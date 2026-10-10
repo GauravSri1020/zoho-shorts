@@ -1,9 +1,21 @@
 {
- "next_id": 1,
- "covered_links": [],
- "problems": [],
- "scripts": {},
+ "next_id": 2,
+ "covered_links": [
+  "https://www.reddit.com/r/Zoho/comments/1wzd94y/sales_order_or_invoice/"
+ ],
+ "problems": [
+  "Zoho Books me online paid sales orders direct closed invoice me convert nahi hote."
+ ],
+ "scripts": {
+  "S0001": {
+   "problem": "Zoho Books me online paid sales orders direct closed invoice me convert nahi hote.",
+   "title": "Fix Zoho Books Sales Order Not Converting to Invoice Automatically #Shorts",
+   "engine": "photo",
+   "created": "2026-10-11T01:53:25.137673+05:30"
+  }
+ },
  "slots": [],
  "failures": {},
- "seen_comments": []
+ "seen_comments": [],
+ "last_photo": "1_jacket.jpg"
 }
