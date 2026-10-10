@@ -76,12 +76,15 @@ jobs:
       - name: Install ffmpeg + fonts
         if: steps.t.outputs.task == 'daily'
         run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg fonts-noto-core fonts-dejavu-core
+      - name: Install browser for the Zoho Books screens
+        if: steps.t.outputs.task == 'daily'
+        run: python -m playwright install --with-deps chromium
       - name: Cache lip-sync engine (SadTalker)
         if: steps.t.outputs.task == 'daily'
         uses: actions/cache@v4
         with:
           path: /home/runner/sadtalker
-          key: sadtalker-v1
+          key: sadtalker-v2
       - name: Install lip-sync engine (first run only)
         if: steps.t.outputs.task == 'daily'
         continue-on-error: true      # if this ever fails, Shorts still go out with the photo-motion avatar
@@ -107,6 +110,7 @@ jobs:
           path: |
             out/**/short.mp4
             out/**/short.json
+            out/**/qa.json
           retention-days: 7
           if-no-files-found: ignore
 
@@ -115,5 +119,5 @@ jobs:
         run: |
           git config user.name "shorts-bot"
           git config user.email "shorts-bot@users.noreply.github.com"
-          git add state/state.json assets/avatars.enc || true
+          git add state/state.json state/benchmark.json assets/avatars.enc || true
           git diff --cached --quiet || (git commit -m "state: $(date -u +%F-%H%M)" && git pull --rebase -q && git push)
