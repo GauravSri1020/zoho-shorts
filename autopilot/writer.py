@@ -20,7 +20,7 @@ from .config import (GEMINI_API_KEY, GEMINI_MODEL, CHANNEL_NAME, CHANNEL_HANDLE,
 
 _client = None
 # Free-tier models get overloaded (503) at peak hours, so rotate through backups (unknown ones are skipped).
-_BACKUPS = ("gemini-2.5-flash", "gemini-3.8-flash", "gemini-3.6-flash", "gemini-2.5-flash-lite")
+_BACKUPS = ("gemini-3.8-flash", "gemini-3.6-flash", "gemini-3.8-flash-lite", "gemini-3.5-flash-lite", "gemini-3.1-flash-lite")
 _MODELS = [GEMINI_MODEL] + [m for m in _BACKUPS if m != GEMINI_MODEL]
 
 
@@ -288,16 +288,18 @@ Reject only for real problems a viewer would notice:
 - content that does not match the title, or anything offensive or misleading
 Return JSON: {{"approved": true|false, "issues": ["..."]}}"""
     try:
-        for model in _MODELS:
-            try:
-                r = client.models.generate_content(
-                    model=model, contents=[f, prompt],
-                    config=types.GenerateContentConfig(temperature=0.1, response_mime_type="application/json"))
-                out = json.loads(r.text)
-                return {"approved": bool(out.get("approved")), "issues": out.get("issues") or []}
-            except Exception as e:
-                print(f"[qa] video check via {model} failed: {str(e)[:160]}")
-                time.sleep(5)
+        for rnd in range(4):                             # 429 / 503 are usually temporary -> wait and go again
+            for model in _MODELS:
+                try:
+                    r = client.models.generate_content(
+                        model=model, contents=[f, prompt],
+                        config=types.GenerateContentConfig(temperature=0.1, response_mime_type="application/json"))
+                    out = json.loads(r.text)
+                    return {"approved": bool(out.get("approved")), "issues": out.get("issues") or []}
+                except Exception as e:
+                    print(f"[qa] video check via {model} (round {rnd + 1}) failed: {str(e)[:160]}")
+                    time.sleep(0 if "404" in str(e) else 5)
+            time.sleep(30 * (rnd + 1))
     finally:
         try:
             client.files.delete(name=f.name)
