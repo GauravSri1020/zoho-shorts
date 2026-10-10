@@ -1,0 +1,9 @@
+out/
+__pycache__/
+*.pyc
+.env
+client_secret*.json
+assets/avatar.jpg
+assets/avatars/
+*.b64
+AVATAR_PHOTO_B64.txt

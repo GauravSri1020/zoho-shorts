@@ -1,0 +1,103 @@
+# =====================================================================================
+#  CHANNEL SETTINGS  -  sab kuch yahin se badlo (naam, niche, feeds, timing)
+#  Fully automatic: AI research, script, QA, AI voice, AI avatar (tere photo se), video, upload.
+#  AI avatar + AI voice -> YouTube ka 'altered or synthetic content' label har video pe ON rehta hai.
+# =====================================================================================
+
+channel:
+  name: "GSX Automation"         # shown on videos and in descriptions
+  handle: "@GSXAutomation"       # your YouTube @handle (update once your existing channel is connected)
+  language: "Hinglish"           # Hinglish | Hindi | English  (scripts + captions)
+  hashtags: ["Shorts", "ZohoCRM", "Zoho", "BusinessAutomation"]
+  # Keep "Zoho" OUT of the channel name/logo (trademark). Using it in titles/tags to describe the topic is fine.
+  disclaimer: "Independent channel. Not affiliated with or endorsed by Zoho Corporation. Zoho is a trademark of Zoho Corporation."
+
+# What the channel is about. The agents read this to decide WHAT to make.
+niche:
+  topic: "Zoho products (CRM, Books, Creator, Desk, Inventory, Forms, Analytics, People, Campaigns, Flow)"
+  audience: "Indian small business owners, Zoho admins, Zoho consultants and developers"
+  promise: >-
+    every Short takes ONE real problem people hit while using a Zoho product and shows how to fix it:
+    inside Zoho (settings, workflow rules, blueprints, custom functions in Deluge), with a small widget,
+    or by connecting an outside HTML page (form / dashboard / webhook / API).
+  good_problems:
+    - "Zoho CRM me duplicate leads ban jaate hain, sales team confuse hoti hai"
+    - "Zoho Books me invoice bana ke WhatsApp pe bhejna manually karna padta hai"
+    - "website ke custom HTML form ki leads Zoho CRM me automatically nahi aati"
+    - "Zoho Desk me tickets ka auto-assignment galat agent ko jaata hai"
+    - "Zoho Creator report me ek button chahiye jo PDF bana ke mail kar de"
+  solution_types:                # the scout picks one per Short
+    native: "fix with built-in settings: workflow rules, blueprint, validation rules, assignment rules, layouts"
+    deluge: "a short Deluge custom function / schedule / button script"
+    widget: "a small Zoho widget (HTML + JS SDK) inside CRM / Desk / Creator"
+    html: "an outside HTML page connected to Zoho (web form, webhook, REST API, embed)"
+  skip: "pricing/discount news, funding news, opinion pieces, anything without a practical fix"
+  safety: "no financial, tax or legal advice; never show real customer data"
+  cta: "Aise hi Zoho fixes ke liye follow karo {name}"
+
+# Where the research agent looks for real problems people are asking about. Any RSS / Atom feed works.
+sources:
+  feeds:
+    - "https://www.reddit.com/r/zoho/new/.rss"
+    - "https://stackoverflow.com/feeds/tag/zoho"
+    - "https://stackoverflow.com/feeds/tag/zoho-deluge"
+    - "https://stackoverflow.com/feeds/tag/zoho-creator"
+    - "https://stackoverflow.com/feeds/tag/zoho-crm"
+    - "https://news.google.com/rss/search?hl=en-IN&gl=IN&ceid=IN:en&q=%22Zoho+CRM%22+when:7d"
+    - "https://news.google.com/rss/search?hl=en-IN&gl=IN&ceid=IN:en&q=Zoho+new+feature+when:7d"
+  keywords: ["zoho", "deluge", "crm", "creator", "zoho books", "zoho desk", "widget", "blueprint", "workflow"]
+  lookback_days: 10
+  # If the feeds give nothing useful, the scout picks a common, evergreen Zoho problem from its own knowledge.
+  evergreen_fallback: true
+
+# Shorts per day (each one goes into the next free morning / evening slot)
+scripts:
+  per_day: 2
+  words_min: 110
+  words_max: 150
+
+# The presenter: AI avatar from your photos (encrypted in assets/avatars.enc, AVATAR_KEY secret) + AI voice
+avatar:
+  engine: "sadtalker"            # sadtalker = lip-sync (free, CPU, slow) | photo = photo with camera motion only
+  gemini_voice: "Puck"           # Gemini TTS voices: Puck, Charon, Fenrir, Orus, Kore, Aoede, Leda, Zephyr ...
+  backup_voice: "hi-IN-MadhurNeural"   # edge-tts voice used only if Gemini TTS is down
+  voice_style: "confident, friendly Hinglish explainer, Indian accent, natural pace"
+  tempo: 1.05
+
+# When videos go public (IST). A random minute inside each window, every day different,
+# and never the same time as the previous day's slot.
+schedule:
+  windows:
+    morning: "07:00-08:00"
+    evening: "20:00-21:00"
+  min_gap_from_yesterday_minutes: 8
+  min_lead_minutes: 30           # never schedule a video less than 30 min after it is made
+
+# Captions / editing
+captions:
+  whisper_model: "small"         # word timings for captions (tiny | base | small)
+  whisper_language: "hi"         # hi for Hinglish/Hindi, en for English
+  roman_captions: true           # show Hinglish captions in Roman letters (Devanagari if false or if it fails)
+  max_words: 3
+
+video:
+  max_seconds: 60
+
+labels:
+  hook_badge: ""                  # small badge top-right ("" = none)
+
+youtube:
+  category_id: "28"              # 28 = Science & Technology, 27 = Education, 26 = Howto & Style
+  language: "hi"                 # hi | en
+
+# Photo agent (weekly): new photorealistic photos of you in new scenes, checked by a QA agent before use
+photo_agent:
+  per_run: 2
+  max_generated: 18             # your original photos are never removed
+  scenes:
+    - "walking slowly on a city street at night, warm string lights and shop lights glowing behind, bokeh"
+    - "standing on a rooftop terrace at dusk with fairy lights behind"
+    - "in a modern office with glass walls, people working in the blurred background"
+    - "sitting at a cafe table with a laptop, warm evening light"
+    - "walking in a co-working space corridor, soft daylight"
+    - "standing near a window with city lights at night behind"
