@@ -57,7 +57,8 @@ def make_video(sc, work, st):
     """script -> voice -> captions timing -> avatar -> finished Short, checked by the QA agent."""
     lines = _lines(sc)
     wav, _ = voice.synthesize(lines, work / "voice", MAX_VIDEO_SECONDS)
-    words = editor.romanize_if_needed(editor.transcribe(wav, work))
+    script_text = " ".join(voice._clean(l.get("say") or l.get("tts")) for l in lines)
+    words = editor.align_to_script(editor.transcribe(wav, work), script_text)
     dur = voice.duration(wav)
     mp4 = work / "short.mp4"
     issues = []
