@@ -5,6 +5,7 @@
 - no cards, no badge, no split screen: only the spoken words as captions
 - technical checks (sound, black frames, size) before the QA agent watches it
 """
+import bisect
 import json
 import re
 import shutil
@@ -71,6 +72,37 @@ def romanize_if_needed(words):
     if not roman:
         return words
     return [(s, e, r) for (s, e, _), r in zip(words, roman)]
+
+
+def align_to_script(words, script_text):
+    """Captions = the exact script words (Roman Hinglish), timed on whisper's word timings.
+
+    Whisper on Hinglish audio often returns Devanagari / mis-heard words, and romanizing needs Gemini
+    (often out of quota). We already KNOW what was said, so only the timing is taken from whisper.
+    """
+    sw = (script_text or "").split()
+    if not words or not sw:
+        return words
+    wl = [max(len(w), 1) for _, _, w in words]
+    cum = [0]
+    for x in wl:
+        cum.append(cum[-1] + x)
+    total = cum[-1]
+
+    def t_at(f):
+        pos = min(max(f, 0.0), 1.0) * total
+        k = min(max(bisect.bisect_right(cum, pos) - 1, 0), len(words) - 1)
+        s, e, _ = words[k]
+        return s + (e - s) * min(max((pos - cum[k]) / wl[k], 0.0), 1.0)
+
+    sl = [max(len(w), 1) for w in sw]
+    stotal, acc, out = sum(sl), 0, []
+    for w, l in zip(sw, sl):
+        a = t_at(acc / stotal)
+        acc += l
+        b = t_at(acc / stotal - 1e-9)
+        out.append((a, max(b, a + 0.05), w))
+    return out
 
 
 # ------------------------------------------------------------------ captions (ASS)
