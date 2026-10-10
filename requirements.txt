@@ -8,3 +8,5 @@ edge-tts>=6.1
 Pillow>=10.0
 PyYAML>=6.0
 av>=11,<19
+playwright>=1.47
+numpy
