@@ -12,7 +12,7 @@ import shutil
 import sys
 import traceback
 
-from . import avatar, editor, google_apis as g, notify, photos, research, schedule, state, voice, writer
+from . import avatar, benchmark, composer, editor, google_apis as g, notify, photos, research, schedule, state, voice, writer
 from .config import (OUT_DIR, CHANNEL_NAME, CHANNEL_HANDLE, HASHTAGS, NICHE, DISCLAIMER, SCRIPTS_PER_DAY,
                      MAX_VIDEO_SECONDS)
 
@@ -53,32 +53,40 @@ def _lines(sc):
     return [l for l in sc.get("lines", []) if (l.get("say") or l.get("tts"))]
 
 
+_RUN = {}
+_STOP = {}          # set when a problem would repeat for every Short of this run (no lip-sync / QA down)
+
+
 def make_video(sc, work, st):
-    """script -> voice -> captions timing -> avatar -> finished Short, checked by the QA agent."""
+    """script -> voice -> lip-synced avatar -> avatar + Zoho screens edit -> benchmark QA gate."""
+    if _STOP:
+        raise RuntimeError("skipped: " + _STOP["why"])
+    if not _RUN.get("learned"):
+        _RUN["learned"] = True
+        try:
+            benchmark.learn(g.youtube())
+        except Exception as e:
+            print(f"[benchmark] learn skipped: {str(e)[:200]}")
     lines = _lines(sc)
     wav, _ = voice.synthesize(lines, work / "voice", MAX_VIDEO_SECONDS)
     script_text = " ".join(voice._clean(l.get("say") or l.get("tts")) for l in lines)
     words = editor.align_to_script(editor.transcribe(wav, work), script_text)
     dur = voice.duration(wav)
+    av, engine, photo = avatar.make(wav, dur, work / "avatar", last_photo=st.get("last_photo"))
     mp4 = work / "short.mp4"
-    issues = []
-    for force_photo in (False, True):          # lip-sync avatar first, photo-motion backup second
-        av, engine, photo = avatar.make(wav, dur, work / "avatar", force_photo=force_photo,
-                                        last_photo=st.get("last_photo"))
-        editor.render_fullscreen(av, wav, words, work / "edit", mp4)
-        problems = editor.check_media(mp4)
-        if problems:
-            issues = problems
-        else:
-            verdict = writer.qa_video(mp4, sc)
-            print(f"[qa] video ({engine}) approved={verdict['approved']} issues={verdict['issues']}")
-            if verdict["approved"]:
-                st["last_photo"] = photo
-                return mp4, engine
-            issues = verdict["issues"]
-        if engine == "photo":
-            break
-    raise RuntimeError("video failed QA: " + "; ".join(map(str, issues))[:300])
+    composer.render(sc, lines, words, av, wav, work / "edit", mp4, seed=st.get("next_id"))
+    problems = editor.check_media(mp4)
+    report = benchmark.gate(mp4, sc, engine, problems)
+    (work / "qa.json").write_text(json.dumps(report, ensure_ascii=False, indent=1), encoding="utf-8")
+    print(f"[qa] engine={engine} score={report['overall']}/{report['min_score']} approved={report['approved']}")
+    for i in report["issues"][:8]:
+        print(f"[qa]   - {i}")
+    if report["approved"]:
+        st["last_photo"] = photo
+        return mp4, engine
+    if report.get("fatal"):
+        _STOP["why"] = report["issues"][0]
+    raise RuntimeError("video failed QA: " + "; ".join(map(str, report["issues"]))[:300])
 
 
 def run_daily(count, do_upload):
