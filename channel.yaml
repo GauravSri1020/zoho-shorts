@@ -101,3 +101,16 @@ photo_agent:
     - "sitting at a cafe table with a laptop, warm evening light"
     - "walking in a co-working space corridor, soft daylight"
     - "standing near a window with city lights at night behind"
+
+# Benchmark agent: watches these Shorts (and the most-viewed Zoho Books Shorts on YouTube) every 14 days,
+# then scores every new video against them. Upload happens ONLY if score >= min_score and the avatar lip-syncs.
+benchmark:
+  min_score: 75
+  youtube_search: "Zoho Books"
+  references:
+    - {url: "https://www.youtube.com/shorts/iw5N2XbH3m0", weight: 3, note: "MOST PREFERRED - title on top, video panel in the middle, caption box below, b-roll cuts"}
+    - {url: "https://www.youtube.com/shorts/SiT0DF2jkyw", weight: 2, note: "news-interview style, like this but with AI faces"}
+    - {url: "https://www.youtube.com/shorts/XtZQSylRrF4", weight: 2, note: "Zoho Books trainer talking head + illustration cutaways + highlighted captions"}
+    - {url: "https://www.youtube.com/shorts/9Yna9kWjysU", weight: 2, note: "Hindi step-by-step Zoho Books screen recording"}
+    - {url: "https://www.youtube.com/shorts/KQeXrvncz_k", weight: 1, note: "AI visuals, fast cuts, music"}
+    - {url: "https://www.youtube.com/shorts/Q9rWfCbDhk8", weight: 1, note: "AI visuals, music, strong hook"}
