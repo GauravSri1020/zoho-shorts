@@ -150,9 +150,11 @@ def write_script(angle):
     source = (f"SOURCE (the question/story this came from): {s['title']} - {s['source']}\n{s['summary']}"
               if s else "SOURCE: evergreen problem, no news source. Do not mention any news.")
     prompt = f"""Write ONE YouTube Short script for "{CHANNEL_NAME}" in natural spoken {LANGUAGE}.
-It is spoken by the channel's AI avatar presenter (solo, face to camera, like explaining to a friend).
-The video is the presenter full screen with only the spoken words as captions, so every line must make
-sense when heard (code goes in the description, not on screen).
+The video switches between the creator's lip-synced AI avatar and Zoho Books screens:
+HOOK / PROBLEM / RESULT / CTA lines show the presenter talking to camera; FIX and every STEP line show the
+Zoho Books screen where that action happens, with the exact button / field highlighted while the voice says it.
+So every STEP must be ONE concrete action in Zoho Books (where to go, what to click or fill), and its "screen"
+must show exactly that (code goes in the description, not on screen).
 
 THE ANGLE
 Product: {angle.get('product')}
@@ -173,6 +175,9 @@ RULES
 - {lo}-{hi} words total in "say". Short sentences. "say" is Roman-script {LANGUAGE}.
 - {_LANG_RULES.get(LANGUAGE, _LANG_RULES['English'])}
 - "card": 2-7 word on-screen text for that line, e.g. "Setup > Automation > Workflow Rules".
+- "screen" (FIX and every STEP line): a faithful mock of the real Zoho Books web screen for that action - real menu
+  names only (Sales, Purchases, Items, Banking, Accountant, Reports, Settings > Preferences ...). Use "list" for
+  record lists, "form" for create/edit pages, "settings" for preferences with toggles. 2-5 rows/fields.
 - Never invent Zoho features, menus, prices or limits. If unsure of a menu name, say it generally.
 - {NICHE.get('safety', '')}
 - If the fix needs code (Deluge function, widget, HTML page), put WORKING, minimal, commented code in "code".
@@ -183,7 +188,12 @@ Return JSON:
  "title": "YouTube title, max 70 chars, problem/fix led, honest",
  "hook_text": "max 6 words shown big at the top of the video",
  "lines": [{{"beat": "HOOK|PROBLEM|FIX|STEP 1|STEP 2|STEP 3|RESULT|CTA", "say": "Roman text",
-            "tts": "text for the voice engine", "card": "on-screen text"}}],
+            "tts": "text for the voice engine", "card": "on-screen text",
+            "screen": null or (for FIX / STEP lines) {{"path": ["Sales", "Sales Orders"], "view": "list|form|settings",
+                       "heading": "page title", "columns": ["..."], "rows": [["realistic Indian sample data"]],
+                       "fields": [["Field label", "sample value"]], "toggles": [["Option label", true]],
+                       "click": "EXACT text of the button / field / row cell / option to highlight (must appear on that screen)",
+                       "tip": "max 8 words"}}}}],
  "code": {{"language": "deluge|html|javascript", "filename": "...", "content": "...",
           "where_to_paste": "exact place in Zoho"}} or null,
  "test_before_recording": ["what to check in your own Zoho account before recording"],
