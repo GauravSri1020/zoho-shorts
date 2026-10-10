@@ -1,0 +1,119 @@
+name: GSX Automation Shorts
+
+on:
+  schedule:
+    - cron: "30 4 * * *"     # 10:00 IST -> make today's Shorts; each is scheduled for a random time
+                             #              in the next free morning (7-8) / evening (8-9 PM) slot
+    - cron: "40 */3 * * *"   # every 3 hours -> reply to new comments
+    - cron: "0 22 * * 6"     # Sunday 03:30 IST -> photo agent makes new photos of you
+  workflow_dispatch:
+    inputs:
+      task:
+        description: "daily, comments or photos"
+        default: "daily"
+      count:
+        description: "daily: how many Shorts"
+        default: "1"
+      upload:
+        description: "daily: upload to YouTube? (yes/no)"
+        default: "no"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: autopilot
+  cancel-in-progress: false
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 330
+    env:
+      PYTHONUNBUFFERED: "1"
+      GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
+      YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
+      YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
+      AVATAR_KEY: ${{ secrets.AVATAR_KEY }}
+      GEMINI_MODEL: ${{ vars.GEMINI_MODEL }}
+      AVATAR_ENGINE: ${{ vars.AVATAR_ENGINE }}
+      TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+      TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+      MAIL_USER: ${{ secrets.MAIL_USER }}
+      MAIL_APP_PASSWORD: ${{ secrets.MAIL_APP_PASSWORD }}
+      MAIL_TO: ${{ secrets.MAIL_TO }}
+      SADTALKER_DIR: /home/runner/sadtalker
+    steps:
+      - uses: actions/checkout@v4
+      - name: Decide task
+        id: t
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            echo "task=${{ inputs.task }}" >> $GITHUB_OUTPUT
+            ARGS=""
+            if [ "${{ inputs.task }}" = "daily" ]; then
+              ARGS="--count ${{ inputs.count }}"
+              if [ "${{ inputs.upload }}" != "yes" ]; then ARGS="$ARGS --no-upload"; fi
+            fi
+            echo "args=$ARGS" >> $GITHUB_OUTPUT
+          elif [ "${{ github.event.schedule }}" = "30 4 * * *" ]; then
+            echo "task=daily" >> $GITHUB_OUTPUT
+          elif [ "${{ github.event.schedule }}" = "0 22 * * 6" ]; then
+            echo "task=photos" >> $GITHUB_OUTPUT
+          else
+            echo "task=comments" >> $GITHUB_OUTPUT
+          fi
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: |
+            3.10
+            3.12
+          cache: pip
+      - run: pip install -r requirements.txt
+
+      - name: Install ffmpeg + fonts
+        if: steps.t.outputs.task == 'daily'
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg fonts-noto-core fonts-dejavu-core
+      - name: Cache lip-sync engine (SadTalker)
+        if: steps.t.outputs.task == 'daily'
+        uses: actions/cache@v4
+        with:
+          path: /home/runner/sadtalker
+          key: sadtalker-v1
+      - name: Install lip-sync engine (first run only)
+        if: steps.t.outputs.task == 'daily'
+        continue-on-error: true      # if this ever fails, Shorts still go out with the photo-motion avatar
+        run: bash tools/install_sadtalker.sh
+      - name: Cache the caption model
+        if: steps.t.outputs.task == 'daily'
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/huggingface
+          key: whisper-small
+          restore-keys: whisper-
+
+      - name: Run
+        run: |
+          echo "python -m autopilot.main ${{ steps.t.outputs.task }} ${{ steps.t.outputs.args }}"
+          python -m autopilot.main ${{ steps.t.outputs.task }} ${{ steps.t.outputs.args }}
+
+      - name: Keep the Shorts as downloadable artifacts (7 days)
+        if: always() && steps.t.outputs.task == 'daily'
+        uses: actions/upload-artifact@v4
+        with:
+          name: shorts-${{ github.run_id }}
+          path: |
+            out/**/short.mp4
+            out/**/short.json
+          retention-days: 7
+          if-no-files-found: ignore
+
+      - name: Save state (topics used, schedule, comments replied, new photos)
+        if: always()
+        run: |
+          git config user.name "shorts-bot"
+          git config user.email "shorts-bot@users.noreply.github.com"
+          git add state/state.json assets/avatars.enc || true
+          git diff --cached --quiet || (git commit -m "state: $(date -u +%F-%H%M)" && git pull --rebase -q && git push)
