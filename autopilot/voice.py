@@ -44,8 +44,12 @@ def _spoken(lines):
     return " ".join(_clean(l.get("tts") or l.get("say")) for l in lines)
 
 
-def _post(model, text):
-    body = {"contents": [{"role": "user", "parts": [{"text": f"Say this as a {STYLE}:\n\n{text}"}]}],
+def _post(model, text, plain=False):
+    # A bare "Say this as a ...:" prefix sometimes gets READ ALOUD by the TTS model, so the
+    # instructions are clearly separated from the transcript (and left out completely on the retry).
+    prompt = text if plain else (f"Read the TRANSCRIPT below aloud. Voice style: {STYLE}. "
+                                 f"Speak ONLY the transcript words, never these instructions.\n\nTRANSCRIPT:\n{text}")
+    body = {"contents": [{"role": "user", "parts": [{"text": prompt}]}],
             "generationConfig": {"responseModalities": ["AUDIO"], "speechConfig": {
                 "voiceConfig": {"prebuiltVoiceConfig": {"voiceName": GEMINI_VOICE}}}}}
     req = urllib.request.Request(API.format(model=model), data=json.dumps(body).encode(),
@@ -75,6 +79,26 @@ def _write_pcm(raw, path):
         w.writeframes(raw)
 
 
+LEAK = re.compile(r"say this|transcript|explainer|indian accent|natural pace|voice style|instructions", re.I)
+
+
+def _leaked(path):
+    """True if the TTS model spoke the style instructions instead of only the script (checks first 12 s)."""
+    try:
+        from faster_whisper import WhisperModel
+        head = path.with_name("head.wav")
+        _run(["ffmpeg", "-y", "-loglevel", "error", "-i", str(path), "-t", "12", "-ar", "16000", "-ac", "1", str(head)])
+        segs, _ = WhisperModel("tiny", device="cpu", compute_type="int8").transcribe(str(head), language="en")
+        said = " ".join(s.text for s in segs)
+    except Exception as e:
+        print(f"[voice] leak check skipped: {e}")
+        return False
+    hit = bool(LEAK.search(said))
+    if hit:
+        print(f"[voice] TTS read the instructions aloud: {said[:120]!r}")
+    return hit
+
+
 def _gemini(text, path):
     if not GEMINI_API_KEY:
         raise RuntimeError("GEMINI_API_KEY missing")
@@ -82,9 +106,11 @@ def _gemini(text, path):
     for model in TTS_MODELS:
         for attempt in range(2):
             try:
-                _write_pcm(_post(model, text), path)
+                _write_pcm(_post(model, text, plain=attempt > 0), path)
                 if duration(path) < 8:
                     raise RuntimeError("audio too short")
+                if _leaked(path):
+                    raise RuntimeError("instructions leaked into audio")
                 print(f"[voice] ok via {model}")
                 return
             except Exception as e:
