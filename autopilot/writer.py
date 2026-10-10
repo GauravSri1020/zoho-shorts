@@ -20,7 +20,7 @@ from .config import (GEMINI_API_KEY, GEMINI_MODEL, CHANNEL_NAME, CHANNEL_HANDLE,
 
 _client = None
 # Free-tier models get overloaded (503) at peak hours, so rotate through backups (unknown ones are skipped).
-_BACKUPS = ("gemini-3.8-flash", "gemini-3.6-flash", "gemini-3.8-flash-lite", "gemini-3.5-flash-lite", "gemini-3.1-flash-lite")
+_BACKUPS = ("gemini-3.8-flash", "gemini-3.6-flash", "gemini-3.5-flash-lite", "gemini-3.1-flash-lite")
 _MODELS = [GEMINI_MODEL] + [m for m in _BACKUPS if m != GEMINI_MODEL]
 
 
@@ -280,7 +280,7 @@ def qa_video(mp4_path, meta):
             break
         time.sleep(4)
     prompt = f"""You are the final quality check before this YouTube Short goes public on "{CHANNEL_NAME}".
-Nobody else will watch it. Expected title: "{meta.get('title', '')}". Expected top text: "{meta.get('hook_text', '')}".
+Nobody else will watch it. Expected title: "{meta.get('title', '')}". The video has NO top banner / title card by design (only spoken-word captions), so never ask for one.
 Reject only for real problems a viewer would notice:
 - captions unreadable, cut off, overlapping, or clearly out of sync with the speech
 - audio missing, distorted, or very quiet; long silences
