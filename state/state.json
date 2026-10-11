@@ -70,7 +70,9 @@
    "title": "Stop manually copying Zoho CRM and Books data to Excel! #Shorts",
    "engine": "flow",
    "job": "20261011-1804-1",
-   "created": "2026-10-11T18:06:21"
+   "created": "2026-10-11T18:06:21",
+   "video_id": "Y1THCzxhr_Y",
+   "publish_at": "2026-10-12T07:35:00+05:30"
   },
   "S0007": {
    "problem": "Sales reps spend hours manually updating lead status and follow-up tasks.",
@@ -150,7 +152,15 @@
    "created": "2026-10-11T18:30:30"
   }
  },
- "slots": [],
+ "slots": [
+  {
+   "date": "2026-10-12",
+   "window": "morning",
+   "minute": 455,
+   "video_id": "Y1THCzxhr_Y",
+   "title": "Stop manually copying Zoho CRM and Books data to Excel! #Shorts"
+  }
+ ],
  "failures": {},
  "seen_comments": [],
  "last_photo": "1_jacket.jpg",
