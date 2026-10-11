@@ -78,8 +78,8 @@ def main():
     out = os.path.join(WORK, "result.mp4")
     t0 = time.time()
     sh(f"python -m scripts.inference --unet_config_path configs/unet/stage2.yaml "
-       f"--inference_ckpt_path checkpoints/latentsync_unet.pt --inference_steps 20 --guidance_scale 1.5 "
-       f"--enable_deepcache --video_path {base} --audio_path {audio} --video_out_path {out} "
+       f"--inference_ckpt_path checkpoints/latentsync_unet.pt --inference_steps 40 --guidance_scale 2.0 "
+       f"--video_path {base} --audio_path {audio} --video_out_path {out} "
        f"--temp_dir {LS_DIR}/tmp", cwd=LS_DIR)
     if not os.path.exists(out) or os.path.getsize(out) < 10000:
         raise RuntimeError("LatentSync produced no video")
