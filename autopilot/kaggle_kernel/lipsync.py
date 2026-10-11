@@ -60,7 +60,7 @@ def main():
 
     # 2. python packages (Kaggle already has torch / torchvision / opencv / librosa / numpy)
     sh("pip install -q diffusers==0.32.2 einops omegaconf python_speech_features kornia DeepCache==0.1.1 "
-       "imageio imageio-ffmpeg ffmpeg-python soundfile huggingface_hub accelerate", check=True)
+       "imageio imageio-ffmpeg ffmpeg-python soundfile transformers==4.48.3 huggingface_hub==0.27.1 accelerate", check=True)
     try:
         sh("pip install -q decord==0.6.0")
         sh("python -c 'import decord'")
