@@ -61,7 +61,7 @@ scripts:
 # into the upload link; the robot does everything else (joins, hides watermark, Zoho screens, captions, music, QA, upload).
 flow:
   per_day: 1                  # Shorts prepared per day (each needs ~5-8 Flow clips; Veo 3.1 Fast ~10-20 credits each)
-  max_words_per_clip: 17      # ~7 s of speech -> fits one 8 s Flow clip
+  max_words_per_clip: 19      # ~7.5 s of speech -> fits one 8 s Flow clip
   presenter: "The man (my avatar)"   # how every prompt refers to you - select your avatar in Flow before pasting
   scene: "wearing a smart navy blue shirt, standing in a bright modern office with soft daylight"   # your look + place, same in every clip
   watermark:                  # Flow puts a visible watermark on every clip; the editor hides it
