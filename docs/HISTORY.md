@@ -39,3 +39,17 @@ Shuru mein: SadTalker / photo motion avatar, Gemini TTS, research/script/QA agen
 ## Kaam ki files
 
 channel.yaml - saari settings. autopilot/flow.py - prompts + clip matching + watermark hide. autopilot/editor.py - final edit. autopilot/screens.py - Zoho screens. state/state.json - robot ka state. .github/workflows/autopilot.yml - daily 10 AM IST + assemble on clip upload.
+
+## Update - 11 Oct 2026, raat 9:30
+
+Flow mein avatar "Gaurav" ban gaya (office blazer photo + voice "Achird custom": friendly, Indian accent). Flow project: Oct 11 - 18:12.
+
+8 clips Flow agent se ek saath bane (9:16, Veo 3.1 Fast) aur jobs/20261011-1326-1/clips/ mein commit hue (clip01-08.mp4).
+
+Run #20 (assemble) success, 6 min. Artifact: shorts-38156161379 (short.mp4, 7 din tak).
+
+QA score 68/75 (fail): 0:00-0:12 halke mouth artifacts, 0:13-0:42 Zoho screens mockup cards lagte hain. Isliye YouTube pe nahi gaya.
+
+job.json mein upload=false hai. User pehle video dekhna chahta hai; upload ON karne se pehle user ki haan chahiye.
+
+Next: user short.mp4 dekhe. Theek lage to upload=true + QA threshold dekhna, ya bad clips retake karke dobara upload.
