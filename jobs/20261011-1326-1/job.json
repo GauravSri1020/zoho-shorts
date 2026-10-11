@@ -1,6 +1,6 @@
 {
  "id": "20261011-1326-1",
- "status": "waiting_for_clips",
+ "status": "uploaded_manually",
  "upload": false,
  "created": "2026-10-11T13:27:49",
  "title": "Stop Paying Extra Zoho Books Seats for Bill Approvals #Shorts",
@@ -428,5 +428,7 @@
    "prompt": "The man (my avatar) looks straight into the camera and talks to the viewer like a friendly YouTube tech explainer; he smiles warmly and points at the camera. Vertical 9:16 medium close-up, static camera, face sharp and well lit, wearing a smart navy blue shirt, standing in a bright modern office with soft daylight. He says, in clear natural English with an Indian accent: \"Follow the channel for more quick Zoho fixes.\" His lips match every word. He starts speaking immediately and stops right after the last word. Audio: only his voice - no music, no sound effects. No subtitles, no captions, no text on screen."
   }
  ],
- "issue": 2
+ "issue": 2,
+ "youtube_id": "TuYUCh3cP6o",
+ "publish_at": "2026-10-12T07:30:00+05:30"
 }
