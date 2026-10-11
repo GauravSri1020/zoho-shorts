@@ -205,6 +205,8 @@ def _anchors(piece, clip, workdir: Path):
     from .editor import align_to_script, transcribe
     cdur = _dur(clip)
     tw = piece["words"]
+    if piece.get("reuse"):          # clip made for another line: just keep the talking motion going
+        return [(piece["t0"], 0.15), (piece["t1"], max(min(cdur - 0.25, 0.15 + piece["t1"] - piece["t0"]), 0.5))]
     try:
         vw = align_to_script(transcribe(clip, workdir), piece["text"])
     except Exception as e:
@@ -260,9 +262,11 @@ def assemble(photo_frame, plist, clips, dur, workdir: Path, out: Path):
     seq.mkdir(parents=True)
     still = workdir / "still.jpg"
     Image.open(photo_frame).convert("RGB").save(still, quality=95)
-    maps = []
+    maps, cache = [], {}
     for i, (p, c) in enumerate(zip(plist, clips)):
-        fr, sfps = _frames(c, workdir / f"f{i:02d}", (w, h))
+        if str(c) not in cache:     # the same clip can serve several lines (manual Gemini mode)
+            cache[str(c)] = _frames(c, workdir / f"f{len(cache):02d}", (w, h))
+        fr, sfps = cache[str(c)]
         pts = _anchors(p, c, workdir / f"w{i:02d}")
         maps.append((p, fr, sfps, pts))
         print(f"[veo] clip {i + 1}: {len(pts)} lip anchors for {p['t1'] - p['t0']:.1f}s line")
@@ -278,7 +282,7 @@ def assemble(photo_frame, plist, clips, dur, workdir: Path, out: Path):
     _run(["ffmpeg", "-y", "-loglevel", "error", "-framerate", str(FPS), "-i", str(seq / "%06d.jpg"),
           "-vf", "format=yuv420p", "-c:v", "libx264", "-preset", "veryfast", "-crf", "15", "-an", str(out)])
     shutil.rmtree(seq, ignore_errors=True)
-    for i in range(len(clips)):
+    for i in range(len(cache)):
         shutil.rmtree(workdir / f"f{i:02d}", ignore_errors=True)
     return out
 
