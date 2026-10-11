@@ -2,6 +2,10 @@
 
 Is file ko har session ke end pe update karo, taaki agla chat yahin se shuru kare.
 
+## Channel branding (12 Oct 2026)
+
+YouTube channel ab "GSX Automation", handle @GSXAutomation (youtube.com/@GSXAutomation). Naya logo (GSX, navy/blue/yellow) + banner ("One real business problem. One quick automation fix.") + professional description (AI presenter disclosure + "not affiliated with Zoho" line) publish ho gaye. Channel name/logo mein "Zoho" jaan-boojh ke nahi (trademark). Purane 4 videos delete nahi kiye, sab Private. Duplicate robot upload MOwTQ0Q8qC4 bhi Private.
+
 ## Abhi kahan hain (12 Oct 2026, raat ~1:45 IST)
 
 YouTube pe scheduled: (1) Bill approvals - TuYUCh3cP6o, 12 Oct 7:30 AM (manual upload). (2) "Stop copying CRM/Books data to Excel" - Y1THCzxhr_Y, 12 Oct 7:35 AM (robot, naya editor v2 - QA pass). Dono same subah hain (slot clash) - chahe to Studio mein ek ko shift karo.
