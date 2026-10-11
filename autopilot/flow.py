@@ -451,6 +451,18 @@ def tts_part(text, out_v: Path, out_a: Path):
     return length
 
 
+def _still_pending(job_id):
+    """True unless another (parallel) run already finished this Short: its job folder is gone from origin/main.
+    Prevents the same Short being uploaded twice when two clip uploads trigger two assemble runs."""
+    try:
+        subprocess.run(["git", "fetch", "-q", "origin", "main"], cwd=ROOT, check=True, timeout=60)
+        r = subprocess.run(["git", "cat-file", "-e", f"origin/main:jobs/{job_id}/job.json"], cwd=ROOT)
+        return r.returncode == 0
+    except Exception as e:
+        print(f"[flow] could not check origin for {job_id}: {e}")
+        return True
+
+
 def finish():
     """Assembles every job whose clips are all uploaded. Returns the number of Shorts finished."""
     from . import benchmark, editor, google_apis as g, notify, schedule, state
@@ -492,6 +504,9 @@ def finish():
                               f"{upload_link(job['id'])}")
                 notify.send(f"⚠️ {CHANNEL_NAME}: Short {job['id']} failed QA ({report['overall']}/"
                             f"{report['min_score']}).\n{issues}\nRetakes: {upload_link(job['id'])}")
+                continue
+            if not _still_pending(job["id"]):
+                print(f"[flow] {job['id']}: already finished by another run - not uploading again")
                 continue
             st = state.load()
             msg = f"✅ Short ready. Video: {run_link} (Artifacts)."
