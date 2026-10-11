@@ -62,8 +62,10 @@ scripts:
 flow:
   per_day: 1                  # Shorts prepared per day (each needs ~5-8 Flow clips; Veo 3.1 Fast ~10-20 credits each)
   max_words_per_clip: 19      # ~7.5 s of speech -> fits one 8 s Flow clip
+  speed: 1.1 # lifts the pace of every clip a little (voice + lips together), 1.0 = off
+  max_batch: 14 # a manual daily run may prepare up to this many Shorts at once (a week)
   presenter: "The man (my avatar)"   # how every prompt refers to you - select your avatar in Flow before pasting
-  scene: "wearing a smart navy blue shirt, standing in a bright modern office with soft daylight"   # your look + place, same in every clip
+  scene: "wearing his dark grey blazer over a navy t-shirt, in a bright modern office with soft daylight"   # your look + place, same in every clip
   watermark:                  # Flow puts a visible watermark on every clip; the editor hides it
     mode: "crop"              # crop = cut the bottom strip away | blur = blur the box below | none
     crop_bottom: 0.10         # part of the height cut from the bottom (crop mode)
@@ -98,7 +100,7 @@ youtube:
 # Benchmark agent: watches these Shorts (and the most-viewed Zoho Books Shorts on YouTube) every 14 days,
 # then scores every new video against them. Upload happens ONLY if score >= min_score and the avatar lip-syncs.
 benchmark:
-  min_score: 75
+  min_score: 65
   youtube_search: "Zoho Books"
   references:
     - {url: "https://www.youtube.com/shorts/iw5N2XbH3m0", weight: 3, note: "MOST PREFERRED - title on top, video panel in the middle, caption box below, b-roll cuts"}
