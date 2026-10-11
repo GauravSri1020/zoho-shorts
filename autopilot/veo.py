@@ -12,7 +12,8 @@ What it does, for every Short:
 4. Returns ONE avatar video as long as the voice track, so composer.py works exactly as before
    (screens, captions, music, layout: nothing else changes).
 
-Key: VEO_API_KEY secret (a billing-enabled Gemini API key; Veo has no free tier). Falls back to GEMINI_API_KEY.
+Key: VEO_API_KEY secret only (a billing-enabled Gemini API key; Veo has no free tier). No VEO_API_KEY -> Veo is
+skipped and nothing is charged (the normal GEMINI_API_KEY is never used for Veo).
 If anything fails, avatar.py falls back to SadTalker and then to the photo, as before.
 """
 import json
@@ -41,9 +42,9 @@ FPS = 30
 
 def _client():
     from google import genai
-    key = (os.getenv("VEO_API_KEY") or os.getenv("GEMINI_API_KEY") or "").strip()
+    key = (os.getenv("VEO_API_KEY") or "").strip()
     if not key:
-        raise RuntimeError("VEO_API_KEY secret missing")
+        raise RuntimeError("VEO_API_KEY secret not set - Veo skipped (free SadTalker is used instead)")
     return genai.Client(api_key=key)
 
 
