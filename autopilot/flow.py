@@ -4,14 +4,15 @@ Every day (10:00 IST, task "daily"):
   research -> script -> QA (unchanged) -> the script is cut into short clips (1-2 lines, max ~7 s each) ->
   jobs/<id>/job.json + jobs/<id>/PROMPTS.md -> a GitHub Issue "Today's Short" with every prompt in a copy box
   and the upload link. GitHub e-mails you that issue (you are assigned to it).
-You (about 5 min):
-  flow.google.com -> your avatar, 9:16 -> paste prompt 1 -> download, prompt 2 -> download ... ->
-  open the upload link -> drag ALL clips in (any names, any order) -> Commit changes.
+You (or Claude in the browser, about 5 min):
+  flow.google.com -> your avatar, 9:16 -> paste the prompts -> download -> open the upload link ->
+  drag ALL clips in (any names, any order) -> Commit changes.
 Robot (task "assemble", starts by itself when the clips are uploaded):
   whisper listens to every clip and matches it to its prompt (file names / order do not matter) ->
-  silence at the start and end is cut, the Flow watermark is hidden (crop or blur) -> clips joined.
-  Flow's own voice is KEPT, so the lips always match -> word timings -> composer (Zoho screens, captions,
-  music, layout - unchanged) -> QA agent -> scheduled YouTube upload -> issue closed, job folder removed.
+  silence at the start and end is cut tight, the pace is lifted a little (flow.speed), the Flow watermark is
+  hidden (crop or blur) -> clips joined. Flow's own voice is KEPT, so the lips always match -> word timings ->
+  composer (full-screen presenter + Zoho screens, captions, music) -> QA agent -> scheduled YouTube upload ->
+  issue closed, job folder removed.
 """
 import datetime as dt
 import difflib
@@ -29,17 +30,28 @@ from .config import CH, CHANNEL_NAME, OUT_DIR, ROOT
 JOBS = ROOT / "jobs"
 _F = CH.get("flow", {}) or {}
 PER_DAY = int(_F.get("per_day", 1))
-MAX_WORDS = int(_F.get("max_words_per_clip", 19))     # ~7.5 s of speech -> fits one 8 s Flow clip
+MAX_BATCH = int(_F.get("max_batch", 14))           # a manual "daily" run may prepare a whole week at once
+MAX_WORDS = int(_F.get("max_words_per_clip", 19))  # ~7.5 s of speech -> fits one 8 s Flow clip
 PRESENTER = (_F.get("presenter") or "The man").strip()
 SCENE = (_F.get("scene") or "").strip()
-LOOKS = [str(x).strip() for x in (_F.get("looks") or []) if str(x).strip()] or [SCENE]   # one look per Short, rotated
+SHOT = (_F.get("shot") or "Vertical 9:16 medium-wide shot from the knees up, camera about two metres away, "
+        "his head in the upper third with space above it, both hands and all his gestures fully visible in the "
+        "frame").strip()
+LOOKS = [str(x).strip() for x in (_F.get("looks") or []) if str(x).strip()] or [SCENE]  # one look per Short, rotated
+SPEED = max(1.0, min(1.25, float(_F.get("speed", 1.1))))  # lifts Veo's slow delivery a little (voice + lips together)
+LEAD, TAIL = float(_F.get("lead_seconds", 0.04)), float(_F.get("tail_seconds", 0.18))
 _WM = _F.get("watermark", {}) or {}
-WM_MODE = str(_WM.get("mode", "crop")).lower()          # crop | blur | none
+WM_MODE = str(_WM.get("mode", "crop")).lower()      # crop | blur | none
 WM_CROP = float(_WM.get("crop_bottom", 0.10))
-WM_BOX = [float(v) for v in (_WM.get("box") or [0.74, 0.88, 0.24, 0.10])]   # x, y, w, h (fractions)
+WM_BOX = [float(v) for v in (_WM.get("box") or [0.74, 0.88, 0.24, 0.10])]  # x, y, w, h (fractions)
 VIDEO_EXT = (".mp4", ".mov", ".webm", ".m4v")
 REPO = os.getenv("GITHUB_REPOSITORY", "GauravSri1020/zoho-shorts")
 W, H, FPS, RATE = 720, 1280, 30, 44100
+SKIP_STATUS = ("done", "uploaded", "uploaded_manually", "skip")
+# Your face (Flow clips) only where it matters; everything else is the Zoho screen with the same voice (tts.py).
+FACE_BEATS = tuple(str(b).upper() for b in (_F.get("face_beats") or ["HOOK", "PROBLEM", "RESULT"]))
+DROP_BEATS = tuple(str(b).upper() for b in (_F.get("drop_beats") or ["CTA"]))
+MAX_WAITING = int(_F.get("max_waiting", 2))  # the scheduled daily run skips if this many Shorts still wait for clips
 
 
 def _run(cmd):
@@ -76,15 +88,38 @@ def _say(line):
     return _clean(line.get("say") or line.get("tts"))
 
 
+def _beat(line):
+    return str(line.get("beat", "")).upper()
+
+
+def is_face(line):
+    return _beat(line).startswith(FACE_BEATS)
+
+
+def keep_lines(lines):
+    """Script lines that go into the video (the follow / CTA line is dropped), each marked face or screen."""
+    out = []
+    for l in lines:
+        if _beat(l).startswith(DROP_BEATS) or not _say(l):
+            continue
+        out.append(dict(l, face=is_face(l)))
+    return out
+
+
 # ------------------------------------------------------------------ script -> Flow clips
 def chunks(lines):
-    """Script -> Flow clips. The words flow on across lines, so each clip is filled up to MAX_WORDS (one 8 s
-    clip); a clip ends at a sentence end (or comma) when it can. HOOK and CTA always get their own clip.
-    Returns [{"text", "lines": [line indexes], "beat"}] in script order."""
+    """Script -> Flow clips, ONLY for the face lines (HOOK / PROBLEM / RESULT). Consecutive face lines flow on,
+    so each clip is filled up to MAX_WORDS (one 8 s clip); a clip ends at a sentence end (or comma) when it can.
+    HOOK always gets its own clip. Returns [{"text", "lines": [line indexes], "beat"}] in script order."""
     groups, cur = [], []
     for i, l in enumerate(lines):
         words = _say(l).split()
         if not words:
+            continue
+        if not l.get("face", is_face(l)):
+            if cur:
+                groups.append(cur)
+                cur = []
             continue
         solo = str(l.get("beat", "")).upper().startswith(("HOOK", "CTA"))
         if solo and cur:
@@ -104,12 +139,12 @@ def chunks(lines):
             if rest <= MAX_WORDS:
                 cut = len(g)
             else:
-                parts = -(-rest // MAX_WORDS)                    # clips still needed for this group
-                target = -(-rest // parts)                       # even size
+                parts = -(-rest // MAX_WORDS)  # clips still needed for this group
+                target = -(-rest // parts)     # even size
                 lo, hi = k + max(4, int(target * 0.6)), min(k + MAX_WORDS, len(g) - 1)
                 cut = k + target
                 best = None
-                for j in range(hi, lo - 1, -1):                  # prefer a sentence end, then a comma
+                for j in range(hi, lo - 1, -1):  # prefer a sentence end, then a comma
                     end = g[j - 1][0]
                     score = 2 if end[-1:] in ".!?" else 1 if end[-1:] in ",;:" else 0
                     if score and (best is None or score > best[0] or
@@ -125,23 +160,24 @@ def chunks(lines):
     return out
 
 
-_ACT = {"HOOK": "leans in slightly with an energetic, curious expression",
-        "PROBLEM": "frowns a little and gestures with one open hand, showing the frustration",
+_ACT = {"HOOK": "steps forward slightly with an energetic, curious expression and an open-hand gesture",
+        "PROBLEM": "frowns a little and gestures with both hands, showing the frustration",
         "FIX": "nods confidently and counts on his fingers",
         "STEP": "points to the side as if showing something on a screen next to him",
-        "RESULT": "smiles and opens both hands",
+        "RESULT": "smiles and opens both arms wide",
         "CTA": "smiles warmly and points at the camera"}
 
 
 def prompt(text, beat="", look=None):
     look = SCENE if look is None else look
     b = str(beat).upper()
-    act = next((v for k, v in _ACT.items() if b.startswith(k)), "explains calmly with small natural hand gestures")
-    return (f"{PRESENTER} looks straight into the camera and talks to the viewer like a friendly YouTube tech "
-            f"explainer; he {act}. Vertical 9:16 medium close-up, static camera, face sharp and well lit"
+    act = next((v for k, v in _ACT.items() if b.startswith(k)), "explains with natural, lively hand gestures")
+    return (f"{PRESENTER} looks into the camera and talks to the viewer like an energetic YouTube tech "
+            f"explainer; he {act}. {SHOT}, static camera, sharp and well lit"
             + (f", {look}" if look else "") + ". "
-            f"He says, in clear natural English with an Indian accent: \"{text}\" "
-            "His lips match every word. He starts speaking immediately and stops right after the last word. "
+            f"He says, in clear natural English with an Indian accent, at a brisk, lively pace: \"{text}\" "
+            "His lips match every word. He starts speaking in the very first frame, with no pause before the "
+            "first word, and stops right after the last word. "
             "Audio: only his voice - no music, no sound effects. No subtitles, no captions, no text on screen.")
 
 
@@ -197,10 +233,17 @@ def _body(job):
 
 
 def prepare(count, do_upload):
-    """Daily run: research -> script -> clip prompts -> job folder + GitHub issue. Nothing is rendered."""
+    """Daily run: research -> script -> clip prompts -> job folder + GitHub issue. Nothing is rendered.
+    The scheduled run makes PER_DAY Shorts; a manual run may ask for more (up to flow.max_batch, e.g. a week)."""
     from . import notify, research, state, writer
     from .main import _lines, build_description, build_title
-    count = max(1, min(count, PER_DAY))
+    count = max(1, min(count, max(PER_DAY, MAX_BATCH)))
+    waiting = [p for p in JOBS.glob("*/job.json")] if JOBS.exists() else []
+    waiting = [p for p in waiting
+               if json.loads(p.read_text(encoding="utf-8")).get("status") == "waiting_for_clips"]
+    if count <= PER_DAY and len(waiting) >= MAX_WAITING:
+        print(f"[flow] {len(waiting)} Shorts already wait for clips - no new one today")
+        return
     st = state.load()
     angles = writer.scout(research.fetch(st["covered_links"]), count + 2, st["problems"])
     print(f"[flow] scout found {len(angles)} angles")
@@ -212,11 +255,11 @@ def prepare(count, do_upload):
         print(f"\n[flow] === {angle.get('problem')}")
         try:
             sc = writer.approved_script(angle)
-            lines = _lines(sc)
+            lines = keep_lines(_lines(sc))
             clips = chunks(lines)
             if not clips:
                 raise RuntimeError("script has no spoken lines")
-            look = LOOKS[st.get("look_index", 0) % len(LOOKS)]     # same look in every clip of this Short
+            look = LOOKS[st.get("look_index", 0) % len(LOOKS)]  # same look in every clip of this Short
             st["look_index"] = st.get("look_index", 0) + 1
             for c in clips:
                 c["prompt"] = prompt(c["text"], c["beat"], look)
@@ -242,7 +285,7 @@ def prepare(count, do_upload):
             st["next_id"] += 1
             made += 1
             where = issue.get("html_url") or f"https://github.com/{REPO}/blob/main/jobs/{job_id}/PROMPTS.md"
-            notify.send(f"🎬 {CHANNEL_NAME}: today's Short needs {len(clips)} Flow clips.\n"
+            notify.send(f"🎬 {CHANNEL_NAME}: a new Short needs {len(clips)} Flow clips.\n"
                         f"Prompts: {where}\nUpload: {upload_link(job_id)}")
             print(f"[flow] job {job_id}: {len(clips)} clips -> {where}")
         except Exception as e:
@@ -300,28 +343,44 @@ def _hide_watermark(vf_in, size):
     return f"{vf_in}null[c]", "[c]"
 
 
-def prep_clip(src: Path, heard, out_v: Path, out_a: Path):
-    """One clip: speech only (silence at both ends cut), watermark hidden, 720x1280 @30, wav 44.1 kHz.
-    Video and audio get exactly the same length, so lips never drift when clips are joined."""
+def speech_window(src, heard):
+    """(start, end) of the actual speech in a clip. The loudness-based start wins over whisper's (whisper's VAD
+    often starts early, which made every clip open with a slow, silent beat)."""
     from . import editor
     d = _dur(src)
+    try:
+        sp = editor.speech_spans(src, noise="-32dB", min_silence=0.15)
+    except Exception:
+        sp = []
+    a = b = None
+    if sp:
+        a, b = sp[0][0], sp[-1][1]
     if heard:
-        a, b = heard[0][0] - 0.12, heard[-1][1] + 0.30
-    else:
-        sp = editor.speech_spans(src)
-        a, b = sp[0][0] - 0.10, sp[-1][1] + 0.25
-    a, b = max(0.0, a), min(d, b)
+        ha, hb = heard[0][0], heard[-1][1]
+        a = ha if a is None else max(a, ha - 0.15)
+        b = hb if b is None else min(max(b, hb), hb + 0.35)
+    if a is None:
+        a, b = 0.0, d
+    a, b = max(0.0, a - LEAD), min(d, b + TAIL)
     if b - a < 0.6:
         a, b = 0.0, d
-    frames = max(int(round((b - a) * FPS)), 1)
+    return a, b
+
+
+def prep_clip(src: Path, heard, out_v: Path, out_a: Path):
+    """One clip: speech only (silence at both ends cut tight), pace x SPEED (voice and lips together), watermark
+    hidden, 720x1280 @30, wav 44.1 kHz. Video and audio get exactly the same length, so lips never drift."""
+    a, b = speech_window(src, heard)
+    frames = max(int(round((b - a) / SPEED * FPS)), 1)
     length = frames / FPS
     chain, last = _hide_watermark("[0:v]", _size(src))
-    fc = (f"{chain};{last}scale={W}:{H}:force_original_aspect_ratio=increase,crop={W}:{H},"
-          f"fps={FPS},setsar=1,format=yuv420p[v]")
+    fc = (f"{chain};{last}setpts=(PTS-STARTPTS)/{SPEED:.3f},scale={W}:{H}:force_original_aspect_ratio=increase,"
+          f"crop={W}:{H},fps={FPS},setsar=1,format=yuv420p[v]")
     _run(_ff("-ss", f"{a:.3f}", "-i", str(src), "-filter_complex", fc, "-map", "[v]", "-frames:v", str(frames),
              "-an", "-c:v", "libx264", "-preset", "veryfast", "-crf", "16", "-r", str(FPS), str(out_v)))
     _run(_ff("-ss", f"{a:.3f}", "-i", str(src), "-vn", "-ac", "1", "-ar", str(RATE), "-af",
-             f"apad=whole_dur={length:.3f}", "-t", f"{length:.3f}", "-c:a", "pcm_s16le", str(out_a)))
+             f"atempo={SPEED:.3f},apad=whole_dur={length:.3f}", "-t", f"{length:.3f}", "-c:a", "pcm_s16le",
+             str(out_a)))
     return length
 
 
@@ -351,18 +410,45 @@ def build(job, files, work: Path):
         print(f"[flow] clip {i + 1} <- {files[fi].name} (text match {s:.2f})")
         if s < 0.45:
             notes.append(f"clip {i + 1} ({files[fi].name}) does not say its line well (match {s:.2f})")
-    parts = []
-    for i in range(len(clips)):
-        fi, _ = pick[i]
-        v, a = work / f"p{i:02d}.mp4", work / f"p{i:02d}.wav"
-        prep_clip(files[fi], heard[fi], v, a)
+    covered = {li for c in clips for li in c["lines"]}
+    lines = [dict(l, face=(i in covered)) for i, l in enumerate(job["lines"])]
+    parts, done_clips = [], set()
+    for i, l in enumerate(lines):
+        if l["face"]:
+            ci = next(k for k, c in enumerate(clips) if i in c["lines"])
+            if ci in done_clips:
+                continue
+            done_clips.add(ci)
+            fi, _ = pick[ci]
+            v, a = work / f"p{len(parts):02d}.mp4", work / f"p{len(parts):02d}.wav"
+            prep_clip(files[fi], heard[fi], v, a)
+        else:  # Zoho-screen part: same voice via TTS, a black placeholder (the composer shows the screen)
+            v, a = work / f"p{len(parts):02d}.mp4", work / f"p{len(parts):02d}.wav"
+            tts_part(_say(l), v, a)
         parts.append((v, a))
     av, voice = join(parts, work)
-    script_text = " ".join(c["text"] for c in clips)
+    script_text = " ".join(_say(l) for l in lines)
     words = editor.align_to_script(editor.transcribe(voice, work), script_text, voice)
     mp4 = work / "short.mp4"
-    composer.render(job["script"], job["lines"], words, av, voice, work / "edit", mp4)
+    composer.render(job["script"], lines, words, av, voice, work / "edit", mp4)
     return mp4, notes
+
+
+def tts_part(text, out_v: Path, out_a: Path):
+    """A screen line: TTS voice + a black 720x1280 placeholder video of exactly the same length."""
+    from . import tts
+    tmp = out_a.with_name(out_a.stem + "_t.wav")
+    tts.speak(text, tmp, RATE)
+    length = _dur(tmp) + 0.12
+    frames = max(int(round(length * FPS)), 1)
+    length = frames / FPS
+    _run(_ff("-i", str(tmp), "-af", f"apad=whole_dur={length:.3f}", "-t", f"{length:.3f}", "-ac", "1",
+             "-ar", str(RATE), "-c:a", "pcm_s16le", str(out_a)))
+    _run(_ff("-f", "lavfi", "-i", f"color=c=black:s={W}x{H}:r={FPS}", "-frames:v", str(frames),
+             "-c:v", "libx264", "-preset", "veryfast", "-crf", "30", "-pix_fmt", "yuv420p", "-r", str(FPS),
+             str(out_v)))
+    tmp.unlink(missing_ok=True)
+    return length
 
 
 def finish():
@@ -373,6 +459,9 @@ def finish():
     for jf in jobs:
         d = jf.parent
         job = json.loads(jf.read_text(encoding="utf-8"))
+        if str(job.get("status", "")).lower() in SKIP_STATUS:
+            print(f"[flow] {job['id']}: status {job.get('status')} - skipped")
+            continue
         files = _clip_files(d)
         need = len(job["clips"])
         if len(files) < need:
@@ -422,7 +511,7 @@ def finish():
             _comment(job, msg)
             if job.get("issue"):
                 _gh("PATCH", f"/issues/{job['issue']}", {"state": "closed"})
-            shutil.rmtree(d)                      # job done -> its folder (and clips) leave the repo
+            shutil.rmtree(d)  # job done -> its folder (and clips) leave the repo
             done += 1
         except Exception as e:
             traceback.print_exc()

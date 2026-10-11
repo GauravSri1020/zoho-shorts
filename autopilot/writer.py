@@ -151,8 +151,8 @@ def write_script(angle):
               if s else "SOURCE: evergreen problem, no news source. Do not mention any news.")
     prompt = f"""Write ONE YouTube Short script for "{CHANNEL_NAME}" in natural spoken {LANGUAGE}.
 The video switches between the creator's lip-synced AI avatar and Zoho Books screens:
-HOOK / PROBLEM / RESULT / CTA lines show the presenter talking to camera; FIX and every STEP line show the
-Zoho Books screen where that action happens, with the exact button / field highlighted while the voice says it.
+HOOK / PROBLEM / RESULT lines show the presenter talking to camera (keep them SHORT: they cost video credits);
+FIX and every STEP line show the Zoho Books screen where that action happens, with the exact button / field highlighted while the voice says it.
 So every STEP must be ONE concrete action in Zoho Books (where to go, what to click or fill), and its "screen"
 must show exactly that (code goes in the description, not on screen).
 
@@ -167,8 +167,10 @@ Hook idea: {angle.get('hook')}
 
 {source}
 
-STRUCTURE: HOOK (the problem as a punch, first 2 seconds) -> PROBLEM (1-2 lines) -> FIX (1 line) ->
-STEP 1..3 (each one clear action) -> RESULT (1 line) -> CTA ("{CTA}" or ask viewers to comment their Zoho problem).
+STRUCTURE: HOOK (the problem as a punch, max 10 words) -> PROBLEM (ONE short line, max 14 words) -> FIX (1 line) ->
+STEP 1..4 (each one clear action - the screen part is the heart of the video, give it the time) ->
+RESULT (ONE short line, max 14 words, ends the video with a soft close like "set it up once and you are done").
+NO CTA line: never ask to follow, like or subscribe.
 No greeting, no intro, no "namaste doston".
 
 RULES
@@ -187,7 +189,7 @@ Return JSON:
 {{
  "title": "YouTube title, max 70 chars, problem/fix led, honest",
  "hook_text": "max 6 words shown big at the top of the video",
- "lines": [{{"beat": "HOOK|PROBLEM|FIX|STEP 1|STEP 2|STEP 3|RESULT|CTA", "say": "Roman text",
+ "lines": [{{"beat": "HOOK|PROBLEM|FIX|STEP 1|STEP 2|STEP 3|STEP 4|RESULT", "say": "Roman text",
             "tts": "text for the voice engine", "card": "on-screen text",
             "screen": null or (for FIX / STEP lines) {{"path": ["Sales", "Sales Orders"], "view": "list|form|settings",
                        "heading": "page title", "columns": ["..."], "rows": [["realistic Indian sample data"]],
@@ -211,7 +213,7 @@ def review_script(script, angle):
 Fix the JSON script below. Checklist:
 1. FACTS: no invented Zoho features, menus, prices or limits. Soften anything you are not sure about.
 2. STEPS: each step is a concrete action (what to open / click / paste). Rewrite vague steps.
-3. LENGTH: total words in "say" must be {lo}-{hi} (now {wc}). Cut filler, keep hook, steps and CTA.
+3. LENGTH: total words in "say" must be {lo}-{hi} (now {wc}). Cut filler, keep hook and steps; remove any CTA / follow line.
 4. HOOK: first line is a punchy problem statement under 12 words. No greeting.
 5. CODE: if present, it must be minimal, correct and safe (no real keys, no deleting data). Fix bugs.
 6. Roman-script {LANGUAGE} in "say"; every line keeps "beat", "say", "tts" and "card". {NICHE.get('safety', '')}

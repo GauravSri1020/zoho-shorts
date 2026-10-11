@@ -1,16 +1,19 @@
-"""Builds the finished Short (layout inspired by the reference videos in channel.yaml -> benchmark):
+"""Builds the finished Short.
 
-  +--------------------------------+
-  |  @channel  ·  Zoho Books tip   |   warm background, big hook title on top for the whole video
-  |  BIG HOOK TITLE (2 lines)      |
-  | +----------------------------+ |
-  | |  middle panel switches:    | |   HOOK / PROBLEM / RESULT / CTA -> your talking (lip-synced) avatar
-  | |  avatar  <->  Zoho screen  | |   FIX / STEP n                  -> Zoho Books screen, camera zooms to
-  | |                            | |                                    the button / field to click
-  | +----------------------------+ |
-  |   [ caption box, word-timed ]  |
-  +--------------------------------+
-Hard cuts every ~3 s (punch-in on the avatar), soft background music ducked under the voice.
+Two kinds of shots, cut together:
+  * AVATAR shots (HOOK / PROBLEM / FIX / RESULT / CTA): YOU, full screen 9:16, the whole Flow frame is shown
+    (body, hands, gestures, background) - no panel, no tight face crop. Only a very gentle camera move.
+  * SCREEN shots (STEP n): the "card" layout -
+      +--------------------------------+
+      |  @channel  .  Zoho Books tip   |   warm background, hook title on top
+      |  BIG HOOK TITLE (2 lines)      |
+      | +----------------------------+ |
+      | |   Zoho Books screen:       | |   first the whole screen (so the viewer sees where we are),
+      | |   full view -> zoom to the | |   then the camera zooms to the button / field to click,
+      | |   button / field           | |   timed to the end of the spoken line
+      | +----------------------------+ |
+      +--------------------------------+
+Word-timed captions at the bottom for the whole video, soft background music ducked under the voice.
 """
 import json
 import random
@@ -22,9 +25,10 @@ from . import music, screens
 from .config import CHANNEL_HANDLE, CHANNEL_NAME
 
 W, H, FPS = 1080, 1920, 30
-PX, PY, PW, PH = 40, 470, 1000, 1100           # middle panel
-CAP_Y = 1685
+PX, PY, PW, PH = 40, 470, 1000, 1100       # middle panel (screen shots)
+CAP_Y = 1640                               # caption centre (above the YouTube Shorts UI at the bottom)
 BG, INK, ACCENT = "#F3ECE0", "#1E2433", "#2F6FEB"
+AVATAR_ZOOMS = [1.0, 1.04, 1.0, 1.06]      # gentle variety between avatar cuts (never a tight face crop)
 
 
 def _run(cmd):
@@ -61,10 +65,20 @@ def line_times(lines, words, dur):
 
 
 def _is_screen(line):
+    """Lines spoken by the presenter on camera ("face", from Flow) show the presenter; every other line is a
+    Zoho screen (its voice is TTS). Old jobs without the flag: only STEP lines with a screen spec."""
+    if "face" in line:
+        return not line["face"]
     beat = str(line.get("beat", "")).upper()
-    if line.get("screen"):
-        return not beat.startswith(("HOOK", "CTA"))
-    return beat.startswith("STEP") or (beat.startswith("FIX") and ">" in str(line.get("card", "")))
+    return beat.startswith("STEP") and bool(line.get("screen"))
+
+
+def _spec_for(lines, i):
+    """The line's own screen spec, else the next one's (FIX usually leads into STEP 1), else the previous one."""
+    if lines[i].get("screen"):
+        return lines[i]["screen"]
+    order = list(range(i + 1, len(lines))) + list(range(i - 1, -1, -1))
+    return next((lines[j]["screen"] for j in order if lines[j].get("screen")), None)
 
 
 def plan(lines, times, dur):
@@ -78,13 +92,13 @@ def plan(lines, times, dur):
             segs.append({"kind": kind, "t0": a, "t1": b, "line": i})
     segs[-1]["t1"] = dur
     out = []
-    for s in segs:                                   # avatar shots longer than ~3.5 s -> punch-in cuts
-        if s["kind"] == "avatar" and s["t1"] - s["t0"] > 3.6:
-            n = max(2, round((s["t1"] - s["t0"]) / 3.0))
+    for s in segs:                                   # long avatar shots -> soft cuts (tiny zoom change)
+        if s["kind"] == "avatar" and s["t1"] - s["t0"] > 4.5:
+            n = max(2, round((s["t1"] - s["t0"]) / 4.0))
             step = (s["t1"] - s["t0"]) / n
             for j in range(n):
                 out.append(s | {"t0": s["t0"] + j * step, "t1": s["t0"] + (j + 1) * step,
-                                "zoom": [1.0, 1.18, 1.06, 1.25][j % 4]})
+                                "zoom": AVATAR_ZOOMS[j % len(AVATAR_ZOOMS)]})
         else:
             out.append(s | {"zoom": 1.0})
     return out
@@ -94,27 +108,37 @@ def plan(lines, times, dur):
 ENC = ["-c:v", "libx264", "-preset", "veryfast", "-crf", "18", "-pix_fmt", "yuv420p", "-r", str(FPS), "-an"]
 
 
-def _avatar_clip(av, t0, frames, zoom, out):
-    zw, zh = int(PW * zoom) // 2 * 2, int(PH * zoom) // 2 * 2
-    vf = (f"tpad=stop_mode=clone:stop_duration=10,fps={FPS},"
-          f"scale={zw}:{zh}:force_original_aspect_ratio=increase,"
-          f"crop={PW}:{PH}:(iw-{PW})/2:(ih-{PH})*0.22,setsar=1")
-    _run(_ff("-ss", f"{t0:.3f}", "-i", str(av), "-vf", vf, "-frames:v", str(frames), *ENC, str(out)))
+def _avatar_full(av, t0, frames, zoom, out):
+    """The presenter full screen 9:16 - the whole frame, scaled to fit (blurred fill if the clip is not 9:16)."""
+    zw, zh = int(W * zoom) // 2 * 2, int(H * zoom) // 2 * 2
+    fc = (f"[0:v]tpad=stop_mode=clone:stop_duration=10,fps={FPS},split[a][b];"
+          f"[a]scale={W}:{H}:force_original_aspect_ratio=increase,crop={W}:{H},boxblur=30:2,setsar=1[bg];"
+          f"[b]scale={zw}:{zh}:force_original_aspect_ratio=decrease:flags=lanczos,setsar=1[fg0];"
+          f"[bg][fg0]overlay=(W-w)/2:(H-h)*0.35,crop={W}:{H}:(iw-{W})/2:(ih-{H})*0.35,setsar=1[v]")
+    _run(_ff("-ss", f"{t0:.3f}", "-i", str(av), "-filter_complex", fc, "-map", "[v]",
+             "-frames:v", str(frames), *ENC, str(out)))
 
 
-def _still_clip(png, frames, out, z0=1.0, z1=1.04, cx=None, cy=None):
-    """Ken-Burns on a 2x screen PNG; (cx, cy) = zoom target in 1x panel pixels."""
+def _still_clip(png, frames, out, z0=1.0, z1=1.04, cx=None, cy=None, reach=0.7):
+    """Ken-Burns on a 2x screen PNG; (cx, cy) = zoom target in 1x panel pixels; the zoom arrives at `reach`."""
     cx = PW / 2 if cx is None else cx
     cy = PH / 2 if cy is None else cy
     n = max(frames, 2)
-    p = f"min(on/{n * 0.55:.1f},1)"
+    p = f"min(on/{n * reach:.1f},1)"
     ease = f"(1-pow(1-{p},3))"
     z = f"{z0}+({z1}-{z0})*{ease}"
-    S = 4                                             # work at 4x to avoid zoompan jitter
+    S = 4  # work at 4x to avoid zoompan jitter
     X = f"max(0,min(iw-iw/zoom,({PW / 2}+({cx}-{PW / 2})*{ease})*{S}-iw/zoom/2))"
     Y = f"max(0,min(ih-ih/zoom,({PH / 2}+({cy}-{PH / 2})*{ease})*{S}-ih/zoom/2))"
     vf = (f"scale={PW * S}:{PH * S},zoompan=z='{z}':x='{X}':y='{Y}':d={n}:s={PW}x{PH}:fps={FPS},setsar=1")
     _run(_ff("-loop", "1", "-i", str(png), "-vf", vf, "-frames:v", str(frames), *ENC, str(out)))
+
+
+def _card(panel_mp4, bg, fg, frames, out):
+    """Screen panel -> full 1080x1920 card frame (title on top, panel in the middle)."""
+    fc = f"[0:v][1:v]overlay={PX}:{PY}:shortest=1[a];[a][2:v]overlay=0:{PY - 40},setsar=1[v]"
+    _run(_ff("-loop", "1", "-i", str(bg), "-i", str(panel_mp4), "-loop", "1", "-i", str(fg),
+             "-filter_complex", fc, "-map", "[v]", "-frames:v", str(frames), *ENC, str(out)))
 
 
 # ------------------------------------------------------------------ static layers
@@ -190,7 +214,7 @@ def _chunks(words, line_ends, max_words=4, max_chars=22):
     return out
 
 
-def build_ass(words, lines, times, segs, path):
+def build_ass(words, lines, times, segs, path, hook=""):
     yellow, white = r"{\c&H003CC9FF&}", r"{\c&H00FFFFFF&}"
     head = f"""[Script Info]
 ScriptType: v4.00+
@@ -203,6 +227,7 @@ ScaledBorderAndShadow: yes
 Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
 Style: Cap,Noto Sans,64,&H00FFFFFF,&H00FFFFFF,&H00332B1E,&H64000000,1,0,0,0,100,100,0,0,3,18,0,5,40,40,0,1
 Style: Chip,Noto Sans,40,&H00FFFFFF,&H00FFFFFF,&H00EB6F2F,&H00000000,1,0,0,0,100,100,1,0,3,12,0,7,0,0,0,1
+Style: Hook,Noto Sans,70,&H00FFFFFF,&H00FFFFFF,&H00332B1E,&H64000000,1,0,0,0,100,100,0,0,3,20,0,8,60,60,190,1
 
 [Events]
 Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
@@ -218,7 +243,11 @@ Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
             e = ch[j + 1][0] if j + 1 < len(ch) else min(w[1] + 0.25, nxt)
             body = " ".join((yellow + t + white) if k == j else t for k, t in enumerate(txt))
             ev.append(f"Dialogue: 1,{_ts(s)},{_ts(e)},Cap,,0,0,0,,{{\\pos({W // 2},{CAP_Y})}}{body}")
-    for s in segs:                                    # "STEP 2" chip on screen shots
+    # hook title on top of the first presenter shot (the card layout has its own title)
+    if hook and segs and segs[0]["kind"] == "avatar":
+        ev.append(f"Dialogue: 2,{_ts(0)},{_ts(min(segs[0]['t1'], 3.2))},Hook,,0,0,0,,"
+                  f"{{\\fad(120,200)}}{_e(hook.upper())}")
+    for s in segs:                                   # "STEP 2" chip on screen shots
         if s["kind"] == "screen":
             beat = str(lines[s["line"]].get("beat", "")).upper()
             label = beat if beat.startswith("STEP") else "HOW TO FIX" if beat.startswith("FIX") else beat
@@ -239,46 +268,59 @@ def render(sc, lines, words, avatar_mp4, voice_wav, workdir: Path, out_path: Pat
         if s["kind"] == "screen":
             l = lines[s["line"]]
             idx[s["line"]] = len(specs)
-            specs.append(screens.normalize(l.get("screen"), l.get("card", ""), l.get("beat", "")))
+            specs.append(screens.normalize(_spec_for(lines, s["line"]), l.get("card", ""), l.get("beat", "")))
     shots = screens.render(specs, workdir / "screens") if specs else []
+    hook = sc.get("hook_text") or sc.get("title", "")
+    bg = fg = None
+    if specs:
+        bg, fg = _layers(hook, workdir)
 
     clips, fb = [], [round(s["t0"] * FPS) for s in segs] + [round(dur * FPS)]
     for k, s in enumerate(segs):
         frames = max(fb[k + 1] - fb[k], 1)
         if s["kind"] == "avatar":
             c = workdir / f"c{k:02d}.mp4"
-            _avatar_clip(avatar_mp4, s["t0"], frames, s["zoom"], c)
+            _avatar_full(avatar_mp4, s["t0"], frames, s["zoom"], c)
             clips.append(c)
-        else:
-            sh = shots[idx[s["line"]]]
-            x, y, w, h = sh["box"]
-            cx, cy = x + w / 2, y + h / 2
-            z1 = max(1.45, min(1.9, PW / (2.4 * max(w, 60))))
-            fa = min(max(int(frames * 0.3), 1), int(1.1 * FPS)) if frames > 20 else 0
-            if fa:
-                a = workdir / f"c{k:02d}a.mp4"
-                _still_clip(sh["plain"], fa, a, 1.0, 1.03)
-                clips.append(a)
-            b = workdir / f"c{k:02d}b.mp4"
-            _still_clip(sh["hl"], frames - fa, b, 1.03 if fa else 1.0, z1, cx, cy)
-            clips.append(b)
+            continue
+        sh = shots[idx[s["line"]]]
+        x, y, w, h = sh["box"]
+        cx, cy = x + w / 2, y + h / 2
+        z1 = max(1.4, min(1.8, PW / (2.4 * max(w, 60))))
+        # first show the WHOLE screen (where are we?), then zoom to the click near the end of the spoken line
+        fa = min(max(int(frames * 0.45), int(0.6 * FPS)), int(2.4 * FPS)) if frames > 30 else 0
+        parts = []
+        if fa:
+            a = workdir / f"p{k:02d}a.mp4"
+            _still_clip(sh["plain"], fa, a, 1.0, 1.02)
+            parts.append(a)
+        b = workdir / f"p{k:02d}b.mp4"
+        _still_clip(sh["hl"], frames - fa, b, 1.02 if fa else 1.0, z1, cx, cy, reach=0.6)
+        parts.append(b)
+        pl = workdir / f"p{k:02d}.txt"
+        pl.write_text("".join(f"file '{p.resolve()}'\n" for p in parts))
+        panel = workdir / f"p{k:02d}.mp4"
+        _run(_ff("-f", "concat", "-safe", "0", "-i", str(pl), "-c", "copy", str(panel)))
+        c = workdir / f"c{k:02d}.mp4"
+        _card(panel, bg, fg, frames, c)
+        clips.append(c)
+
     lst = workdir / "clips.txt"
     lst.write_text("".join(f"file '{c.resolve()}'\n" for c in clips))
-    panel = workdir / "panel.mp4"
-    _run(_ff("-f", "concat", "-safe", "0", "-i", str(lst), "-c", "copy", str(panel)))
+    video = workdir / "video.mp4"
+    _run(_ff("-f", "concat", "-safe", "0", "-i", str(lst), "-c", "copy", str(video)))
 
-    bg, fg = _layers(sc.get("hook_text") or sc.get("title", ""), workdir)
     ass = workdir / "captions.ass"
-    build_ass(words, lines, times, segs, ass)
+    build_ass(words, lines, times, segs, ass, hook)
     mus = music.pick(dur + 1, workdir, seed)
     ass_arg = str(ass.resolve()).replace(":", r"\:").replace("'", r"\'")
-    fc = (f"[0:v][1:v]overlay={PX}:{PY}:shortest=1[a];[a][2:v]overlay=0:{PY - 40}[b];[b]ass='{ass_arg}'[v];"
-          f"[4:a]aformat=sample_rates=44100:channel_layouts=stereo,volume=0.22[m];"
-          f"[3:a]aformat=sample_rates=44100:channel_layouts=stereo,asplit=2[vo][sc];"
+    fc = (f"[0:v]ass='{ass_arg}'[v];"
+          f"[2:a]aformat=sample_rates=44100:channel_layouts=stereo,volume=0.22[m];"
+          f"[1:a]aformat=sample_rates=44100:channel_layouts=stereo,asplit=2[vo][sc];"
           f"[m][sc]sidechaincompress=threshold=0.03:ratio=8:attack=20:release=400[md];"
           f"[vo][md]amix=inputs=2:duration=first:normalize=0,alimiter=limit=0.95[aout]")
-    _run(_ff("-loop", "1", "-i", str(bg), "-i", str(panel), "-loop", "1", "-i", str(fg), "-i", str(voice_wav),
-             "-stream_loop", "-1", "-i", str(mus), "-filter_complex", fc, "-map", "[v]", "-map", "[aout]",
+    _run(_ff("-i", str(video), "-i", str(voice_wav), "-stream_loop", "-1", "-i", str(mus),
+             "-filter_complex", fc, "-map", "[v]", "-map", "[aout]",
              "-t", f"{dur:.3f}", "-c:v", "libx264", "-preset", "medium", "-crf", "19", "-pix_fmt", "yuv420p",
              "-r", str(FPS), "-c:a", "aac", "-b:a", "192k", "-movflags", "+faststart", str(out_path)))
     (workdir / "plan.json").write_text(json.dumps(
