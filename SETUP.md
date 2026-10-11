@@ -83,6 +83,20 @@ Tere 3 photos har video mein baari-baari se lagte hain: brown jacket, office sta
 - Kharcha: ~25-30 sec Veo per Short. Veo 3.1 Fast ~$0.10/sec (~$2.5-3 per Short), Lite ~$0.05/sec. Sasta chahiye to Variables mein `VEO_MODELS` = `veo-3.1-lite-generate-preview` daal de.
 - Veo fail ho (key/quota/filter) to apne aap SadTalker, phir photo pe chala jaata hai.
 
+## Step 2c: Gemini manual mode (FREE, abhi yahi ON hai)
+
+`channel.yaml` mein `avatar.engine: "gemini_manual"`. Tera chehra wala part tu Gemini app (Pro plan) se banata hai, baaki sab robot.
+
+1. Roz 10 baje robot script + AI awaaz bana ke `jobs/<id>/PROMPTS.md` banata hai aur Telegram pe link bhejta hai.
+2. PROMPTS.md kholo. Har clip ka prompt diya hai (max 3, kyunki Pro mein roz ~3 Gemini videos milte hain).
+3. gemini.google.com -> Video -> apni photo upload -> prompt paste -> video download. Har clip ke liye same photo.
+4. PROMPTS.md mein diye upload link pe jaake clips upload karo (01.mp4, 02.mp4, 03.mp4) -> Commit changes.
+5. Upload hote hi GitHub khud chalta hai: Gemini ki awaaz hata ke clips ko AI awaaz pe lip-sync karta hai,
+   sequence-wise Zoho screens ke beech lagata hai, QA karta hai aur YouTube pe schedule karta hai.
+6. QA fail ho to Telegram pe message aata hai, clips hata diye jaate hain, naye upload kar do.
+
+Clips kabhi na daale to wo Short bas wait karta rehta hai, kuch upload nahi hota.
+
 ## Step 3: Pehla test (upload ke bina)
 
 1. Actions > "GSX Automation Shorts" > **Run workflow** chala. Inputs: task `daily`, count `1`, upload `no`.
