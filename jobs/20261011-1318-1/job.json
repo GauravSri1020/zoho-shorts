@@ -1,0 +1,423 @@
+{
+ "id": "20261011-1318-1",
+ "status": "waiting_for_clips",
+ "upload": false,
+ "created": "2026-10-11T13:20:15",
+ "title": "Auto-Create Zoho Bigin Deals from Incoming Outlook Emails #Shorts",
+ "description": "Stop converting emails manually into pipeline deals. Route incoming emails to Zoho Bigin's native Email-In address to generate deals automatically. Follow GSX Automation for more quick Zoho fixes.\n\n1. In Zoho Bigin Settings, navigate to Pipelines and copy the dedicated Email-In address for your target pipeline.\n2. In your email client (Outlook or Gmail), create a forwarding rule to route sales inquiry emails to this Email-In address.\n3. In Bigin Email-In configuration, map the default deal stage, contact creation rule, and deal owner.\n\nDaily Zoho fixes - follow @GSXAutomation\n\nQuestion that inspired this: https://www.reddit.com/r/Zoho/comments/1x312vi/zoho_flow_automation_to_create_deals/\n\nThis video uses an AI-generated presenter and voice.\nIndependent channel. Not affiliated with or endorsed by Zoho Corporation. Zoho is a trademark of Zoho Corporation.\n\n#Shorts #ZohoCRM #Zoho #BusinessAutomation",
+ "angle": {
+  "story_index": 0,
+  "product": "Zoho Bigin",
+  "problem": "Sales reps waste hours manually reviewing and converting hundreds of incoming customer emails into deals.",
+  "fix_type": "native",
+  "solution": "Route incoming emails to Bigin's native Email-In address to automatically generate pipeline deals.",
+  "steps": [
+   "In Zoho Bigin Settings, navigate to Pipelines and copy the dedicated Email-In address for your target pipeline.",
+   "In your email client (Outlook or Gmail), create a forwarding rule to route sales inquiry emails to this Email-In address.",
+   "In Bigin Email-In configuration, map the default deal stage, contact creation rule, and deal owner."
+  ],
+  "result": "Every sales inquiry instantly turns into an active pipeline deal without any manual clicking.",
+  "hook": "Stop manually converting hundreds of Outlook emails into Zoho deals daily."
+ },
+ "story": {
+  "title": "Zoho Flow: Automation to create deals automatically not working as expected.",
+  "link": "https://www.reddit.com/r/Zoho/comments/1x312vi/zoho_flow_automation_to_create_deals/",
+  "summary": "Hey everyone, I'm building an automation workflow on Zoho Flow for a client using Zoho Bigin (Express Plan) and Outlook. I'm running into an issue where the flow completes successfully, but the Deal never actually gets created in Bigin. My client receives 200+ emails/day in Outlook. Right now, Outlook syncs emails into Bigin, but he has to manually approve or reject each email to convert it into a deal. He wants to fully automate this filtering and deal creation step. How I Built the Automation in Zoho Flow: Trigger: New email received in Outlook. Deduplication Check: Check an Audit Log (Zoho Sheet) using the Outlook Conversation ID. If the Conversation ID exists in the log (meaning it's a reply to an existing email thread), the flow stops immediately to prevent duplicate deals. If it’s a new Conversation ID, it proceeds. Email Parsing & Classification: A custom script separates the subj",
+  "source": "newest submissions : Zoho",
+  "ts": 1791700774
+ },
+ "script": {
+  "title": "Auto-Create Zoho Bigin Deals from Incoming Outlook Emails",
+  "hook_text": "Stop Manually Converting Emails to Deals",
+  "lines": [
+   {
+    "beat": "HOOK",
+    "say": "Stop manually converting Outlook emails into Zoho deals every day.",
+    "tts": "Stop manually converting Outlook emails into Zoho deals every day.",
+    "card": "Stop Converting Emails Manually",
+    "screen": null
+   },
+   {
+    "beat": "PROBLEM",
+    "say": "If your inbox gets flooded with sales inquiries, manually typing records and approving deals wastes hours of selling time.",
+    "tts": "If your inbox gets flooded with sales inquiries, manually typing records and approving deals wastes hours of selling time.",
+    "card": "Inbox Flooded With Leads",
+    "screen": null
+   },
+   {
+    "beat": "FIX",
+    "say": "You can automate this entire flow using Bigin's built-in Email-In feature.",
+    "tts": "You can automate this entire flow using Bigin's built-in Email-In feature.",
+    "card": "Use Built-In Email-In",
+    "screen": {
+     "path": [
+      "Settings",
+      "Channels",
+      "Email-In"
+     ],
+     "view": "settings",
+     "heading": "Email-In Settings",
+     "toggles": [
+      [
+       "Enable Email-In",
+       true
+      ]
+     ],
+     "click": "Enable Email-In",
+     "tip": "Turn on native email parsing"
+    }
+   },
+   {
+    "beat": "STEP 1",
+    "say": "In Bigin Settings, navigate to Channels, select Email-In to configure pipeline routing, and copy your dedicated Email-In address.",
+    "tts": "In Bigin Settings, navigate to Channels, select Email-In to configure pipeline routing, and copy your dedicated Email-In address.",
+    "card": "Copy Pipeline Email Address",
+    "screen": {
+     "path": [
+      "Settings",
+      "Channels",
+      "Email-In"
+     ],
+     "view": "form",
+     "heading": "Email-In Address Setup",
+     "fields": [
+      [
+       "Target Pipeline",
+       "Standard Sales"
+      ],
+      [
+       "Email-In Address",
+       "sales-deals@bigin.zoho.com"
+      ]
+     ],
+     "click": "Copy Address",
+     "tip": "Copy unique pipeline address"
+    }
+   },
+   {
+    "beat": "STEP 2",
+    "say": "Open your email client, like Outlook or Gmail, and create a rule to auto-forward new lead emails here.",
+    "tts": "Open your email client, like Outlook or Gmail, and create a rule to auto-forward new lead emails here.",
+    "card": "Set Up Forwarding Rule",
+    "screen": {
+     "path": [
+      "Settings",
+      "Email Routing"
+     ],
+     "view": "form",
+     "heading": "Forwarding Rules",
+     "fields": [
+      [
+       "Condition",
+       "Subject contains Lead"
+      ],
+      [
+       "Forward To",
+       "sales-deals@bigin.zoho.com"
+      ]
+     ],
+     "click": "Save Rule",
+     "tip": "Auto-forward sales inquiries"
+    }
+   },
+   {
+    "beat": "STEP 3",
+    "say": "Under Bigin Email-In settings, select your default deal stage, assign a deal owner, and enable automatic contact creation.",
+    "tts": "Under Bigin Email-In settings, select your default deal stage, assign a deal owner, and enable automatic contact creation.",
+    "card": "Map Stage and Owner",
+    "screen": {
+     "path": [
+      "Settings",
+      "Channels",
+      "Email-In"
+     ],
+     "view": "form",
+     "heading": "Deal Mapping Rules",
+     "fields": [
+      [
+       "Default Stage",
+       "Qualification"
+      ],
+      [
+       "Assign Owner",
+       "Sales Manager"
+      ],
+      [
+       "Create Associated Contact",
+       "Yes"
+      ]
+     ],
+     "click": "Save Mapping",
+     "tip": "Set stage and owner defaults"
+    }
+   },
+   {
+    "beat": "RESULT",
+    "say": "Every incoming inquiry instantly becomes an active pipeline deal without any manual data entry or missed opportunities.",
+    "tts": "Every incoming inquiry instantly becomes an active pipeline deal without any manual data entry or missed opportunities.",
+    "card": "Automatic Deal Creation",
+    "screen": null
+   },
+   {
+    "beat": "CTA",
+    "say": "Subscribe to GSX Automation for more practical Zoho tips, and comment your biggest workflow bottleneck below.",
+    "tts": "Subscribe to GSX Automation for more practical Zoho tips, and comment your biggest workflow bottleneck below.",
+    "card": "Follow GSX Automation",
+    "screen": null
+   }
+  ],
+  "code": null,
+  "test_before_recording": [
+   "Verify that the Email-In feature is accessible under Settings > Channels > Email-In in Zoho Bigin",
+   "Send a test email to the copied pipeline address to confirm automated deal and contact creation"
+  ],
+  "description": "Stop converting emails manually into pipeline deals. Route incoming emails to Zoho Bigin's native Email-In address to generate deals automatically. Follow GSX Automation for more quick Zoho fixes.",
+  "tags": [
+   "Zoho",
+   "ZohoBigin",
+   "EmailIn",
+   "OutlookToZoho",
+   "Automation",
+   "SalesPipeline",
+   "CRM",
+   "GSXAutomation",
+   "ZohoTutorial"
+  ]
+ },
+ "lines": [
+  {
+   "beat": "HOOK",
+   "say": "Stop manually converting Outlook emails into Zoho deals every day.",
+   "tts": "Stop manually converting Outlook emails into Zoho deals every day.",
+   "card": "Stop Converting Emails Manually",
+   "screen": null
+  },
+  {
+   "beat": "PROBLEM",
+   "say": "If your inbox gets flooded with sales inquiries, manually typing records and approving deals wastes hours of selling time.",
+   "tts": "If your inbox gets flooded with sales inquiries, manually typing records and approving deals wastes hours of selling time.",
+   "card": "Inbox Flooded With Leads",
+   "screen": null
+  },
+  {
+   "beat": "FIX",
+   "say": "You can automate this entire flow using Bigin's built-in Email-In feature.",
+   "tts": "You can automate this entire flow using Bigin's built-in Email-In feature.",
+   "card": "Use Built-In Email-In",
+   "screen": {
+    "path": [
+     "Settings",
+     "Channels",
+     "Email-In"
+    ],
+    "view": "settings",
+    "heading": "Email-In Settings",
+    "toggles": [
+     [
+      "Enable Email-In",
+      true
+     ]
+    ],
+    "click": "Enable Email-In",
+    "tip": "Turn on native email parsing"
+   }
+  },
+  {
+   "beat": "STEP 1",
+   "say": "In Bigin Settings, navigate to Channels, select Email-In to configure pipeline routing, and copy your dedicated Email-In address.",
+   "tts": "In Bigin Settings, navigate to Channels, select Email-In to configure pipeline routing, and copy your dedicated Email-In address.",
+   "card": "Copy Pipeline Email Address",
+   "screen": {
+    "path": [
+     "Settings",
+     "Channels",
+     "Email-In"
+    ],
+    "view": "form",
+    "heading": "Email-In Address Setup",
+    "fields": [
+     [
+      "Target Pipeline",
+      "Standard Sales"
+     ],
+     [
+      "Email-In Address",
+      "sales-deals@bigin.zoho.com"
+     ]
+    ],
+    "click": "Copy Address",
+    "tip": "Copy unique pipeline address"
+   }
+  },
+  {
+   "beat": "STEP 2",
+   "say": "Open your email client, like Outlook or Gmail, and create a rule to auto-forward new lead emails here.",
+   "tts": "Open your email client, like Outlook or Gmail, and create a rule to auto-forward new lead emails here.",
+   "card": "Set Up Forwarding Rule",
+   "screen": {
+    "path": [
+     "Settings",
+     "Email Routing"
+    ],
+    "view": "form",
+    "heading": "Forwarding Rules",
+    "fields": [
+     [
+      "Condition",
+      "Subject contains Lead"
+     ],
+     [
+      "Forward To",
+      "sales-deals@bigin.zoho.com"
+     ]
+    ],
+    "click": "Save Rule",
+    "tip": "Auto-forward sales inquiries"
+   }
+  },
+  {
+   "beat": "STEP 3",
+   "say": "Under Bigin Email-In settings, select your default deal stage, assign a deal owner, and enable automatic contact creation.",
+   "tts": "Under Bigin Email-In settings, select your default deal stage, assign a deal owner, and enable automatic contact creation.",
+   "card": "Map Stage and Owner",
+   "screen": {
+    "path": [
+     "Settings",
+     "Channels",
+     "Email-In"
+    ],
+    "view": "form",
+    "heading": "Deal Mapping Rules",
+    "fields": [
+     [
+      "Default Stage",
+      "Qualification"
+     ],
+     [
+      "Assign Owner",
+      "Sales Manager"
+     ],
+     [
+      "Create Associated Contact",
+      "Yes"
+     ]
+    ],
+    "click": "Save Mapping",
+    "tip": "Set stage and owner defaults"
+   }
+  },
+  {
+   "beat": "RESULT",
+   "say": "Every incoming inquiry instantly becomes an active pipeline deal without any manual data entry or missed opportunities.",
+   "tts": "Every incoming inquiry instantly becomes an active pipeline deal without any manual data entry or missed opportunities.",
+   "card": "Automatic Deal Creation",
+   "screen": null
+  },
+  {
+   "beat": "CTA",
+   "say": "Subscribe to GSX Automation for more practical Zoho tips, and comment your biggest workflow bottleneck below.",
+   "tts": "Subscribe to GSX Automation for more practical Zoho tips, and comment your biggest workflow bottleneck below.",
+   "card": "Follow GSX Automation",
+   "screen": null
+  }
+ ],
+ "clips": [
+  {
+   "text": "Stop manually converting Outlook emails into Zoho deals every day.",
+   "lines": [
+    0
+   ],
+   "beat": "HOOK",
+   "prompt": "The man (my avatar) looks straight into the camera and talks to the viewer like a friendly YouTube tech explainer; he leans in slightly with an energetic, curious expression. Vertical 9:16 medium close-up, static camera, face sharp and well lit, wearing a smart navy blue shirt, standing in a bright modern office with soft daylight. He says, in clear natural English with an Indian accent: \"Stop manually converting Outlook emails into Zoho deals every day.\" His lips match every word. He starts speaking immediately and stops right after the last word. Audio: only his voice - no music, no sound effects. No subtitles, no captions, no text on screen."
+  },
+  {
+   "text": "If your inbox gets flooded with sales inquiries, manually typing",
+   "lines": [
+    1
+   ],
+   "beat": "PROBLEM",
+   "prompt": "The man (my avatar) looks straight into the camera and talks to the viewer like a friendly YouTube tech explainer; he frowns a little and gestures with one open hand, showing the frustration. Vertical 9:16 medium close-up, static camera, face sharp and well lit, wearing a smart navy blue shirt, standing in a bright modern office with soft daylight. He says, in clear natural English with an Indian accent: \"If your inbox gets flooded with sales inquiries, manually typing\" His lips match every word. He starts speaking immediately and stops right after the last word. Audio: only his voice - no music, no sound effects. No subtitles, no captions, no text on screen."
+  },
+  {
+   "text": "records and approving deals wastes hours of selling time.",
+   "lines": [
+    1
+   ],
+   "beat": "PROBLEM",
+   "prompt": "The man (my avatar) looks straight into the camera and talks to the viewer like a friendly YouTube tech explainer; he frowns a little and gestures with one open hand, showing the frustration. Vertical 9:16 medium close-up, static camera, face sharp and well lit, wearing a smart navy blue shirt, standing in a bright modern office with soft daylight. He says, in clear natural English with an Indian accent: \"records and approving deals wastes hours of selling time.\" His lips match every word. He starts speaking immediately and stops right after the last word. Audio: only his voice - no music, no sound effects. No subtitles, no captions, no text on screen."
+  },
+  {
+   "text": "You can automate this entire flow using Bigin's built-in Email-In feature.",
+   "lines": [
+    2
+   ],
+   "beat": "FIX",
+   "prompt": "The man (my avatar) looks straight into the camera and talks to the viewer like a friendly YouTube tech explainer; he nods confidently and counts on his fingers. Vertical 9:16 medium close-up, static camera, face sharp and well lit, wearing a smart navy blue shirt, standing in a bright modern office with soft daylight. He says, in clear natural English with an Indian accent: \"You can automate this entire flow using Bigin's built-in Email-In feature.\" His lips match every word. He starts speaking immediately and stops right after the last word. Audio: only his voice - no music, no sound effects. No subtitles, no captions, no text on screen."
+  },
+  {
+   "text": "In Bigin Settings, navigate to Channels, select Email-In to",
+   "lines": [
+    3
+   ],
+   "beat": "STEP 1",
+   "prompt": "The man (my avatar) looks straight into the camera and talks to the viewer like a friendly YouTube tech explainer; he points to the side as if showing something on a screen next to him. Vertical 9:16 medium close-up, static camera, face sharp and well lit, wearing a smart navy blue shirt, standing in a bright modern office with soft daylight. He says, in clear natural English with an Indian accent: \"In Bigin Settings, navigate to Channels, select Email-In to\" His lips match every word. He starts speaking immediately and stops right after the last word. Audio: only his voice - no music, no sound effects. No subtitles, no captions, no text on screen."
+  },
+  {
+   "text": "configure pipeline routing, and copy your dedicated Email-In address.",
+   "lines": [
+    3
+   ],
+   "beat": "STEP 1",
+   "prompt": "The man (my avatar) looks straight into the camera and talks to the viewer like a friendly YouTube tech explainer; he points to the side as if showing something on a screen next to him. Vertical 9:16 medium close-up, static camera, face sharp and well lit, wearing a smart navy blue shirt, standing in a bright modern office with soft daylight. He says, in clear natural English with an Indian accent: \"configure pipeline routing, and copy your dedicated Email-In address.\" His lips match every word. He starts speaking immediately and stops right after the last word. Audio: only his voice - no music, no sound effects. No subtitles, no captions, no text on screen."
+  },
+  {
+   "text": "Open your email client, like Outlook or Gmail, and",
+   "lines": [
+    4
+   ],
+   "beat": "STEP 2",
+   "prompt": "The man (my avatar) looks straight into the camera and talks to the viewer like a friendly YouTube tech explainer; he points to the side as if showing something on a screen next to him. Vertical 9:16 medium close-up, static camera, face sharp and well lit, wearing a smart navy blue shirt, standing in a bright modern office with soft daylight. He says, in clear natural English with an Indian accent: \"Open your email client, like Outlook or Gmail, and\" His lips match every word. He starts speaking immediately and stops right after the last word. Audio: only his voice - no music, no sound effects. No subtitles, no captions, no text on screen."
+  },
+  {
+   "text": "create a rule to auto-forward new lead emails here.",
+   "lines": [
+    4
+   ],
+   "beat": "STEP 2",
+   "prompt": "The man (my avatar) looks straight into the camera and talks to the viewer like a friendly YouTube tech explainer; he points to the side as if showing something on a screen next to him. Vertical 9:16 medium close-up, static camera, face sharp and well lit, wearing a smart navy blue shirt, standing in a bright modern office with soft daylight. He says, in clear natural English with an Indian accent: \"create a rule to auto-forward new lead emails here.\" His lips match every word. He starts speaking immediately and stops right after the last word. Audio: only his voice - no music, no sound effects. No subtitles, no captions, no text on screen."
+  },
+  {
+   "text": "Under Bigin Email-In settings, select your default deal stage,",
+   "lines": [
+    5
+   ],
+   "beat": "STEP 3",
+   "prompt": "The man (my avatar) looks straight into the camera and talks to the viewer like a friendly YouTube tech explainer; he points to the side as if showing something on a screen next to him. Vertical 9:16 medium close-up, static camera, face sharp and well lit, wearing a smart navy blue shirt, standing in a bright modern office with soft daylight. He says, in clear natural English with an Indian accent: \"Under Bigin Email-In settings, select your default deal stage,\" His lips match every word. He starts speaking immediately and stops right after the last word. Audio: only his voice - no music, no sound effects. No subtitles, no captions, no text on screen."
+  },
+  {
+   "text": "assign a deal owner, and enable automatic contact creation.",
+   "lines": [
+    5
+   ],
+   "beat": "STEP 3",
+   "prompt": "The man (my avatar) looks straight into the camera and talks to the viewer like a friendly YouTube tech explainer; he points to the side as if showing something on a screen next to him. Vertical 9:16 medium close-up, static camera, face sharp and well lit, wearing a smart navy blue shirt, standing in a bright modern office with soft daylight. He says, in clear natural English with an Indian accent: \"assign a deal owner, and enable automatic contact creation.\" His lips match every word. He starts speaking immediately and stops right after the last word. Audio: only his voice - no music, no sound effects. No subtitles, no captions, no text on screen."
+  },
+  {
+   "text": "Every incoming inquiry instantly becomes an active pipeline deal without any manual data entry or missed opportunities.",
+   "lines": [
+    6
+   ],
+   "beat": "RESULT",
+   "prompt": "The man (my avatar) looks straight into the camera and talks to the viewer like a friendly YouTube tech explainer; he smiles and opens both hands. Vertical 9:16 medium close-up, static camera, face sharp and well lit, wearing a smart navy blue shirt, standing in a bright modern office with soft daylight. He says, in clear natural English with an Indian accent: \"Every incoming inquiry instantly becomes an active pipeline deal without any manual data entry or missed opportunities.\" His lips match every word. He starts speaking immediately and stops right after the last word. Audio: only his voice - no music, no sound effects. No subtitles, no captions, no text on screen."
+  },
+  {
+   "text": "Subscribe to GSX Automation for more practical Zoho tips, and comment your biggest workflow bottleneck below.",
+   "lines": [
+    7
+   ],
+   "beat": "CTA",
+   "prompt": "The man (my avatar) looks straight into the camera and talks to the viewer like a friendly YouTube tech explainer; he smiles warmly and points at the camera. Vertical 9:16 medium close-up, static camera, face sharp and well lit, wearing a smart navy blue shirt, standing in a bright modern office with soft daylight. He says, in clear natural English with an Indian accent: \"Subscribe to GSX Automation for more practical Zoho tips, and comment your biggest workflow bottleneck below.\" His lips match every word. He starts speaking immediately and stops right after the last word. Audio: only his voice - no music, no sound effects. No subtitles, no captions, no text on screen."
+  }
+ ],
+ "issue": 1
+}
