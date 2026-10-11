@@ -32,6 +32,7 @@ PER_DAY = int(_F.get("per_day", 1))
 MAX_WORDS = int(_F.get("max_words_per_clip", 19))     # ~7.5 s of speech -> fits one 8 s Flow clip
 PRESENTER = (_F.get("presenter") or "The man").strip()
 SCENE = (_F.get("scene") or "").strip()
+LOOKS = [str(x).strip() for x in (_F.get("looks") or []) if str(x).strip()] or [SCENE]   # one look per Short, rotated
 _WM = _F.get("watermark", {}) or {}
 WM_MODE = str(_WM.get("mode", "crop")).lower()          # crop | blur | none
 WM_CROP = float(_WM.get("crop_bottom", 0.10))
@@ -132,12 +133,13 @@ _ACT = {"HOOK": "leans in slightly with an energetic, curious expression",
         "CTA": "smiles warmly and points at the camera"}
 
 
-def prompt(text, beat=""):
+def prompt(text, beat="", look=None):
+    look = SCENE if look is None else look
     b = str(beat).upper()
     act = next((v for k, v in _ACT.items() if b.startswith(k)), "explains calmly with small natural hand gestures")
     return (f"{PRESENTER} looks straight into the camera and talks to the viewer like a friendly YouTube tech "
             f"explainer; he {act}. Vertical 9:16 medium close-up, static camera, face sharp and well lit"
-            + (f", {SCENE}" if SCENE else "") + ". "
+            + (f", {look}" if look else "") + ". "
             f"He says, in clear natural English with an Indian accent: \"{text}\" "
             "His lips match every word. He starts speaking immediately and stops right after the last word. "
             "Audio: only his voice - no music, no sound effects. No subtitles, no captions, no text on screen.")
@@ -180,6 +182,7 @@ def _body(job):
     return "\n".join([
         f"## 🎬 {job['title']}", "",
         f"**{n} Flow clips** · Short `{job['id']}` · {job['created'][:10]}", "",
+        *([f"**Today's look (same in every clip):** {job['look']}", ""] if job.get("look") else []),
         "### Steps (about 5 min)",
         "1. Open **https://flow.google.com** -> your project -> video settings **9:16**, model **Veo 3.1 - Fast**.",
         "2. Select **your avatar** (Characters), so every clip is you with your voice.",
@@ -213,8 +216,10 @@ def prepare(count, do_upload):
             clips = chunks(lines)
             if not clips:
                 raise RuntimeError("script has no spoken lines")
+            look = LOOKS[st.get("look_index", 0) % len(LOOKS)]     # same look in every clip of this Short
+            st["look_index"] = st.get("look_index", 0) + 1
             for c in clips:
-                c["prompt"] = prompt(c["text"], c["beat"])
+                c["prompt"] = prompt(c["text"], c["beat"], look)
             d = JOBS / job_id
             (d / "clips").mkdir(parents=True, exist_ok=True)
             (d / "clips" / ".keep").write_text("drop the Flow clips here\n")
@@ -222,7 +227,7 @@ def prepare(count, do_upload):
                    "created": dt.datetime.utcnow().isoformat(timespec="seconds"),
                    "title": build_title(sc), "description": build_description(sc, angle),
                    "angle": {k2: v for k2, v in angle.items() if k2 != "story"}, "story": angle.get("story"),
-                   "script": sc, "lines": lines, "clips": clips}
+                   "script": sc, "lines": lines, "clips": clips, "look": look}
             body = _body(job)
             issue = _gh("POST", "/issues", {"title": f"🎬 Today's Short: {job['title'][:70]} ({len(clips)} Flow clips)",
                                             "body": body, "assignees": [REPO.split("/")[0]]})
