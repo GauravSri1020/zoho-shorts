@@ -72,7 +72,8 @@ def make_video(sc, work, st):
     script_text = " ".join(voice._clean(l.get("say") or l.get("tts")) for l in lines)
     words = editor.align_to_script(editor.transcribe(wav, work), script_text)
     dur = voice.duration(wav)
-    av, engine, photo = avatar.make(wav, dur, work / "avatar", last_photo=st.get("last_photo"))
+    av, engine, photo = avatar.make(wav, dur, work / "avatar", last_photo=st.get("last_photo"), lines=lines,
+                                    words=words)
     mp4 = work / "short.mp4"
     composer.render(sc, lines, words, av, wav, work / "edit", mp4, seed=st.get("next_id"))
     problems = editor.check_media(mp4)
