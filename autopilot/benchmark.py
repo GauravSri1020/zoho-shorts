@@ -4,7 +4,7 @@
              most-viewed Zoho Books Shorts found on YouTube) and writes a scoring rubric -> state/benchmark.json
 2. gate():   Gemini watches OUR finished Short next to that rubric and scores it 0-100 per criterion.
              Upload is allowed ONLY if
-               - the avatar really lip-syncs (engine == sadtalker),
+               - the avatar really lip-syncs (engine == veo or sadtalker),
                - the technical checks passed,
                - overall score >= benchmark.min_score (default 75) and no criterion is a "blocker".
              If Gemini can't watch it (quota / outage) the answer is NO - never upload unchecked.
@@ -143,8 +143,8 @@ def gate(mp4, sc, engine, tech_problems):
     """Returns the QA report dict; report["approved"] decides the upload."""
     report = {"engine": engine, "min_score": MIN_SCORE, "tech_problems": list(tech_problems or []),
               "scores": {}, "overall": 0, "issues": [], "approved": False, "fatal": False}
-    if engine != "sadtalker":
-        report["issues"].append("Avatar is not lip-synced (SadTalker did not run) - a still photo is not allowed.")
+    if engine not in ("veo", "sadtalker"):
+        report["issues"].append("Avatar is not lip-synced (Veo / SadTalker did not run) - a still photo is not allowed.")
         report["fatal"] = True
     if tech_problems:
         report["issues"] += [f"technical: {p}" for p in tech_problems]
