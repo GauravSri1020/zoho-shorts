@@ -73,7 +73,7 @@ avatar:
   # Manual Gemini mode (autopilot/manual.py): daily run writes jobs/<id>/PROMPTS.md, you upload clips to jobs/<id>/clips/
   manual:
     per_day: 1                     # Shorts prepared per day
-    max_clips: 3                   # Gemini clips per Short (Pro plan ~3 videos/day); extra lines reuse these clips
+    max_clips: 2                   # Gemini clips per Short (Pro plan ~3 videos/day); extra lines reuse these clips
 
 # When videos go public (IST). A random minute inside each window, every day different,
 # and never the same time as the previous day's slot.
