@@ -36,8 +36,10 @@ jobs:
       YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
       YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
       AVATAR_KEY: ${{ secrets.AVATAR_KEY }}
+      VEO_API_KEY: ${{ secrets.VEO_API_KEY }}
       GEMINI_MODEL: ${{ vars.GEMINI_MODEL }}
       AVATAR_ENGINE: ${{ vars.AVATAR_ENGINE }}
+      VEO_MODELS: ${{ vars.VEO_MODELS }}
       TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
       TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
       MAIL_USER: ${{ secrets.MAIL_USER }}
