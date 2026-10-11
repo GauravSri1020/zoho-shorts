@@ -58,7 +58,7 @@ scripts:
 
 # The presenter: AI avatar from your photos (encrypted in assets/avatars.enc, AVATAR_KEY secret) + AI voice
 avatar:
-  engine: "gemini_manual"        # gemini_manual = you make the clips in the Gemini app, robot does the rest (free with Pro) | veo = Veo API (paid) | sadtalker = lip-sync (free, CPU) | photo
+  engine: "sadtalker"            # gemini_manual = you make the clips in the Gemini app, robot does the rest (free with Pro) | veo = Veo API (paid) | sadtalker = lip-sync (free, CPU) | photo
   gemini_voice: "Puck"           # Gemini TTS voices: Puck, Charon, Fenrir, Orus, Kore, Aoede, Leda, Zephyr ...
   backup_voice: "hi-IN-MadhurNeural"   # edge-tts voice used only if Gemini TTS is down
   voice_style: "confident, friendly Hinglish explainer, Indian accent, natural pace"
