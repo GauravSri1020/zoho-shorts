@@ -17,5 +17,7 @@
  "slots": [],
  "failures": {},
  "seen_comments": [],
- "last_photo": "1_jacket.jpg"
+ "last_photo": "1_jacket.jpg",
+ "photo_scenes": [],
+ "photo_agent_error": "RuntimeError: image model unavailable: 404 NOT_FOUND. {'error': {'code': 404, 'm"
 }
