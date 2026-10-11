@@ -79,7 +79,9 @@
    "title": "Automate Zoho CRM Lead Tasks Instantly #Shorts",
    "engine": "flow",
    "job": "20261011-1806-2",
-   "created": "2026-10-11T18:07:48"
+   "created": "2026-10-11T18:07:48",
+   "video_id": "Xd6fFF3P0lc",
+   "publish_at": "2026-10-12T20:11:00+05:30"
   },
   "S0008": {
    "problem": "Tracking restaurant inventory recipes with multiple variants is complex.",
@@ -159,6 +161,13 @@
    "minute": 455,
    "video_id": "Y1THCzxhr_Y",
    "title": "Stop manually copying Zoho CRM and Books data to Excel! #Shorts"
+  },
+  {
+   "date": "2026-10-12",
+   "window": "evening",
+   "minute": 1211,
+   "video_id": "Xd6fFF3P0lc",
+   "title": "Automate Zoho CRM Lead Tasks Instantly #Shorts"
   }
  ],
  "failures": {},
