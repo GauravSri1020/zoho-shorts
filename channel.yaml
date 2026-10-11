@@ -7,7 +7,7 @@
 channel:
   name: "GSX Automation"         # shown on videos and in descriptions
   handle: "@GSXAutomation"       # your YouTube @handle (update once your existing channel is connected)
-  language: "Hinglish"           # Hinglish | Hindi | English  (scripts + captions)
+  language: "English"           # Hinglish | Hindi | English  (scripts + captions)
   hashtags: ["Shorts", "ZohoCRM", "Zoho", "BusinessAutomation"]
   # Keep "Zoho" OUT of the channel name/logo (trademark). Using it in titles/tags to describe the topic is fine.
   disclaimer: "Independent channel. Not affiliated with or endorsed by Zoho Corporation. Zoho is a trademark of Zoho Corporation."
@@ -33,7 +33,7 @@ niche:
     html: "an outside HTML page connected to Zoho (web form, webhook, REST API, embed)"
   skip: "pricing/discount news, funding news, opinion pieces, anything without a practical fix"
   safety: "no financial, tax or legal advice; never show real customer data"
-  cta: "Aise hi Zoho fixes ke liye follow karo {name}"
+  cta: "Follow {name} for more quick Zoho fixes"
 
 # Where the research agent looks for real problems people are asking about. Any RSS / Atom feed works.
 sources:
@@ -58,17 +58,17 @@ scripts:
 
 # The presenter: AI avatar from your photos (encrypted in assets/avatars.enc, AVATAR_KEY secret) + AI voice
 avatar:
-  engine: "sadtalker"            # gemini_manual = you make the clips in the Gemini app, robot does the rest (free with Pro) | veo = Veo API (paid) | sadtalker = lip-sync (free, CPU) | photo
+  engine: "kaggle"            # gemini_manual = you make the clips in the Gemini app, robot does the rest (free with Pro) | veo = Veo API (paid) | sadtalker = lip-sync (free, CPU) | photo
   gemini_voice: "Puck"           # Gemini TTS voices: Puck, Charon, Fenrir, Orus, Kore, Aoede, Leda, Zephyr ...
-  backup_voice: "hi-IN-MadhurNeural"   # edge-tts voice used only if Gemini TTS is down
-  voice_style: "confident, friendly Hinglish explainer, Indian accent, natural pace"
+  backup_voice: "en-IN-PrabhatNeural"   # edge-tts voice used only if Gemini TTS is down
+  voice_style: "confident, friendly English explainer, Indian accent, clear and natural pace"
   tempo: 1.05
   # Veo avatar agent (autopilot/veo.py). Key: VEO_API_KEY secret (billing ON). Fails -> SadTalker -> photo.
   veo:
     models: ["veo-3.1-fast-generate-preview", "veo-3.1-lite-generate-preview", "veo-3.1-generate-preview"]
     resolution: "720p"             # 720p is enough (avatar sits in the middle panel); 1080p costs more
     max_seconds_per_short: 48      # cost guard: max Veo seconds per Short (Fast ~ $0.10/s, Lite ~ $0.05/s)
-    speech: "friendly, confident Hinglish explainer voice, Indian accent, natural pace"
+    speech: "friendly, confident English explainer voice, Indian accent, natural pace"
     scene: ""                      # optional extra direction, e.g. "soft office daylight"
   # Manual Gemini mode (autopilot/manual.py): daily run writes jobs/<id>/PROMPTS.md, you upload clips to jobs/<id>/clips/
   manual:
@@ -87,8 +87,8 @@ schedule:
 # Captions / editing
 captions:
   whisper_model: "small"         # word timings for captions (tiny | base | small)
-  whisper_language: "hi"         # hi for Hinglish/Hindi, en for English
-  roman_captions: true           # show Hinglish captions in Roman letters (Devanagari if false or if it fails)
+  whisper_language: "en"         # hi for Hinglish/Hindi, en for English
+  roman_captions: false           # show Hinglish captions in Roman letters (Devanagari if false or if it fails)
   max_words: 3
 
 video:
@@ -99,7 +99,7 @@ labels:
 
 youtube:
   category_id: "28"              # 28 = Science & Technology, 27 = Education, 26 = Howto & Style
-  language: "hi"                 # hi | en
+  language: "en"                 # hi | en
 
 # Photo agent (weekly): new photorealistic photos of you in new scenes, checked by a QA agent before use
 photo_agent:
