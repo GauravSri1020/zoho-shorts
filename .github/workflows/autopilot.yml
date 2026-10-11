@@ -12,7 +12,7 @@ on:
   workflow_dispatch:
     inputs:
       task:
-        description: "daily, comments, photos or assemble"
+        description: "daily, comments, photos, assemble or gputest"
         default: "daily"
       count:
         description: "daily: how many Shorts"
@@ -40,6 +40,8 @@ jobs:
       YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
       AVATAR_KEY: ${{ secrets.AVATAR_KEY }}
       VEO_API_KEY: ${{ secrets.VEO_API_KEY }}
+      KAGGLE_USERNAME: ${{ secrets.KAGGLE_USERNAME }}
+      KAGGLE_API_TOKEN: ${{ secrets.KAGGLE_API_TOKEN }}
       GEMINI_MODEL: ${{ vars.GEMINI_MODEL }}
       AVATAR_ENGINE: ${{ vars.AVATAR_ENGINE }}
       VEO_MODELS: ${{ vars.VEO_MODELS }}
@@ -81,10 +83,10 @@ jobs:
       - run: pip install -r requirements.txt
 
       - name: Install ffmpeg + fonts
-        if: steps.t.outputs.task == 'daily' || steps.t.outputs.task == 'assemble'
+        if: steps.t.outputs.task == 'daily' || steps.t.outputs.task == 'assemble' || steps.t.outputs.task == 'gputest'
         run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg fonts-noto-core fonts-dejavu-core
       - name: Install browser for the Zoho Books screens
-        if: steps.t.outputs.task == 'daily' || steps.t.outputs.task == 'assemble'
+        if: steps.t.outputs.task == 'daily' || steps.t.outputs.task == 'assemble' || steps.t.outputs.task == 'gputest'
         run: python -m playwright install --with-deps chromium
       - name: Cache lip-sync engine (SadTalker)
         if: steps.t.outputs.task == 'daily'
@@ -97,7 +99,7 @@ jobs:
         continue-on-error: true      # if this ever fails, Shorts still go out with the photo-motion avatar
         run: bash tools/install_sadtalker.sh
       - name: Cache the caption model
-        if: steps.t.outputs.task == 'daily' || steps.t.outputs.task == 'assemble'
+        if: steps.t.outputs.task == 'daily' || steps.t.outputs.task == 'assemble' || steps.t.outputs.task == 'gputest'
         uses: actions/cache@v4
         with:
           path: ~/.cache/huggingface
@@ -110,7 +112,7 @@ jobs:
           python -m autopilot.main ${{ steps.t.outputs.task }} ${{ steps.t.outputs.args }}
 
       - name: Keep the Shorts as downloadable artifacts (7 days)
-        if: always() && (steps.t.outputs.task == 'daily' || steps.t.outputs.task == 'assemble')
+        if: always() && (steps.t.outputs.task == 'daily' || steps.t.outputs.task == 'assemble' || steps.t.outputs.task == 'gputest')
         uses: actions/upload-artifact@v4
         with:
           name: shorts-${{ github.run_id }}
