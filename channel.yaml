@@ -52,28 +52,22 @@ sources:
 
 # Shorts per day (each one goes into the next free morning / evening slot)
 scripts:
-  per_day: 2
+  per_day: 1
   words_min: 110
   words_max: 150
 
-# The presenter: AI avatar from your photos (encrypted in assets/avatars.enc, AVATAR_KEY secret) + AI voice
-avatar:
-  engine: "kaggle"            # gemini_manual = you make the clips in the Gemini app, robot does the rest (free with Pro) | veo = Veo API (paid) | sadtalker = lip-sync (free, CPU) | photo
-  gemini_voice: "Puck"           # Gemini TTS voices: Puck, Charon, Fenrir, Orus, Kore, Aoede, Leda, Zephyr ...
-  backup_voice: "en-IN-PrabhatNeural"   # edge-tts voice used only if Gemini TTS is down
-  voice_style: "confident, friendly English explainer, Indian accent, clear and natural pace"
-  tempo: 1.05
-  # Veo avatar agent (autopilot/veo.py). Key: VEO_API_KEY secret (billing ON). Fails -> SadTalker -> photo.
-  veo:
-    models: ["veo-3.1-fast-generate-preview", "veo-3.1-lite-generate-preview", "veo-3.1-generate-preview"]
-    resolution: "720p"             # 720p is enough (avatar sits in the middle panel); 1080p costs more
-    max_seconds_per_short: 48      # cost guard: max Veo seconds per Short (Fast ~ $0.10/s, Lite ~ $0.05/s)
-    speech: "friendly, confident English explainer voice, Indian accent, natural pace"
-    scene: ""                      # optional extra direction, e.g. "soft office daylight"
-  # Manual Gemini mode (autopilot/manual.py): daily run writes jobs/<id>/PROMPTS.md, you upload clips to jobs/<id>/clips/
-  manual:
-    per_day: 1                     # Shorts prepared per day
-    max_clips: 2                   # Gemini clips per Short (Pro plan ~3 videos/day); extra lines reuse these clips
+# The presenter: YOU, made in Google Flow (your avatar + Veo 3.1 with its own voice) - see autopilot/flow.py
+# Every morning a GitHub issue (e-mailed to you) lists the clip prompts; you make the clips in Flow and drop them
+# into the upload link; the robot does everything else (joins, hides watermark, Zoho screens, captions, music, QA, upload).
+flow:
+  per_day: 1                  # Shorts prepared per day (each needs ~5-8 Flow clips; Veo 3.1 Fast ~10-20 credits each)
+  max_words_per_clip: 17      # ~7 s of speech -> fits one 8 s Flow clip
+  presenter: "The man (my avatar)"   # how every prompt refers to you - select your avatar in Flow before pasting
+  scene: "wearing a smart navy blue shirt, standing in a bright modern office with soft daylight"   # your look + place, same in every clip
+  watermark:                  # Flow puts a visible watermark on every clip; the editor hides it
+    mode: "crop"              # crop = cut the bottom strip away | blur = blur the box below | none
+    crop_bottom: 0.10         # part of the height cut from the bottom (crop mode)
+    box: [0.74, 0.88, 0.24, 0.10]   # x, y, width, height as parts of the frame (blur mode)
 
 # When videos go public (IST). A random minute inside each window, every day different,
 # and never the same time as the previous day's slot.
@@ -100,18 +94,6 @@ labels:
 youtube:
   category_id: "28"              # 28 = Science & Technology, 27 = Education, 26 = Howto & Style
   language: "en"                 # hi | en
-
-# Photo agent (weekly): new photorealistic photos of you in new scenes, checked by a QA agent before use
-photo_agent:
-  per_run: 2
-  max_generated: 18             # your original photos are never removed
-  scenes:
-    - "walking slowly on a city street at night, warm string lights and shop lights glowing behind, bokeh"
-    - "standing on a rooftop terrace at dusk with fairy lights behind"
-    - "in a modern office with glass walls, people working in the blurred background"
-    - "sitting at a cafe table with a laptop, warm evening light"
-    - "walking in a co-working space corridor, soft daylight"
-    - "standing near a window with city lights at night behind"
 
 # Benchmark agent: watches these Shorts (and the most-viewed Zoho Books Shorts on YouTube) every 14 days,
 # then scores every new video against them. Upload happens ONLY if score >= min_score and the avatar lip-syncs.
