@@ -1,0 +1,1328 @@
+{
+ "id": "20261011-0556-1",
+ "status": "waiting_for_clips",
+ "upload": false,
+ "created": "2026-10-11T05:59:53",
+ "title": "Get Monthly YTD P&L in Zoho Books in One Click #Shorts",
+ "description": "Stop setting manual filters every month in Zoho Books for YTD P&L comparison. Learn how to create a permanent Custom Report with monthly comparison columns in 3 easy steps.\n\nSubscribe to GSX Automation for more Zoho tips and fixes!\n\n1. Zoho Books me Reports section me jakar 'Profit and Loss' report open karo.\n2. 'Customize Report' par click karke Date Range me 'This Fiscal Year' aur 'Compare With' me previous months select karo.\n3. Top right me 'Save as Custom Report' par click karke name save karo taaki har mahine one-click me view mil jaye.\n\nDaily Zoho fixes - follow @GSXAutomation\n\nQuestion that inspired this: https://www.reddit.com/r/Zoho/comments/1x20wuz/why_is_it_so_hard_to_get_a_fiscal_ytd_pl_report/\n\nIs video mein GSX Automation ka AI avatar aur AI voice hai. This video uses an AI-generated presenter and voice.\nIndependent channel. Not affiliated with or endorsed by Zoho Corporation. Zoho is a trademark of Zoho Corporation.\n\n#Shorts #ZohoCRM #Zoho #BusinessAutomation",
+ "angle": {
+  "story_index": 2,
+  "product": "Zoho Books",
+  "problem": "Zoho Books me har mahine fiscal YTD P&L report dekhne ke liye baar baar comparison filters manually set karne padte hain.",
+  "fix_type": "native",
+  "solution": "Profit and Loss report ko monthly comparison ke saath customize karke permanent Custom Report bana lo.",
+  "steps": [
+   "Zoho Books me Reports section me jakar 'Profit and Loss' report open karo.",
+   "'Customize Report' par click karke Date Range me 'This Fiscal Year' aur 'Compare With' me previous months select karo.",
+   "Top right me 'Save as Custom Report' par click karke name save karo taaki har mahine one-click me view mil jaye."
+  ],
+  "result": "Baar-baar filters lagaye bina har mahine ek click me poore saal ka monthly P&L comparison ready milega.",
+  "hook": "Zoho Books me har mahine P&L filter lagana band karo!"
+ },
+ "story": {
+  "title": "Why is it so hard to get a fiscal YTD P&L report in Zoho Books.",
+  "link": "https://www.reddit.com/r/Zoho/comments/1x20wuz/why_is_it_so_hard_to_get_a_fiscal_ytd_pl_report/",
+  "summary": "Yes I know that it could be done in Zoho Analytics, but I would have expected this default report view to be easily accessible in the list of Books accounting reports. Just like any other basic accounting system, I'm looking for monthly columns of the P&L report for the current fiscal year. Using the compare with and setting the number of months is a solution but it has to be redone each time the current month changes. Anyone else get an answer from Zoho support about this kind of request? https://preview.redd.it/9ppb7vm7pmuh1.png?width=2704&format=png&auto=webp&s=fe68c8738a8651afec90e12db5dcb156be534e6a submitted by /u/elimontreal [link] [comments]",
+  "source": "newest submissions : Zoho",
+  "ts": 1791590453
+ },
+ "script": {
+  "title": "Get Monthly YTD P&L in Zoho Books in One Click",
+  "hook_text": "Stop Setting P&L Filters Monthly!",
+  "lines": [
+   {
+    "beat": "HOOK",
+    "say": "Zoho Books me har mahine P&L filter lagana band karo!",
+    "tts": "Zoho Books में हर महीने P&L filter लगाना बंद करो!",
+    "card": "Stop Setting P&L Filters Monthly!",
+    "screen": null
+   },
+   {
+    "beat": "PROBLEM",
+    "say": "YTD Profit and Loss report me monthly comparison ke liye har baar dates aur months reset karne padte hain.",
+    "tts": "YTD Profit and Loss report में monthly comparison के लिए हर बार dates और months reset करने पड़ते हैं।",
+    "card": "Resetting Date Filters Every Month Wastes Time",
+    "screen": null
+   },
+   {
+    "beat": "FIX",
+    "say": "Iska permanent solution hai! Report ko monthly comparison ke saath custom report ki tarah save kar lo.",
+    "tts": "इसका permanent solution है! Report को monthly comparison के साथ custom report की तरह save कर लो।",
+    "card": "Save P&L as Custom Report",
+    "screen": {
+     "path": [
+      "Reports"
+     ],
+     "view": "list",
+     "heading": "Reports",
+     "columns": [
+      "Report Name",
+      "Category"
+     ],
+     "rows": [
+      [
+       "Profit and Loss",
+       "Business Overview"
+      ],
+      [
+       "Balance Sheet",
+       "Business Overview"
+      ]
+     ],
+     "fields": [],
+     "toggles": [],
+     "click": "Profit and Loss",
+     "tip": "Open standard Profit and Loss report"
+    }
+   },
+   {
+    "beat": "STEP 1",
+    "say": "Zoho Books me Reports section me jaakar Profit and Loss report open karo.",
+    "tts": "Zoho Books में Reports section में जाकर Profit and Loss report open करो।",
+    "card": "Reports > Profit and Loss",
+    "screen": {
+     "path": [
+      "Reports",
+      "Business Overview"
+     ],
+     "view": "list",
+     "heading": "Business Overview Reports",
+     "columns": [
+      "Report Name",
+      "Description"
+     ],
+     "rows": [
+      [
+       "Profit and Loss",
+       "Overview of income and expenses"
+      ],
+      [
+       "Cash Flow Statement",
+       "Cash movement summary"
+      ]
+     ],
+     "fields": [],
+     "toggles": [],
+     "click": "Profit and Loss",
+     "tip": "Select Profit and Loss report"
+    }
+   },
+   {
+    "beat": "STEP 2",
+    "say": "Top par Customize Report par click karo, Date Range 'This Fiscal Year' aur Compare With me Previous Months choose karo.",
+    "tts": "Top पर Customize Report पर click करो, Date Range 'This Fiscal Year' और Compare With में Previous Months choose करो।",
+    "card": "Customize: This Fiscal Year + Compare Months",
+    "screen": {
+     "path": [
+      "Reports",
+      "Profit and Loss"
+     ],
+     "view": "form",
+     "heading": "Customize Report",
+     "columns": [],
+     "rows": [],
+     "fields": [
+      [
+       "Date Range",
+       "This Fiscal Year"
+      ],
+      [
+       "Compare With",
+       "Previous Months (11)"
+      ]
+     ],
+     "toggles": [],
+     "click": "Run Report",
+     "tip": "Set comparison and run report"
+    }
+   },
+   {
+    "beat": "STEP 3",
+    "say": "Ab Top right me Save as Custom Report par click karke name enter karo aur Save kar do.",
+    "tts": "अब Top right में Save as Custom Report पर click करके name enter करो और Save कर दो।",
+    "card": "Save as Custom Report",
+    "screen": {
+     "path": [
+      "Reports",
+      "Profit and Loss"
+     ],
+     "view": "form",
+     "heading": "Save as Custom Report",
+     "columns": [],
+     "rows": [],
+     "fields": [
+      [
+       "Custom Report Name",
+       "Monthly YTD P&L"
+      ]
+     ],
+     "toggles": [],
+     "click": "Save",
+     "tip": "Save report for one-click access"
+    }
+   },
+   {
+    "beat": "RESULT",
+    "say": "Ab har mahine bina kisi manual filter ke ek click me poore saal ka monthly P&L ready milega!",
+    "tts": "अब हर महीने बिना किसी manual filter के एक click में पूरे साल का monthly P&L ready मिलेगा!",
+    "card": "1-Click Monthly YTD P&L Ready!",
+    "screen": null
+   },
+   {
+    "beat": "CTA",
+    "say": "Aise hi smart Zoho Books hacks ke liye GSX Automation ko follow karo!",
+    "tts": "ऐसे ही smart Zoho Books hacks के लिए GSX Automation को follow करो!",
+    "card": "Follow GSX Automation for Zoho Tips",
+    "screen": null
+   }
+  ],
+  "code": null,
+  "test_before_recording": [
+   "Verify that 'Save as Custom Report' option is visible in your Zoho Books Profit & Loss report page.",
+   "Ensure the customized report preserves relative date filters like 'This Fiscal Year'."
+  ],
+  "description": "Stop setting manual filters every month in Zoho Books for YTD P&L comparison. Learn how to create a permanent Custom Report with monthly comparison columns in 3 easy steps.\n\nSubscribe to GSX Automation for more Zoho tips and fixes!",
+  "tags": [
+   "zohobooks",
+   "zoho",
+   "accounting",
+   "pnlreport",
+   "reports",
+   "customreports",
+   "automation",
+   "gsxautomation",
+   "finance",
+   "zohotips"
+  ]
+ },
+ "lines": [
+  {
+   "beat": "HOOK",
+   "say": "Zoho Books me har mahine P&L filter lagana band karo!",
+   "tts": "Zoho Books में हर महीने P&L filter लगाना बंद करो!",
+   "card": "Stop Setting P&L Filters Monthly!",
+   "screen": null
+  },
+  {
+   "beat": "PROBLEM",
+   "say": "YTD Profit and Loss report me monthly comparison ke liye har baar dates aur months reset karne padte hain.",
+   "tts": "YTD Profit and Loss report में monthly comparison के लिए हर बार dates और months reset करने पड़ते हैं।",
+   "card": "Resetting Date Filters Every Month Wastes Time",
+   "screen": null
+  },
+  {
+   "beat": "FIX",
+   "say": "Iska permanent solution hai! Report ko monthly comparison ke saath custom report ki tarah save kar lo.",
+   "tts": "इसका permanent solution है! Report को monthly comparison के साथ custom report की तरह save कर लो।",
+   "card": "Save P&L as Custom Report",
+   "screen": {
+    "path": [
+     "Reports"
+    ],
+    "view": "list",
+    "heading": "Reports",
+    "columns": [
+     "Report Name",
+     "Category"
+    ],
+    "rows": [
+     [
+      "Profit and Loss",
+      "Business Overview"
+     ],
+     [
+      "Balance Sheet",
+      "Business Overview"
+     ]
+    ],
+    "fields": [],
+    "toggles": [],
+    "click": "Profit and Loss",
+    "tip": "Open standard Profit and Loss report"
+   }
+  },
+  {
+   "beat": "STEP 1",
+   "say": "Zoho Books me Reports section me jaakar Profit and Loss report open karo.",
+   "tts": "Zoho Books में Reports section में जाकर Profit and Loss report open करो।",
+   "card": "Reports > Profit and Loss",
+   "screen": {
+    "path": [
+     "Reports",
+     "Business Overview"
+    ],
+    "view": "list",
+    "heading": "Business Overview Reports",
+    "columns": [
+     "Report Name",
+     "Description"
+    ],
+    "rows": [
+     [
+      "Profit and Loss",
+      "Overview of income and expenses"
+     ],
+     [
+      "Cash Flow Statement",
+      "Cash movement summary"
+     ]
+    ],
+    "fields": [],
+    "toggles": [],
+    "click": "Profit and Loss",
+    "tip": "Select Profit and Loss report"
+   }
+  },
+  {
+   "beat": "STEP 2",
+   "say": "Top par Customize Report par click karo, Date Range 'This Fiscal Year' aur Compare With me Previous Months choose karo.",
+   "tts": "Top पर Customize Report पर click करो, Date Range 'This Fiscal Year' और Compare With में Previous Months choose करो।",
+   "card": "Customize: This Fiscal Year + Compare Months",
+   "screen": {
+    "path": [
+     "Reports",
+     "Profit and Loss"
+    ],
+    "view": "form",
+    "heading": "Customize Report",
+    "columns": [],
+    "rows": [],
+    "fields": [
+     [
+      "Date Range",
+      "This Fiscal Year"
+     ],
+     [
+      "Compare With",
+      "Previous Months (11)"
+     ]
+    ],
+    "toggles": [],
+    "click": "Run Report",
+    "tip": "Set comparison and run report"
+   }
+  },
+  {
+   "beat": "STEP 3",
+   "say": "Ab Top right me Save as Custom Report par click karke name enter karo aur Save kar do.",
+   "tts": "अब Top right में Save as Custom Report पर click करके name enter करो और Save कर दो।",
+   "card": "Save as Custom Report",
+   "screen": {
+    "path": [
+     "Reports",
+     "Profit and Loss"
+    ],
+    "view": "form",
+    "heading": "Save as Custom Report",
+    "columns": [],
+    "rows": [],
+    "fields": [
+     [
+      "Custom Report Name",
+      "Monthly YTD P&L"
+     ]
+    ],
+    "toggles": [],
+    "click": "Save",
+    "tip": "Save report for one-click access"
+   }
+  },
+  {
+   "beat": "RESULT",
+   "say": "Ab har mahine bina kisi manual filter ke ek click me poore saal ka monthly P&L ready milega!",
+   "tts": "अब हर महीने बिना किसी manual filter के एक click में पूरे साल का monthly P&L ready मिलेगा!",
+   "card": "1-Click Monthly YTD P&L Ready!",
+   "screen": null
+  },
+  {
+   "beat": "CTA",
+   "say": "Aise hi smart Zoho Books hacks ke liye GSX Automation ko follow karo!",
+   "tts": "ऐसे ही smart Zoho Books hacks के लिए GSX Automation को follow करो!",
+   "card": "Follow GSX Automation for Zoho Tips",
+   "screen": null
+  }
+ ],
+ "words": [
+  [
+   0.227732,
+   0.4709763248587571,
+   "Zoho"
+  ],
+  [
+   0.4709773248587571,
+   0.7628707146892657,
+   "Books"
+  ],
+  [
+   0.7628717146892656,
+   0.9088179096045199,
+   "me"
+  ],
+  [
+   0.90881890960452,
+   1.1034141694915258,
+   "har"
+  ],
+  [
+   1.1034151694915257,
+   1.443957624293786,
+   "mahine"
+  ],
+  [
+   1.4439586242937859,
+   1.6385538841807914,
+   "P&L"
+  ],
+  [
+   1.6385548841807913,
+   1.9790973389830517,
+   "filter"
+  ],
+  [
+   1.9790983389830517,
+   2.3196407937853114,
+   "lagana"
+  ],
+  [
+   2.3196417937853115,
+   2.5628861186440686,
+   "band"
+  ],
+  [
+   2.5628871186440687,
+   2.854780508474577,
+   "karo!"
+  ],
+  [
+   2.854781508474577,
+   3.303976768361583,
+   "YTD"
+  ],
+  [
+   3.303977768361583,
+   3.644520223163843,
+   "Profit"
+  ],
+  [
+   3.644521223163843,
+   3.839116483050849,
+   "and"
+  ],
+  [
+   3.839117483050849,
+   4.082361807909606,
+   "Loss"
+  ],
+  [
+   4.082362807909606,
+   4.422905262711867,
+   "report"
+  ],
+  [
+   4.422906262711866,
+   4.56885245762712,
+   "me"
+  ],
+  [
+   4.56885345762712,
+   4.958044977401132,
+   "monthly"
+  ],
+  [
+   4.958045977401132,
+   5.493184692090397,
+   "comparison"
+  ],
+  [
+   5.493185692090397,
+   5.639131887005652,
+   "ke"
+  ],
+  [
+   5.639132887005652,
+   5.882377211864409,
+   "liye"
+  ],
+  [
+   5.882378211864409,
+   6.076973471751415,
+   "har"
+  ],
+  [
+   6.076974471751415,
+   6.320218796610171,
+   "baar"
+  ],
+  [
+   6.320219796610171,
+   6.61211318644068,
+   "dates"
+  ],
+  [
+   6.61211418644068,
+   6.806709446327686,
+   "aur"
+  ],
+  [
+   6.806710446327686,
+   7.147252901129946,
+   "months"
+  ],
+  [
+   7.147253901129946,
+   7.439147290960454,
+   "reset"
+  ],
+  [
+   7.439148290960453,
+   7.7310416807909625,
+   "karne"
+  ],
+  [
+   7.731042680790964,
+   8.022936070621471,
+   "padte"
+  ],
+  [
+   8.022937070621472,
+   8.31483046045198,
+   "hain."
+  ],
+  [
+   8.314831460451979,
+   8.558075785310738,
+   "Iska"
+  ],
+  [
+   8.558076785310737,
+   9.533296435028252,
+   "permanent"
+  ],
+  [
+   9.53329743502825,
+   9.971138019774015,
+   "solution"
+  ],
+  [
+   9.971139019774014,
+   10.214383344632774,
+   "hai!"
+  ],
+  [
+   10.214384344632773,
+   10.813626799435031,
+   "Report"
+  ],
+  [
+   10.81362779943503,
+   10.959573994350286,
+   "ko"
+  ],
+  [
+   10.959574994350286,
+   11.348766514124298,
+   "monthly"
+  ],
+  [
+   11.348767514124297,
+   11.883906228813563,
+   "comparison"
+  ],
+  [
+   11.883907228813563,
+   12.029853423728817,
+   "ke"
+  ],
+  [
+   12.029854423728816,
+   12.321747813559325,
+   "saath"
+  ],
+  [
+   12.321748813559324,
+   12.662291268361587,
+   "custom"
+  ],
+  [
+   12.662292268361586,
+   13.002834723163845,
+   "report"
+  ],
+  [
+   13.002835723163845,
+   13.1487819180791,
+   "ki"
+  ],
+  [
+   13.1487829180791,
+   13.440676307909607,
+   "tarah"
+  ],
+  [
+   13.440677307909606,
+   13.683921632768365,
+   "save"
+  ],
+  [
+   13.683922632768365,
+   13.87851789265537,
+   "kar"
+  ],
+  [
+   13.87851889265537,
+   14.44711415254238,
+   "lo."
+  ],
+  [
+   14.447115152542379,
+   14.690359477401136,
+   "Zoho"
+  ],
+  [
+   14.690360477401136,
+   14.982253867231645,
+   "Books"
+  ],
+  [
+   14.982254867231644,
+   15.128201062146898,
+   "me"
+  ],
+  [
+   15.128202062146897,
+   15.51739358192091,
+   "Reports"
+  ],
+  [
+   15.51739458192091,
+   15.906586101694922,
+   "section"
+  ],
+  [
+   15.906587101694921,
+   16.05253329661018,
+   "me"
+  ],
+  [
+   16.052534296610176,
+   16.393076751412437,
+   "jaakar"
+  ],
+  [
+   16.393077751412434,
+   16.733620206214695,
+   "Profit"
+  ],
+  [
+   16.733621206214693,
+   16.928216466101702,
+   "and"
+  ],
+  [
+   16.9282174661017,
+   17.171461790960457,
+   "Loss"
+  ],
+  [
+   17.171462790960458,
+   17.51200524576272,
+   "report"
+  ],
+  [
+   17.51200624576272,
+   18.036650570621475,
+   "open"
+  ],
+  [
+   18.036651570621476,
+   18.328544960451982,
+   "karo."
+  ],
+  [
+   18.328545960451983,
+   18.52314122033899,
+   "Top"
+  ],
+  [
+   18.52314222033899,
+   18.717737480225995,
+   "par"
+  ],
+  [
+   18.717738480225997,
+   19.20422812994351,
+   "Customize"
+  ],
+  [
+   19.20422912994351,
+   19.544771584745767,
+   "Report"
+  ],
+  [
+   19.54477258474577,
+   19.953967844632768,
+   "par"
+  ],
+  [
+   19.95396884463277,
+   20.245862234463278,
+   "click"
+  ],
+  [
+   20.24586323446328,
+   20.537756624293785,
+   "karo,"
+  ],
+  [
+   20.537757624293786,
+   20.781001949152543,
+   "Date"
+  ],
+  [
+   20.781002949152544,
+   21.07289633898305,
+   "Range"
+  ],
+  [
+   21.07289733898305,
+   21.364790728813556,
+   "'This"
+  ],
+  [
+   21.364791728813557,
+   21.70533418361582,
+   "Fiscal"
+  ],
+  [
+   21.70533518361582,
+   21.99722857344633,
+   "Year'"
+  ],
+  [
+   21.99722957344633,
+   22.191824833333335,
+   "aur"
+  ],
+  [
+   22.191825833333336,
+   22.581017353107345,
+   "Compare"
+  ],
+  [
+   22.581018353107346,
+   22.8242626779661,
+   "With"
+  ],
+  [
+   22.8242636779661,
+   22.97020987288136,
+   "me"
+  ],
+  [
+   22.97021087288136,
+   23.40805145762712,
+   "Previous"
+  ],
+  [
+   23.40805245762712,
+   24.145794912429377,
+   "Months"
+  ],
+  [
+   24.145795912429378,
+   24.48633836723164,
+   "choose"
+  ],
+  [
+   24.48633936723164,
+   24.778232757062145,
+   "karo."
+  ],
+  [
+   24.778233757062146,
+   24.9241799519774,
+   "Ab"
+  ],
+  [
+   24.9241809519774,
+   25.118776211864407,
+   "Top"
+  ],
+  [
+   25.11877721186441,
+   25.410670601694914,
+   "right"
+  ],
+  [
+   25.410671601694915,
+   25.55661779661017,
+   "me"
+  ],
+  [
+   25.55661879661017,
+   25.799863121468928,
+   "Save"
+  ],
+  [
+   25.79986412146893,
+   25.94581031638418,
+   "as"
+  ],
+  [
+   25.94581131638418,
+   26.28635377118644,
+   "Custom"
+  ],
+  [
+   26.286354771186442,
+   26.6268972259887,
+   "Report"
+  ],
+  [
+   26.6268982259887,
+   26.821493485875706,
+   "par"
+  ],
+  [
+   26.821494485875707,
+   27.113387875706216,
+   "click"
+  ],
+  [
+   27.113388875706217,
+   27.405282265536723,
+   "karke"
+  ],
+  [
+   27.405283265536724,
+   27.64852759039548,
+   "name"
+  ],
+  [
+   27.648528590395482,
+   27.940421980225988,
+   "enter"
+  ],
+  [
+   27.94042298022599,
+   28.534967305084745,
+   "karo"
+  ],
+  [
+   28.534968305084746,
+   28.72956356497175,
+   "aur"
+  ],
+  [
+   28.72956456497175,
+   28.972808889830507,
+   "Save"
+  ],
+  [
+   28.972809889830508,
+   29.167405149717514,
+   "kar"
+  ],
+  [
+   29.167406149717515,
+   29.362001409604517,
+   "do."
+  ],
+  [
+   29.362002409604518,
+   29.507948604519772,
+   "Ab"
+  ],
+  [
+   29.507949604519773,
+   29.70254486440678,
+   "har"
+  ],
+  [
+   29.70254586440678,
+   30.043088319209037,
+   "mahine"
+  ],
+  [
+   30.043089319209038,
+   30.286333644067795,
+   "bina"
+  ],
+  [
+   30.286334644067797,
+   30.529578968926554,
+   "kisi"
+  ],
+  [
+   30.529579968926555,
+   30.870122423728816,
+   "manual"
+  ],
+  [
+   30.870123423728817,
+   31.21066587853107,
+   "filter"
+  ],
+  [
+   31.21066687853107,
+   31.356613073446326,
+   "ke"
+  ],
+  [
+   31.356614073446327,
+   31.50256026836158,
+   "ek"
+  ],
+  [
+   31.502561268361582,
+   31.79445465819209,
+   "click"
+  ],
+  [
+   31.794455658192092,
+   31.940401853107346,
+   "me"
+  ],
+  [
+   31.940402853107347,
+   32.23229624293785,
+   "poore"
+  ],
+  [
+   32.232297242937854,
+   32.47554156779661,
+   "saal"
+  ],
+  [
+   32.47554256779661,
+   32.62148876271186,
+   "ka"
+  ],
+  [
+   32.62148976271187,
+   33.010681282485876,
+   "monthly"
+  ],
+  [
+   33.010682282485874,
+   33.20527754237288,
+   "P&L"
+  ],
+  [
+   33.20527854237288,
+   33.497171932203386,
+   "ready"
+  ],
+  [
+   33.49717293220339,
+   34.348364451977396,
+   "milega!"
+  ],
+  [
+   34.3483654519774,
+   34.59160977683615,
+   "Aise"
+  ],
+  [
+   34.591610776836156,
+   34.7375569717514,
+   "hi"
+  ],
+  [
+   34.73755797175141,
+   35.02945136158192,
+   "smart"
+  ],
+  [
+   35.02945236158192,
+   35.272696686440675,
+   "Zoho"
+  ],
+  [
+   35.27269768644068,
+   35.564591076271185,
+   "Books"
+  ],
+  [
+   35.56459207627118,
+   35.856485466101695,
+   "hacks"
+  ],
+  [
+   35.85648646610169,
+   36.00243266101695,
+   "ke"
+  ],
+  [
+   36.002433661016944,
+   36.24567798587571,
+   "liye"
+  ],
+  [
+   36.245678985875706,
+   36.44027424576271,
+   "GSX"
+  ],
+  [
+   36.440275245762706,
+   36.97541396045198,
+   "Automation"
+  ],
+  [
+   36.97541496045198,
+   37.12136115536723,
+   "ko"
+  ],
+  [
+   37.12136215536723,
+   37.46190461016949,
+   "follow"
+  ],
+  [
+   37.46190561016949,
+   37.753799,
+   "karo!"
+  ]
+ ],
+ "dur": 38.072585,
+ "pieces": [
+  {
+   "t0": 0.0,
+   "t1": 2.854781508474577,
+   "text": "Zoho Books me har mahine P&L filter lagana band karo!",
+   "words": [
+    [
+     0.227732,
+     0.4709763248587571,
+     "Zoho"
+    ],
+    [
+     0.4709773248587571,
+     0.7628707146892657,
+     "Books"
+    ],
+    [
+     0.7628717146892656,
+     0.9088179096045199,
+     "me"
+    ],
+    [
+     0.90881890960452,
+     1.1034141694915258,
+     "har"
+    ],
+    [
+     1.1034151694915257,
+     1.443957624293786,
+     "mahine"
+    ],
+    [
+     1.4439586242937859,
+     1.6385538841807914,
+     "P&L"
+    ],
+    [
+     1.6385548841807913,
+     1.9790973389830517,
+     "filter"
+    ],
+    [
+     1.9790983389830517,
+     2.3196407937853114,
+     "lagana"
+    ],
+    [
+     2.3196417937853115,
+     2.5628861186440686,
+     "band"
+    ],
+    [
+     2.5628871186440687,
+     2.854780508474577,
+     "karo!"
+    ]
+   ]
+  },
+  {
+   "t0": 2.854781508474577,
+   "t1": 8.314831460451979,
+   "text": "YTD Profit and Loss report me monthly comparison ke liye har baar dates aur months reset karne padte hain.",
+   "words": [
+    [
+     2.854781508474577,
+     3.303976768361583,
+     "YTD"
+    ],
+    [
+     3.303977768361583,
+     3.644520223163843,
+     "Profit"
+    ],
+    [
+     3.644521223163843,
+     3.839116483050849,
+     "and"
+    ],
+    [
+     3.839117483050849,
+     4.082361807909606,
+     "Loss"
+    ],
+    [
+     4.082362807909606,
+     4.422905262711867,
+     "report"
+    ],
+    [
+     4.422906262711866,
+     4.56885245762712,
+     "me"
+    ],
+    [
+     4.56885345762712,
+     4.958044977401132,
+     "monthly"
+    ],
+    [
+     4.958045977401132,
+     5.493184692090397,
+     "comparison"
+    ],
+    [
+     5.493185692090397,
+     5.639131887005652,
+     "ke"
+    ],
+    [
+     5.639132887005652,
+     5.882377211864409,
+     "liye"
+    ],
+    [
+     5.882378211864409,
+     6.076973471751415,
+     "har"
+    ],
+    [
+     6.076974471751415,
+     6.320218796610171,
+     "baar"
+    ],
+    [
+     6.320219796610171,
+     6.61211318644068,
+     "dates"
+    ],
+    [
+     6.61211418644068,
+     6.806709446327686,
+     "aur"
+    ],
+    [
+     6.806710446327686,
+     7.147252901129946,
+     "months"
+    ],
+    [
+     7.147253901129946,
+     7.439147290960454,
+     "reset"
+    ],
+    [
+     7.439148290960453,
+     7.7310416807909625,
+     "karne"
+    ],
+    [
+     7.731042680790964,
+     8.022936070621471,
+     "padte"
+    ],
+    [
+     8.022937070621472,
+     8.31483046045198,
+     "hain."
+    ]
+   ]
+  },
+  {
+   "t0": 29.362002409604518,
+   "t1": 34.3483654519774,
+   "text": "Ab har mahine bina kisi manual filter ke ek click me poore saal ka monthly P&L ready milega!",
+   "words": [
+    [
+     29.362002409604518,
+     29.507948604519772,
+     "Ab"
+    ],
+    [
+     29.507949604519773,
+     29.70254486440678,
+     "har"
+    ],
+    [
+     29.70254586440678,
+     30.043088319209037,
+     "mahine"
+    ],
+    [
+     30.043089319209038,
+     30.286333644067795,
+     "bina"
+    ],
+    [
+     30.286334644067797,
+     30.529578968926554,
+     "kisi"
+    ],
+    [
+     30.529579968926555,
+     30.870122423728816,
+     "manual"
+    ],
+    [
+     30.870123423728817,
+     31.21066587853107,
+     "filter"
+    ],
+    [
+     31.21066687853107,
+     31.356613073446326,
+     "ke"
+    ],
+    [
+     31.356614073446327,
+     31.50256026836158,
+     "ek"
+    ],
+    [
+     31.502561268361582,
+     31.79445465819209,
+     "click"
+    ],
+    [
+     31.794455658192092,
+     31.940401853107346,
+     "me"
+    ],
+    [
+     31.940402853107347,
+     32.23229624293785,
+     "poore"
+    ],
+    [
+     32.232297242937854,
+     32.47554156779661,
+     "saal"
+    ],
+    [
+     32.47554256779661,
+     32.62148876271186,
+     "ka"
+    ],
+    [
+     32.62148976271187,
+     33.010681282485876,
+     "monthly"
+    ],
+    [
+     33.010682282485874,
+     33.20527754237288,
+     "P&L"
+    ],
+    [
+     33.20527854237288,
+     33.497171932203386,
+     "ready"
+    ],
+    [
+     33.49717293220339,
+     34.348364451977396,
+     "milega!"
+    ]
+   ]
+  },
+  {
+   "t0": 34.3483654519774,
+   "t1": 38.072585,
+   "text": "Aise hi smart Zoho Books hacks ke liye GSX Automation ko follow karo!",
+   "words": [
+    [
+     34.3483654519774,
+     34.59160977683615,
+     "Aise"
+    ],
+    [
+     34.591610776836156,
+     34.7375569717514,
+     "hi"
+    ],
+    [
+     34.73755797175141,
+     35.02945136158192,
+     "smart"
+    ],
+    [
+     35.02945236158192,
+     35.272696686440675,
+     "Zoho"
+    ],
+    [
+     35.27269768644068,
+     35.564591076271185,
+     "Books"
+    ],
+    [
+     35.56459207627118,
+     35.856485466101695,
+     "hacks"
+    ],
+    [
+     35.85648646610169,
+     36.00243266101695,
+     "ke"
+    ],
+    [
+     36.002433661016944,
+     36.24567798587571,
+     "liye"
+    ],
+    [
+     36.245678985875706,
+     36.44027424576271,
+     "GSX"
+    ],
+    [
+     36.440275245762706,
+     36.97541396045198,
+     "Automation"
+    ],
+    [
+     36.97541496045198,
+     37.12136115536723,
+     "ko"
+    ],
+    [
+     37.12136215536723,
+     37.46190461016949,
+     "follow"
+    ],
+    [
+     37.46190561016949,
+     37.753799,
+     "karo!"
+    ]
+   ]
+  }
+ ],
+ "clips": [
+  {
+   "piece": 0,
+   "text": "Zoho Books me har mahine P&L filter lagana band karo!"
+  },
+  {
+   "piece": 1,
+   "text": "YTD Profit and Loss report me monthly comparison ke liye har baar dates aur months reset karne padte hain."
+  }
+ ]
+}
