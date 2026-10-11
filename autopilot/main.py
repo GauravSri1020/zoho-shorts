@@ -70,7 +70,7 @@ def make_video(sc, work, st):
     lines = _lines(sc)
     wav, _ = voice.synthesize(lines, work / "voice", MAX_VIDEO_SECONDS)
     script_text = " ".join(voice._clean(l.get("say") or l.get("tts")) for l in lines)
-    words = editor.align_to_script(editor.transcribe(wav, work), script_text)
+    words = editor.align_to_script(editor.transcribe(wav, work), script_text, wav)
     dur = voice.duration(wav)
     av, engine, photo = avatar.make(wav, dur, work / "avatar", last_photo=st.get("last_photo"), lines=lines,
                                     words=words)
