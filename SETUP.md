@@ -74,6 +74,15 @@ Roz kya hota hai (GitHub pe, free):
 
 Tere 3 photos har video mein baari-baari se lagte hain: brown jacket, office standing aur office desk. Repo mein ye sirf encrypted rehte hain. Naye ya HD photos lagane hon to project mein bhej de, main naya bundle bana dunga.
 
+## Step 2b: Veo avatar (tera bolta hua part Gemini Veo se)
+
+- `channel.yaml` mein `avatar.engine: "veo"` hai. Har Short mein jahan tu camera pe hai (hook, problem, result, CTA), wo line Veo tere photo se video banata hai: tu camera mein dekh ke wahi line bolta hai.
+- Awaaz poori video mein wahi Gemini TTS wali rehti hai. Whisper Veo clip ke words sunta hai aur clip ko word-by-word TTS awaaz pe fit karta hai, taaki lips match karein.
+- Baaki sab (Zoho screens, captions, music, layout) bilkul pehle jaisa.
+- **Key:** Settings > Secrets and variables > Actions > New repository secret: naam `VEO_API_KEY`, value = Gemini API key jis project pe **billing ON** ho (https://aistudio.google.com/apikey). Veo free tier mein nahi chalta. Gemini app ka Pro plan API ke paise cover nahi karta.
+- Kharcha: ~25-30 sec Veo per Short. Veo 3.1 Fast ~$0.10/sec (~$2.5-3 per Short), Lite ~$0.05/sec. Sasta chahiye to Variables mein `VEO_MODELS` = `veo-3.1-lite-generate-preview` daal de.
+- Veo fail ho (key/quota/filter) to apne aap SadTalker, phir photo pe chala jaata hai.
+
 ## Step 3: Pehla test (upload ke bina)
 
 1. Actions > "GSX Automation Shorts" > **Run workflow** chala. Inputs: task `daily`, count `1`, upload `no`.
