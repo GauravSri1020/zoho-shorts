@@ -16,6 +16,7 @@ _F = CH.get("flow", {}) or {}
 VOICE = str(_F.get("voice", "Achird"))
 STYLE = str(_F.get("voice_style", "Say this like a friendly, energetic YouTube tech explainer, clear natural "
                                     "English with an Indian accent, brisk pace"))
+BACKUP_VOICE = str(_F.get("backup_voice", "en-IN-PrabhatNeural"))
 MODELS = [m for m in [os.getenv("TTS_MODEL", ""), *(_F.get("tts_models") or []),
                       "gemini-2.5-flash-preview-tts", "gemini-2.5-pro-preview-tts"] if m]
 
@@ -26,6 +27,17 @@ def _pcm_to_wav(pcm: bytes, path: Path, rate=24000):
         w.setsampwidth(2)
         w.setframerate(rate)
         w.writeframes(pcm)
+
+
+def _edge(text, out_wav: Path):
+    """Free Microsoft neural voice (no key) - used only when Gemini TTS is out of quota."""
+    import asyncio
+    import edge_tts
+    mp3 = out_wav.with_suffix(".edge.mp3")
+    asyncio.run(edge_tts.Communicate(text, BACKUP_VOICE, rate="+8%").save(str(mp3)))
+    subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-i", str(mp3), "-ac", "1", "-ar", "24000", str(out_wav)],
+                   check=True)
+    mp3.unlink(missing_ok=True)
 
 
 def speak(text, out_wav: Path, rate=44100):
@@ -62,7 +74,8 @@ def speak(text, out_wav: Path, rate=44100):
             print(f"[tts] {model} attempt {attempt + 1} failed: {str(e)[:160]}")
             time.sleep(0 if "404" in str(e) else min(6 * (attempt + 1), 30))
     else:
-        raise RuntimeError(f"TTS failed: {last}")
+        print(f"[tts] Gemini TTS unavailable ({str(last)[:120]}) -> edge-tts backup voice {BACKUP_VOICE}")
+        _edge(text, raw)
     # trim silence at both ends, resample
     af = ("silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.03,areverse,"
           "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.08,areverse")
