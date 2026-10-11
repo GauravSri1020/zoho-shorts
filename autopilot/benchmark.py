@@ -4,7 +4,7 @@
              most-viewed Zoho Books Shorts found on YouTube) and writes a scoring rubric -> state/benchmark.json
 2. gate():   Gemini watches OUR finished Short next to that rubric and scores it 0-100 per criterion.
              Upload is allowed ONLY if
-               - the avatar really lip-syncs (engine == veo or sadtalker),
+               - the avatar really lip-syncs (engine == flow: Google Flow clips with their own voice),
                - the technical checks passed,
                - overall score >= benchmark.min_score (default 75) and no criterion is a "blocker".
              If Gemini can't watch it (quota / outage) the answer is NO - never upload unchecked.
@@ -30,7 +30,7 @@ CRITERIA = {
     "zoho_screens": "the Zoho Books steps are SHOWN on screen, the exact button/field is highlighted, readable",
     "pacing": "visual change every 2-4 s, no dead time, length fits the content (25-60 s)",
     "captions": "readable, in sync, match the speech exactly, not covering important parts",
-    "audio": "clear voice, natural Hinglish, music present but quiet under the voice",
+    "audio": "clear voice, natural English, music present but quiet under the voice",
     "value": "a Zoho Books user learns a real, correct fix they can follow",
     "polish": "looks as professional as the reference Shorts (layout, fonts, colours, no glitches)",
 }
@@ -101,7 +101,7 @@ def learn(yt=None, force=False):
         vid = _yt_id(ref.get("url"))
         if not vid:
             continue
-        prompt = f"""Watch this YouTube Short. Our channel "{CHANNEL_NAME}" makes Hinglish Zoho Books problem->fix Shorts
+        prompt = f"""Watch this YouTube Short. Our channel "{CHANNEL_NAME}" makes English Zoho problem->fix Shorts
 with an AI avatar of the creator + Zoho Books screens. Owner's note about this reference: "{ref.get('note', '')}".
 Describe precisely what makes it work. Return JSON:
 {{"length_s": 0, "hook": "what happens in the first 2 s", "layout": "screen layout (title bar, panels, split screen...)",
@@ -143,7 +143,7 @@ def gate(mp4, sc, engine, tech_problems):
     """Returns the QA report dict; report["approved"] decides the upload."""
     report = {"engine": engine, "min_score": MIN_SCORE, "tech_problems": list(tech_problems or []),
               "scores": {}, "overall": 0, "issues": [], "approved": False, "fatal": False}
-    if engine not in ("kaggle", "veo", "sadtalker"):
+    if engine not in ("flow", "kaggle", "veo", "sadtalker"):
         report["issues"].append("Avatar is not lip-synced (Veo / SadTalker did not run) - a still photo is not allowed.")
         report["fatal"] = True
     if tech_problems:
@@ -152,7 +152,7 @@ def gate(mp4, sc, engine, tech_problems):
     refs = [{k: r.get(k) for k in ("url", "note", "hook", "layout", "visuals", "cuts_per_10s", "captions",
                                     "presenter", "music", "what_to_copy")} for r in bm.get("references", [])]
     from google.genai import types
-    prompt = f"""You are the strict final reviewer for the YouTube channel "{CHANNEL_NAME}" (Hinglish Zoho Books tips).
+    prompt = f"""You are the strict final reviewer for the YouTube channel "{CHANNEL_NAME}" (English Zoho tips).
 The attached video is OUR new Short. It must be as good as the best Shorts in the niche, otherwise it is NOT uploaded.
 Expected title: "{sc.get('title', '')}". Expected top title text: "{sc.get('hook_text', '')}".
 Script (what should be said and shown): {json.dumps([{k: l.get(k) for k in ('beat', 'say', 'card')} for l in sc.get('lines', [])], ensure_ascii=False)}
