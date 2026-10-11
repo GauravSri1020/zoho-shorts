@@ -1,0 +1,432 @@
+{
+ "id": "20261011-1326-1",
+ "status": "waiting_for_clips",
+ "upload": false,
+ "created": "2026-10-11T13:27:49",
+ "title": "Stop Paying Extra Zoho Books Seats for Bill Approvals #Shorts",
+ "description": "Stop paying full Zoho Books user license costs for staff who only need to approve vendor bills. Learn how to configure a custom field, workflow rule, and Deluge script to handle one-click bill approvals via email and webhooks.\n\n1. Create a custom field named 'Approval Status' in Zoho Books Bill preferences.\n2. Set up a Workflow Rule on Bill creation that triggers a Deluge script sending an email with action links.\n3. Use a Zoho Flow webhook link to receive the approval response and update the bill status via Zoho Books API.\n\nCode (deluge) - Settings › Automation › Workflow Rules › Actions › Custom Functions:\nbillId = bill.get(\"bill_id\");\nbillNumber = bill.get(\"bill_number\");\ntotalAmount = bill.get(\"total\");\napproverEmail = \"manager@example.com\";\nwebhookBaseUrl = \"https://flow.zoho.com/YOUR_ORG_ID/flow/api/webhook\";\napproveUrl = webhookBaseUrl + \"?bill_id=\" + billId + \"&action=Approved\";\nrejectUrl = webhookBaseUrl + \"?bill_id=\" + billId + \"&action=Rejected\";\nemailContent = \"‹p›New Bill Pending Approval: ‹b›\" + billNumber + \"‹/b›‹/p›\";\nemailContent = emailContent + \"‹p›Total: \" + totalAmount + \"‹/p›\";\nemailContent = emailContent + \"‹p›‹a href='\" + approveUrl + \"'›Click to Approve‹/a› | ‹a href='\" + rejectUrl + \"'›Click to Reject‹/a›‹/p›\";\nsendmail\n[\n\tfrom :zoho.adminuserid\n\tto :approverEmail\n\tsubject :\"Approval Required: Bill #\" + billNumber\n\tmessage :emailContent\n];\n\nDaily Zoho fixes - follow @GSXAutomation\n\nQuestion that inspired this: https://www.reddit.com/r/Zoho/comments/1wwe1n2/how_i_cut_a_property_management_firms_software/\n\nThis video uses an AI-generated presenter and voice.\nIndependent channel. Not affiliated with or endorsed by Zoho Corporation. Zoho is a trademark of Zoho Corporation.\n\n#Shorts #ZohoCRM #Zoho #BusinessAutomation",
+ "angle": {
+  "story_index": 25,
+  "product": "Zoho Books",
+  "problem": "Vendor bill approvals require purchasing expensive additional user licenses in Zoho Books just for approval workflows.",
+  "fix_type": "deluge",
+  "solution": "Automate bill approval notifications with actionable webhook links via Deluge, updating approval status without extra user seats.",
+  "steps": [
+   "Create a custom field named 'Approval Status' in Zoho Books Bill preferences.",
+   "Set up a Workflow Rule on Bill creation that triggers a Deluge script sending an email with action links.",
+   "Use a Zoho Flow webhook link to receive the approval response and update the bill status via Zoho Books API."
+  ],
+  "result": "Save software subscription costs by approving vendor bills without paying for extra Zoho Books licenses.",
+  "hook": "Paying full Zoho Books license fees just to approve bills?"
+ },
+ "story": {
+  "title": "How I cut a property management firm's software costs by changing one workflow",
+  "link": "https://www.reddit.com/r/Zoho/comments/1wwe1n2/how_i_cut_a_property_management_firms_software/",
+  "summary": "When I looked at how property management companies handle bills, I found a quiet money leak. It wasn't fraud or bad investments. It was software licensing. The standard workflow: Property Manager logs into Zoho Books to upload a bill. L1 Manager logs into Zoho Books to approve it. Finance Manager logs into Zoho Books to finalize it. The issue: Zoho Books charges a plan fee per organisation, which includes a fixed number of users (3 to 15 depending on the plan). Every user beyond that costs about ₹150–180 per month, plus GST. Say you have 20 properties. That's Let's say 30 (25(pr) + (1-3)(L1) + (1-2)(fin)) people who need a login just to upload or click \"Approve\". That pushes you into a higher plan and adds extra seats on top. The solution: I built a lightweight app that sits in front of Zoho: Property Manager uploads the bill in the app (no Zoho login needed). L1 Manager approves it in t",
+  "source": "newest submissions : Zoho",
+  "ts": 1791001513
+ },
+ "script": {
+  "title": "Stop Paying Extra Zoho Books Seats for Bill Approvals",
+  "hook_text": "Stop Buying Extra Zoho Seats",
+  "lines": [
+   {
+    "beat": "HOOK",
+    "say": "Paying full Zoho Books license fees just to approve bills?",
+    "tts": "Paying full Zoho Books license fees just to approve bills?",
+    "card": "Stop Paying Extra User Licenses",
+    "screen": null
+   },
+   {
+    "beat": "PROBLEM",
+    "say": "Adding department managers to your subscription just to click an approve button burns extra cash every single month.",
+    "tts": "Adding department managers to your subscription just to click an approve button burns extra cash every single month.",
+    "card": "Bill Approvers Waste Seat Licenses",
+    "screen": null
+   },
+   {
+    "beat": "FIX",
+    "say": "Automate secure one-click email approvals with Deluge and webhooks without purchasing extra user seats.",
+    "tts": "Automate secure one-click email approvals with Deluge and webhooks without purchasing extra user seats.",
+    "card": "Deluge External Bill Approvals",
+    "screen": {
+     "path": [
+      "Settings",
+      "Preferences",
+      "Bills"
+     ],
+     "view": "settings",
+     "heading": "Bill Preferences",
+     "columns": [],
+     "rows": [],
+     "fields": [],
+     "toggles": [
+      [
+       "Enable Approval Process",
+       false
+      ]
+     ],
+     "click": "Field Customization",
+     "tip": "Manage approvals via custom fields"
+    }
+   },
+   {
+    "beat": "STEP 1",
+    "say": "In Settings, open Preferences, select Bills, and create a custom field called Approval Status.",
+    "tts": "In Settings, open Preferences, select Bills, and create a custom field called Approval Status.",
+    "card": "Settings > Preferences > Bills",
+    "screen": {
+     "path": [
+      "Settings",
+      "Preferences",
+      "Bills"
+     ],
+     "view": "form",
+     "heading": "New Custom Field",
+     "columns": [],
+     "rows": [],
+     "fields": [
+      [
+       "Label Name",
+       "Approval Status"
+      ],
+      [
+       "Data Type",
+       "Dropdown"
+      ],
+      [
+       "Values",
+       "Pending, Approved, Rejected"
+      ]
+     ],
+     "toggles": [],
+     "click": "Save",
+     "tip": "Add custom approval status field"
+    }
+   },
+   {
+    "beat": "STEP 2",
+    "say": "Under Automation, open Workflow Rules, and trigger a custom function when a new bill is created.",
+    "tts": "Under Automation, open Workflow Rules, and trigger a custom function when a new bill is created.",
+    "card": "Automation > Workflow Rules",
+    "screen": {
+     "path": [
+      "Settings",
+      "Automation",
+      "Workflow Rules"
+     ],
+     "view": "form",
+     "heading": "New Workflow Rule",
+     "columns": [],
+     "rows": [],
+     "fields": [
+      [
+       "Module",
+       "Bills"
+      ],
+      [
+       "Rule Name",
+       "Send Bill Approval Link"
+      ],
+      [
+       "Type",
+       "Custom Function"
+      ]
+     ],
+     "toggles": [],
+     "click": "Save and Next",
+     "tip": "Trigger function on bill creation"
+    }
+   },
+   {
+    "beat": "STEP 3",
+    "say": "In your script, generate one-click approval links that ping a webhook to update the bill via API.",
+    "tts": "In your script, generate one-click approval links that ping a webhook to update the bill via API.",
+    "card": "Send Webhook Approval Links",
+    "screen": {
+     "path": [
+      "Settings",
+      "Automation",
+      "Custom Functions"
+     ],
+     "view": "form",
+     "heading": "Configure Custom Function",
+     "columns": [],
+     "rows": [],
+     "fields": [
+      [
+       "Function Name",
+       "sendBillApprovalEmail"
+      ],
+      [
+       "Module",
+       "Bills"
+      ]
+     ],
+     "toggles": [],
+     "click": "Save",
+     "tip": "Send email with webhook links"
+    }
+   },
+   {
+    "beat": "RESULT",
+    "say": "Managers approve bills straight from email, saving your business money on monthly software licensing.",
+    "tts": "Managers approve bills straight from email, saving your business money on monthly software licensing.",
+    "card": "Zero Extra Seats Needed",
+    "screen": null
+   },
+   {
+    "beat": "CTA",
+    "say": "Follow the channel for more quick Zoho fixes.",
+    "tts": "Follow the channel for more quick Zoho fixes.",
+    "card": "Follow for More",
+    "screen": null
+   }
+  ],
+  "code": {
+   "language": "deluge",
+   "filename": "sendBillApprovalEmail.dg",
+   "content": "billId = bill.get(\"bill_id\");\nbillNumber = bill.get(\"bill_number\");\ntotalAmount = bill.get(\"total\");\napproverEmail = \"manager@example.com\";\nwebhookBaseUrl = \"https://flow.zoho.com/YOUR_ORG_ID/flow/api/webhook\";\napproveUrl = webhookBaseUrl + \"?bill_id=\" + billId + \"&action=Approved\";\nrejectUrl = webhookBaseUrl + \"?bill_id=\" + billId + \"&action=Rejected\";\nemailContent = \"<p>New Bill Pending Approval: <b>\" + billNumber + \"</b></p>\";\nemailContent = emailContent + \"<p>Total: \" + totalAmount + \"</p>\";\nemailContent = emailContent + \"<p><a href='\" + approveUrl + \"'>Click to Approve</a> | <a href='\" + rejectUrl + \"'>Click to Reject</a></p>\";\nsendmail\n[\n\tfrom :zoho.adminuserid\n\tto :approverEmail\n\tsubject :\"Approval Required: Bill #\" + billNumber\n\tmessage :emailContent\n];",
+   "where_to_paste": "Settings > Automation > Workflow Rules > Actions > Custom Functions"
+  },
+  "test_before_recording": [
+   "Verify that the 'Approval Status' dropdown custom field exists under Settings > Preferences > Bills.",
+   "Verify the workflow rule triggers correctly upon bill creation.",
+   "Ensure test email delivers with clickable links."
+  ],
+  "description": "Stop paying full Zoho Books user license costs for staff who only need to approve vendor bills. Learn how to configure a custom field, workflow rule, and Deluge script to handle one-click bill approvals via email and webhooks.",
+  "tags": [
+   "Zoho Books",
+   "Deluge",
+   "Zoho Automation",
+   "Bill Approval",
+   "Zoho Tutorial",
+   "Save Software Costs",
+   "Zoho Flow",
+   "Workflow Rules",
+   "Zoho Tips",
+   "GSX Automation"
+  ]
+ },
+ "lines": [
+  {
+   "beat": "HOOK",
+   "say": "Paying full Zoho Books license fees just to approve bills?",
+   "tts": "Paying full Zoho Books license fees just to approve bills?",
+   "card": "Stop Paying Extra User Licenses",
+   "screen": null
+  },
+  {
+   "beat": "PROBLEM",
+   "say": "Adding department managers to your subscription just to click an approve button burns extra cash every single month.",
+   "tts": "Adding department managers to your subscription just to click an approve button burns extra cash every single month.",
+   "card": "Bill Approvers Waste Seat Licenses",
+   "screen": null
+  },
+  {
+   "beat": "FIX",
+   "say": "Automate secure one-click email approvals with Deluge and webhooks without purchasing extra user seats.",
+   "tts": "Automate secure one-click email approvals with Deluge and webhooks without purchasing extra user seats.",
+   "card": "Deluge External Bill Approvals",
+   "screen": {
+    "path": [
+     "Settings",
+     "Preferences",
+     "Bills"
+    ],
+    "view": "settings",
+    "heading": "Bill Preferences",
+    "columns": [],
+    "rows": [],
+    "fields": [],
+    "toggles": [
+     [
+      "Enable Approval Process",
+      false
+     ]
+    ],
+    "click": "Field Customization",
+    "tip": "Manage approvals via custom fields"
+   }
+  },
+  {
+   "beat": "STEP 1",
+   "say": "In Settings, open Preferences, select Bills, and create a custom field called Approval Status.",
+   "tts": "In Settings, open Preferences, select Bills, and create a custom field called Approval Status.",
+   "card": "Settings > Preferences > Bills",
+   "screen": {
+    "path": [
+     "Settings",
+     "Preferences",
+     "Bills"
+    ],
+    "view": "form",
+    "heading": "New Custom Field",
+    "columns": [],
+    "rows": [],
+    "fields": [
+     [
+      "Label Name",
+      "Approval Status"
+     ],
+     [
+      "Data Type",
+      "Dropdown"
+     ],
+     [
+      "Values",
+      "Pending, Approved, Rejected"
+     ]
+    ],
+    "toggles": [],
+    "click": "Save",
+    "tip": "Add custom approval status field"
+   }
+  },
+  {
+   "beat": "STEP 2",
+   "say": "Under Automation, open Workflow Rules, and trigger a custom function when a new bill is created.",
+   "tts": "Under Automation, open Workflow Rules, and trigger a custom function when a new bill is created.",
+   "card": "Automation > Workflow Rules",
+   "screen": {
+    "path": [
+     "Settings",
+     "Automation",
+     "Workflow Rules"
+    ],
+    "view": "form",
+    "heading": "New Workflow Rule",
+    "columns": [],
+    "rows": [],
+    "fields": [
+     [
+      "Module",
+      "Bills"
+     ],
+     [
+      "Rule Name",
+      "Send Bill Approval Link"
+     ],
+     [
+      "Type",
+      "Custom Function"
+     ]
+    ],
+    "toggles": [],
+    "click": "Save and Next",
+    "tip": "Trigger function on bill creation"
+   }
+  },
+  {
+   "beat": "STEP 3",
+   "say": "In your script, generate one-click approval links that ping a webhook to update the bill via API.",
+   "tts": "In your script, generate one-click approval links that ping a webhook to update the bill via API.",
+   "card": "Send Webhook Approval Links",
+   "screen": {
+    "path": [
+     "Settings",
+     "Automation",
+     "Custom Functions"
+    ],
+    "view": "form",
+    "heading": "Configure Custom Function",
+    "columns": [],
+    "rows": [],
+    "fields": [
+     [
+      "Function Name",
+      "sendBillApprovalEmail"
+     ],
+     [
+      "Module",
+      "Bills"
+     ]
+    ],
+    "toggles": [],
+    "click": "Save",
+    "tip": "Send email with webhook links"
+   }
+  },
+  {
+   "beat": "RESULT",
+   "say": "Managers approve bills straight from email, saving your business money on monthly software licensing.",
+   "tts": "Managers approve bills straight from email, saving your business money on monthly software licensing.",
+   "card": "Zero Extra Seats Needed",
+   "screen": null
+  },
+  {
+   "beat": "CTA",
+   "say": "Follow the channel for more quick Zoho fixes.",
+   "tts": "Follow the channel for more quick Zoho fixes.",
+   "card": "Follow for More",
+   "screen": null
+  }
+ ],
+ "clips": [
+  {
+   "text": "Paying full Zoho Books license fees just to approve bills?",
+   "lines": [
+    0
+   ],
+   "beat": "HOOK",
+   "prompt": "The man (my avatar) looks straight into the camera and talks to the viewer like a friendly YouTube tech explainer; he leans in slightly with an energetic, curious expression. Vertical 9:16 medium close-up, static camera, face sharp and well lit, wearing a smart navy blue shirt, standing in a bright modern office with soft daylight. He says, in clear natural English with an Indian accent: \"Paying full Zoho Books license fees just to approve bills?\" His lips match every word. He starts speaking immediately and stops right after the last word. Audio: only his voice - no music, no sound effects. No subtitles, no captions, no text on screen."
+  },
+  {
+   "text": "Adding department managers to your subscription just to click an approve button burns extra cash every single month.",
+   "lines": [
+    1
+   ],
+   "beat": "PROBLEM",
+   "prompt": "The man (my avatar) looks straight into the camera and talks to the viewer like a friendly YouTube tech explainer; he frowns a little and gestures with one open hand, showing the frustration. Vertical 9:16 medium close-up, static camera, face sharp and well lit, wearing a smart navy blue shirt, standing in a bright modern office with soft daylight. He says, in clear natural English with an Indian accent: \"Adding department managers to your subscription just to click an approve button burns extra cash every single month.\" His lips match every word. He starts speaking immediately and stops right after the last word. Audio: only his voice - no music, no sound effects. No subtitles, no captions, no text on screen."
+  },
+  {
+   "text": "Automate secure one-click email approvals with Deluge and webhooks without purchasing extra user seats.",
+   "lines": [
+    2
+   ],
+   "beat": "FIX",
+   "prompt": "The man (my avatar) looks straight into the camera and talks to the viewer like a friendly YouTube tech explainer; he nods confidently and counts on his fingers. Vertical 9:16 medium close-up, static camera, face sharp and well lit, wearing a smart navy blue shirt, standing in a bright modern office with soft daylight. He says, in clear natural English with an Indian accent: \"Automate secure one-click email approvals with Deluge and webhooks without purchasing extra user seats.\" His lips match every word. He starts speaking immediately and stops right after the last word. Audio: only his voice - no music, no sound effects. No subtitles, no captions, no text on screen."
+  },
+  {
+   "text": "In Settings, open Preferences, select Bills, and create a custom field called Approval Status.",
+   "lines": [
+    3
+   ],
+   "beat": "STEP 1",
+   "prompt": "The man (my avatar) looks straight into the camera and talks to the viewer like a friendly YouTube tech explainer; he points to the side as if showing something on a screen next to him. Vertical 9:16 medium close-up, static camera, face sharp and well lit, wearing a smart navy blue shirt, standing in a bright modern office with soft daylight. He says, in clear natural English with an Indian accent: \"In Settings, open Preferences, select Bills, and create a custom field called Approval Status.\" His lips match every word. He starts speaking immediately and stops right after the last word. Audio: only his voice - no music, no sound effects. No subtitles, no captions, no text on screen."
+  },
+  {
+   "text": "Under Automation, open Workflow Rules, and trigger a custom function when a new bill is created.",
+   "lines": [
+    4
+   ],
+   "beat": "STEP 2",
+   "prompt": "The man (my avatar) looks straight into the camera and talks to the viewer like a friendly YouTube tech explainer; he points to the side as if showing something on a screen next to him. Vertical 9:16 medium close-up, static camera, face sharp and well lit, wearing a smart navy blue shirt, standing in a bright modern office with soft daylight. He says, in clear natural English with an Indian accent: \"Under Automation, open Workflow Rules, and trigger a custom function when a new bill is created.\" His lips match every word. He starts speaking immediately and stops right after the last word. Audio: only his voice - no music, no sound effects. No subtitles, no captions, no text on screen."
+  },
+  {
+   "text": "In your script, generate one-click approval links that ping a webhook to update the bill via API.",
+   "lines": [
+    5
+   ],
+   "beat": "STEP 3",
+   "prompt": "The man (my avatar) looks straight into the camera and talks to the viewer like a friendly YouTube tech explainer; he points to the side as if showing something on a screen next to him. Vertical 9:16 medium close-up, static camera, face sharp and well lit, wearing a smart navy blue shirt, standing in a bright modern office with soft daylight. He says, in clear natural English with an Indian accent: \"In your script, generate one-click approval links that ping a webhook to update the bill via API.\" His lips match every word. He starts speaking immediately and stops right after the last word. Audio: only his voice - no music, no sound effects. No subtitles, no captions, no text on screen."
+  },
+  {
+   "text": "Managers approve bills straight from email, saving your business money on monthly software licensing.",
+   "lines": [
+    6
+   ],
+   "beat": "RESULT",
+   "prompt": "The man (my avatar) looks straight into the camera and talks to the viewer like a friendly YouTube tech explainer; he smiles and opens both hands. Vertical 9:16 medium close-up, static camera, face sharp and well lit, wearing a smart navy blue shirt, standing in a bright modern office with soft daylight. He says, in clear natural English with an Indian accent: \"Managers approve bills straight from email, saving your business money on monthly software licensing.\" His lips match every word. He starts speaking immediately and stops right after the last word. Audio: only his voice - no music, no sound effects. No subtitles, no captions, no text on screen."
+  },
+  {
+   "text": "Follow the channel for more quick Zoho fixes.",
+   "lines": [
+    7
+   ],
+   "beat": "CTA",
+   "prompt": "The man (my avatar) looks straight into the camera and talks to the viewer like a friendly YouTube tech explainer; he smiles warmly and points at the camera. Vertical 9:16 medium close-up, static camera, face sharp and well lit, wearing a smart navy blue shirt, standing in a bright modern office with soft daylight. He says, in clear natural English with an Indian accent: \"Follow the channel for more quick Zoho fixes.\" His lips match every word. He starts speaking immediately and stops right after the last word. Audio: only his voice - no music, no sound effects. No subtitles, no captions, no text on screen."
+  }
+ ],
+ "issue": 2
+}

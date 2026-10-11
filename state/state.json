@@ -1,16 +1,18 @@
 {
- "next_id": 5,
+ "next_id": 6,
  "covered_links": [
   "https://www.reddit.com/r/Zoho/comments/1wzd94y/sales_order_or_invoice/",
   "https://www.reddit.com/r/Zoho/comments/1wwjbbr/accounting_of_travel_agent/",
   "https://www.reddit.com/r/Zoho/comments/1x20wuz/why_is_it_so_hard_to_get_a_fiscal_ytd_pl_report/",
-  "https://www.reddit.com/r/Zoho/comments/1x312vi/zoho_flow_automation_to_create_deals/"
+  "https://www.reddit.com/r/Zoho/comments/1x312vi/zoho_flow_automation_to_create_deals/",
+  "https://www.reddit.com/r/Zoho/comments/1wwe1n2/how_i_cut_a_property_management_firms_software/"
  ],
  "problems": [
   "Zoho Books me online paid sales orders direct closed invoice me convert nahi hote.",
   "Client ke behalf par flight ya hotel ka kharcha kiya par invoice me jodna bhool gaye.",
   "Zoho Books me har mahine fiscal YTD P&L report dekhne ke liye baar baar comparison filters manually set karne padte hain.",
-  "Sales reps waste hours manually reviewing and converting hundreds of incoming customer emails into deals."
+  "Sales reps waste hours manually reviewing and converting hundreds of incoming customer emails into deals.",
+  "Vendor bill approvals require purchasing expensive additional user licenses in Zoho Books just for approval workflows."
  ],
  "scripts": {
   "S0001": {
@@ -39,6 +41,13 @@
    "engine": "flow",
    "job": "20261011-1318-1",
    "created": "2026-10-11T13:20:15"
+  },
+  "S0005": {
+   "problem": "Vendor bill approvals require purchasing expensive additional user licenses in Zoho Books just for approval workflows.",
+   "title": "Stop Paying Extra Zoho Books Seats for Bill Approvals #Shorts",
+   "engine": "flow",
+   "job": "20261011-1326-1",
+   "created": "2026-10-11T13:27:49"
   }
  },
  "slots": [],
