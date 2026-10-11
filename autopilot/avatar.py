@@ -18,7 +18,7 @@ from .config import ASSETS_DIR, CH
 
 SADTALKER_DIR = Path(os.getenv("SADTALKER_DIR") or Path.home() / "sadtalker")
 _A = CH.get("avatar", {})
-ENGINE = os.getenv("AVATAR_ENGINE") or _A.get("engine", "sadtalker")   # sadtalker | photo
+ENGINE = os.getenv("AVATAR_ENGINE") or _A.get("engine", "sadtalker")   # veo | sadtalker | photo
 FPS = 30
 
 
@@ -88,10 +88,17 @@ def _photo_motion(img, dur, out):
     return out
 
 
-def make(audio, dur, workdir: Path, force_photo=False, last_photo=None):
-    """Returns (avatar video path, engine name, photo name)."""
+def make(audio, dur, workdir: Path, force_photo=False, last_photo=None, lines=None, words=None):
+    """Returns (avatar video path, engine name, photo name).
+    Order: Veo (Gemini API, your lines spoken on camera) -> SadTalker -> photo motion."""
     img, name = photo(workdir, last_photo)
-    if not force_photo and ENGINE == "sadtalker":
+    if not force_photo and ENGINE == "veo" and lines and words:
+        try:
+            from . import veo
+            return veo.make(img, lines, words, dur, workdir / "veo"), "veo", name
+        except Exception as e:
+            print(f"[avatar] Veo failed, trying SadTalker: {str(e)[:300]}")
+    if not force_photo and ENGINE in ("sadtalker", "veo"):
         if sadtalker_ready():
             try:
                 return _sadtalker(img, audio, workdir), "sadtalker", name
