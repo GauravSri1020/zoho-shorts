@@ -1,0 +1,1415 @@
+{
+ "id": "20261011-0537-1",
+ "status": "waiting_for_clips",
+ "upload": false,
+ "created": "2026-10-11T05:39:53",
+ "title": "Stop Missing Client Expenses in Zoho Books | Billable Expenses #Shorts",
+ "description": "Stop missing client expenses! Learn how to use Zoho Books' native Billable Expenses feature to track client costs, add a markup, and push them directly to invoices.\n\n1. Expense record karte time 'Billable' checkbox check karo aur Customer select karo.\n2. Itemize option me markup percentage ya fixed amount add karo.\n3. Uss customer ka naya Invoice banate waqt Zoho Books side panel me unbilled expense dikhayega, 'Add' par click karo.\n\nDaily Zoho fixes - follow @GSXAutomation\n\nQuestion that inspired this: https://www.reddit.com/r/Zoho/comments/1wwjbbr/accounting_of_travel_agent/\n\nIs video mein GSX Automation ka AI avatar aur AI voice hai. This video uses an AI-generated presenter and voice.\nIndependent channel. Not affiliated with or endorsed by Zoho Corporation. Zoho is a trademark of Zoho Corporation.\n\n#Shorts #ZohoCRM #Zoho #BusinessAutomation",
+ "angle": {
+  "story_index": 26,
+  "product": "Zoho Books",
+  "problem": "Client ke behalf par flight ya hotel ka kharcha kiya par invoice me jodna bhool gaye.",
+  "fix_type": "native",
+  "solution": "Expense banate waqt 'Billable' tick karo aur invoice me auto-fetch karke markup lagao.",
+  "steps": [
+   "Expense record karte time 'Billable' checkbox check karo aur Customer select karo.",
+   "Itemize option me markup percentage ya fixed amount add karo.",
+   "Uss customer ka naya Invoice banate waqt Zoho Books side panel me unbilled expense dikhayega, 'Add' par click karo."
+  ],
+  "result": "Har client expense automatically invoice me judega aur revenue leak hona band ho jayega.",
+  "hook": "Client ka kharcha apni jeb se bhar diya aur bill karna bhool gaye?"
+ },
+ "story": {
+  "title": "Accounting of Travel Agent",
+  "link": "https://www.reddit.com/r/Zoho/comments/1wwjbbr/accounting_of_travel_agent/",
+  "summary": "I am doing accounting of a Travel agent and there are expenses made on behalf of customer and then invoice is raised by adding a markup to it. As of now he was maintaining excel for raising invoice but revenue is missed due to non tracking of expenses. How can i do accounting in zoho books so that no revenue is missed submitted by /u/Remarkable-Rest-4451 [link] [comments]",
+  "source": "newest submissions : Zoho",
+  "ts": 1791020947
+ },
+ "script": {
+  "title": "Stop Missing Client Expenses in Zoho Books | Billable Expenses",
+  "hook_text": "Forgot to Bill Client Expenses?",
+  "lines": [
+   {
+    "beat": "HOOK",
+    "say": "Client ka kharcha apni jeb se bhara aur bill karna bhool gaye?",
+    "tts": "Client का खर्चा अपनी जेब से भरा और bill करना भूल गए?",
+    "card": "Forgot Billing Client Expenses?",
+    "screen": null
+   },
+   {
+    "beat": "PROBLEM",
+    "say": "Clients ke flight aur hotel expenses manual track karne se har mahine hazaron rupees ka revenue leak ho jata hai.",
+    "tts": "Clients के flight और hotel expenses manual track करने से हर महीने हज़ारों rupees का revenue leak हो जाता है।",
+    "card": "Manual Tracking = Revenue Leak",
+    "screen": null
+   },
+   {
+    "beat": "FIX",
+    "say": "Isko Zoho Books ke native Billable Expense feature se do minute me fix karo.",
+    "tts": "इसको Zoho Books के native Billable Expense feature से दो minute में fix करो।",
+    "card": "Use Billable Expenses in Zoho Books",
+    "screen": {
+     "path": [
+      "Purchases",
+      "Expenses"
+     ],
+     "view": "form",
+     "heading": "New Expense",
+     "fields": [
+      [
+       "Category Name",
+       "Travel Expenses"
+      ],
+      [
+       "Amount",
+       "12500"
+      ]
+     ],
+     "toggles": [
+      [
+       "Billable",
+       true
+      ]
+     ],
+     "click": "Billable",
+     "tip": "Enable billable expense tracking"
+    }
+   },
+   {
+    "beat": "STEP 1",
+    "say": "Purchases me jakar Expense record karte time Billable checkbox tick karo aur Customer select karo.",
+    "tts": "Purchases में जाकर Expense record करते time Billable checkbox tick करो और Customer select करो।",
+    "card": "Check Billable & Select Customer",
+    "screen": {
+     "path": [
+      "Purchases",
+      "Expenses"
+     ],
+     "view": "form",
+     "heading": "New Expense",
+     "fields": [
+      [
+       "Category Name",
+       "Travel Expenses"
+      ],
+      [
+       "Amount",
+       "12500"
+      ],
+      [
+       "Customer Name",
+       "Sharma Travels"
+      ]
+     ],
+     "toggles": [
+      [
+       "Billable",
+       true
+      ]
+     ],
+     "click": "Customer Name",
+     "tip": "Link expense to customer"
+    }
+   },
+   {
+    "beat": "STEP 2",
+    "say": "Phir wahi par apna Markup percentage ya fixed profit amount specify kar do.",
+    "tts": "फिर वहीं पर अपना Markup percentage या fixed profit amount specify कर दो।",
+    "card": "Add Markup % or Fixed Amount",
+    "screen": {
+     "path": [
+      "Purchases",
+      "Expenses"
+     ],
+     "view": "form",
+     "heading": "New Expense",
+     "fields": [
+      [
+       "Customer Name",
+       "Sharma Travels"
+      ],
+      [
+       "Markup Option",
+       "Percentage"
+      ],
+      [
+       "Markup Percentage",
+       "10%"
+      ]
+     ],
+     "toggles": [
+      [
+       "Billable",
+       true
+      ]
+     ],
+     "click": "Markup Percentage",
+     "tip": "Add markup to billable expense"
+    }
+   },
+   {
+    "beat": "STEP 3",
+    "say": "Ab customer ka naya Invoice banate waqt right side panel me unbilled expense dikhega, bas Add par click karo.",
+    "tts": "अब customer का नया Invoice बनाते वक़्त right side panel में unbilled expense दिखेगा, बस Add पर click करो।",
+    "card": "Click Add from Unbilled Expenses Drawer",
+    "screen": {
+     "path": [
+      "Sales",
+      "Invoices"
+     ],
+     "view": "form",
+     "heading": "New Invoice",
+     "fields": [
+      [
+       "Customer Name",
+       "Sharma Travels"
+      ],
+      [
+       "Unbilled Expenses Drawer",
+       "1 Expense Available"
+      ]
+     ],
+     "click": "Add",
+     "tip": "Add expense line directly to invoice"
+    }
+   },
+   {
+    "beat": "RESULT",
+    "say": "Har client expense direct invoice me add ho jayega aur aapka revenue leakage hamesha ke liye band ho jayega.",
+    "tts": "हर client expense direct invoice में add हो जाएगा और आपका revenue leakage हमेशा के लिए बंद हो जाएगा।",
+    "card": "Zero Revenue Leakage!",
+    "screen": null
+   },
+   {
+    "beat": "CTA",
+    "say": "Aise hi useful Zoho Books workflow automation tips ke liye GSX Automation ko abhi follow karo!",
+    "tts": "ऐसे ही useful Zoho Books workflow automation tips के लिए GSX Automation को अभी follow करो!",
+    "card": "Follow GSX Automation",
+    "screen": null
+   }
+  ],
+  "code": null,
+  "test_before_recording": [
+   "Ensure 'Billable Expenses' preference is enabled under Settings > Preferences > Expenses in Zoho Books.",
+   "Verify that ticking the Billable box displays Customer Name and Markup fields on the Expense form.",
+   "Create a billable expense for a test contact and check if the right side drawer prompts to add unbilled expenses when creating a new Invoice for that contact."
+  ],
+  "description": "Stop missing client expenses! Learn how to use Zoho Books' native Billable Expenses feature to track client costs, add a markup, and push them directly to invoices.",
+  "tags": [
+   "zohobooks",
+   "zoho",
+   "accounting",
+   "smallbusiness",
+   "automation",
+   "expenses",
+   "invoicing",
+   "fintech",
+   "gsxautomation"
+  ]
+ },
+ "lines": [
+  {
+   "beat": "HOOK",
+   "say": "Client ka kharcha apni jeb se bhara aur bill karna bhool gaye?",
+   "tts": "Client का खर्चा अपनी जेब से भरा और bill करना भूल गए?",
+   "card": "Forgot Billing Client Expenses?",
+   "screen": null
+  },
+  {
+   "beat": "PROBLEM",
+   "say": "Clients ke flight aur hotel expenses manual track karne se har mahine hazaron rupees ka revenue leak ho jata hai.",
+   "tts": "Clients के flight और hotel expenses manual track करने से हर महीने हज़ारों rupees का revenue leak हो जाता है।",
+   "card": "Manual Tracking = Revenue Leak",
+   "screen": null
+  },
+  {
+   "beat": "FIX",
+   "say": "Isko Zoho Books ke native Billable Expense feature se do minute me fix karo.",
+   "tts": "इसको Zoho Books के native Billable Expense feature से दो minute में fix करो।",
+   "card": "Use Billable Expenses in Zoho Books",
+   "screen": {
+    "path": [
+     "Purchases",
+     "Expenses"
+    ],
+    "view": "form",
+    "heading": "New Expense",
+    "fields": [
+     [
+      "Category Name",
+      "Travel Expenses"
+     ],
+     [
+      "Amount",
+      "12500"
+     ]
+    ],
+    "toggles": [
+     [
+      "Billable",
+      true
+     ]
+    ],
+    "click": "Billable",
+    "tip": "Enable billable expense tracking"
+   }
+  },
+  {
+   "beat": "STEP 1",
+   "say": "Purchases me jakar Expense record karte time Billable checkbox tick karo aur Customer select karo.",
+   "tts": "Purchases में जाकर Expense record करते time Billable checkbox tick करो और Customer select करो।",
+   "card": "Check Billable & Select Customer",
+   "screen": {
+    "path": [
+     "Purchases",
+     "Expenses"
+    ],
+    "view": "form",
+    "heading": "New Expense",
+    "fields": [
+     [
+      "Category Name",
+      "Travel Expenses"
+     ],
+     [
+      "Amount",
+      "12500"
+     ],
+     [
+      "Customer Name",
+      "Sharma Travels"
+     ]
+    ],
+    "toggles": [
+     [
+      "Billable",
+      true
+     ]
+    ],
+    "click": "Customer Name",
+    "tip": "Link expense to customer"
+   }
+  },
+  {
+   "beat": "STEP 2",
+   "say": "Phir wahi par apna Markup percentage ya fixed profit amount specify kar do.",
+   "tts": "फिर वहीं पर अपना Markup percentage या fixed profit amount specify कर दो।",
+   "card": "Add Markup % or Fixed Amount",
+   "screen": {
+    "path": [
+     "Purchases",
+     "Expenses"
+    ],
+    "view": "form",
+    "heading": "New Expense",
+    "fields": [
+     [
+      "Customer Name",
+      "Sharma Travels"
+     ],
+     [
+      "Markup Option",
+      "Percentage"
+     ],
+     [
+      "Markup Percentage",
+      "10%"
+     ]
+    ],
+    "toggles": [
+     [
+      "Billable",
+      true
+     ]
+    ],
+    "click": "Markup Percentage",
+    "tip": "Add markup to billable expense"
+   }
+  },
+  {
+   "beat": "STEP 3",
+   "say": "Ab customer ka naya Invoice banate waqt right side panel me unbilled expense dikhega, bas Add par click karo.",
+   "tts": "अब customer का नया Invoice बनाते वक़्त right side panel में unbilled expense दिखेगा, बस Add पर click करो।",
+   "card": "Click Add from Unbilled Expenses Drawer",
+   "screen": {
+    "path": [
+     "Sales",
+     "Invoices"
+    ],
+    "view": "form",
+    "heading": "New Invoice",
+    "fields": [
+     [
+      "Customer Name",
+      "Sharma Travels"
+     ],
+     [
+      "Unbilled Expenses Drawer",
+      "1 Expense Available"
+     ]
+    ],
+    "click": "Add",
+    "tip": "Add expense line directly to invoice"
+   }
+  },
+  {
+   "beat": "RESULT",
+   "say": "Har client expense direct invoice me add ho jayega aur aapka revenue leakage hamesha ke liye band ho jayega.",
+   "tts": "हर client expense direct invoice में add हो जाएगा और आपका revenue leakage हमेशा के लिए बंद हो जाएगा।",
+   "card": "Zero Revenue Leakage!",
+   "screen": null
+  },
+  {
+   "beat": "CTA",
+   "say": "Aise hi useful Zoho Books workflow automation tips ke liye GSX Automation ko abhi follow karo!",
+   "tts": "ऐसे ही useful Zoho Books workflow automation tips के लिए GSX Automation को अभी follow करो!",
+   "card": "Follow GSX Automation",
+   "screen": null
+  }
+ ],
+ "words": [
+  [
+   0.0,
+   0.1039674690181301,
+   "Client"
+  ],
+  [
+   0.10396747967479676,
+   0.15396747967479676,
+   "ka"
+  ],
+  [
+   0.13862330623306232,
+   0.25991868853032524,
+   "kharcha"
+  ],
+  [
+   0.2599186991869919,
+   0.32923034164685644,
+   "apni"
+  ],
+  [
+   0.3292303523035231,
+   0.3812140814842548,
+   "jeb"
+  ],
+  [
+   0.38121409214092145,
+   0.43121409214092143,
+   "se"
+  ],
+  [
+   0.41586991869918705,
+   0.67069913417187,
+   "bhara"
+  ],
+  [
+   0.6706991869918699,
+   0.9178942623780895,
+   "aur"
+  ],
+  [
+   0.9178943089430894,
+   1.220756050995976,
+   "bill"
+  ],
+  [
+   1.2207560975609757,
+   1.5993332867683334,
+   "karna"
+  ],
+  [
+   1.599333333333333,
+   1.9779105225406917,
+   "bhool"
+  ],
+  [
+   1.977910569105691,
+   2.2379512042221954,
+   "gaye?"
+  ],
+  [
+   2.2379512195121953,
+   2.4,
+   "Clients"
+  ],
+  [
+   2.4,
+   2.4499999999999997,
+   "ke"
+  ],
+  [
+   2.4,
+   2.5650731457117075,
+   "flight"
+  ],
+  [
+   2.5650731707317074,
+   2.960877959820488,
+   "aur"
+  ],
+  [
+   2.960878048780488,
+   12.455284358245528,
+   "hotel"
+  ],
+  [
+   12.45528455284553,
+   16.946666472066667,
+   "expenses"
+  ],
+  [
+   16.946666666666665,
+   17.61778861510618,
+   "manual"
+  ],
+  [
+   17.61778861788618,
+   24.22731687857073,
+   "track"
+  ],
+  [
+   24.22731707317073,
+   25.836357503957238,
+   "karne"
+  ],
+  [
+   25.83635772357724,
+   26.550568886071055,
+   "se"
+  ],
+  [
+   26.550569105691057,
+   27.504422602987642,
+   "har"
+  ],
+  [
+   27.504422764227645,
+   28.670601553736258,
+   "mahine"
+  ],
+  [
+   28.67060162601626,
+   30.001788603986178,
+   "hazaron"
+  ],
+  [
+   30.00178861788618,
+   30.13739836008374,
+   "rupees"
+  ],
+  [
+   30.13739837398374,
+   30.18739837398374,
+   "ka"
+  ],
+  [
+   30.181430894308942,
+   30.268447146826546,
+   "revenue"
+  ],
+  [
+   30.268447154471545,
+   30.318447154471546,
+   "leak"
+  ],
+  [
+   30.318170731707315,
+   30.368170731707316,
+   "ho"
+  ],
+  [
+   30.343032520325202,
+   30.393032520325203,
+   "jata"
+  ],
+  [
+   30.392756097560973,
+   30.442756097560974,
+   "hai."
+  ],
+  [
+   30.436686991869916,
+   30.486686991869917,
+   "Isko"
+  ],
+  [
+   30.47963008130081,
+   30.529630081300812,
+   "Zoho"
+  ],
+  [
+   30.522573170731707,
+   30.576252025917825,
+   "Books"
+  ],
+  [
+   30.576252032520326,
+   30.626252032520327,
+   "ke"
+  ],
+  [
+   30.597723577235772,
+   30.662138204779612,
+   "native"
+  ],
+  [
+   30.662138211382114,
+   30.748024383641404,
+   "Billable"
+  ],
+  [
+   30.748024390243902,
+   30.838172348827577,
+   "Expense"
+  ],
+  [
+   30.83817235772358,
+   30.939427633380422,
+   "feature"
+  ],
+  [
+   30.939427642276424,
+   30.989427642276425,
+   "se"
+  ],
+  [
+   30.96835772357724,
+   31.01835772357724,
+   "do"
+  ],
+  [
+   30.99728780487805,
+   31.08407803988449,
+   "minute"
+  ],
+  [
+   31.08407804878049,
+   31.13407804878049,
+   "me"
+  ],
+  [
+   31.126829268292685,
+   31.216331688969074,
+   "fix"
+  ],
+  [
+   31.216331707317075,
+   31.365502420676393,
+   "karo."
+  ],
+  [
+   31.36550243902439,
+   31.63400973774956,
+   "Purchases"
+  ],
+  [
+   31.634009756097562,
+   31.693678030432487,
+   "me"
+  ],
+  [
+   31.693678048780487,
+   31.797658528245368,
+   "jakar"
+  ],
+  [
+   31.797658536585367,
+   31.886991865285363,
+   "Expense"
+  ],
+  [
+   31.8869918699187,
+   31.9369918699187,
+   "record"
+  ],
+  [
+   31.93219512195122,
+   31.98219512195122,
+   "karte"
+  ],
+  [
+   31.969864498644988,
+   32.019864498644985,
+   "time"
+  ],
+  [
+   32.012,
+   32.10843359692271,
+   "Billable"
+  ],
+  [
+   32.10843360433604,
+   32.17648780070805,
+   "checkbox"
+  ],
+  [
+   32.17648780487805,
+   32.22648780487805,
+   "tick"
+  ],
+  [
+   32.20842276422764,
+   32.27170730734317,
+   "karo"
+  ],
+  [
+   32.27170731707317,
+   32.32170731707317,
+   "aur"
+  ],
+  [
+   32.31917073170732,
+   32.445739827668376,
+   "Customer"
+  ],
+  [
+   32.44573983739837,
+   32.540666656936665,
+   "select"
+  ],
+  [
+   32.54066666666667,
+   32.619772347993575,
+   "karo."
+  ],
+  [
+   32.619772357723576,
+   32.81206502953041,
+   "Phir"
+  ],
+  [
+   32.81206504065041,
+   32.88439023278244,
+   "wahi"
+  ],
+  [
+   32.88439024390244,
+   32.93863413522146,
+   "par"
+  ],
+  [
+   32.938634146341464,
+   33.01095933847349,
+   "apna"
+  ],
+  [
+   33.01095934959349,
+   33.11944714335154,
+   "Markup"
+  ],
+  [
+   33.119447154471544,
+   33.27164226728848,
+   "percentage"
+  ],
+  [
+   33.27164227642277,
+   33.321642276422764,
+   "ya"
+  ],
+  [
+   33.301347270615565,
+   33.37560974696328,
+   "fixed"
+  ],
+  [
+   33.37560975609756,
+   33.46472472954167,
+   "profit"
+  ],
+  [
+   33.46472473867596,
+   33.55383971212007,
+   "amount"
+  ],
+  [
+   33.553839721254356,
+   33.67037397261984,
+   "specify"
+  ],
+  [
+   33.67037398373984,
+   33.72461787505886,
+   "kar"
+  ],
+  [
+   33.72461788617886,
+   33.77886177749789,
+   "do."
+  ],
+  [
+   33.77886178861789,
+   33.828861788617886,
+   "Ab"
+  ],
+  [
+   33.815024390243906,
+   33.941821132095384,
+   "customer"
+  ],
+  [
+   33.94182113821138,
+   33.99182113821138,
+   "ka"
+  ],
+  [
+   33.96171056910569,
+   34.01171056910569,
+   "naya"
+  ],
+  [
+   34.00148943089431,
+   34.07110243290839,
+   "Invoice"
+  ],
+  [
+   34.07110243902439,
+   34.13077072559132,
+   "banate"
+  ],
+  [
+   34.130770731707315,
+   34.18077073170731,
+   "waqt"
+  ],
+  [
+   34.16777235772358,
+   34.217772357723575,
+   "right"
+  ],
+  [
+   34.2129756097561,
+   34.2629756097561,
+   "side"
+  ],
+  [
+   34.24913821138211,
+   34.29913821138211,
+   "panel"
+  ],
+  [
+   34.29434146341463,
+   34.34434146341463,
+   "me"
+  ],
+  [
+   34.31242276422764,
+   34.38474796191967,
+   "unbilled"
+  ],
+  [
+   34.384747967479676,
+   34.4480325147652,
+   "expense"
+  ],
+  [
+   34.44803252032521,
+   34.5373224830316,
+   "dikhega,"
+  ],
+  [
+   34.537322493224934,
+   34.58732249322493,
+   "bas"
+  ],
+  [
+   34.5870460704607,
+   34.6370460704607,
+   "Add"
+  ],
+  [
+   34.636769647696475,
+   34.68676964769647,
+   "par"
+  ],
+  [
+   34.68649322493225,
+   34.7693658434652,
+   "click"
+  ],
+  [
+   34.769365853658535,
+   34.85223847219149,
+   "karo."
+  ],
+  [
+   34.85223848238482,
+   34.90223848238482,
+   "Har"
+  ],
+  [
+   34.901962059620594,
+   34.97349592939935,
+   "client"
+  ],
+  [
+   34.973495934959345,
+   35.03678048224488,
+   "expense"
+  ],
+  [
+   35.036780487804876,
+   35.091024384683905,
+   "direct"
+  ],
+  [
+   35.0910243902439,
+   35.161463406294146,
+   "invoice"
+  ],
+  [
+   35.16146341463415,
+   35.211463414634146,
+   "me"
+  ],
+  [
+   35.188585365853655,
+   35.23858536585365,
+   "add"
+  ],
+  [
+   35.229268292682924,
+   35.27926829268292,
+   "ho"
+  ],
+  [
+   35.25639024390244,
+   35.32911652375198,
+   "jayega"
+  ],
+  [
+   35.32911653116531,
+   35.37911653116531,
+   "aur"
+  ],
+  [
+   35.36527913279133,
+   35.429105678894416,
+   "aapka"
+  ],
+  [
+   35.42910569105691,
+   35.567540638244004,
+   "revenue"
+  ],
+  [
+   35.56754065040651,
+   35.7059755975936,
+   "leakage"
+  ],
+  [
+   35.705975609756095,
+   35.84441055694319,
+   "hamesha"
+  ],
+  [
+   35.84441056910569,
+   35.89441056910569,
+   "ke"
+  ],
+  [
+   35.883963414634145,
+   35.96306909352856,
+   "liye"
+  ],
+  [
+   35.963069105691055,
+   36.04217478458546,
+   "band"
+  ],
+  [
+   36.042174796747965,
+   36.09217479674796,
+   "ho"
+  ],
+  [
+   36.08172764227642,
+   36.19249863618312,
+   "jayega."
+  ],
+  [
+   36.19249864498645,
+   36.24975608875764,
+   "Aise"
+  ],
+  [
+   36.249756097560976,
+   36.29975609756097,
+   "hi"
+  ],
+  [
+   36.278384823848235,
+   36.36427099390669,
+   "useful"
+  ],
+  [
+   36.364271002710026,
+   36.42152844648122,
+   "Zoho"
+  ],
+  [
+   36.42152845528455,
+   36.49310026219938,
+   "Books"
+  ],
+  [
+   36.49310027100271,
+   36.652926816758296,
+   "workflow"
+  ],
+  [
+   36.652926829268296,
+   36.83674795635967,
+   "automation"
+  ],
+  [
+   36.836747967479674,
+   36.90907315961171,
+   "tips"
+  ],
+  [
+   36.90907317073171,
+   36.959073170731706,
+   "ke"
+  ],
+  [
+   36.94050406504065,
+   36.99926828364793,
+   "liye"
+  ],
+  [
+   36.99926829268293,
+   37.049268292682925,
+   "GSX"
+  ],
+  [
+   37.043341463414635,
+   37.18630893752943,
+   "Automation"
+  ],
+  [
+   37.18630894308943,
+   37.236308943089426,
+   "ko"
+  ],
+  [
+   37.20439024390244,
+   37.254390243902435,
+   "abhi"
+  ],
+  [
+   37.240552845528455,
+   37.294796742407485,
+   "follow"
+  ],
+  [
+   37.29479674796748,
+   37.34479674796748,
+   "karo!"
+  ]
+ ],
+ "dur": 37.681973,
+ "pieces": [
+  {
+   "t0": 0.0,
+   "t1": 2.2379512195121953,
+   "text": "Client ka kharcha apni jeb se bhara aur bill karna bhool gaye?",
+   "words": [
+    [
+     0.0,
+     0.1039674690181301,
+     "Client"
+    ],
+    [
+     0.10396747967479676,
+     0.15396747967479676,
+     "ka"
+    ],
+    [
+     0.13862330623306232,
+     0.25991868853032524,
+     "kharcha"
+    ],
+    [
+     0.2599186991869919,
+     0.32923034164685644,
+     "apni"
+    ],
+    [
+     0.3292303523035231,
+     0.3812140814842548,
+     "jeb"
+    ],
+    [
+     0.38121409214092145,
+     0.43121409214092143,
+     "se"
+    ],
+    [
+     0.41586991869918705,
+     0.67069913417187,
+     "bhara"
+    ],
+    [
+     0.6706991869918699,
+     0.9178942623780895,
+     "aur"
+    ],
+    [
+     0.9178943089430894,
+     1.220756050995976,
+     "bill"
+    ],
+    [
+     1.2207560975609757,
+     1.5993332867683334,
+     "karna"
+    ],
+    [
+     1.599333333333333,
+     1.9779105225406917,
+     "bhool"
+    ],
+    [
+     1.977910569105691,
+     2.2379512042221954,
+     "gaye?"
+    ]
+   ]
+  },
+  {
+   "t0": 2.2379512195121953,
+   "t1": 2.960878048780488,
+   "text": "Clients ke flight aur",
+   "words": [
+    [
+     2.2379512195121953,
+     2.4,
+     "Clients"
+    ],
+    [
+     2.4,
+     2.4499999999999997,
+     "ke"
+    ],
+    [
+     2.4,
+     2.5650731457117075,
+     "flight"
+    ],
+    [
+     2.5650731707317074,
+     2.960877959820488,
+     "aur"
+    ]
+   ]
+  },
+  {
+   "t0": 2.960878048780488,
+   "t1": 12.45528455284553,
+   "text": "hotel",
+   "words": [
+    [
+     2.960878048780488,
+     12.455284358245528,
+     "hotel"
+    ]
+   ]
+  },
+  {
+   "t0": 12.45528455284553,
+   "t1": 17.61778861788618,
+   "text": "expenses manual",
+   "words": [
+    [
+     12.45528455284553,
+     16.946666472066667,
+     "expenses"
+    ],
+    [
+     16.946666666666665,
+     17.61778861510618,
+     "manual"
+    ]
+   ]
+  },
+  {
+   "t0": 17.61778861788618,
+   "t1": 24.22731707317073,
+   "text": "track",
+   "words": [
+    [
+     17.61778861788618,
+     24.22731687857073,
+     "track"
+    ]
+   ]
+  },
+  {
+   "t0": 24.22731707317073,
+   "t1": 30.436686991869916,
+   "text": "karne se har mahine hazaron rupees ka revenue leak ho jata hai.",
+   "words": [
+    [
+     24.22731707317073,
+     25.836357503957238,
+     "karne"
+    ],
+    [
+     25.83635772357724,
+     26.550568886071055,
+     "se"
+    ],
+    [
+     26.550569105691057,
+     27.504422602987642,
+     "har"
+    ],
+    [
+     27.504422764227645,
+     28.670601553736258,
+     "mahine"
+    ],
+    [
+     28.67060162601626,
+     30.001788603986178,
+     "hazaron"
+    ],
+    [
+     30.00178861788618,
+     30.13739836008374,
+     "rupees"
+    ],
+    [
+     30.13739837398374,
+     30.18739837398374,
+     "ka"
+    ],
+    [
+     30.181430894308942,
+     30.268447146826546,
+     "revenue"
+    ],
+    [
+     30.268447154471545,
+     30.318447154471546,
+     "leak"
+    ],
+    [
+     30.318170731707315,
+     30.368170731707316,
+     "ho"
+    ],
+    [
+     30.343032520325202,
+     30.393032520325203,
+     "jata"
+    ],
+    [
+     30.392756097560973,
+     30.442756097560974,
+     "hai."
+    ]
+   ]
+  },
+  {
+   "t0": 34.85223848238482,
+   "t1": 36.19249864498645,
+   "text": "Har client expense direct invoice me add ho jayega aur aapka revenue leakage hamesha ke liye band ho jayega.",
+   "words": [
+    [
+     34.85223848238482,
+     34.90223848238482,
+     "Har"
+    ],
+    [
+     34.901962059620594,
+     34.97349592939935,
+     "client"
+    ],
+    [
+     34.973495934959345,
+     35.03678048224488,
+     "expense"
+    ],
+    [
+     35.036780487804876,
+     35.091024384683905,
+     "direct"
+    ],
+    [
+     35.0910243902439,
+     35.161463406294146,
+     "invoice"
+    ],
+    [
+     35.16146341463415,
+     35.211463414634146,
+     "me"
+    ],
+    [
+     35.188585365853655,
+     35.23858536585365,
+     "add"
+    ],
+    [
+     35.229268292682924,
+     35.27926829268292,
+     "ho"
+    ],
+    [
+     35.25639024390244,
+     35.32911652375198,
+     "jayega"
+    ],
+    [
+     35.32911653116531,
+     35.37911653116531,
+     "aur"
+    ],
+    [
+     35.36527913279133,
+     35.429105678894416,
+     "aapka"
+    ],
+    [
+     35.42910569105691,
+     35.567540638244004,
+     "revenue"
+    ],
+    [
+     35.56754065040651,
+     35.7059755975936,
+     "leakage"
+    ],
+    [
+     35.705975609756095,
+     35.84441055694319,
+     "hamesha"
+    ],
+    [
+     35.84441056910569,
+     35.89441056910569,
+     "ke"
+    ],
+    [
+     35.883963414634145,
+     35.96306909352856,
+     "liye"
+    ],
+    [
+     35.963069105691055,
+     36.04217478458546,
+     "band"
+    ],
+    [
+     36.042174796747965,
+     36.09217479674796,
+     "ho"
+    ],
+    [
+     36.08172764227642,
+     36.19249863618312,
+     "jayega."
+    ]
+   ]
+  },
+  {
+   "t0": 36.19249864498645,
+   "t1": 37.681973,
+   "text": "Aise hi useful Zoho Books workflow automation tips ke liye GSX Automation ko abhi follow karo!",
+   "words": [
+    [
+     36.19249864498645,
+     36.24975608875764,
+     "Aise"
+    ],
+    [
+     36.249756097560976,
+     36.29975609756097,
+     "hi"
+    ],
+    [
+     36.278384823848235,
+     36.36427099390669,
+     "useful"
+    ],
+    [
+     36.364271002710026,
+     36.42152844648122,
+     "Zoho"
+    ],
+    [
+     36.42152845528455,
+     36.49310026219938,
+     "Books"
+    ],
+    [
+     36.49310027100271,
+     36.652926816758296,
+     "workflow"
+    ],
+    [
+     36.652926829268296,
+     36.83674795635967,
+     "automation"
+    ],
+    [
+     36.836747967479674,
+     36.90907315961171,
+     "tips"
+    ],
+    [
+     36.90907317073171,
+     36.959073170731706,
+     "ke"
+    ],
+    [
+     36.94050406504065,
+     36.99926828364793,
+     "liye"
+    ],
+    [
+     36.99926829268293,
+     37.049268292682925,
+     "GSX"
+    ],
+    [
+     37.043341463414635,
+     37.18630893752943,
+     "Automation"
+    ],
+    [
+     37.18630894308943,
+     37.236308943089426,
+     "ko"
+    ],
+    [
+     37.20439024390244,
+     37.254390243902435,
+     "abhi"
+    ],
+    [
+     37.240552845528455,
+     37.294796742407485,
+     "follow"
+    ],
+    [
+     37.29479674796748,
+     37.34479674796748,
+     "karo!"
+    ]
+   ]
+  }
+ ],
+ "clips": [
+  {
+   "text": "Client ka kharcha apni jeb se bhara aur bill karna bhool gaye?"
+  },
+  {
+   "text": "Clients ke flight aur"
+  }
+ ]
+}
