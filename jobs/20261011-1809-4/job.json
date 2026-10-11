@@ -1,0 +1,389 @@
+{
+ "id": "20261011-1809-4",
+ "status": "waiting_for_clips",
+ "upload": true,
+ "created": "2026-10-11T18:12:13",
+ "title": "Automate Zoho Marketing Journeys with Deluge API #Shorts",
+ "description": "Tired of building customer journeys manually in Zoho? Use a Deluge function and invokeurl API inside CRM workflow rules for instant, automated customer onboarding.\n\n1. Create a custom function in CRM\n2. Use 'invokeurl' to hit the Marketing Automation trigger API\n3. Associate the function with a Workflow Rule\n\nCode (deluge) - Settings › Developer Space › Functions › Create New Function:\ncontactEmail = input.get(\"email\");\nurl = \"https://marketingautomation.zoho.com/api/v1/json/addcontact\";\nparams = map();\nparams.put(\"resfmt\", \"JSON\");\nparams.put(\"portalname\", \"YOUR_PORTAL_NAME\");\nparams.put(\"listkey\", \"YOUR_LIST_KEY\");\nparams.put(\"email\", contactEmail);\nresponse = invokeurl\n(\n\turl:url\n\ttype:POST\n\tparameters:params\n\tconnection:\"your_oauth_connection\"\n);\ninfo response;\n\nDaily Zoho fixes - follow @GSXAutomation\n\nQuestion that inspired this: https://www.reddit.com/r/Zoho/comments/1wzkkp4/marketing_automation_mcp/\n\nThis video uses an AI-generated presenter and voice.\nIndependent channel. Not affiliated with or endorsed by Zoho Corporation. Zoho is a trademark of Zoho Corporation.\n\n#Shorts #ZohoCRM #Zoho #BusinessAutomation",
+ "angle": {
+  "story_index": 15,
+  "product": "Zoho Marketing Automation",
+  "problem": "Building complex customer journeys manually is slow and error-prone.",
+  "fix_type": "deluge",
+  "solution": "Use a Deluge function to trigger journeys via API based on CRM events.",
+  "steps": [
+   "Create a custom function in CRM",
+   "Use 'invokeurl' to hit the Marketing Automation trigger API",
+   "Associate the function with a Workflow Rule"
+  ],
+  "result": "Instant, automated customer onboarding without manual journey setup.",
+  "hook": "Tired of manually building customer journeys in Zoho?"
+ },
+ "story": {
+  "title": "Marketing Automation MCP?",
+  "link": "https://www.reddit.com/r/Zoho/comments/1wzkkp4/marketing_automation_mcp/",
+  "summary": "I've just started using Zoho Marketing Automation and I find it cumbersome to create all the steps of a journey. Is there a way to plug in Claude/leverage an MCP server for this? I have it connected to a lot of my tools but there seems to be a gap here. submitted by /u/tomfoolery77 [link] [comments]",
+  "source": "newest submissions : Zoho",
+  "ts": 1791338228
+ },
+ "script": {
+  "title": "Automate Zoho Marketing Journeys with Deluge API",
+  "hook_text": "Manual journeys are too slow!",
+  "lines": [
+   {
+    "beat": "HOOK",
+    "say": "Tired of manually building customer journeys in Zoho? Stop wasting precious time clicking through repetitive setup tasks when you can automate the entire onboarding pipeline effortlessly.",
+    "tts": "Tired of manually building customer journeys in Zoho? Stop wasting precious time clicking through repetitive setup tasks when you can automate the entire onboarding pipeline effortlessly.",
+    "card": "Manual journeys slow you down",
+    "screen": null
+   },
+   {
+    "beat": "PROBLEM",
+    "say": "Doing it step by step takes way too much time, and human error can easily disrupt your marketing campaigns, leading to missed opportunities and delayed customer engagement.",
+    "tts": "Doing it step by step takes way too much time, and human error can easily disrupt your marketing campaigns, leading to missed opportunities and delayed customer engagement.",
+    "card": "Too much manual work",
+    "screen": null
+   },
+   {
+    "beat": "FIX",
+    "say": "Use a custom Deluge function to trigger journeys via API automatically. This bridges your CRM data directly with Marketing Automation for seamless, instant synchronization.",
+    "tts": "Use a custom Deluge function to trigger journeys via API automatically. This bridges your CRM data directly with Marketing Automation for seamless, instant synchronization.",
+    "card": "Trigger journeys with Deluge API",
+    "screen": {
+     "path": [
+      "Settings",
+      "Developer Space"
+     ],
+     "view": "settings",
+     "heading": "Functions",
+     "columns": [],
+     "rows": [],
+     "fields": [
+      [
+       "Function Name",
+       "TriggerJourney"
+      ],
+      [
+       "Module",
+       "Deals"
+      ]
+     ],
+     "toggles": [],
+     "click": "Create New Function",
+     "tip": "Set up your custom Deluge function"
+    }
+   },
+   {
+    "beat": "STEP 1",
+    "say": "First, create a custom function in your CRM settings and define your input arguments clearly so the script can easily grab the lead or contact details.",
+    "tts": "First, create a custom function in your CRM settings and define your input arguments clearly so the script can easily grab the lead or contact details.",
+    "card": "Create custom function",
+    "screen": {
+     "path": [
+      "Settings",
+      "Developer Space",
+      "Functions"
+     ],
+     "view": "form",
+     "heading": "New Custom Function",
+     "columns": [],
+     "rows": [],
+     "fields": [
+      [
+       "Display Name",
+       "Trigger_Journey_API"
+      ],
+      [
+       "Description",
+       "Triggers Marketing Automation via API"
+      ]
+     ],
+     "toggles": [],
+     "click": "Save",
+     "tip": "Save the function container"
+    }
+   },
+   {
+    "beat": "STEP 2",
+    "say": "Next, construct your parameter map and use invokeurl to safely hit the Marketing Automation trigger endpoint, passing along the defined contact email variable.",
+    "tts": "Next, construct your parameter map and use invokeurl to safely hit the Marketing Automation trigger endpoint, passing along the defined contact email variable.",
+    "card": "Add invokeurl to script",
+    "screen": {
+     "path": [
+      "Settings",
+      "Developer Space",
+      "Functions"
+     ],
+     "view": "form",
+     "heading": "Edit Function",
+     "columns": [],
+     "rows": [],
+     "fields": [
+      [
+       "Deluge Script",
+       "response = invokeurl [ url: 'https://marketingautomation.zoho.com/api/v1/json/addcontact' type: POST parameters: params ];"
+      ]
+     ],
+     "toggles": [],
+     "click": "Save Script",
+     "tip": "Paste the API call in code"
+    }
+   },
+   {
+    "beat": "STEP 3",
+    "say": "Finally, associate this powerful function with a Workflow Rule in your CRM so it fires instantly whenever a specific deal stage updates or a new lead arrives.",
+    "tts": "Finally, associate this powerful function with a Workflow Rule in your CRM so it fires instantly whenever a specific deal stage updates or a new lead arrives.",
+    "card": "Link to Workflow Rule",
+    "screen": {
+     "path": [
+      "Settings",
+      "Workflow Rules"
+     ],
+     "view": "form",
+     "heading": "Configure Instant Action",
+     "columns": [],
+     "rows": [],
+     "fields": [
+      [
+       "Action Type",
+       "Custom Functions"
+      ],
+      [
+       "Select Function",
+       "Trigger_Journey_API"
+      ]
+     ],
+     "toggles": [],
+     "click": "Associate",
+     "tip": "Link function to CRM trigger"
+    }
+   },
+   {
+    "beat": "RESULT",
+    "say": "Set it up once, test your API connection, and you are completely done enjoying hands-free, high-speed automated customer onboarding every single day.",
+    "tts": "Set it up once, test your API connection, and you are completely done enjoying hands-free, high-speed automated customer onboarding every single day.",
+    "card": "Instant automated onboarding",
+    "screen": null
+   }
+  ],
+  "code": {
+   "language": "deluge",
+   "filename": "trigger_journey.deluge",
+   "content": "contactEmail = input.get(\"email\");\nurl = \"https://marketingautomation.zoho.com/api/v1/json/addcontact\";\nparams = map();\nparams.put(\"resfmt\", \"JSON\");\nparams.put(\"portalname\", \"YOUR_PORTAL_NAME\");\nparams.put(\"listkey\", \"YOUR_LIST_KEY\");\nparams.put(\"email\", contactEmail);\nresponse = invokeurl\n(\n\turl:url\n\ttype:POST\n\tparameters:params\n\tconnection:\"your_oauth_connection\"\n);\ninfo response;",
+   "where_to_paste": "Settings > Developer Space > Functions > Create New Function"
+  },
+  "test_before_recording": [
+   "Verify Zoho Marketing Automation API endpoint and permissions",
+   "Check OAuth connection scope for Marketing Automation"
+  ],
+  "description": "Tired of building customer journeys manually in Zoho? Use a Deluge function and invokeurl API inside CRM workflow rules for instant, automated customer onboarding.",
+  "tags": [
+   "Zoho",
+   "MarketingAutomation",
+   "Deluge",
+   "Workflow",
+   "CRM",
+   "API",
+   "Automation",
+   "Tutorial",
+   "Shorts",
+   "Productivity"
+  ]
+ },
+ "lines": [
+  {
+   "beat": "HOOK",
+   "say": "Tired of manually building customer journeys in Zoho? Stop wasting precious time clicking through repetitive setup tasks when you can automate the entire onboarding pipeline effortlessly.",
+   "tts": "Tired of manually building customer journeys in Zoho? Stop wasting precious time clicking through repetitive setup tasks when you can automate the entire onboarding pipeline effortlessly.",
+   "card": "Manual journeys slow you down",
+   "screen": null,
+   "face": true
+  },
+  {
+   "beat": "PROBLEM",
+   "say": "Doing it step by step takes way too much time, and human error can easily disrupt your marketing campaigns, leading to missed opportunities and delayed customer engagement.",
+   "tts": "Doing it step by step takes way too much time, and human error can easily disrupt your marketing campaigns, leading to missed opportunities and delayed customer engagement.",
+   "card": "Too much manual work",
+   "screen": null,
+   "face": true
+  },
+  {
+   "beat": "FIX",
+   "say": "Use a custom Deluge function to trigger journeys via API automatically. This bridges your CRM data directly with Marketing Automation for seamless, instant synchronization.",
+   "tts": "Use a custom Deluge function to trigger journeys via API automatically. This bridges your CRM data directly with Marketing Automation for seamless, instant synchronization.",
+   "card": "Trigger journeys with Deluge API",
+   "screen": {
+    "path": [
+     "Settings",
+     "Developer Space"
+    ],
+    "view": "settings",
+    "heading": "Functions",
+    "columns": [],
+    "rows": [],
+    "fields": [
+     [
+      "Function Name",
+      "TriggerJourney"
+     ],
+     [
+      "Module",
+      "Deals"
+     ]
+    ],
+    "toggles": [],
+    "click": "Create New Function",
+    "tip": "Set up your custom Deluge function"
+   },
+   "face": false
+  },
+  {
+   "beat": "STEP 1",
+   "say": "First, create a custom function in your CRM settings and define your input arguments clearly so the script can easily grab the lead or contact details.",
+   "tts": "First, create a custom function in your CRM settings and define your input arguments clearly so the script can easily grab the lead or contact details.",
+   "card": "Create custom function",
+   "screen": {
+    "path": [
+     "Settings",
+     "Developer Space",
+     "Functions"
+    ],
+    "view": "form",
+    "heading": "New Custom Function",
+    "columns": [],
+    "rows": [],
+    "fields": [
+     [
+      "Display Name",
+      "Trigger_Journey_API"
+     ],
+     [
+      "Description",
+      "Triggers Marketing Automation via API"
+     ]
+    ],
+    "toggles": [],
+    "click": "Save",
+    "tip": "Save the function container"
+   },
+   "face": false
+  },
+  {
+   "beat": "STEP 2",
+   "say": "Next, construct your parameter map and use invokeurl to safely hit the Marketing Automation trigger endpoint, passing along the defined contact email variable.",
+   "tts": "Next, construct your parameter map and use invokeurl to safely hit the Marketing Automation trigger endpoint, passing along the defined contact email variable.",
+   "card": "Add invokeurl to script",
+   "screen": {
+    "path": [
+     "Settings",
+     "Developer Space",
+     "Functions"
+    ],
+    "view": "form",
+    "heading": "Edit Function",
+    "columns": [],
+    "rows": [],
+    "fields": [
+     [
+      "Deluge Script",
+      "response = invokeurl [ url: 'https://marketingautomation.zoho.com/api/v1/json/addcontact' type: POST parameters: params ];"
+     ]
+    ],
+    "toggles": [],
+    "click": "Save Script",
+    "tip": "Paste the API call in code"
+   },
+   "face": false
+  },
+  {
+   "beat": "STEP 3",
+   "say": "Finally, associate this powerful function with a Workflow Rule in your CRM so it fires instantly whenever a specific deal stage updates or a new lead arrives.",
+   "tts": "Finally, associate this powerful function with a Workflow Rule in your CRM so it fires instantly whenever a specific deal stage updates or a new lead arrives.",
+   "card": "Link to Workflow Rule",
+   "screen": {
+    "path": [
+     "Settings",
+     "Workflow Rules"
+    ],
+    "view": "form",
+    "heading": "Configure Instant Action",
+    "columns": [],
+    "rows": [],
+    "fields": [
+     [
+      "Action Type",
+      "Custom Functions"
+     ],
+     [
+      "Select Function",
+      "Trigger_Journey_API"
+     ]
+    ],
+    "toggles": [],
+    "click": "Associate",
+    "tip": "Link function to CRM trigger"
+   },
+   "face": false
+  },
+  {
+   "beat": "RESULT",
+   "say": "Set it up once, test your API connection, and you are completely done enjoying hands-free, high-speed automated customer onboarding every single day.",
+   "tts": "Set it up once, test your API connection, and you are completely done enjoying hands-free, high-speed automated customer onboarding every single day.",
+   "card": "Instant automated onboarding",
+   "screen": null,
+   "face": true
+  }
+ ],
+ "clips": [
+  {
+   "text": "Tired of manually building customer journeys in Zoho?",
+   "lines": [
+    0
+   ],
+   "beat": "HOOK",
+   "prompt": "The man (my avatar) looks into the camera and talks to the viewer like an energetic YouTube tech explainer; he steps forward slightly with an energetic, curious expression and an open-hand gesture. Vertical 9:16 medium-wide shot from the knees up, camera about two metres away, his head in the upper third with space above it, both hands and all his gestures fully visible in the frame, static camera, sharp and well lit, wearing his dark grey blazer over a navy t-shirt, in a bright modern office with soft daylight. He says, in clear natural English with an Indian accent, at a brisk, lively pace: \"Tired of manually building customer journeys in Zoho?\" His lips match every word. He starts speaking in the very first frame, with no pause before the first word, and stops right after the last word. Audio: only his voice - no music, no sound effects. No subtitles, no captions, no text on screen."
+  },
+  {
+   "text": "Stop wasting precious time clicking through repetitive setup tasks when you can automate the entire onboarding pipeline effortlessly.",
+   "lines": [
+    0
+   ],
+   "beat": "HOOK",
+   "prompt": "The man (my avatar) looks into the camera and talks to the viewer like an energetic YouTube tech explainer; he steps forward slightly with an energetic, curious expression and an open-hand gesture. Vertical 9:16 medium-wide shot from the knees up, camera about two metres away, his head in the upper third with space above it, both hands and all his gestures fully visible in the frame, static camera, sharp and well lit, wearing his dark grey blazer over a navy t-shirt, in a bright modern office with soft daylight. He says, in clear natural English with an Indian accent, at a brisk, lively pace: \"Stop wasting precious time clicking through repetitive setup tasks when you can automate the entire onboarding pipeline effortlessly.\" His lips match every word. He starts speaking in the very first frame, with no pause before the first word, and stops right after the last word. Audio: only his voice - no music, no sound effects. No subtitles, no captions, no text on screen."
+  },
+  {
+   "text": "Doing it step by step takes way too much time,",
+   "lines": [
+    1
+   ],
+   "beat": "PROBLEM",
+   "prompt": "The man (my avatar) looks into the camera and talks to the viewer like an energetic YouTube tech explainer; he frowns a little and gestures with both hands, showing the frustration. Vertical 9:16 medium-wide shot from the knees up, camera about two metres away, his head in the upper third with space above it, both hands and all his gestures fully visible in the frame, static camera, sharp and well lit, wearing his dark grey blazer over a navy t-shirt, in a bright modern office with soft daylight. He says, in clear natural English with an Indian accent, at a brisk, lively pace: \"Doing it step by step takes way too much time,\" His lips match every word. He starts speaking in the very first frame, with no pause before the first word, and stops right after the last word. Audio: only his voice - no music, no sound effects. No subtitles, no captions, no text on screen."
+  },
+  {
+   "text": "and human error can easily disrupt your marketing campaigns, leading to missed opportunities and delayed customer engagement.",
+   "lines": [
+    1
+   ],
+   "beat": "PROBLEM",
+   "prompt": "The man (my avatar) looks into the camera and talks to the viewer like an energetic YouTube tech explainer; he frowns a little and gestures with both hands, showing the frustration. Vertical 9:16 medium-wide shot from the knees up, camera about two metres away, his head in the upper third with space above it, both hands and all his gestures fully visible in the frame, static camera, sharp and well lit, wearing his dark grey blazer over a navy t-shirt, in a bright modern office with soft daylight. He says, in clear natural English with an Indian accent, at a brisk, lively pace: \"and human error can easily disrupt your marketing campaigns, leading to missed opportunities and delayed customer engagement.\" His lips match every word. He starts speaking in the very first frame, with no pause before the first word, and stops right after the last word. Audio: only his voice - no music, no sound effects. No subtitles, no captions, no text on screen."
+  },
+  {
+   "text": "Set it up once, test your API connection,",
+   "lines": [
+    6
+   ],
+   "beat": "RESULT",
+   "prompt": "The man (my avatar) looks into the camera and talks to the viewer like an energetic YouTube tech explainer; he smiles and opens both arms wide. Vertical 9:16 medium-wide shot from the knees up, camera about two metres away, his head in the upper third with space above it, both hands and all his gestures fully visible in the frame, static camera, sharp and well lit, wearing his dark grey blazer over a navy t-shirt, in a bright modern office with soft daylight. He says, in clear natural English with an Indian accent, at a brisk, lively pace: \"Set it up once, test your API connection,\" His lips match every word. He starts speaking in the very first frame, with no pause before the first word, and stops right after the last word. Audio: only his voice - no music, no sound effects. No subtitles, no captions, no text on screen."
+  },
+  {
+   "text": "and you are completely done enjoying hands-free, high-speed automated customer onboarding every single day.",
+   "lines": [
+    6
+   ],
+   "beat": "RESULT",
+   "prompt": "The man (my avatar) looks into the camera and talks to the viewer like an energetic YouTube tech explainer; he smiles and opens both arms wide. Vertical 9:16 medium-wide shot from the knees up, camera about two metres away, his head in the upper third with space above it, both hands and all his gestures fully visible in the frame, static camera, sharp and well lit, wearing his dark grey blazer over a navy t-shirt, in a bright modern office with soft daylight. He says, in clear natural English with an Indian accent, at a brisk, lively pace: \"and you are completely done enjoying hands-free, high-speed automated customer onboarding every single day.\" His lips match every word. He starts speaking in the very first frame, with no pause before the first word, and stops right after the last word. Audio: only his voice - no music, no sound effects. No subtitles, no captions, no text on screen."
+  }
+ ],
+ "look": "wearing his dark grey blazer over a navy t-shirt, in a bright modern office with soft daylight",
+ "issue": 6
+}

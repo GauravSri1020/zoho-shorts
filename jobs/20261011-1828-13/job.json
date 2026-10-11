@@ -1,0 +1,376 @@
+{
+ "id": "20261011-1828-13",
+ "status": "waiting_for_clips",
+ "upload": true,
+ "created": "2026-10-11T18:30:30",
+ "title": "Declutter Your Zoho CRM Interface With Canvas Builder #Shorts",
+ "description": "Stop CRM clutter by using Zoho CRM's Canvas Builder. Follow these quick steps to create role-specific layouts and hide unnecessary fields for your team.\n\n1. Go to Setup › Customization › Canvas\n2. Create a new view for your specific team\n3. Hide unnecessary fields for a cleaner look\n\nDaily Zoho fixes - follow @GSXAutomation\n\nThis video uses an AI-generated presenter and voice.\nIndependent channel. Not affiliated with or endorsed by Zoho Corporation. Zoho is a trademark of Zoho Corporation.\n\n#Shorts #ZohoCRM #Zoho #BusinessAutomation",
+ "angle": {
+  "story_index": -1,
+  "product": "Zoho CRM",
+  "problem": "Customizing the UI for different user roles is too cluttered.",
+  "fix_type": "native",
+  "solution": "Use 'Canvas Builder' to create role-specific layouts.",
+  "steps": [
+   "Go to Setup > Customization > Canvas",
+   "Create a new view for your specific team",
+   "Hide unnecessary fields for a cleaner look"
+  ],
+  "result": "A simplified, distraction-free CRM interface for your team.",
+  "hook": "Is your CRM interface too cluttered for your team?"
+ },
+ "story": null,
+ "script": {
+  "title": "Declutter Your Zoho CRM Interface With Canvas Builder",
+  "hook_text": "Is your CRM too cluttered?",
+  "lines": [
+   {
+    "beat": "HOOK",
+    "say": "Is your Zoho CRM interface looking far too cluttered and overwhelming for your daily team operations?",
+    "tts": "Is your Zoho CRM interface looking far too cluttered and overwhelming for your daily team operations?",
+    "card": "Cluttered CRM interface?",
+    "screen": null
+   },
+   {
+    "beat": "PROBLEM",
+    "say": "Every single user currently sees every single field, making simple data entry tasks frustratingly slow and confusing.",
+    "tts": "Every single user currently sees every single field, making simple data entry tasks frustratingly slow and confusing.",
+    "card": "Too many fields",
+    "screen": null
+   },
+   {
+    "beat": "FIX",
+    "say": "Instead of settling for the default view, use Zoho's powerful Canvas Builder to design custom, role-specific layouts.",
+    "tts": "Instead of settling for the default view, use Zoho's powerful Canvas Builder to design custom, role-specific layouts.",
+    "card": "Canvas Builder Solution",
+    "screen": {
+     "path": [
+      "Setup",
+      "Customization",
+      "Canvas"
+     ],
+     "view": "settings",
+     "heading": "Canvas Builder",
+     "columns": [],
+     "rows": [],
+     "fields": [
+      [
+       "Module",
+       "Leads"
+      ],
+      [
+       "Layout",
+       "Sales Team View"
+      ]
+     ],
+     "toggles": [
+      [
+       "Enable Role View",
+       true
+      ]
+     ],
+     "click": "Canvas",
+     "tip": "Open Canvas customization settings"
+    }
+   },
+   {
+    "beat": "STEP 1",
+    "say": "First, navigate directly to your settings, open Setup, select Customization, and then click on the Canvas section.",
+    "tts": "First, navigate directly to your settings, open Setup, select Customization, and then click on the Canvas section.",
+    "card": "Setup > Customization > Canvas",
+    "screen": {
+     "path": [
+      "Setup",
+      "Customization",
+      "Canvas"
+     ],
+     "view": "settings",
+     "heading": "Canvas Builder Dashboard",
+     "columns": [],
+     "rows": [],
+     "fields": [],
+     "toggles": [],
+     "click": "Canvas",
+     "tip": "Navigate to Canvas section"
+    }
+   },
+   {
+    "beat": "STEP 2",
+    "say": "Next, easily create a brand new view that is specifically tailored for your specific sales team and daily profile needs.",
+    "tts": "Next, easily create a brand new view that is specifically tailored for your specific sales team and daily profile needs.",
+    "card": "Create new view",
+    "screen": {
+     "path": [
+      "Setup",
+      "Customization",
+      "Canvas"
+     ],
+     "view": "form",
+     "heading": "New Canvas View",
+     "columns": [],
+     "rows": [],
+     "fields": [
+      [
+       "View Name",
+       "Sales Team Layout"
+      ],
+      [
+       "Associated Profile",
+       "Standard"
+      ]
+     ],
+     "toggles": [],
+     "click": "Create New View",
+     "tip": "Add role-specific layout"
+    }
+   },
+   {
+    "beat": "STEP 3",
+    "say": "Then, completely hide all unnecessary fields, legacy IDs, and clutter for a much cleaner and faster visual experience.",
+    "tts": "Then, completely hide all unnecessary fields, legacy IDs, and clutter for a much cleaner and faster visual experience.",
+    "card": "Hide unnecessary fields",
+    "screen": {
+     "path": [
+      "Setup",
+      "Customization",
+      "Canvas"
+     ],
+     "view": "settings",
+     "heading": "Canvas Editor",
+     "columns": [],
+     "rows": [],
+     "fields": [
+      [
+       "Visible Fields",
+       "Name, Email, Phone"
+      ],
+      [
+       "Hidden Fields",
+       "Internal Notes, Legacy ID"
+      ]
+     ],
+     "toggles": [
+      [
+       "Hide Empty Fields",
+       true
+      ]
+     ],
+     "click": "Hide unnecessary fields",
+     "tip": "Remove visual clutter"
+    }
+   },
+   {
+    "beat": "RESULT",
+    "say": "Enjoy a totally simplified, distraction-free CRM interface for your entire team. Set it up once and you are completely done.",
+    "tts": "Enjoy a totally simplified, distraction-free CRM interface for your entire team. Set it up once and you are completely done.",
+    "card": "Clean & distraction-free CRM",
+    "screen": null
+   }
+  ],
+  "code": null,
+  "test_before_recording": [
+   "Check you have Administrator privileges in Zoho CRM",
+   "Ensure Canvas Builder is available in your CRM edition"
+  ],
+  "description": "Stop CRM clutter by using Zoho CRM's Canvas Builder. Follow these quick steps to create role-specific layouts and hide unnecessary fields for your team.",
+  "tags": [
+   "ZohoCRM",
+   "CanvasBuilder",
+   "CRMClutter",
+   "Productivity",
+   "CRMUI",
+   "Automation",
+   "SalesTeam",
+   "ZohoTutorial",
+   "Customization",
+   "TechTips"
+  ]
+ },
+ "lines": [
+  {
+   "beat": "HOOK",
+   "say": "Is your Zoho CRM interface looking far too cluttered and overwhelming for your daily team operations?",
+   "tts": "Is your Zoho CRM interface looking far too cluttered and overwhelming for your daily team operations?",
+   "card": "Cluttered CRM interface?",
+   "screen": null,
+   "face": true
+  },
+  {
+   "beat": "PROBLEM",
+   "say": "Every single user currently sees every single field, making simple data entry tasks frustratingly slow and confusing.",
+   "tts": "Every single user currently sees every single field, making simple data entry tasks frustratingly slow and confusing.",
+   "card": "Too many fields",
+   "screen": null,
+   "face": true
+  },
+  {
+   "beat": "FIX",
+   "say": "Instead of settling for the default view, use Zoho's powerful Canvas Builder to design custom, role-specific layouts.",
+   "tts": "Instead of settling for the default view, use Zoho's powerful Canvas Builder to design custom, role-specific layouts.",
+   "card": "Canvas Builder Solution",
+   "screen": {
+    "path": [
+     "Setup",
+     "Customization",
+     "Canvas"
+    ],
+    "view": "settings",
+    "heading": "Canvas Builder",
+    "columns": [],
+    "rows": [],
+    "fields": [
+     [
+      "Module",
+      "Leads"
+     ],
+     [
+      "Layout",
+      "Sales Team View"
+     ]
+    ],
+    "toggles": [
+     [
+      "Enable Role View",
+      true
+     ]
+    ],
+    "click": "Canvas",
+    "tip": "Open Canvas customization settings"
+   },
+   "face": false
+  },
+  {
+   "beat": "STEP 1",
+   "say": "First, navigate directly to your settings, open Setup, select Customization, and then click on the Canvas section.",
+   "tts": "First, navigate directly to your settings, open Setup, select Customization, and then click on the Canvas section.",
+   "card": "Setup > Customization > Canvas",
+   "screen": {
+    "path": [
+     "Setup",
+     "Customization",
+     "Canvas"
+    ],
+    "view": "settings",
+    "heading": "Canvas Builder Dashboard",
+    "columns": [],
+    "rows": [],
+    "fields": [],
+    "toggles": [],
+    "click": "Canvas",
+    "tip": "Navigate to Canvas section"
+   },
+   "face": false
+  },
+  {
+   "beat": "STEP 2",
+   "say": "Next, easily create a brand new view that is specifically tailored for your specific sales team and daily profile needs.",
+   "tts": "Next, easily create a brand new view that is specifically tailored for your specific sales team and daily profile needs.",
+   "card": "Create new view",
+   "screen": {
+    "path": [
+     "Setup",
+     "Customization",
+     "Canvas"
+    ],
+    "view": "form",
+    "heading": "New Canvas View",
+    "columns": [],
+    "rows": [],
+    "fields": [
+     [
+      "View Name",
+      "Sales Team Layout"
+     ],
+     [
+      "Associated Profile",
+      "Standard"
+     ]
+    ],
+    "toggles": [],
+    "click": "Create New View",
+    "tip": "Add role-specific layout"
+   },
+   "face": false
+  },
+  {
+   "beat": "STEP 3",
+   "say": "Then, completely hide all unnecessary fields, legacy IDs, and clutter for a much cleaner and faster visual experience.",
+   "tts": "Then, completely hide all unnecessary fields, legacy IDs, and clutter for a much cleaner and faster visual experience.",
+   "card": "Hide unnecessary fields",
+   "screen": {
+    "path": [
+     "Setup",
+     "Customization",
+     "Canvas"
+    ],
+    "view": "settings",
+    "heading": "Canvas Editor",
+    "columns": [],
+    "rows": [],
+    "fields": [
+     [
+      "Visible Fields",
+      "Name, Email, Phone"
+     ],
+     [
+      "Hidden Fields",
+      "Internal Notes, Legacy ID"
+     ]
+    ],
+    "toggles": [
+     [
+      "Hide Empty Fields",
+      true
+     ]
+    ],
+    "click": "Hide unnecessary fields",
+    "tip": "Remove visual clutter"
+   },
+   "face": false
+  },
+  {
+   "beat": "RESULT",
+   "say": "Enjoy a totally simplified, distraction-free CRM interface for your entire team. Set it up once and you are completely done.",
+   "tts": "Enjoy a totally simplified, distraction-free CRM interface for your entire team. Set it up once and you are completely done.",
+   "card": "Clean & distraction-free CRM",
+   "screen": null,
+   "face": true
+  }
+ ],
+ "clips": [
+  {
+   "text": "Is your Zoho CRM interface looking far too cluttered and overwhelming for your daily team operations?",
+   "lines": [
+    0
+   ],
+   "beat": "HOOK",
+   "prompt": "The man (my avatar) looks into the camera and talks to the viewer like an energetic YouTube tech explainer; he steps forward slightly with an energetic, curious expression and an open-hand gesture. Vertical 9:16 medium-wide shot from the knees up, camera about two metres away, his head in the upper third with space above it, both hands and all his gestures fully visible in the frame, static camera, sharp and well lit, wearing his dark grey blazer over a navy t-shirt, in a bright modern office with soft daylight. He says, in clear natural English with an Indian accent, at a brisk, lively pace: \"Is your Zoho CRM interface looking far too cluttered and overwhelming for your daily team operations?\" His lips match every word. He starts speaking in the very first frame, with no pause before the first word, and stops right after the last word. Audio: only his voice - no music, no sound effects. No subtitles, no captions, no text on screen."
+  },
+  {
+   "text": "Every single user currently sees every single field, making simple data entry tasks frustratingly slow and confusing.",
+   "lines": [
+    1
+   ],
+   "beat": "PROBLEM",
+   "prompt": "The man (my avatar) looks into the camera and talks to the viewer like an energetic YouTube tech explainer; he frowns a little and gestures with both hands, showing the frustration. Vertical 9:16 medium-wide shot from the knees up, camera about two metres away, his head in the upper third with space above it, both hands and all his gestures fully visible in the frame, static camera, sharp and well lit, wearing his dark grey blazer over a navy t-shirt, in a bright modern office with soft daylight. He says, in clear natural English with an Indian accent, at a brisk, lively pace: \"Every single user currently sees every single field, making simple data entry tasks frustratingly slow and confusing.\" His lips match every word. He starts speaking in the very first frame, with no pause before the first word, and stops right after the last word. Audio: only his voice - no music, no sound effects. No subtitles, no captions, no text on screen."
+  },
+  {
+   "text": "Enjoy a totally simplified, distraction-free CRM interface for your entire team.",
+   "lines": [
+    6
+   ],
+   "beat": "RESULT",
+   "prompt": "The man (my avatar) looks into the camera and talks to the viewer like an energetic YouTube tech explainer; he smiles and opens both arms wide. Vertical 9:16 medium-wide shot from the knees up, camera about two metres away, his head in the upper third with space above it, both hands and all his gestures fully visible in the frame, static camera, sharp and well lit, wearing his dark grey blazer over a navy t-shirt, in a bright modern office with soft daylight. He says, in clear natural English with an Indian accent, at a brisk, lively pace: \"Enjoy a totally simplified, distraction-free CRM interface for your entire team.\" His lips match every word. He starts speaking in the very first frame, with no pause before the first word, and stops right after the last word. Audio: only his voice - no music, no sound effects. No subtitles, no captions, no text on screen."
+  },
+  {
+   "text": "Set it up once and you are completely done.",
+   "lines": [
+    6
+   ],
+   "beat": "RESULT",
+   "prompt": "The man (my avatar) looks into the camera and talks to the viewer like an energetic YouTube tech explainer; he smiles and opens both arms wide. Vertical 9:16 medium-wide shot from the knees up, camera about two metres away, his head in the upper third with space above it, both hands and all his gestures fully visible in the frame, static camera, sharp and well lit, wearing his dark grey blazer over a navy t-shirt, in a bright modern office with soft daylight. He says, in clear natural English with an Indian accent, at a brisk, lively pace: \"Set it up once and you are completely done.\" His lips match every word. He starts speaking in the very first frame, with no pause before the first word, and stops right after the last word. Audio: only his voice - no music, no sound effects. No subtitles, no captions, no text on screen."
+  }
+ ],
+ "look": "wearing his dark grey blazer over a navy t-shirt, in a bright modern office with soft daylight",
+ "issue": 14
+}

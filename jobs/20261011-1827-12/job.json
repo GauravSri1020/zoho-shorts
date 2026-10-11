@@ -1,0 +1,380 @@
+{
+ "id": "20261011-1827-12",
+ "status": "waiting_for_clips",
+ "upload": true,
+ "created": "2026-10-11T18:28:18",
+ "title": "Stop Running Out Of Stock in Zoho Inventory #Shorts",
+ "description": "Stop missing low stock alerts in Zoho Inventory. Learn how to set reorder points and enable email notifications so you never run out of stock unexpectedly. Set it up once and you are done.\n\n1. Go to Items › Edit Item\n2. Set 'Reorder Point' quantity\n3. Enable 'Low Stock Email' in Preferences\n\nDaily Zoho fixes - follow @GSXAutomation\n\nThis video uses an AI-generated presenter and voice.\nIndependent channel. Not affiliated with or endorsed by Zoho Corporation. Zoho is a trademark of Zoho Corporation.\n\n#Shorts #ZohoCRM #Zoho #BusinessAutomation",
+ "angle": {
+  "story_index": -1,
+  "product": "Zoho Inventory",
+  "problem": "Low stock alerts are missed, leading to lost sales.",
+  "fix_type": "native",
+  "solution": "Set up 'Reorder Points' for automatic alerts.",
+  "steps": [
+   "Go to Items > Edit Item",
+   "Set 'Reorder Point' quantity",
+   "Enable 'Low Stock Email' in Preferences"
+  ],
+  "result": "Never run out of stock unexpectedly again.",
+  "hook": "Running out of stock? Set this up in Zoho now."
+ },
+ "story": null,
+ "script": {
+  "title": "Stop Running Out Of Stock in Zoho Inventory",
+  "hook_text": "Missed low stock alerts?",
+  "lines": [
+   {
+    "beat": "HOOK",
+    "say": "Running out of stock? Fix this in Zoho right now.",
+    "tts": "Running out of stock? Fix this in Zoho right now.",
+    "card": "Stop stockouts now",
+    "screen": null
+   },
+   {
+    "beat": "PROBLEM",
+    "say": "Missing low stock alerts means unexpected inventory gaps, lost sales, and unhappy customers.",
+    "tts": "Missing low stock alerts means unexpected inventory gaps, lost sales, and unhappy customers.",
+    "card": "Lost sales from empty shelves",
+    "screen": null
+   },
+   {
+    "beat": "FIX",
+    "say": "Fix it by configuring native reorder points directly inside your Zoho Inventory account.",
+    "tts": "Fix it by configuring native reorder points directly inside your Zoho Inventory account.",
+    "card": "Use native reorder points",
+    "screen": {
+     "path": [
+      "Items",
+      "All Items"
+     ],
+     "view": "list",
+     "heading": "Items",
+     "columns": [
+      "Name",
+      "SKU",
+      "Stock on Hand",
+      "Reorder Point"
+     ],
+     "rows": [
+      [
+       "Wireless Mouse",
+       "WM-001",
+       "4",
+       "10"
+      ],
+      [
+       "USB-C Cable",
+       "UC-002",
+       "25",
+       "15"
+      ]
+     ],
+     "fields": [],
+     "toggles": [],
+     "click": "Wireless Mouse",
+     "tip": "Click on the item you want to edit"
+    }
+   },
+   {
+    "beat": "STEP 1",
+    "say": "First, navigate to your Items module in the left sidebar and click on the specific product to open its details page.",
+    "tts": "First, navigate to your Items module in the left sidebar and click on the specific product to open its details page.",
+    "card": "Go to Items > Edit Item",
+    "screen": {
+     "path": [
+      "Items",
+      "Wireless Mouse"
+     ],
+     "view": "form",
+     "heading": "Edit Item",
+     "columns": [],
+     "rows": [],
+     "fields": [
+      [
+       "Item Name",
+       "Wireless Mouse"
+      ],
+      [
+       "Selling Price",
+       "499.00"
+      ]
+     ],
+     "toggles": [],
+     "click": "Edit Item",
+     "tip": "Open item details page"
+    }
+   },
+   {
+    "beat": "STEP 2",
+    "say": "Next, click edit on that item and enter your desired numeric quantity into the Reorder Point field.",
+    "tts": "Next, click edit on that item and enter your desired numeric quantity into the Reorder Point field.",
+    "card": "Set Reorder Point quantity",
+    "screen": {
+     "path": [
+      "Items",
+      "Edit Item"
+     ],
+     "view": "form",
+     "heading": "Edit Item",
+     "columns": [],
+     "rows": [],
+     "fields": [
+      [
+       "Stock on Hand",
+       "4"
+      ],
+      [
+       "Reorder Point",
+       "10"
+      ]
+     ],
+     "toggles": [],
+     "click": "Reorder Point",
+     "tip": "Enter your minimum stock threshold"
+    }
+   },
+   {
+    "beat": "STEP 3",
+    "say": "Then, open your organization settings, go to preferences for items, and turn on low stock email alerts.",
+    "tts": "Then, open your organization settings, go to preferences for items, and turn on low stock email alerts.",
+    "card": "Enable Low Stock Email",
+    "screen": {
+     "path": [
+      "Settings",
+      "Preferences",
+      "Items"
+     ],
+     "view": "settings",
+     "heading": "Preferences - Items",
+     "columns": [],
+     "rows": [],
+     "fields": [
+      [
+       "Notify when stock reaches reorder point",
+       "Enabled"
+      ]
+     ],
+     "toggles": [
+      [
+       "Send low stock email alerts",
+       true
+      ]
+     ],
+     "click": "Send low stock email alerts",
+     "tip": "Toggle email alerts on"
+    }
+   },
+   {
+    "beat": "RESULT",
+    "say": "Never run out of stock unexpectedly again. Set it up once and keep your fulfillment running smoothly.",
+    "tts": "Never run out of stock unexpectedly again. Set it up once and keep your fulfillment running smoothly.",
+    "card": "Never run out of stock",
+    "screen": null
+   }
+  ],
+  "code": null,
+  "test_before_recording": [
+   "Ensure you have admin permissions in Zoho Inventory",
+   "Check that your item list has valid current stock numbers"
+  ],
+  "description": "Stop missing low stock alerts in Zoho Inventory. Learn how to set reorder points and enable email notifications so you never run out of stock unexpectedly. Set it up once and you are done.",
+  "tags": [
+   "Zoho Inventory",
+   "Stock Alert",
+   "Reorder Point",
+   "Inventory Management",
+   "Zoho Tutorial",
+   "Low Stock",
+   "E-commerce",
+   "Small Business",
+   "Automation",
+   "Zoho Books"
+  ]
+ },
+ "lines": [
+  {
+   "beat": "HOOK",
+   "say": "Running out of stock? Fix this in Zoho right now.",
+   "tts": "Running out of stock? Fix this in Zoho right now.",
+   "card": "Stop stockouts now",
+   "screen": null,
+   "face": true
+  },
+  {
+   "beat": "PROBLEM",
+   "say": "Missing low stock alerts means unexpected inventory gaps, lost sales, and unhappy customers.",
+   "tts": "Missing low stock alerts means unexpected inventory gaps, lost sales, and unhappy customers.",
+   "card": "Lost sales from empty shelves",
+   "screen": null,
+   "face": true
+  },
+  {
+   "beat": "FIX",
+   "say": "Fix it by configuring native reorder points directly inside your Zoho Inventory account.",
+   "tts": "Fix it by configuring native reorder points directly inside your Zoho Inventory account.",
+   "card": "Use native reorder points",
+   "screen": {
+    "path": [
+     "Items",
+     "All Items"
+    ],
+    "view": "list",
+    "heading": "Items",
+    "columns": [
+     "Name",
+     "SKU",
+     "Stock on Hand",
+     "Reorder Point"
+    ],
+    "rows": [
+     [
+      "Wireless Mouse",
+      "WM-001",
+      "4",
+      "10"
+     ],
+     [
+      "USB-C Cable",
+      "UC-002",
+      "25",
+      "15"
+     ]
+    ],
+    "fields": [],
+    "toggles": [],
+    "click": "Wireless Mouse",
+    "tip": "Click on the item you want to edit"
+   },
+   "face": false
+  },
+  {
+   "beat": "STEP 1",
+   "say": "First, navigate to your Items module in the left sidebar and click on the specific product to open its details page.",
+   "tts": "First, navigate to your Items module in the left sidebar and click on the specific product to open its details page.",
+   "card": "Go to Items > Edit Item",
+   "screen": {
+    "path": [
+     "Items",
+     "Wireless Mouse"
+    ],
+    "view": "form",
+    "heading": "Edit Item",
+    "columns": [],
+    "rows": [],
+    "fields": [
+     [
+      "Item Name",
+      "Wireless Mouse"
+     ],
+     [
+      "Selling Price",
+      "499.00"
+     ]
+    ],
+    "toggles": [],
+    "click": "Edit Item",
+    "tip": "Open item details page"
+   },
+   "face": false
+  },
+  {
+   "beat": "STEP 2",
+   "say": "Next, click edit on that item and enter your desired numeric quantity into the Reorder Point field.",
+   "tts": "Next, click edit on that item and enter your desired numeric quantity into the Reorder Point field.",
+   "card": "Set Reorder Point quantity",
+   "screen": {
+    "path": [
+     "Items",
+     "Edit Item"
+    ],
+    "view": "form",
+    "heading": "Edit Item",
+    "columns": [],
+    "rows": [],
+    "fields": [
+     [
+      "Stock on Hand",
+      "4"
+     ],
+     [
+      "Reorder Point",
+      "10"
+     ]
+    ],
+    "toggles": [],
+    "click": "Reorder Point",
+    "tip": "Enter your minimum stock threshold"
+   },
+   "face": false
+  },
+  {
+   "beat": "STEP 3",
+   "say": "Then, open your organization settings, go to preferences for items, and turn on low stock email alerts.",
+   "tts": "Then, open your organization settings, go to preferences for items, and turn on low stock email alerts.",
+   "card": "Enable Low Stock Email",
+   "screen": {
+    "path": [
+     "Settings",
+     "Preferences",
+     "Items"
+    ],
+    "view": "settings",
+    "heading": "Preferences - Items",
+    "columns": [],
+    "rows": [],
+    "fields": [
+     [
+      "Notify when stock reaches reorder point",
+      "Enabled"
+     ]
+    ],
+    "toggles": [
+     [
+      "Send low stock email alerts",
+      true
+     ]
+    ],
+    "click": "Send low stock email alerts",
+    "tip": "Toggle email alerts on"
+   },
+   "face": false
+  },
+  {
+   "beat": "RESULT",
+   "say": "Never run out of stock unexpectedly again. Set it up once and keep your fulfillment running smoothly.",
+   "tts": "Never run out of stock unexpectedly again. Set it up once and keep your fulfillment running smoothly.",
+   "card": "Never run out of stock",
+   "screen": null,
+   "face": true
+  }
+ ],
+ "clips": [
+  {
+   "text": "Running out of stock? Fix this in Zoho right now.",
+   "lines": [
+    0
+   ],
+   "beat": "HOOK",
+   "prompt": "The man (my avatar) looks into the camera and talks to the viewer like an energetic YouTube tech explainer; he steps forward slightly with an energetic, curious expression and an open-hand gesture. Vertical 9:16 medium-wide shot from the knees up, camera about two metres away, his head in the upper third with space above it, both hands and all his gestures fully visible in the frame, static camera, sharp and well lit, wearing his dark grey blazer over a navy t-shirt, in a bright modern office with soft daylight. He says, in clear natural English with an Indian accent, at a brisk, lively pace: \"Running out of stock? Fix this in Zoho right now.\" His lips match every word. He starts speaking in the very first frame, with no pause before the first word, and stops right after the last word. Audio: only his voice - no music, no sound effects. No subtitles, no captions, no text on screen."
+  },
+  {
+   "text": "Missing low stock alerts means unexpected inventory gaps, lost sales, and unhappy customers.",
+   "lines": [
+    1
+   ],
+   "beat": "PROBLEM",
+   "prompt": "The man (my avatar) looks into the camera and talks to the viewer like an energetic YouTube tech explainer; he frowns a little and gestures with both hands, showing the frustration. Vertical 9:16 medium-wide shot from the knees up, camera about two metres away, his head in the upper third with space above it, both hands and all his gestures fully visible in the frame, static camera, sharp and well lit, wearing his dark grey blazer over a navy t-shirt, in a bright modern office with soft daylight. He says, in clear natural English with an Indian accent, at a brisk, lively pace: \"Missing low stock alerts means unexpected inventory gaps, lost sales, and unhappy customers.\" His lips match every word. He starts speaking in the very first frame, with no pause before the first word, and stops right after the last word. Audio: only his voice - no music, no sound effects. No subtitles, no captions, no text on screen."
+  },
+  {
+   "text": "Never run out of stock unexpectedly again. Set it up once and keep your fulfillment running smoothly.",
+   "lines": [
+    6
+   ],
+   "beat": "RESULT",
+   "prompt": "The man (my avatar) looks into the camera and talks to the viewer like an energetic YouTube tech explainer; he smiles and opens both arms wide. Vertical 9:16 medium-wide shot from the knees up, camera about two metres away, his head in the upper third with space above it, both hands and all his gestures fully visible in the frame, static camera, sharp and well lit, wearing his dark grey blazer over a navy t-shirt, in a bright modern office with soft daylight. He says, in clear natural English with an Indian accent, at a brisk, lively pace: \"Never run out of stock unexpectedly again. Set it up once and keep your fulfillment running smoothly.\" His lips match every word. He starts speaking in the very first frame, with no pause before the first word, and stops right after the last word. Audio: only his voice - no music, no sound effects. No subtitles, no captions, no text on screen."
+  }
+ ],
+ "look": "wearing his dark grey blazer over a navy t-shirt, in a bright modern office with soft daylight",
+ "issue": 13
+}

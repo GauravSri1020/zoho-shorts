@@ -1,18 +1,34 @@
 {
- "next_id": 6,
+ "next_id": 18,
  "covered_links": [
   "https://www.reddit.com/r/Zoho/comments/1wzd94y/sales_order_or_invoice/",
   "https://www.reddit.com/r/Zoho/comments/1wwjbbr/accounting_of_travel_agent/",
   "https://www.reddit.com/r/Zoho/comments/1x20wuz/why_is_it_so_hard_to_get_a_fiscal_ytd_pl_report/",
   "https://www.reddit.com/r/Zoho/comments/1x312vi/zoho_flow_automation_to_create_deals/",
-  "https://www.reddit.com/r/Zoho/comments/1wwe1n2/how_i_cut_a_property_management_firms_software/"
+  "https://www.reddit.com/r/Zoho/comments/1wwe1n2/how_i_cut_a_property_management_firms_software/",
+  "https://www.reddit.com/r/Zoho/comments/1wyufsg/are_you_still_using_spreadsheets_for_reporting/",
+  "https://www.reddit.com/r/Zoho/comments/1x0j0pn/can_zia_agents_really_replace_manual_crm_tasks/",
+  "https://www.reddit.com/r/Zoho/comments/1wwnw5z/zoho_restaurant_posbooks/",
+  "https://www.reddit.com/r/Zoho/comments/1wzkkp4/marketing_automation_mcp/"
  ],
  "problems": [
   "Zoho Books me online paid sales orders direct closed invoice me convert nahi hote.",
   "Client ke behalf par flight ya hotel ka kharcha kiya par invoice me jodna bhool gaye.",
   "Zoho Books me har mahine fiscal YTD P&L report dekhne ke liye baar baar comparison filters manually set karne padte hain.",
   "Sales reps waste hours manually reviewing and converting hundreds of incoming customer emails into deals.",
-  "Vendor bill approvals require purchasing expensive additional user licenses in Zoho Books just for approval workflows."
+  "Vendor bill approvals require purchasing expensive additional user licenses in Zoho Books just for approval workflows.",
+  "Data silos between CRM, Books, and Desk make business reporting a nightmare.",
+  "Sales reps spend hours manually updating lead status and follow-up tasks.",
+  "Tracking restaurant inventory recipes with multiple variants is complex.",
+  "Building complex customer journeys manually is slow and error-prone.",
+  "Duplicate leads cluttering the database from web forms.",
+  "Users need a quick way to generate and email a PDF report from a record.",
+  "Tickets are being assigned to the wrong agents automatically.",
+  "Notification delays between different apps causing missed opportunities.",
+  "Customers aren't paying invoices on time because reminders are manual.",
+  "Sales reps forget to fill mandatory fields before closing a deal.",
+  "Low stock alerts are missed, leading to lost sales.",
+  "Customizing the UI for different user roles is too cluttered."
  ],
  "scripts": {
   "S0001": {
@@ -48,6 +64,90 @@
    "engine": "flow",
    "job": "20261011-1326-1",
    "created": "2026-10-11T13:27:49"
+  },
+  "S0006": {
+   "problem": "Data silos between CRM, Books, and Desk make business reporting a nightmare.",
+   "title": "Stop manually copying Zoho CRM and Books data to Excel! #Shorts",
+   "engine": "flow",
+   "job": "20261011-1804-1",
+   "created": "2026-10-11T18:06:21"
+  },
+  "S0007": {
+   "problem": "Sales reps spend hours manually updating lead status and follow-up tasks.",
+   "title": "Automate Zoho CRM Lead Tasks Instantly #Shorts",
+   "engine": "flow",
+   "job": "20261011-1806-2",
+   "created": "2026-10-11T18:07:48"
+  },
+  "S0008": {
+   "problem": "Tracking restaurant inventory recipes with multiple variants is complex.",
+   "title": "Track Restaurant Recipe Sizes in Zoho Books #Shorts",
+   "engine": "flow",
+   "job": "20261011-1807-3",
+   "created": "2026-10-11T18:09:53"
+  },
+  "S0009": {
+   "problem": "Building complex customer journeys manually is slow and error-prone.",
+   "title": "Automate Zoho Marketing Journeys with Deluge API #Shorts",
+   "engine": "flow",
+   "job": "20261011-1809-4",
+   "created": "2026-10-11T18:12:13"
+  },
+  "S0010": {
+   "problem": "Duplicate leads cluttering the database from web forms.",
+   "title": "Block Duplicate Leads in Zoho CRM Automatically (No Code) #Shorts",
+   "engine": "flow",
+   "job": "20261011-1812-5",
+   "created": "2026-10-11T18:13:43"
+  },
+  "S0011": {
+   "problem": "Users need a quick way to generate and email a PDF report from a record.",
+   "title": "Generate and Email Zoho Creator PDFs in One Click #Shorts",
+   "engine": "flow",
+   "job": "20261011-1813-6",
+   "created": "2026-10-11T18:16:14"
+  },
+  "S0012": {
+   "problem": "Tickets are being assigned to the wrong agents automatically.",
+   "title": "Fix Wrong Ticket Assignment in Zoho Desk #Shorts",
+   "engine": "flow",
+   "job": "20261011-1816-7",
+   "created": "2026-10-11T18:18:25"
+  },
+  "S0013": {
+   "problem": "Notification delays between different apps causing missed opportunities.",
+   "title": "Stop Missed Alerts with Instant Zoho Flows #Shorts",
+   "engine": "flow",
+   "job": "20261011-1821-9",
+   "created": "2026-10-11T18:23:29"
+  },
+  "S0014": {
+   "problem": "Customers aren't paying invoices on time because reminders are manual.",
+   "title": "Automate Payment Reminders in Zoho Books #Shorts",
+   "engine": "flow",
+   "job": "20261011-1823-10",
+   "created": "2026-10-11T18:24:48"
+  },
+  "S0015": {
+   "problem": "Sales reps forget to fill mandatory fields before closing a deal.",
+   "title": "Force Mandatory Fields in Zoho CRM Deals #Shorts",
+   "engine": "flow",
+   "job": "20261011-1824-11",
+   "created": "2026-10-11T18:26:59"
+  },
+  "S0016": {
+   "problem": "Low stock alerts are missed, leading to lost sales.",
+   "title": "Stop Running Out Of Stock in Zoho Inventory #Shorts",
+   "engine": "flow",
+   "job": "20261011-1827-12",
+   "created": "2026-10-11T18:28:18"
+  },
+  "S0017": {
+   "problem": "Customizing the UI for different user roles is too cluttered.",
+   "title": "Declutter Your Zoho CRM Interface With Canvas Builder #Shorts",
+   "engine": "flow",
+   "job": "20261011-1828-13",
+   "created": "2026-10-11T18:30:30"
   }
  },
  "slots": [],
@@ -55,5 +155,6 @@
  "seen_comments": [],
  "last_photo": "1_jacket.jpg",
  "photo_scenes": [],
- "photo_agent_error": "RuntimeError: image model unavailable: 404 NOT_FOUND. {'error': {'code': 404, 'm"
+ "photo_agent_error": "RuntimeError: image model unavailable: 404 NOT_FOUND. {'error': {'code': 404, 'm",
+ "look_index": 12
 }

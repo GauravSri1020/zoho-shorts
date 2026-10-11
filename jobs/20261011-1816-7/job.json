@@ -1,0 +1,370 @@
+{
+ "id": "20261011-1816-7",
+ "status": "waiting_for_clips",
+ "upload": true,
+ "created": "2026-10-11T18:18:25",
+ "title": "Fix Wrong Ticket Assignment in Zoho Desk #Shorts",
+ "description": "Stop misrouted support tickets in Zoho Desk. Learn how to refine your assignment rules using specific criteria like department and subject so tickets reach the right expert every time.\n\n1. Go to Setup › Automation › Assignment Rules\n2. Add criteria based on ticket category\n3. Assign to specific agent or round-robin queue\n\nDaily Zoho fixes - follow @GSXAutomation\n\nThis video uses an AI-generated presenter and voice.\nIndependent channel. Not affiliated with or endorsed by Zoho Corporation. Zoho is a trademark of Zoho Corporation.\n\n#Shorts #ZohoCRM #Zoho #BusinessAutomation",
+ "angle": {
+  "story_index": -1,
+  "product": "Zoho Desk",
+  "problem": "Tickets are being assigned to the wrong agents automatically.",
+  "fix_type": "native",
+  "solution": "Refine 'Assignment Rules' using specific criteria like 'Department' or 'Subject'.",
+  "steps": [
+   "Go to Setup > Automation > Assignment Rules",
+   "Add criteria based on ticket category",
+   "Assign to specific agent or round-robin queue"
+  ],
+  "result": "Tickets reach the right expert every single time.",
+  "hook": "Are your support tickets going to the wrong agent?"
+ },
+ "story": null,
+ "script": {
+  "title": "Fix Wrong Ticket Assignment in Zoho Desk",
+  "hook_text": "Are your support tickets going to the wrong agent?",
+  "lines": [
+   {
+    "beat": "HOOK",
+    "say": "Are your support tickets going to the wrong agent?",
+    "tts": "Are your support tickets going to the wrong agent?",
+    "card": "Wrong agent routing?",
+    "screen": null
+   },
+   {
+    "beat": "PROBLEM",
+    "say": "Random assignments cause unnecessary delays and frustrated customers who need fast help.",
+    "tts": "Random assignments cause unnecessary delays and frustrated customers who need fast help.",
+    "card": "Delays and angry customers",
+    "screen": null
+   },
+   {
+    "beat": "FIX",
+    "say": "We can easily fix this frustrating issue by refining your assignment rules with specific criteria right now.",
+    "tts": "We can easily fix this frustrating issue by refining your assignment rules with specific criteria right now.",
+    "card": "Refine Assignment Rules",
+    "screen": {
+     "path": [
+      "Setup",
+      "Automation",
+      "Assignment Rules"
+     ],
+     "view": "settings",
+     "heading": "Assignment Rules",
+     "columns": [],
+     "rows": [],
+     "fields": [
+      [
+       "Rule Name",
+       "Support Routing"
+      ]
+     ],
+     "toggles": [
+      [
+       "Enable Rule",
+       true
+      ]
+     ],
+     "click": "Assignment Rules",
+     "tip": "Navigate to automation settings"
+    }
+   },
+   {
+    "beat": "STEP 1",
+    "say": "Click the gear icon for Setup, open Automation, and click Assignment Rules.",
+    "tts": "Click the gear icon for Setup, open Automation, and click Assignment Rules.",
+    "card": "Setup > Automation > Assignment Rules",
+    "screen": {
+     "path": [
+      "Setup",
+      "Automation",
+      "Assignment Rules"
+     ],
+     "view": "list",
+     "heading": "Ticket Assignment Rules",
+     "columns": [
+      "Rule Name",
+      "Module",
+      "Status"
+     ],
+     "rows": [
+      [
+       "Default Rule",
+       "Tickets",
+       "Active"
+      ]
+     ],
+     "fields": [],
+     "toggles": [],
+     "click": "Assignment Rules",
+     "tip": "Open assignment rules section"
+    }
+   },
+   {
+    "beat": "STEP 2",
+    "say": "Click add rule, then type your specific criteria based on ticket category or department.",
+    "tts": "Click add rule, then type your specific criteria based on ticket category or department.",
+    "card": "Add rule criteria",
+    "screen": {
+     "path": [
+      "Setup",
+      "Automation",
+      "Assignment Rules"
+     ],
+     "view": "form",
+     "heading": "Edit Assignment Rule",
+     "columns": [],
+     "rows": [],
+     "fields": [
+      [
+       "Criteria",
+       "Department equals Billing"
+      ],
+      [
+       "Assign To",
+       "Billing Team"
+      ]
+     ],
+     "toggles": [],
+     "click": "Criteria",
+     "tip": "Set your routing criteria"
+    }
+   },
+   {
+    "beat": "STEP 3",
+    "say": "Select your target agent or choose a round-robin queue from the dropdown menu, then click save.",
+    "tts": "Select your target agent or choose a round-robin queue from the dropdown menu, then click save.",
+    "card": "Assign to agent or queue",
+    "screen": {
+     "path": [
+      "Setup",
+      "Automation",
+      "Assignment Rules"
+     ],
+     "view": "form",
+     "heading": "Edit Assignment Rule",
+     "columns": [],
+     "rows": [],
+     "fields": [
+      [
+       "Assignment Type",
+       "Agent"
+      ],
+      [
+       "Select Agent",
+       "Support Agent"
+      ]
+     ],
+     "toggles": [],
+     "click": "Select Agent",
+     "tip": "Choose the right expert"
+    }
+   },
+   {
+    "beat": "RESULT",
+    "say": "Now tickets reach the right expert every single time without any manual sorting needed.",
+    "tts": "Now tickets reach the right expert every single time without any manual sorting needed.",
+    "card": "Right expert every time",
+    "screen": null
+   }
+  ],
+  "code": null,
+  "test_before_recording": [
+   "Check existing assignment rules in Zoho Desk",
+   "Ensure department names are correctly set up"
+  ],
+  "description": "Stop misrouted support tickets in Zoho Desk. Learn how to refine your assignment rules using specific criteria like department and subject so tickets reach the right expert every time.",
+  "tags": [
+   "Zoho Desk",
+   "Assignment Rules",
+   "Support Tickets",
+   "Automation",
+   "Helpdesk",
+   "Customer Support",
+   "Zoho Tutorial",
+   "Ticket Routing",
+   "Productivity",
+   "CRM"
+  ]
+ },
+ "lines": [
+  {
+   "beat": "HOOK",
+   "say": "Are your support tickets going to the wrong agent?",
+   "tts": "Are your support tickets going to the wrong agent?",
+   "card": "Wrong agent routing?",
+   "screen": null,
+   "face": true
+  },
+  {
+   "beat": "PROBLEM",
+   "say": "Random assignments cause unnecessary delays and frustrated customers who need fast help.",
+   "tts": "Random assignments cause unnecessary delays and frustrated customers who need fast help.",
+   "card": "Delays and angry customers",
+   "screen": null,
+   "face": true
+  },
+  {
+   "beat": "FIX",
+   "say": "We can easily fix this frustrating issue by refining your assignment rules with specific criteria right now.",
+   "tts": "We can easily fix this frustrating issue by refining your assignment rules with specific criteria right now.",
+   "card": "Refine Assignment Rules",
+   "screen": {
+    "path": [
+     "Setup",
+     "Automation",
+     "Assignment Rules"
+    ],
+    "view": "settings",
+    "heading": "Assignment Rules",
+    "columns": [],
+    "rows": [],
+    "fields": [
+     [
+      "Rule Name",
+      "Support Routing"
+     ]
+    ],
+    "toggles": [
+     [
+      "Enable Rule",
+      true
+     ]
+    ],
+    "click": "Assignment Rules",
+    "tip": "Navigate to automation settings"
+   },
+   "face": false
+  },
+  {
+   "beat": "STEP 1",
+   "say": "Click the gear icon for Setup, open Automation, and click Assignment Rules.",
+   "tts": "Click the gear icon for Setup, open Automation, and click Assignment Rules.",
+   "card": "Setup > Automation > Assignment Rules",
+   "screen": {
+    "path": [
+     "Setup",
+     "Automation",
+     "Assignment Rules"
+    ],
+    "view": "list",
+    "heading": "Ticket Assignment Rules",
+    "columns": [
+     "Rule Name",
+     "Module",
+     "Status"
+    ],
+    "rows": [
+     [
+      "Default Rule",
+      "Tickets",
+      "Active"
+     ]
+    ],
+    "fields": [],
+    "toggles": [],
+    "click": "Assignment Rules",
+    "tip": "Open assignment rules section"
+   },
+   "face": false
+  },
+  {
+   "beat": "STEP 2",
+   "say": "Click add rule, then type your specific criteria based on ticket category or department.",
+   "tts": "Click add rule, then type your specific criteria based on ticket category or department.",
+   "card": "Add rule criteria",
+   "screen": {
+    "path": [
+     "Setup",
+     "Automation",
+     "Assignment Rules"
+    ],
+    "view": "form",
+    "heading": "Edit Assignment Rule",
+    "columns": [],
+    "rows": [],
+    "fields": [
+     [
+      "Criteria",
+      "Department equals Billing"
+     ],
+     [
+      "Assign To",
+      "Billing Team"
+     ]
+    ],
+    "toggles": [],
+    "click": "Criteria",
+    "tip": "Set your routing criteria"
+   },
+   "face": false
+  },
+  {
+   "beat": "STEP 3",
+   "say": "Select your target agent or choose a round-robin queue from the dropdown menu, then click save.",
+   "tts": "Select your target agent or choose a round-robin queue from the dropdown menu, then click save.",
+   "card": "Assign to agent or queue",
+   "screen": {
+    "path": [
+     "Setup",
+     "Automation",
+     "Assignment Rules"
+    ],
+    "view": "form",
+    "heading": "Edit Assignment Rule",
+    "columns": [],
+    "rows": [],
+    "fields": [
+     [
+      "Assignment Type",
+      "Agent"
+     ],
+     [
+      "Select Agent",
+      "Support Agent"
+     ]
+    ],
+    "toggles": [],
+    "click": "Select Agent",
+    "tip": "Choose the right expert"
+   },
+   "face": false
+  },
+  {
+   "beat": "RESULT",
+   "say": "Now tickets reach the right expert every single time without any manual sorting needed.",
+   "tts": "Now tickets reach the right expert every single time without any manual sorting needed.",
+   "card": "Right expert every time",
+   "screen": null,
+   "face": true
+  }
+ ],
+ "clips": [
+  {
+   "text": "Are your support tickets going to the wrong agent?",
+   "lines": [
+    0
+   ],
+   "beat": "HOOK",
+   "prompt": "The man (my avatar) looks into the camera and talks to the viewer like an energetic YouTube tech explainer; he steps forward slightly with an energetic, curious expression and an open-hand gesture. Vertical 9:16 medium-wide shot from the knees up, camera about two metres away, his head in the upper third with space above it, both hands and all his gestures fully visible in the frame, static camera, sharp and well lit, wearing his dark grey blazer over a navy t-shirt, in a bright modern office with soft daylight. He says, in clear natural English with an Indian accent, at a brisk, lively pace: \"Are your support tickets going to the wrong agent?\" His lips match every word. He starts speaking in the very first frame, with no pause before the first word, and stops right after the last word. Audio: only his voice - no music, no sound effects. No subtitles, no captions, no text on screen."
+  },
+  {
+   "text": "Random assignments cause unnecessary delays and frustrated customers who need fast help.",
+   "lines": [
+    1
+   ],
+   "beat": "PROBLEM",
+   "prompt": "The man (my avatar) looks into the camera and talks to the viewer like an energetic YouTube tech explainer; he frowns a little and gestures with both hands, showing the frustration. Vertical 9:16 medium-wide shot from the knees up, camera about two metres away, his head in the upper third with space above it, both hands and all his gestures fully visible in the frame, static camera, sharp and well lit, wearing his dark grey blazer over a navy t-shirt, in a bright modern office with soft daylight. He says, in clear natural English with an Indian accent, at a brisk, lively pace: \"Random assignments cause unnecessary delays and frustrated customers who need fast help.\" His lips match every word. He starts speaking in the very first frame, with no pause before the first word, and stops right after the last word. Audio: only his voice - no music, no sound effects. No subtitles, no captions, no text on screen."
+  },
+  {
+   "text": "Now tickets reach the right expert every single time without any manual sorting needed.",
+   "lines": [
+    6
+   ],
+   "beat": "RESULT",
+   "prompt": "The man (my avatar) looks into the camera and talks to the viewer like an energetic YouTube tech explainer; he smiles and opens both arms wide. Vertical 9:16 medium-wide shot from the knees up, camera about two metres away, his head in the upper third with space above it, both hands and all his gestures fully visible in the frame, static camera, sharp and well lit, wearing his dark grey blazer over a navy t-shirt, in a bright modern office with soft daylight. He says, in clear natural English with an Indian accent, at a brisk, lively pace: \"Now tickets reach the right expert every single time without any manual sorting needed.\" His lips match every word. He starts speaking in the very first frame, with no pause before the first word, and stops right after the last word. Audio: only his voice - no music, no sound effects. No subtitles, no captions, no text on screen."
+  }
+ ],
+ "look": "wearing his dark grey blazer over a navy t-shirt, in a bright modern office with soft daylight",
+ "issue": 9
+}
