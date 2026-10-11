@@ -33,9 +33,11 @@ KERNEL_SRC = Path(__file__).parent / "kaggle_kernel" / "lipsync.py"
 
 
 def _user():
-    u = os.getenv("KAGGLE_USERNAME", "").strip()
+    """Kaggle username; also accepts a pasted profile link like https://www.kaggle.com/<name>."""
+    u = os.getenv("KAGGLE_USERNAME", "").strip().rstrip("/").split("/")[-1].lstrip("@").strip()
     if not u or not (os.getenv("KAGGLE_API_TOKEN") or os.getenv("KAGGLE_KEY")):
         raise RuntimeError("KAGGLE_USERNAME / KAGGLE_API_TOKEN secrets not set")
+    os.environ["KAGGLE_USERNAME"] = u
     return u
 
 
@@ -74,13 +76,18 @@ def _upload_inputs(user, base, audio, run_id, workdir: Path):
         "title": DATASET_SLUG, "id": f"{user}/{DATASET_SLUG}", "licenses": [{"name": "CC0-1.0"}]}))
     exists = "ready" in _kaggle("datasets", "status", f"{user}/{DATASET_SLUG}", check=False).lower()
     if exists:
-        _kaggle("datasets", "version", "-p", str(d), "-m", run_id, "--dir-mode", "skip")
+        out = _kaggle("datasets", "version", "-p", str(d), "-m", run_id, "--dir-mode", "skip")
     else:
-        _kaggle("datasets", "create", "-p", str(d))        # private by default
+        out = _kaggle("datasets", "create", "-p", str(d))  # private by default
+    print(f"[kaggle] dataset {'version' if exists else 'create'}: {out.strip()[-300:]}")
+    if "error" in out.lower() or "invalid" in out.lower():
+        raise RuntimeError(f"Kaggle dataset upload failed: {out.strip()[-300:]}")
     for _ in range(60):                                   # wait until Kaggle has processed the new version
         time.sleep(10)
         if "ready" in _kaggle("datasets", "status", f"{user}/{DATASET_SLUG}", check=False).lower():
             break
+    else:
+        raise RuntimeError("Kaggle dataset never became ready")
     print(f"[kaggle] inputs uploaded ({'new version' if exists else 'new dataset'}), run {run_id}")
 
 
@@ -97,11 +104,12 @@ def _push_kernel(user, workdir: Path, machine=MACHINE):
     (d / "kernel-metadata.json").write_text(json.dumps(meta, indent=1))
     out = _kaggle("kernels", "push", "-p", str(d), check=False)
     print(f"[kaggle] push: {out.strip()[-300:]}")
-    if "error" in out.lower() and machine:
+    if "successfully pushed" in out.lower():
+        return
+    if machine:
         print("[kaggle] retrying without machine_shape")
         return _push_kernel(user, workdir, machine=None)
-    if "error" in out.lower():
-        raise RuntimeError(f"kernel push failed: {out.strip()[-300:]}")
+    raise RuntimeError(f"Kaggle notebook push failed: {out.strip()[-300:]}")
 
 
 def _fetch_output(user, workdir: Path):
