@@ -58,11 +58,18 @@ scripts:
 
 # The presenter: AI avatar from your photos (encrypted in assets/avatars.enc, AVATAR_KEY secret) + AI voice
 avatar:
-  engine: "sadtalker"            # sadtalker = lip-sync (free, CPU, slow) | photo = photo with camera motion only
+  engine: "veo"                  # veo = Google Veo makes your talking part (paid API, best) | sadtalker = lip-sync (free, CPU, slow) | photo = photo with camera motion only
   gemini_voice: "Puck"           # Gemini TTS voices: Puck, Charon, Fenrir, Orus, Kore, Aoede, Leda, Zephyr ...
   backup_voice: "hi-IN-MadhurNeural"   # edge-tts voice used only if Gemini TTS is down
   voice_style: "confident, friendly Hinglish explainer, Indian accent, natural pace"
   tempo: 1.05
+  # Veo avatar agent (autopilot/veo.py). Key: VEO_API_KEY secret (billing ON). Fails -> SadTalker -> photo.
+  veo:
+    models: ["veo-3.1-fast-generate-preview", "veo-3.1-lite-generate-preview", "veo-3.1-generate-preview"]
+    resolution: "720p"             # 720p is enough (avatar sits in the middle panel); 1080p costs more
+    max_seconds_per_short: 48      # cost guard: max Veo seconds per Short (Fast ~ $0.10/s, Lite ~ $0.05/s)
+    speech: "friendly, confident Hinglish explainer voice, Indian accent, natural pace"
+    scene: ""                      # optional extra direction, e.g. "soft office daylight"
 
 # When videos go public (IST). A random minute inside each window, every day different,
 # and never the same time as the previous day's slot.
