@@ -1,9 +1,9 @@
-"""Entry point. Fully automatic: nobody records, reads or reviews anything.
-  python -m autopilot.main daily [--count 2] [--no-upload]   research -> script -> QA -> voice -> avatar ->
-                                                              video -> QA -> scheduled upload (AI label on)
+"""Entry point.
+  python -m autopilot.main daily [--count 1] [--no-upload]   research -> script -> QA -> Flow prompts -> GitHub issue
+                                                              (GitHub e-mails it; you make the clips in Google Flow)
+  python -m autopilot.main assemble                           your uploaded Flow clips -> finished Short -> QA ->
+                                                              scheduled YouTube upload (starts by itself on upload)
   python -m autopilot.main comments                           reply to new comments
-  python -m autopilot.main photos                             photo agent: new scenes of you (weekly)
-Telegram / email only when something goes wrong.
 """
 import argparse
 import datetime as dt
@@ -12,13 +12,12 @@ import shutil
 import sys
 import traceback
 
-from . import avatar, benchmark, composer, editor, google_apis as g, notify, photos, research, schedule, state, voice, writer
+from . import flow, google_apis as g, notify, schedule, state, writer
 from .config import (OUT_DIR, CHANNEL_NAME, CHANNEL_HANDLE, HASHTAGS, NICHE, DISCLAIMER, SCRIPTS_PER_DAY,
                      MAX_VIDEO_SECONDS)
 
 IST = schedule.IST
-AI_DISCLOSURE = (f"Is video mein {CHANNEL_NAME} ka AI avatar aur AI voice hai. "
-                 "This video uses an AI-generated presenter and voice.")
+AI_DISCLOSURE = "This video uses an AI-generated presenter and voice."
 
 
 def _yt_safe(text):
@@ -51,96 +50,6 @@ def build_description(sc, angle):
 
 def _lines(sc):
     return [l for l in sc.get("lines", []) if (l.get("say") or l.get("tts"))]
-
-
-_RUN = {}
-_STOP = {}          # set when a problem would repeat for every Short of this run (no lip-sync / QA down)
-
-
-def make_video(sc, work, st):
-    """script -> voice -> lip-synced avatar -> avatar + Zoho screens edit -> benchmark QA gate."""
-    if _STOP:
-        raise RuntimeError("skipped: " + _STOP["why"])
-    if not _RUN.get("learned"):
-        _RUN["learned"] = True
-        try:
-            benchmark.learn(g.youtube())
-        except Exception as e:
-            print(f"[benchmark] learn skipped: {str(e)[:200]}")
-    lines = _lines(sc)
-    wav, _ = voice.synthesize(lines, work / "voice", MAX_VIDEO_SECONDS)
-    script_text = " ".join(voice._clean(l.get("say") or l.get("tts")) for l in lines)
-    words = editor.align_to_script(editor.transcribe(wav, work), script_text, wav)
-    dur = voice.duration(wav)
-    av, engine, photo = avatar.make(wav, dur, work / "avatar", last_photo=st.get("last_photo"), lines=lines,
-                                    words=words)
-    mp4 = work / "short.mp4"
-    composer.render(sc, lines, words, av, wav, work / "edit", mp4, seed=st.get("next_id"))
-    problems = editor.check_media(mp4)
-    report = benchmark.gate(mp4, sc, engine, problems)
-    (work / "qa.json").write_text(json.dumps(report, ensure_ascii=False, indent=1), encoding="utf-8")
-    print(f"[qa] engine={engine} score={report['overall']}/{report['min_score']} approved={report['approved']}")
-    for i in report["issues"][:8]:
-        print(f"[qa]   - {i}")
-    if report["approved"]:
-        st["last_photo"] = photo
-        return mp4, engine
-    if report.get("fatal"):
-        _STOP["why"] = report["issues"][0]
-    raise RuntimeError("video failed QA: " + "; ".join(map(str, report["issues"]))[:300])
-
-
-def run_daily(count, do_upload):
-    st = state.load()
-    candidates = research.fetch(st["covered_links"])
-    angles = writer.scout(candidates, count + 2, st["problems"])     # spares in case some fail
-    print(f"[daily] scout found {len(angles)} angles")
-    made, errors = 0, []
-    yt = g.youtube() if do_upload else None
-    for k, angle in enumerate(angles):
-        if made >= count:
-            break
-        work = OUT_DIR / f"{dt.datetime.now(IST):%Y%m%d-%H%M}-{k + 1}"
-        shutil.rmtree(work, ignore_errors=True)
-        work.mkdir(parents=True)
-        print(f"\n[daily] === {angle.get('problem')}")
-        try:
-            sc = writer.approved_script(angle)
-            mp4, engine = make_video(sc, work, st)
-            title, desc = build_title(sc), build_description(sc, angle)
-            (work / "short.json").write_text(json.dumps(
-                {"angle": {k2: v for k2, v in angle.items() if k2 != "story"}, "source": angle.get("story"),
-                 "script": sc, "title": title, "description": desc, "avatar_engine": engine},
-                ensure_ascii=False, indent=1), encoding="utf-8")
-            entry = {"problem": angle["problem"], "title": title, "engine": engine,
-                     "created": dt.datetime.now(IST).isoformat()}
-            if do_upload:
-                when, slot = schedule.next_slot(st["slots"])
-                tags = list(sc.get("tags") or []) + ["Zoho", "Shorts"]
-                vid = g.upload(yt, mp4, title, desc, tags, schedule.to_rfc3339_utc(when))
-                st["slots"].append(slot | {"video_id": vid, "title": title})
-                entry |= {"video_id": vid, "publish_at": when.isoformat()}
-                print(f"[daily] scheduled for {when:%d %b %I:%M %p} IST: https://youtube.com/shorts/{vid}")
-            st["scripts"][f"S{st['next_id']:04d}"] = entry
-            st["next_id"] += 1
-            st["problems"].append(angle["problem"])
-            if angle.get("story"):
-                st["covered_links"].append(angle["story"]["link"])
-            made += 1
-        except Exception as e:
-            traceback.print_exc()
-            errors.append(f"{angle.get('problem', '')[:60]}: {type(e).__name__}: {str(e)[:200]}")
-        finally:
-            shutil.rmtree(work / "edit", ignore_errors=True)
-            shutil.rmtree(work / "avatar" / "sadtalker", ignore_errors=True)
-        state.save(st)
-
-    print(f"[daily] done: {made}/{count} Shorts")
-    if made < count:
-        notify.send(f"⚠️ {CHANNEL_NAME}: aaj {count} mein se sirf {made} Short upload hue.\n"
-                    + "\n".join(errors[-3:]) + "\nGitHub > Actions mein log dekh.")
-    if not made:
-        sys.exit(1)                       # already alerted above
 
 
 def run_comments(max_replies=15):
@@ -177,43 +86,17 @@ def run_comments(max_replies=15):
         notify.send(f"⚠️ {CHANNEL_NAME}: {failed} comment replies fail ho gaye. GitHub Actions ka log dekh.")
 
 
-def run_photos():
-    st = state.load()
-    try:
-        photos.run(st)
-    except Exception as e:
-        traceback.print_exc()
-        # alert once per kind of problem, not every week
-        msg = f"{type(e).__name__}: {str(e)[:200]}"
-        if st.get("photo_agent_error") != msg[:80]:
-            notify.send(f"⚠️ {CHANNEL_NAME}: photo agent naye photos nahi bana paya ({msg}). "
-                        "Purane photos se videos chalti rahengi.")
-        st["photo_agent_error"] = msg[:80]
-    else:
-        st.pop("photo_agent_error", None)
-    state.save(st)
-
-
 def main(argv=None):
     p = argparse.ArgumentParser()
-    p.add_argument("task", choices=["daily", "comments", "photos", "assemble", "gputest"])
+    p.add_argument("task", choices=["daily", "comments", "assemble"])
     p.add_argument("--count", type=int, default=SCRIPTS_PER_DAY)
     p.add_argument("--no-upload", action="store_true")
     a = p.parse_args(argv)
     try:
-        if a.task == "daily" and avatar.ENGINE == "gemini_manual":
-            from . import manual   # script + voice + Gemini prompts; you upload the clips
-            manual.prepare(max(1, a.count), not a.no_upload)
-        elif a.task == "daily":
-            run_daily(max(1, a.count), not a.no_upload)
-        elif a.task == "gputest":
-            from . import kaggle_gpu   # Kaggle GPU lip-sync check -> out/gputest/short.mp4
-            kaggle_gpu.self_test()
-        elif a.task == "assemble":
-            from . import manual   # your Gemini clips -> finished Short -> QA -> upload
-            manual.finish()
-        elif a.task == "photos":
-            run_photos()
+        if a.task == "daily":          # script + Flow prompts -> GitHub issue (you make the clips in Flow)
+            flow.prepare(max(1, a.count), not a.no_upload)
+        elif a.task == "assemble":     # your Flow clips -> finished Short -> QA -> YouTube
+            flow.finish()
         else:
             run_comments()
     except Exception as e:
