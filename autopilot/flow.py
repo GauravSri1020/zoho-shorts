@@ -29,7 +29,7 @@ from .config import CH, CHANNEL_NAME, OUT_DIR, ROOT
 JOBS = ROOT / "jobs"
 _F = CH.get("flow", {}) or {}
 PER_DAY = int(_F.get("per_day", 1))
-MAX_WORDS = int(_F.get("max_words_per_clip", 17))     # ~7 s of speech -> fits one 8 s Flow clip
+MAX_WORDS = int(_F.get("max_words_per_clip", 19))     # ~7.5 s of speech -> fits one 8 s Flow clip
 PRESENTER = (_F.get("presenter") or "The man").strip()
 SCENE = (_F.get("scene") or "").strip()
 _WM = _F.get("watermark", {}) or {}
@@ -77,37 +77,50 @@ def _say(line):
 
 # ------------------------------------------------------------------ script -> Flow clips
 def chunks(lines):
-    """Consecutive script lines packed into clips of <= MAX_WORDS words; long lines are split.
+    """Script -> Flow clips. The words flow on across lines, so each clip is filled up to MAX_WORDS (one 8 s
+    clip); a clip ends at a sentence end (or comma) when it can. HOOK and CTA always get their own clip.
     Returns [{"text", "lines": [line indexes], "beat"}] in script order."""
-    out, cur, idx = [], [], []
-
-    def flush():
-        if cur:
-            out.append({"text": " ".join(cur), "lines": sorted(set(idx)),
-                        "beat": str(lines[idx[0]].get("beat", ""))})
-            cur.clear()
-            idx.clear()
-
+    groups, cur = [], []
     for i, l in enumerate(lines):
         words = _say(l).split()
         if not words:
             continue
-        if len(words) > MAX_WORDS:                       # one long line -> several equal parts
-            flush()
-            parts = -(-len(words) // MAX_WORDS)
-            size = -(-len(words) // parts)
-            for j in range(0, len(words), size):
-                cur.extend(words[j:j + size])
-                idx.append(i)
-                flush()
-            continue
-        solo = str(l.get("beat", "")).upper().startswith(("HOOK", "CTA"))   # hook / CTA: own clip
-        if cur and (solo or len(cur) + len(words) > MAX_WORDS or
-                    str(lines[idx[0]].get("beat", "")).upper().startswith(("HOOK", "CTA"))):
-            flush()
-        cur.extend(words)
-        idx.append(i)
-    flush()
+        solo = str(l.get("beat", "")).upper().startswith(("HOOK", "CTA"))
+        if solo and cur:
+            groups.append(cur)
+            cur = []
+        cur += [(w, i) for w in words]
+        if solo:
+            groups.append(cur)
+            cur = []
+    if cur:
+        groups.append(cur)
+    out = []
+    for g in groups:
+        k = 0
+        while k < len(g):
+            rest = len(g) - k
+            if rest <= MAX_WORDS:
+                cut = len(g)
+            else:
+                parts = -(-rest // MAX_WORDS)                    # clips still needed for this group
+                target = -(-rest // parts)                       # even size
+                lo, hi = k + max(4, int(target * 0.6)), min(k + MAX_WORDS, len(g) - 1)
+                cut = k + target
+                best = None
+                for j in range(hi, lo - 1, -1):                  # prefer a sentence end, then a comma
+                    end = g[j - 1][0]
+                    score = 2 if end[-1:] in ".!?" else 1 if end[-1:] in ",;:" else 0
+                    if score and (best is None or score > best[0] or
+                                  (score == best[0] and abs(j - k - target) < abs(best[1] - k - target))):
+                        best = (score, j)
+                if best:
+                    cut = best[1]
+            piece = g[k:cut]
+            idx = sorted({i for _, i in piece})
+            out.append({"text": " ".join(w for w, _ in piece), "lines": idx,
+                        "beat": str(lines[piece[0][1]].get("beat", ""))})
+            k = cut
     return out
 
 
