@@ -10,3 +10,4 @@ PyYAML>=6.0
 av>=11,<19
 playwright>=1.47
 numpy
+kaggle>=1.8
