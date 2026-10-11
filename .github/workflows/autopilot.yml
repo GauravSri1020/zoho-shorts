@@ -6,10 +6,13 @@ on:
                              #              in the next free morning (7-8) / evening (8-9 PM) slot
     - cron: "40 */3 * * *"   # every 3 hours -> reply to new comments
     - cron: "0 22 * * 6"     # Sunday 03:30 IST -> photo agent makes new photos of you
+  push:                     # you uploaded Gemini clips -> assemble the Short
+    branches: [main]
+    paths: ["jobs/*/clips/**"]
   workflow_dispatch:
     inputs:
       task:
-        description: "daily, comments or photos"
+        description: "daily, comments, photos or assemble"
         default: "daily"
       count:
         description: "daily: how many Shorts"
@@ -59,6 +62,8 @@ jobs:
               if [ "${{ inputs.upload }}" != "yes" ]; then ARGS="$ARGS --no-upload"; fi
             fi
             echo "args=$ARGS" >> $GITHUB_OUTPUT
+          elif [ "${{ github.event_name }}" = "push" ]; then
+            echo "task=assemble" >> $GITHUB_OUTPUT
           elif [ "${{ github.event.schedule }}" = "30 4 * * *" ]; then
             echo "task=daily" >> $GITHUB_OUTPUT
           elif [ "${{ github.event.schedule }}" = "0 22 * * 6" ]; then
@@ -76,10 +81,10 @@ jobs:
       - run: pip install -r requirements.txt
 
       - name: Install ffmpeg + fonts
-        if: steps.t.outputs.task == 'daily'
+        if: steps.t.outputs.task == 'daily' || steps.t.outputs.task == 'assemble'
         run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg fonts-noto-core fonts-dejavu-core
       - name: Install browser for the Zoho Books screens
-        if: steps.t.outputs.task == 'daily'
+        if: steps.t.outputs.task == 'daily' || steps.t.outputs.task == 'assemble'
         run: python -m playwright install --with-deps chromium
       - name: Cache lip-sync engine (SadTalker)
         if: steps.t.outputs.task == 'daily'
@@ -92,7 +97,7 @@ jobs:
         continue-on-error: true      # if this ever fails, Shorts still go out with the photo-motion avatar
         run: bash tools/install_sadtalker.sh
       - name: Cache the caption model
-        if: steps.t.outputs.task == 'daily'
+        if: steps.t.outputs.task == 'daily' || steps.t.outputs.task == 'assemble'
         uses: actions/cache@v4
         with:
           path: ~/.cache/huggingface
@@ -105,7 +110,7 @@ jobs:
           python -m autopilot.main ${{ steps.t.outputs.task }} ${{ steps.t.outputs.args }}
 
       - name: Keep the Shorts as downloadable artifacts (7 days)
-        if: always() && steps.t.outputs.task == 'daily'
+        if: always() && (steps.t.outputs.task == 'daily' || steps.t.outputs.task == 'assemble')
         uses: actions/upload-artifact@v4
         with:
           name: shorts-${{ github.run_id }}
@@ -122,4 +127,5 @@ jobs:
           git config user.name "shorts-bot"
           git config user.email "shorts-bot@users.noreply.github.com"
           git add state/state.json state/benchmark.json assets/avatars.enc || true
+          git add -A jobs || true
           git diff --cached --quiet || (git commit -m "state: $(date -u +%F-%H%M)" && git pull --rebase -q && git push)
