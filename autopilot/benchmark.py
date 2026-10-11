@@ -143,7 +143,7 @@ def gate(mp4, sc, engine, tech_problems):
     """Returns the QA report dict; report["approved"] decides the upload."""
     report = {"engine": engine, "min_score": MIN_SCORE, "tech_problems": list(tech_problems or []),
               "scores": {}, "overall": 0, "issues": [], "approved": False, "fatal": False}
-    if engine not in ("veo", "sadtalker"):
+    if engine not in ("kaggle", "veo", "sadtalker"):
         report["issues"].append("Avatar is not lip-synced (Veo / SadTalker did not run) - a still photo is not allowed.")
         report["fatal"] = True
     if tech_problems:

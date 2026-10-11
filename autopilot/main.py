@@ -196,7 +196,7 @@ def run_photos():
 
 def main(argv=None):
     p = argparse.ArgumentParser()
-    p.add_argument("task", choices=["daily", "comments", "photos", "assemble"])
+    p.add_argument("task", choices=["daily", "comments", "photos", "assemble", "gputest"])
     p.add_argument("--count", type=int, default=SCRIPTS_PER_DAY)
     p.add_argument("--no-upload", action="store_true")
     a = p.parse_args(argv)
@@ -206,6 +206,9 @@ def main(argv=None):
             manual.prepare(max(1, a.count), not a.no_upload)
         elif a.task == "daily":
             run_daily(max(1, a.count), not a.no_upload)
+        elif a.task == "gputest":
+            from . import kaggle_gpu   # Kaggle GPU lip-sync check -> out/gputest/short.mp4
+            kaggle_gpu.self_test()
         elif a.task == "assemble":
             from . import manual   # your Gemini clips -> finished Short -> QA -> upload
             manual.finish()
