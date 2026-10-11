@@ -84,12 +84,14 @@ def prepare(count, do_upload):
             lines = _lines(sc)
             wav, _ = voice.synthesize(lines, work / "voice", MAX_VIDEO_SECONDS)
             script_text = " ".join(voice._clean(l.get("say") or l.get("tts")) for l in lines)
-            words = editor.align_to_script(editor.transcribe(wav, work), script_text)
+            words = editor.align_to_script(editor.transcribe(wav, work), script_text, wav)
             dur = voice.duration(wav)
             plist = veo.pieces(lines, words, dur)
             if not plist:
                 raise RuntimeError("script has no on-camera line")
-            clips = plist[:MAX_CLIPS]
+            # Gemini clips go to the hook + the longest other on-camera lines; the rest reuse them
+            order = [0] + sorted(range(1, len(plist)), key=lambda i: plist[i]["t1"] - plist[i]["t0"], reverse=True)
+            clips = [{"piece": i, "text": plist[i]["text"]} for i in sorted(order[:MAX_CLIPS])]
             d = JOBS / job_id
             (d / "clips").mkdir(parents=True, exist_ok=True)
             (d / "clips" / ".keep").write_text("upload the Gemini clips here\n")
@@ -99,7 +101,7 @@ def prepare(count, do_upload):
                    "title": build_title(sc), "description": build_description(sc, angle),
                    "angle": {k2: v for k2, v in angle.items() if k2 != "story"}, "story": angle.get("story"),
                    "script": sc, "lines": lines, "words": words, "dur": dur, "pieces": plist,
-                   "clips": [{"text": p["text"]} for p in clips]}
+                   "clips": clips}
             (d / "job.json").write_text(json.dumps(job, ensure_ascii=False, indent=1), encoding="utf-8")
             (d / "PROMPTS.md").write_text(_prompts_md(job), encoding="utf-8")
             st["problems"].append(angle["problem"])
@@ -154,10 +156,11 @@ def finish():
             plist = job["pieces"]
             for p in plist:
                 p["words"] = [tuple(w) for w in p["words"]]
-            # clip i for piece i; extra pieces (more lines than Gemini clips) reuse the clips in turn
-            clips = [files[i] if i < need else files[i % need] for i in range(len(plist))]
+            # each clip belongs to one line; lines without their own clip reuse the clips in turn
+            own = {c.get("piece", n): n for n, c in enumerate(job["clips"])}
+            clips = [files[own[i]] if i in own else files[i % need] for i in range(len(plist))]
             for i, p in enumerate(plist):
-                p["reuse"] = i >= need
+                p["reuse"] = i not in own
             words = [tuple(w) for w in job["words"]]
             frame = _first_frame(files[0], work / "first_frame.jpg")
             (work / "avatar").mkdir(parents=True, exist_ok=True)

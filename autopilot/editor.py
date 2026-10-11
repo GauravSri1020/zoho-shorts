@@ -74,7 +74,78 @@ def romanize_if_needed(words):
     return [(s, e, r) for (s, e, _), r in zip(words, roman)]
 
 
-def align_to_script(words, script_text):
+def align_to_script(words, script_text, audio=None):
+    """Script words with timings: [(start, end, word)].
+
+    Uses whisper's word timings when they look sane. When they don't (whisper on Hinglish TTS sometimes
+    returns one 9 s word or squeezes 20 words into half a second), the script is spread over the real
+    speech parts of the audio (silence detection), each word's share proportional to its length.
+    """
+    sw = (script_text or "").split()
+    if not sw:
+        return words
+    out = _align_whisper(words, script_text) if words else []
+    if out and _timings_sane(out):
+        return out
+    if audio is not None:
+        spans = speech_spans(audio)
+    elif words:
+        spans = [(words[0][0], words[-1][1])]
+    else:
+        return words
+    print(f"[editor] whisper timings unusable -> script spread over {len(spans)} speech parts of the audio")
+    return _spread(sw, spans)
+
+
+def _timings_sane(aligned):
+    """False if any word is absurdly long, or many words are absurdly short."""
+    too_long = sum(e - s > max(1.6, 0.22 * len(w)) for s, e, w in aligned)
+    too_short = sum(e - s < 0.07 for s, e, _ in aligned)
+    return too_long == 0 and too_short <= 0.2 * len(aligned)
+
+
+def speech_spans(audio, noise="-35dB", min_silence=0.18):
+    """[(start, end)] of the parts of the audio where someone is speaking."""
+    dur = float(subprocess.run(["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0",
+                                str(audio)], capture_output=True, text=True, check=True).stdout)
+    err = subprocess.run(["ffmpeg", "-hide_banner", "-i", str(audio), "-af",
+                          f"silencedetect=noise={noise}:d={min_silence}", "-f", "null", "-"],
+                         capture_output=True, text=True).stderr
+    starts = [max(float(x), 0.0) for x in re.findall(r"silence_start: (-?[\d.]+)", err)]
+    ends = [float(x) for x in re.findall(r"silence_end: ([\d.]+)", err)]
+    ends += [dur] * (len(starts) - len(ends))
+    spans, t = [], 0.0
+    for s, e in zip(starts, ends):
+        if s - t > 0.05:
+            spans.append((t, s))
+        t = e
+    if dur - t > 0.05:
+        spans.append((t, dur))
+    return spans or [(0.0, dur)]
+
+
+def _spread(script_words, spans):
+    """Lays the script words over the speech spans; a word's share of speech time ~ its length."""
+    cum = [0.0]
+    for s, e in spans:
+        cum.append(cum[-1] + e - s)
+    speech = cum[-1]
+
+    def real_time(x):                       # x seconds into the speech -> time in the audio
+        k = min(max(bisect.bisect_right(cum, x) - 1, 0), len(spans) - 1)
+        return spans[k][0] + min(x - cum[k], spans[k][1] - spans[k][0])
+
+    lens = [len(w) + 1 for w in script_words]
+    total, acc, out = sum(lens), 0, []
+    for w, l in zip(script_words, lens):
+        a = real_time(acc / total * speech)
+        acc += l
+        b = real_time(acc / total * speech - 1e-6)
+        out.append((a, max(b, a + 0.05), w))
+    return out
+
+
+def _align_whisper(words, script_text):
     """Captions = the exact script words (Roman Hinglish), timed on whisper's word timings.
 
     Whisper on Hinglish audio often returns Devanagari / mis-heard words, and romanizing needs Gemini
