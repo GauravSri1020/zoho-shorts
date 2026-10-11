@@ -336,7 +336,7 @@
   "zoho_screens": "the Zoho Books steps are SHOWN on screen, the exact button/field is highlighted, readable",
   "pacing": "visual change every 2-4 s, no dead time, length fits the content (25-60 s)",
   "captions": "readable, in sync, match the speech exactly, not covering important parts",
-  "audio": "clear voice, natural Hinglish, music present but quiet under the voice",
+  "audio": "clear voice, natural English, music present but quiet under the voice",
   "value": "a Zoho Books user learns a real, correct fix they can follow",
   "polish": "looks as professional as the reference Shorts (layout, fonts, colours, no glitches)"
  }
