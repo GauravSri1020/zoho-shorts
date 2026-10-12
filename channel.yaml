@@ -2,106 +2,164 @@
 #  CHANNEL SETTINGS  -  sab kuch yahin se badlo (naam, niche, feeds, timing)
 #  Fully automatic: AI research, script, QA, AI voice, AI avatar (tere photo se), video, upload.
 #  AI avatar + AI voice -> YouTube ka 'altered or synthetic content' label har video pe ON rehta hai.
+#  12 Oct 2026: niche v2 = "AI + Zoho automation" (trending, AI agents, lead flow, APIs), global audience.
+#  Purani settings: git branch backup-2026-10-12-before-ai-niche
 # =====================================================================================
 
 channel:
   name: "GSX Automation"         # shown on videos and in descriptions
-  handle: "@GSXAutomation"       # your YouTube @handle (update once your existing channel is connected)
+  handle: "@GSXAutomation"       # your YouTube @handle
   language: "English"           # Hinglish | Hindi | English  (scripts + captions)
-  hashtags: ["Shorts", "ZohoCRM", "Zoho", "BusinessAutomation"]
+  hashtags: ["Shorts", "Zoho", "AIAutomation", "ZohoCRM", "AIAgents"]
   # Keep "Zoho" OUT of the channel name/logo (trademark). Using it in titles/tags to describe the topic is fine.
   disclaimer: "Independent channel. Not affiliated with or endorsed by Zoho Corporation. Zoho is a trademark of Zoho Corporation."
 
 # What the channel is about. The agents read this to decide WHAT to make.
 niche:
-  topic: "Zoho products (CRM, Books, Creator, Desk, Inventory, Forms, Analytics, People, Campaigns, Flow)"
-  audience: "Indian small business owners, Zoho admins, Zoho consultants and developers"
+  topic: >-
+    AI-powered business automation with Zoho: connecting Claude, ChatGPT / OpenAI, Gemini and Zia agents to
+    Zoho CRM, Books, Desk, Creator, Social, Flow, Sign, Catalyst, Analytics, SalesIQ and their APIs
+  audience: >-
+    business owners, sales and ops managers, Zoho admins, consultants and developers in the Middle East (UAE, Saudi),
+    Europe, India and the US who want their business to run itself
   promise: >-
-    every Short takes ONE real problem people hit while using a Zoho product and shows how to fix it:
-    inside Zoho (settings, workflow rules, blueprints, custom functions in Deluge), with a small widget,
-    or by connecting an outside HTML page (form / dashboard / webhook / API).
+    every Short takes ONE real business problem (ideally one that is trending this week) and shows a working,
+    future-proof fix inside Zoho - preferably with AI doing the work (an AI agent, Claude or ChatGPT over MCP,
+    an AI step in Zoho Flow, a Deluge function calling an AI API, a widget, a custom API). Show the real menu,
+    the real API endpoint or the real prompt, so the viewer can copy it. It should make even a Zoho expert say
+    "I didn't know you could do that".
+  # Content mix. The scout picks the pillar for each Short by these weights (trending news always wins if strong).
+  pillars:
+    trending: {weight: 3, about: "this week's AI / tech / business news or deadline -> how to use it inside Zoho today"}
+    ai_agent: {weight: 3, about: "AI does the work in Zoho: Claude/ChatGPT via Zoho MCP, Zia Agent Studio agents, AI steps in Flow, LLM calls from Deluge"}
+    lead_flow: {weight: 2, about: "leads from every source (Facebook/Instagram ads via Zoho Social, WhatsApp, website forms, email, SalesIQ chat) land in Zoho CRM automatically, scored and routed by AI"}
+    dev_api: {weight: 2, about: "the developer view: which Zoho API / scope / endpoint / limit, custom APIs, webhooks, widgets, Catalyst functions, Zoho Sign API - with the exact call"}
+    problem_fix: {weight: 1, about: "a classic everyday Zoho pain fixed in 3 steps (workflow, blueprint, Deluge), upgraded with an AI twist where it helps"}
   good_problems:
-    - "Zoho CRM me duplicate leads ban jaate hain, sales team confuse hoti hai"
-    - "Zoho Books me invoice bana ke WhatsApp pe bhejna manually karna padta hai"
-    - "website ke custom HTML form ki leads Zoho CRM me automatically nahi aati"
-    - "Zoho Desk me tickets ka auto-assignment galat agent ko jaata hai"
-    - "Zoho Creator report me ek button chahiye jo PDF bana ke mail kar de"
-  solution_types:                # the scout picks one per Short
-    native: "fix with built-in settings: workflow rules, blueprint, validation rules, assignment rules, layouts"
-    deluge: "a short Deluge custom function / schedule / button script"
-    widget: "a small Zoho widget (HTML + JS SDK) inside CRM / Desk / Creator"
-    html: "an outside HTML page connected to Zoho (web form, webhook, REST API, embed)"
-  skip: "pricing/discount news, funding news, opinion pieces, anything without a practical fix"
-  safety: "no financial, tax or legal advice; never show real customer data"
-  cta: "Follow {name} for more quick Zoho fixes"
+    - "Sales manager exports CRM to Excel just to see which deals are stuck - Claude answers it live via Zoho MCP"
+    - "Facebook lead-ad leads reach the sales rep two days late - Zoho Social pushes them to CRM in real time and AI scores them"
+    - "Every inbound email is read and sorted by hand - a Zoho Flow AI step classifies it and creates the lead / ticket / bill"
+    - "Integration breaks with TOO_MANY_REQUESTS - Zoho CRM API credits and concurrency explained with the fix"
+    - "UAE e-invoicing deadline - where to switch it on in Zoho Books (menus only, no tax advice)"
+    - "A screen Zoho doesn't have - build a CRM widget with the JS SDK in 20 lines"
+  solution_types: # the scout picks one per Short
+    ai_agent: "an AI agent does it: Zia Agent Studio agent, or Claude / ChatGPT connected through Zoho MCP"
+    mcp: "connect an AI client (Claude, ChatGPT, any MCP client) to a Zoho MCP server and give it the job in plain English"
+    flow_ai: "a Zoho Flow with an AI step (OpenAI / Claude / Zia) between a trigger and a Zoho action"
+    deluge_ai: "a Deluge custom function that calls an AI API with invokeurl and writes the answer back"
+    native: "built-in settings: workflow rules, blueprint, validation, assignment rules, layouts, Zia features"
+    deluge: "a short Deluge custom function / schedule / button"
+    widget: "a Zoho widget (HTML + JS SDK) inside CRM / Desk / Creator"
+    api: "a REST call: Zoho API endpoint, custom API, webhook, Catalyst function, Zoho Sign API"
+  skip: "pricing/discount news, funding news, opinion pieces, rumours, anything without a practical fix"
+  safety: "no financial, tax or legal advice (for tax/e-invoicing topics show the menus only and say 'check with your tax advisor'); never show real customer data, real keys or tokens"
+  cta: "Follow {name} for AI + Zoho automations"
 
-# Where the research agent looks for real problems people are asking about. Any RSS / Atom feed works.
+# Real problems + Gaurav's own Zoho experience. The scout reads this every day (see research/problem_bank.yaml).
+problem_bank: "research/problem_bank.yaml"
+
+# Where the research agent looks for what is trending and what people are asking. Any RSS / Atom feed works.
 sources:
   feeds:
+    # Zoho questions and news
     - "https://www.reddit.com/r/zoho/new/.rss"
     - "https://stackoverflow.com/feeds/tag/zoho"
     - "https://stackoverflow.com/feeds/tag/zoho-deluge"
     - "https://stackoverflow.com/feeds/tag/zoho-creator"
     - "https://stackoverflow.com/feeds/tag/zoho-crm"
-    - "https://news.google.com/rss/search?hl=en-IN&gl=IN&ceid=IN:en&q=%22Zoho+CRM%22+when:7d"
-    - "https://news.google.com/rss/search?hl=en-IN&gl=IN&ceid=IN:en&q=Zoho+new+feature+when:7d"
-  keywords: ["zoho", "deluge", "crm", "creator", "zoho books", "zoho desk", "widget", "blueprint", "workflow"]
-  lookback_days: 10
-  # If the feeds give nothing useful, the scout picks a common, evergreen Zoho problem from its own knowledge.
+    - "https://news.google.com/rss/search?hl=en&gl=US&ceid=US:en&q=Zoho+when:7d"
+    - "https://news.google.com/rss/search?hl=en&gl=US&ceid=US:en&q=Zoho+Zia+OR+%22Zoho+MCP%22+when:14d"
+    # AI news that can be turned into "use it inside Zoho today"
+    - "https://news.google.com/rss/search?hl=en&gl=US&ceid=US:en&q=%22AI+agents%22+CRM+OR+sales+when:3d"
+    - "https://news.google.com/rss/search?hl=en&gl=US&ceid=US:en&q=Claude+OR+ChatGPT+OR+OpenAI+OR+Gemini+launch+business+when:3d"
+    - "https://news.google.com/rss/search?hl=en&gl=US&ceid=US:en&q=%22Model+Context+Protocol%22+OR+MCP+server+when:7d"
+    - "https://hnrss.org/newest?q=MCP+OR+%22AI+agent%22+OR+CRM&points=50"
+    # People asking for automation help
+    - "https://www.reddit.com/r/CRM/new/.rss"
+    - "https://www.reddit.com/r/automation/new/.rss"
+    - "https://www.reddit.com/r/smallbusiness/search.rss?q=CRM+OR+automation+OR+leads&sort=new&restrict_sr=on"
+    # Region news (Middle East, Europe): deadlines and changes that hit every business
+    - "https://news.google.com/rss/search?hl=en-AE&gl=AE&ceid=AE:en&q=e-invoicing+OR+%22AI%22+business+UAE+when:7d"
+    - "https://news.google.com/rss/search?hl=en-GB&gl=GB&ceid=GB:en&q=e-invoicing+OR+%22AI+Act%22+business+Europe+when:7d"
+    # Google Trends (daily trending searches) - only items that match the keywords below are kept
+    - "https://trends.google.com/trending/rss?geo=US"
+    - "https://trends.google.com/trending/rss?geo=AE"
+    - "https://trends.google.com/trending/rss?geo=DE"
+  keywords: ["zoho", "deluge", "zia", "crm", "creator", "zoho books", "zoho desk", "widget", "blueprint", "workflow",
+             "ai agent", "agents", "mcp", "claude", "chatgpt", "openai", "gemini", "llm", "automation", "automate",
+             "lead", "leads", "sales", "whatsapp", "e-invoicing", "invoice", "api", "webhook", "no-code", "crm"]
+  lookback_days: 7
+  # If the feeds give nothing useful, the scout picks from the problem bank / its own knowledge.
   evergreen_fallback: true
 
-# Shorts per day (each one goes into the next free morning / evening slot)
+# Shorts per day (each one goes into the next free slot)
 scripts:
   per_day: 1
   words_min: 110
   words_max: 150
 
-# The presenter: YOU, made in Google Flow (your avatar + Veo 3.1 with its own voice) - see autopilot/flow.py
-# Every morning a GitHub issue (e-mailed to you) lists the clip prompts; you make the clips in Flow and drop them
-# into the upload link; the robot does everything else (joins, hides watermark, Zoho screens, captions, music, QA, upload).
-flow:
-  per_day: 1                  # Shorts prepared per day (each needs ~5-8 Flow clips; Veo 3.1 Fast ~10-20 credits each)
-  max_words_per_clip: 19      # ~7.5 s of speech -> fits one 8 s Flow clip
-  speed: 1.1 # lifts the pace of every clip a little (voice + lips together), 1.0 = off
-  max_batch: 14 # a manual daily run may prepare up to this many Shorts at once (a week)
-  presenter: "The man (my avatar)"   # how every prompt refers to you - select your avatar in Flow before pasting
-  scene: "wearing his dark grey blazer over a navy t-shirt, in a bright modern office with soft daylight"   # your look + place, same in every clip
-  watermark:                  # Flow puts a visible watermark on every clip; the editor hides it
-    mode: "crop"              # crop = cut the bottom strip away | blur = blur the box below | none
-    crop_bottom: 0.10         # part of the height cut from the bottom (crop mode)
-    box: [0.74, 0.88, 0.24, 0.10]   # x, y, width, height as parts of the frame (blur mode)
+# Titles + descriptions are also written in these languages and attached to every upload (YouTube shows the
+# viewer's language automatically). Audio and captions stay English.
+localize:
+  languages: ["ar", "de", "fr", "es", "hi"]
 
-# When videos go public (IST). A random minute inside each window, every day different,
-# and never the same time as the previous day's slot.
+# The presenter: YOU, made in Google Flow (your avatar + Veo 3.1 with its own voice) - see autopilot/flow.py
+flow:
+  per_day: 1                # Shorts prepared per day (each needs ~3-6 Flow clips; Veo 3.1 Fast ~20 credits each)
+  max_words_per_clip: 19    # ~7.5 s of speech -> fits one 8 s Flow clip
+  speed: 1.1                # lifts the pace of every clip a little (voice + lips together), 1.0 = off
+  max_batch: 14             # a manual daily run may prepare up to this many Shorts at once (a week)
+  presenter: "The man (my avatar)"   # how every prompt refers to you - select your avatar in Flow before pasting
+  # Accent for a global audience (Middle East + Europe + US + India). Change to "an Indian accent" for the old style.
+  accent: "a clear, neutral international accent"
+  voice_style: "Say this like a friendly, energetic YouTube tech explainer, clear natural English with a neutral international accent, brisk pace"
+  backup_voice: "en-GB-RyanNeural"
+  scene: "wearing a dark grey blazer over a navy t-shirt, in a bright modern office with soft daylight"
+  # One look per Short, rotated (outfit + office), so the channel doesn't look like the same day every day.
+  looks:
+    - "wearing a navy blazer over a crisp white shirt, in a glass-walled high-rise office with a city skyline at golden hour behind him"
+    - "wearing a black crew-neck t-shirt under a charcoal overshirt, in a modern tech startup office with exposed brick, plants and warm lights"
+    - "wearing a light grey suit jacket over a black t-shirt, in a minimal white meeting room with a large wall screen behind him"
+    - "wearing a dark green polo shirt, in a cozy home office with bookshelves, a desk lamp and a monitor showing dashboards"
+    - "wearing a beige linen shirt with rolled sleeves, in a bright co-working space with large windows and wooden tables"
+    - "wearing a dark grey blazer over a navy t-shirt, in a bright modern office with soft daylight"
+  watermark:                # Flow puts a visible watermark on every clip; the editor hides it
+    mode: "crop"            # crop = cut the bottom strip away | blur = blur the box below | none
+    crop_bottom: 0.10
+    box: [0.74, 0.88, 0.24, 0.10]
+
+# When videos go public (IST). Picked for the target regions:
+#   17:30-18:30 IST = 16:00-17:00 UAE/Saudi (after work) = 13:00-14:00 CET (lunch break, Europe)
+#   21:30-22:30 IST = 20:00-21:00 UAE/Saudi (prime time) = 18:00-19:00 CET (evening, Europe) = 12:00 New York
 schedule:
   windows:
-    morning: "07:00-08:00"
-    evening: "20:00-21:00"
+    gulf_eu_noon: "17:30-18:30"
+    gulf_prime: "21:30-22:30"
   min_gap_from_yesterday_minutes: 8
-  min_lead_minutes: 30           # never schedule a video less than 30 min after it is made
+  min_lead_minutes: 30
 
 # Captions / editing
 captions:
-  whisper_model: "small"         # word timings for captions (tiny | base | small)
-  whisper_language: "en"         # hi for Hinglish/Hindi, en for English
-  roman_captions: false           # show Hinglish captions in Roman letters (Devanagari if false or if it fails)
+  whisper_model: "small"
+  whisper_language: "en"
+  roman_captions: false
   max_words: 3
 
 video:
   max_seconds: 60
 
 labels:
-  hook_badge: ""                  # small badge top-right ("" = none)
+  hook_badge: ""
 
 youtube:
-  category_id: "28"              # 28 = Science & Technology, 27 = Education, 26 = Howto & Style
-  language: "en"                 # hi | en
+  category_id: "28"     # 28 = Science & Technology
+  language: "en"
 
-# Benchmark agent: watches these Shorts (and the most-viewed Zoho Books Shorts on YouTube) every 14 days,
-# then scores every new video against them. Upload happens ONLY if score >= min_score and the avatar lip-syncs.
+# Benchmark agent: watches these Shorts (and the most-viewed Shorts for youtube_search) every 14 days,
+# then scores every new video against them. Upload happens ONLY if score >= min_score.
 benchmark:
   min_score: 65
-  youtube_search: "Zoho Books"
+  youtube_search: "Zoho AI automation"
   references:
     - {url: "https://www.youtube.com/shorts/iw5N2XbH3m0", weight: 3, note: "MOST PREFERRED - title on top, video panel in the middle, caption box below, b-roll cuts"}
     - {url: "https://www.youtube.com/shorts/SiT0DF2jkyw", weight: 2, note: "news-interview style, like this but with AI faces"}
