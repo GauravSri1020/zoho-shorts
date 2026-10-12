@@ -19,6 +19,9 @@ DISCLAIMER = CH["channel"].get("disclaimer", "")
 
 NICHE = CH["niche"]
 CTA = NICHE.get("cta", "Follow karo {name}").format(name=CHANNEL_NAME)
+PILLARS = NICHE.get("pillars", {}) or {}
+PROBLEM_BANK = ROOT / CH.get("problem_bank", "research/problem_bank.yaml")
+LOCALES = [str(x) for x in ((CH.get("localize") or {}).get("languages") or [])]
 
 FEEDS = CH["sources"].get("feeds", [])
 KEYWORDS = CH["sources"].get("keywords", [])
@@ -42,7 +45,6 @@ CAPTION_MAX_WORDS = int(_C.get("max_words", 3))
 
 MAX_VIDEO_SECONDS = float(CH.get("video", {}).get("max_seconds", 60))
 BADGE = CH.get("labels", {}).get("hook_badge", "")
-
 
 # Keys (GitHub -> Settings -> Secrets and variables -> Actions)
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY", "")

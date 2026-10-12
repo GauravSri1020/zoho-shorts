@@ -1,12 +1,13 @@
 """The AI team (free Gemini API). It writes and edits; YOU are the face and the voice.
 
-1. Scout        - turns real questions/stories into PROBLEM -> FIX angles for Zoho users
-2. Scriptwriter - writes a ~50-second solo script you read on camera (+ code for widget/Deluge/HTML fixes)
-3. Reviewer     - checks facts, makes steps concrete, enforces the length, reviews the code
-   QA agent     - independent pass/fail gate on every script and on every finished video (no human review)
-4. Captions     - converts Devanagari Hinglish captions to Roman letters
-5. Metadata     - title/description for videos you recorded without a script
-6. Community    - replies to comments (skips anything risky)
+1. Scout - turns trending news, real questions and the problem bank into PROBLEM -> AI/ZOHO FIX angles
+2. Scriptwriter - writes a ~50-second solo script (+ code / API call / AI prompt for the fix)
+3. Reviewer - checks facts, makes steps concrete, enforces the length, reviews the code
+   QA agent - independent pass/fail gate on every script and on every finished video (no human review)
+4. Captions - converts Devanagari Hinglish captions to Roman letters
+5. Metadata - title/description for videos you recorded without a script
+6. Community - replies to comments (skips anything risky)
+7. Localizer - title + description in Arabic, German, French, Spanish, Hindi (channel.yaml -> localize)
 """
 import json
 import re
@@ -16,13 +17,12 @@ from google import genai
 from google.genai import types
 
 from .config import (GEMINI_API_KEY, GEMINI_MODEL, CHANNEL_NAME, CHANNEL_HANDLE, LANGUAGE, NICHE, CTA,
-                     SCRIPT_WORDS, EVERGREEN_FALLBACK)
+                     SCRIPT_WORDS, EVERGREEN_FALLBACK, PILLARS)
 
 _client = None
 # Free-tier models get overloaded (503) at peak hours, so rotate through backups (unknown ones are skipped).
 _BACKUPS = ("gemini-3.8-flash", "gemini-3.6-flash", "gemini-3.5-flash-lite", "gemini-3.1-flash-lite")
 _MODELS = [GEMINI_MODEL] + [m for m in _BACKUPS if m != GEMINI_MODEL]
-
 
 _LANG_RULES = {
     "Hinglish": '"tts": Hindi words in DEVANAGARI and English/brand words in Latin script, e.g. '
@@ -30,6 +30,11 @@ _LANG_RULES = {
     "Hindi": '"tts": the line in Devanagari Hindi (brand names may stay in Latin script).',
     "English": '"tts": the same as "say".',
 }
+
+# What the screen part of a Short can show (autopilot/screens.py draws each of these).
+APPS = ("crm", "books", "desk", "creator", "social", "flow", "analytics", "sign", "catalyst", "salesiq",
+        "inventory", "people", "campaigns", "claude", "chatgpt", "api", "code")
+VIEWS = ("list", "form", "settings", "chat", "api", "code", "flow")
 
 
 def _gemini():
@@ -83,49 +88,73 @@ def _examples():
 
 
 def _solution_types():
-    return "\n".join(f'  - "{k}": {v}' for k, v in NICHE.get("solution_types", {}).items())
+    return "\n".join(f'   - "{k}": {v}' for k, v in NICHE.get("solution_types", {}).items())
+
+
+def _pillars():
+    if not PILLARS:
+        return "   - problem_fix: a real Zoho problem and its fix"
+    return "\n".join(f'   - "{k}" (weight {v.get("weight", 1)}): {v.get("about", "")}' for k, v in PILLARS.items())
 
 
 # ---------------------------------------------------------------- 1. Scout
 def scout(candidates, n, past_problems):
     listing = "\n".join(
-        f"[{i}] {c['title']} | {c['source']} | {c['summary'][:400]}" for i, c in enumerate(candidates))
+        f"[{i}] (trend {c.get('trend', 0)}) {c['title']} | {c['source']} | {c['summary'][:400]}"
+        for i, c in enumerate(candidates))
     past = "\n".join(f"- {p}" for p in past_problems[-60:]) or "- (none yet)"
-    evergreen = ("If fewer than {n} items are good, ADD evergreen problems that Zoho users commonly face, "
+    evergreen = ("If fewer than {n} items are good, ADD strong problems you know Zoho users face, "
                  "with story_index -1. Only use features you are sure exist in current Zoho products."
                  ).format(n=n) if EVERGREEN_FALLBACK else "Only use the items below."
     prompt = f"""You are the research lead of "{CHANNEL_NAME}", a {LANGUAGE} YouTube Shorts channel about
-{NICHE['topic']} for {NICHE['audience']}. Each Short is presented by the channel's AI avatar presenter.
+{NICHE['topic']}, for {NICHE['audience']}. Each Short is presented by the channel's AI avatar presenter.
 Our promise: {NICHE['promise']}
 
-From the questions/stories below, find the {n} best "PROBLEM -> FIX" angles.
+Goal: Shorts that TREND this month and solve a real business problem. Prefer, in this order:
+1. A topic that is trending right now (high "trend" number, or this week's AI launch / deadline) turned into
+   "here is how you use it inside Zoho today".
+2. A fix where AI does the work (Claude / ChatGPT over Zoho MCP, Zia agents, an AI step in Zoho Flow, Deluge
+   calling an AI API) - future-proof, rare, and impressive enough that a Zoho expert would be surprised.
+3. High-value business topics advertisers pay for: sales pipeline, lead generation and conversion, invoicing
+   and getting paid, customer support, compliance deadlines, developer APIs.
+
+Content pillars (mix them; the weight is how often):
+{_pillars()}
+
+From the items below, find the {n} best "PROBLEM -> FIX" angles.
 A good angle:
-- is a painful, specific, everyday problem of a Zoho user, e.g. {_examples()}.
-- has a fix that can be shown in 2-4 concrete steps (and, if needed, one short piece of code).
+- is a painful, specific, everyday problem of a business that uses (or could use) Zoho, e.g. {_examples()}.
+- has a fix that can be shown in 2-4 concrete steps (real menus, a real API call, or a real AI prompt).
 - uses one of these fix types:
 {_solution_types()}
+- "GSX problem bank" items are real problems collected by the creator: their "facts" are verified - use them.
 Skip {NICHE.get('skip', 'anything without a practical fix')}. Rules: {NICHE.get('safety', '')}.
 {evergreen}
 Do not repeat these recent problems:
 {past}
 
-Never invent Zoho features, menu names, prices or limits. If unsure about an exact menu path, describe it
-generally ("Setup me Automation section").
+Never invent Zoho features, menu names, API endpoints, prices or limits. If unsure about an exact menu path,
+describe it generally ("in Setup, under Automation").
 
 Return JSON:
 {{"angles": [{{
   "story_index": 0,
-  "product": "Zoho CRM | Zoho Books | Zoho Creator | ...",
+  "pillar": "trending | ai_agent | lead_flow | dev_api | problem_fix",
+  "region": "global | gcc | europe | india",
+  "product": "Zoho CRM | Zoho Books | Zoho Flow | Zoho Social | Zoho Creator | Zoho Desk | ... (+ Claude / ChatGPT if used)",
+  "app": "main screen to show: {' | '.join(APPS)}",
   "problem": "the pain in one {LANGUAGE} line, specific",
-  "fix_type": "native | deluge | widget | html",
+  "fix_type": "{' | '.join(NICHE.get('solution_types', {}).keys()) or 'native'}",
   "solution": "the fix in one line",
   "steps": ["step 1", "step 2", "step 3"],
-  "result": "what the viewer gains",
-  "hook": "a scroll-stopping first line in {LANGUAGE}, under 12 words, built on the problem"
+  "api": "the exact API / endpoint / scope / MCP server / AI prompt used, or null",
+  "result": "what the viewer gains (time or money saved, leads not lost)",
+  "wow": "the one surprising detail that makes this Short worth sharing",
+  "hook": "a scroll-stopping first line in {LANGUAGE}, under 12 words, built on the problem or the news"
 }}]}}
-Order from best to worst. Best = most Zoho users have this problem + clearest fix.
+Order from best to worst. Best = trending + many businesses have this problem + AI fix + clearest steps.
 
-QUESTIONS / STORIES:
+ITEMS (news, questions, problem bank):
 {listing or "(none today)"}"""
     angles = ask_json(prompt, temperature=0.5).get("angles", [])
     out = []
@@ -144,63 +173,105 @@ QUESTIONS / STORIES:
 
 
 # ---------------------------------------------------------------- 2. Scriptwriter
+def _real_screens_hint():
+    """Real Zoho screenshots available in assets/screens (captured from the creator's own Zoho account)."""
+    try:
+        from .screens import library
+        lib = library()
+    except Exception:
+        lib = {}
+    if not lib:
+        return ""
+    rows = "\n".join(f'  - "{k}": {v.get("about", "")} (clickable: {", ".join(v.get("targets", {}).keys()) or "-"})'
+                     for k, v in list(lib.items())[:60])
+    return ("REAL SCREENSHOTS you can use (prefer them when one fits the step): put its key in \"real\" and the "
+            f"clickable label in \"click\".\n{rows}\n")
+
+
 def write_script(angle):
     lo, hi = SCRIPT_WORDS
     s = angle.get("story")
-    source = (f"SOURCE (the question/story this came from): {s['title']} - {s['source']}\n{s['summary']}"
-              if s else "SOURCE: evergreen problem, no news source. Do not mention any news.")
+    if s and s.get("source") == "GSX problem bank":
+        source = f"SOURCE: the creator's problem bank (verified facts):\n{s['title']}\n{s['summary']}"
+    elif s:
+        source = f"SOURCE (the question/news this came from): {s['title']} - {s['source']}\n{s['summary']}"
+    else:
+        source = "SOURCE: evergreen problem, no news source. Do not mention any news."
     prompt = f"""Write ONE YouTube Short script for "{CHANNEL_NAME}" in natural spoken {LANGUAGE}.
-The video switches between the creator's lip-synced AI avatar and Zoho Books screens:
+The audience is global (Middle East, Europe, US, India): plain international English, no Indian slang, amounts
+in a neutral way (or USD/AED/EUR), no country-specific jokes.
+The video switches between the creator's lip-synced AI avatar and the real app screens:
 HOOK / PROBLEM / RESULT lines show the presenter talking to camera (keep them SHORT: they cost video credits);
-FIX and every STEP line show the Zoho Books screen where that action happens, with the exact button / field highlighted while the voice says it.
-So every STEP must be ONE concrete action in Zoho Books (where to go, what to click or fill), and its "screen"
-must show exactly that (code goes in the description, not on screen).
+FIX and every STEP line show the screen where that action happens (the Zoho app, the AI chat, the API call or
+the code), with the exact button / field / line highlighted while the voice says it.
+So every STEP must be ONE concrete action (where to go, what to click, what to type, which endpoint to call),
+and its "screen" must show exactly that.
 
 THE ANGLE
+Pillar: {angle.get('pillar')}
 Product: {angle.get('product')}
+Main screen: {angle.get('app')}
 Problem: {angle.get('problem')}
 Fix type: {angle.get('fix_type')}
 Solution: {angle.get('solution')}
 Steps: {json.dumps(angle.get('steps', []), ensure_ascii=False)}
+API / prompt: {angle.get('api')}
 Result: {angle.get('result')}
+Wow detail: {angle.get('wow')}
 Hook idea: {angle.get('hook')}
 
 {source}
 
-STRUCTURE: HOOK (the problem as a punch, max 10 words) -> PROBLEM (ONE short line, max 14 words) -> FIX (1 line) ->
-STEP 1..4 (each one clear action - the screen part is the heart of the video, give it the time) ->
-RESULT (ONE short line, max 14 words, ends the video with a soft close like "set it up once and you are done").
-NO CTA line: never ask to follow, like or subscribe.
-No greeting, no intro, no "namaste doston".
+STRUCTURE: HOOK (the problem or the news as a punch, max 10 words) -> PROBLEM (ONE short line, max 14 words) ->
+FIX (1 line, name the tool: e.g. "Connect Claude to Zoho CRM with Zoho's MCP server") ->
+STEP 1..4 (each one clear action - the screen part is the heart of the video, give it the time; say the wow
+detail in one of the steps) -> RESULT (ONE short line, max 14 words, a soft close like "set it up once and
+your CRM works for you").
+NO CTA line: never ask to follow, like or subscribe. No greeting, no intro.
 
 RULES
 - {lo}-{hi} words total in "say". Short sentences. "say" is Roman-script {LANGUAGE}.
 - {_LANG_RULES.get(LANGUAGE, _LANG_RULES['English'])}
-- "card": 2-7 word on-screen text for that line, e.g. "Setup > Automation > Workflow Rules".
-- "screen" (FIX and every STEP line): a faithful mock of the real Zoho Books web screen for that action - real menu
-  names only (Sales, Purchases, Items, Banking, Accountant, Reports, Settings > Preferences ...). Use "list" for
-  record lists, "form" for create/edit pages, "settings" for preferences with toggles. 2-5 rows/fields.
-- Never invent Zoho features, menus, prices or limits. If unsure of a menu name, say it generally.
+- "card": 2-7 word on-screen text for that line, e.g. "CRM > Setup > Workflow Rules" or "POST /crm/v8/Leads/upsert".
+- "screen" (FIX and every STEP line) - pick what the viewer must SEE:
+  * a Zoho app page: "app" one of {', '.join(a for a in APPS if a not in ('claude', 'chatgpt', 'api', 'code'))};
+    "view" list | form | settings; real menu names of THAT app only; 2-5 rows/fields; realistic international
+    sample data (company names like "Al Noor Trading", "Berlin Logistics GmbH", "Sharma Exports").
+  * an AI chat (Claude / ChatGPT connected to Zoho): "app" claude | chatgpt, "view" "chat",
+    "messages": [["user", "the exact prompt"], ["assistant", "short answer / what it did"]], "tool": "the MCP
+    tool or connector it used, e.g. Zoho CRM - Data Insights".
+  * an API call: "app" "api", "view" "api", "method", "url" (real Zoho endpoint with YOUR_DOMAIN placeholders),
+    "headers": [["Authorization", "Zoho-oauthtoken ****"]], "body": short JSON text, "response": short JSON text.
+  * code (Deluge / widget JS / HTML): "app" "code", "view" "code", "language", "code": max 14 short lines.
+  * a Zoho Flow / automation chain: "app" "flow", "view" "flow", "nodes": ["Trigger: ...", "AI: ...", "Action: ..."].
+  "click": EXACT text of the button / field / row cell / node / code token to highlight (must appear on that screen).
+  "tip": max 8 words.
+{_real_screens_hint()}- Never invent Zoho features, menus, endpoints, prices or limits. If unsure of a menu name, say it generally.
 - {NICHE.get('safety', '')}
-- If the fix needs code (Deluge function, widget, HTML page), put WORKING, minimal, commented code in "code".
-  Use placeholders like YOUR_ORG_ID / YOUR_API_DOMAIN, never real keys. Otherwise set "code" to null.
+- If the fix needs code (Deluge function, widget, HTML page, API call), put WORKING, minimal, commented code in
+  "code". Use placeholders like YOUR_ORG_ID / YOUR_DOMAIN / YOUR_API_KEY, never real keys. Otherwise null.
 
 Return JSON:
 {{
- "title": "YouTube title, max 70 chars, problem/fix led, honest",
+ "title": "YouTube title, max 70 chars, problem/fix led, honest, may name the trending tool (Claude, ChatGPT, AI agent)",
  "hook_text": "max 6 words shown big at the top of the video",
+ "app_label": "short label for the top tag, e.g. 'Zoho CRM + Claude' or 'Zoho Flow AI'",
  "lines": [{{"beat": "HOOK|PROBLEM|FIX|STEP 1|STEP 2|STEP 3|STEP 4|RESULT", "say": "Roman text",
             "tts": "text for the voice engine", "card": "on-screen text",
-            "screen": null or (for FIX / STEP lines) {{"path": ["Sales", "Sales Orders"], "view": "list|form|settings",
-                       "heading": "page title", "columns": ["..."], "rows": [["realistic Indian sample data"]],
+            "screen": null or (for FIX / STEP lines) {{"app": "...", "view": "...", "path": ["...", "..."],
+                       "heading": "page title", "columns": ["..."], "rows": [["..."]],
                        "fields": [["Field label", "sample value"]], "toggles": [["Option label", true]],
-                       "click": "EXACT text of the button / field / row cell / option to highlight (must appear on that screen)",
-                       "tip": "max 8 words"}}}}],
- "code": {{"language": "deluge|html|javascript", "filename": "...", "content": "...",
+                       "messages": [["user", "..."], ["assistant", "..."]], "tool": "...",
+                       "method": "POST", "url": "...", "headers": [["...", "..."]], "body": "...", "response": "...",
+                       "language": "deluge", "nodes": ["..."], "real": null,
+                       "click": "EXACT text to highlight", "tip": "max 8 words"}}}}],
+ "api": {{"name": "what it is", "endpoint": "method + URL or MCP server / Flow app", "scope": "OAuth scope if any",
+          "docs": "official docs page title"}} or null,
+ "code": {{"language": "deluge|html|javascript|json|bash", "filename": "...", "content": "...",
           "where_to_paste": "exact place in Zoho"}} or null,
- "test_before_recording": ["what to check in your own Zoho account before recording"],
+ "test_before_recording": ["what to check in your own Zoho account"],
  "description": "2-3 lines: problem, fix, steps summary",
- "tags": ["10 short tags"]
+ "tags": ["10 short tags, include the trending tool names"]
 }}"""
     return ask_json(prompt, temperature=0.8)
 
@@ -211,12 +282,14 @@ def review_script(script, angle):
     wc = word_count(" ".join(l.get("say", "") for l in script.get("lines", [])))
     prompt = f"""You are the strict editor of a solo {LANGUAGE} YouTube Short about {NICHE['topic']}.
 Fix the JSON script below. Checklist:
-1. FACTS: no invented Zoho features, menus, prices or limits. Soften anything you are not sure about.
-2. STEPS: each step is a concrete action (what to open / click / paste). Rewrite vague steps.
+1. FACTS: no invented Zoho features, menus, API endpoints, prices or limits. Soften anything you are not sure about.
+2. STEPS: each step is a concrete action (what to open / click / type / call). Rewrite vague steps.
 3. LENGTH: total words in "say" must be {lo}-{hi} (now {wc}). Cut filler, keep hook and steps; remove any CTA / follow line.
 4. HOOK: first line is a punchy problem statement under 12 words. No greeting.
-5. CODE: if present, it must be minimal, correct and safe (no real keys, no deleting data). Fix bugs.
-6. Roman-script {LANGUAGE} in "say"; every line keeps "beat", "say", "tts" and "card". {NICHE.get('safety', '')}
+5. CODE / API: if present, it must be minimal, correct and safe (no real keys, no deleting data). Fix bugs.
+6. SCREENS: every FIX / STEP screen shows the app, chat, API call or code the line talks about, and its "click"
+   text really appears on that screen.
+7. Roman-script {LANGUAGE} in "say"; every line keeps "beat", "say", "tts" and "card". {NICHE.get('safety', '')}
 Return the corrected JSON only, same structure.
 
 ANGLE: {json.dumps({k: v for k, v in angle.items() if k != 'story'}, ensure_ascii=False)}
@@ -239,12 +312,12 @@ def qa_script(script, angle):
 {NICHE['topic']}. Nobody else reviews this script before it is published, so be strict.
 
 Reject (approved=false) if ANY of these is true:
-- it states a Zoho feature, menu, price or limit that you are not confident exists today
-- a step is vague (viewer would not know what to click / paste)
-- the code (if any) has a bug, uses real keys, or could delete/overwrite data
+- it states a Zoho feature, menu, API endpoint, price or limit that you are not confident exists today
+- a step is vague (viewer would not know what to click / type / call)
+- the code or API call (if any) has a bug, uses real keys, or could delete/overwrite data
 - total words in "say" outside {lo}-{hi}, or the first line is not a punchy problem hook
 - anything misleading, clickbait, or against: {NICHE.get('safety', '')}
-- it mentions or implies affiliation with Zoho Corporation
+- it mentions or implies affiliation with Zoho Corporation, Anthropic or OpenAI
 
 Return JSON: {{"approved": true|false, "score": 1-10, "issues": ["specific problem + how to fix"]}}
 
@@ -286,7 +359,7 @@ def qa_video(mp4_path, meta):
     """Gemini watches the finished video. Returns {"approved": bool, "issues": [...]}"""
     client = _gemini()
     f = client.files.upload(file=str(mp4_path))
-    for _ in range(30):                                  # wait until Google has processed the video
+    for _ in range(30):  # wait until Google has processed the video
         f = client.files.get(name=f.name)
         if str(getattr(f.state, "name", f.state)) != "PROCESSING":
             break
@@ -300,7 +373,7 @@ Reject only for real problems a viewer would notice:
 - content that does not match the title, or anything offensive or misleading
 Return JSON: {{"approved": true|false, "issues": ["..."]}}"""
     try:
-        for rnd in range(4):                             # 429 / 503 are usually temporary -> wait and go again
+        for rnd in range(4):  # 429 / 503 are usually temporary -> wait and go again
             for model in _MODELS:
                 try:
                     r = client.models.generate_content(
@@ -364,8 +437,46 @@ Comment: "{comment}"
 
 If the comment is spam, abusive, flame-bait, asks for personal/financial/legal/tax advice, or needs a
 fact you are not sure about, answer exactly SKIP.
-If they describe a Zoho problem, thank them and say it may become a Short.
-Otherwise write ONE short, friendly reply (max 30 words) in the same language style as the comment.
+If they describe a Zoho / automation problem, thank them and say it may become a Short.
+Otherwise write ONE short, friendly reply (max 30 words) in the same language as the comment.
 No links, no promises, no made-up facts."""
     out = ask_text(prompt)
     return None if (not out or out.strip().upper().startswith("SKIP")) else out[:400]
+
+
+# ---------------------------------------------------------------- 7. Localizer
+_LANG_NAMES = {"ar": "Arabic (Modern Standard, natural for UAE / Saudi viewers)", "de": "German", "fr": "French",
+               "es": "Spanish", "hi": "Hindi (Devanagari)", "it": "Italian", "pt": "Portuguese", "nl": "Dutch",
+               "tr": "Turkish", "ur": "Urdu"}
+
+
+def localize(title, description, languages):
+    """YouTube localizations: {"ar": {"title": ..., "description": ...}, ...}. Empty dict if it fails."""
+    langs = [l for l in languages if l]
+    if not langs:
+        return {}
+    want = ", ".join(f'"{l}" = {_LANG_NAMES.get(l, l)}' for l in langs)
+    prompt = f"""Translate this YouTube Short title and description for viewers in other countries: {want}.
+Keep product and brand names in English (Zoho, Zoho CRM, Zia, Claude, ChatGPT, OpenAI, MCP, API, Deluge, Flow),
+keep menu paths, code, URLs and hashtags exactly as they are. Title max 95 characters and keep " #Shorts" at
+the end. Natural, native wording, not word-by-word.
+
+TITLE: {title}
+DESCRIPTION:
+{description[:3500]}
+
+Return JSON: {{"<language code>": {{"title": "...", "description": "..."}}, ...}} for exactly these codes: {langs}"""
+    try:
+        out = ask_json(prompt, temperature=0.2, retries=4)
+    except Exception as e:
+        print(f"[localize] skipped: {e}")
+        return {}
+    res = {}
+    for l in langs:
+        v = out.get(l) if isinstance(out, dict) else None
+        if isinstance(v, dict) and v.get("title"):
+            t = str(v["title"]).replace("<", "‹").replace(">", "›")[:100]
+            d = str(v.get("description") or description).replace("<", "‹").replace(">", "›")[:4900]
+            res[l] = {"title": t, "description": d}
+    print(f"[localize] {', '.join(res) or 'none'}")
+    return res

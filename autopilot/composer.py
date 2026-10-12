@@ -5,12 +5,12 @@ Two kinds of shots, cut together:
     (body, hands, gestures, background) - no panel, no tight face crop. Only a very gentle camera move.
   * SCREEN shots (STEP n): the "card" layout -
       +--------------------------------+
-      |  @channel  .  Zoho Books tip   |   warm background, hook title on top
-      |  BIG HOOK TITLE (2 lines)      |
+      |  @channel . Zoho CRM + Claude  |   warm background, hook title on top
+      |      BIG HOOK TITLE (2 lines)  |
       | +----------------------------+ |
-      | |   Zoho Books screen:       | |   first the whole screen (so the viewer sees where we are),
-      | |   full view -> zoom to the | |   then the camera zooms to the button / field to click,
-      | |   button / field           | |   timed to the end of the spoken line
+      | | app / AI chat / API screen:| |   first the whole screen (so the viewer sees where we are),
+      | | full view -> zoom to the   | |   then the camera zooms to the button / field to click,
+      | | button / field             | |   timed to the end of the spoken line
       | +----------------------------+ |
       +--------------------------------+
 Word-timed captions at the bottom for the whole video, soft background music ducked under the voice.
@@ -25,10 +25,10 @@ from . import music, screens
 from .config import CHANNEL_HANDLE, CHANNEL_NAME
 
 W, H, FPS = 1080, 1920, 30
-PX, PY, PW, PH = 40, 470, 1000, 1100       # middle panel (screen shots)
-CAP_Y = 1640                               # caption centre (above the YouTube Shorts UI at the bottom)
+PX, PY, PW, PH = 40, 470, 1000, 1100  # middle panel (screen shots)
+CAP_Y = 1640  # caption centre (above the YouTube Shorts UI at the bottom)
 BG, INK, ACCENT = "#F3ECE0", "#1E2433", "#2F6FEB"
-AVATAR_ZOOMS = [1.0, 1.04, 1.0, 1.06]      # gentle variety between avatar cuts (never a tight face crop)
+AVATAR_ZOOMS = [1.0, 1.04, 1.0, 1.06]  # gentle variety between avatar cuts (never a tight face crop)
 
 
 def _run(cmd):
@@ -92,7 +92,7 @@ def plan(lines, times, dur):
             segs.append({"kind": kind, "t0": a, "t1": b, "line": i})
     segs[-1]["t1"] = dur
     out = []
-    for s in segs:                                   # long avatar shots -> soft cuts (tiny zoom change)
+    for s in segs:  # long avatar shots -> soft cuts (tiny zoom change)
         if s["kind"] == "avatar" and s["t1"] - s["t0"] > 4.5:
             n = max(2, round((s["t1"] - s["t0"]) / 4.0))
             step = (s["t1"] - s["t0"]) / n
@@ -142,7 +142,18 @@ def _card(panel_mp4, bg, fg, frames, out):
 
 
 # ------------------------------------------------------------------ static layers
-def _layers(hook, workdir: Path):
+def _app_label(sc, specs):
+    """Top tag text: the script's own label ("Zoho CRM + Claude"), else from the first screen's app."""
+    import html as h
+    lab = str(sc.get("app_label") or "").strip()
+    if not lab and specs:
+        app = specs[0].get("app", "")
+        lab = {"claude": "Claude + Zoho", "chatgpt": "ChatGPT + Zoho", "api": "Zoho API", "code": "Zoho dev",
+               "flow": "Zoho Flow"}.get(app) or (f"Zoho {screens.APPS[app]['name']}" if app in screens.APPS else "Zoho")
+    return h.escape(lab[:28] or "Zoho")
+
+
+def _layers(hook, workdir: Path, app_label="Zoho"):
     from playwright.sync_api import sync_playwright
     hook = (hook or "").strip()
     size = 78 if len(hook) <= 22 else 66 if len(hook) <= 34 else 56
@@ -161,7 +172,7 @@ def _layers(hook, workdir: Path):
     .shadow{{position:absolute;left:{PX}px;top:{PY}px;width:{PW}px;height:{PH}px;border-radius:36px;
              box-shadow:0 18px 50px rgba(30,36,51,.28);background:#000}}
     </style></head><body><div class="dots"></div>
-    <div class="tag"><span>{tag} · <b>Zoho Books</b> tip</span></div>
+    <div class="tag"><span>{tag} · <b>{app_label}</b></span></div>
     <div class="title"><div>{_title_html(hook)}</div></div><div class="shadow"></div></body></html>"""
     fg_html = f"""<html><head><style>body{{margin:0;width:{W}px;height:{H}px;background:transparent;overflow:hidden}}
     .hole{{position:absolute;left:{PX}px;top:{PY}px;width:{PW}px;height:{PH}px;border-radius:36px;
@@ -247,7 +258,7 @@ Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
     if hook and segs and segs[0]["kind"] == "avatar":
         ev.append(f"Dialogue: 2,{_ts(0)},{_ts(min(segs[0]['t1'], 3.2))},Hook,,0,0,0,,"
                   f"{{\\fad(120,200)}}{_e(hook.upper())}")
-    for s in segs:                                   # "STEP 2" chip on screen shots
+    for s in segs:  # "STEP 2" chip on screen shots
         if s["kind"] == "screen":
             beat = str(lines[s["line"]].get("beat", "")).upper()
             label = beat if beat.startswith("STEP") else "HOW TO FIX" if beat.startswith("FIX") else beat
@@ -273,7 +284,7 @@ def render(sc, lines, words, avatar_mp4, voice_wav, workdir: Path, out_path: Pat
     hook = sc.get("hook_text") or sc.get("title", "")
     bg = fg = None
     if specs:
-        bg, fg = _layers(hook, workdir)
+        bg, fg = _layers(hook, workdir, _app_label(sc, specs))
 
     clips, fb = [], [round(s["t0"] * FPS) for s in segs] + [round(dur * FPS)]
     for k, s in enumerate(segs):
@@ -325,6 +336,6 @@ def render(sc, lines, words, avatar_mp4, voice_wav, workdir: Path, out_path: Pat
              "-r", str(FPS), "-c:a", "aac", "-b:a", "192k", "-movflags", "+faststart", str(out_path)))
     (workdir / "plan.json").write_text(json.dumps(
         [{k: v for k, v in s.items()} | {"beat": lines[s["line"]].get("beat")} for s in segs], indent=1))
-    print(f"[composer] {len(segs)} shots ({sum(s['kind'] == 'screen' for s in segs)} Zoho screens), "
+    print(f"[composer] {len(segs)} shots ({sum(s['kind'] == 'screen' for s in segs)} screens), "
           f"{dur:.1f}s -> {out_path}")
     return out_path

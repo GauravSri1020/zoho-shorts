@@ -35,12 +35,17 @@ def build_description(sc, angle):
     steps = angle.get("steps") or []
     if steps:
         lines += [f"{i + 1}. {s}" for i, s in enumerate(steps)] + [""]
+    api = sc.get("api")
+    if isinstance(api, dict) and (api.get("endpoint") or api.get("name")):
+        lines += ["API / tool used:"] + [f"- {k}: {api[k]}" for k in ("name", "endpoint", "scope", "docs")
+                                          if api.get(k)] + [""]
     code = sc.get("code")
     if isinstance(code, dict) and code.get("content") and len(code["content"]) < 2500:
         lines += [f"Code ({code.get('language', '')}) - {code.get('where_to_paste', '')}:", code["content"], ""]
-    lines.append(f"Daily Zoho fixes - follow {CHANNEL_HANDLE}")
-    if angle.get("story"):
-        lines += ["", f"Question that inspired this: {angle['story']['link']}"]
+    lines.append(f"AI + Zoho automations every day - follow {CHANNEL_HANDLE}")
+    story = angle.get("story")
+    if story and str(story.get("link", "")).startswith("http"):
+        lines += ["", f"What inspired this: {story['link']}"]
     lines += ["", AI_DISCLOSURE]
     if DISCLAIMER:
         lines.append(DISCLAIMER)
@@ -93,9 +98,9 @@ def main(argv=None):
     p.add_argument("--no-upload", action="store_true")
     a = p.parse_args(argv)
     try:
-        if a.task == "daily":          # script + Flow prompts -> GitHub issue (you make the clips in Flow)
+        if a.task == "daily":  # script + Flow prompts -> GitHub issue (you make the clips in Flow)
             flow.prepare(max(1, a.count), not a.no_upload)
-        elif a.task == "assemble":     # your Flow clips -> finished Short -> QA -> YouTube
+        elif a.task == "assemble":  # your Flow clips -> finished Short -> QA -> YouTube
             flow.finish()
         else:
             run_comments()

@@ -11,8 +11,8 @@ Robot (task "assemble", starts by itself when the clips are uploaded):
   whisper listens to every clip and matches it to its prompt (file names / order do not matter) ->
   silence at the start and end is cut tight, the pace is lifted a little (flow.speed), the Flow watermark is
   hidden (crop or blur) -> clips joined. Flow's own voice is KEPT, so the lips always match -> word timings ->
-  composer (full-screen presenter + Zoho screens, captions, music) -> QA agent -> scheduled YouTube upload ->
-  issue closed, job folder removed.
+  composer (full-screen presenter + Zoho screens, captions, music) -> QA agent -> scheduled YouTube upload
+  (title + description also in the channel.yaml -> localize languages) -> issue closed, job folder removed.
 """
 import datetime as dt
 import difflib
@@ -25,15 +25,16 @@ import traceback
 import urllib.request
 from pathlib import Path
 
-from .config import CH, CHANNEL_NAME, OUT_DIR, ROOT
+from .config import CH, CHANNEL_NAME, OUT_DIR, ROOT, LOCALES
 
 JOBS = ROOT / "jobs"
 _F = CH.get("flow", {}) or {}
 PER_DAY = int(_F.get("per_day", 1))
-MAX_BATCH = int(_F.get("max_batch", 14))           # a manual "daily" run may prepare a whole week at once
+MAX_BATCH = int(_F.get("max_batch", 14))  # a manual "daily" run may prepare a whole week at once
 MAX_WORDS = int(_F.get("max_words_per_clip", 19))  # ~7.5 s of speech -> fits one 8 s Flow clip
 PRESENTER = (_F.get("presenter") or "The man").strip()
 SCENE = (_F.get("scene") or "").strip()
+ACCENT = (_F.get("accent") or "a clear, neutral international accent").strip()
 SHOT = (_F.get("shot") or "Vertical 9:16 medium-wide shot from the knees up, camera about two metres away, "
         "his head in the upper third with space above it, both hands and all his gestures fully visible in the "
         "frame").strip()
@@ -41,7 +42,7 @@ LOOKS = [str(x).strip() for x in (_F.get("looks") or []) if str(x).strip()] or [
 SPEED = max(1.0, min(1.25, float(_F.get("speed", 1.1))))  # lifts Veo's slow delivery a little (voice + lips together)
 LEAD, TAIL = float(_F.get("lead_seconds", 0.04)), float(_F.get("tail_seconds", 0.18))
 _WM = _F.get("watermark", {}) or {}
-WM_MODE = str(_WM.get("mode", "crop")).lower()      # crop | blur | none
+WM_MODE = str(_WM.get("mode", "crop")).lower()  # crop | blur | none
 WM_CROP = float(_WM.get("crop_bottom", 0.10))
 WM_BOX = [float(v) for v in (_WM.get("box") or [0.74, 0.88, 0.24, 0.10])]  # x, y, w, h (fractions)
 VIDEO_EXT = (".mp4", ".mov", ".webm", ".m4v")
@@ -140,7 +141,7 @@ def chunks(lines):
                 cut = len(g)
             else:
                 parts = -(-rest // MAX_WORDS)  # clips still needed for this group
-                target = -(-rest // parts)     # even size
+                target = -(-rest // parts)  # even size
                 lo, hi = k + max(4, int(target * 0.6)), min(k + MAX_WORDS, len(g) - 1)
                 cut = k + target
                 best = None
@@ -175,7 +176,7 @@ def prompt(text, beat="", look=None):
     return (f"{PRESENTER} looks into the camera and talks to the viewer like an energetic YouTube tech "
             f"explainer; he {act}. {SHOT}, static camera, sharp and well lit"
             + (f", {look}" if look else "") + ". "
-            f"He says, in clear natural English with an Indian accent, at a brisk, lively pace: \"{text}\" "
+            f"He says, in clear natural English with {ACCENT}, at a brisk, lively pace: \"{text}\" "
             "His lips match every word. He starts speaking in the very first frame, with no pause before the "
             "first word, and stops right after the last word. "
             "Audio: only his voice - no music, no sound effects. No subtitles, no captions, no text on screen.")
@@ -204,6 +205,13 @@ def _gh(method, path, body=None):
 def _comment(job, text):
     if job.get("issue"):
         _gh("POST", f"/issues/{job['issue']}/comments", {"body": text})
+
+
+def _issue_closed(job):
+    """A closed issue = this Short was already finished (or cancelled by hand). Never build / upload it again."""
+    if not job.get("issue"):
+        return False
+    return _gh("GET", f"/issues/{job['issue']}").get("state") == "closed"
 
 
 def upload_link(job_id):
@@ -252,7 +260,7 @@ def prepare(count, do_upload):
         if made >= count:
             break
         job_id = f"{dt.datetime.utcnow():%Y%m%d-%H%M}-{k + 1}"
-        print(f"\n[flow] === {angle.get('problem')}")
+        print(f"\n[flow] === [{angle.get('pillar', '')}] {angle.get('problem')}")
         try:
             sc = writer.approved_script(angle)
             lines = keep_lines(_lines(sc))
@@ -281,7 +289,8 @@ def prepare(count, do_upload):
             if angle.get("story"):
                 st["covered_links"].append(angle["story"]["link"])
             st["scripts"][f"S{st['next_id']:04d}"] = {"problem": angle["problem"], "title": job["title"],
-                                                      "engine": "flow", "job": job_id, "created": job["created"]}
+                                                      "pillar": angle.get("pillar"), "engine": "flow",
+                                                      "job": job_id, "created": job["created"]}
             st["next_id"] += 1
             made += 1
             where = issue.get("html_url") or f"https://github.com/{REPO}/blob/main/jobs/{job_id}/PROMPTS.md"
@@ -319,7 +328,7 @@ def match(files, clips, work: Path):
         wd.mkdir(parents=True, exist_ok=True)
         heard.append(editor.transcribe(f, wd))
     scores = sorted(((difflib.SequenceMatcher(None, _words(" ".join(w[2] for w in heard[fi])),
-                                               _words(c["text"])).ratio(), fi, ci)
+                                              _words(c["text"])).ratio(), fi, ci)
                      for fi in range(len(files)) for ci, c in enumerate(clips)), reverse=True)
     pick, used = {}, set()
     for s, fi, ci in scores:
@@ -465,7 +474,7 @@ def _still_pending(job_id):
 
 def finish():
     """Assembles every job whose clips are all uploaded. Returns the number of Shorts finished."""
-    from . import benchmark, editor, google_apis as g, notify, schedule, state
+    from . import benchmark, editor, google_apis as g, notify, schedule, state, writer
     jobs = sorted(JOBS.glob("*/job.json")) if JOBS.exists() else []
     done = 0
     for jf in jobs:
@@ -478,6 +487,11 @@ def finish():
         need = len(job["clips"])
         if len(files) < need:
             print(f"[flow] {job['id']}: {len(files)}/{need} clips uploaded, waiting")
+            continue
+        if _issue_closed(job):
+            print(f"[flow] {job['id']}: issue #{job['issue']} is closed (already finished) - marked done, skipped")
+            job["status"] = "done"
+            jf.write_text(json.dumps(job, ensure_ascii=False, indent=1), encoding="utf-8")
             continue
         work = OUT_DIR / job["id"]
         shutil.rmtree(work, ignore_errors=True)
@@ -513,8 +527,14 @@ def finish():
             if job.get("upload", True):
                 yt = g.youtube()
                 when, slot = schedule.next_slot(st["slots"])
-                tags = list(sc.get("tags") or []) + ["Zoho", "Shorts"]
-                vid = g.upload(yt, mp4, job["title"], job["description"], tags, schedule.to_rfc3339_utc(when))
+                tags = list(sc.get("tags") or []) + ["Zoho", "AI automation", "Shorts"]
+                try:
+                    loc = writer.localize(job["title"], job["description"], LOCALES)
+                except Exception as e:
+                    print(f"[localize] failed: {e}")
+                    loc = {}
+                vid = g.upload(yt, mp4, job["title"], job["description"], tags, schedule.to_rfc3339_utc(when),
+                               localizations=loc)
                 st["slots"].append(slot | {"video_id": vid, "title": job["title"]})
                 for v in st["scripts"].values():
                     if v.get("job") == job["id"]:

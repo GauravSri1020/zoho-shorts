@@ -1,8 +1,8 @@
 """YouTube login (refresh token).
 
 Scopes:
-  youtube.upload    - upload the Shorts (scheduled, private until publish time)
-  youtube.force-ssl - read and reply to comments
+  youtube.upload     - upload the Shorts (scheduled, private until publish time)
+  youtube.force-ssl  - read and reply to comments
 """
 
 from google.oauth2.credentials import Credentials
@@ -28,8 +28,9 @@ def youtube():
     return build("youtube", "v3", credentials=_creds(), cache_discovery=False)
 
 
-def upload(yt, video_path, title, description, tags, publish_at):
-    """Uploads as private with publishAt -> YouTube makes it public at that exact time."""
+def upload(yt, video_path, title, description, tags, publish_at, localizations=None):
+    """Uploads as private with publishAt -> YouTube makes it public at that exact time.
+    localizations: {"ar": {"title", "description"}, ...} -> viewers see the title in their own language."""
     body = {
         "snippet": {"title": title[:100], "description": description[:4900],
                     "tags": [t for t in tags if t][:15], "categoryId": YT_CATEGORY_ID,
@@ -38,15 +39,34 @@ def upload(yt, video_path, title, description, tags, publish_at):
         "status": {"privacyStatus": "private", "publishAt": publish_at,
                    "selfDeclaredMadeForKids": False, "containsSyntheticMedia": True},
     }
-    req = yt.videos().insert(part="snippet,status", body=body,
-                             media_body=MediaFileUpload(str(video_path), chunksize=8 * 1024 * 1024,
-                                                        resumable=True, mimetype="video/mp4"))
+    parts = "snippet,status"
+    loc = {k: v for k, v in (localizations or {}).items() if k != YT_LANGUAGE and v.get("title")}
+    if loc:
+        body["localizations"] = loc
+        parts += ",localizations"
+
+    def _insert(b, p):
+        return yt.videos().insert(part=p, body=b,
+                                  media_body=MediaFileUpload(str(video_path), chunksize=8 * 1024 * 1024,
+                                                             resumable=True, mimetype="video/mp4"))
+    req = _insert(body, parts)
     resp = None
-    while resp is None:
-        status, resp = req.next_chunk()
-        if status:
-            print(f"[yt] upload {int(status.progress() * 100)}%")
-    print(f"[yt] uploaded https://youtube.com/shorts/{resp['id']} (public at {publish_at})")
+    try:
+        while resp is None:
+            status, resp = req.next_chunk()
+            if status:
+                print(f"[yt] upload {int(status.progress() * 100)}%")
+    except Exception as e:
+        if not loc or resp is not None:
+            raise
+        # a bad translation must never block the upload: retry without localizations
+        print(f"[yt] upload with localizations failed ({str(e)[:160]}) - retrying without them")
+        body.pop("localizations", None)
+        req, resp = _insert(body, "snippet,status"), None
+        while resp is None:
+            status, resp = req.next_chunk()
+    print(f"[yt] uploaded https://youtube.com/shorts/{resp['id']} (public at {publish_at})"
+          + (f", titles in {', '.join(loc)}" if "localizations" in body else ""))
     return resp["id"]
 
 
