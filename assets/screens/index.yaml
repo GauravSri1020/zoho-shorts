@@ -14,4 +14,345 @@
 #             "Create Lead": [1380, 92, 160, 44]
 #             "Lead Source": [880, 170, 140, 36]
 # =====================================================================================
-screens: {}
+screens:
+  crm/mcp_server:
+    file: crm/mcp_server.png
+    size:
+    - 1540
+    - 688
+    about: 'Zoho CRM > MCP Server page: official MCP servers that let AI agents (Claude, ChatGPT) work on CRM data - Data Insights (read-only: search, forecasting, pipeline analysis) and Data Operations
+      (create/update records, convert leads, bulk ops), each with Install and View Detail'
+    targets:
+      Install:
+      - 805
+      - 505
+      - 120
+      - 52
+      Install Data Operations:
+      - 805
+      - 505
+      - 120
+      - 52
+      Install Data Insights:
+      - 52
+      - 505
+      - 120
+      - 52
+      View Detail:
+      - 186
+      - 515
+      - 134
+      - 32
+      Explore MCP Tools:
+      - 753
+      - 132
+      - 157
+      - 31
+      Data Operations:
+      - 878
+      - 220
+      - 224
+      - 37
+      Data Insights:
+      - 123
+      - 220
+      - 201
+      - 37
+  crm/leads_list:
+    file: crm/leads_list.png
+    size:
+    - 1568
+    - 632
+    about: Zoho CRM Leads module list view (All Leads) with Filter, Sort, Create Lead button and columns Lead Name, Company, Email, Phone; left sidebar shows Home, Reports, MCP Server and modules
+    targets:
+      Create Lead:
+      - 1391
+      - 98
+      - 121
+      - 47
+      Filter:
+      - 263
+      - 100
+      - 86
+      - 42
+      Sort:
+      - 345
+      - 103
+      - 75
+      - 38
+      Lead Name:
+      - 751
+      - 165
+      - 89
+      - 32
+      Company:
+      - 961
+      - 165
+      - 79
+      - 32
+      Email:
+      - 1172
+      - 165
+      - 50
+      - 32
+      Phone:
+      - 1383
+      - 165
+      - 56
+      - 32
+      MCP Server:
+      - 45
+      - 135
+      - 197
+      - 29
+      Reports:
+      - 45
+      - 97
+      - 197
+      - 29
+      Deals:
+      - 45
+      - 365
+      - 197
+      - 37
+      Contacts:
+      - 45
+      - 297
+      - 197
+      - 37
+      Search records:
+      - 1115
+      - 2
+      - 259
+      - 44
+  crm/workflow_rules:
+    file: crm/workflow_rules.png
+    size:
+    - 1568
+    - 632
+    about: 'Zoho CRM Setup > Automation > Workflow Rules list: Create Rule button, rule table (Rule Name, module, Execute On, Actions, Status toggle) and a banner for Catalyst-powered data processing'
+    targets:
+      Create Rule:
+      - 1446
+      - 266
+      - 122
+      - 46
+      Workflow Rules:
+      - 5
+      - 346
+      - 244
+      - 44
+      Big Deal Rule:
+      - 384
+      - 375
+      - 101
+      - 29
+      Explore Now:
+      - 980
+      - 195
+      - 113
+      - 38
+      Execute On:
+      - 826
+      - 329
+      - 92
+      - 29
+      Status:
+      - 1422
+      - 332
+      - 56
+      - 29
+      Actions:
+      - 38
+      - 387
+      - 65
+      - 29
+      Modules and Fields:
+      - 38
+      - 183
+      - 143
+      - 29
+  crm/webforms:
+    file: crm/webforms.png
+    size:
+    - 1568
+    - 632
+    about: Zoho CRM Setup > Channels > Webforms (empty state 'Turn your website visitors into customers') with New Form button and Auto-Response Rules tab - where website form leads are pushed into CRM
+    targets:
+      New Form:
+      - 869
+      - 562
+      - 111
+      - 46
+      Webforms:
+      - 5
+      - 346
+      - 244
+      - 44
+      Auto-Response Rules:
+      - 410
+      - 77
+      - 173
+      - 30
+      Webforms tab:
+      - 299
+      - 78
+      - 89
+      - 29
+      Chat:
+      - 38
+      - 386
+      - 54
+      - 29
+  crm/mcp_for_ai_agents:
+    file: crm/mcp_for_ai_agents.png
+    size:
+    - 1568
+    - 664
+    about: 'Zoho CRM Setup > Developer Hub > MCP for AI Agents: MCP servers Data Insights and Data Operations; the Install menu is open showing VS Code, Cursor, Other IDEs; the link icon on the card copies
+      the server URL for Claude/ChatGPT connectors'
+    targets:
+      Install:
+      - 948
+      - 510
+      - 103
+      - 46
+      VS Code:
+      - 953
+      - 550
+      - 149
+      - 44
+      Cursor:
+      - 953
+      - 583
+      - 149
+      - 44
+      Other IDEs:
+      - 953
+      - 616
+      - 149
+      - 44
+      Copy server link:
+      - 1503
+      - 279
+      - 50
+      - 50
+      MCP for AI Agents:
+      - 5
+      - 525
+      - 244
+      - 46
+      APIs and SDKs:
+      - 38
+      - 568
+      - 109
+      - 29
+      Catalyst Solutions:
+      - 38
+      - 602
+      - 135
+      - 29
+      Data Operations:
+      - 1009
+      - 271
+      - 191
+      - 33
+      Data Insights:
+      - 374
+      - 271
+      - 171
+      - 33
+      Explore MCP Tools:
+      - 904
+      - 195
+      - 134
+      - 28
+      View Detail:
+      - 1058
+      - 519
+      - 115
+      - 29
+  crm/api_names:
+    file: crm/api_names.png
+    size:
+    - 1568
+    - 632
+    about: 'Zoho CRM Setup > Developer Hub > APIs and SDKs > CRM API > API names: module display name vs API name (e.g. Meetings = Events), with Dashboard tab for API credit usage and SDKs tab'
+    targets:
+      API names:
+      - 428
+      - 136
+      - 140
+      - 37
+      Dashboard:
+      - 296
+      - 136
+      - 141
+      - 37
+      CRM API:
+      - 296
+      - 77
+      - 82
+      - 30
+      SDKs:
+      - 397
+      - 77
+      - 56
+      - 30
+      Events:
+      - 728
+      - 529
+      - 57
+      - 29
+      Meetings:
+      - 350
+      - 530
+      - 75
+      - 29
+      Leads:
+      - 728
+      - 314
+      - 52
+      - 29
+      APIs and SDKs:
+      - 5
+      - 560
+      - 244
+      - 44
+      MCP for AI Agents:
+      - 5
+      - 525
+      - 244
+      - 44
+      Search:
+      - 295
+      - 220
+      - 275
+      - 46
+  crm/catalyst_solutions:
+    file: crm/catalyst_solutions.png
+    size:
+    - 1568
+    - 600
+    about: 'Zoho CRM Setup > Developer Hub > Catalyst Solutions: pre-packaged Catalyst microservices for CRM, e.g. Zoho CRM Bulk Data Processor card with Learn More'
+    targets:
+      Learn More:
+      - 412
+      - 458
+      - 111
+      - 46
+      Zoho CRM Bulk Data Processor:
+      - 333
+      - 299
+      - 275
+      - 56
+      Catalyst Solutions:
+      - 5
+      - 594
+      - 244
+      - 44
+      MCP for AI Agents:
+      - 5
+      - 525
+      - 244
+      - 44
