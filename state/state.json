@@ -127,7 +127,9 @@
    "title": "Stop Missed Alerts with Instant Zoho Flows #Shorts",
    "engine": "flow",
    "job": "20261011-1821-9",
-   "created": "2026-10-11T18:23:29"
+   "created": "2026-10-11T18:23:29",
+   "video_id": "idOoLNsr2zo",
+   "publish_at": "2026-10-14T18:17:00+05:30"
   },
   "S0014": {
    "problem": "Customers aren't paying invoices on time because reminders are manual.",
@@ -152,7 +154,9 @@
    "title": "Stop Running Out Of Stock in Zoho Inventory #Shorts",
    "engine": "flow",
    "job": "20261011-1827-12",
-   "created": "2026-10-11T18:28:18"
+   "created": "2026-10-11T18:28:18",
+   "video_id": "qj5em7r7nBU",
+   "publish_at": "2026-10-14T21:47:00+05:30"
   },
   "S0017": {
    "problem": "Customizing the UI for different user roles is too cluttered.",
@@ -204,6 +208,20 @@
    "minute": 1052,
    "video_id": "V_2WpXtoCsk",
    "title": "Generate and Email Zoho Creator PDFs in One Click #Shorts"
+  },
+  {
+   "date": "2026-10-14",
+   "window": "gulf_eu_noon",
+   "minute": 1097,
+   "video_id": "idOoLNsr2zo",
+   "title": "Stop Missed Alerts with Instant Zoho Flows #Shorts"
+  },
+  {
+   "date": "2026-10-14",
+   "window": "gulf_prime",
+   "minute": 1307,
+   "video_id": "qj5em7r7nBU",
+   "title": "Stop Running Out Of Stock in Zoho Inventory #Shorts"
   }
  ],
  "failures": {},
