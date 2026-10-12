@@ -1,0 +1,17 @@
+# =====================================================================================
+#  REAL ZOHO SCREENSHOTS  (from your own Zoho account - no customer data!)
+#  The script writer sees this list and uses a real screenshot when one fits a step ("real": "<key>").
+#  Without a fitting one, screens.py draws an illustration of the right Zoho app instead.
+#
+#  How to add one (Claude does this for you in the browser once you are logged in to Zoho):
+#    1. Put the PNG in assets/screens/<app>/<name>.png (e.g. 1600x1000, demo data only)
+#    2. Add an entry below:
+#         crm/leads_list:
+#           file: crm/leads_list.png
+#           size: [1600, 1000]                 # image width, height in pixels
+#           about: "Zoho CRM Leads list view with Lead Source column"
+#           targets:                           # clickable things: label -> [x, y, w, h] in image pixels
+#             "Create Lead": [1380, 92, 160, 44]
+#             "Lead Source": [880, 170, 140, 36]
+# =====================================================================================
+screens: {}
