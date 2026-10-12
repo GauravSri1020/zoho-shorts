@@ -405,6 +405,32 @@ def join(parts, work: Path):
     return av, voice
 
 
+_APP_WORDS = [("crm", "crm"), ("bigin", "crm"), ("campaigns", "crm"), ("books", "books"), ("invoice", "books"),
+              ("desk", "desk"), ("creator", "creator"), ("inventory", "inventory"), ("analytics", "analytics"),
+              ("salesiq", "salesiq"), ("zoho sign", "sign"), ("zoho social", "social"), ("zoho flow", "flow"),
+              ("catalyst", "catalyst")]
+
+
+def _fill_app(job, lines):
+    """Older scripts have screen specs without "app" -> they were drawn as Zoho Books even for a CRM Short.
+    Guess the app from the title (then description / spoken lines) and fill it in where it is missing."""
+    texts = [job.get("title", ""), job.get("description", ""), " ".join(_say(l) for l in lines)]
+    guess = None
+    for t in texts:
+        t = str(t).lower()
+        hits = sorted((t.find(w), app) for w, app in _APP_WORDS if w in t)
+        if hits:
+            guess = hits[0][1]
+            break
+    if not guess:
+        return
+    for l in lines:
+        sp = l.get("screen")
+        if isinstance(sp, dict) and not str(sp.get("app") or "").strip() and \
+                str(sp.get("view") or "").lower() in ("", "list", "form", "settings"):
+            sp["app"] = guess
+
+
 def build(job, files, work: Path):
     """Clips -> finished Short (short.mp4). Returns (mp4, report-notes)."""
     from . import composer, editor
@@ -421,6 +447,7 @@ def build(job, files, work: Path):
             notes.append(f"clip {i + 1} ({files[fi].name}) does not say its line well (match {s:.2f})")
     covered = {li for c in clips for li in c["lines"]}
     lines = [dict(l, face=(i in covered)) for i, l in enumerate(job["lines"])]
+    _fill_app(job, lines)
     parts, done_clips = [], set()
     for i, l in enumerate(lines):
         if l["face"]:
