@@ -163,7 +163,9 @@
    "title": "Declutter Your Zoho CRM Interface With Canvas Builder #Shorts",
    "engine": "flow",
    "job": "20261011-1828-13",
-   "created": "2026-10-11T18:30:30"
+   "created": "2026-10-11T18:30:30",
+   "video_id": "u-IuxoDNnwY",
+   "publish_at": "2026-10-15T17:43:00+05:30"
   }
  },
  "slots": [
@@ -222,6 +224,13 @@
    "minute": 1307,
    "video_id": "qj5em7r7nBU",
    "title": "Stop Running Out Of Stock in Zoho Inventory #Shorts"
+  },
+  {
+   "date": "2026-10-15",
+   "window": "gulf_eu_noon",
+   "minute": 1063,
+   "video_id": "u-IuxoDNnwY",
+   "title": "Declutter Your Zoho CRM Interface With Canvas Builder #Shorts"
   }
  ],
  "failures": {},
