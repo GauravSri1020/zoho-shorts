@@ -1,0 +1,140 @@
+# =====================================================================================
+#  PROBLEM BANK  -  real problems the scout can turn into Shorts (research + Gaurav's own Zoho experience)
+#  Add your own any time: copy one block, change the text, commit. The scout reads this every day,
+#  mixes it with today's trending news/questions, and never repeats a problem already made.
+#  pillar: trending | ai_agent | lead_flow | dev_api | problem_fix
+#  region: global | gcc (UAE/KSA) | europe | india
+# =====================================================================================
+
+problems:
+  # ---------------------------------------------------------------- AI agents inside Zoho
+  - pillar: ai_agent
+    product: Zoho CRM + Claude (MCP)
+    problem: "Sales managers export CRM data to Excel just to answer one question like 'which deals are stuck?'"
+    fix: "Connect Claude to Zoho CRM with Zoho's official MCP server (Data Insights server) and just ask in plain English"
+    facts: "Zoho CRM MCP has 4 servers: Data Insights, Data Operations, Module Customization, Workflow & Process Automation. In Claude: Customize > Connectors > Add custom connector > paste Remote MCP Server URL > Connect (OAuth to your CRM org)."
+    wow: "Claude reads live CRM data and builds the stuck-deals report in seconds, no export"
+  - pillar: ai_agent
+    product: Zoho CRM + Claude (MCP)
+    problem: "Building a new custom module, fields and layout in Zoho CRM takes an admin a whole afternoon"
+    fix: "Claude + the Module Customization MCP server creates the module and fields from one prompt"
+    facts: "Access follows the connected user's permissions. Test in a sandbox first."
+  - pillar: ai_agent
+    product: Zoho CRM + Claude (MCP)
+    problem: "Nobody updates CRM after calls; deals have no next step"
+    fix: "Claude via MCP reads the meeting notes, updates the deal stage and creates the follow-up task"
+  - pillar: ai_agent
+    product: Zia Agent Studio
+    problem: "Repetitive lead qualification eats SDR time"
+    fix: "Build a no-code Zia agent in Agent Studio that scores and routes new leads, triggered by a rule"
+    facts: "Agent Studio: prompt-based, no-code with optional low-code; 700+ built-in actions; triggers = button, rule, live engagement. Agent Marketplace has ready agents (deal analyzer, revenue growth specialist, candidate screener)."
+  - pillar: ai_agent
+    product: Zoho Flow + OpenAI / Claude
+    problem: "Every inbound email has to be read and sorted by hand before anyone acts on it"
+    fix: "Zoho Flow: email trigger -> OpenAI or Anthropic Claude action classifies intent -> create CRM lead / Desk ticket / Books bill"
+    facts: "Zoho Flow lists OpenAI, ChatGPT, Anthropic Claude, DeepSeek as apps; Zia can build a flow from a text prompt."
+  - pillar: ai_agent
+    product: Zoho Desk + AI
+    problem: "Support agents write the same answer 50 times a day"
+    fix: "Zia in Desk suggests replies from the knowledge base; or a Deluge function calls an LLM API to draft a reply into a private comment"
+  - pillar: ai_agent
+    product: Zoho Creator + AI
+    problem: "Field team sends photos of handwritten orders; someone types them into Creator"
+    fix: "Creator form + Deluge invokeurl to an AI vision API -> extract line items -> create the order record"
+  - pillar: ai_agent
+    product: Zoho Books + AI
+    problem: "Supplier PDF bills are keyed in manually"
+    fix: "Zoho Books autoscan / document inbox, or Flow + AI extraction -> bill draft for approval"
+  - pillar: ai_agent
+    product: Zoho Analytics + Zia
+    problem: "Founders wait for the weekly report to know yesterday's sales"
+    fix: "Ask Zia in Analytics in plain language; schedule the answer to Cliq every morning"
+
+  # ---------------------------------------------------------------- Lead flow (Social / WhatsApp / forms -> CRM)
+  - pillar: lead_flow
+    product: Zoho Social -> Zoho CRM
+    problem: "Facebook lead-ad leads sit in Meta and get called two days late"
+    fix: "Zoho Social Lead Forms: connect the ad account, map fields, apply a CRM assignment rule -> leads land in CRM in real time"
+    facts: "Needs Zoho Social Premium/Agency/Agency Plus. CRM: Setup > Channels > Social, import the brand. One ad account per brand. Test with Meta's Lead Ads Testing Tool. Common failure: Leads Access in Business Manager not granted to Zoho Social, or mandatory CRM field not mapped."
+    wow: "Add a Zia/AI step: score the lead and send the hot ones to the rep on WhatsApp within 60 seconds"
+  - pillar: lead_flow
+    product: WhatsApp -> Zoho CRM
+    problem: "Leads message on WhatsApp and are never entered in CRM"
+    fix: "WhatsApp Business channel in Zoho CRM / SalesIQ; first message creates or matches a lead; AI summarises the chat into the lead"
+  - pillar: lead_flow
+    product: Website form -> Zoho CRM
+    problem: "Custom HTML website form leads don't reach Zoho CRM"
+    fix: "Webform or a small fetch() to a CRM webhook / Flow webhook; dedupe by email with upsert"
+    facts: "Upsert API uses duplicate_check_fields; insert/update/upsert cost 1 credit per 10 records."
+  - pillar: lead_flow
+    product: Zoho CRM
+    problem: "Leads from 5 sources, nobody knows which source actually converts"
+    fix: "Lead Source picklist filled automatically per channel + a conversion-by-source report; AI explains the trend"
+  - pillar: lead_flow
+    product: Zoho CRM + AI
+    problem: "Hot leads get the same slow response as cold ones"
+    fix: "Workflow on create -> Deluge calls an LLM to score intent from the message -> assignment rule + instant task"
+
+  # ---------------------------------------------------------------- Developer / API (show the real endpoint)
+  - pillar: dev_api
+    product: Zoho CRM API
+    problem: "Integration suddenly fails with TOO_MANY_REQUESTS"
+    fix: "Understand API credits and concurrency: batch 100 records per insert, use COQL instead of many GETs, Bulk Read for exports"
+    facts: "Credits per 24h: Free 5,000; Standard 50,000+250/user; Professional 50,000+500/user; Enterprise 50,000+1,000/user; Ultimate 50,000+2,000/user. Concurrency: Std 50, Pro 100, Ent 200, Ult 300, sub-concurrency 20. Insert/Update/Upsert = 1 credit per 10 records; COQL LIMIT<=200 = 1 credit; Bulk Read init 50; Bulk Write init 500. Deluge integration tasks use the same credits."
+  - pillar: dev_api
+    product: Zoho CRM / Creator custom API
+    problem: "An outside app needs to push data into Zoho but you don't want to share OAuth tokens"
+    fix: "Create a Custom API (CRM Functions as REST API / Creator Custom API) with an API key; call it with one URL"
+  - pillar: dev_api
+    product: Zoho CRM Widgets
+    problem: "Users need a screen inside CRM that Zoho doesn't have (e.g. a live map or calculator)"
+    fix: "A small widget (HTML + Zoho JS SDK): ZOHO.embeddedApp.init(), ZOHO.CRM.API.getRecord(), placed in a related list or button"
+  - pillar: dev_api
+    product: Zoho Catalyst
+    problem: "Deluge hits its execution limits on a heavy job"
+    fix: "Move it to a Catalyst serverless function (Node/Python/Java) and call it from CRM; schedule with Catalyst cron"
+  - pillar: dev_api
+    product: Zoho Sign API
+    problem: "Contracts are emailed as PDFs and chased for signatures"
+    fix: "CRM button -> Zoho Sign template -> send for signature; webhook updates the deal to Closed Won when signed"
+  - pillar: dev_api
+    product: Zoho Flow webhooks
+    problem: "Two Zoho apps don't talk to an outside tool"
+    fix: "Flow webhook trigger + custom app action; map fields; add a Zia/AI step in the middle"
+
+  # ---------------------------------------------------------------- Regional, trending (GCC / Europe)
+  - pillar: trending
+    region: gcc
+    product: Zoho Books UAE
+    problem: "UAE e-invoicing: large businesses must appoint an ASP by 30 Oct 2026 and go live 1 Jan 2027"
+    fix: "Zoho Books: Settings > Taxes & Compliance > E-Invoicing; pick Zoho Software Trading LLC as ASP in EmaraTax; fill TIN / Electronic Address on customers; watch Reports > E-invoice Report"
+    facts: "Timeline: revenue >= AED 50M -> ASP by 30 Oct 2026, mandatory 1 Jan 2027; below AED 50M -> ASP by 31 Mar 2027, mandatory 1 Jul 2027; government -> 1 Oct 2027. Format PINT-AE (UBL 2.1 XML) over Peppol. B2C excluded for now. Not tax advice - always say 'check with your tax advisor / FTA'."
+  - pillar: trending
+    region: gcc
+    product: Zoho Books KSA
+    problem: "Saudi ZATCA e-invoicing waves keep adding businesses"
+    fix: "Zoho Books ZATCA integration setup (show the menu, not advice)"
+  - pillar: trending
+    region: europe
+    product: Zoho Books / Zoho CRM
+    problem: "GDPR: a customer asks to be deleted or exported from CRM"
+    fix: "Zoho CRM GDPR compliance settings: data subject requests, consent fields, export"
+  - pillar: trending
+    region: global
+    product: Zoho + any new AI model
+    problem: "A new AI model / agent launched this week - can I use it in Zoho today?"
+    fix: "Show the fastest way: Flow AI action, Deluge invokeurl to the model's API, or MCP client connected to Zoho"
+
+  # ---------------------------------------------------------------- Gaurav's own Zoho experience (add more here)
+  - pillar: problem_fix
+    product: Zoho CRM
+    problem: "Deals closed in CRM but the sales order in Books is created by hand"
+    fix: "Blueprint transition -> Deluge creates the Books sales order and links it back to the deal"
+  - pillar: problem_fix
+    product: Zoho CRM
+    problem: "Commission for agents is calculated in Excel every month"
+    fix: "Custom module + Deluge on deal close computes commission; Analytics report per agent"
+  - pillar: problem_fix
+    product: Zoho Books
+    problem: "Post-dated cheques (PDC) are tracked on paper"
+    fix: "Custom module/fields + scheduled function that reminds before the cheque date and records the payment"
