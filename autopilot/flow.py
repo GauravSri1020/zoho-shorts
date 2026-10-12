@@ -424,17 +424,18 @@ def build(job, files, work: Path):
     parts, done_clips = [], set()
     for i, l in enumerate(lines):
         if l["face"]:
-            ci = next(k for k, c in enumerate(clips) if i in c["lines"])
-            if ci in done_clips:
-                continue
-            done_clips.add(ci)
-            fi, _ = pick[ci]
-            v, a = work / f"p{len(parts):02d}.mp4", work / f"p{len(parts):02d}.wav"
-            prep_clip(files[fi], heard[fi], v, a)
+            # a long line can be split over several clips (older jobs: HOOK / PROBLEM / RESULT in 2 clips each) -
+            # use ALL of them in order, otherwise half the line's speech goes missing and captions/screens drift
+            for ci in [k for k, c in enumerate(clips) if i in c["lines"] and k not in done_clips]:
+                done_clips.add(ci)
+                fi, _ = pick[ci]
+                v, a = work / f"p{len(parts):02d}.mp4", work / f"p{len(parts):02d}.wav"
+                prep_clip(files[fi], heard[fi], v, a)
+                parts.append((v, a))
         else:  # Zoho-screen part: same voice via TTS, a black placeholder (the composer shows the screen)
             v, a = work / f"p{len(parts):02d}.mp4", work / f"p{len(parts):02d}.wav"
             tts_part(_say(l), v, a)
-        parts.append((v, a))
+            parts.append((v, a))
     av, voice = join(parts, work)
     script_text = " ".join(_say(l) for l in lines)
     words = editor.align_to_script(editor.transcribe(voice, work), script_text, voice)
