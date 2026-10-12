@@ -111,7 +111,9 @@
    "title": "Generate and Email Zoho Creator PDFs in One Click #Shorts",
    "engine": "flow",
    "job": "20261011-1813-6",
-   "created": "2026-10-11T18:16:14"
+   "created": "2026-10-11T18:16:14",
+   "video_id": "V_2WpXtoCsk",
+   "publish_at": "2026-10-13T17:32:00+05:30"
   },
   "S0012": {
    "problem": "Tickets are being assigned to the wrong agents automatically.",
@@ -195,6 +197,13 @@
    "minute": 1321,
    "video_id": "i5NMCCIRXio",
    "title": "Automate Payment Reminders in Zoho Books #Shorts"
+  },
+  {
+   "date": "2026-10-13",
+   "window": "gulf_eu_noon",
+   "minute": 1052,
+   "video_id": "V_2WpXtoCsk",
+   "title": "Generate and Email Zoho Creator PDFs in One Click #Shorts"
   }
  ],
  "failures": {},
