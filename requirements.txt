@@ -9,4 +9,5 @@ PyYAML>=6.0
 av>=11,<19
 playwright>=1.47
 numpy
-edge-tts>=6.1
+edge-tts>=7.2.8
+piper-tts>=1.3
