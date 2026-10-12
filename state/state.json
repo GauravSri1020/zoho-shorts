@@ -137,7 +137,9 @@
    "title": "Force Mandatory Fields in Zoho CRM Deals #Shorts",
    "engine": "flow",
    "job": "20261011-1824-11",
-   "created": "2026-10-11T18:26:59"
+   "created": "2026-10-11T18:26:59",
+   "video_id": "vN9oqO_tDD4",
+   "publish_at": "2026-10-13T07:44:00+05:30"
   },
   "S0016": {
    "problem": "Low stock alerts are missed, leading to lost sales.",
@@ -168,6 +170,13 @@
    "minute": 1211,
    "video_id": "Xd6fFF3P0lc",
    "title": "Automate Zoho CRM Lead Tasks Instantly #Shorts"
+  },
+  {
+   "date": "2026-10-13",
+   "window": "morning",
+   "minute": 464,
+   "video_id": "vN9oqO_tDD4",
+   "title": "Force Mandatory Fields in Zoho CRM Deals #Shorts"
   }
  ],
  "failures": {},
