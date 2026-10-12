@@ -30,6 +30,16 @@ Safety fixes: assemble ab closed issue wale job ko kabhi dobara build/upload nah
 
 12 Oct ke clips: Flow project mein bane 12 clips GitHub pe upload kiye - 1824-11 (#12), 1823-10 (#11), 1807-3 (#5); 1813-6 (#8) baaki tha jab browser connection toota. Bache hue jobs jinke clips bane hi nahi: 1827-12 RESULT (1), 1809-4 (6), 1821-9 (6), 1828-13 (4) = 17 clips (~340 credits). Ye purane niche ke Shorts hain - banana hai ya band karna, Gaurav decide kare.
 
+## 12-13 Oct raat (Claude akela, Gaurav bahar) - kya hua
+
+- Niche v2 code push (5 commits) + test: run #33 ne 1807-3 (13 Oct 18:09, oSE8KY9KftE) aur 1823-10 (13 Oct 22:01, i5NMCCIRXio) schedule kiye. #34: 1813-6 Creator PDF (13 Oct 17:32, V_2WpXtoCsk), QA 94/65.
+- TTS: Gemini free quota 429 + edge-tts 403 (Microsoft ne GitHub runners block kiye) -> 0 Shorts ban rahe the. tts.py ab Gemini -> edge -> Piper (offline, default en_US-ryan-high; badalna ho to channel.yaml flow.piper_voice) - ek baar fail hua provider us run mein dobara try nahi hota. requirements: piper-tts.
+- Bug: push-run purana trigger commit checkout karta tha -> state save pe git conflict, state.json mein #34 ka upload missing tha (haath se jod diya). Workflow ab `checkout ref: main` + conflict pe `-X theirs`.
+- Asli Zoho screenshots (Gaurav ka CRM org60046315185, sirf sample data): assets/screens/crm/ mcp_server, leads_list, workflow_rules, webforms, mcp_for_ai_agents (Install menu: VS Code/Cursor/Other IDEs + link icon = server URL), api_names (Meetings = Events), catalyst_solutions. index.yaml mein click targets. Ye CRM edition: Functions/Blueprint/Zia setup nahi dikhte. Zoho Social account activate nahi hai (signup Claude nahi karta) - Social/Flow/Creator screens tab, jab Gaurav un apps ko on kare.
+- Screenshot ka tareeka: Claude in Chrome `zoom` + save_to_disk (full-res PNG, scale ~1.05 of CSS px), JS se element rects -> targets; /home/claude/shots/add.py jaisa script.
+- Flow clips: 1813-6 (3), 1827-12 (3), 1821-9 (6), 1828-13 (4), 1809-4 (6) - sab purane Shorts ke clips GitHub pe (robot assemble + schedule karta hai, ek push = ek run). Flow credits ~13 Oct 2:45 AM pe ~40 bache (month mein reset) - naye AI niche Shorts ke liye credits chahiye honge.
+- Flow agent tip: prompt type karne ke baad pehla send click aksar register nahi hota - agent state check karo (Start generation vs Stop) aur dobara click; Stop kabhi mat dabao (request cancel ho jaati hai). Kuch clips mein gale ki chain aa jaati hai (Veo variance).
+
 ## Channel branding (12 Oct 2026)
 
 YouTube channel ab "GSX Automation", handle @GSXAutomation (youtube.com/@GSXAutomation). Naya logo (GSX, navy/blue/yellow) + banner ("One real business problem. One quick automation fix.") + professional description (AI presenter disclosure + "not affiliated with Zoho" line) publish ho gaye. Channel name/logo mein "Zoho" jaan-boojh ke nahi (trademark). Purane 4 videos delete nahi kiye, sab Private. Duplicate robot upload MOwTQ0Q8qC4 bhi Private.
