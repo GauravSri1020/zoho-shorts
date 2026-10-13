@@ -1,6 +1,6 @@
 {
  "id": "20261011-1809-4",
- "status": "waiting_for_clips",
+ "status": "skip",
  "upload": true,
  "created": "2026-10-11T18:12:13",
  "title": "Automate Zoho Marketing Journeys with Deluge API #Shorts",
@@ -385,5 +385,6 @@
   }
  ],
  "look": "wearing his dark grey blazer over a navy t-shirt, in a bright modern office with soft daylight",
- "issue": 6
+ "issue": 6,
+ "skip_reason": "12-13 Oct: QA fail x3 (old 6-clip script: 69s > 60s, 23s intro). Remake as a new AI-niche Short instead."
 }
