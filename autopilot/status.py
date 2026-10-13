@@ -1,7 +1,8 @@
 """Pipeline status for the Control Room dashboard ("kitni video kahan hai").
 
-After every robot run the count per stage is posted as ONE comment on the GitHub issue "📊 Control room"
-(only when something changed). GitHub e-mails it to you -> the dashboard reads the newest one from Gmail.
+After every robot run whose counts changed, the robot opens ONE NEW small GitHub issue whose TITLE is the whole
+PIPELINE line (and closes the previous status issue). Gmail only shows the old messages of one thread, so every
+status gets its own issue = its own e-mail; the dashboard reads the newest e-mail from Gmail.
 The first line is machine-readable (the dashboard parses it), e.g.
 PIPELINE ideas=24 clips=1 editing=0 qa_failed=1 scheduled=3 published=8 total=11 today=2 next=2026-10-14T18:00
 
@@ -86,7 +87,8 @@ def line(c):
 
 
 def post():
-    """Posts the counts on the Control room issue when they changed. Never breaks a run."""
+    """Opens a new status issue (title = PIPELINE line) when the counts changed and closes the old one.
+    Never breaks a run."""
     try:
         from .flow import REPO, _gh
         st = _state.load()
@@ -95,20 +97,18 @@ def post():
         if st.get("status_line") == txt:
             print(f"[status] unchanged: {txt}")
             return
-        num = st.get("status_issue")
-        if not num:
-            iss = _gh("POST", "/issues", {
-                "title": "📊 Control room - pipeline status",
-                "body": "The robot posts the pipeline counts here after every run (only when they change). "
-                        "The Control Room dashboard reads them from these e-mails. Keep this issue open.",
-                "assignees": [REPO.split("/")[0]]})
-            num = iss.get("number")
-            if not num:
-                return
+        old = st.get("status_issue")
+        if old:  # close first, so the newest e-mail is always the new issue
+            _gh("PATCH", f"/issues/{old}", {"state": "closed", "state_reason": "completed"})
         table = "\n".join(f"| {LABELS[k]} | {c[k]} |" for k in KEYS)
-        r = _gh("POST", f"/issues/{num}/comments", {"body": f"{txt}\n\n| Stage | Count |\n|---|---|\n{table}"})
-        if r:
-            st["status_issue"], st["status_line"] = num, txt
+        stamp = dt.datetime.now(IST).strftime("%Y-%m-%d %H:%M IST")
+        iss = _gh("POST", "/issues", {
+            "title": f"📊 {txt}",
+            "body": f"{txt}\n\n| Stage | Count |\n|---|---|\n{table}\n\nPosted {stamp}. The Control Room dashboard "
+                    "reads the newest of these e-mails. The robot closes the old status issue by itself.",
+            "assignees": [REPO.split("/")[0]]})
+        if iss.get("number"):
+            st["status_issue"], st["status_line"] = iss["number"], txt
             _state.save(st)
         print(f"[status] {txt}")
     except Exception as e:
