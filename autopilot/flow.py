@@ -380,6 +380,12 @@ def prep_clip(src: Path, heard, out_v: Path, out_a: Path):
     """One clip: speech only (silence at both ends cut tight), pace x SPEED (voice and lips together), watermark
     hidden, 720x1280 @30, wav 44.1 kHz. Video and audio get exactly the same length, so lips never drift."""
     a, b = speech_window(src, heard)
+    from .editor import black_spans
+    for s0, s1 in black_spans(src, 0.04):  # Veo sometimes fades in from / out to black -> never use those frames
+        if s0 <= a + 0.05 < s1:
+            a = min(s1, b - 0.3)
+        elif s0 < b - 0.05 <= s1:
+            b = max(s0, a + 0.3)
     frames = max(int(round((b - a) / SPEED * FPS)), 1)
     length = frames / FPS
     chain, last = _hide_watermark("[0:v]", _size(src))
@@ -397,7 +403,13 @@ def join(parts, work: Path):
     """[(video, wav)] -> (avatar.mp4, voice.wav)"""
     vl, al = work / "v.txt", work / "a.txt"
     vl.write_text("".join(f"file '{v.resolve()}'\n" for v, _ in parts))
-    al.write_text("".join(f"file '{a.resolve()}'\n" for _, a in parts))
+    normed = []
+    for k, (_, a) in enumerate(parts):  # every part at the same loudness -> no volume jump between clip and screen voice
+        n = work / f"n{k:02d}.wav"
+        _run(_ff("-i", str(a), "-af", "loudnorm=I=-16:TP=-1.5:LRA=7,apad", "-ar", str(RATE), "-ac", "1",
+                 "-t", f"{_dur(a):.4f}", "-c:a", "pcm_s16le", str(n)))
+        normed.append(n)
+    al.write_text("".join(f"file '{n.resolve()}'\n" for n in normed))
     av, raw, voice = work / "avatar.mp4", work / "voice_raw.wav", work / "voice.wav"
     _run(_ff("-f", "concat", "-safe", "0", "-i", str(vl), "-c", "copy", str(av)))
     _run(_ff("-f", "concat", "-safe", "0", "-i", str(al), "-c", "copy", str(raw)))
@@ -448,7 +460,19 @@ def build(job, files, work: Path):
     covered = {li for c in clips for li in c["lines"]}
     lines = [dict(l, face=(i in covered)) for i, l in enumerate(job["lines"])]
     _fill_app(job, lines)
-    parts, done_clips = [], set()
+    parts, done_clips, timeline = [], set(), []
+    # screen lines first, ALL in ONE voice: Gemini (= your avatar's voice); a backup voice only if Gemini is out
+    screen = [(i, _say(l)) for i, l in enumerate(lines) if not l["face"]]
+    voiced = {}
+    if screen:
+        from . import tts
+        tdir = work / "tts"
+        tdir.mkdir(parents=True, exist_ok=True)
+        outs = [tdir / f"line{i:02d}.wav" for i, _ in screen]
+        job["_voice"] = tts.speak_all([t for _, t in screen], outs, RATE)
+        voiced = {i: o for (i, _), o in zip(screen, outs)}
+        if job["_voice"] != "gemini":
+            print(f"[flow] screen parts use the backup voice '{job['_voice']}' (Gemini TTS out of quota)")
     for i, l in enumerate(lines):
         if l["face"]:
             # a long line can be split over several clips (older jobs: HOOK / PROBLEM / RESULT in 2 clips each) -
@@ -457,25 +481,32 @@ def build(job, files, work: Path):
                 done_clips.add(ci)
                 fi, _ = pick[ci]
                 v, a = work / f"p{len(parts):02d}.mp4", work / f"p{len(parts):02d}.wav"
-                prep_clip(files[fi], heard[fi], v, a)
+                timeline.append(("avatar", i, prep_clip(files[fi], heard[fi], v, a)))
                 parts.append((v, a))
-        else:  # Zoho-screen part: same voice via TTS, a black placeholder (the composer shows the screen)
+        else:  # Zoho-screen part: TTS voice + a placeholder video (the composer puts the screen exactly here)
             v, a = work / f"p{len(parts):02d}.mp4", work / f"p{len(parts):02d}.wav"
-            tts_part(_say(l), v, a)
+            timeline.append(("screen", i, tts_part(_say(l), v, a, voiced.get(i))))
             parts.append((v, a))
     av, voice = join(parts, work)
+    # editor's ear: no dead air inside the Short
+    sp = editor.speech_spans(voice, noise="-40dB", min_silence=1.2)
+    for (_, e0), (s1, _) in zip(sp, sp[1:]):
+        notes.append(f"dead air: {s1 - e0:.1f}s of silence at {e0:.1f}s")
     script_text = " ".join(_say(l) for l in lines)
     words = editor.align_to_script(editor.transcribe(voice, work), script_text, voice)
     mp4 = work / "short.mp4"
-    composer.render(job["script"], lines, words, av, voice, work / "edit", mp4)
+    composer.render(job["script"], lines, words, av, voice, work / "edit", mp4, timeline=timeline)
     return mp4, notes
 
 
-def tts_part(text, out_v: Path, out_a: Path):
+def tts_part(text, out_v: Path, out_a: Path, wav=None):
     """A screen line: TTS voice + a black 720x1280 placeholder video of exactly the same length."""
     from . import tts
     tmp = out_a.with_name(out_a.stem + "_t.wav")
-    tts.speak(text, tmp, RATE)
+    if wav is not None:  # already voiced by tts.speak_all (one voice for the whole Short)
+        shutil.copy(wav, tmp)
+    else:
+        tts.speak(text, tmp, RATE)
     length = _dur(tmp) + 0.12
     frames = max(int(round(length * FPS)), 1)
     length = frames / FPS
@@ -532,7 +563,8 @@ def finish():
             except Exception as e:
                 print(f"[benchmark] learn skipped: {str(e)[:200]}")
             sc = job["script"]
-            report = benchmark.gate(mp4, sc, "flow", editor.check_media(mp4) + notes)
+            report = benchmark.gate(mp4, sc, "flow", editor.check_media(mp4) + notes,
+                                    voice=job.get("_voice", "gemini"))
             (work / "qa.json").write_text(json.dumps(report, ensure_ascii=False, indent=1), encoding="utf-8")
             print(f"[qa] score={report['overall']}/{report['min_score']} approved={report['approved']}")
             (work / "short.json").write_text(json.dumps({k: job[k] for k in ("title", "description", "script")},
@@ -571,6 +603,9 @@ def finish():
                        f"Video file: {run_link} (Artifacts).")
                 print(f"[flow] scheduled for {when:%d %b %I:%M %p} IST: https://youtube.com/shorts/{vid}")
             state.save(st)
+            if job.get("_voice") not in (None, "gemini"):
+                msg += (f"\n\nℹ️ The Gemini voice quota was used up, so the Zoho-screen parts use the backup voice "
+                        f"'{job['_voice']}' this time (your presenter clips keep your own voice).")
             _comment(job, msg)
             if job.get("issue"):
                 _gh("PATCH", f"/issues/{job['issue']}", {"state": "closed"})
