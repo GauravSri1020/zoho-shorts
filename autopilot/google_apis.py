@@ -70,6 +70,41 @@ def upload(yt, video_path, title, description, tags, publish_at, localizations=N
     return resp["id"]
 
 
+def scheduled_times(yt, days_back=3):
+    """[(video_id, aware datetime)] of every upload that is scheduled (private + publishAt) or went public in the
+    last days_back days. The scheduler counts these so a day never gets more than schedule.per_day videos - also
+    when a video was uploaded by hand or by a parallel run."""
+    import datetime as dt
+    ch = yt.channels().list(part="contentDetails", mine=True).execute()
+    uploads = ch["items"][0]["contentDetails"]["relatedPlaylists"]["uploads"]
+    ids, token = [], None
+    for _ in range(4):  # newest 200 uploads is plenty
+        r = yt.playlistItems().list(part="contentDetails", playlistId=uploads, maxResults=50,
+                                    pageToken=token).execute()
+        ids += [it["contentDetails"]["videoId"] for it in r.get("items", [])]
+        token = r.get("nextPageToken")
+        if not token:
+            break
+    since = dt.datetime.now(dt.timezone.utc) - dt.timedelta(days=days_back)
+    out = []
+    for k in range(0, len(ids), 50):
+        r = yt.videos().list(part="status,snippet", id=",".join(ids[k:k + 50])).execute()
+        for v in r.get("items", []):
+            st = v.get("status", {}) or {}
+            if st.get("privacyStatus") == "private" and st.get("publishAt"):
+                t = st["publishAt"]
+            elif st.get("privacyStatus") == "public":
+                t = (v.get("snippet") or {}).get("publishedAt")
+            else:
+                continue
+            if not t:
+                continue
+            when = dt.datetime.fromisoformat(t.replace("Z", "+00:00"))
+            if when >= since:
+                out.append((v["id"], when))
+    return out
+
+
 def my_channel_id(yt):
     return yt.channels().list(part="id", mine=True).execute()["items"][0]["id"]
 
