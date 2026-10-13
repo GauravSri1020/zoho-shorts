@@ -2,6 +2,25 @@
 
 Is file ko har session ke end pe update karo, taaki agla chat yahin se shuru kare.
 
+## RULE: pehle backup, phir kaam (Gaurav ka standing order)
+
+Gaurav jab bhi kuch bhi change karne bole: SABSE PEHLE backup - `backup-YYYY-MM-DD-<kya-badal-rahe-ho>` branch main se banao (aur agar video ka kaam hai to latest Short ka artifact download karo). Tabhi code chhuo. Kuch bigde to us branch se purana code wapas lo.
+
+## 13 Oct 2026 shaam - voice + black screen fix, editor/QA tight
+
+Backup: branch `backup-2026-10-13-before-voice-blackscreen-fix` (fix se pehle ka pura code). Latest 4 Shorts ke artifacts (runs #39, #41, #42, #43) Gaurav ke browser mein download kiye.
+
+Problem 1 - black screen 3-5 s (YouTube pe gaya): screen lines ke neeche flow.py ek KAALA placeholder video rakhta hai; composer whisper word-timings se decide karta tha kab presenter / kab screen. Sabse sambhav wajah: timing 1-2 s galat -> presenter shot placeholder mein chala gaya = kaala screen. Purana check (blackdetect d=1.0, default pic_th) captions wale kaale frame ko pakad hi nahi paata tha.
+Fix: flow.build har part ki EXACT length (clip / TTS line) ka timeline banata hai -> composer.plan_parts() shots wahi se lagata hai (word timings sirf captions ke liye). composer final edit pe black_spans() chalata hai - 0.1 s bhi kaala (captions ke neeche bhi, pic_th 0.85) = build fail, upload nahi. editor.check_media bhi wahi strict check. Veo clip ke start/end ka black fade prep_clip mein kat jaata hai.
+
+Problem 2 - awaaz badalna: tts.py har 429 ko "quota khatam" maan leta tha (asal mein aksar sirf per-MINUTE limit hota hai) aur line-by-line fallback karta tha -> ek hi Short mein lines alag-alag awaaz mein.
+Fix: per-minute 429 -> retryDelay wait karke wahi Gemini voice (Achird). Backup voice (edge / Piper) SIRF jab har Gemini TTS model ka DAILY quota khatam ho. tts.speak_all(): Short ki saari screen lines EK hi provider se - kabhi mix nahi. Har line whisper se suni jaati hai (Gemini kabhi style-instruction bol deta hai / shabd kaat deta hai) -> galat ho to dobara. Backup voice laga to issue comment mein likha aata hai.
+
+Editor tight: har part ki loudness same (loudnorm per part) -> clip aur screen voice mein volume jump nahi. Andar 1.2 s+ dead air = note (upload block).
+QA tight (benchmark.py): editor checklist - black frames, voice change, same outfit/background, lips, screens, captions, music, ending. Naye criteria "continuity" + "voice". black_frames / voice_changes (jab Gemini voice tha) = blocker. Koi bhi criterion < 55 = blocker. min_score 65 -> 70 (channel.yaml).
+
+Issue #2 (Bill approvals, job 20261011-1326-1) = uploaded_manually (TuYUCh3cP6o) - kuch karna baaki nahi, issue close kar sakte ho. Agla pending: #15 (20261013-1228-3, Sort Inbound Emails) clips ka wait.
+
 ## Niche v2: "AI + Zoho automation" (12 Oct 2026, dopahar)
 
 Backup: git branch `backup-2026-10-12-before-ai-niche` (purana code + jobs, sab kuch). Wapas jaana ho to us branch se files le lo.
