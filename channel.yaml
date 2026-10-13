@@ -158,7 +158,8 @@ youtube:
 # Benchmark agent: watches these Shorts (and the most-viewed Shorts for youtube_search) every 14 days,
 # then scores every new video against them. Upload happens ONLY if score >= min_score.
 benchmark:
-  min_score: 65
+  min_score: 70  # 13 Oct: quality first (was 65)
+  min_criterion: 55  # any single QA criterion below this blocks the upload
   youtube_search: "Zoho AI automation"
   references:
     - {url: "https://www.youtube.com/shorts/iw5N2XbH3m0", weight: 3, note: "MOST PREFERRED - title on top, video panel in the middle, caption box below, b-roll cuts"}
