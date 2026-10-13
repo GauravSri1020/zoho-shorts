@@ -123,19 +123,22 @@ flow:
     - "wearing a dark green polo shirt, in a cozy home office with bookshelves, a desk lamp and a monitor showing dashboards"
     - "wearing a beige linen shirt with rolled sleeves, in a bright co-working space with large windows and wooden tables"
     - "wearing a dark grey blazer over a navy t-shirt, in a bright modern office with soft daylight"
+    - "wearing a maroon knit polo shirt, in a modern cafe-style workspace with a laptop and soft window light"
+    - "wearing a white linen shirt with the top button open, on a sunny rooftop terrace with a city view behind him"
+    - "wearing a navy quarter-zip sweater over a white t-shirt, in a dark studio with soft blue and orange accent lights"
+    - "wearing an olive-green bomber jacket over a grey t-shirt, in an open-plan tech office with glass meeting pods"
+    - "wearing a light blue denim shirt, in a bright library-style lounge with tall wooden bookshelves"
+    - "wearing a black blazer over a black turtleneck, in a premium boardroom with a long table and warm lights"
   watermark:                # Flow puts a visible watermark on every clip; the editor hides it
     mode: "crop"            # crop = cut the bottom strip away | blur = blur the box below | none
     crop_bottom: 0.10
     box: [0.74, 0.88, 0.24, 0.10]
 
-# When videos go public (IST). Picked for the target regions:
-#   17:30-18:30 IST = 16:00-17:00 UAE/Saudi (after work) = 13:00-14:00 CET (lunch break, Europe)
-#   21:30-22:30 IST = 20:00-21:00 UAE/Saudi (prime time) = 18:00-19:00 CET (evening, Europe) = 12:00 New York
+# When videos go public (IST): FIXED times, max per_day videos a day (also counts videos already scheduled on
+# YouTube, incl. manual uploads). 18:00 IST = 16:30 UAE / 14:30 CET, 22:00 IST = 20:30 UAE / 18:30 CET / 12:30 New York.
 schedule:
-  windows:
-    gulf_eu_noon: "17:30-18:30"
-    gulf_prime: "21:30-22:30"
-  min_gap_from_yesterday_minutes: 8
+  times: ["18:00", "22:00"]
+  per_day: 2
   min_lead_minutes: 30
 
 # Captions / editing
