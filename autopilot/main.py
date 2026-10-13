@@ -107,6 +107,9 @@ def main(argv=None):
     except Exception as e:
         notify.send(f"⚠️ {CHANNEL_NAME} {a.task} FAILED: {type(e).__name__}: {str(e)[:300]}")
         raise
+    finally:  # Control room dashboard: how many Shorts are in which stage
+        from . import status
+        status.post()
 
 
 if __name__ == "__main__":
