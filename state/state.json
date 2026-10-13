@@ -248,5 +248,7 @@
  "last_photo": "1_jacket.jpg",
  "photo_scenes": [],
  "photo_agent_error": "RuntimeError: image model unavailable: 404 NOT_FOUND. {'error': {'code': 404, 'm",
- "look_index": 13
+ "look_index": 13,
+ "status_issue": 16,
+ "status_line": "PIPELINE ideas=27 clips=1 editing=0 qa_failed=0 scheduled=3 published=6 total=9 today=2 next=2026-10-14T18:17"
 }
