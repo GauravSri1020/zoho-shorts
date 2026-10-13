@@ -19,6 +19,7 @@ from .config import CH, CHANNEL_NAME, STATE_DIR
 
 _B = CH.get("benchmark", {}) or {}
 MIN_SCORE = int(_B.get("min_score", 75))
+MIN_CRITERION = int(_B.get("min_criterion", 50))  # any single criterion below this blocks the upload
 REFS = _B.get("references", []) or []
 SEARCH = _B.get("youtube_search", "Zoho Books")
 FILE = STATE_DIR / "benchmark.json"
@@ -26,12 +27,18 @@ MAX_AGE_DAYS = 14
 
 CRITERIA = {
     "hook": "first 2 seconds: is the problem clear and does it stop the scroll? (big title + spoken hook)",
-    "avatar": "presenter looks like a real person talking: lips match the words, natural face, not a frozen photo",
-    "zoho_screens": "the Zoho Books steps are SHOWN on screen, the exact button/field is highlighted, readable",
+    "avatar": "presenter looks like a real person talking: lips match every word, natural face and hands (no morphing, "
+              "extra fingers, frozen photo), gestures fit the words",
+    "continuity": "clean editing: no black / blank / frozen frame anywhere, no glitch or broken cut, the presenter has "
+                  "the SAME outfit and background in every shot, no Flow watermark, nothing cut off at the edges",
+    "voice": "one consistent, natural voice (same timbre, accent, pace and loudness in presenter and screen parts), "
+             "no cut-off words, clicks, robotic words or dead air",
+    "zoho_screens": "the Zoho / AI / API steps are SHOWN on screen at the moment they are said, the exact button / "
+                    "field is highlighted, readable on a phone",
     "pacing": "visual change every 2-4 s, no dead time, length fits the content (25-60 s)",
-    "captions": "readable, in sync, match the speech exactly, not covering important parts",
-    "audio": "clear voice, natural English, music present but quiet under the voice",
-    "value": "a Zoho Books user learns a real, correct fix they can follow",
+    "captions": "readable, in sync, match the speech exactly, never covering the face or the important part of the screen",
+    "audio": "clear voice, music present but always quieter than the voice",
+    "value": "the viewer learns a real, correct fix they can follow",
     "polish": "looks as professional as the reference Shorts (layout, fonts, colours, no glitches)",
 }
 
@@ -139,10 +146,13 @@ def _upload_video(path):
     return f
 
 
-def gate(mp4, sc, engine, tech_problems):
-    """Returns the QA report dict; report["approved"] decides the upload."""
-    report = {"engine": engine, "min_score": MIN_SCORE, "tech_problems": list(tech_problems or []),
-              "scores": {}, "overall": 0, "issues": [], "approved": False, "fatal": False}
+def gate(mp4, sc, engine, tech_problems, voice="gemini"):
+    """Returns the QA report dict; report["approved"] decides the upload.
+    voice = who voiced the Zoho-screen parts: "gemini" = the avatar's own voice, so ANY voice change is a blocker;
+    anything else = backup voice because the Gemini quota was used up -> a voice change there is expected."""
+    report = {"engine": engine, "min_score": MIN_SCORE, "min_criterion": MIN_CRITERION, "voice": voice,
+              "tech_problems": list(tech_problems or []), "scores": {}, "overall": 0, "issues": [],
+              "approved": False, "fatal": False}
     if engine not in ("flow", "kaggle", "veo", "sadtalker"):
         report["issues"].append("Avatar is not lip-synced (Veo / SadTalker did not run) - a still photo is not allowed.")
         report["fatal"] = True
@@ -150,20 +160,39 @@ def gate(mp4, sc, engine, tech_problems):
         report["issues"] += [f"technical: {p}" for p in tech_problems]
     bm = load()
     refs = [{k: r.get(k) for k in ("url", "note", "hook", "layout", "visuals", "cuts_per_10s", "captions",
-                                    "presenter", "music", "what_to_copy")} for r in bm.get("references", [])]
+                                   "presenter", "music", "what_to_copy")} for r in bm.get("references", [])]
     from google.genai import types
-    prompt = f"""You are the strict final reviewer for the YouTube channel "{CHANNEL_NAME}" (English Zoho tips).
-The attached video is OUR new Short. It must be as good as the best Shorts in the niche, otherwise it is NOT uploaded.
+    voice_rule = ("ONE voice from start to end: the presenter clips and the Zoho-screen parts must sound like the SAME "
+                  "man (timbre, accent, pace, loudness). A different voice anywhere is a blocker." if voice == "gemini"
+                  else f"Today the Zoho-screen parts use a backup voice ('{voice}') because the AI-voice quota was used "
+                  "up - a different voice on the screen parts is expected and NOT a blocker, but every part must be "
+                  "clear, natural and at the same loudness.")
+    prompt = f"""You are the senior video editor AND the strict final QA for the YouTube channel "{CHANNEL_NAME}"
+(English AI + Zoho automation Shorts). Watch the attached Short second by second - picture AND sound - exactly like a
+professional editor does before publishing. It is uploaded ONLY if it is as good as the best Shorts in the niche;
+when in doubt, it fails. Being strict here protects the channel.
 Expected title: "{sc.get('title', '')}". Expected top title text: "{sc.get('hook_text', '')}".
 Script (what should be said and shown): {json.dumps([{k: l.get(k) for k in ('beat', 'say', 'card')} for l in sc.get('lines', [])], ensure_ascii=False)}
 
 What the reference Shorts do (learned by watching them): {json.dumps(refs, ensure_ascii=False)[:9000]}
 
+Editor's checklist - check EVERY point and give a timestamp (m:ss) for each defect:
+1. Picture: any black, blank or frozen frame (even 0.1 s), flash, glitch, broken cut, Flow watermark, head / hands cut off.
+2. Presenter: lips match every word, natural face and hands (no morphing, extra fingers), gestures fit the words,
+   the SAME outfit and background in every presenter shot.
+3. Voice: {voice_rule} Also: no sudden loudness jump, click / pop, cut-off word, robotic word, silence over 0.8 s.
+4. Screens: the Zoho / AI / API screen shows what is being said at that moment, readable on a phone, the highlight is
+   on the right button / field, it looks like the real app.
+5. Captions: exactly the spoken words, in sync, never covering the face or the important part of the screen.
+6. Music: present but always quieter than the voice.
+7. Story: hook in the first 2 s, the fix is correct and complete, the video ends cleanly (no abrupt cut).
+
 Score each criterion 0-100 compared with those references (70 = as good as an average reference, 90 = as good as the best):
 {json.dumps(CRITERIA, ensure_ascii=False, indent=1)}
-Mark a criterion as blocker if a viewer would clearly find it bad/fake/broken (e.g. lips not moving, wrong Zoho steps,
-unreadable screens, captions not matching speech, silence, glitches).
+Mark a criterion as blocker if a viewer would clearly find it bad / fake / broken.
 Return JSON: {{"scores": {{"hook": 0, ...}}, "blockers": ["criterion names"], "overall": 0,
+ "black_frames": ["m:ss-m:ss of every black / blank moment; empty list if none"],
+ "voice_changes": ["m:ss what changes; empty list if the voice stays the same"],
  "issues": ["specific problems with timestamps"], "fixes": ["what to change next time"],
  "vs_references": "one honest sentence"}}"""
     try:
@@ -172,9 +201,23 @@ Return JSON: {{"scores": {{"hook": 0, ...}}, "blockers": ["criterion names"], "o
                                                                                         mime_type="video/mp4")),
                                                       types.Part(text=prompt)])])
         report["scores"] = d.get("scores", {})
-        report["blockers"] = d.get("blockers", [])
         vals = [float(v) for v in report["scores"].values() if isinstance(v, (int, float))]
         report["overall"] = round(min(float(d.get("overall", 0) or 0), sum(vals) / len(vals) if vals else 0), 1)
+        report["black_frames"] = [str(x) for x in (d.get("black_frames") or []) if str(x).strip()]
+        report["voice_changes"] = [str(x) for x in (d.get("voice_changes") or []) if str(x).strip()]
+        blockers = [str(b) for b in (d.get("blockers") or [])]
+        if report["black_frames"]:
+            blockers.append("continuity")
+            report["issues"] += [f"black / blank picture at {x}" for x in report["black_frames"]]
+        if report["voice_changes"] and voice == "gemini":
+            blockers.append("voice")
+            report["issues"] += [f"voice changes at {x}" for x in report["voice_changes"]]
+        low = [k for k, v in report["scores"].items() if isinstance(v, (int, float)) and v < MIN_CRITERION]
+        if low:
+            blockers += low
+            report["issues"].append(f"below the minimum of {MIN_CRITERION}: "
+                                    + ", ".join(f"{k} {report['scores'][k]}" for k in low))
+        report["blockers"] = list(dict.fromkeys(blockers))
         report["issues"] += d.get("issues", [])
         report["fixes"] = d.get("fixes", [])
         report["vs_references"] = d.get("vs_references", "")
