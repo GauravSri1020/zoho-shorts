@@ -576,6 +576,9 @@ def finish():
                 _comment(job, f"⚠️ QA failed ({report['overall']}/{report['min_score']}):\n{issues}\n\n"
                               f"Video to check: {run_link} (Artifacts). Upload retakes of the bad clips here: "
                               f"{upload_link(job['id'])}")
+                job["status"] = "qa_failed"  # Control room: "QA failed - retake needed" (a retake upload rebuilds it)
+                jf.write_text(json.dumps({k: v for k, v in job.items() if not k.startswith("_")},
+                                         ensure_ascii=False, indent=1), encoding="utf-8")
                 notify.send(f"⚠️ {CHANNEL_NAME}: Short {job['id']} failed QA ({report['overall']}/"
                             f"{report['min_score']}).\n{issues}\nRetakes: {upload_link(job['id'])}")
                 continue
