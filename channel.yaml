@@ -135,9 +135,10 @@ flow:
     box: [0.74, 0.88, 0.24, 0.10]
 
 # When videos go public (IST): FIXED times, max per_day videos a day (also counts videos already scheduled on
-# YouTube, incl. manual uploads). 18:00 IST = 16:30 UAE / 14:30 CET, 22:00 IST = 20:30 UAE / 18:30 CET / 12:30 New York.
+# YouTube, incl. manual uploads). 13 Oct: Gaurav wants one morning (7-8 AM) + one night (9-10 PM) slot.
+# 07:30 IST = 06:00 UAE / 22:00 New York (day before), 21:30 IST = 20:00 UAE / 18:00 Europe (CEST) / 12:00 New York.
 schedule:
-  times: ["18:00", "22:00"]
+  times: ["07:30", "21:30"]
   per_day: 2
   min_lead_minutes: 30
 
