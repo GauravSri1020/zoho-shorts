@@ -91,8 +91,13 @@ def plan(lines, times, dur):
         else:
             segs.append({"kind": kind, "t0": a, "t1": b, "line": i})
     segs[-1]["t1"] = dur
+    return _soft_cuts(segs)
+
+
+def _soft_cuts(segs):
+    """Long avatar shots -> soft cuts (tiny zoom change) every ~4 s."""
     out = []
-    for s in segs:  # long avatar shots -> soft cuts (tiny zoom change)
+    for s in segs:
         if s["kind"] == "avatar" and s["t1"] - s["t0"] > 4.5:
             n = max(2, round((s["t1"] - s["t0"]) / 4.0))
             step = (s["t1"] - s["t0"]) / n
@@ -102,6 +107,23 @@ def plan(lines, times, dur):
         else:
             out.append(s | {"zoom": 1.0})
     return out
+
+
+def plan_parts(timeline, dur):
+    """Visual segments from the EXACT lengths of the parts the assembler joined: [(kind, line, seconds)].
+    Word timings from whisper can be off by a second or more; part lengths cannot. So the presenter is shown
+    only where his Flow clip really is and a Zoho screen exactly where a TTS line is - the black placeholder
+    under the screen parts can never leak into the video (that was the 3-5 s black screen)."""
+    segs, t = [], 0.0
+    for kind, li, ln in timeline:
+        if segs and segs[-1]["kind"] == kind and (kind == "avatar" or segs[-1]["line"] == li):
+            segs[-1]["t1"] = t + ln
+        else:
+            segs.append({"kind": kind, "t0": t, "t1": t + ln, "line": li})
+        t += ln
+    if segs:
+        segs[-1]["t1"] = max(dur, segs[-1]["t0"] + 0.1)
+    return _soft_cuts(segs)
 
 
 # ------------------------------------------------------------------ clips
@@ -267,12 +289,12 @@ Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
 
 
 # ------------------------------------------------------------------ main
-def render(sc, lines, words, avatar_mp4, voice_wav, workdir: Path, out_path: Path, seed=None):
+def render(sc, lines, words, avatar_mp4, voice_wav, workdir: Path, out_path: Path, seed=None, timeline=None):
     workdir.mkdir(parents=True, exist_ok=True)
     rng = random.Random(seed)
     dur = _dur(voice_wav)
     times = line_times(lines, words, dur)
-    segs = plan(lines, times, dur)
+    segs = plan_parts(timeline, dur) if timeline else plan(lines, times, dur)
 
     specs, idx = [], {}
     for s in segs:
@@ -320,6 +342,12 @@ def render(sc, lines, words, avatar_mp4, voice_wav, workdir: Path, out_path: Pat
     lst.write_text("".join(f"file '{c.resolve()}'\n" for c in clips))
     video = workdir / "video.mp4"
     _run(_ff("-f", "concat", "-safe", "0", "-i", str(lst), "-c", "copy", str(video)))
+    # editor's self-check before captions + music go on top: not one black frame may reach YouTube
+    from .editor import black_spans
+    black = black_spans(video)
+    if black:
+        raise RuntimeError("black frames in the edit at " + ", ".join(f"{a:.1f}-{b:.1f}s" for a, b in black[:5])
+                           + " - a screen / presenter shot is missing there; not uploading a broken Short")
 
     ass = workdir / "captions.ass"
     build_ass(words, lines, times, segs, ass, hook)
