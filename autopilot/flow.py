@@ -586,7 +586,12 @@ def finish():
             msg = f"✅ Short ready. Video: {run_link} (Artifacts)."
             if job.get("upload", True):
                 yt = g.youtube()
-                when, slot = schedule.next_slot(st["slots"])
+                try:  # what is really on the channel (manual uploads, other runs) also counts -> max 2 a day
+                    yt_times = g.scheduled_times(yt)
+                except Exception as e:
+                    print(f"[schedule] could not read the channel's scheduled videos: {str(e)[:160]}")
+                    yt_times = []
+                when, slot = schedule.next_slot(st["slots"], youtube_times=yt_times)
                 tags = list(sc.get("tags") or []) + ["Zoho", "AI automation", "Shorts"]
                 try:
                     loc = writer.localize(job["title"], job["description"], LOCALES)
