@@ -20,6 +20,9 @@ W, H, FPS = 1080, 1920, 30
 DEVANAGARI = re.compile(r"[ऀ-ॿ]")
 
 
+_WHISPER = None  # whisper model, loaded once per run
+
+
 def _run(cmd, **kw):
     subprocess.run(cmd, check=True, **kw)
 
@@ -51,7 +54,10 @@ def transcribe(video, workdir):
     from faster_whisper import WhisperModel
     wav = workdir / "voice16k.wav"
     _run(["ffmpeg", "-y", "-loglevel", "error", "-i", str(video), "-vn", "-ac", "1", "-ar", "16000", str(wav)])
-    model = WhisperModel(WHISPER_MODEL, device="cpu", compute_type="int8")
+    global _WHISPER
+    if _WHISPER is None:  # load once: it is used for every clip, every TTS line check and the final voice
+        _WHISPER = WhisperModel(WHISPER_MODEL, device="cpu", compute_type="int8")
+    model = _WHISPER
     segments, info = model.transcribe(str(wav), language=WHISPER_LANGUAGE, word_timestamps=True,
                                       vad_filter=True, beam_size=5)
     words = []
@@ -242,6 +248,16 @@ Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
 
 
 # ------------------------------------------------------------------ automatic checks (no human review)
+def black_spans(path, min_len=0.1):
+    """[(start, end)] where the picture is (almost) black for >= min_len s. pic_th 0.85 = a black frame is still
+    caught when captions / a title cover up to 15% of it (the old check, d=1.0 + default pic_th, missed exactly
+    that: a 3-5 s black placeholder with captions on it went to YouTube)."""
+    err = subprocess.run(["ffmpeg", "-hide_banner", "-i", str(path), "-an", "-vf",
+                          f"blackdetect=d={min_len}:pic_th=0.85:pix_th=0.10", "-f", "null", "-"],
+                         capture_output=True, text=True).stderr
+    return [(float(a), float(b)) for a, b in re.findall(r"black_start:\s*([\d.]+)\s+black_end:\s*([\d.]+)", err)]
+
+
 def check_media(path):
     """Cheap technical checks on the finished file. Returns a list of problems (empty = ok)."""
     problems = []
@@ -252,14 +268,15 @@ def check_media(path):
         return problems + ["no audio track"]
     if info["duration"] < 8:
         problems.append(f"too short ({info['duration']:.1f}s)")
-    err = subprocess.run(["ffmpeg", "-hide_banner", "-i", str(path), "-vf", "blackdetect=d=1.0:pix_th=0.08",
-                          "-af", "volumedetect", "-f", "null", "-"], capture_output=True, text=True).stderr
+    err = subprocess.run(["ffmpeg", "-hide_banner", "-i", str(path), "-vn", "-af", "volumedetect", "-f", "null", "-"],
+                         capture_output=True, text=True).stderr
     m = re.search(r"mean_volume: (-?[\d.]+) dB", err)
     if m and float(m.group(1)) < -40:
         problems.append(f"audio almost silent ({m.group(1)} dB)")
-    black = sum(float(x) for x in re.findall(r"black_duration:([\d.]+)", err))
-    if black > 1.5:
-        problems.append(f"{black:.1f}s of black video")
+    # ANY black picture of 0.1 s or more fails - also when captions / a title are drawn on top of it
+    black = black_spans(path)
+    if black:
+        problems.append("black screen at " + ", ".join(f"{a:.1f}-{b:.1f}s" for a, b in black[:5]))
     return problems
 
 
