@@ -115,20 +115,56 @@ flow:
   voice_style: "Say this like a friendly, energetic YouTube tech explainer, clear natural English with a neutral international accent, brisk pace"
   backup_voice: "en-GB-RyanNeural"
   scene: "wearing a dark grey blazer over a navy t-shirt, in a bright modern office with soft daylight"
-  # One look per Short, rotated (outfit + office), so the channel doesn't look like the same day every day.
+  # 14 Oct 2026 (Gaurav): har Short alag look - smart-casual mix (kabhi casual, kabhi professional; na Gen-Z
+  # streetwear, na stiff suit-tie), alag-alag jagah (office ke bahar campus/park, street, terrace, lounge...).
+  # Ek look = ek Short ke saare clips (outfit + jagah same rehti hai), Shorts ke beech rotate hota hai.
   looks:
-    - "wearing a navy blazer over a crisp white shirt, in a glass-walled high-rise office with a city skyline at golden hour behind him"
-    - "wearing a black crew-neck t-shirt under a charcoal overshirt, in a modern tech startup office with exposed brick, plants and warm lights"
-    - "wearing a light grey suit jacket over a black t-shirt, in a minimal white meeting room with a large wall screen behind him"
+    - "wearing a navy unstructured blazer over a plain white t-shirt and dark chinos, on a tree-lined walkway of a modern corporate office campus in soft morning sun, glass office buildings behind him"
+    - "wearing a light blue oxford shirt with the sleeves rolled up, in a bright co-working space with large windows, wooden tables and plants"
+    - "wearing a charcoal overshirt over a black crew-neck t-shirt, in a modern tech startup office with exposed brick, plants and warm lights"
+    - "wearing an olive field jacket over a grey t-shirt, on a clean city sidewalk just outside a glass office tower, softly blurred street behind him"
+    - "wearing a white linen shirt with the top button open, on a sunny rooftop terrace with a city skyline behind him at golden hour"
+    - "wearing a navy blazer over a crisp white shirt with no tie, in a glass-walled high-rise office with a city skyline at golden hour behind him"
     - "wearing a dark green polo shirt, in a cozy home office with bookshelves, a desk lamp and a monitor showing dashboards"
-    - "wearing a beige linen shirt with rolled sleeves, in a bright co-working space with large windows and wooden tables"
-    - "wearing a dark grey blazer over a navy t-shirt, in a bright modern office with soft daylight"
-    - "wearing a maroon knit polo shirt, in a modern cafe-style workspace with a laptop and soft window light"
-    - "wearing a white linen shirt with the top button open, on a sunny rooftop terrace with a city view behind him"
-    - "wearing a navy quarter-zip sweater over a white t-shirt, in a dark studio with soft blue and orange accent lights"
-    - "wearing an olive-green bomber jacket over a grey t-shirt, in an open-plan tech office with glass meeting pods"
-    - "wearing a light blue denim shirt, in a bright library-style lounge with tall wooden bookshelves"
-    - "wearing a black blazer over a black turtleneck, in a premium boardroom with a long table and warm lights"
+    - "wearing a grey crew-neck knit sweater over a white collared shirt, in a glass meeting room with a whiteboard full of flow diagrams"
+    - "wearing a beige overshirt over a white t-shirt, at an outdoor cafe terrace table with a laptop, green trees and soft daylight behind him"
+    - "wearing a black polo shirt, in a premium business lounge with tall windows, leather chairs and a modern city view"
+    - "wearing a light grey blazer over a black t-shirt, in a bright modern office lobby with plants, a reception desk and natural light"
+    - "wearing a light denim shirt, in a landscaped office park courtyard with benches, trees and a modern building behind him"
+  # Shakal + body hamesha avatar ki reference photos jaisi - kabhi patla / mota nahi.
+  body: "His face, skin tone, hairstyle, beard, height and body build stay exactly as in my avatar's reference photos - the same natural average build, never slimmer and never heavier"
+  # Gesture / body language har clip mein alag (har line ke liye pool se ek chuna jaata hai, script ke text se).
+  # Research (14 Oct): talking-head Shorts mein presenter kabhi poora still nahi - halka walk-in, weight shift,
+  # haath ki movement, important baat se pehle chhota pause, ek dost se baat karne jaisa tone, ~15% zyada energy.
+  gestures:
+    HOOK:
+      - "walks a few relaxed steps toward the camera and stops, then raises one hand with an open palm on the first words"
+      - "turns from looking to the side to face the camera, leans in slightly and raises his eyebrows"
+      - "stands with relaxed shoulders, shakes his head once with a half smile and holds up one hand as if saying stop"
+      - "walks into the frame from the side, stops at the centre and points briefly at the camera with an easy smile"
+      - "leans one hand on a table or railing next to him, then straightens up and talks with a confident open gesture"
+    PROBLEM:
+      - "frowns slightly, sighs and spreads both hands palms up as if asking why this is still so hard"
+      - "rubs his forehead briefly, then drops his hand and talks with a tired, relatable expression"
+      - "counts the wasted hours on his fingers with a slightly annoyed face"
+      - "crosses his arms for a moment, then uncrosses them and gestures to the side in mild frustration"
+      - "shrugs with both shoulders and tilts his head, as if he has seen this problem a hundred times"
+    FIX:
+      - "nods confidently and counts the steps on his fingers"
+      - "taps his palm with two fingers as he lists each step"
+    STEP:
+      - "points to the side as if showing something on a screen next to him"
+      - "draws a small arrow in the air with one finger while he explains"
+    RESULT:
+      - "smiles and opens both arms wide"
+      - "relaxes his shoulders, smiles and gives a small satisfied nod with an open-hand gesture"
+      - "snaps his fingers once and smiles as if the problem just disappeared"
+      - "puts one hand in his pocket, smiles and gestures toward the camera with the other hand"
+      - "gives a short confident thumbs up near his chest and smiles"
+    CTA:
+      - "smiles warmly and points at the camera"
+    ANY:
+      - "explains with natural, lively hand gestures and shifts his weight a little"
   watermark:                # Flow puts a visible watermark on every clip; the editor hides it
     mode: "crop"            # crop = cut the bottom strip away | blur = blur the box below | none
     crop_bottom: 0.10
