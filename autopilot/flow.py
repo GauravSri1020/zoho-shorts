@@ -169,14 +169,32 @@ _ACT = {"HOOK": "steps forward slightly with an energetic, curious expression an
         "CTA": "smiles warmly and points at the camera"}
 
 
+# 14 Oct 2026: gesture / body language har clip mein alag - channel.yaml flow.gestures (beat -> list) se,
+# line ke text se seed hota hai (same line = same gesture, alag line = alag). Pool khaali ho to _ACT fallback.
+_GEST = {str(k).upper(): [str(x).strip() for x in (v or []) if str(x).strip()]
+         for k, v in (_F.get("gestures") or {}).items()}
+BODY = (_F.get("body") or "").strip().rstrip(".")
+
+
+def _act(beat, text):
+    import random
+    b = str(beat).upper()
+    pool = next((v for k, v in _GEST.items() if k != "ANY" and b.startswith(k) and v), None) or _GEST.get("ANY")
+    if pool:
+        return random.Random(f"{b}|{text}").choice(pool)
+    return next((v for k, v in _ACT.items() if b.startswith(k)), "explains with natural, lively hand gestures")
+
+
 def prompt(text, beat="", look=None):
     look = SCENE if look is None else look
-    b = str(beat).upper()
-    act = next((v for k, v in _ACT.items() if b.startswith(k)), "explains with natural, lively hand gestures")
-    return (f"{PRESENTER} looks into the camera and talks to the viewer like an energetic YouTube tech "
-            f"explainer; he {act}. {SHOT}, static camera, sharp and well lit"
+    act = _act(beat, text)
+    cam = ("smooth gimbal camera gently moving back with him so the framing stays the same"
+           if re.search(r"\bwalk", act) else "static camera")
+    return (f"{PRESENTER} looks into the camera and talks to the viewer like a confident, friendly business tech "
+            f"explainer, smart and natural, not stiff; he {act}. {SHOT}, {cam}, sharp and well lit"
             + (f", {look}" if look else "") + ". "
-            f"He says, in clear natural English with {ACCENT}, at a brisk, lively pace: \"{text}\" "
+            + (f"{BODY}. " if BODY else "")
+            + f"He says, in clear natural English with {ACCENT}, at a brisk, lively pace: \"{text}\" "
             "His lips match every word. He starts speaking in the very first frame, with no pause before the "
             "first word, and stops right after the last word. "
             "Audio: only his voice - no music, no sound effects. No subtitles, no captions, no text on screen.")
