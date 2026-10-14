@@ -6,6 +6,27 @@ Is file ko har session ke end pe update karo, taaki agla chat yahin se shuru kar
 
 Gaurav jab bhi kuch bhi change karne bole: SABSE PEHLE backup - `backup-YYYY-MM-DD-<kya-badal-rahe-ho>` branch main se banao (aur agar video ka kaam hai to latest Short ka artifact download karo). Tabhi code chhuo. Kuch bigde to us branch se purana code wapas lo.
 
+## 14 Oct 2026 - Flow account switch + presenter variety
+
+Backup: branch `backup-2026-10-14-before-presenter-variety` (change se pehle ka main).
+
+Clips kyun nahi ban rahi thi: robot theek tha (research + script + issue roz ban rahe the). Clips Flow mein haath se / Claude in Chrome se banti hain - kisi ne banayi nahi + purane account (gauravsri069) mein credits khatam (~90 -> ab ~30). Naya Flow account: srig9056 (920 credits, project "Oct 13 - 22:36"). GEMINI_API_KEY badalni ho to: repo Settings -> Secrets and variables -> Actions -> GEMINI_API_KEY -> Update (abhi zaroorat nahi, purani key chal rahi hai).
+
+#17 (20261014-0941-1, Stuck CRM deals): purane account se 3 clips -> run #53 -> scheduled 15 Oct 07:30 IST (A3r_WPRLf_U). Outfit avatar wala grey blazer aaya (look wala nahi) - teeno clips same.
+
+Gaurav ka feedback (presenter): har clip mein same chalna / dekhna; body kabhi patli kabhi theek; location hamesha office; kapde ek jaise. Chahiye: alag gesture + body language har baar, alag jagah (office ke bahar campus/park, street, terrace, lounge), body bilkul reference photos jaisi, kapde smart-casual mix (na Gen-Z, na stiff formal).
+
+Kya badla (sirf prompt text, editor/QA/pipeline code nahi chhua):
+- channel.yaml flow.looks: 12 naye smart-casual looks, kai outdoor (corporate campus walkway, city sidewalk, rooftop, cafe terrace, office park courtyard, lounge, lobby).
+- channel.yaml flow.body: chehra, skin tone, baal, beard, height, build reference photos jaise - "never slimmer, never heavier" har prompt mein.
+- channel.yaml flow.gestures: beat-wise pools (HOOK/PROBLEM/FIX/STEP/RESULT/CTA/ANY). Research: presenter kabhi poora still nahi, walk-in, weight shift, ek dost se baat jaisa tone, ~15% zyada energy.
+- flow.py prompt(): har line ke liye pool se gesture (line text se seed, isliye clips mein alag). "walk" wale gesture pe camera = smooth gimbal (warna static). Tone: "confident, friendly business tech explainer, smart and natural, not stiff".
+
+Open / next:
+- #15 (20261013-1228-3, Sort Inbound Emails) - naye account ke project mein email/inbox wale clips dikh rahe hain ("Man talking about inbox assistant", "Man explaining email sorting AI") - check karke upload karna hai; agent ne "six video generations" bhi queue kiye the.
+- Gestures abhi fixed pool se aate hain. Agla step (Gaurav ne maanga): research agent roz trending Shorts presenters ka body language / hook style dekh ke pool update kare.
+- Naye prompts ka pehla test: kal 10 baje wala issue.
+
 ## 13 Oct 2026 shaam - voice + black screen fix, editor/QA tight
 
 Backup: branch `backup-2026-10-13-before-voice-blackscreen-fix` (fix se pehle ka pura code). Latest 4 Shorts ke artifacts (runs #39, #41, #42, #43) Gaurav ke browser mein download kiye.
