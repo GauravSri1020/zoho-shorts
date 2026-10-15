@@ -1,0 +1,482 @@
+{
+ "id": "20261015-2117-4",
+ "status": "waiting_for_clips",
+ "upload": true,
+ "created": "2026-10-15T21:18:31",
+ "title": "Enable ZATCA Phase Two in Zoho Books Saudi Arabia #Shorts",
+ "description": "Quick tutorial on activating Saudi ZATCA Phase 2 e-invoicing compliance natively inside Zoho Books settings.\n\n1. Go to Zoho Books Settings and select 'Compliance' or 'E-Invoicing (ZATCA)'.\n2. Enter your organization details, GSTIN/VAT number, and upload your ZATCA cryptographic stamp.\n3. Test generation in the sandbox environment before switching the toggle to live generation.\n\nAPI / tool used:\n- name: Zoho Books ZATCA Integration\n- endpoint: Built-in Zoho Books Settings\n- scope: ZohoBooks.settings.ALL\n- docs: Zoho Books ZATCA Phase 2 Guide\n\nAI + Zoho automations every day - follow @GSXAutomation\n\nThis video uses an AI-generated presenter and voice.\nIndependent channel. Not affiliated with or endorsed by Zoho Corporation. Zoho is a trademark of Zoho Corporation.\n\n#Shorts #Zoho #AIAutomation #ZohoCRM #AIAgents",
+ "angle": {
+  "story_index": 48,
+  "pillar": "trending",
+  "region": "gcc",
+  "product": "Zoho Books KSA",
+  "app": "books",
+  "problem": "Saudi ZATCA e-invoicing compliance waves keep adding businesses, and manual setup is risky.",
+  "fix_type": "native",
+  "solution": "Activate the built-in ZATCA Phase 2 e-invoicing integration directly inside Zoho Books settings.",
+  "steps": [
+   "Go to Zoho Books Settings and select 'Compliance' or 'E-Invoicing (ZATCA)'.",
+   "Enter your organization details, GSTIN/VAT number, and upload your ZATCA cryptographic stamp.",
+   "Test generation in the sandbox environment before switching the toggle to live generation."
+  ],
+  "api": null,
+  "result": "Fully compliant Phase 2 ZATCA e-invoices generated automatically on every sale.",
+  "wow": "Zoho Books handles the complex XML generation and ZATCA clearance behind the scenes natively.",
+  "hook": "Worried about the ZATCA e-invoicing deadline? Here is where to switch it on in Zoho Books."
+ },
+ "story": {
+  "title": "Saudi ZATCA e-invoicing waves keep adding businesses",
+  "link": "bank:saudi zatca einvoicing waves keep adding businesses",
+  "summary": "pillar: trending | region: gcc | product: Zoho Books KSA | fix: Zoho Books ZATCA integration setup (show the menu, not advice)",
+  "source": "GSX problem bank",
+  "ts": 1792098704.4134896,
+  "trend": 0,
+  "pillar": "trending"
+ },
+ "script": {
+  "title": "Enable ZATCA Phase Two in Zoho Books Saudi Arabia",
+  "hook_text": "ZATCA Phase 2 Deadline",
+  "app_label": "Zoho Books KSA",
+  "lines": [
+   {
+    "beat": "HOOK",
+    "say": "Worried about the ZATCA e-invoicing deadline?",
+    "tts": "Worried about the ZATCA e-invoicing deadline?",
+    "card": "ZATCA Phase 2 in Zoho Books",
+    "screen": null
+   },
+   {
+    "beat": "PROBLEM",
+    "say": "Saudi compliance waves keep expanding, and manual work creates potential risk. Always check with your tax advisor for specific regulatory requirements.",
+    "tts": "Saudi compliance waves keep expanding, and manual work creates potential risk. Always check with your tax advisor for specific regulatory requirements.",
+    "card": "Manual Setup Is Risky",
+    "screen": null
+   },
+   {
+    "beat": "FIX",
+    "say": "Activate the built-in ZATCA Phase Two integration directly inside Zoho Books settings.",
+    "tts": "Activate the built-in ZATCA Phase Two integration directly inside Zoho Books settings.",
+    "card": "Native ZATCA Integration",
+    "screen": {
+     "app": "books",
+     "view": "settings",
+     "path": [
+      "Settings",
+      "Taxes & Compliance"
+     ],
+     "heading": "Taxes & Compliance",
+     "columns": [],
+     "rows": [],
+     "fields": [
+      [
+       "GSTIN/VAT Number",
+       "300000000000003"
+      ],
+      [
+       "Country",
+       "Saudi Arabia"
+      ]
+     ],
+     "toggles": [
+      [
+       "E-Invoicing (ZATCA)",
+       false
+      ]
+     ],
+     "messages": [],
+     "tool": null,
+     "method": null,
+     "url": null,
+     "headers": [],
+     "body": null,
+     "response": null,
+     "language": null,
+     "nodes": [],
+     "real": "books/taxes_compliance",
+     "click": "Taxes & Compliance",
+     "tip": "Open settings gear icon."
+    }
+   },
+   {
+    "beat": "STEP 1",
+    "say": "First, click the gear icon, open Zoho Books settings, and select Taxes and Compliance.",
+    "tts": "First, click the gear icon, open Zoho Books settings, and select Taxes and Compliance.",
+    "card": "Select Compliance Menu",
+    "screen": {
+     "app": "books",
+     "view": "settings",
+     "path": [
+      "Settings",
+      "Taxes & Compliance"
+     ],
+     "heading": "Taxes & Compliance",
+     "columns": [],
+     "rows": [],
+     "fields": [],
+     "toggles": [
+      [
+       "E-Invoicing (ZATCA)",
+       false
+      ]
+     ],
+     "messages": [],
+     "tool": null,
+     "method": null,
+     "url": null,
+     "headers": [],
+     "body": null,
+     "response": null,
+     "language": null,
+     "nodes": [],
+     "real": "books/taxes_compliance",
+     "click": "Taxes & Compliance",
+     "tip": "Check with your tax advisor."
+    }
+   },
+   {
+    "beat": "STEP 2",
+    "say": "Next, fill in your organization details, enter your VAT number, and click to upload your ZATCA cryptographic stamp file.",
+    "tts": "Next, fill in your organization details, enter your VAT number, and click to upload your ZATCA cryptographic stamp file.",
+    "card": "Upload Cryptographic Stamp",
+    "screen": {
+     "app": "books",
+     "view": "settings",
+     "path": [
+      "Settings",
+      "Taxes & Compliance",
+      "E-Invoicing"
+     ],
+     "heading": "ZATCA E-Invoicing Configuration",
+     "columns": [],
+     "rows": [],
+     "fields": [
+      [
+       "Organization Name",
+       "Al Noor Trading LLC"
+      ],
+      [
+       "VAT Registration Number",
+       "300000000000003"
+      ],
+      [
+       "Cryptographic Stamp",
+       "zatca_csid.pem"
+      ]
+     ],
+     "toggles": [],
+     "messages": [],
+     "tool": null,
+     "method": null,
+     "url": null,
+     "headers": [],
+     "body": null,
+     "response": null,
+     "language": null,
+     "nodes": [],
+     "real": null,
+     "click": "Cryptographic Stamp",
+     "tip": "Obtain your CSID from Fatoora portal."
+    }
+   },
+   {
+    "beat": "STEP 3",
+    "say": "Test generation in the sandbox environment before you click the toggle to switch to live generation.",
+    "tts": "Test generation in the sandbox environment before you click the toggle to switch to live generation.",
+    "card": "Test in Sandbox",
+    "screen": {
+     "app": "books",
+     "view": "settings",
+     "path": [
+      "Settings",
+      "Taxes & Compliance",
+      "E-Invoicing"
+     ],
+     "heading": "ZATCA E-Invoicing Configuration",
+     "columns": [],
+     "rows": [],
+     "fields": [
+      [
+       "Environment",
+       "Sandbox"
+      ]
+     ],
+     "toggles": [
+      [
+       "Enable Live E-Invoicing",
+       false
+      ]
+     ],
+     "messages": [],
+     "tool": null,
+     "method": null,
+     "url": null,
+     "headers": [],
+     "body": null,
+     "response": null,
+     "language": null,
+     "nodes": [],
+     "real": null,
+     "click": "Enable Live E-Invoicing",
+     "tip": "Verify sample invoices before production."
+    }
+   },
+   {
+    "beat": "RESULT",
+    "say": "Zoho Books helps handle complex XML generation and ZATCA clearance smoothly on every single sale.",
+    "tts": "Zoho Books helps handle complex XML generation and ZATCA clearance smoothly on every single sale.",
+    "card": "Automated ZATCA Clearance",
+    "screen": null
+   }
+  ],
+  "api": {
+   "name": "Zoho Books ZATCA Integration",
+   "endpoint": "Built-in Zoho Books Settings",
+   "scope": "ZohoBooks.settings.ALL",
+   "docs": "Zoho Books ZATCA Phase 2 Guide"
+  },
+  "code": null,
+  "test_before_recording": [
+   "Verify organization address and VAT registration number",
+   "Obtain active production and sandbox CSID files from Fatoora portal"
+  ],
+  "description": "Quick tutorial on activating Saudi ZATCA Phase 2 e-invoicing compliance natively inside Zoho Books settings.",
+  "tags": [
+   "ZohoBooks",
+   "ZATCA",
+   "Phase2",
+   "Einvoicing",
+   "SaudiArabia",
+   "Compliance",
+   "VAT",
+   "Accounting",
+   "Business",
+   "Automation"
+  ]
+ },
+ "lines": [
+  {
+   "beat": "HOOK",
+   "say": "Worried about the ZATCA e-invoicing deadline?",
+   "tts": "Worried about the ZATCA e-invoicing deadline?",
+   "card": "ZATCA Phase 2 in Zoho Books",
+   "screen": null,
+   "face": true
+  },
+  {
+   "beat": "PROBLEM",
+   "say": "Saudi compliance waves keep expanding, and manual work creates potential risk. Always check with your tax advisor for specific regulatory requirements.",
+   "tts": "Saudi compliance waves keep expanding, and manual work creates potential risk. Always check with your tax advisor for specific regulatory requirements.",
+   "card": "Manual Setup Is Risky",
+   "screen": null,
+   "face": true
+  },
+  {
+   "beat": "FIX",
+   "say": "Activate the built-in ZATCA Phase Two integration directly inside Zoho Books settings.",
+   "tts": "Activate the built-in ZATCA Phase Two integration directly inside Zoho Books settings.",
+   "card": "Native ZATCA Integration",
+   "screen": {
+    "app": "books",
+    "view": "settings",
+    "path": [
+     "Settings",
+     "Taxes & Compliance"
+    ],
+    "heading": "Taxes & Compliance",
+    "columns": [],
+    "rows": [],
+    "fields": [
+     [
+      "GSTIN/VAT Number",
+      "300000000000003"
+     ],
+     [
+      "Country",
+      "Saudi Arabia"
+     ]
+    ],
+    "toggles": [
+     [
+      "E-Invoicing (ZATCA)",
+      false
+     ]
+    ],
+    "messages": [],
+    "tool": null,
+    "method": null,
+    "url": null,
+    "headers": [],
+    "body": null,
+    "response": null,
+    "language": null,
+    "nodes": [],
+    "real": "books/taxes_compliance",
+    "click": "Taxes & Compliance",
+    "tip": "Open settings gear icon."
+   },
+   "face": false
+  },
+  {
+   "beat": "STEP 1",
+   "say": "First, click the gear icon, open Zoho Books settings, and select Taxes and Compliance.",
+   "tts": "First, click the gear icon, open Zoho Books settings, and select Taxes and Compliance.",
+   "card": "Select Compliance Menu",
+   "screen": {
+    "app": "books",
+    "view": "settings",
+    "path": [
+     "Settings",
+     "Taxes & Compliance"
+    ],
+    "heading": "Taxes & Compliance",
+    "columns": [],
+    "rows": [],
+    "fields": [],
+    "toggles": [
+     [
+      "E-Invoicing (ZATCA)",
+      false
+     ]
+    ],
+    "messages": [],
+    "tool": null,
+    "method": null,
+    "url": null,
+    "headers": [],
+    "body": null,
+    "response": null,
+    "language": null,
+    "nodes": [],
+    "real": "books/taxes_compliance",
+    "click": "Taxes & Compliance",
+    "tip": "Check with your tax advisor."
+   },
+   "face": false
+  },
+  {
+   "beat": "STEP 2",
+   "say": "Next, fill in your organization details, enter your VAT number, and click to upload your ZATCA cryptographic stamp file.",
+   "tts": "Next, fill in your organization details, enter your VAT number, and click to upload your ZATCA cryptographic stamp file.",
+   "card": "Upload Cryptographic Stamp",
+   "screen": {
+    "app": "books",
+    "view": "settings",
+    "path": [
+     "Settings",
+     "Taxes & Compliance",
+     "E-Invoicing"
+    ],
+    "heading": "ZATCA E-Invoicing Configuration",
+    "columns": [],
+    "rows": [],
+    "fields": [
+     [
+      "Organization Name",
+      "Al Noor Trading LLC"
+     ],
+     [
+      "VAT Registration Number",
+      "300000000000003"
+     ],
+     [
+      "Cryptographic Stamp",
+      "zatca_csid.pem"
+     ]
+    ],
+    "toggles": [],
+    "messages": [],
+    "tool": null,
+    "method": null,
+    "url": null,
+    "headers": [],
+    "body": null,
+    "response": null,
+    "language": null,
+    "nodes": [],
+    "real": null,
+    "click": "Cryptographic Stamp",
+    "tip": "Obtain your CSID from Fatoora portal."
+   },
+   "face": false
+  },
+  {
+   "beat": "STEP 3",
+   "say": "Test generation in the sandbox environment before you click the toggle to switch to live generation.",
+   "tts": "Test generation in the sandbox environment before you click the toggle to switch to live generation.",
+   "card": "Test in Sandbox",
+   "screen": {
+    "app": "books",
+    "view": "settings",
+    "path": [
+     "Settings",
+     "Taxes & Compliance",
+     "E-Invoicing"
+    ],
+    "heading": "ZATCA E-Invoicing Configuration",
+    "columns": [],
+    "rows": [],
+    "fields": [
+     [
+      "Environment",
+      "Sandbox"
+     ]
+    ],
+    "toggles": [
+     [
+      "Enable Live E-Invoicing",
+      false
+     ]
+    ],
+    "messages": [],
+    "tool": null,
+    "method": null,
+    "url": null,
+    "headers": [],
+    "body": null,
+    "response": null,
+    "language": null,
+    "nodes": [],
+    "real": null,
+    "click": "Enable Live E-Invoicing",
+    "tip": "Verify sample invoices before production."
+   },
+   "face": false
+  },
+  {
+   "beat": "RESULT",
+   "say": "Zoho Books helps handle complex XML generation and ZATCA clearance smoothly on every single sale.",
+   "tts": "Zoho Books helps handle complex XML generation and ZATCA clearance smoothly on every single sale.",
+   "card": "Automated ZATCA Clearance",
+   "screen": null,
+   "face": true
+  }
+ ],
+ "clips": [
+  {
+   "text": "Worried about the ZATCA e-invoicing deadline?",
+   "lines": [
+    0
+   ],
+   "beat": "HOOK",
+   "prompt": "The man (my avatar) looks into the camera and talks to the viewer like a confident, friendly business tech explainer, smart and natural, not stiff; he leans one hand on a table or railing next to him, then straightens up and talks with a confident open gesture. Vertical 9:16 medium-wide shot from the knees up, camera about two metres away, his head in the upper third with space above it, both hands and all his gestures fully visible in the frame, static camera, sharp and well lit, wearing a light grey blazer over a black t-shirt, in a bright modern office lobby with plants, a reception desk and natural light. His face, skin tone, hairstyle, beard, height and body build stay exactly as in my avatar's reference photos - the same natural average build, never slimmer and never heavier. He says, in clear natural English with a clear, neutral international accent, at a brisk, lively pace: \"Worried about the ZATCA e-invoicing deadline?\" His lips match every word. He starts speaking in the very first frame, with no pause before the first word, and stops right after the last word. Audio: only his voice - no music, no sound effects. No subtitles, no captions, no text on screen."
+  },
+  {
+   "text": "Saudi compliance waves keep expanding, and manual work creates potential risk. Always check with your tax advisor for specific regulatory requirements.",
+   "lines": [
+    1
+   ],
+   "beat": "PROBLEM",
+   "prompt": "The man (my avatar) looks into the camera and talks to the viewer like a confident, friendly business tech explainer, smart and natural, not stiff; he crosses his arms for a moment, then uncrosses them and gestures to the side in mild frustration. Vertical 9:16 medium-wide shot from the knees up, camera about two metres away, his head in the upper third with space above it, both hands and all his gestures fully visible in the frame, static camera, sharp and well lit, wearing a light grey blazer over a black t-shirt, in a bright modern office lobby with plants, a reception desk and natural light. His face, skin tone, hairstyle, beard, height and body build stay exactly as in my avatar's reference photos - the same natural average build, never slimmer and never heavier. He says, in clear natural English with a clear, neutral international accent, at a brisk, lively pace: \"Saudi compliance waves keep expanding, and manual work creates potential risk. Always check with your tax advisor for specific regulatory requirements.\" His lips match every word. He starts speaking in the very first frame, with no pause before the first word, and stops right after the last word. Audio: only his voice - no music, no sound effects. No subtitles, no captions, no text on screen."
+  },
+  {
+   "text": "Zoho Books helps handle complex XML generation and ZATCA clearance smoothly on every single sale.",
+   "lines": [
+    6
+   ],
+   "beat": "RESULT",
+   "prompt": "The man (my avatar) looks into the camera and talks to the viewer like a confident, friendly business tech explainer, smart and natural, not stiff; he smiles and opens both arms wide. Vertical 9:16 medium-wide shot from the knees up, camera about two metres away, his head in the upper third with space above it, both hands and all his gestures fully visible in the frame, static camera, sharp and well lit, wearing a light grey blazer over a black t-shirt, in a bright modern office lobby with plants, a reception desk and natural light. His face, skin tone, hairstyle, beard, height and body build stay exactly as in my avatar's reference photos - the same natural average build, never slimmer and never heavier. He says, in clear natural English with a clear, neutral international accent, at a brisk, lively pace: \"Zoho Books helps handle complex XML generation and ZATCA clearance smoothly on every single sale.\" His lips match every word. He starts speaking in the very first frame, with no pause before the first word, and stops right after the last word. Audio: only his voice - no music, no sound effects. No subtitles, no captions, no text on screen."
+  }
+ ],
+ "look": "wearing a light grey blazer over a black t-shirt, in a bright modern office lobby with plants, a reception desk and natural light",
+ "issue": 38
+}

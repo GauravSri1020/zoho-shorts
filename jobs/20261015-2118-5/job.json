@@ -1,0 +1,396 @@
+{
+ "id": "20261015-2118-5",
+ "status": "waiting_for_clips",
+ "upload": true,
+ "created": "2026-10-15T21:19:58",
+ "title": "Build a custom Zoho CRM widget in 20 lines of code #Shorts",
+ "description": "Learn how to build custom Zoho CRM widgets using HTML, JavaScript, and the Zoho Embedded App SDK to display external UIs directly inside records.\n\n1. Create an extension in Zoho Developer Console and set up a Hosted Widget widget project.\n2. Initialize the SDK in your JS file using ZOHO.embeddedApp.init() and fetch record data with ZOHO.CRM.API.getRecord().\n3. Deploy the widget and place it directly into a CRM module's Related List or Custom Button.\n\nAPI / tool used:\n- name: Zoho Embedded App SDK\n- endpoint: ZOHO.embeddedApp.init() + ZOHO.CRM.API.getRecord()\n- scope: ZohoCRM.modules.READ\n- docs: Zoho Developer Guide - Widgets\n\nCode (javascript) - Hosted Widget JS file in Zoho Developer Console:\nwindow.onload = function() {\n    ZOHO.embeddedApp.on(\"PageLoad\", function(data) {\n        if(data && data.EntityId) {\n            ZOHO.CRM.API.getRecord({Entity: data.Entity, RecordID: data.EntityId})\n            .then(function(response) {\n                document.getElementById('recordName').innerText = response.data[0].Last_Name;\n            });\n        }\n    });\n    ZOHO.embeddedApp.init();\n};\n\nAI + Zoho automations every day - follow @GSXAutomation\n\nThis video uses an AI-generated presenter and voice.\nIndependent channel. Not affiliated with or endorsed by Zoho Corporation. Zoho is a trademark of Zoho Corporation.\n\n#Shorts #Zoho #AIAutomation #ZohoCRM #AIAgents",
+ "angle": {
+  "story_index": 52,
+  "pillar": "dev_api",
+  "region": "global",
+  "product": "Zoho CRM Widgets",
+  "app": "creator",
+  "problem": "Users need a custom screen inside CRM that Zoho doesn't natively provide, like a live calculator or map.",
+  "fix_type": "widget",
+  "solution": "Build and embed a custom CRM Widget using HTML, JavaScript, and the Zoho Embedded App SDK.",
+  "steps": [
+   "Create an extension in Zoho Developer Console and set up a Hosted Widget widget project.",
+   "Initialize the SDK in your JS file using ZOHO.embeddedApp.init() and fetch record data with ZOHO.CRM.API.getRecord().",
+   "Deploy the widget and place it directly into a CRM module's Related List or Custom Button."
+  ],
+  "api": "ZOHO.embeddedApp.init() + ZOHO.CRM.API.getRecord() SDK methods",
+  "result": "Bring any external UI, calculator, or dashboard directly inside your Zoho CRM interface.",
+  "wow": "You can embed custom web apps inside Zoho CRM tabs that interact live with CRM data records.",
+  "hook": "Need a screen Zoho doesn't have? Build a CRM widget in 20 lines of code."
+ },
+ "story": {
+  "title": "Users need a screen inside CRM that Zoho doesn't have (e.g. a live map or calculator)",
+  "link": "bank:users need a screen inside crm that zoho doesnt have eg a li",
+  "summary": "pillar: dev_api | product: Zoho CRM Widgets | fix: A small widget (HTML + Zoho JS SDK): ZOHO.embeddedApp.init(), ZOHO.CRM.API.getRecord(), placed in a related list or button",
+  "source": "GSX problem bank",
+  "ts": 1792098704.4134786,
+  "trend": 0,
+  "pillar": "dev_api"
+ },
+ "script": {
+  "title": "Build a custom Zoho CRM widget in 20 lines of code",
+  "hook_text": "Need a screen Zoho doesn't have?",
+  "app_label": "Zoho CRM Widgets",
+  "lines": [
+   {
+    "beat": "HOOK",
+    "say": "Need a custom screen Zoho doesn't natively provide inside your CRM interface?",
+    "tts": "Need a custom screen Zoho doesn't natively provide inside your CRM interface?",
+    "card": "Custom CRM Screens",
+    "screen": null
+   },
+   {
+    "beat": "PROBLEM",
+    "say": "Standard CRM views limit your workflow when you need interactive tools like live calculators right inside records.",
+    "tts": "Standard CRM views limit your workflow when you need interactive tools like live calculators right inside records.",
+    "card": "Missing native UI",
+    "screen": null
+   },
+   {
+    "beat": "FIX",
+    "say": "Build and embed a custom CRM Widget using HTML, JavaScript, and the official Zoho Embedded App SDK.",
+    "tts": "Build and embed a custom CRM Widget using HTML, JavaScript, and the official Zoho Embedded App SDK.",
+    "card": "CRM Widget & SDK",
+    "screen": {
+     "app": "crm",
+     "view": "settings",
+     "path": [
+      "Developer Space",
+      "Widgets"
+     ],
+     "heading": "Developer Space",
+     "columns": [],
+     "rows": [],
+     "fields": [],
+     "toggles": [],
+     "messages": [],
+     "tool": null,
+     "method": null,
+     "url": null,
+     "headers": [],
+     "body": null,
+     "response": null,
+     "language": null,
+     "nodes": [],
+     "real": "books/developer_space",
+     "click": "Widgets",
+     "tip": "Create a new hosted widget project."
+    }
+   },
+   {
+    "beat": "STEP 1",
+    "say": "Open the Zoho Developer Console, create a new extension, and set up your hosted widget project.",
+    "tts": "Open the Zoho Developer Console, create a new extension, and set up your hosted widget project.",
+    "card": "Create extension",
+    "screen": {
+     "app": "crm",
+     "view": "settings",
+     "path": [
+      "Developer Space",
+      "Extensions"
+     ],
+     "heading": "Extensions",
+     "columns": [],
+     "rows": [],
+     "fields": [],
+     "toggles": [],
+     "messages": [],
+     "tool": null,
+     "method": null,
+     "url": null,
+     "headers": [],
+     "body": null,
+     "response": null,
+     "language": null,
+     "nodes": [],
+     "real": null,
+     "click": "New Extension",
+     "tip": "Name your extension and select widget."
+    }
+   },
+   {
+    "beat": "STEP 2",
+    "say": "Initialize the SDK in your JavaScript file using ZOHO.embeddedApp.init and fetch active record data.",
+    "tts": "Initialize the SDK in your JavaScript file using ZOHO.embeddedApp.init and fetch active record data.",
+    "card": "Initialize SDK",
+    "screen": {
+     "app": "code",
+     "view": "code",
+     "path": [],
+     "heading": "widget.js",
+     "columns": [],
+     "rows": [],
+     "fields": [],
+     "toggles": [],
+     "messages": [],
+     "tool": null,
+     "method": null,
+     "url": null,
+     "headers": [],
+     "body": null,
+     "response": null,
+     "language": "javascript",
+     "code": "ZOHO.embeddedApp.on(\"PageLoad\", function(data){\n    ZOHO.CRM.API.getRecord({Entity:\"Leads\",RecordID:data.EntityId})\n    .then(function(response){\n        console.log(response);\n    });\n});\nZOHO.embeddedApp.init();",
+     "nodes": [],
+     "real": null,
+     "click": "ZOHO.embeddedApp.init()",
+     "tip": "Use async/await for cleaner data handling."
+    }
+   },
+   {
+    "beat": "STEP 3",
+    "say": "Deploy your code and place the widget directly into any CRM module related list or custom button view.",
+    "tts": "Deploy your code and place the widget directly into any CRM module related list or custom button view.",
+    "card": "Deploy to CRM",
+    "screen": {
+     "app": "crm",
+     "view": "settings",
+     "path": [
+      "Customization",
+      "Modules"
+     ],
+     "heading": "Module Layouts",
+     "columns": [],
+     "rows": [],
+     "fields": [],
+     "toggles": [],
+     "messages": [],
+     "tool": null,
+     "method": null,
+     "url": null,
+     "headers": [],
+     "body": null,
+     "response": null,
+     "language": null,
+     "nodes": [],
+     "real": null,
+     "click": "Related List",
+     "tip": "Attach your widget to any module."
+    }
+   },
+   {
+    "beat": "RESULT",
+    "say": "Bring external tools, calculators, and custom dashboards directly inside your everyday Zoho CRM workspace.",
+    "tts": "Bring external tools, calculators, and custom dashboards directly inside your everyday Zoho CRM workspace.",
+    "card": "Custom CRM UI",
+    "screen": null
+   }
+  ],
+  "api": {
+   "name": "Zoho Embedded App SDK",
+   "endpoint": "ZOHO.embeddedApp.init() + ZOHO.CRM.API.getRecord()",
+   "scope": "ZohoCRM.modules.READ",
+   "docs": "Zoho Developer Guide - Widgets"
+  },
+  "code": {
+   "language": "javascript",
+   "filename": "widget.js",
+   "content": "window.onload = function() {\n    ZOHO.embeddedApp.on(\"PageLoad\", function(data) {\n        if(data && data.EntityId) {\n            ZOHO.CRM.API.getRecord({Entity: data.Entity, RecordID: data.EntityId})\n            .then(function(response) {\n                document.getElementById('recordName').innerText = response.data[0].Last_Name;\n            });\n        }\n    });\n    ZOHO.embeddedApp.init();\n};",
+   "where_to_paste": "Hosted Widget JS file in Zoho Developer Console"
+  },
+  "test_before_recording": [
+   "Verify SDK script tag is included in HTML",
+   "Check CRM test record permissions",
+   "Test widget deployment in sandbox mode"
+  ],
+  "description": "Learn how to build custom Zoho CRM widgets using HTML, JavaScript, and the Zoho Embedded App SDK to display external UIs directly inside records.",
+  "tags": [
+   "zoho",
+   "zohocrm",
+   "crmwidgets",
+   "javascript",
+   "webdevelopment",
+   "crm",
+   "coding",
+   "developer",
+   "apodevelopment",
+   "software"
+  ]
+ },
+ "lines": [
+  {
+   "beat": "HOOK",
+   "say": "Need a custom screen Zoho doesn't natively provide inside your CRM interface?",
+   "tts": "Need a custom screen Zoho doesn't natively provide inside your CRM interface?",
+   "card": "Custom CRM Screens",
+   "screen": null,
+   "face": true
+  },
+  {
+   "beat": "PROBLEM",
+   "say": "Standard CRM views limit your workflow when you need interactive tools like live calculators right inside records.",
+   "tts": "Standard CRM views limit your workflow when you need interactive tools like live calculators right inside records.",
+   "card": "Missing native UI",
+   "screen": null,
+   "face": true
+  },
+  {
+   "beat": "FIX",
+   "say": "Build and embed a custom CRM Widget using HTML, JavaScript, and the official Zoho Embedded App SDK.",
+   "tts": "Build and embed a custom CRM Widget using HTML, JavaScript, and the official Zoho Embedded App SDK.",
+   "card": "CRM Widget & SDK",
+   "screen": {
+    "app": "crm",
+    "view": "settings",
+    "path": [
+     "Developer Space",
+     "Widgets"
+    ],
+    "heading": "Developer Space",
+    "columns": [],
+    "rows": [],
+    "fields": [],
+    "toggles": [],
+    "messages": [],
+    "tool": null,
+    "method": null,
+    "url": null,
+    "headers": [],
+    "body": null,
+    "response": null,
+    "language": null,
+    "nodes": [],
+    "real": "books/developer_space",
+    "click": "Widgets",
+    "tip": "Create a new hosted widget project."
+   },
+   "face": false
+  },
+  {
+   "beat": "STEP 1",
+   "say": "Open the Zoho Developer Console, create a new extension, and set up your hosted widget project.",
+   "tts": "Open the Zoho Developer Console, create a new extension, and set up your hosted widget project.",
+   "card": "Create extension",
+   "screen": {
+    "app": "crm",
+    "view": "settings",
+    "path": [
+     "Developer Space",
+     "Extensions"
+    ],
+    "heading": "Extensions",
+    "columns": [],
+    "rows": [],
+    "fields": [],
+    "toggles": [],
+    "messages": [],
+    "tool": null,
+    "method": null,
+    "url": null,
+    "headers": [],
+    "body": null,
+    "response": null,
+    "language": null,
+    "nodes": [],
+    "real": null,
+    "click": "New Extension",
+    "tip": "Name your extension and select widget."
+   },
+   "face": false
+  },
+  {
+   "beat": "STEP 2",
+   "say": "Initialize the SDK in your JavaScript file using ZOHO.embeddedApp.init and fetch active record data.",
+   "tts": "Initialize the SDK in your JavaScript file using ZOHO.embeddedApp.init and fetch active record data.",
+   "card": "Initialize SDK",
+   "screen": {
+    "app": "code",
+    "view": "code",
+    "path": [],
+    "heading": "widget.js",
+    "columns": [],
+    "rows": [],
+    "fields": [],
+    "toggles": [],
+    "messages": [],
+    "tool": null,
+    "method": null,
+    "url": null,
+    "headers": [],
+    "body": null,
+    "response": null,
+    "language": "javascript",
+    "code": "ZOHO.embeddedApp.on(\"PageLoad\", function(data){\n    ZOHO.CRM.API.getRecord({Entity:\"Leads\",RecordID:data.EntityId})\n    .then(function(response){\n        console.log(response);\n    });\n});\nZOHO.embeddedApp.init();",
+    "nodes": [],
+    "real": null,
+    "click": "ZOHO.embeddedApp.init()",
+    "tip": "Use async/await for cleaner data handling."
+   },
+   "face": false
+  },
+  {
+   "beat": "STEP 3",
+   "say": "Deploy your code and place the widget directly into any CRM module related list or custom button view.",
+   "tts": "Deploy your code and place the widget directly into any CRM module related list or custom button view.",
+   "card": "Deploy to CRM",
+   "screen": {
+    "app": "crm",
+    "view": "settings",
+    "path": [
+     "Customization",
+     "Modules"
+    ],
+    "heading": "Module Layouts",
+    "columns": [],
+    "rows": [],
+    "fields": [],
+    "toggles": [],
+    "messages": [],
+    "tool": null,
+    "method": null,
+    "url": null,
+    "headers": [],
+    "body": null,
+    "response": null,
+    "language": null,
+    "nodes": [],
+    "real": null,
+    "click": "Related List",
+    "tip": "Attach your widget to any module."
+   },
+   "face": false
+  },
+  {
+   "beat": "RESULT",
+   "say": "Bring external tools, calculators, and custom dashboards directly inside your everyday Zoho CRM workspace.",
+   "tts": "Bring external tools, calculators, and custom dashboards directly inside your everyday Zoho CRM workspace.",
+   "card": "Custom CRM UI",
+   "screen": null,
+   "face": true
+  }
+ ],
+ "clips": [
+  {
+   "text": "Need a custom screen Zoho doesn't natively provide inside your CRM interface?",
+   "lines": [
+    0
+   ],
+   "beat": "HOOK",
+   "prompt": "The man (my avatar) looks into the camera and talks to the viewer like a confident, friendly business tech explainer, smart and natural, not stiff; he turns from looking to the side to face the camera, leans in slightly and raises his eyebrows. Vertical 9:16 medium-wide shot from the knees up, camera about two metres away, his head in the upper third with space above it, both hands and all his gestures fully visible in the frame, static camera, sharp and well lit, wearing a light denim shirt, in a landscaped office park courtyard with benches, trees and a modern building behind him. His face, skin tone, hairstyle, beard, height and body build stay exactly as in my avatar's reference photos - the same natural average build, never slimmer and never heavier. He says, in clear natural English with a clear, neutral international accent, at a brisk, lively pace: \"Need a custom screen Zoho doesn't natively provide inside your CRM interface?\" His lips match every word. He starts speaking in the very first frame, with no pause before the first word, and stops right after the last word. Audio: only his voice - no music, no sound effects. No subtitles, no captions, no text on screen."
+  },
+  {
+   "text": "Standard CRM views limit your workflow when you need interactive tools like live calculators right inside records.",
+   "lines": [
+    1
+   ],
+   "beat": "PROBLEM",
+   "prompt": "The man (my avatar) looks into the camera and talks to the viewer like a confident, friendly business tech explainer, smart and natural, not stiff; he shrugs with both shoulders and tilts his head, as if he has seen this problem a hundred times. Vertical 9:16 medium-wide shot from the knees up, camera about two metres away, his head in the upper third with space above it, both hands and all his gestures fully visible in the frame, static camera, sharp and well lit, wearing a light denim shirt, in a landscaped office park courtyard with benches, trees and a modern building behind him. His face, skin tone, hairstyle, beard, height and body build stay exactly as in my avatar's reference photos - the same natural average build, never slimmer and never heavier. He says, in clear natural English with a clear, neutral international accent, at a brisk, lively pace: \"Standard CRM views limit your workflow when you need interactive tools like live calculators right inside records.\" His lips match every word. He starts speaking in the very first frame, with no pause before the first word, and stops right after the last word. Audio: only his voice - no music, no sound effects. No subtitles, no captions, no text on screen."
+  },
+  {
+   "text": "Bring external tools, calculators, and custom dashboards directly inside your everyday Zoho CRM workspace.",
+   "lines": [
+    6
+   ],
+   "beat": "RESULT",
+   "prompt": "The man (my avatar) looks into the camera and talks to the viewer like a confident, friendly business tech explainer, smart and natural, not stiff; he snaps his fingers once and smiles as if the problem just disappeared. Vertical 9:16 medium-wide shot from the knees up, camera about two metres away, his head in the upper third with space above it, both hands and all his gestures fully visible in the frame, static camera, sharp and well lit, wearing a light denim shirt, in a landscaped office park courtyard with benches, trees and a modern building behind him. His face, skin tone, hairstyle, beard, height and body build stay exactly as in my avatar's reference photos - the same natural average build, never slimmer and never heavier. He says, in clear natural English with a clear, neutral international accent, at a brisk, lively pace: \"Bring external tools, calculators, and custom dashboards directly inside your everyday Zoho CRM workspace.\" His lips match every word. He starts speaking in the very first frame, with no pause before the first word, and stops right after the last word. Audio: only his voice - no music, no sound effects. No subtitles, no captions, no text on screen."
+  }
+ ],
+ "look": "wearing a light denim shirt, in a landscaped office park courtyard with benches, trees and a modern building behind him",
+ "issue": 39
+}

@@ -1,0 +1,511 @@
+{
+ "id": "20261015-2114-2",
+ "status": "waiting_for_clips",
+ "upload": true,
+ "created": "2026-10-15T21:15:42",
+ "title": "Automate Lead Qualification with Zia Agent Studio #Shorts",
+ "description": "Learn how to build a no-code Zia agent in Zoho CRM Agent Studio to automatically score and route incoming leads, saving valuable SDR time.\n\n1. Go to Zia Agent Studio in Zoho CRM and create a new agent with a natural language prompt.\n2. Select the trigger rule: when a new lead is created with a score below threshold.\n3. Attach one of the 700+ built-in actions to enrich company data and assign to the right rep.\n\nAI + Zoho automations every day - follow @GSXAutomation\n\nThis video uses an AI-generated presenter and voice.\nIndependent channel. Not affiliated with or endorsed by Zoho Corporation. Zoho is a trademark of Zoho Corporation.\n\n#Shorts #Zoho #AIAutomation #ZohoCRM #AIAgents",
+ "angle": {
+  "story_index": 45,
+  "pillar": "ai_agent",
+  "region": "global",
+  "product": "Zia Agent Studio",
+  "app": "crm",
+  "problem": "Repetitive lead qualification eats SDR time before they even know if a lead is worth calling.",
+  "fix_type": "ai_agent",
+  "solution": "Build a no-code Zia agent in Agent Studio that automatically scores and routes new incoming leads.",
+  "steps": [
+   "Go to Zia Agent Studio in Zoho CRM and create a new agent with a natural language prompt.",
+   "Select the trigger rule: when a new lead is created with a score below threshold.",
+   "Attach one of the 700+ built-in actions to enrich company data and assign to the right rep."
+  ],
+  "api": null,
+  "result": "SDRs only talk to pre-qualified hot leads, slashing conversion time in half.",
+  "wow": "You can build a fully autonomous lead qualification agent without writing a single line of code.",
+  "hook": "Stop wasting SDR hours on unqualified leads—let Zia Agent Studio do it."
+ },
+ "story": {
+  "title": "Repetitive lead qualification eats SDR time",
+  "link": "bank:repetitive lead qualification eats sdr time",
+  "summary": "pillar: ai_agent | product: Zia Agent Studio | fix: Build a no-code Zia agent in Agent Studio that scores and routes new leads, triggered by a rule | facts: Agent Studio: prompt-based, no-code with optional low-code; 700+ built-in actions; triggers = button, rule, live engagement. Agent Marketplace has ready agents (deal analyzer, revenue growth specialist, candidate screener).",
+  "source": "GSX problem bank",
+  "ts": 1792098704.4134436,
+  "trend": 0,
+  "pillar": "ai_agent"
+ },
+ "script": {
+  "title": "Automate Lead Qualification with Zia Agent Studio",
+  "hook_text": "Stop wasting SDR hours",
+  "app_label": "Zoho CRM + AI",
+  "lines": [
+   {
+    "beat": "HOOK",
+    "say": "Stop wasting SDR hours on unqualified leads—let Zia Agent Studio do it.",
+    "tts": "Stop wasting SDR hours on unqualified leads—let Zia Agent Studio do it.",
+    "card": "Stop wasting SDR hours",
+    "screen": null
+   },
+   {
+    "beat": "PROBLEM",
+    "say": "Repetitive lead qualification eats SDR time before they even know if a lead is worth calling.",
+    "tts": "Repetitive lead qualification eats SDR time before they even know if a lead is worth calling.",
+    "card": "Repetitive qualification eats time",
+    "screen": null
+   },
+   {
+    "beat": "FIX",
+    "say": "Build a no-code Zia agent in Agent Studio that automatically scores and routes new incoming leads.",
+    "tts": "Build a no-code Zia agent in Agent Studio that automatically scores and routes new incoming leads.",
+    "card": "Build a no-code Zia agent",
+    "screen": {
+     "app": "crm",
+     "view": "settings",
+     "path": [
+      "Setup",
+      "Developer Hub",
+      "Zia Agent Studio"
+     ],
+     "heading": "Zia Agent Studio",
+     "columns": [
+      "Agent Name",
+      "Module",
+      "Trigger",
+      "Status"
+     ],
+     "rows": [
+      [
+       "Lead Qualifier Bot",
+       "Leads",
+       "Workflow Rule",
+       "Active"
+      ]
+     ],
+     "fields": [
+      [
+       "Agent Description",
+       "Qualifies incoming leads based on score"
+      ]
+     ],
+     "toggles": [
+      [
+       "Auto-assign leads",
+       true
+      ]
+     ],
+     "messages": null,
+     "tool": null,
+     "method": null,
+     "url": null,
+     "headers": null,
+     "body": null,
+     "response": null,
+     "language": null,
+     "nodes": null,
+     "real": null,
+     "click": "Create Agent",
+     "tip": "Use natural language to configure behavior."
+    }
+   },
+   {
+    "beat": "STEP 1",
+    "say": "Go to Zia Agent Studio in Zoho CRM and create a new agent with a natural language prompt.",
+    "tts": "Go to Zia Agent Studio in Zoho CRM and create a new agent with a natural language prompt.",
+    "card": "Create agent with prompt",
+    "screen": {
+     "app": "crm",
+     "view": "settings",
+     "path": [
+      "Zia Agent Studio",
+      "New Agent"
+     ],
+     "heading": "Configure Agent Prompt",
+     "columns": [],
+     "rows": [],
+     "fields": [
+      [
+       "Prompt",
+       "Analyze incoming lead data and assign a score from 1 to 100 based on company size and industry."
+      ]
+     ],
+     "toggles": [],
+     "messages": null,
+     "tool": null,
+     "method": null,
+     "url": null,
+     "headers": null,
+     "body": null,
+     "response": null,
+     "language": null,
+     "nodes": null,
+     "real": null,
+     "click": "Save Prompt",
+     "tip": "Describe the qualification logic clearly."
+    }
+   },
+   {
+    "beat": "STEP 2",
+    "say": "Select the trigger rule: when a new lead is created with a score below threshold.",
+    "tts": "Select the trigger rule: when a new lead is created with a score below threshold.",
+    "card": "Set trigger rule",
+    "screen": {
+     "app": "crm",
+     "view": "settings",
+     "path": [
+      "Automation",
+      "Workflow Rules"
+     ],
+     "heading": "Trigger Configuration",
+     "columns": [],
+     "rows": [],
+     "fields": [
+      [
+       "Module",
+       "Leads"
+      ],
+      [
+       "Execution",
+       "On Create"
+      ],
+      [
+       "Criteria",
+       "Lead Score < 50"
+      ]
+     ],
+     "toggles": [
+      [
+       "Instant Trigger",
+       true
+      ]
+     ],
+     "messages": null,
+     "tool": null,
+     "method": null,
+     "url": null,
+     "headers": null,
+     "body": null,
+     "response": null,
+     "language": null,
+     "nodes": null,
+     "real": "crm/workflow_rules",
+     "click": "Create Rule",
+     "tip": "Define precise criteria for your workflow."
+    }
+   },
+   {
+    "beat": "STEP 3",
+    "say": "Attach one of the seven hundred plus built-in actions to enrich company data and assign to the right rep.",
+    "tts": "Attach one of the seven hundred plus built-in actions to enrich company data and assign to the right rep.",
+    "card": "Attach built-in actions",
+    "screen": {
+     "app": "crm",
+     "view": "settings",
+     "path": [
+      "Agent Actions",
+      "Built-in Library"
+     ],
+     "heading": "Action Repository",
+     "columns": [
+      "Action Name",
+      "Category",
+      "Status"
+     ],
+     "rows": [
+      [
+       "Company Data Enrichment",
+       "Enrichment",
+       "Available"
+      ],
+      [
+       "Round Robin Assignment",
+       "Routing",
+       "Available"
+      ]
+     ],
+     "fields": [],
+     "toggles": [],
+     "messages": null,
+     "tool": null,
+     "method": null,
+     "url": null,
+     "headers": null,
+     "body": null,
+     "response": null,
+     "language": null,
+     "nodes": null,
+     "real": null,
+     "click": "Attach Action",
+     "tip": "You can build a fully autonomous lead qualification agent without writing a single line of code."
+    }
+   },
+   {
+    "beat": "RESULT",
+    "say": "SDRs only talk to pre-qualified hot leads, slashing conversion time in half.",
+    "tts": "SDRs only talk to pre-qualified hot leads, slashing conversion time in half.",
+    "card": "Talk to hot leads only",
+    "screen": null
+   }
+  ],
+  "api": null,
+  "code": null,
+  "test_before_recording": [
+   "Verify Zoho CRM has access to Zia Agent Studio",
+   "Check that sample lead data exists in the test environment"
+  ],
+  "description": "Learn how to build a no-code Zia agent in Zoho CRM Agent Studio to automatically score and route incoming leads, saving valuable SDR time.",
+  "tags": [
+   "ZohoCRM",
+   "ZiaAgentStudio",
+   "AI",
+   "SalesAutomation",
+   "LeadQualification",
+   "NoCode",
+   "SDR",
+   "Productivity",
+   "CRM",
+   "AIagent"
+  ]
+ },
+ "lines": [
+  {
+   "beat": "HOOK",
+   "say": "Stop wasting SDR hours on unqualified leads—let Zia Agent Studio do it.",
+   "tts": "Stop wasting SDR hours on unqualified leads—let Zia Agent Studio do it.",
+   "card": "Stop wasting SDR hours",
+   "screen": null,
+   "face": true
+  },
+  {
+   "beat": "PROBLEM",
+   "say": "Repetitive lead qualification eats SDR time before they even know if a lead is worth calling.",
+   "tts": "Repetitive lead qualification eats SDR time before they even know if a lead is worth calling.",
+   "card": "Repetitive qualification eats time",
+   "screen": null,
+   "face": true
+  },
+  {
+   "beat": "FIX",
+   "say": "Build a no-code Zia agent in Agent Studio that automatically scores and routes new incoming leads.",
+   "tts": "Build a no-code Zia agent in Agent Studio that automatically scores and routes new incoming leads.",
+   "card": "Build a no-code Zia agent",
+   "screen": {
+    "app": "crm",
+    "view": "settings",
+    "path": [
+     "Setup",
+     "Developer Hub",
+     "Zia Agent Studio"
+    ],
+    "heading": "Zia Agent Studio",
+    "columns": [
+     "Agent Name",
+     "Module",
+     "Trigger",
+     "Status"
+    ],
+    "rows": [
+     [
+      "Lead Qualifier Bot",
+      "Leads",
+      "Workflow Rule",
+      "Active"
+     ]
+    ],
+    "fields": [
+     [
+      "Agent Description",
+      "Qualifies incoming leads based on score"
+     ]
+    ],
+    "toggles": [
+     [
+      "Auto-assign leads",
+      true
+     ]
+    ],
+    "messages": null,
+    "tool": null,
+    "method": null,
+    "url": null,
+    "headers": null,
+    "body": null,
+    "response": null,
+    "language": null,
+    "nodes": null,
+    "real": null,
+    "click": "Create Agent",
+    "tip": "Use natural language to configure behavior."
+   },
+   "face": false
+  },
+  {
+   "beat": "STEP 1",
+   "say": "Go to Zia Agent Studio in Zoho CRM and create a new agent with a natural language prompt.",
+   "tts": "Go to Zia Agent Studio in Zoho CRM and create a new agent with a natural language prompt.",
+   "card": "Create agent with prompt",
+   "screen": {
+    "app": "crm",
+    "view": "settings",
+    "path": [
+     "Zia Agent Studio",
+     "New Agent"
+    ],
+    "heading": "Configure Agent Prompt",
+    "columns": [],
+    "rows": [],
+    "fields": [
+     [
+      "Prompt",
+      "Analyze incoming lead data and assign a score from 1 to 100 based on company size and industry."
+     ]
+    ],
+    "toggles": [],
+    "messages": null,
+    "tool": null,
+    "method": null,
+    "url": null,
+    "headers": null,
+    "body": null,
+    "response": null,
+    "language": null,
+    "nodes": null,
+    "real": null,
+    "click": "Save Prompt",
+    "tip": "Describe the qualification logic clearly."
+   },
+   "face": false
+  },
+  {
+   "beat": "STEP 2",
+   "say": "Select the trigger rule: when a new lead is created with a score below threshold.",
+   "tts": "Select the trigger rule: when a new lead is created with a score below threshold.",
+   "card": "Set trigger rule",
+   "screen": {
+    "app": "crm",
+    "view": "settings",
+    "path": [
+     "Automation",
+     "Workflow Rules"
+    ],
+    "heading": "Trigger Configuration",
+    "columns": [],
+    "rows": [],
+    "fields": [
+     [
+      "Module",
+      "Leads"
+     ],
+     [
+      "Execution",
+      "On Create"
+     ],
+     [
+      "Criteria",
+      "Lead Score < 50"
+     ]
+    ],
+    "toggles": [
+     [
+      "Instant Trigger",
+      true
+     ]
+    ],
+    "messages": null,
+    "tool": null,
+    "method": null,
+    "url": null,
+    "headers": null,
+    "body": null,
+    "response": null,
+    "language": null,
+    "nodes": null,
+    "real": "crm/workflow_rules",
+    "click": "Create Rule",
+    "tip": "Define precise criteria for your workflow."
+   },
+   "face": false
+  },
+  {
+   "beat": "STEP 3",
+   "say": "Attach one of the seven hundred plus built-in actions to enrich company data and assign to the right rep.",
+   "tts": "Attach one of the seven hundred plus built-in actions to enrich company data and assign to the right rep.",
+   "card": "Attach built-in actions",
+   "screen": {
+    "app": "crm",
+    "view": "settings",
+    "path": [
+     "Agent Actions",
+     "Built-in Library"
+    ],
+    "heading": "Action Repository",
+    "columns": [
+     "Action Name",
+     "Category",
+     "Status"
+    ],
+    "rows": [
+     [
+      "Company Data Enrichment",
+      "Enrichment",
+      "Available"
+     ],
+     [
+      "Round Robin Assignment",
+      "Routing",
+      "Available"
+     ]
+    ],
+    "fields": [],
+    "toggles": [],
+    "messages": null,
+    "tool": null,
+    "method": null,
+    "url": null,
+    "headers": null,
+    "body": null,
+    "response": null,
+    "language": null,
+    "nodes": null,
+    "real": null,
+    "click": "Attach Action",
+    "tip": "You can build a fully autonomous lead qualification agent without writing a single line of code."
+   },
+   "face": false
+  },
+  {
+   "beat": "RESULT",
+   "say": "SDRs only talk to pre-qualified hot leads, slashing conversion time in half.",
+   "tts": "SDRs only talk to pre-qualified hot leads, slashing conversion time in half.",
+   "card": "Talk to hot leads only",
+   "screen": null,
+   "face": true
+  }
+ ],
+ "clips": [
+  {
+   "text": "Stop wasting SDR hours on unqualified leads—let Zia Agent Studio do it.",
+   "lines": [
+    0
+   ],
+   "beat": "HOOK",
+   "prompt": "The man (my avatar) looks into the camera and talks to the viewer like a confident, friendly business tech explainer, smart and natural, not stiff; he walks into the frame from the side, stops at the centre and points briefly at the camera with an easy smile. Vertical 9:16 medium-wide shot from the knees up, camera about two metres away, his head in the upper third with space above it, both hands and all his gestures fully visible in the frame, smooth gimbal camera gently moving back with him so the framing stays the same, sharp and well lit, wearing a beige overshirt over a white t-shirt, at an outdoor cafe terrace table with a laptop, green trees and soft daylight behind him. His face, skin tone, hairstyle, beard, height and body build stay exactly as in my avatar's reference photos - the same natural average build, never slimmer and never heavier. He says, in clear natural English with a clear, neutral international accent, at a brisk, lively pace: \"Stop wasting SDR hours on unqualified leads—let Zia Agent Studio do it.\" His lips match every word. He starts speaking in the very first frame, with no pause before the first word, and stops right after the last word. Audio: only his voice - no music, no sound effects. No subtitles, no captions, no text on screen."
+  },
+  {
+   "text": "Repetitive lead qualification eats SDR time before they even know if a lead is worth calling.",
+   "lines": [
+    1
+   ],
+   "beat": "PROBLEM",
+   "prompt": "The man (my avatar) looks into the camera and talks to the viewer like a confident, friendly business tech explainer, smart and natural, not stiff; he frowns slightly, sighs and spreads both hands palms up as if asking why this is still so hard. Vertical 9:16 medium-wide shot from the knees up, camera about two metres away, his head in the upper third with space above it, both hands and all his gestures fully visible in the frame, static camera, sharp and well lit, wearing a beige overshirt over a white t-shirt, at an outdoor cafe terrace table with a laptop, green trees and soft daylight behind him. His face, skin tone, hairstyle, beard, height and body build stay exactly as in my avatar's reference photos - the same natural average build, never slimmer and never heavier. He says, in clear natural English with a clear, neutral international accent, at a brisk, lively pace: \"Repetitive lead qualification eats SDR time before they even know if a lead is worth calling.\" His lips match every word. He starts speaking in the very first frame, with no pause before the first word, and stops right after the last word. Audio: only his voice - no music, no sound effects. No subtitles, no captions, no text on screen."
+  },
+  {
+   "text": "SDRs only talk to pre-qualified hot leads, slashing conversion time in half.",
+   "lines": [
+    6
+   ],
+   "beat": "RESULT",
+   "prompt": "The man (my avatar) looks into the camera and talks to the viewer like a confident, friendly business tech explainer, smart and natural, not stiff; he relaxes his shoulders, smiles and gives a small satisfied nod with an open-hand gesture. Vertical 9:16 medium-wide shot from the knees up, camera about two metres away, his head in the upper third with space above it, both hands and all his gestures fully visible in the frame, static camera, sharp and well lit, wearing a beige overshirt over a white t-shirt, at an outdoor cafe terrace table with a laptop, green trees and soft daylight behind him. His face, skin tone, hairstyle, beard, height and body build stay exactly as in my avatar's reference photos - the same natural average build, never slimmer and never heavier. He says, in clear natural English with a clear, neutral international accent, at a brisk, lively pace: \"SDRs only talk to pre-qualified hot leads, slashing conversion time in half.\" His lips match every word. He starts speaking in the very first frame, with no pause before the first word, and stops right after the last word. Audio: only his voice - no music, no sound effects. No subtitles, no captions, no text on screen."
+  }
+ ],
+ "look": "wearing a beige overshirt over a white t-shirt, at an outdoor cafe terrace table with a laptop, green trees and soft daylight behind him",
+ "issue": 36
+}

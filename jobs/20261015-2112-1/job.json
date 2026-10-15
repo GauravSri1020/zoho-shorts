@@ -1,0 +1,489 @@
+{
+ "id": "20261015-2112-1",
+ "status": "waiting_for_clips",
+ "upload": true,
+ "created": "2026-10-15T21:14:19",
+ "title": "Run Gemini or Claude Inside Zoho Flow Instantly #Shorts",
+ "description": "Learn how to connect new AI models like Claude or Gemini to Zoho Flow using custom API steps without writing any Deluge code.\n\n1. Create a Zoho Flow triggered by an inbound CRM lead or Support ticket.\n2. Add the 'AI' or 'Custom API' step inside the flow and paste the new LLM API endpoint.\n3. Map the AI response (like lead sentiment or classification) directly to Zoho fields.\n\nAPI / tool used:\n- name: Anthropic Messages API / Gemini API\n- endpoint: POST https://api.anthropic.com/v1/messages\n- scope: External API\n- docs: Anthropic API Documentation\n\nAI + Zoho automations every day - follow @GSXAutomation\n\nWhat inspired this: https://news.google.com/rss/articles/CBMirgFBVV95cUxNM0VCeERlLWh4NzZZM0VBZ1RPMUY1RkdlUWMyeWFIRW4xX3gySThwSWRpTVFnX1UtQVhWSHpSWXVPSDItX1BTVDEtMHdYUmpod1NSaUs1aGRhZjc5MGczR0pKN21KV1g2NWp3eHR2N1FOTWt5NzJIWjFXWGdDRl84QkVadG9qYW00aXBPLTZFQjhkTkdoeEg2OFJ1Q1YxVG9uOGltVUtvSnZrZVR6WVE?oc=5\n\nThis video uses an AI-generated presenter and voice.\nIndependent channel. Not affiliated with or endorsed by Zoho Corporation. Zoho is a trademark of Zoho Corporation.\n\n#Shorts #Zoho #AIAutomation #ZohoCRM #AIAgents",
+ "angle": {
+  "story_index": 1,
+  "pillar": "trending",
+  "region": "global",
+  "product": "Zoho Flow + Claude / Gemini",
+  "app": "flow",
+  "problem": "New AI models like Gemini 4 and Claude launch every week, but connecting them to Zoho takes custom code.",
+  "fix_type": "flow_ai",
+  "solution": "Use Zoho Flow's native AI step to plug any new LLM API directly into your workflows without coding.",
+  "steps": [
+   "Create a Zoho Flow triggered by an inbound CRM lead or Support ticket.",
+   "Add the 'AI' or 'Custom API' step inside the flow and paste the new LLM API endpoint.",
+   "Map the AI response (like lead sentiment or classification) directly to Zoho fields."
+  ],
+  "api": "POST https://api.anthropic.com/v1/messages or Gemini endpoint via Zoho Flow custom connector",
+  "result": "Instantly leverage state-of-the-art AI releases inside your Zoho apps on day one.",
+  "wow": "No Deluge required—you can upgrade your entire Zoho stack to the newest AI model in under 5 minutes.",
+  "hook": "Got the new Gemini or Claude? Here is how to run it inside Zoho today!"
+ },
+ "story": {
+  "title": "Google launches Gemini 4 Argon AI model for developers, businesses - Gulf News",
+  "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxNM0VCeERlLWh4NzZZM0VBZ1RPMUY1RkdlUWMyeWFIRW4xX3gySThwSWRpTVFnX1UtQVhWSHpSWXVPSDItX1BTVDEtMHdYUmpod1NSaUs1aGRhZjc5MGczR0pKN21KV1g2NWp3eHR2N1FOTWt5NzJIWjFXWGdDRl84QkVadG9qYW00aXBPLTZFQjhkTkdoeEg2OFJ1Q1YxVG9uOGltVUtvSnZrZVR6WVE?oc=5",
+  "summary": "Google launches Gemini 4 Argon AI model for developers, businesses Gulf News",
+  "source": "\"Claude OR ChatGPT OR OpenAI OR Gemini launch business when:3d\" - Google News",
+  "ts": 1791937776,
+  "trend": 23
+ },
+ "script": {
+  "title": "Run Gemini or Claude Inside Zoho Flow Instantly",
+  "hook_text": "New AI in Zoho!",
+  "app_label": "Zoho Flow + AI",
+  "lines": [
+   {
+    "beat": "HOOK",
+    "say": "Got the new Gemini or Claude? Here is how to run it inside Zoho today!",
+    "tts": "Got the new Gemini or Claude? Here is how to run it inside Zoho today!",
+    "card": "New AI models in Zoho",
+    "screen": null
+   },
+   {
+    "beat": "PROBLEM",
+    "say": "New AI models launch every week, but connecting them to Zoho usually takes custom code.",
+    "tts": "New AI models launch every week, but connecting them to Zoho usually takes custom code.",
+    "card": "Custom code required",
+    "screen": null
+   },
+   {
+    "beat": "FIX",
+    "say": "Use Zoho Flow's native AI step to plug any new LLM API directly into your workflows.",
+    "tts": "Use Zoho Flow's native AI step to plug any new LLM API directly into your workflows.",
+    "card": "Zoho Flow AI step",
+    "screen": {
+     "app": "flow",
+     "view": "flow",
+     "path": [
+      "Flows",
+      "Create Flow"
+     ],
+     "heading": "Flow Builder",
+     "columns": [],
+     "rows": [],
+     "fields": [],
+     "toggles": [],
+     "messages": null,
+     "tool": null,
+     "method": null,
+     "url": null,
+     "headers": null,
+     "body": null,
+     "response": null,
+     "language": null,
+     "nodes": [
+      "Trigger: Zoho CRM - New Lead",
+      "AI: LLM Integration",
+      "Action: Update CRM Lead"
+     ],
+     "real": null,
+     "click": "AI: LLM Integration",
+     "tip": "No Deluge coding needed"
+    }
+   },
+   {
+    "beat": "STEP 1",
+    "say": "First, create a brand new Zoho Flow triggered effortlessly by an inbound CRM lead or incoming support ticket.",
+    "tts": "First, create a brand new Zoho Flow triggered effortlessly by an inbound CRM lead or incoming support ticket.",
+    "card": "Create Flow trigger",
+    "screen": {
+     "app": "flow",
+     "view": "flow",
+     "path": [
+      "Flows",
+      "New Flow"
+     ],
+     "heading": "Configure Trigger",
+     "columns": [],
+     "rows": [],
+     "fields": [
+      [
+       "App",
+       "Zoho CRM"
+      ],
+      [
+       "Trigger",
+       "New Lead"
+      ]
+     ],
+     "toggles": [],
+     "messages": null,
+     "tool": null,
+     "method": null,
+     "url": null,
+     "headers": null,
+     "body": null,
+     "response": null,
+     "language": null,
+     "nodes": [
+      "Trigger: Zoho CRM - New Lead"
+     ],
+     "real": null,
+     "click": "Trigger: Zoho CRM - New Lead",
+     "tip": "Select your app and trigger"
+    }
+   },
+   {
+    "beat": "STEP 2",
+    "say": "Next, add the custom API step inside the workflow builder and paste your new LLM endpoint URL securely.",
+    "tts": "Next, add the custom API step inside the workflow builder and paste your new LLM endpoint URL securely.",
+    "card": "Paste LLM API endpoint",
+    "screen": {
+     "app": "api",
+     "view": "api",
+     "path": [
+      "Flows",
+      "Actions",
+      "Custom API"
+     ],
+     "heading": "API Request",
+     "columns": [],
+     "rows": [],
+     "fields": [
+      [
+       "Method",
+       "POST"
+      ],
+      [
+       "URL",
+       "https://api.anthropic.com/v1/messages"
+      ]
+     ],
+     "toggles": [],
+     "messages": null,
+     "tool": null,
+     "method": "POST",
+     "url": "https://api.anthropic.com/v1/messages",
+     "headers": [
+      [
+       "Authorization",
+       "Bearer YOUR_API_KEY"
+      ]
+     ],
+     "body": "{\"model\":\"claude-3\",\"prompt\":\"Analyze lead\"}",
+     "response": "{\"status\":\"success\"}",
+     "language": null,
+     "nodes": [
+      "Action: Custom API Request"
+     ],
+     "real": null,
+     "click": "https://api.anthropic.com/v1/messages",
+     "tip": "Connect any LLM instantly"
+    }
+   },
+   {
+    "beat": "STEP 3",
+    "say": "Finally, map the returned AI response, such as lead sentiment analysis or classification, directly to your Zoho fields.",
+    "tts": "Finally, map the returned AI response, such as lead sentiment analysis or classification, directly to your Zoho fields.",
+    "card": "Map AI response fields",
+    "screen": {
+     "app": "flow",
+     "view": "flow",
+     "path": [
+      "Flows",
+      "Field Mapping"
+     ],
+     "heading": "Map Data",
+     "columns": [],
+     "rows": [
+      [
+       "AI Sentiment",
+       "Lead.Description"
+      ]
+     ],
+     "fields": [
+      [
+       "Source",
+       "AI Response Text"
+      ],
+      [
+       "Destination",
+       "CRM Lead Description"
+      ]
+     ],
+     "toggles": [],
+     "messages": null,
+     "tool": null,
+     "method": null,
+     "url": null,
+     "headers": null,
+     "body": null,
+     "response": null,
+     "language": null,
+     "nodes": [
+      "Action: Update Zoho CRM"
+     ],
+     "real": null,
+     "click": "Destination",
+     "tip": "Upgrade stack in 5 minutes"
+    }
+   },
+   {
+    "beat": "RESULT",
+    "say": "Instantly leverage state-of-the-art AI releases inside your everyday Zoho applications right on day one without any hassle.",
+    "tts": "Instantly leverage state-of-the-art AI releases inside your everyday Zoho applications right on day one without any hassle.",
+    "card": "AI ready on day one",
+    "screen": null
+   }
+  ],
+  "api": {
+   "name": "Anthropic Messages API / Gemini API",
+   "endpoint": "POST https://api.anthropic.com/v1/messages",
+   "scope": "External API",
+   "docs": "Anthropic API Documentation"
+  },
+  "code": null,
+  "test_before_recording": [
+   "Check your Zoho Flow active connections",
+   "Verify LLM API key has sufficient credits"
+  ],
+  "description": "Learn how to connect new AI models like Claude or Gemini to Zoho Flow using custom API steps without writing any Deluge code.",
+  "tags": [
+   "ZohoFlow",
+   "Claude",
+   "Gemini",
+   "AIAutomation",
+   "ZohoCRM",
+   "NoCode",
+   "LLM",
+   "Productivity",
+   "TechShorts",
+   "Integration"
+  ]
+ },
+ "lines": [
+  {
+   "beat": "HOOK",
+   "say": "Got the new Gemini or Claude? Here is how to run it inside Zoho today!",
+   "tts": "Got the new Gemini or Claude? Here is how to run it inside Zoho today!",
+   "card": "New AI models in Zoho",
+   "screen": null,
+   "face": true
+  },
+  {
+   "beat": "PROBLEM",
+   "say": "New AI models launch every week, but connecting them to Zoho usually takes custom code.",
+   "tts": "New AI models launch every week, but connecting them to Zoho usually takes custom code.",
+   "card": "Custom code required",
+   "screen": null,
+   "face": true
+  },
+  {
+   "beat": "FIX",
+   "say": "Use Zoho Flow's native AI step to plug any new LLM API directly into your workflows.",
+   "tts": "Use Zoho Flow's native AI step to plug any new LLM API directly into your workflows.",
+   "card": "Zoho Flow AI step",
+   "screen": {
+    "app": "flow",
+    "view": "flow",
+    "path": [
+     "Flows",
+     "Create Flow"
+    ],
+    "heading": "Flow Builder",
+    "columns": [],
+    "rows": [],
+    "fields": [],
+    "toggles": [],
+    "messages": null,
+    "tool": null,
+    "method": null,
+    "url": null,
+    "headers": null,
+    "body": null,
+    "response": null,
+    "language": null,
+    "nodes": [
+     "Trigger: Zoho CRM - New Lead",
+     "AI: LLM Integration",
+     "Action: Update CRM Lead"
+    ],
+    "real": null,
+    "click": "AI: LLM Integration",
+    "tip": "No Deluge coding needed"
+   },
+   "face": false
+  },
+  {
+   "beat": "STEP 1",
+   "say": "First, create a brand new Zoho Flow triggered effortlessly by an inbound CRM lead or incoming support ticket.",
+   "tts": "First, create a brand new Zoho Flow triggered effortlessly by an inbound CRM lead or incoming support ticket.",
+   "card": "Create Flow trigger",
+   "screen": {
+    "app": "flow",
+    "view": "flow",
+    "path": [
+     "Flows",
+     "New Flow"
+    ],
+    "heading": "Configure Trigger",
+    "columns": [],
+    "rows": [],
+    "fields": [
+     [
+      "App",
+      "Zoho CRM"
+     ],
+     [
+      "Trigger",
+      "New Lead"
+     ]
+    ],
+    "toggles": [],
+    "messages": null,
+    "tool": null,
+    "method": null,
+    "url": null,
+    "headers": null,
+    "body": null,
+    "response": null,
+    "language": null,
+    "nodes": [
+     "Trigger: Zoho CRM - New Lead"
+    ],
+    "real": null,
+    "click": "Trigger: Zoho CRM - New Lead",
+    "tip": "Select your app and trigger"
+   },
+   "face": false
+  },
+  {
+   "beat": "STEP 2",
+   "say": "Next, add the custom API step inside the workflow builder and paste your new LLM endpoint URL securely.",
+   "tts": "Next, add the custom API step inside the workflow builder and paste your new LLM endpoint URL securely.",
+   "card": "Paste LLM API endpoint",
+   "screen": {
+    "app": "api",
+    "view": "api",
+    "path": [
+     "Flows",
+     "Actions",
+     "Custom API"
+    ],
+    "heading": "API Request",
+    "columns": [],
+    "rows": [],
+    "fields": [
+     [
+      "Method",
+      "POST"
+     ],
+     [
+      "URL",
+      "https://api.anthropic.com/v1/messages"
+     ]
+    ],
+    "toggles": [],
+    "messages": null,
+    "tool": null,
+    "method": "POST",
+    "url": "https://api.anthropic.com/v1/messages",
+    "headers": [
+     [
+      "Authorization",
+      "Bearer YOUR_API_KEY"
+     ]
+    ],
+    "body": "{\"model\":\"claude-3\",\"prompt\":\"Analyze lead\"}",
+    "response": "{\"status\":\"success\"}",
+    "language": null,
+    "nodes": [
+     "Action: Custom API Request"
+    ],
+    "real": null,
+    "click": "https://api.anthropic.com/v1/messages",
+    "tip": "Connect any LLM instantly"
+   },
+   "face": false
+  },
+  {
+   "beat": "STEP 3",
+   "say": "Finally, map the returned AI response, such as lead sentiment analysis or classification, directly to your Zoho fields.",
+   "tts": "Finally, map the returned AI response, such as lead sentiment analysis or classification, directly to your Zoho fields.",
+   "card": "Map AI response fields",
+   "screen": {
+    "app": "flow",
+    "view": "flow",
+    "path": [
+     "Flows",
+     "Field Mapping"
+    ],
+    "heading": "Map Data",
+    "columns": [],
+    "rows": [
+     [
+      "AI Sentiment",
+      "Lead.Description"
+     ]
+    ],
+    "fields": [
+     [
+      "Source",
+      "AI Response Text"
+     ],
+     [
+      "Destination",
+      "CRM Lead Description"
+     ]
+    ],
+    "toggles": [],
+    "messages": null,
+    "tool": null,
+    "method": null,
+    "url": null,
+    "headers": null,
+    "body": null,
+    "response": null,
+    "language": null,
+    "nodes": [
+     "Action: Update Zoho CRM"
+    ],
+    "real": null,
+    "click": "Destination",
+    "tip": "Upgrade stack in 5 minutes"
+   },
+   "face": false
+  },
+  {
+   "beat": "RESULT",
+   "say": "Instantly leverage state-of-the-art AI releases inside your everyday Zoho applications right on day one without any hassle.",
+   "tts": "Instantly leverage state-of-the-art AI releases inside your everyday Zoho applications right on day one without any hassle.",
+   "card": "AI ready on day one",
+   "screen": null,
+   "face": true
+  }
+ ],
+ "clips": [
+  {
+   "text": "Got the new Gemini or Claude? Here is how to run it inside Zoho today!",
+   "lines": [
+    0
+   ],
+   "beat": "HOOK",
+   "prompt": "The man (my avatar) looks into the camera and talks to the viewer like a confident, friendly business tech explainer, smart and natural, not stiff; he walks a few relaxed steps toward the camera and stops, then raises one hand with an open palm on the first words. Vertical 9:16 medium-wide shot from the knees up, camera about two metres away, his head in the upper third with space above it, both hands and all his gestures fully visible in the frame, smooth gimbal camera gently moving back with him so the framing stays the same, sharp and well lit, wearing a grey crew-neck knit sweater over a white collared shirt, in a glass meeting room with a whiteboard full of flow diagrams. His face, skin tone, hairstyle, beard, height and body build stay exactly as in my avatar's reference photos - the same natural average build, never slimmer and never heavier. He says, in clear natural English with a clear, neutral international accent, at a brisk, lively pace: \"Got the new Gemini or Claude? Here is how to run it inside Zoho today!\" His lips match every word. He starts speaking in the very first frame, with no pause before the first word, and stops right after the last word. Audio: only his voice - no music, no sound effects. No subtitles, no captions, no text on screen."
+  },
+  {
+   "text": "New AI models launch every week, but connecting them to Zoho usually takes custom code.",
+   "lines": [
+    1
+   ],
+   "beat": "PROBLEM",
+   "prompt": "The man (my avatar) looks into the camera and talks to the viewer like a confident, friendly business tech explainer, smart and natural, not stiff; he frowns slightly, sighs and spreads both hands palms up as if asking why this is still so hard. Vertical 9:16 medium-wide shot from the knees up, camera about two metres away, his head in the upper third with space above it, both hands and all his gestures fully visible in the frame, static camera, sharp and well lit, wearing a grey crew-neck knit sweater over a white collared shirt, in a glass meeting room with a whiteboard full of flow diagrams. His face, skin tone, hairstyle, beard, height and body build stay exactly as in my avatar's reference photos - the same natural average build, never slimmer and never heavier. He says, in clear natural English with a clear, neutral international accent, at a brisk, lively pace: \"New AI models launch every week, but connecting them to Zoho usually takes custom code.\" His lips match every word. He starts speaking in the very first frame, with no pause before the first word, and stops right after the last word. Audio: only his voice - no music, no sound effects. No subtitles, no captions, no text on screen."
+  },
+  {
+   "text": "Instantly leverage state-of-the-art AI releases inside your everyday Zoho applications right on day one without any hassle.",
+   "lines": [
+    6
+   ],
+   "beat": "RESULT",
+   "prompt": "The man (my avatar) looks into the camera and talks to the viewer like a confident, friendly business tech explainer, smart and natural, not stiff; he snaps his fingers once and smiles as if the problem just disappeared. Vertical 9:16 medium-wide shot from the knees up, camera about two metres away, his head in the upper third with space above it, both hands and all his gestures fully visible in the frame, static camera, sharp and well lit, wearing a grey crew-neck knit sweater over a white collared shirt, in a glass meeting room with a whiteboard full of flow diagrams. His face, skin tone, hairstyle, beard, height and body build stay exactly as in my avatar's reference photos - the same natural average build, never slimmer and never heavier. He says, in clear natural English with a clear, neutral international accent, at a brisk, lively pace: \"Instantly leverage state-of-the-art AI releases inside your everyday Zoho applications right on day one without any hassle.\" His lips match every word. He starts speaking in the very first frame, with no pause before the first word, and stops right after the last word. Audio: only his voice - no music, no sound effects. No subtitles, no captions, no text on screen."
+  }
+ ],
+ "look": "wearing a grey crew-neck knit sweater over a white collared shirt, in a glass meeting room with a whiteboard full of flow diagrams",
+ "issue": 35
+}
