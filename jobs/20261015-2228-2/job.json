@@ -1,0 +1,555 @@
+{
+ "id": "20261015-2228-2",
+ "status": "waiting_for_clips",
+ "upload": true,
+ "created": "2026-10-15T22:29:53",
+ "title": "Stop Exporting CRM Data: Query Deals Live with Claude #Shorts",
+ "description": "Learn how to connect Claude directly to Zoho CRM using an MCP server. Query your live pipeline, find stalled deals in plain English, and eliminate manual Excel exports.\n\n1. Set up the Zoho MCP server configuration in your local AI client settings or environment variables.\n2. Authorize secure read access to your Zoho CRM Deals module using your API scopes.\n3. Type in plain English: 'Which enterprise deals have had no activity in 14 days?' and get an instant, actionable breakdown.\n\nAPI / tool used:\n- name: Zoho CRM Search Records API via MCP\n- endpoint: POST https://www.zohoapis.com/crm/v3/Deals/search\n- scope: ZohoCRM.modules.deals.READ\n- docs: Zoho CRM API v3 Search Records\n\nAI + Zoho automations every day - follow @GSXAutomation\n\nWhat inspired this: https://news.google.com/rss/articles/CBMipgFBVV95cUxNREZFckxFcjdzbzJIZHdUVUZTTWRPTnhJQnVFNTk5Z1BaUlNObVg4eVZid2w3bTZORTN6dWhBM2h6bEEyOUdvNnU3VG50S1VWbnEtLVpEOEFtdXZ6UkVTUVlIYUN4Q2E3WUQ3UXp2ejdfS2VxY3JlMGViMFdpN2hwQUZEY1hQX2NTeW0tVGhxa09GUnNmdjlTbzJPT0hBSjh4TTZMSG13?oc=5\n\nThis video uses an AI-generated presenter and voice.\nIndependent channel. Not affiliated with or endorsed by Zoho Corporation. Zoho is a trademark of Zoho Corporation.\n\n#Shorts #Zoho #AIAutomation #ZohoCRM #AIAgents",
+ "angle": {
+  "story_index": 18,
+  "pillar": "trending",
+  "region": "global",
+  "product": "Zoho CRM + Claude / ChatGPT",
+  "app": "mcp",
+  "problem": "Sales managers export CRM data to Excel and waste hours pivot-table filtering just to find stalled deals.",
+  "fix_type": "mcp",
+  "solution": "Connect Claude or ChatGPT directly to Zoho CRM using a Model Context Protocol (MCP) server for live text queries.",
+  "steps": [
+   "Set up the Zoho MCP server configuration in your local AI client settings or environment variables.",
+   "Authorize secure read access to your Zoho CRM Deals module using your API scopes.",
+   "Type in plain English: 'Which enterprise deals have had no activity in 14 days?' and get an instant, actionable breakdown."
+  ],
+  "api": "Zoho CRM API v2/v3 / Search Records endpoint with MCP bridge",
+  "result": "Eliminate manual report building entirely by letting AI query live CRM data on demand.",
+  "wow": "Your AI chat client talks directly to live Zoho records in real time without writing SQL or export files.",
+  "hook": "Stop exporting CRM to Excel—let Claude query your deals live!"
+ },
+ "story": {
+  "title": "Scytale Launches Scytale MCP, Connecting AI Tools Directly to Live Compliance Data - Yahoo Finance",
+  "link": "https://news.google.com/rss/articles/CBMipgFBVV95cUxNREZFckxFcjdzbzJIZHdUVUZTTWRPTnhJQnVFNTk5Z1BaUlNObVg4eVZid2w3bTZORTN6dWhBM2h6bEEyOUdvNnU3VG50S1VWbnEtLVpEOEFtdXZ6UkVTUVlIYUN4Q2E3WUQ3UXp2ejdfS2VxY3JlMGViMFdpN2hwQUZEY1hQX2NTeW0tVGhxa09GUnNmdjlTbzJPT0hBSjh4TTZMSG13?oc=5",
+  "summary": "Scytale Launches Scytale MCP, Connecting AI Tools Directly to Live Compliance Data Yahoo Finance",
+  "source": "\"\"Model Context Protocol\" OR MCP server when:7d\" - Google News",
+  "ts": 1791924660,
+  "trend": 16
+ },
+ "script": {
+  "title": "Stop Exporting CRM Data: Query Deals Live with Claude",
+  "hook_text": "Query Zoho Deals Live with Claude",
+  "app_label": "Zoho CRM + Claude",
+  "lines": [
+   {
+    "beat": "HOOK",
+    "say": "Stop exporting CRM to Excel, let Claude query your deals live!",
+    "tts": "Stop exporting CRM to Excel, let Claude query your deals live!",
+    "card": "Query Deals Live with Claude",
+    "screen": null
+   },
+   {
+    "beat": "PROBLEM",
+    "say": "Sales managers waste hours in pivot tables just to find stalled deals.",
+    "tts": "Sales managers waste hours in pivot tables just to find stalled deals.",
+    "card": "Hours Wasted on Pivot Tables",
+    "screen": null
+   },
+   {
+    "beat": "FIX",
+    "say": "Connect Claude to Zoho CRM using an MCP configuration server in your settings.",
+    "tts": "Connect Claude to Zoho CRM using an MCP configuration server in your settings.",
+    "card": "Setup Zoho MCP Server",
+    "screen": {
+     "app": "crm",
+     "view": "settings",
+     "path": [
+      "Setup",
+      "Developer Hub",
+      "API"
+     ],
+     "heading": "API Settings",
+     "columns": [
+      "Client Name",
+      "Status",
+      "Actions"
+     ],
+     "rows": [
+      [
+       "Data Insights",
+       "Active",
+       "Install"
+      ],
+      [
+       "Data Operations",
+       "Active",
+       "Install"
+      ]
+     ],
+     "fields": [],
+     "toggles": [],
+     "messages": [],
+     "tool": null,
+     "method": null,
+     "url": null,
+     "headers": [],
+     "body": null,
+     "response": null,
+     "language": null,
+     "nodes": [],
+     "real": "crm/mcp_server",
+     "click": "Install",
+     "tip": "Enable the official Zoho API integration."
+    }
+   },
+   {
+    "beat": "STEP 1",
+    "say": "Open your local AI client settings and paste the Zoho server configuration variables.",
+    "tts": "Open your local AI client settings and paste the Zoho server configuration variables.",
+    "card": "Configure MCP in AI Client",
+    "screen": {
+     "app": "crm",
+     "view": "settings",
+     "path": [
+      "Setup",
+      "Developer Hub",
+      "API"
+     ],
+     "heading": "API Settings",
+     "columns": [],
+     "rows": [],
+     "fields": [
+      [
+       "Server URL",
+       "https://www.zohoapis.com/crm/v3"
+      ],
+      [
+       "Authentication",
+       "OAuth 2.0"
+      ]
+     ],
+     "toggles": [],
+     "messages": [],
+     "tool": null,
+     "method": null,
+     "url": null,
+     "headers": [],
+     "body": null,
+     "response": null,
+     "language": null,
+     "nodes": [],
+     "real": "crm/mcp_for_ai_agents",
+     "click": "Copy server link",
+     "tip": "Copy the server link into your client."
+    }
+   },
+   {
+    "beat": "STEP 2",
+    "say": "Authorize secure read access to your Zoho CRM Deals module using your API scopes.",
+    "tts": "Authorize secure read access to your Zoho CRM Deals module using your API scopes.",
+    "card": "Authorize Zoho API Scopes",
+    "screen": {
+     "app": "api",
+     "view": "api",
+     "path": [
+      "Setup",
+      "Developer Hub",
+      "APIs and SDKs"
+     ],
+     "heading": "CRM API Settings",
+     "columns": [],
+     "rows": [],
+     "fields": [
+      [
+       "Scope",
+       "ZohoCRM.modules.deals.READ"
+      ]
+     ],
+     "toggles": [],
+     "messages": [],
+     "tool": "Zoho CRM - Data Insights",
+     "method": "POST",
+     "url": "https://accounts.zoho.com/oauth/v2/token",
+     "headers": [
+      [
+       "Authorization",
+       "Zoho-oauthtoken ****"
+      ]
+     ],
+     "body": "{\"scope\": \"ZohoCRM.modules.deals.READ\"}",
+     "response": "{\"status\": \"success\"}",
+     "language": null,
+     "nodes": [],
+     "real": "crm/api_names",
+     "click": "CRM API",
+     "tip": "Ensure read scope is active."
+    }
+   },
+   {
+    "beat": "STEP 3",
+    "say": "Type in plain English: Which enterprise deals have had no activity in 14 days?",
+    "tts": "Type in plain English: Which enterprise deals have had no activity in 14 days?",
+    "card": "Ask AI in Plain English",
+    "screen": {
+     "app": "claude",
+     "view": "chat",
+     "path": [],
+     "heading": "Claude AI Chat",
+     "columns": [],
+     "rows": [],
+     "fields": [],
+     "toggles": [],
+     "messages": [
+      [
+       "user",
+       "Which enterprise deals have had no activity in 14 days?"
+      ],
+      [
+       "assistant",
+       "Searching Zoho CRM Deals module..."
+      ]
+     ],
+     "tool": "Zoho CRM - Data Insights",
+     "method": null,
+     "url": null,
+     "headers": [],
+     "body": null,
+     "response": null,
+     "language": null,
+     "nodes": [],
+     "real": null,
+     "click": "Zoho CRM - Data Insights",
+     "tip": "Your AI queries live records instantly."
+    }
+   },
+   {
+    "beat": "STEP 4",
+    "say": "Get an instant, actionable breakdown directly from your live CRM pipeline.",
+    "tts": "Get an instant, actionable breakdown directly from your live CRM pipeline.",
+    "card": "Get Instant CRM Breakdown",
+    "screen": {
+     "app": "claude",
+     "view": "chat",
+     "path": [],
+     "heading": "Claude AI Chat",
+     "columns": [],
+     "rows": [],
+     "fields": [],
+     "toggles": [],
+     "messages": [
+      [
+       "user",
+       "Which enterprise deals have had no activity in 14 days?"
+      ],
+      [
+       "assistant",
+       "Found 3 deals: Al Noor Trading, Berlin Logistics, Sharma Exports."
+      ]
+     ],
+     "tool": "Zoho CRM - Data Insights",
+     "method": null,
+     "url": null,
+     "headers": [],
+     "body": null,
+     "response": null,
+     "language": null,
+     "nodes": [],
+     "real": null,
+     "click": "Al Noor Trading",
+     "tip": "Review stalled deals immediately."
+    }
+   },
+   {
+    "beat": "RESULT",
+    "say": "Set it up once and your CRM works for you.",
+    "tts": "Set it up once and your CRM works for you.",
+    "card": "AI Queries CRM Live",
+    "screen": null
+   }
+  ],
+  "api": {
+   "name": "Zoho CRM Search Records API via MCP",
+   "endpoint": "POST https://www.zohoapis.com/crm/v3/Deals/search",
+   "scope": "ZohoCRM.modules.deals.READ",
+   "docs": "Zoho CRM API v3 Search Records"
+  },
+  "code": null,
+  "test_before_recording": [
+   "Verify Zoho CRM Enterprise edition with active Deals records",
+   "Confirm MCP server connection in local AI client settings",
+   "Check OAuth token permissions for ZohoCRM.modules.deals.READ"
+  ],
+  "description": "Learn how to connect Claude directly to Zoho CRM using an MCP server. Query your live pipeline, find stalled deals in plain English, and eliminate manual Excel exports.",
+  "tags": [
+   "ZohoCRM",
+   "ClaudeAI",
+   "ChatGPT",
+   "MCP",
+   "ModelContextProtocol",
+   "SalesAutomation",
+   "CRM",
+   "ArtificialIntelligence",
+   "Productivity",
+   "Zoho"
+  ]
+ },
+ "lines": [
+  {
+   "beat": "HOOK",
+   "say": "Stop exporting CRM to Excel, let Claude query your deals live!",
+   "tts": "Stop exporting CRM to Excel, let Claude query your deals live!",
+   "card": "Query Deals Live with Claude",
+   "screen": null,
+   "face": true
+  },
+  {
+   "beat": "PROBLEM",
+   "say": "Sales managers waste hours in pivot tables just to find stalled deals.",
+   "tts": "Sales managers waste hours in pivot tables just to find stalled deals.",
+   "card": "Hours Wasted on Pivot Tables",
+   "screen": null,
+   "face": true
+  },
+  {
+   "beat": "FIX",
+   "say": "Connect Claude to Zoho CRM using an MCP configuration server in your settings.",
+   "tts": "Connect Claude to Zoho CRM using an MCP configuration server in your settings.",
+   "card": "Setup Zoho MCP Server",
+   "screen": {
+    "app": "crm",
+    "view": "settings",
+    "path": [
+     "Setup",
+     "Developer Hub",
+     "API"
+    ],
+    "heading": "API Settings",
+    "columns": [
+     "Client Name",
+     "Status",
+     "Actions"
+    ],
+    "rows": [
+     [
+      "Data Insights",
+      "Active",
+      "Install"
+     ],
+     [
+      "Data Operations",
+      "Active",
+      "Install"
+     ]
+    ],
+    "fields": [],
+    "toggles": [],
+    "messages": [],
+    "tool": null,
+    "method": null,
+    "url": null,
+    "headers": [],
+    "body": null,
+    "response": null,
+    "language": null,
+    "nodes": [],
+    "real": "crm/mcp_server",
+    "click": "Install",
+    "tip": "Enable the official Zoho API integration."
+   },
+   "face": false
+  },
+  {
+   "beat": "STEP 1",
+   "say": "Open your local AI client settings and paste the Zoho server configuration variables.",
+   "tts": "Open your local AI client settings and paste the Zoho server configuration variables.",
+   "card": "Configure MCP in AI Client",
+   "screen": {
+    "app": "crm",
+    "view": "settings",
+    "path": [
+     "Setup",
+     "Developer Hub",
+     "API"
+    ],
+    "heading": "API Settings",
+    "columns": [],
+    "rows": [],
+    "fields": [
+     [
+      "Server URL",
+      "https://www.zohoapis.com/crm/v3"
+     ],
+     [
+      "Authentication",
+      "OAuth 2.0"
+     ]
+    ],
+    "toggles": [],
+    "messages": [],
+    "tool": null,
+    "method": null,
+    "url": null,
+    "headers": [],
+    "body": null,
+    "response": null,
+    "language": null,
+    "nodes": [],
+    "real": "crm/mcp_for_ai_agents",
+    "click": "Copy server link",
+    "tip": "Copy the server link into your client."
+   },
+   "face": false
+  },
+  {
+   "beat": "STEP 2",
+   "say": "Authorize secure read access to your Zoho CRM Deals module using your API scopes.",
+   "tts": "Authorize secure read access to your Zoho CRM Deals module using your API scopes.",
+   "card": "Authorize Zoho API Scopes",
+   "screen": {
+    "app": "api",
+    "view": "api",
+    "path": [
+     "Setup",
+     "Developer Hub",
+     "APIs and SDKs"
+    ],
+    "heading": "CRM API Settings",
+    "columns": [],
+    "rows": [],
+    "fields": [
+     [
+      "Scope",
+      "ZohoCRM.modules.deals.READ"
+     ]
+    ],
+    "toggles": [],
+    "messages": [],
+    "tool": "Zoho CRM - Data Insights",
+    "method": "POST",
+    "url": "https://accounts.zoho.com/oauth/v2/token",
+    "headers": [
+     [
+      "Authorization",
+      "Zoho-oauthtoken ****"
+     ]
+    ],
+    "body": "{\"scope\": \"ZohoCRM.modules.deals.READ\"}",
+    "response": "{\"status\": \"success\"}",
+    "language": null,
+    "nodes": [],
+    "real": "crm/api_names",
+    "click": "CRM API",
+    "tip": "Ensure read scope is active."
+   },
+   "face": false
+  },
+  {
+   "beat": "STEP 3",
+   "say": "Type in plain English: Which enterprise deals have had no activity in 14 days?",
+   "tts": "Type in plain English: Which enterprise deals have had no activity in 14 days?",
+   "card": "Ask AI in Plain English",
+   "screen": {
+    "app": "claude",
+    "view": "chat",
+    "path": [],
+    "heading": "Claude AI Chat",
+    "columns": [],
+    "rows": [],
+    "fields": [],
+    "toggles": [],
+    "messages": [
+     [
+      "user",
+      "Which enterprise deals have had no activity in 14 days?"
+     ],
+     [
+      "assistant",
+      "Searching Zoho CRM Deals module..."
+     ]
+    ],
+    "tool": "Zoho CRM - Data Insights",
+    "method": null,
+    "url": null,
+    "headers": [],
+    "body": null,
+    "response": null,
+    "language": null,
+    "nodes": [],
+    "real": null,
+    "click": "Zoho CRM - Data Insights",
+    "tip": "Your AI queries live records instantly."
+   },
+   "face": false
+  },
+  {
+   "beat": "STEP 4",
+   "say": "Get an instant, actionable breakdown directly from your live CRM pipeline.",
+   "tts": "Get an instant, actionable breakdown directly from your live CRM pipeline.",
+   "card": "Get Instant CRM Breakdown",
+   "screen": {
+    "app": "claude",
+    "view": "chat",
+    "path": [],
+    "heading": "Claude AI Chat",
+    "columns": [],
+    "rows": [],
+    "fields": [],
+    "toggles": [],
+    "messages": [
+     [
+      "user",
+      "Which enterprise deals have had no activity in 14 days?"
+     ],
+     [
+      "assistant",
+      "Found 3 deals: Al Noor Trading, Berlin Logistics, Sharma Exports."
+     ]
+    ],
+    "tool": "Zoho CRM - Data Insights",
+    "method": null,
+    "url": null,
+    "headers": [],
+    "body": null,
+    "response": null,
+    "language": null,
+    "nodes": [],
+    "real": null,
+    "click": "Al Noor Trading",
+    "tip": "Review stalled deals immediately."
+   },
+   "face": false
+  },
+  {
+   "beat": "RESULT",
+   "say": "Set it up once and your CRM works for you.",
+   "tts": "Set it up once and your CRM works for you.",
+   "card": "AI Queries CRM Live",
+   "screen": null,
+   "face": true
+  }
+ ],
+ "clips": [
+  {
+   "text": "Stop exporting CRM to Excel, let Claude query your deals live!",
+   "lines": [
+    0
+   ],
+   "beat": "HOOK",
+   "prompt": "The man (my avatar) looks into the camera and talks to the viewer like a confident, friendly business tech explainer, smart and natural, not stiff; he leans one hand on a table or railing next to him, then straightens up and talks with a confident open gesture. Vertical 9:16 medium-wide shot from the knees up, camera about two metres away, his head in the upper third with space above it, both hands and all his gestures fully visible in the frame, static camera, sharp and well lit, wearing a navy unstructured blazer over a plain white t-shirt and dark chinos, on a tree-lined walkway of a modern corporate office campus in soft morning sun, glass office buildings behind him. His face, skin tone, hairstyle, beard, height and body build stay exactly as in my avatar's reference photos - the same natural average build, never slimmer and never heavier. He says, in clear natural English with a clear, neutral international accent, at a brisk, lively pace: \"Stop exporting CRM to Excel, let Claude query your deals live!\" His lips match every word. He starts speaking in the very first frame, with no pause before the first word, and stops right after the last word. Audio: only his voice - no music, no sound effects. No subtitles, no captions, no text on screen."
+  },
+  {
+   "text": "Sales managers waste hours in pivot tables just to find stalled deals.",
+   "lines": [
+    1
+   ],
+   "beat": "PROBLEM",
+   "prompt": "The man (my avatar) looks into the camera and talks to the viewer like a confident, friendly business tech explainer, smart and natural, not stiff; he shrugs with both shoulders and tilts his head, as if he has seen this problem a hundred times. Vertical 9:16 medium-wide shot from the knees up, camera about two metres away, his head in the upper third with space above it, both hands and all his gestures fully visible in the frame, static camera, sharp and well lit, wearing a navy unstructured blazer over a plain white t-shirt and dark chinos, on a tree-lined walkway of a modern corporate office campus in soft morning sun, glass office buildings behind him. His face, skin tone, hairstyle, beard, height and body build stay exactly as in my avatar's reference photos - the same natural average build, never slimmer and never heavier. He says, in clear natural English with a clear, neutral international accent, at a brisk, lively pace: \"Sales managers waste hours in pivot tables just to find stalled deals.\" His lips match every word. He starts speaking in the very first frame, with no pause before the first word, and stops right after the last word. Audio: only his voice - no music, no sound effects. No subtitles, no captions, no text on screen."
+  },
+  {
+   "text": "Set it up once and your CRM works for you.",
+   "lines": [
+    7
+   ],
+   "beat": "RESULT",
+   "prompt": "The man (my avatar) looks into the camera and talks to the viewer like a confident, friendly business tech explainer, smart and natural, not stiff; he smiles and opens both arms wide. Vertical 9:16 medium-wide shot from the knees up, camera about two metres away, his head in the upper third with space above it, both hands and all his gestures fully visible in the frame, static camera, sharp and well lit, wearing a navy unstructured blazer over a plain white t-shirt and dark chinos, on a tree-lined walkway of a modern corporate office campus in soft morning sun, glass office buildings behind him. His face, skin tone, hairstyle, beard, height and body build stay exactly as in my avatar's reference photos - the same natural average build, never slimmer and never heavier. He says, in clear natural English with a clear, neutral international accent, at a brisk, lively pace: \"Set it up once and your CRM works for you.\" His lips match every word. He starts speaking in the very first frame, with no pause before the first word, and stops right after the last word. Audio: only his voice - no music, no sound effects. No subtitles, no captions, no text on screen."
+  }
+ ],
+ "look": "wearing a navy unstructured blazer over a plain white t-shirt and dark chinos, on a tree-lined walkway of a modern corporate office campus in soft morning sun, glass office buildings behind him",
+ "issue": 46
+}
