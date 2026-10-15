@@ -106,8 +106,8 @@ localize:
 # The presenter: YOU, made in Google Flow (your avatar + Veo 3.1 with its own voice) - see autopilot/flow.py
 flow:
   per_day: 1                # Shorts prepared per day (each needs ~3-6 Flow clips; Veo 3.1 Fast ~20 credits each)
-  max_words_per_clip: 19    # ~7.5 s of speech -> fits one 8 s Flow clip
-  speed: 1.1                # lifts the pace of every clip a little (voice + lips together), 1.0 = off
+  max_words_per_clip: 21    # ~7.8 s of brisk speech -> still fits one 8 s Flow clip (was 19)
+  speed: 1.15               # lifts the pace of every clip a little (voice + lips together), 1.0 = off (was 1.1)
   max_batch: 14             # a manual daily run may prepare up to this many Shorts at once (a week)
   presenter: "The man (my avatar)"   # how every prompt refers to you - select your avatar in Flow before pasting
   # Accent for a global audience (Middle East + Europe + US + India). Change to "an Indian accent" for the old style.
