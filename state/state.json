@@ -227,7 +227,9 @@
    "pillar": "ai_agent",
    "engine": "flow",
    "job": "20261015-1750-2",
-   "created": "2026-10-15T17:51:31"
+   "created": "2026-10-15T17:51:31",
+   "video_id": "tFYWOEPCIdQ",
+   "publish_at": "2026-10-18T07:30:00+05:30"
   },
   "S0023": {
    "problem": "Facebook lead-ad leads sit in Meta dashboards and get called two days too late by sales",
@@ -235,7 +237,9 @@
    "pillar": "lead_flow",
    "engine": "flow",
    "job": "20261015-1751-3",
-   "created": "2026-10-15T17:53:00"
+   "created": "2026-10-15T17:53:00",
+   "video_id": "br1TzwETceo",
+   "publish_at": "2026-10-18T21:30:00+05:30"
   },
   "S0024": {
    "problem": "Integrations suddenly crash and burn with a TOO_MANY_REQUESTS error code",
@@ -337,6 +341,20 @@
    "minute": 450,
    "video_id": "zJ3cltfUohs",
    "title": "UAE E-Invoicing in Zoho Books: Setup Guide #Shorts"
+  },
+  {
+   "date": "2026-10-18",
+   "window": "07:30",
+   "minute": 450,
+   "video_id": "tFYWOEPCIdQ",
+   "title": "Stop wasting afternoons clicking in CRM—let Claude build modules! #Shorts"
+  },
+  {
+   "date": "2026-10-18",
+   "window": "21:30",
+   "minute": 1290,
+   "video_id": "br1TzwETceo",
+   "title": "Stop losing Facebook leads! Connect Zoho Social to Zoho CRM #Shorts"
   }
  ],
  "failures": {},
@@ -345,6 +363,6 @@
  "photo_scenes": [],
  "photo_agent_error": "RuntimeError: image model unavailable: 404 NOT_FOUND. {'error': {'code': 404, 'm",
  "look_index": 19,
- "status_issue": 31,
- "status_line": "PIPELINE ideas=27 clips=3 editing=0 qa_failed=0 scheduled=3 published=10 total=13 today=2 next=2026-10-16T07:30"
+ "status_issue": 33,
+ "status_line": "PIPELINE ideas=27 clips=1 editing=0 qa_failed=0 scheduled=5 published=10 total=15 today=2 next=2026-10-16T07:30"
 }
