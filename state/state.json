@@ -287,7 +287,9 @@
    "pillar": "lead_flow",
    "engine": "flow",
    "job": "20261015-2115-3",
-   "created": "2026-10-15T21:17:09"
+   "created": "2026-10-15T21:17:09",
+   "video_id": "wOyzo2MawIk",
+   "publish_at": "2026-10-20T21:30:00+05:30"
   },
   "S0028": {
    "problem": "Saudi ZATCA e-invoicing compliance waves keep adding businesses, and manual setup is risky.",
@@ -432,6 +434,13 @@
    "minute": 450,
    "video_id": "XXdjFLEBNew",
    "title": "Automate Lead Qualification with Zia Agent Studio #Shorts"
+  },
+  {
+   "date": "2026-10-20",
+   "window": "21:30",
+   "minute": 1290,
+   "video_id": "wOyzo2MawIk",
+   "title": "Never lose a WhatsApp lead again: Zoho CRM WhatsApp Integration #Shorts"
   }
  ],
  "failures": {},
@@ -440,6 +449,6 @@
  "photo_scenes": [],
  "photo_agent_error": "RuntimeError: image model unavailable: 404 NOT_FOUND. {'error': {'code': 404, 'm",
  "look_index": 24,
- "status_issue": 42,
- "status_line": "PIPELINE ideas=27 clips=3 editing=0 qa_failed=0 scheduled=8 published=10 total=18 today=2 next=2026-10-16T07:30"
+ "status_issue": 43,
+ "status_line": "PIPELINE ideas=27 clips=2 editing=0 qa_failed=0 scheduled=9 published=10 total=19 today=2 next=2026-10-16T07:30"
 }
