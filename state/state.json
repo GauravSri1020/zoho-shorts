@@ -307,7 +307,9 @@
    "pillar": "dev_api",
    "engine": "flow",
    "job": "20261015-2118-5",
-   "created": "2026-10-15T21:19:58"
+   "created": "2026-10-15T21:19:58",
+   "video_id": "r6gQ6rrev98",
+   "publish_at": "2026-10-21T21:30:00+05:30"
   }
  },
  "slots": [
@@ -450,6 +452,13 @@
    "minute": 450,
    "video_id": "zgGIw4kanHI",
    "title": "Enable ZATCA Phase Two in Zoho Books Saudi Arabia #Shorts"
+  },
+  {
+   "date": "2026-10-21",
+   "window": "21:30",
+   "minute": 1290,
+   "video_id": "r6gQ6rrev98",
+   "title": "Build a custom Zoho CRM widget in 20 lines of code #Shorts"
   }
  ],
  "failures": {},
@@ -458,6 +467,6 @@
  "photo_scenes": [],
  "photo_agent_error": "RuntimeError: image model unavailable: 404 NOT_FOUND. {'error': {'code': 404, 'm",
  "look_index": 24,
- "status_issue": 44,
- "status_line": "PIPELINE ideas=27 clips=1 editing=0 qa_failed=0 scheduled=10 published=10 total=20 today=2 next=2026-10-16T07:30"
+ "status_issue": 45,
+ "status_line": "PIPELINE ideas=27 clips=0 editing=0 qa_failed=0 scheduled=11 published=10 total=21 today=2 next=2026-10-16T07:30"
 }
