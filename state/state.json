@@ -197,7 +197,9 @@
    "pillar": "ai_agent",
    "engine": "flow",
    "job": "20261015-0923-2",
-   "created": "2026-10-15T09:26:19"
+   "created": "2026-10-15T09:26:19",
+   "video_id": "xUeJN562JqM",
+   "publish_at": "2026-10-16T07:30:00+05:30"
   }
  },
  "slots": [
@@ -270,6 +272,13 @@
    "minute": 450,
    "video_id": "A3r_WPRLf_U",
    "title": "Find Stuck Zoho CRM Deals Fast Using Claude MCP #Shorts"
+  },
+  {
+   "date": "2026-10-16",
+   "window": "07:30",
+   "minute": 450,
+   "video_id": "xUeJN562JqM",
+   "title": "Update Zoho CRM Deals Instantly with Claude MCP #Shorts"
   }
  ],
  "failures": {},
@@ -278,6 +287,6 @@
  "photo_scenes": [],
  "photo_agent_error": "RuntimeError: image model unavailable: 404 NOT_FOUND. {'error': {'code': 404, 'm",
  "look_index": 15,
- "status_issue": 24,
- "status_line": "PIPELINE ideas=27 clips=0 editing=2 qa_failed=0 scheduled=0 published=10 total=10 today=2 next=-"
+ "status_issue": 25,
+ "status_line": "PIPELINE ideas=27 clips=0 editing=0 qa_failed=1 scheduled=1 published=10 total=11 today=2 next=2026-10-16T07:30"
 }
