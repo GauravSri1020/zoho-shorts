@@ -187,7 +187,9 @@
    "pillar": "ai_agent",
    "engine": "flow",
    "job": "20261013-1228-3",
-   "created": "2026-10-13T12:40:31"
+   "created": "2026-10-13T12:40:31",
+   "video_id": "KXH8AKSO9LY",
+   "publish_at": "2026-10-16T21:30:00+05:30"
   },
   "S0019": {
    "problem": "Sales managers export CRM deals to Excel and waste hours pivot-table filtering just to find stalled deals.",
@@ -215,7 +217,9 @@
    "pillar": "trending",
    "engine": "flow",
    "job": "20261015-1746-1",
-   "created": "2026-10-15T17:50:10"
+   "created": "2026-10-15T17:50:10",
+   "video_id": "zJ3cltfUohs",
+   "publish_at": "2026-10-17T07:30:00+05:30"
   },
   "S0022": {
    "problem": "Building a new custom CRM module, fields, and layout manually takes an entire afternoon",
@@ -319,6 +323,20 @@
    "minute": 450,
    "video_id": "xUeJN562JqM",
    "title": "Update Zoho CRM Deals Instantly with Claude MCP #Shorts"
+  },
+  {
+   "date": "2026-10-16",
+   "window": "21:30",
+   "minute": 1290,
+   "video_id": "KXH8AKSO9LY",
+   "title": "Sort Inbound Emails with Zoho Flow and AI #Shorts"
+  },
+  {
+   "date": "2026-10-17",
+   "window": "07:30",
+   "minute": 450,
+   "video_id": "zJ3cltfUohs",
+   "title": "UAE E-Invoicing in Zoho Books: Setup Guide #Shorts"
   }
  ],
  "failures": {},
@@ -327,6 +345,6 @@
  "photo_scenes": [],
  "photo_agent_error": "RuntimeError: image model unavailable: 404 NOT_FOUND. {'error': {'code': 404, 'm",
  "look_index": 19,
- "status_issue": 30,
- "status_line": "PIPELINE ideas=27 clips=4 editing=0 qa_failed=1 scheduled=1 published=10 total=11 today=2 next=2026-10-16T07:30"
+ "status_issue": 31,
+ "status_line": "PIPELINE ideas=27 clips=3 editing=0 qa_failed=0 scheduled=3 published=10 total=13 today=2 next=2026-10-16T07:30"
 }
