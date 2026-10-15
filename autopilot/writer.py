@@ -42,7 +42,7 @@ def _gemini():
     if _client is None:
         if not GEMINI_API_KEY:
             raise SystemExit("GEMINI_API_KEY missing")
-        _client = genai.Client(api_key=GEMINI_API_KEY)
+        _client = genai.Client(api_key=GEMINI_API_KEY, http_options=types.HttpOptions(timeout=300000))  # 5 min max per call - a stuck request hung run #58 for 40+ min
     return _client
 
 
