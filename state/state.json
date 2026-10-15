@@ -277,7 +277,9 @@
    "pillar": "ai_agent",
    "engine": "flow",
    "job": "20261015-2114-2",
-   "created": "2026-10-15T21:15:42"
+   "created": "2026-10-15T21:15:42",
+   "video_id": "XXdjFLEBNew",
+   "publish_at": "2026-10-20T07:30:00+05:30"
   },
   "S0027": {
    "problem": "Important customer leads message on WhatsApp and are never entered into CRM.",
@@ -423,6 +425,13 @@
    "minute": 1290,
    "video_id": "dDtFCu5M05U",
    "title": "Run Gemini or Claude Inside Zoho Flow Instantly #Shorts"
+  },
+  {
+   "date": "2026-10-20",
+   "window": "07:30",
+   "minute": 450,
+   "video_id": "XXdjFLEBNew",
+   "title": "Automate Lead Qualification with Zia Agent Studio #Shorts"
   }
  ],
  "failures": {},
@@ -431,6 +440,6 @@
  "photo_scenes": [],
  "photo_agent_error": "RuntimeError: image model unavailable: 404 NOT_FOUND. {'error': {'code': 404, 'm",
  "look_index": 24,
- "status_issue": 41,
- "status_line": "PIPELINE ideas=27 clips=4 editing=0 qa_failed=0 scheduled=7 published=10 total=17 today=2 next=2026-10-16T07:30"
+ "status_issue": 42,
+ "status_line": "PIPELINE ideas=27 clips=3 editing=0 qa_failed=0 scheduled=8 published=10 total=18 today=2 next=2026-10-16T07:30"
 }
