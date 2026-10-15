@@ -1,0 +1,652 @@
+{
+ "id": "20261015-1751-3",
+ "status": "waiting_for_clips",
+ "upload": true,
+ "created": "2026-10-15T17:53:00",
+ "title": "Stop losing Facebook leads! Connect Zoho Social to Zoho CRM #Shorts",
+ "description": "Stop letting Facebook lead ads sit stale in Meta. Learn how to connect Zoho Social directly to Zoho CRM with instant field mapping and assignment rules.\n\n1. Navigate to CRM Setup › Channels › Social and import your brand's ad account.\n2. Map your Facebook Lead Ad form fields to your Zoho CRM Lead fields.\n3. Apply an instant assignment rule to route the lead to the nearest active sales rep.\n\nAPI / tool used:\n- name: Zoho CRM Leads API\n- endpoint: POST https://www.zohoapis.com/crm/v8/Leads\n- scope: ZohoCRM.modules.Leads.ALL\n- docs: Zoho CRM Insert Records API\n\nAI + Zoho automations every day - follow @GSXAutomation\n\nThis video uses an AI-generated presenter and voice.\nIndependent channel. Not affiliated with or endorsed by Zoho Corporation. Zoho is a trademark of Zoho Corporation.\n\n#Shorts #Zoho #AIAutomation #ZohoCRM #AIAgents",
+ "angle": {
+  "story_index": 46,
+  "pillar": "lead_flow",
+  "region": "global",
+  "product": "Zoho Social -> Zoho CRM",
+  "app": "social",
+  "problem": "Facebook lead-ad leads sit in Meta dashboards and get called two days too late by sales",
+  "fix_type": "native",
+  "solution": "Connect Zoho Social Lead Forms directly to Zoho CRM with instant assignment rules",
+  "steps": [
+   "Navigate to CRM Setup > Channels > Social and import your brand's ad account.",
+   "Map your Facebook Lead Ad form fields to your Zoho CRM Lead fields.",
+   "Apply an instant assignment rule to route the lead to the nearest active sales rep."
+  ],
+  "api": null,
+  "result": "Cut lead response time from 48 hours to 48 seconds and double your conversion rates.",
+  "wow": "Leads move from Facebook to your sales rep's screen before they even close the browser tab.",
+  "hook": "Your Facebook leads are sitting stale—push them to Zoho CRM in real time!"
+ },
+ "story": {
+  "title": "Facebook lead-ad leads sit in Meta and get called two days late",
+  "link": "bank:facebook leadad leads sit in meta and get called two days la",
+  "summary": "pillar: lead_flow | product: Zoho Social -> Zoho CRM | fix: Zoho Social Lead Forms: connect the ad account, map fields, apply a CRM assignment rule -> leads land in CRM in real time | facts: Needs Zoho Social Premium/Agency/Agency Plus. CRM: Setup > Channels > Social, import the brand. One ad account per brand. Test with Meta's Lead Ads Testing Tool. Common failure: Leads Access in Business Manager not granted to Zoho Social, or mandatory CRM field not mapped. | wow: Add a Zia/AI step: score the lead and send the hot ones to the rep on WhatsApp within 60 seconds",
+  "source": "GSX problem bank",
+  "ts": 1792086351.1609976,
+  "trend": 0,
+  "pillar": "lead_flow"
+ },
+ "script": {
+  "title": "Stop losing Facebook leads! Connect Zoho Social to Zoho CRM",
+  "hook_text": "Stop stale Facebook leads",
+  "app_label": "Zoho Social + CRM",
+  "lines": [
+   {
+    "beat": "HOOK",
+    "say": "Your Facebook leads are sitting stale—push them to Zoho CRM in real time!",
+    "tts": "Your Facebook leads are sitting stale—push them to Zoho CRM in real time!",
+    "card": "Stop stale leads",
+    "screen": null
+   },
+   {
+    "beat": "PROBLEM",
+    "say": "Facebook lead ad leads sit in Meta dashboards and get called two days too late by sales.",
+    "tts": "Facebook lead ad leads sit in Meta dashboards and get called two days too late by sales.",
+    "card": "Leads stuck in Meta",
+    "screen": null
+   },
+   {
+    "beat": "FIX",
+    "say": "Connect Zoho Social Lead Forms directly to Zoho CRM with instant assignment rules.",
+    "tts": "Connect Zoho Social Lead Forms directly to Zoho CRM with instant assignment rules.",
+    "card": "Zoho Social to CRM",
+    "screen": {
+     "app": "social",
+     "view": "settings",
+     "path": [
+      "Settings",
+      "Lead Forms"
+     ],
+     "heading": "Lead Forms Configuration",
+     "columns": [
+      "Brand",
+      "Ad Account",
+      "Status"
+     ],
+     "rows": [
+      [
+       "Al Noor Trading",
+       "Act_982374192",
+       "Connected"
+      ]
+     ],
+     "fields": [
+      [
+       "Brand Name",
+       "Al Noor Trading"
+      ],
+      [
+       "Ad Account ID",
+       "act_982374192"
+      ]
+     ],
+     "toggles": [
+      [
+       "Sync Lead Ads",
+       true
+      ]
+     ],
+     "messages": [],
+     "tool": null,
+     "method": null,
+     "url": null,
+     "headers": null,
+     "body": null,
+     "response": null,
+     "language": null,
+     "nodes": null,
+     "real": null,
+     "click": "Connected",
+     "tip": "Requires Zoho Social Premium or Agency."
+    }
+   },
+   {
+    "beat": "STEP 1",
+    "say": "Navigate to CRM Setup, Channels, Social, and import your brand's ad account.",
+    "tts": "Navigate to CRM Setup, Channels, Social, and import your brand's ad account.",
+    "card": "CRM Setup > Channels > Social",
+    "screen": {
+     "app": "crm",
+     "view": "settings",
+     "path": [
+      "Setup",
+      "Channels",
+      "Social"
+     ],
+     "heading": "Social Channel Integration",
+     "columns": [
+      "Channel",
+      "Status"
+     ],
+     "rows": [
+      [
+       "Facebook",
+       "Active"
+      ]
+     ],
+     "fields": [
+      [
+       "Import Ad Account",
+       "Al Noor Trading"
+      ]
+     ],
+     "toggles": [],
+     "messages": [],
+     "tool": null,
+     "method": null,
+     "url": null,
+     "headers": null,
+     "body": null,
+     "response": null,
+     "language": null,
+     "nodes": null,
+     "real": "crm/webforms",
+     "click": "Social",
+     "tip": "One ad account per brand."
+    }
+   },
+   {
+    "beat": "STEP 2",
+    "say": "Map your Facebook Lead Ad form fields directly to your Zoho CRM Lead fields.",
+    "tts": "Map your Facebook Lead Ad form fields directly to your Zoho CRM Lead fields.",
+    "card": "Map Lead Ad fields",
+    "screen": {
+     "app": "crm",
+     "view": "form",
+     "path": [
+      "Setup",
+      "Channels",
+      "Social",
+      "Field Mapping"
+     ],
+     "heading": "Field Mapping",
+     "columns": [
+      "Meta Field",
+      "CRM Field"
+     ],
+     "rows": [
+      [
+       "Full Name",
+       "Last Name"
+      ],
+      [
+       "Email",
+       "Email"
+      ],
+      [
+       "Phone Number",
+       "Phone"
+      ]
+     ],
+     "fields": [
+      [
+       "Full Name",
+       "Last Name"
+      ],
+      [
+       "Email",
+       "Email"
+      ]
+     ],
+     "toggles": [],
+     "messages": [],
+     "tool": null,
+     "method": null,
+     "url": null,
+     "headers": null,
+     "body": null,
+     "response": null,
+     "language": null,
+     "nodes": null,
+     "real": "crm/webforms",
+     "click": "Email",
+     "tip": "Ensure all mandatory fields are mapped."
+    }
+   },
+   {
+    "beat": "STEP 3",
+    "say": "Apply an instant assignment rule to route the lead to the nearest active sales rep.",
+    "tts": "Apply an instant assignment rule to route the lead to the nearest active sales rep.",
+    "card": "Assignment Rule",
+    "screen": {
+     "app": "crm",
+     "view": "settings",
+     "path": [
+      "Setup",
+      "Automation",
+      "Assignment Rules"
+     ],
+     "heading": "Lead Assignment Rules",
+     "columns": [
+      "Rule Name",
+      "Module",
+      "Status"
+     ],
+     "rows": [
+      [
+       "Instant Facebook Routing",
+       "Leads",
+       "Active"
+      ]
+     ],
+     "fields": [
+      [
+       "Criteria",
+       "Lead Source is Facebook Ads"
+      ]
+     ],
+     "toggles": [
+      [
+       "Active",
+       true
+      ]
+     ],
+     "messages": [],
+     "tool": null,
+     "method": null,
+     "url": null,
+     "headers": null,
+     "body": null,
+     "response": null,
+     "language": null,
+     "nodes": null,
+     "real": "crm/workflow_rules",
+     "click": "Active",
+     "tip": "Distribute leads round-robin to active reps."
+    }
+   },
+   {
+    "beat": "STEP 4",
+    "say": "Leads move from Facebook to your sales rep's screen before they even close the browser tab.",
+    "tts": "Leads move from Facebook to your sales rep's screen before they even close the browser tab.",
+    "card": "Instant sync wow detail",
+    "screen": {
+     "app": "crm",
+     "view": "list",
+     "path": [
+      "Leads"
+     ],
+     "heading": "All Leads",
+     "columns": [
+      "Lead Name",
+      "Company",
+      "Email",
+      "Phone"
+     ],
+     "rows": [
+      [
+       "Tariq Al Jassim",
+       "Al Noor Trading",
+       "tariq@alnoor.ae",
+       "+971501234567"
+      ]
+     ],
+     "fields": [],
+     "toggles": [],
+     "messages": [],
+     "tool": null,
+     "method": null,
+     "url": null,
+     "headers": null,
+     "body": null,
+     "response": null,
+     "language": null,
+     "nodes": null,
+     "real": "crm/leads_list",
+     "click": "Lead Name",
+     "tip": "Test using Meta's Lead Ads Testing Tool."
+    }
+   },
+   {
+    "beat": "RESULT",
+    "say": "Cut lead response time from forty-eight hours to forty-eight seconds and double your conversion rates.",
+    "tts": "Cut lead response time from forty-eight hours to forty-eight seconds and double your conversion rates.",
+    "card": "48 hours to 48 seconds",
+    "screen": null
+   }
+  ],
+  "api": {
+   "name": "Zoho CRM Leads API",
+   "endpoint": "POST https://www.zohoapis.com/crm/v8/Leads",
+   "scope": "ZohoCRM.modules.Leads.ALL",
+   "docs": "Zoho CRM Insert Records API"
+  },
+  "code": null,
+  "test_before_recording": [
+   "Verify Zoho Social Premium or Agency plan is active",
+   "Confirm Leads Access permission is granted in Meta Business Manager",
+   "Test the integration using Meta's Lead Ads Testing Tool"
+  ],
+  "description": "Stop letting Facebook lead ads sit stale in Meta. Learn how to connect Zoho Social directly to Zoho CRM with instant field mapping and assignment rules.",
+  "tags": [
+   "ZohoCRM",
+   "ZohoSocial",
+   "LeadGeneration",
+   "CRMAutomation",
+   "SalesPipeline",
+   "FacebookAds",
+   "LeadRouting",
+   "Zoho",
+   "B2BSales",
+   "Productivity"
+  ]
+ },
+ "lines": [
+  {
+   "beat": "HOOK",
+   "say": "Your Facebook leads are sitting stale—push them to Zoho CRM in real time!",
+   "tts": "Your Facebook leads are sitting stale—push them to Zoho CRM in real time!",
+   "card": "Stop stale leads",
+   "screen": null,
+   "face": true
+  },
+  {
+   "beat": "PROBLEM",
+   "say": "Facebook lead ad leads sit in Meta dashboards and get called two days too late by sales.",
+   "tts": "Facebook lead ad leads sit in Meta dashboards and get called two days too late by sales.",
+   "card": "Leads stuck in Meta",
+   "screen": null,
+   "face": true
+  },
+  {
+   "beat": "FIX",
+   "say": "Connect Zoho Social Lead Forms directly to Zoho CRM with instant assignment rules.",
+   "tts": "Connect Zoho Social Lead Forms directly to Zoho CRM with instant assignment rules.",
+   "card": "Zoho Social to CRM",
+   "screen": {
+    "app": "social",
+    "view": "settings",
+    "path": [
+     "Settings",
+     "Lead Forms"
+    ],
+    "heading": "Lead Forms Configuration",
+    "columns": [
+     "Brand",
+     "Ad Account",
+     "Status"
+    ],
+    "rows": [
+     [
+      "Al Noor Trading",
+      "Act_982374192",
+      "Connected"
+     ]
+    ],
+    "fields": [
+     [
+      "Brand Name",
+      "Al Noor Trading"
+     ],
+     [
+      "Ad Account ID",
+      "act_982374192"
+     ]
+    ],
+    "toggles": [
+     [
+      "Sync Lead Ads",
+      true
+     ]
+    ],
+    "messages": [],
+    "tool": null,
+    "method": null,
+    "url": null,
+    "headers": null,
+    "body": null,
+    "response": null,
+    "language": null,
+    "nodes": null,
+    "real": null,
+    "click": "Connected",
+    "tip": "Requires Zoho Social Premium or Agency."
+   },
+   "face": false
+  },
+  {
+   "beat": "STEP 1",
+   "say": "Navigate to CRM Setup, Channels, Social, and import your brand's ad account.",
+   "tts": "Navigate to CRM Setup, Channels, Social, and import your brand's ad account.",
+   "card": "CRM Setup > Channels > Social",
+   "screen": {
+    "app": "crm",
+    "view": "settings",
+    "path": [
+     "Setup",
+     "Channels",
+     "Social"
+    ],
+    "heading": "Social Channel Integration",
+    "columns": [
+     "Channel",
+     "Status"
+    ],
+    "rows": [
+     [
+      "Facebook",
+      "Active"
+     ]
+    ],
+    "fields": [
+     [
+      "Import Ad Account",
+      "Al Noor Trading"
+     ]
+    ],
+    "toggles": [],
+    "messages": [],
+    "tool": null,
+    "method": null,
+    "url": null,
+    "headers": null,
+    "body": null,
+    "response": null,
+    "language": null,
+    "nodes": null,
+    "real": "crm/webforms",
+    "click": "Social",
+    "tip": "One ad account per brand."
+   },
+   "face": false
+  },
+  {
+   "beat": "STEP 2",
+   "say": "Map your Facebook Lead Ad form fields directly to your Zoho CRM Lead fields.",
+   "tts": "Map your Facebook Lead Ad form fields directly to your Zoho CRM Lead fields.",
+   "card": "Map Lead Ad fields",
+   "screen": {
+    "app": "crm",
+    "view": "form",
+    "path": [
+     "Setup",
+     "Channels",
+     "Social",
+     "Field Mapping"
+    ],
+    "heading": "Field Mapping",
+    "columns": [
+     "Meta Field",
+     "CRM Field"
+    ],
+    "rows": [
+     [
+      "Full Name",
+      "Last Name"
+     ],
+     [
+      "Email",
+      "Email"
+     ],
+     [
+      "Phone Number",
+      "Phone"
+     ]
+    ],
+    "fields": [
+     [
+      "Full Name",
+      "Last Name"
+     ],
+     [
+      "Email",
+      "Email"
+     ]
+    ],
+    "toggles": [],
+    "messages": [],
+    "tool": null,
+    "method": null,
+    "url": null,
+    "headers": null,
+    "body": null,
+    "response": null,
+    "language": null,
+    "nodes": null,
+    "real": "crm/webforms",
+    "click": "Email",
+    "tip": "Ensure all mandatory fields are mapped."
+   },
+   "face": false
+  },
+  {
+   "beat": "STEP 3",
+   "say": "Apply an instant assignment rule to route the lead to the nearest active sales rep.",
+   "tts": "Apply an instant assignment rule to route the lead to the nearest active sales rep.",
+   "card": "Assignment Rule",
+   "screen": {
+    "app": "crm",
+    "view": "settings",
+    "path": [
+     "Setup",
+     "Automation",
+     "Assignment Rules"
+    ],
+    "heading": "Lead Assignment Rules",
+    "columns": [
+     "Rule Name",
+     "Module",
+     "Status"
+    ],
+    "rows": [
+     [
+      "Instant Facebook Routing",
+      "Leads",
+      "Active"
+     ]
+    ],
+    "fields": [
+     [
+      "Criteria",
+      "Lead Source is Facebook Ads"
+     ]
+    ],
+    "toggles": [
+     [
+      "Active",
+      true
+     ]
+    ],
+    "messages": [],
+    "tool": null,
+    "method": null,
+    "url": null,
+    "headers": null,
+    "body": null,
+    "response": null,
+    "language": null,
+    "nodes": null,
+    "real": "crm/workflow_rules",
+    "click": "Active",
+    "tip": "Distribute leads round-robin to active reps."
+   },
+   "face": false
+  },
+  {
+   "beat": "STEP 4",
+   "say": "Leads move from Facebook to your sales rep's screen before they even close the browser tab.",
+   "tts": "Leads move from Facebook to your sales rep's screen before they even close the browser tab.",
+   "card": "Instant sync wow detail",
+   "screen": {
+    "app": "crm",
+    "view": "list",
+    "path": [
+     "Leads"
+    ],
+    "heading": "All Leads",
+    "columns": [
+     "Lead Name",
+     "Company",
+     "Email",
+     "Phone"
+    ],
+    "rows": [
+     [
+      "Tariq Al Jassim",
+      "Al Noor Trading",
+      "tariq@alnoor.ae",
+      "+971501234567"
+     ]
+    ],
+    "fields": [],
+    "toggles": [],
+    "messages": [],
+    "tool": null,
+    "method": null,
+    "url": null,
+    "headers": null,
+    "body": null,
+    "response": null,
+    "language": null,
+    "nodes": null,
+    "real": "crm/leads_list",
+    "click": "Lead Name",
+    "tip": "Test using Meta's Lead Ads Testing Tool."
+   },
+   "face": false
+  },
+  {
+   "beat": "RESULT",
+   "say": "Cut lead response time from forty-eight hours to forty-eight seconds and double your conversion rates.",
+   "tts": "Cut lead response time from forty-eight hours to forty-eight seconds and double your conversion rates.",
+   "card": "48 hours to 48 seconds",
+   "screen": null,
+   "face": true
+  }
+ ],
+ "clips": [
+  {
+   "text": "Your Facebook leads are sitting stale—push them to Zoho CRM in real time!",
+   "lines": [
+    0
+   ],
+   "beat": "HOOK",
+   "prompt": "The man (my avatar) looks into the camera and talks to the viewer like a confident, friendly business tech explainer, smart and natural, not stiff; he leans one hand on a table or railing next to him, then straightens up and talks with a confident open gesture. Vertical 9:16 medium-wide shot from the knees up, camera about two metres away, his head in the upper third with space above it, both hands and all his gestures fully visible in the frame, static camera, sharp and well lit, wearing a navy blazer over a crisp white shirt with no tie, in a glass-walled high-rise office with a city skyline at golden hour behind him. His face, skin tone, hairstyle, beard, height and body build stay exactly as in my avatar's reference photos - the same natural average build, never slimmer and never heavier. He says, in clear natural English with a clear, neutral international accent, at a brisk, lively pace: \"Your Facebook leads are sitting stale—push them to Zoho CRM in real time!\" His lips match every word. He starts speaking in the very first frame, with no pause before the first word, and stops right after the last word. Audio: only his voice - no music, no sound effects. No subtitles, no captions, no text on screen."
+  },
+  {
+   "text": "Facebook lead ad leads sit in Meta dashboards and get called two days too late by sales.",
+   "lines": [
+    1
+   ],
+   "beat": "PROBLEM",
+   "prompt": "The man (my avatar) looks into the camera and talks to the viewer like a confident, friendly business tech explainer, smart and natural, not stiff; he shrugs with both shoulders and tilts his head, as if he has seen this problem a hundred times. Vertical 9:16 medium-wide shot from the knees up, camera about two metres away, his head in the upper third with space above it, both hands and all his gestures fully visible in the frame, static camera, sharp and well lit, wearing a navy blazer over a crisp white shirt with no tie, in a glass-walled high-rise office with a city skyline at golden hour behind him. His face, skin tone, hairstyle, beard, height and body build stay exactly as in my avatar's reference photos - the same natural average build, never slimmer and never heavier. He says, in clear natural English with a clear, neutral international accent, at a brisk, lively pace: \"Facebook lead ad leads sit in Meta dashboards and get called two days too late by sales.\" His lips match every word. He starts speaking in the very first frame, with no pause before the first word, and stops right after the last word. Audio: only his voice - no music, no sound effects. No subtitles, no captions, no text on screen."
+  },
+  {
+   "text": "Cut lead response time from forty-eight hours to forty-eight seconds and double your conversion rates.",
+   "lines": [
+    7
+   ],
+   "beat": "RESULT",
+   "prompt": "The man (my avatar) looks into the camera and talks to the viewer like a confident, friendly business tech explainer, smart and natural, not stiff; he puts one hand in his pocket, smiles and gestures toward the camera with the other hand. Vertical 9:16 medium-wide shot from the knees up, camera about two metres away, his head in the upper third with space above it, both hands and all his gestures fully visible in the frame, static camera, sharp and well lit, wearing a navy blazer over a crisp white shirt with no tie, in a glass-walled high-rise office with a city skyline at golden hour behind him. His face, skin tone, hairstyle, beard, height and body build stay exactly as in my avatar's reference photos - the same natural average build, never slimmer and never heavier. He says, in clear natural English with a clear, neutral international accent, at a brisk, lively pace: \"Cut lead response time from forty-eight hours to forty-eight seconds and double your conversion rates.\" His lips match every word. He starts speaking in the very first frame, with no pause before the first word, and stops right after the last word. Audio: only his voice - no music, no sound effects. No subtitles, no captions, no text on screen."
+  }
+ ],
+ "look": "wearing a navy blazer over a crisp white shirt with no tie, in a glass-walled high-rise office with a city skyline at golden hour behind him",
+ "issue": 28
+}

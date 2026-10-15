@@ -1,5 +1,5 @@
 {
- "next_id": 21,
+ "next_id": 25,
  "covered_links": [
   "https://www.reddit.com/r/Zoho/comments/1wzd94y/sales_order_or_invoice/",
   "https://www.reddit.com/r/Zoho/comments/1wwjbbr/accounting_of_travel_agent/",
@@ -12,7 +12,11 @@
   "https://www.reddit.com/r/Zoho/comments/1wzkkp4/marketing_automation_mcp/",
   "bank:every inbound email has to be read and sorted by hand before",
   "bank:sales managers export crm data to excel just to answer one q",
-  "bank:nobody updates crm after calls deals have no next step"
+  "bank:nobody updates crm after calls deals have no next step",
+  "bank:uae einvoicing large businesses must appoint an asp by 30 oc",
+  "bank:building a new custom module fields and layout in zoho crm t",
+  "bank:facebook leadad leads sit in meta and get called two days la",
+  "bank:integration suddenly fails with toomanyrequests"
  ],
  "problems": [
   "Zoho Books me online paid sales orders direct closed invoice me convert nahi hote.",
@@ -34,7 +38,11 @@
   "Customizing the UI for different user roles is too cluttered.",
   "Every inbound email has to be read and sorted by hand before anyone acts on it.",
   "Sales managers export CRM deals to Excel and waste hours pivot-table filtering just to find stalled deals.",
-  "Sales reps never update CRM after client calls, leaving deals with zero next steps"
+  "Sales reps never update CRM after client calls, leaving deals with zero next steps",
+  "UAE e-invoicing deadline is looming for large businesses - manual compliance setup is risky",
+  "Building a new custom CRM module, fields, and layout manually takes an entire afternoon",
+  "Facebook lead-ad leads sit in Meta dashboards and get called two days too late by sales",
+  "Integrations suddenly crash and burn with a TOO_MANY_REQUESTS error code"
  ],
  "scripts": {
   "S0001": {
@@ -200,6 +208,38 @@
    "created": "2026-10-15T09:26:19",
    "video_id": "xUeJN562JqM",
    "publish_at": "2026-10-16T07:30:00+05:30"
+  },
+  "S0021": {
+   "problem": "UAE e-invoicing deadline is looming for large businesses - manual compliance setup is risky",
+   "title": "UAE E-Invoicing in Zoho Books: Setup Guide #Shorts",
+   "pillar": "trending",
+   "engine": "flow",
+   "job": "20261015-1746-1",
+   "created": "2026-10-15T17:50:10"
+  },
+  "S0022": {
+   "problem": "Building a new custom CRM module, fields, and layout manually takes an entire afternoon",
+   "title": "Stop wasting afternoons clicking in CRM—let Claude build modules! #Shorts",
+   "pillar": "ai_agent",
+   "engine": "flow",
+   "job": "20261015-1750-2",
+   "created": "2026-10-15T17:51:31"
+  },
+  "S0023": {
+   "problem": "Facebook lead-ad leads sit in Meta dashboards and get called two days too late by sales",
+   "title": "Stop losing Facebook leads! Connect Zoho Social to Zoho CRM #Shorts",
+   "pillar": "lead_flow",
+   "engine": "flow",
+   "job": "20261015-1751-3",
+   "created": "2026-10-15T17:53:00"
+  },
+  "S0024": {
+   "problem": "Integrations suddenly crash and burn with a TOO_MANY_REQUESTS error code",
+   "title": "Fix Crashing Zoho API Too Many Requests Error Instantly #Shorts",
+   "pillar": "dev_api",
+   "engine": "flow",
+   "job": "20261015-1753-4",
+   "created": "2026-10-15T17:54:31"
   }
  },
  "slots": [
@@ -286,7 +326,7 @@
  "last_photo": "1_jacket.jpg",
  "photo_scenes": [],
  "photo_agent_error": "RuntimeError: image model unavailable: 404 NOT_FOUND. {'error': {'code': 404, 'm",
- "look_index": 15,
- "status_issue": 25,
- "status_line": "PIPELINE ideas=27 clips=0 editing=0 qa_failed=1 scheduled=1 published=10 total=11 today=2 next=2026-10-16T07:30"
+ "look_index": 19,
+ "status_issue": 30,
+ "status_line": "PIPELINE ideas=27 clips=4 editing=0 qa_failed=1 scheduled=1 published=10 total=11 today=2 next=2026-10-16T07:30"
 }
