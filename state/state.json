@@ -267,7 +267,9 @@
    "pillar": "trending",
    "engine": "flow",
    "job": "20261015-2112-1",
-   "created": "2026-10-15T21:14:19"
+   "created": "2026-10-15T21:14:19",
+   "video_id": "dDtFCu5M05U",
+   "publish_at": "2026-10-19T21:30:00+05:30"
   },
   "S0026": {
    "problem": "Repetitive lead qualification eats SDR time before they even know if a lead is worth calling.",
@@ -414,6 +416,13 @@
    "minute": 450,
    "video_id": "9Xk0DZF2Lug",
    "title": "Fix Crashing Zoho API Too Many Requests Error Instantly #Shorts"
+  },
+  {
+   "date": "2026-10-19",
+   "window": "21:30",
+   "minute": 1290,
+   "video_id": "dDtFCu5M05U",
+   "title": "Run Gemini or Claude Inside Zoho Flow Instantly #Shorts"
   }
  ],
  "failures": {},
@@ -422,6 +431,6 @@
  "photo_scenes": [],
  "photo_agent_error": "RuntimeError: image model unavailable: 404 NOT_FOUND. {'error': {'code': 404, 'm",
  "look_index": 24,
- "status_issue": 40,
- "status_line": "PIPELINE ideas=27 clips=5 editing=0 qa_failed=0 scheduled=6 published=10 total=16 today=2 next=2026-10-16T07:30"
+ "status_issue": 41,
+ "status_line": "PIPELINE ideas=27 clips=4 editing=0 qa_failed=0 scheduled=7 published=10 total=17 today=2 next=2026-10-16T07:30"
 }
