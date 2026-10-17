@@ -1,5 +1,5 @@
 {
- "next_id": 32,
+ "next_id": 33,
  "covered_links": [
   "https://www.reddit.com/r/Zoho/comments/1wzd94y/sales_order_or_invoice/",
   "https://www.reddit.com/r/Zoho/comments/1wwjbbr/accounting_of_travel_agent/",
@@ -23,7 +23,8 @@
   "bank:saudi zatca einvoicing waves keep adding businesses",
   "bank:users need a screen inside crm that zoho doesnt have eg a li",
   "https://news.google.com/rss/articles/CBMipgFBVV95cUxNREZFckxFcjdzbzJIZHdUVUZTTWRPTnhJQnVFNTk5Z1BaUlNObVg4eVZid2w3bTZORTN6dWhBM2h6bEEyOUdvNnU3VG50S1VWbnEtLVpEOEFtdXZ6UkVTUVlIYUN4Q2E3WUQ3UXp2ejdfS2VxY3JlMGViMFdpN2hwQUZEY1hQX2NTeW0tVGhxa09GUnNmdjlTbzJPT0hBSjh4TTZMSG13?oc=5",
-  "bank:field team sends photos of handwritten orders someone types "
+  "bank:field team sends photos of handwritten orders someone types ",
+  "https://news.google.com/rss/articles/CBMimAJBVV95cUxOdjNsbExGLURvdGNDazZaZ0ZjYWhOSDQtY2VEM3EwMVlRQ0FOblRxdzU1REp2UjQwRkxKcElpM2NqZ0FQM2pmTTIzanFaRkR5R0cyTS13Tzc1ZXJUV0xzNmd5RVZpZU9UNldmbUdNNUhNQnVvclpaMW5MYUE0V0RJc0F2dm55aXJkcFotc19oeUxWUWNfMlhrWm1JYk9sSE1SX2I4ODlZTXR1ZHJiMTJJbkZwY2RaRk14eHhrV2tZTWoyUTMzbFRKNk1vUHVIaXlLMGlUYjFmd0NVeVBQSGV0ZEluM0tubENSaDVoZDE3TGk4UUtDUThpV0xwSC1oQUxhdzhtd2FnaElFQmFhOGU0b1otcEhkMF9j?oc=5"
  ],
  "problems": [
   "Zoho Books me online paid sales orders direct closed invoice me convert nahi hote.",
@@ -56,7 +57,8 @@
   "Saudi ZATCA e-invoicing compliance waves keep adding businesses, and manual setup is risky.",
   "Users need a custom screen inside CRM that Zoho doesn't natively provide, like a live calculator or map.",
   "Sales managers export CRM data to Excel and waste hours pivot-table filtering just to find stalled deals.",
-  "Field team sends photos of handwritten orders; someone types them into Creator by hand."
+  "Field team sends photos of handwritten orders; someone types them into Creator by hand.",
+  "Sales managers export CRM deals to Excel and waste hours pivot-table filtering just to find stalled deals."
  ],
  "scripts": {
   "S0001": {
@@ -330,6 +332,14 @@
    "engine": "flow",
    "job": "20261015-2229-3",
    "created": "2026-10-15T22:31:43"
+  },
+  "S0032": {
+   "problem": "Sales managers export CRM deals to Excel and waste hours pivot-table filtering just to find stalled deals.",
+   "title": "Query Zoho CRM in Claude Using MCP (No More Excel Exports) #Shorts",
+   "pillar": "ai_agent",
+   "engine": "flow",
+   "job": "20261017-0845-1",
+   "created": "2026-10-17T08:47:25"
   }
  },
  "slots": [
@@ -486,7 +496,7 @@
  "last_photo": "1_jacket.jpg",
  "photo_scenes": [],
  "photo_agent_error": "RuntimeError: image model unavailable: 404 NOT_FOUND. {'error': {'code': 404, 'm",
- "look_index": 26,
- "status_issue": 52,
- "status_line": "PIPELINE ideas=27 clips=1 editing=0 qa_failed=1 scheduled=8 published=13 total=21 today=1 next=2026-10-18T07:30"
+ "look_index": 27,
+ "status_issue": 54,
+ "status_line": "PIPELINE ideas=27 clips=2 editing=0 qa_failed=1 scheduled=8 published=13 total=21 today=1 next=2026-10-18T07:30"
 }
