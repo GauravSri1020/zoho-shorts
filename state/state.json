@@ -487,6 +487,6 @@
  "photo_scenes": [],
  "photo_agent_error": "RuntimeError: image model unavailable: 404 NOT_FOUND. {'error': {'code': 404, 'm",
  "look_index": 26,
- "status_issue": 51,
- "status_line": "PIPELINE ideas=27 clips=1 editing=0 qa_failed=1 scheduled=9 published=12 total=21 today=1 next=2026-10-17T07:30"
+ "status_issue": 52,
+ "status_line": "PIPELINE ideas=27 clips=1 editing=0 qa_failed=1 scheduled=8 published=13 total=21 today=1 next=2026-10-18T07:30"
 }
