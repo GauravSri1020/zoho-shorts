@@ -325,7 +325,9 @@
    "pillar": "trending",
    "engine": "flow",
    "job": "20261015-2228-2",
-   "created": "2026-10-15T22:29:53"
+   "created": "2026-10-15T22:29:53",
+   "video_id": "zQZbqqgF6IM",
+   "publish_at": "2026-10-25T07:30:00+05:30"
   },
   "S0031": {
    "problem": "Field team sends photos of handwritten orders; someone types them into Creator by hand.",
@@ -333,7 +335,9 @@
    "pillar": "ai_agent",
    "engine": "flow",
    "job": "20261015-2229-3",
-   "created": "2026-10-15T22:31:43"
+   "created": "2026-10-15T22:31:43",
+   "video_id": "8Dqrvvh7n2I",
+   "publish_at": "2026-10-25T21:30:00+05:30"
   },
   "S0032": {
    "problem": "Sales managers export CRM deals to Excel and waste hours pivot-table filtering just to find stalled deals.",
@@ -508,6 +512,20 @@
    "minute": 1290,
    "video_id": "KkEUyae9-RI",
    "title": "Query Zoho CRM in Claude Using MCP (No More Excel Exports) #Shorts"
+  },
+  {
+   "date": "2026-10-25",
+   "window": "07:30",
+   "minute": 450,
+   "video_id": "zQZbqqgF6IM",
+   "title": "Stop Exporting CRM Data: Query Deals Live with Claude #Shorts"
+  },
+  {
+   "date": "2026-10-25",
+   "window": "21:30",
+   "minute": 1290,
+   "video_id": "8Dqrvvh7n2I",
+   "title": "Automate Handwritten Zoho Creator Orders with AI Vision #Shorts"
   }
  ],
  "failures": {},
@@ -516,6 +534,6 @@
  "photo_scenes": [],
  "photo_agent_error": "RuntimeError: image model unavailable: 404 NOT_FOUND. {'error': {'code': 404, 'm",
  "look_index": 28,
- "status_issue": 68,
- "status_line": "PIPELINE ideas=27 clips=2 editing=0 qa_failed=1 scheduled=1 published=21 total=22 today=1 next=2026-10-24T21:30"
+ "status_issue": 69,
+ "status_line": "PIPELINE ideas=27 clips=1 editing=0 qa_failed=0 scheduled=3 published=21 total=24 today=1 next=2026-10-24T21:30"
 }
