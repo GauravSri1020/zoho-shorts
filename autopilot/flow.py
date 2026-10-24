@@ -589,7 +589,13 @@ def finish():
                                                         ensure_ascii=False, indent=1), encoding="utf-8")
             run_link = (f"https://github.com/{REPO}/actions/runs/{os.getenv('GITHUB_RUN_ID')}"
                         if os.getenv("GITHUB_RUN_ID") else "")
-            if not report["approved"]:
+            # Gaurav watched this exact Short and said "upload it" -> job.json "owner_approved": true.
+            # Only that one job skips the QA block; every other Short stays as strict as before.
+            owner_ok = bool(job.get("owner_approved")) and not report["approved"]
+            if owner_ok:
+                print(f"[qa] {job['id']}: QA said no ({report['overall']}/{report['min_score']}), "
+                      f"but Gaurav approved it by hand (owner_approved) - uploading")
+            if not report["approved"] and not owner_ok:
                 issues = "\n".join(f"- {x}" for x in map(str, report["issues"][:6]))
                 _comment(job, f"⚠️ QA failed ({report['overall']}/{report['min_score']}):\n{issues}\n\n"
                               f"Video to check: {run_link} (Artifacts). Upload retakes of the bad clips here: "

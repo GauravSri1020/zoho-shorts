@@ -6,6 +6,15 @@ Is file ko har session ke end pe update karo, taaki agla chat yahin se shuru kar
 
 Gaurav jab bhi kuch bhi change karne bole: SABSE PEHLE backup - `backup-YYYY-MM-DD-<kya-badal-rahe-ho>` branch main se banao (aur agar video ka kaam hai to latest Short ka artifact download karo). Tabhi code chhuo. Kuch bigde to us branch se purana code wapas lo.
 
+## 24 Oct 2026 - YouTube token + #53 owner-approved
+
+Backup: branch `backup-2026-10-24-before-owner-approve-override` (change se pehle ka main).
+
+- YT_REFRESH_TOKEN expire / revoke ho gaya tha (runs #119, #120: `invalid_grant`). Gaurav ne OAuth Playground se naya token banake secret update kiya (Google Cloud project `gsx-shorts-511217`, "Web client 1", app already "In production"). Test: run #123 (comments) bina error.
+- #53 (20261017-0845-1): clips Flow se bane (2 gauravsri069 pe, 1 srig9056 pe), run #121 -> QA 58/70 (voice change 0:12-0:41, screen part). Gaurav ne video dekh ke bola upload karo.
+- Naya: job.json mein `"owner_approved": true` -> sirf us job pe QA block skip (flow.finish). Baaki sab Shorts pe QA utna hi strict. Ye flag tabhi lagao jab Gaurav ne khud video dekh ke haan bola ho.
+- Open: #47 (20261015-2229-3) clips nahi bane; #46 (20261015-2228-2) qa_failed, retakes chahiye; #66 (20261024-0903-1) clips ka wait. Screen-part voice change ka asli wajah (tts.py) abhi check nahi kiya.
+
 ## 14 Oct 2026 - Flow account switch + presenter variety
 
 Backup: branch `backup-2026-10-14-before-presenter-variety` (change se pehle ka main).
