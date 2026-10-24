@@ -6,6 +6,15 @@ Is file ko har session ke end pe update karo, taaki agla chat yahin se shuru kar
 
 Gaurav jab bhi kuch bhi change karne bole: SABSE PEHLE backup - `backup-YYYY-MM-DD-<kya-badal-rahe-ho>` branch main se banao (aur agar video ka kaam hai to latest Short ka artifact download karo). Tabhi code chhuo. Kuch bigde to us branch se purana code wapas lo.
 
+## 24 Oct 2026 (shaam) - #47 + #46 scheduled, clips seedha git push se
+
+Backup: branch `backup-2026-10-24-before-47-clips`.
+
+- Gaurav ne 6 downloaded clips chat mein diye = 3 unique (baaki byte-same duplicates), teeno #47 (20261015-2229-3). Claude ne seedha `git push` se jobs/20261015-2229-3/clips/ mein daale (koi manual upload nahi) -> run #125.
+- Run #125: #47 scheduled 25 Oct 09:30 PM IST (8Dqrvvh7n2I), #46 scheduled 25 Oct 07:30 AM IST (zQZbqqgF6IM) - #46 pe clips nahi badle, sirf re-assemble se QA pass (screen part backup voice 'edge', Gemini quota khatam). #53 scheduled 24 Oct 09:30 PM IST (KkEUyae9-RI).
+- Flow: Golu Sri = srig9056 = Flow URL `/u/1/` (bina /u/1 kholo to main account khulta hai - Gaurav ko ye pasand nahi, hamesha /u/1). Golu Sri pe ~55 credits, avatar "Me". Ek extra #47 Clip 1 galti se generate hua (20 credits).
+- Open: #66 (20261024-0903-1) ke 3 clips nahi bane (60 credits chahiye). Screen-part voice change ka asli wajah (tts.py) abhi bhi check nahi kiya.
+
 ## 24 Oct 2026 - YouTube token + #53 owner-approved
 
 Backup: branch `backup-2026-10-24-before-owner-approve-override` (change se pehle ka main).
