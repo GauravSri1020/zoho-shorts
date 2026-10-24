@@ -1,5 +1,5 @@
 {
- "next_id": 33,
+ "next_id": 34,
  "covered_links": [
   "https://www.reddit.com/r/Zoho/comments/1wzd94y/sales_order_or_invoice/",
   "https://www.reddit.com/r/Zoho/comments/1wwjbbr/accounting_of_travel_agent/",
@@ -24,7 +24,8 @@
   "bank:users need a screen inside crm that zoho doesnt have eg a li",
   "https://news.google.com/rss/articles/CBMipgFBVV95cUxNREZFckxFcjdzbzJIZHdUVUZTTWRPTnhJQnVFNTk5Z1BaUlNObVg4eVZid2w3bTZORTN6dWhBM2h6bEEyOUdvNnU3VG50S1VWbnEtLVpEOEFtdXZ6UkVTUVlIYUN4Q2E3WUQ3UXp2ejdfS2VxY3JlMGViMFdpN2hwQUZEY1hQX2NTeW0tVGhxa09GUnNmdjlTbzJPT0hBSjh4TTZMSG13?oc=5",
   "bank:field team sends photos of handwritten orders someone types ",
-  "https://news.google.com/rss/articles/CBMimAJBVV95cUxOdjNsbExGLURvdGNDazZaZ0ZjYWhOSDQtY2VEM3EwMVlRQ0FOblRxdzU1REp2UjQwRkxKcElpM2NqZ0FQM2pmTTIzanFaRkR5R0cyTS13Tzc1ZXJUV0xzNmd5RVZpZU9UNldmbUdNNUhNQnVvclpaMW5MYUE0V0RJc0F2dm55aXJkcFotc19oeUxWUWNfMlhrWm1JYk9sSE1SX2I4ODlZTXR1ZHJiMTJJbkZwY2RaRk14eHhrV2tZTWoyUTMzbFRKNk1vUHVIaXlLMGlUYjFmd0NVeVBQSGV0ZEluM0tubENSaDVoZDE3TGk4UUtDUThpV0xwSC1oQUxhdzhtd2FnaElFQmFhOGU0b1otcEhkMF9j?oc=5"
+  "https://news.google.com/rss/articles/CBMimAJBVV95cUxOdjNsbExGLURvdGNDazZaZ0ZjYWhOSDQtY2VEM3EwMVlRQ0FOblRxdzU1REp2UjQwRkxKcElpM2NqZ0FQM2pmTTIzanFaRkR5R0cyTS13Tzc1ZXJUV0xzNmd5RVZpZU9UNldmbUdNNUhNQnVvclpaMW5MYUE0V0RJc0F2dm55aXJkcFotc19oeUxWUWNfMlhrWm1JYk9sSE1SX2I4ODlZTXR1ZHJiMTJJbkZwY2RaRk14eHhrV2tZTWoyUTMzbFRKNk1vUHVIaXlLMGlUYjFmd0NVeVBQSGV0ZEluM0tubENSaDVoZDE3TGk4UUtDUThpV0xwSC1oQUxhdzhtd2FnaElFQmFhOGU0b1otcEhkMF9j?oc=5",
+  "bank:support agents write the same answer 50 times a day"
  ],
  "problems": [
   "Zoho Books me online paid sales orders direct closed invoice me convert nahi hote.",
@@ -58,7 +59,8 @@
   "Users need a custom screen inside CRM that Zoho doesn't natively provide, like a live calculator or map.",
   "Sales managers export CRM data to Excel and waste hours pivot-table filtering just to find stalled deals.",
   "Field team sends photos of handwritten orders; someone types them into Creator by hand.",
-  "Sales managers export CRM deals to Excel and waste hours pivot-table filtering just to find stalled deals."
+  "Sales managers export CRM deals to Excel and waste hours pivot-table filtering just to find stalled deals.",
+  "Customer support agents spend half their day retyping the exact same answers to repetitive support tickets."
  ],
  "scripts": {
   "S0001": {
@@ -340,6 +342,14 @@
    "engine": "flow",
    "job": "20261017-0845-1",
    "created": "2026-10-17T08:47:25"
+  },
+  "S0033": {
+   "problem": "Customer support agents spend half their day retyping the exact same answers to repetitive support tickets.",
+   "title": "Automate Support Replies with Zoho Desk and Claude #Shorts",
+   "pillar": "ai_agent",
+   "engine": "flow",
+   "job": "20261024-0903-1",
+   "created": "2026-10-24T09:10:10"
   }
  },
  "slots": [
@@ -496,7 +506,7 @@
  "last_photo": "1_jacket.jpg",
  "photo_scenes": [],
  "photo_agent_error": "RuntimeError: image model unavailable: 404 NOT_FOUND. {'error': {'code': 404, 'm",
- "look_index": 27,
- "status_issue": 65,
- "status_line": "PIPELINE ideas=27 clips=1 editing=0 qa_failed=2 scheduled=0 published=21 total=21 today=0 next=-"
+ "look_index": 28,
+ "status_issue": 67,
+ "status_line": "PIPELINE ideas=27 clips=2 editing=0 qa_failed=2 scheduled=0 published=21 total=21 today=0 next=-"
 }
