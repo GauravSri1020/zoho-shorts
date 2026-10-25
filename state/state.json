@@ -1,5 +1,5 @@
 {
- "next_id": 34,
+ "next_id": 35,
  "covered_links": [
   "https://www.reddit.com/r/Zoho/comments/1wzd94y/sales_order_or_invoice/",
   "https://www.reddit.com/r/Zoho/comments/1wwjbbr/accounting_of_travel_agent/",
@@ -25,7 +25,8 @@
   "https://news.google.com/rss/articles/CBMipgFBVV95cUxNREZFckxFcjdzbzJIZHdUVUZTTWRPTnhJQnVFNTk5Z1BaUlNObVg4eVZid2w3bTZORTN6dWhBM2h6bEEyOUdvNnU3VG50S1VWbnEtLVpEOEFtdXZ6UkVTUVlIYUN4Q2E3WUQ3UXp2ejdfS2VxY3JlMGViMFdpN2hwQUZEY1hQX2NTeW0tVGhxa09GUnNmdjlTbzJPT0hBSjh4TTZMSG13?oc=5",
   "bank:field team sends photos of handwritten orders someone types ",
   "https://news.google.com/rss/articles/CBMimAJBVV95cUxOdjNsbExGLURvdGNDazZaZ0ZjYWhOSDQtY2VEM3EwMVlRQ0FOblRxdzU1REp2UjQwRkxKcElpM2NqZ0FQM2pmTTIzanFaRkR5R0cyTS13Tzc1ZXJUV0xzNmd5RVZpZU9UNldmbUdNNUhNQnVvclpaMW5MYUE0V0RJc0F2dm55aXJkcFotc19oeUxWUWNfMlhrWm1JYk9sSE1SX2I4ODlZTXR1ZHJiMTJJbkZwY2RaRk14eHhrV2tZTWoyUTMzbFRKNk1vUHVIaXlLMGlUYjFmd0NVeVBQSGV0ZEluM0tubENSaDVoZDE3TGk4UUtDUThpV0xwSC1oQUxhdzhtd2FnaElFQmFhOGU0b1otcEhkMF9j?oc=5",
-  "bank:support agents write the same answer 50 times a day"
+  "bank:support agents write the same answer 50 times a day",
+  "https://news.google.com/rss/articles/CBMisAFBVV95cUxQWnJSQXpyY3U1c0RaeW04Qkk3aVJhWmVIVklNellwWURpQVphXzJCaFhZTHkyNnNhQ0JGMGM4bDBMM0NlTHFtcU9nVHVRNVJvR251NmM4cVAwLXlrT2Q0cU5LTHdKTDJXckpkREswU1ZfdFhVYmV2Q01nSGJ2R0QwcHRGbDZqaFR2YnZmd0E3OGZGSlJ6TXYxejAzLThnWXRDeXgxMEdfdnNFZ3d6ZlJIZg?oc=5"
  ],
  "problems": [
   "Zoho Books me online paid sales orders direct closed invoice me convert nahi hote.",
@@ -60,7 +61,8 @@
   "Sales managers export CRM data to Excel and waste hours pivot-table filtering just to find stalled deals.",
   "Field team sends photos of handwritten orders; someone types them into Creator by hand.",
   "Sales managers export CRM deals to Excel and waste hours pivot-table filtering just to find stalled deals.",
-  "Customer support agents spend half their day retyping the exact same answers to repetitive support tickets."
+  "Customer support agents spend half their day retyping the exact same answers to repetitive support tickets.",
+  "Sales leaders want Claude to run CRM operations without writing custom REST API scripts"
  ],
  "scripts": {
   "S0001": {
@@ -356,6 +358,14 @@
    "engine": "flow",
    "job": "20261024-0903-1",
    "created": "2026-10-24T09:10:10"
+  },
+  "S0034": {
+   "problem": "Sales leaders want Claude to run CRM operations without writing custom REST API scripts",
+   "title": "Control Zoho CRM with Claude AI via MCP #Shorts",
+   "pillar": "trending",
+   "engine": "flow",
+   "job": "20261025-0920-1",
+   "created": "2026-10-25T09:40:13"
   }
  },
  "slots": [
@@ -533,7 +543,7 @@
  "last_photo": "1_jacket.jpg",
  "photo_scenes": [],
  "photo_agent_error": "RuntimeError: image model unavailable: 404 NOT_FOUND. {'error': {'code': 404, 'm",
- "look_index": 28,
- "status_issue": 72,
- "status_line": "PIPELINE ideas=27 clips=1 editing=0 qa_failed=0 scheduled=1 published=23 total=24 today=2 next=2026-10-25T21:30"
+ "look_index": 29,
+ "status_issue": 74,
+ "status_line": "PIPELINE ideas=27 clips=2 editing=0 qa_failed=0 scheduled=1 published=23 total=24 today=2 next=2026-10-25T21:30"
 }

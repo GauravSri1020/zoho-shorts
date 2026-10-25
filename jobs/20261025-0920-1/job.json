@@ -1,0 +1,300 @@
+{
+ "id": "20261025-0920-1",
+ "status": "waiting_for_clips",
+ "upload": true,
+ "created": "2026-10-25T09:40:13",
+ "title": "Control Zoho CRM with Claude AI via MCP #Shorts",
+ "description": "Connect Claude Desktop directly to Zoho CRM using an executable FastMCP Python server script and Zoho CRM REST API v3. Execute conversational deal queries and automate record updates without manual dashboard work.\n\n1. Add the Zoho CRM MCP server config into your claude_desktop_config.json file\n2. Authenticate with Zoho OAuth 2.0 scopes for CRM record access\n3. Ask Claude in plain English: 'Find all unassigned deals over $50k and draft follow-up tasks'\n\nAPI / tool used:\n- name: Zoho CRM REST API v3 via FastMCP\n- endpoint: https://www.zohoapis.com/crm/v3\n- scope: ZohoCRM.modules.ALL, ZohoCRM.settings.ALL\n- docs: https://www.zoho.com/crm/developer/docs/api/v3/\n\nCode (python) - Save locally as zoho_crm_mcp.py and register in Claude Desktop via claude_desktop_config.json:\nfrom mcp.server.fastmcp import FastMCP\nimport os\nimport requests\n\nmcp = FastMCP(\"zoho-crm\")\n\nCLIENT_ID = os.environ.get(\"ZOHO_CLIENT_ID\", \"\")\nCLIENT_SECRET = os.environ.get(\"ZOHO_CLIENT_SECRET\", \"\")\nREFRESH_TOKEN = os.environ.get(\"ZOHO_REFRESH_TOKEN\", \"\")\n\ndef get_access_token() -› str:\n    url = \"https://accounts.zoho.com/oauth/v2/token\"\n    params = {\n        \"refresh_token\": REFRESH_TOKEN,\n        \"client_id\": CLIENT_ID,\n        \"client_secret\": CLIENT_SECRET,\n        \"grant_type\": \"refresh_token\"\n    }\n    response = requests.post(url, params=params)\n    return response.json().get(\"access_token\", \"\")\n\n@mcp.tool()\ndef get_deals() -› list:\n    \"\"\"Query Deals module from Zoho CRM.\"\"\"\n    token = get_access_token()\n    headers = {\"Authorization\": f\"Zoho-oauthtoken {token}\"}\n    res = requests.get(\"https://www.zohoapis.com/crm/v3/Deals\", headers=headers)\n    return res.json().get(\"data\", [])\n\n@mcp.tool()\ndef create_task(subject: str, deal_id: str) -› dict:\n    \"\"\"Create follow-up task for a deal in Zoho CRM.\"\"\"\n    token = get_access_token()\n    headers = {\"Authorization\": f\"Zoho-oauthtoken {token}\", \"Content-Type\": \"application/json\"}\n    payload = {\"data\": [{\"Subject\": subject, \"$se_module\": \"Deals\", \"What_Id\": deal_id}]}\n    res = requests.post(\"https://www.zohoapis.com/crm/v3/Tasks\", headers=headers, json=payload)\n    return res.json()\n\nif __name__ == \"__main__\":\n    mcp.run(transport=\"stdio\")\n\nAI + Zoho automations every day - follow @GSXAutomation\n\nWhat inspired this: https://news.google.com/rss/articles/CBMisAFBVV95cUxQWnJSQXpyY3U1c0RaeW04Qkk3aVJhWmVIVklNellwWURpQVphXzJCaFhZTHkyNnNhQ0JGMGM4bDBMM0NlTHFtcU9nVHVRNVJvR251NmM4cVAwLXlrT2Q0cU5LTHdKTDJXckpkREswU1ZfdFhVYmV2Q01nSGJ2R0QwcHRGbDZqaFR2YnZmd0E3OGZGSlJ6TXYxejAzLThnWXRDeXgxMEdfdnNFZ3d6ZlJIZg?oc=5\n\nThis video uses an AI-generated presenter and voice.\nIndependent channel. Not affiliated with or endorsed by Zoho Corporation. Zoho is a trademark of Zoho Corporation.\n\n#Shorts #Zoho #AIAutomation #ZohoCRM #AIAgents",
+ "angle": {
+  "story_index": 2,
+  "pillar": "trending",
+  "region": "global",
+  "product": "Zoho CRM + Claude",
+  "app": "claude",
+  "problem": "Sales leaders want Claude to run CRM operations without writing custom REST API scripts",
+  "fix_type": "mcp",
+  "solution": "Connect Claude Desktop directly to Zoho CRM using the Model Context Protocol server",
+  "steps": [
+   "Add the Zoho CRM MCP server config into your claude_desktop_config.json file",
+   "Authenticate with Zoho OAuth 2.0 scopes for CRM record access",
+   "Ask Claude in plain English: 'Find all unassigned deals over $50k and draft follow-up tasks'"
+  ],
+  "api": "npx @zoho/mcp-server-crm (Zoho CRM MCP Server over OAuth 2.0)",
+  "result": "Executes complex multi-step CRM actions via conversational AI in seconds",
+  "wow": "Claude reads and updates live Zoho CRM records directly without opening a browser",
+  "hook": "Anthropic launched Claude Duet—here is how it controls your Zoho CRM!"
+ },
+ "story": {
+  "title": "Anthropic Launches Claude Duet to Automate Business Workflows With AI Agents - Konsulteer",
+  "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxQWnJSQXpyY3U1c0RaeW04Qkk3aVJhWmVIVklNellwWURpQVphXzJCaFhZTHkyNnNhQ0JGMGM4bDBMM0NlTHFtcU9nVHVRNVJvR251NmM4cVAwLXlrT2Q0cU5LTHdKTDJXckpkREswU1ZfdFhVYmV2Q01nSGJ2R0QwcHRGbDZqaFR2YnZmd0E3OGZGSlJ6TXYxejAzLThnWXRDeXgxMEdfdnNFZ3d6ZlJIZg?oc=5",
+  "summary": "Anthropic Launches Claude Duet to Automate Business Workflows With AI Agents Konsulteer",
+  "source": "\"Claude OR ChatGPT OR OpenAI OR Gemini launch business when:3d\" - Google News",
+  "ts": 1792679027,
+  "trend": 20
+ },
+ "script": {
+  "title": "Control Zoho CRM with Claude AI via MCP",
+  "hook_text": "Claude Now Runs Zoho CRM",
+  "app_label": "Zoho CRM + Claude",
+  "lines": [
+   {
+    "beat": "HOOK",
+    "say": "Tired of writing custom API scripts just to automate Zoho CRM?",
+    "tts": "Tired of writing custom API scripts just to automate Zoho CRM?",
+    "card": "No More Custom CRM Scripts",
+    "screen": null
+   },
+   {
+    "beat": "PROBLEM",
+    "say": "Sales teams waste hours manual-logging activities when conversational AI could handle pipeline tasks.",
+    "tts": "Sales teams waste hours manual-logging activities when conversational AI could handle pipeline tasks.",
+    "card": "Manual CRM Work Slows Teams",
+    "screen": null
+   },
+   {
+    "beat": "FIX",
+    "say": "You can connect Claude Desktop directly to Zoho CRM using Model Context Protocol.",
+    "tts": "You can connect Claude Desktop directly to Zoho CRM using Model Context Protocol.",
+    "card": "Claude Desktop + Model Context Protocol",
+    "screen": {
+     "app": "claude",
+     "view": "settings",
+     "click": "Developer",
+     "tip": "Open Developer tab in Claude Desktop settings"
+    }
+   },
+   {
+    "beat": "STEP 1",
+    "say": "In Zoho API Console, create a Server-based Application to get your client ID and secret.",
+    "tts": "In Zoho API Console, create a Server-based Application to get your client ID and secret.",
+    "card": "Zoho API Console > Add Client",
+    "screen": {
+     "app": "browser",
+     "view": "api-console.zoho.com",
+     "click": "Server-based Applications",
+     "tip": "Generate OAuth 2.0 client credentials"
+    }
+   },
+   {
+    "beat": "STEP 2",
+    "say": "Open Claude Desktop settings, click Developer, and select Edit Config to open your JSON file.",
+    "tts": "Open Claude Desktop settings, click Developer, and select Edit Config to open your JSON file.",
+    "card": "Claude Settings > Edit Config",
+    "screen": {
+     "app": "claude",
+     "view": "settings",
+     "click": "Edit Config",
+     "tip": "Opens claude_desktop_config.json"
+    }
+   },
+   {
+    "beat": "STEP 3",
+    "say": "Add the Zoho CRM server entry running your Python script with your OAuth credentials to Claude's config.",
+    "tts": "Add the Zoho CRM server entry running your Python script with your OAuth credentials to Claude's config.",
+    "card": "claude_desktop_config.json",
+    "screen": {
+     "app": "code",
+     "view": "code",
+     "language": "json",
+     "code": "{\n  \"mcpServers\": {\n    \"zoho-crm\": {\n      \"command\": \"python\",\n      \"args\": [\"zoho_crm_mcp.py\"],\n      \"env\": {\n        \"ZOHO_CLIENT_ID\": \"YOUR_CLIENT_ID\",\n        \"ZOHO_CLIENT_SECRET\": \"YOUR_CLIENT_SECRET\",\n        \"ZOHO_REFRESH_TOKEN\": \"YOUR_REFRESH_TOKEN\"\n      }\n    }\n  }\n}",
+     "click": "\"zoho-crm\"",
+     "tip": "Configure local FastMCP server script with OAuth environment variables"
+    }
+   },
+   {
+    "beat": "STEP 4",
+    "say": "Ask Claude in plain English to find unassigned deals over fifty thousand dollars and draft follow-up tasks.",
+    "tts": "Ask Claude in plain English to find unassigned deals over fifty thousand dollars and draft follow-up tasks.",
+    "card": "Natural Language CRM Prompt",
+    "screen": {
+     "app": "claude",
+     "view": "chat",
+     "messages": [
+      [
+       "user",
+       "Find all unassigned deals over $50k and draft follow-up tasks in Zoho CRM."
+      ],
+      [
+       "assistant",
+       "I queried Zoho CRM Deals module and identified 2 unassigned deals over $50,000. Follow-up tasks have been created in Zoho CRM."
+      ]
+     ],
+     "tool": "zoho-crm",
+     "click": "zoho-crm",
+     "tip": "Claude invokes Zoho CRM tools autonomously"
+    }
+   },
+   {
+    "beat": "RESULT",
+    "say": "Claude queries your CRM, returns the matching records, and creates the tasks automatically without opening a browser.",
+    "tts": "Claude queries your CRM, returns the matching records, and creates the tasks automatically without opening a browser.",
+    "card": "Automated CRM Actions via AI",
+    "screen": null
+   }
+  ],
+  "api": {
+   "name": "Zoho CRM REST API v3 via FastMCP",
+   "endpoint": "https://www.zohoapis.com/crm/v3",
+   "scope": "ZohoCRM.modules.ALL, ZohoCRM.settings.ALL",
+   "docs": "https://www.zoho.com/crm/developer/docs/api/v3/"
+  },
+  "code": {
+   "language": "python",
+   "filename": "zoho_crm_mcp.py",
+   "content": "from mcp.server.fastmcp import FastMCP\nimport os\nimport requests\n\nmcp = FastMCP(\"zoho-crm\")\n\nCLIENT_ID = os.environ.get(\"ZOHO_CLIENT_ID\", \"\")\nCLIENT_SECRET = os.environ.get(\"ZOHO_CLIENT_SECRET\", \"\")\nREFRESH_TOKEN = os.environ.get(\"ZOHO_REFRESH_TOKEN\", \"\")\n\ndef get_access_token() -> str:\n    url = \"https://accounts.zoho.com/oauth/v2/token\"\n    params = {\n        \"refresh_token\": REFRESH_TOKEN,\n        \"client_id\": CLIENT_ID,\n        \"client_secret\": CLIENT_SECRET,\n        \"grant_type\": \"refresh_token\"\n    }\n    response = requests.post(url, params=params)\n    return response.json().get(\"access_token\", \"\")\n\n@mcp.tool()\ndef get_deals() -> list:\n    \"\"\"Query Deals module from Zoho CRM.\"\"\"\n    token = get_access_token()\n    headers = {\"Authorization\": f\"Zoho-oauthtoken {token}\"}\n    res = requests.get(\"https://www.zohoapis.com/crm/v3/Deals\", headers=headers)\n    return res.json().get(\"data\", [])\n\n@mcp.tool()\ndef create_task(subject: str, deal_id: str) -> dict:\n    \"\"\"Create follow-up task for a deal in Zoho CRM.\"\"\"\n    token = get_access_token()\n    headers = {\"Authorization\": f\"Zoho-oauthtoken {token}\", \"Content-Type\": \"application/json\"}\n    payload = {\"data\": [{\"Subject\": subject, \"$se_module\": \"Deals\", \"What_Id\": deal_id}]}\n    res = requests.post(\"https://www.zohoapis.com/crm/v3/Tasks\", headers=headers, json=payload)\n    return res.json()\n\nif __name__ == \"__main__\":\n    mcp.run(transport=\"stdio\")",
+   "where_to_paste": "Save locally as zoho_crm_mcp.py and register in Claude Desktop via claude_desktop_config.json"
+  },
+  "test_before_recording": [
+   "Generate OAuth 2.0 Client ID, Secret, and Refresh Token in Zoho API Console (api-console.zoho.com).",
+   "Install dependencies: pip install \"mcp[cli]\" requests.",
+   "Verify zoho_crm_mcp.py runs standalone and communicates with Zoho CRM v3 REST endpoints.",
+   "Ensure claude_desktop_config.json points to the saved zoho_crm_mcp.py file with valid credentials.",
+   "Confirm Claude Desktop Developer tools detect the zoho-crm MCP server."
+  ],
+  "description": "Connect Claude Desktop directly to Zoho CRM using an executable FastMCP Python server script and Zoho CRM REST API v3. Execute conversational deal queries and automate record updates without manual dashboard work.",
+  "tags": [
+   "Zoho CRM",
+   "Claude",
+   "Claude AI",
+   "MCP",
+   "Model Context Protocol",
+   "Zoho Automation",
+   "AI Agents",
+   "Anthropic",
+   "CRM Automation",
+   "Claude Desktop"
+  ]
+ },
+ "lines": [
+  {
+   "beat": "HOOK",
+   "say": "Tired of writing custom API scripts just to automate Zoho CRM?",
+   "tts": "Tired of writing custom API scripts just to automate Zoho CRM?",
+   "card": "No More Custom CRM Scripts",
+   "screen": null,
+   "face": true
+  },
+  {
+   "beat": "PROBLEM",
+   "say": "Sales teams waste hours manual-logging activities when conversational AI could handle pipeline tasks.",
+   "tts": "Sales teams waste hours manual-logging activities when conversational AI could handle pipeline tasks.",
+   "card": "Manual CRM Work Slows Teams",
+   "screen": null,
+   "face": true
+  },
+  {
+   "beat": "FIX",
+   "say": "You can connect Claude Desktop directly to Zoho CRM using Model Context Protocol.",
+   "tts": "You can connect Claude Desktop directly to Zoho CRM using Model Context Protocol.",
+   "card": "Claude Desktop + Model Context Protocol",
+   "screen": {
+    "app": "claude",
+    "view": "settings",
+    "click": "Developer",
+    "tip": "Open Developer tab in Claude Desktop settings"
+   },
+   "face": false
+  },
+  {
+   "beat": "STEP 1",
+   "say": "In Zoho API Console, create a Server-based Application to get your client ID and secret.",
+   "tts": "In Zoho API Console, create a Server-based Application to get your client ID and secret.",
+   "card": "Zoho API Console > Add Client",
+   "screen": {
+    "app": "browser",
+    "view": "api-console.zoho.com",
+    "click": "Server-based Applications",
+    "tip": "Generate OAuth 2.0 client credentials"
+   },
+   "face": false
+  },
+  {
+   "beat": "STEP 2",
+   "say": "Open Claude Desktop settings, click Developer, and select Edit Config to open your JSON file.",
+   "tts": "Open Claude Desktop settings, click Developer, and select Edit Config to open your JSON file.",
+   "card": "Claude Settings > Edit Config",
+   "screen": {
+    "app": "claude",
+    "view": "settings",
+    "click": "Edit Config",
+    "tip": "Opens claude_desktop_config.json"
+   },
+   "face": false
+  },
+  {
+   "beat": "STEP 3",
+   "say": "Add the Zoho CRM server entry running your Python script with your OAuth credentials to Claude's config.",
+   "tts": "Add the Zoho CRM server entry running your Python script with your OAuth credentials to Claude's config.",
+   "card": "claude_desktop_config.json",
+   "screen": {
+    "app": "code",
+    "view": "code",
+    "language": "json",
+    "code": "{\n  \"mcpServers\": {\n    \"zoho-crm\": {\n      \"command\": \"python\",\n      \"args\": [\"zoho_crm_mcp.py\"],\n      \"env\": {\n        \"ZOHO_CLIENT_ID\": \"YOUR_CLIENT_ID\",\n        \"ZOHO_CLIENT_SECRET\": \"YOUR_CLIENT_SECRET\",\n        \"ZOHO_REFRESH_TOKEN\": \"YOUR_REFRESH_TOKEN\"\n      }\n    }\n  }\n}",
+    "click": "\"zoho-crm\"",
+    "tip": "Configure local FastMCP server script with OAuth environment variables"
+   },
+   "face": false
+  },
+  {
+   "beat": "STEP 4",
+   "say": "Ask Claude in plain English to find unassigned deals over fifty thousand dollars and draft follow-up tasks.",
+   "tts": "Ask Claude in plain English to find unassigned deals over fifty thousand dollars and draft follow-up tasks.",
+   "card": "Natural Language CRM Prompt",
+   "screen": {
+    "app": "claude",
+    "view": "chat",
+    "messages": [
+     [
+      "user",
+      "Find all unassigned deals over $50k and draft follow-up tasks in Zoho CRM."
+     ],
+     [
+      "assistant",
+      "I queried Zoho CRM Deals module and identified 2 unassigned deals over $50,000. Follow-up tasks have been created in Zoho CRM."
+     ]
+    ],
+    "tool": "zoho-crm",
+    "click": "zoho-crm",
+    "tip": "Claude invokes Zoho CRM tools autonomously"
+   },
+   "face": false
+  },
+  {
+   "beat": "RESULT",
+   "say": "Claude queries your CRM, returns the matching records, and creates the tasks automatically without opening a browser.",
+   "tts": "Claude queries your CRM, returns the matching records, and creates the tasks automatically without opening a browser.",
+   "card": "Automated CRM Actions via AI",
+   "screen": null,
+   "face": true
+  }
+ ],
+ "clips": [
+  {
+   "text": "Tired of writing custom API scripts just to automate Zoho CRM?",
+   "lines": [
+    0
+   ],
+   "beat": "HOOK",
+   "prompt": "The man (my avatar) looks into the camera and talks to the viewer like a confident, friendly business tech explainer, smart and natural, not stiff; he turns from looking to the side to face the camera, leans in slightly and raises his eyebrows. Vertical 9:16 medium-wide shot from the knees up, camera about two metres away, his head in the upper third with space above it, both hands and all his gestures fully visible in the frame, static camera, sharp and well lit, wearing a white linen shirt with the top button open, on a sunny rooftop terrace with a city skyline behind him at golden hour. His face, skin tone, hairstyle, beard, height and body build stay exactly as in my avatar's reference photos - the same natural average build, never slimmer and never heavier. He says, in clear natural English with a clear, neutral international accent, at a brisk, lively pace: \"Tired of writing custom API scripts just to automate Zoho CRM?\" His lips match every word. He starts speaking in the very first frame, with no pause before the first word, and stops right after the last word. Audio: only his voice - no music, no sound effects. No subtitles, no captions, no text on screen."
+  },
+  {
+   "text": "Sales teams waste hours manual-logging activities when conversational AI could handle pipeline tasks.",
+   "lines": [
+    1
+   ],
+   "beat": "PROBLEM",
+   "prompt": "The man (my avatar) looks into the camera and talks to the viewer like a confident, friendly business tech explainer, smart and natural, not stiff; he shrugs with both shoulders and tilts his head, as if he has seen this problem a hundred times. Vertical 9:16 medium-wide shot from the knees up, camera about two metres away, his head in the upper third with space above it, both hands and all his gestures fully visible in the frame, static camera, sharp and well lit, wearing a white linen shirt with the top button open, on a sunny rooftop terrace with a city skyline behind him at golden hour. His face, skin tone, hairstyle, beard, height and body build stay exactly as in my avatar's reference photos - the same natural average build, never slimmer and never heavier. He says, in clear natural English with a clear, neutral international accent, at a brisk, lively pace: \"Sales teams waste hours manual-logging activities when conversational AI could handle pipeline tasks.\" His lips match every word. He starts speaking in the very first frame, with no pause before the first word, and stops right after the last word. Audio: only his voice - no music, no sound effects. No subtitles, no captions, no text on screen."
+  },
+  {
+   "text": "Claude queries your CRM, returns the matching records, and creates the tasks automatically without opening a browser.",
+   "lines": [
+    7
+   ],
+   "beat": "RESULT",
+   "prompt": "The man (my avatar) looks into the camera and talks to the viewer like a confident, friendly business tech explainer, smart and natural, not stiff; he puts one hand in his pocket, smiles and gestures toward the camera with the other hand. Vertical 9:16 medium-wide shot from the knees up, camera about two metres away, his head in the upper third with space above it, both hands and all his gestures fully visible in the frame, static camera, sharp and well lit, wearing a white linen shirt with the top button open, on a sunny rooftop terrace with a city skyline behind him at golden hour. His face, skin tone, hairstyle, beard, height and body build stay exactly as in my avatar's reference photos - the same natural average build, never slimmer and never heavier. He says, in clear natural English with a clear, neutral international accent, at a brisk, lively pace: \"Claude queries your CRM, returns the matching records, and creates the tasks automatically without opening a browser.\" His lips match every word. He starts speaking in the very first frame, with no pause before the first word, and stops right after the last word. Audio: only his voice - no music, no sound effects. No subtitles, no captions, no text on screen."
+  }
+ ],
+ "look": "wearing a white linen shirt with the top button open, on a sunny rooftop terrace with a city skyline behind him at golden hour",
+ "issue": 73
+}
