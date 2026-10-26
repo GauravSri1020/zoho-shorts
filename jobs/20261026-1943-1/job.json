@@ -1,0 +1,353 @@
+{
+ "id": "20261026-1943-1",
+ "niche": "claude_wealth",
+ "status": "waiting_for_clips",
+ "upload": false,
+ "created": "2026-10-26T19:44:40",
+ "title": "Turn Your Weekly Routine into Claude Skills You Can Sell #Shorts",
+ "description": "Learn how to package your weekly professional routines into Claude Skill files (SKILL.md) and sell them as digital bundles using Stripe.\n\n1. Isolate your repeated professional process into modular steps\n2. Create a folder with a SKILL.md instruction file that Claude loads when triggered\n3. Package 10 to 20 SKILL.md files into a zip and set up a simple one-page checkout\n\nTool used:\n- name: Claude Agent Skills\n- endpoint: SKILL.md Instruction Loading\n- docs: Anthropic Agent Skills Documentation\n\nSKILL.md (markdown) - Inside a folder named client-report-generator in your Claude environment:\n---\nname: client-report-generator\ndescription: Generates a weekly advisory report from raw metrics\n---\n\n# Client Report Generator\n\n1. Read raw metrics from input.\n2. Summarize key KPI wins and losses.\n3. Format as a 3-bullet advisory email.\n\nThe catch: Selling digital SKILL packs requires an existing audience or traffic source to convert buyers.\n\nSources for the numbers:\n- Ryan Doser (ryandoser.com/claude-ai-side-hustle/)\n\nReal ways to earn with AI, no hype - follow @GSXAutomation\n\nThis video uses an AI-generated presenter and voice.\nIndependent channel. Not affiliated with or endorsed by Anthropic; Claude is a trademark of Anthropic. Education only - not financial, investment, trading or tax advice. Income numbers are what the named creators reported; results vary and nothing is guaranteed.\n\n#Shorts #ClaudeAI #AI #SideHustle #MakeMoneyWithAI",
+ "angle": {
+  "story_index": 45,
+  "pillar": "skills_product",
+  "kind": "wealth",
+  "region": "global",
+  "product": "Claude Skills (SKILL.md) + Stripe checkout",
+  "app": "code",
+  "problem": "You know a repeated task cold every week, but have nothing to sell.",
+  "fix_type": "skill",
+  "solution": "Turn that exact process into a bundle of Claude Skills and sell it as a digital product.",
+  "steps": [
+   "Isolate your repeated professional process into modular steps",
+   "Create a folder with a SKILL.md instruction file that Claude loads when triggered",
+   "Package 10 to 20 SKILL.md files into a zip and set up a simple one-page checkout"
+  ],
+  "api": "--- \nname: client-report-generator\ndescription: Generates a weekly advisory report from raw metrics\n---",
+  "numbers": "Creator Ryan Doser reports selling a ~20-skill bundle at $99 per copy, making over $5,000 in about 50 days, plus a $1,000 setup job from one buyer.",
+  "catch": "Selling digital SKILL packs requires an existing audience or traffic source to convert buyers.",
+  "result": "A digital product asset that generates sales without live client hours.",
+  "wow": "The product is just a few markdown files—the real value is your private workflow inside them.",
+  "hook": "Turn your weekly work routine into a digital product that sells itself."
+ },
+ "story": {
+  "title": "You do one task better than most people every week, but you have nothing to sell",
+  "link": "bank:you do one task better than most people every week but you h",
+  "summary": "pillar: skills_product | product: Claude Skills (SKILL.md) + Stripe checkout | fix: Turn that task into a bundle of Claude Skills and sell the bundle as a digital product | facts: A Skill is a folder with a SKILL.md instruction file that Claude loads when the task comes up (Anthropic launched Agent Skills in Oct 2025; Anthropic's public skills repo on GitHub includes a 'skill-creator' skill). Creator Ryan Doser reports selling a ~20-skill bundle at $99 per copy, over $5,000 in about 50 days, plus a $1,000 setup job from one buyer - he also has a 10,000+ subscriber newsletter, which is where the sales came from. | wow: The product is a few markdown files - the value is YOUR process inside them | kind: wealth | steps: ['Pick ONE task you repeat every week (e.g. writing a YouTube script, an SEO brief, a GST invoice check)', 'Talk through how you do it into the Claude app, then ask Claude to turn it into a Skill with the skill-creator skill', 'Bundle 3-10 related Skills for one niche, zip them', 'Sell on a one-page checkout (Stripe / Gumroad / Razorpay link); offer paid setup for buyers'] | catch: His sales came from an existing audience; with zero audience start with 1:1 setup work first | source: https://ryandoser.com/claude-ai-side-hustle/",
+  "source": "GSX problem bank",
+  "ts": 1793043470.484689,
+  "trend": 0,
+  "pillar": "skills_product",
+  "kind": "wealth",
+  "order": 1
+ },
+ "script": {
+  "title": "Turn Your Weekly Routine into Claude Skills You Can Sell",
+  "hook_text": "Monetize Your Routine",
+  "app_label": "Claude Skills",
+  "lines": [
+   {
+    "beat": "HOOK",
+    "say": "Turn your weekly work routine into a digital product.",
+    "tts": "Turn your weekly work routine into a digital product.",
+    "card": "Monetize Your Routine",
+    "screen": null
+   },
+   {
+    "beat": "PROBLEM",
+    "say": "You execute a complex task perfectly every single week, but you lack an asset to sell.",
+    "tts": "You execute a complex task perfectly every single week, but you lack an asset to sell.",
+    "card": "No Product To Sell",
+    "screen": null
+   },
+   {
+    "beat": "FIX",
+    "say": "You can turn that exact process into a pack of Claude Skills and sell it as a digital download.",
+    "tts": "You can turn that exact process into a pack of Claude Skills and sell it as a digital download.",
+    "card": "Claude Skills Bundle",
+    "screen": {
+     "app": "claude",
+     "view": "chat",
+     "messages": [
+      [
+       "user",
+       "Turn my report process into a custom Skill file using skill-creator."
+      ],
+      [
+       "assistant",
+       "Creating SKILL.md for your client-report-generator workflow..."
+      ]
+     ],
+     "tool": "skill-creator",
+     "click": "skill-creator",
+     "tip": "Claude builds skills automatically"
+    }
+   },
+   {
+    "beat": "STEP 1",
+    "say": "Open your code editor, create a folder, and write a SKILL.md file with YAML frontmatter and step-by-step instructions.",
+    "tts": "Open your code editor, create a folder, and write a SKILL.md file with YAML frontmatter and step-by-step instructions.",
+    "card": "1. Create SKILL.md",
+    "screen": {
+     "app": "code",
+     "view": "code",
+     "language": "markdown",
+     "heading": "SKILL.md",
+     "code": "---\nname: client-report-generator\ndescription: Generates a weekly advisory report from raw metrics\n---\n\n# Workflow Instructions\n1. Process weekly client raw data.\n2. Calculate revenue variance.\n3. Draft bulleted executive summary.",
+     "click": "name: client-report-generator",
+     "tip": "Save workflow in frontmatter"
+    }
+   },
+   {
+    "beat": "STEP 2",
+    "say": "Open terminal and run the zip command to package ten to twenty markdown skill files into one download file.",
+    "tts": "Open terminal and run the zip command to package ten to twenty markdown skill files into one download file.",
+    "card": "2. Zip The Bundle",
+    "screen": {
+     "app": "code",
+     "view": "code",
+     "language": "bash",
+     "heading": "Terminal",
+     "code": "mkdir claude-skills-bundle\ncp skills/*.md claude-skills-bundle/\nzip -r claude-skills-bundle.zip claude-skills-bundle/",
+     "click": "zip -r claude-skills-bundle.zip",
+     "tip": "Bundle markdown files together"
+    }
+   },
+   {
+    "beat": "STEP 3",
+    "say": "Create a digital checkout page on Stripe or Gumroad to host and deliver your zipped skill bundle automatically.",
+    "tts": "Create a digital checkout page on Stripe or Gumroad to host and deliver your zipped skill bundle automatically.",
+    "card": "3. Simple Checkout",
+    "screen": {
+     "app": "flow",
+     "view": "flow",
+     "heading": "Checkout Flow",
+     "nodes": [
+      "Stripe Checkout Page",
+      "Digital Download Zip",
+      "Optional $1k Setup Offer"
+     ],
+     "click": "Stripe Checkout Page",
+     "tip": "Deliver instantly upon payment"
+    }
+   },
+   {
+    "beat": "STEP 4",
+    "say": "Creator Ryan Doser reported earning five thousand dollars selling a twenty skill bundle at ninety nine dollars, plus a setup fee.",
+    "tts": "Creator Ryan Doser reported earning five thousand dollars selling a twenty skill bundle at ninety nine dollars, plus a setup fee.",
+    "card": "4. Reported Sales",
+    "screen": {
+     "app": "notes",
+     "view": "notes",
+     "heading": "Reported Sales Data",
+     "rows": [
+      [
+       "Bundle Price",
+       "$99 per copy (Ryan Doser)"
+      ],
+      [
+       "50-Day Revenue",
+       "$5,000+ (Ryan Doser)"
+      ],
+      [
+       "Setup Upsell",
+       "$1,000 (1 client)"
+      ]
+     ],
+     "click": "$5,000+ (Ryan Doser)",
+     "tip": "Results depend on audience reach"
+    }
+   },
+   {
+    "beat": "RESULT",
+    "say": "Results vary completely based on reach. Digital skill packs require an existing audience or active traffic source to convert sales.",
+    "tts": "Results vary completely based on reach. Digital skill packs require an existing audience or active traffic source to convert sales.",
+    "card": "Audience Needed",
+    "screen": null
+   }
+  ],
+  "api": {
+   "name": "Claude Agent Skills",
+   "endpoint": "SKILL.md Instruction Loading",
+   "scope": null,
+   "docs": "Anthropic Agent Skills Documentation"
+  },
+  "code": {
+   "language": "markdown",
+   "filename": "SKILL.md",
+   "content": "---\nname: client-report-generator\ndescription: Generates a weekly advisory report from raw metrics\n---\n\n# Client Report Generator\n\n1. Read raw metrics from input.\n2. Summarize key KPI wins and losses.\n3. Format as a 3-bullet advisory email.",
+   "where_to_paste": "Inside a folder named client-report-generator in your Claude environment"
+  },
+  "sources": [
+   "Ryan Doser (ryandoser.com/claude-ai-side-hustle/)"
+  ],
+  "description": "Learn how to package your weekly professional routines into Claude Skill files (SKILL.md) and sell them as digital bundles using Stripe.",
+  "tags": [
+   "Claude",
+   "Claude Skills",
+   "SKILL.md",
+   "Digital Product",
+   "Side Hustle",
+   "Stripe",
+   "Gumroad",
+   "Automation",
+   "Freelancing",
+   "Workflow"
+  ]
+ },
+ "lines": [
+  {
+   "beat": "HOOK",
+   "say": "Turn your weekly work routine into a digital product.",
+   "tts": "Turn your weekly work routine into a digital product.",
+   "card": "Monetize Your Routine",
+   "screen": null,
+   "face": true
+  },
+  {
+   "beat": "PROBLEM",
+   "say": "You execute a complex task perfectly every single week, but you lack an asset to sell.",
+   "tts": "You execute a complex task perfectly every single week, but you lack an asset to sell.",
+   "card": "No Product To Sell",
+   "screen": null,
+   "face": true
+  },
+  {
+   "beat": "FIX",
+   "say": "You can turn that exact process into a pack of Claude Skills and sell it as a digital download.",
+   "tts": "You can turn that exact process into a pack of Claude Skills and sell it as a digital download.",
+   "card": "Claude Skills Bundle",
+   "screen": {
+    "app": "claude",
+    "view": "chat",
+    "messages": [
+     [
+      "user",
+      "Turn my report process into a custom Skill file using skill-creator."
+     ],
+     [
+      "assistant",
+      "Creating SKILL.md for your client-report-generator workflow..."
+     ]
+    ],
+    "tool": "skill-creator",
+    "click": "skill-creator",
+    "tip": "Claude builds skills automatically"
+   },
+   "face": false
+  },
+  {
+   "beat": "STEP 1",
+   "say": "Open your code editor, create a folder, and write a SKILL.md file with YAML frontmatter and step-by-step instructions.",
+   "tts": "Open your code editor, create a folder, and write a SKILL.md file with YAML frontmatter and step-by-step instructions.",
+   "card": "1. Create SKILL.md",
+   "screen": {
+    "app": "code",
+    "view": "code",
+    "language": "markdown",
+    "heading": "SKILL.md",
+    "code": "---\nname: client-report-generator\ndescription: Generates a weekly advisory report from raw metrics\n---\n\n# Workflow Instructions\n1. Process weekly client raw data.\n2. Calculate revenue variance.\n3. Draft bulleted executive summary.",
+    "click": "name: client-report-generator",
+    "tip": "Save workflow in frontmatter"
+   },
+   "face": false
+  },
+  {
+   "beat": "STEP 2",
+   "say": "Open terminal and run the zip command to package ten to twenty markdown skill files into one download file.",
+   "tts": "Open terminal and run the zip command to package ten to twenty markdown skill files into one download file.",
+   "card": "2. Zip The Bundle",
+   "screen": {
+    "app": "code",
+    "view": "code",
+    "language": "bash",
+    "heading": "Terminal",
+    "code": "mkdir claude-skills-bundle\ncp skills/*.md claude-skills-bundle/\nzip -r claude-skills-bundle.zip claude-skills-bundle/",
+    "click": "zip -r claude-skills-bundle.zip",
+    "tip": "Bundle markdown files together"
+   },
+   "face": false
+  },
+  {
+   "beat": "STEP 3",
+   "say": "Create a digital checkout page on Stripe or Gumroad to host and deliver your zipped skill bundle automatically.",
+   "tts": "Create a digital checkout page on Stripe or Gumroad to host and deliver your zipped skill bundle automatically.",
+   "card": "3. Simple Checkout",
+   "screen": {
+    "app": "flow",
+    "view": "flow",
+    "heading": "Checkout Flow",
+    "nodes": [
+     "Stripe Checkout Page",
+     "Digital Download Zip",
+     "Optional $1k Setup Offer"
+    ],
+    "click": "Stripe Checkout Page",
+    "tip": "Deliver instantly upon payment"
+   },
+   "face": false
+  },
+  {
+   "beat": "STEP 4",
+   "say": "Creator Ryan Doser reported earning five thousand dollars selling a twenty skill bundle at ninety nine dollars, plus a setup fee.",
+   "tts": "Creator Ryan Doser reported earning five thousand dollars selling a twenty skill bundle at ninety nine dollars, plus a setup fee.",
+   "card": "4. Reported Sales",
+   "screen": {
+    "app": "notes",
+    "view": "notes",
+    "heading": "Reported Sales Data",
+    "rows": [
+     [
+      "Bundle Price",
+      "$99 per copy (Ryan Doser)"
+     ],
+     [
+      "50-Day Revenue",
+      "$5,000+ (Ryan Doser)"
+     ],
+     [
+      "Setup Upsell",
+      "$1,000 (1 client)"
+     ]
+    ],
+    "click": "$5,000+ (Ryan Doser)",
+    "tip": "Results depend on audience reach"
+   },
+   "face": false
+  },
+  {
+   "beat": "RESULT",
+   "say": "Results vary completely based on reach. Digital skill packs require an existing audience or active traffic source to convert sales.",
+   "tts": "Results vary completely based on reach. Digital skill packs require an existing audience or active traffic source to convert sales.",
+   "card": "Audience Needed",
+   "screen": null,
+   "face": true
+  }
+ ],
+ "clips": [
+  {
+   "text": "Turn your weekly work routine into a digital product.",
+   "lines": [
+    0
+   ],
+   "beat": "HOOK",
+   "prompt": "The man (my avatar) looks into the camera and talks to the viewer like a confident, friendly business tech explainer, smart and natural, not stiff; he stands with relaxed shoulders, shakes his head once with a half smile and holds up one hand as if saying stop. Vertical 9:16 medium-wide shot from the knees up, camera about two metres away, his head in the upper third with space above it, both hands and all his gestures fully visible in the frame, static camera, sharp and well lit, wearing a navy blazer over a crisp white shirt with no tie, in a glass-walled high-rise office with a city skyline at golden hour behind him. His face, skin tone, hairstyle, beard, height and body build stay exactly as in my avatar's reference photos - the same natural average build, never slimmer and never heavier. He says, in clear natural English with a clear, neutral international accent, at a brisk, lively pace: \"Turn your weekly work routine into a digital product.\" His lips match every word. He starts speaking in the very first frame, with no pause before the first word, and stops right after the last word. Audio: only his voice - no music, no sound effects. No subtitles, no captions, no text on screen."
+  },
+  {
+   "text": "You execute a complex task perfectly every single week, but you lack an asset to sell.",
+   "lines": [
+    1
+   ],
+   "beat": "PROBLEM",
+   "prompt": "The man (my avatar) looks into the camera and talks to the viewer like a confident, friendly business tech explainer, smart and natural, not stiff; he shrugs with both shoulders and tilts his head, as if he has seen this problem a hundred times. Vertical 9:16 medium-wide shot from the knees up, camera about two metres away, his head in the upper third with space above it, both hands and all his gestures fully visible in the frame, static camera, sharp and well lit, wearing a navy blazer over a crisp white shirt with no tie, in a glass-walled high-rise office with a city skyline at golden hour behind him. His face, skin tone, hairstyle, beard, height and body build stay exactly as in my avatar's reference photos - the same natural average build, never slimmer and never heavier. He says, in clear natural English with a clear, neutral international accent, at a brisk, lively pace: \"You execute a complex task perfectly every single week, but you lack an asset to sell.\" His lips match every word. He starts speaking in the very first frame, with no pause before the first word, and stops right after the last word. Audio: only his voice - no music, no sound effects. No subtitles, no captions, no text on screen."
+  },
+  {
+   "text": "Results vary completely based on reach. Digital skill packs require an existing audience or active traffic source to convert sales.",
+   "lines": [
+    7
+   ],
+   "beat": "RESULT",
+   "prompt": "The man (my avatar) looks into the camera and talks to the viewer like a confident, friendly business tech explainer, smart and natural, not stiff; he gives a short confident thumbs up near his chest and smiles. Vertical 9:16 medium-wide shot from the knees up, camera about two metres away, his head in the upper third with space above it, both hands and all his gestures fully visible in the frame, static camera, sharp and well lit, wearing a navy blazer over a crisp white shirt with no tie, in a glass-walled high-rise office with a city skyline at golden hour behind him. His face, skin tone, hairstyle, beard, height and body build stay exactly as in my avatar's reference photos - the same natural average build, never slimmer and never heavier. He says, in clear natural English with a clear, neutral international accent, at a brisk, lively pace: \"Results vary completely based on reach. Digital skill packs require an existing audience or active traffic source to convert sales.\" His lips match every word. He starts speaking in the very first frame, with no pause before the first word, and stops right after the last word. Audio: only his voice - no music, no sound effects. No subtitles, no captions, no text on screen."
+  }
+ ],
+ "look": "wearing a navy blazer over a crisp white shirt with no tie, in a glass-walled high-rise office with a city skyline at golden hour behind him",
+ "issue": 78
+}
