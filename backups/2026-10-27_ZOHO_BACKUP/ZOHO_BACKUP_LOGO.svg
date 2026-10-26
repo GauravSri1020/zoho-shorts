@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 200" width="640" height="200" role="img" aria-label="ZOHO BACKUP - 27 Oct 2026">
+  <rect x="4" y="4" width="632" height="192" rx="24" fill="#0f1b3d" stroke="#f5b400" stroke-width="6"/>
+  <g transform="translate(40,46)">
+    <rect x="0" y="0" width="108" height="108" rx="18" fill="#f5b400"/>
+    <path d="M24 30h60v14L44 80h40v14H24V80l40-36H24z" fill="#0f1b3d"/>
+  </g>
+  <text x="180" y="96" font-family="Poppins, Arial, sans-serif" font-size="58" font-weight="700" fill="#ffffff" letter-spacing="2">ZOHO BACKUP</text>
+  <text x="182" y="140" font-family="Poppins, Arial, sans-serif" font-size="26" fill="#f5b400">27 Oct 2026 · GSX Automation · Zoho niche v2</text>
+  <text x="182" y="172" font-family="Poppins, Arial, sans-serif" font-size="18" fill="#9fb3d9">commit 2ad7606 · branch backup-2026-10-27-zoho-before-claude-wealth</text>
+</svg>

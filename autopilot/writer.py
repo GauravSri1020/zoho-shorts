@@ -17,7 +17,7 @@ from google import genai
 from google.genai import types
 
 from .config import (GEMINI_API_KEY, GEMINI_MODEL, CHANNEL_NAME, CHANNEL_HANDLE, LANGUAGE, NICHE, CTA,
-                     SCRIPT_WORDS, EVERGREEN_FALLBACK, PILLARS)
+                     SCRIPT_WORDS, EVERGREEN_FALLBACK, PILLARS, IS_ZOHO)
 
 _client = None
 # Free-tier models get overloaded (503) at peak hours, so rotate through backups (unknown ones are skipped).
@@ -35,6 +35,15 @@ _LANG_RULES = {
 APPS = ("crm", "books", "desk", "creator", "social", "flow", "analytics", "sign", "catalyst", "salesiq",
         "inventory", "people", "campaigns", "claude", "chatgpt", "api", "code")
 VIEWS = ("list", "form", "settings", "chat", "api", "code", "flow")
+if not IS_ZOHO:  # niche switch: the Claude-wealth screens (+ the "notes" numbers / checklist card)
+    from .niche_claude_wealth import APPS  # noqa: E402,F811
+    VIEWS = ("chat", "api", "code", "flow", "notes")
+
+
+def _niche():
+    """NICHE SWITCH (27 Oct 2026): the non-Zoho niche's prompts live in their own module; Zoho never loads it."""
+    from . import niche_claude_wealth
+    return niche_claude_wealth
 
 
 def _gemini():
@@ -98,7 +107,9 @@ def _pillars():
 
 
 # ---------------------------------------------------------------- 1. Scout
-def scout(candidates, n, past_problems):
+def scout(candidates, n, past_problems, kinds=None):
+    if not IS_ZOHO:  # niche switch - everything below is the Zoho niche, unchanged
+        return _niche().scout(candidates, n, past_problems, kinds)
     listing = "\n".join(
         f"[{i}] (trend {c.get('trend', 0)}) {c['title']} | {c['source']} | {c['summary'][:400]}"
         for i, c in enumerate(candidates))
@@ -189,6 +200,8 @@ def _real_screens_hint():
 
 
 def write_script(angle):
+    if not IS_ZOHO:  # niche switch
+        return _niche().write_script(angle)
     lo, hi = SCRIPT_WORDS
     s = angle.get("story")
     if s and s.get("source") == "GSX problem bank":
@@ -280,6 +293,13 @@ Return JSON:
 def review_script(script, angle):
     lo, hi = SCRIPT_WORDS
     wc = word_count(" ".join(l.get("say", "") for l in script.get("lines", [])))
+    if not IS_ZOHO:  # niche switch
+        try:
+            fixed = ask_json(_niche().review_prompt(script, angle, wc), temperature=0.2)
+        except Exception as e:
+            print(f"[review] skipped: {e}")
+            return script
+        return fixed if fixed.get("lines") else script
     prompt = f"""You are the strict editor of a solo {LANGUAGE} YouTube Short about {NICHE['topic']}.
 Fix the JSON script below. Checklist:
 1. FACTS: no invented Zoho features, menus, API endpoints, prices or limits. Soften anything you are not sure about.
@@ -308,6 +328,10 @@ SCRIPT:
 def qa_script(script, angle):
     """A second, independent agent grades the script. Returns {"approved": bool, "issues": [...]}"""
     lo, hi = SCRIPT_WORDS
+    if not IS_ZOHO:  # niche switch: same gate logic, Claude-wealth rules
+        out = ask_json(_niche().qa_prompt(script, angle), temperature=0.1)
+        return {"approved": bool(out.get("approved")) and int(out.get("score") or 0) >= 7,
+                "score": out.get("score"), "issues": out.get("issues") or []}
     prompt = f"""You are the quality gate of "{CHANNEL_NAME}", a {LANGUAGE} YouTube Shorts channel about
 {NICHE['topic']}. Nobody else reviews this script before it is published, so be strict.
 
@@ -437,7 +461,7 @@ Comment: "{comment}"
 
 If the comment is spam, abusive, flame-bait, asks for personal/financial/legal/tax advice, or needs a
 fact you are not sure about, answer exactly SKIP.
-If they describe a Zoho / automation problem, thank them and say it may become a Short.
+{"If they describe a Zoho / automation problem, thank them and say it may become a Short." if IS_ZOHO else _niche().REPLY_LINE}
 Otherwise write ONE short, friendly reply (max 30 words) in the same language as the comment.
 No links, no promises, no made-up facts."""
     out = ask_text(prompt)
@@ -457,7 +481,7 @@ def localize(title, description, languages):
         return {}
     want = ", ".join(f'"{l}" = {_LANG_NAMES.get(l, l)}' for l in langs)
     prompt = f"""Translate this YouTube Short title and description for viewers in other countries: {want}.
-Keep product and brand names in English (Zoho, Zoho CRM, Zia, Claude, ChatGPT, OpenAI, MCP, API, Deluge, Flow),
+Keep product and brand names in English ({"Zoho, Zoho CRM, Zia, Claude, ChatGPT, OpenAI, MCP, API, Deluge, Flow" if IS_ZOHO else _niche().BRANDS}),
 keep menu paths, code, URLs and hashtags exactly as they are. Title max 95 characters and keep " #Shorts" at
 the end. Natural, native wording, not word-by-word.
 

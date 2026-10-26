@@ -1,0 +1,118 @@
+# =====================================================================================
+#  NICHE: CLAUDE WEALTH  (27 Oct 2026)
+#  "Claude se log asli mein kaise kama rahe hain" + "Claude ki problems / limits / myths".
+#  Order: 4 wealth Shorts -> 1 problems Short -> repeat  (niche.rotation).
+#  Presenter (tera avatar), looks, gestures, schedule, captions, QA limits: sab niches/zoho.yaml se aata hai
+#  (extends: zoho). Yahan sirf wahi likha hai jo is niche mein alag hai.
+#
+#  IMPORTANT (YouTube rules, Oct 2026): monetization policy kehti hai ki AI-generated persona se sensitive topics
+#  (health, legal, FINANCIAL ADVICE) dene wale channels monetize nahi hote. Isliye ye channel "kaise kamate hain /
+#  kya banate hain" dikhata hai (business + tools), kabhi stock / crypto / trading tip ya "itna pakka kamaoge" nahi.
+# =====================================================================================
+
+extends: zoho
+
+channel:
+  hashtags: ["Shorts", "ClaudeAI", "AI", "SideHustle", "MakeMoneyWithAI"]
+  disclaimer: >-
+    Independent channel. Not affiliated with or endorsed by Anthropic; Claude is a trademark of Anthropic.
+    Education only - not financial, investment, trading or tax advice. Income numbers are what the named
+    creators reported; results vary and nothing is guaranteed.
+
+niche:
+  topic: >-
+    how real people earn money with Claude (Anthropic's AI): Claude Code apps and micro-SaaS, Claude Skills sold
+    as digital products, AI automation and AI-agent services for small businesses, freelance work (writing,
+    research, document processing) done faster, content businesses built with Claude - and the real problems,
+    limits, costs and myths of each
+  audience: >-
+    freelancers, students, creators, developers, job holders and small-business owners in India, the Middle East,
+    the US and Europe who want an extra income with AI and are tired of hype
+  promise: >-
+    every Short takes ONE real way people earn with Claude and shows the exact workflow on screen - the prompt,
+    the Skill file, the Claude Code command or the tool chain - plus the honest numbers (who reported them) and
+    the catch, so the viewer can try it today. No hype: what is real, what it costs, where it breaks.
+  # Content mix. Rotation decides WHICH KIND comes next; the weights decide the pillar inside "wealth".
+  rotation: ["wealth", "wealth", "wealth", "wealth", "problems"]
+  pillars:
+    skills_product: {weight: 3, kind: wealth, about: "package your know-how as Claude Skills / prompt packs / Project templates and sell them as a digital product (+ setup service)"}
+    claude_code_build: {weight: 3, kind: wealth, about: "build and sell with Claude Code: micro-SaaS, internal tools for clients, finishing half-built apps for non-technical founders (vibe-code agency)"}
+    ai_services: {weight: 3, kind: wealth, about: "AI automation / AI-agent services for local and small businesses: intake, follow-ups, reports, support - setup fee + monthly retainer"}
+    freelance_speed: {weight: 2, kind: wealth, about: "freelancing with Claude doing the first 80%: writing, research reports, document extraction, translation - and where the human still adds the value"}
+    creator_engine: {weight: 2, kind: wealth, about: "a content business with Claude (research, scripts, repurposing one video into 30 posts, newsletters) - the version that survives YouTube's inauthentic-content rules"}
+    trending: {weight: 2, kind: wealth, about: "this week's Claude / Anthropic launch or news -> one concrete way to earn from it today"}
+    problems: {weight: 1, kind: problems, about: "the problems, limits and myths: hallucinated facts, usage limits, API costs eating the margin, demonetized AI channels, fake 'Claude made $10k overnight trading' stories, clients who leave - and how pros handle each"}
+  good_problems:
+    - "You know a task cold but have no product - turn it into a bundle of Claude Skills and sell it on a one-page checkout"
+    - "Founder stuck on auth, payments and deployment of a half-built app - finish it with Claude Code as a paid service"
+    - "Local clinic loses leads because nobody answers after 7 pm - an AI intake + follow-up flow sold as a monthly service"
+    - "A research report takes you 3 days - Claude does the first pass in an hour, you sell the judgement"
+    - "One podcast episode -> 30 posts a month for a client with a Claude Project"
+    - "'Claude turned $2,000 into $12,000 overnight' - what really happened (a copy-trading bot, survivorship bias)"
+  solution_types:
+    claude_chat: "a plain Claude chat with an exact prompt the viewer can copy"
+    project: "a Claude Project (instructions + knowledge files) reused for every client"
+    skill: "a Claude Skill (SKILL.md folder) that turns a repeated task into one command"
+    claude_code: "Claude Code in the terminal building / fixing the actual product"
+    api: "the Claude API inside your own tool or agent (with a real cost estimate)"
+    artifact: "a Claude artifact / mini web app made in chat and shared with a link"
+    automation: "a chain: trigger -> Claude -> action (e.g. form -> Claude -> CRM / email / sheet) in n8n, Make or Zapier"
+  skip: >-
+    get-rich-quick claims, trading signals, stock / crypto / betting picks, 'passive income' with no work, MLM,
+    unverifiable screenshots of earnings, anything that breaks a platform's terms (spam, fake reviews, mass AI slop)
+  safety: >-
+    never give financial, investment, trading, banking or tax advice and never name a stock, coin or bet; trading /
+    banking topics only as 'Claude helps you build or research, YOU decide, you can lose money' or as myth-busting;
+    never promise or imply guaranteed income - every number says who reported it ('one creator reports $5k in
+    50 days'); never show real API keys, client data, bank balances or dashboards; never claim to be Anthropic
+  cta: "Follow {name} for real ways to earn with AI"
+
+problem_bank: "research/claude_wealth_bank.yaml"
+
+sources:
+  feeds:
+    # Claude / Anthropic news + launches
+    - "https://news.google.com/rss/search?hl=en&gl=US&ceid=US:en&q=Claude+Anthropic+when:7d"
+    - "https://news.google.com/rss/search?hl=en&gl=US&ceid=US:en&q=%22Claude+Code%22+OR+%22Claude+Skills%22+when:14d"
+    - "https://hnrss.org/newest?q=Claude&points=50"
+    # People earning (or failing) with AI
+    - "https://www.reddit.com/r/ClaudeAI/top/.rss?t=week"
+    - "https://www.reddit.com/r/ClaudeAI/search.rss?q=money+OR+client+OR+revenue+OR+income&sort=new&restrict_sr=on"
+    - "https://www.reddit.com/r/SideProject/top/.rss?t=week"
+    - "https://www.reddit.com/r/sidehustle/search.rss?q=Claude+OR+AI&sort=new&restrict_sr=on"
+    - "https://www.reddit.com/r/Entrepreneur/search.rss?q=Claude&sort=new&restrict_sr=on"
+    - "https://www.reddit.com/r/freelance/search.rss?q=AI+OR+Claude&sort=new&restrict_sr=on"
+    - "https://news.google.com/rss/search?hl=en&gl=US&ceid=US:en&q=%22make+money%22+AI+Claude+OR+%22AI+agency%22+when:14d"
+    - "https://news.google.com/rss/search?hl=en-IN&gl=IN&ceid=IN:en&q=AI+freelancing+OR+%22AI+side+income%22+when:14d"
+    # Platform rules that change what works (YouTube inauthentic content, AI disclosure)
+    - "https://news.google.com/rss/search?hl=en&gl=US&ceid=US:en&q=YouTube+AI+monetization+policy+when:30d"
+    # Google Trends (only items matching the keywords below are kept)
+    - "https://trends.google.com/trending/rss?geo=US"
+    - "https://trends.google.com/trending/rss?geo=IN"
+  keywords: ["claude", "anthropic", "claude code", "skills", "skill", "mcp", "artifact", "side hustle", "side income",
+             "income", "freelance", "freelancing", "client", "clients", "saas", "mrr", "revenue", "agency",
+             "ai agent", "agents", "automation", "automate", "make money", "earn", "monetization", "demonetized",
+             "vibe coding", "vibe code", "prompt", "course"]
+  lookback_days: 10
+  evergreen_fallback: true
+
+localize:
+  languages: ["hi", "ar", "es", "de", "fr"]
+
+# Labels the screen illustrations use in this niche (Zoho niche keeps its own defaults).
+screens:
+  chat_badge: "● Claude"
+  chat_tool: "Skill: niche-research"
+  flow_logo: "Automation"
+  flow_heading: "Workflow"
+  default_app: "notes"
+
+upload_tags: ["Claude AI", "make money with AI", "AI side hustle", "Shorts"]
+
+benchmark:
+  youtube_search: "make money with Claude AI"
+  references:
+    - {url: "https://www.youtube.com/shorts/iw5N2XbH3m0", weight: 3, note: "MOST PREFERRED layout - title on top, video panel in the middle, caption box below, b-roll cuts"}
+    - {url: "https://www.youtube.com/shorts/8bhVsbA4sUA", weight: 2, note: "make-money-with-Claude Short: hook style and pacing of the niche"}
+    - {url: "https://www.youtube.com/shorts/KQeXrvncz_k", weight: 1, note: "AI visuals, fast cuts, music"}
+    - {url: "https://www.youtube.com/shorts/Q9rWfCbDhk8", weight: 1, note: "AI visuals, music, strong hook"}

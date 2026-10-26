@@ -8,13 +8,15 @@
 import argparse
 import datetime as dt
 import json
+import os
+import subprocess
 import shutil
 import sys
 import traceback
 
 from . import flow, google_apis as g, notify, schedule, state, writer
 from .config import (OUT_DIR, CHANNEL_NAME, CHANNEL_HANDLE, HASHTAGS, NICHE, DISCLAIMER, SCRIPTS_PER_DAY,
-                     MAX_VIDEO_SECONDS)
+                     MAX_VIDEO_SECONDS, IS_ZOHO, NICHE_ID, NICHES)
 
 IST = schedule.IST
 AI_DISCLOSURE = "This video uses an AI-generated presenter and voice."
@@ -26,11 +28,17 @@ def _yt_safe(text):
 
 
 def build_title(sc):
+    if not IS_ZOHO:  # niche switch - below is the Zoho niche, unchanged
+        from .niche_claude_wealth import build_title as nb
+        return nb(sc, _yt_safe)
     t = (sc.get("title") or f"{CHANNEL_NAME} - Zoho fix").replace("#Shorts", "").strip()
     return _yt_safe((t[:88] + " #Shorts").strip())
 
 
 def build_description(sc, angle):
+    if not IS_ZOHO:  # niche switch
+        from .niche_claude_wealth import build_description as nd
+        return nd(sc, angle, _yt_safe, AI_DISCLOSURE)
     lines = [(sc.get("description") or "").strip(), ""]
     steps = angle.get("steps") or []
     if steps:
@@ -91,6 +99,29 @@ def run_comments(max_replies=15):
         notify.send(f"⚠️ {CHANNEL_NAME}: {failed} comment replies fail ho gaye. GitHub Actions ka log dekh.")
 
 
+def _assemble_other_niches():
+    """NICHE SWITCH: a Short is always built with the niche it was written for (job.json "niche"; old jobs = zoho).
+    flow.finish() above only builds jobs of the active niche; jobs of other niches still waiting are built here, in
+    a child run with NICHE=<their niche>, so switching niches never breaks a Short that is half-way."""
+    if os.getenv("NICHE_CHILD"):
+        return
+    others = set()
+    for jf in sorted(flow.JOBS.glob("*/job.json")) if flow.JOBS.exists() else []:
+        try:
+            job = json.loads(jf.read_text(encoding="utf-8"))
+        except Exception:
+            continue
+        n = job.get("niche") or "zoho"
+        if n != NICHE_ID and n in NICHES and str(job.get("status", "")).lower() not in flow.SKIP_STATUS:
+            others.add(n)
+    for n in sorted(others):
+        print(f"\n[niche] building waiting '{n}' Shorts with the {n} settings")
+        r = subprocess.run([sys.executable, "-m", "autopilot.main", "assemble"],
+                           env=dict(os.environ, NICHE=n, NICHE_CHILD="1"))
+        if r.returncode:
+            print(f"[niche] '{n}' assemble exited with {r.returncode}")
+
+
 def main(argv=None):
     p = argparse.ArgumentParser()
     p.add_argument("task", choices=["daily", "comments", "assemble"])
@@ -102,6 +133,7 @@ def main(argv=None):
             flow.prepare(max(1, a.count), not a.no_upload)
         elif a.task == "assemble":  # your Flow clips -> finished Short -> QA -> YouTube
             flow.finish()
+            _assemble_other_niches()
         else:
             run_comments()
     except Exception as e:

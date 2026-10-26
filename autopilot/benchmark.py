@@ -15,14 +15,14 @@ import json
 import re
 import time
 
-from .config import CH, CHANNEL_NAME, STATE_DIR
+from .config import CH, CHANNEL_NAME, STATE_DIR, IS_ZOHO
 
 _B = CH.get("benchmark", {}) or {}
 MIN_SCORE = int(_B.get("min_score", 75))
 MIN_CRITERION = int(_B.get("min_criterion", 50))  # any single criterion below this blocks the upload
 REFS = _B.get("references", []) or []
 SEARCH = _B.get("youtube_search", "Zoho Books")
-FILE = STATE_DIR / "benchmark.json"
+FILE = STATE_DIR / ("benchmark.json" if IS_ZOHO else "benchmark_claude_wealth.json")  # niche switch: own rubric
 MAX_AGE_DAYS = 14
 
 CRITERIA = {
@@ -41,6 +41,22 @@ CRITERIA = {
     "value": "the viewer learns a real, correct fix they can follow",
     "polish": "looks as professional as the reference Shorts (layout, fonts, colours, no glitches)",
 }
+
+# NICHE SWITCH (27 Oct 2026): the words that describe the niche. Zoho values = exactly the old text; the checks,
+# scores, blockers and limits are the SAME for every niche (quality stays as strict as before).
+_QA_NICHE = "English AI + Zoho automation Shorts"
+_QA_LEARN = "English Zoho problem->fix Shorts\nwith an AI avatar of the creator + Zoho Books screens"
+_QA_PART = "Zoho-screen"
+_QA_SCREENS = ("the Zoho / AI / API screen shows what is being said at that moment, readable on a phone, the highlight is\n"
+               "   on the right button / field, it looks like the real app")
+_QA_STORY = "hook in the first 2 s, the fix is correct and complete, the video ends cleanly (no abrupt cut)"
+if not IS_ZOHO:
+    from . import niche_claude_wealth as _nw
+    CRITERIA = {("screens" if k == "zoho_screens" else k): v for k, v in CRITERIA.items()}
+    CRITERIA["screens"] = _nw.QA_SCREENS
+    CRITERIA["value"] = _nw.QA_VALUE
+    _QA_NICHE, _QA_LEARN, _QA_PART, _QA_SCREENS, _QA_STORY = (_nw.QA_NICHE, _nw.QA_LEARN, _nw.QA_SCREEN_PART,
+                                                              _nw.QA_SCREENS, _nw.QA_STORY)
 
 
 def _yt_id(url):
@@ -108,8 +124,7 @@ def learn(yt=None, force=False):
         vid = _yt_id(ref.get("url"))
         if not vid:
             continue
-        prompt = f"""Watch this YouTube Short. Our channel "{CHANNEL_NAME}" makes English Zoho problem->fix Shorts
-with an AI avatar of the creator + Zoho Books screens. Owner's note about this reference: "{ref.get('note', '')}".
+        prompt = f"""Watch this YouTube Short. Our channel "{CHANNEL_NAME}" makes {_QA_LEARN}. Owner's note about this reference: "{ref.get('note', '')}".
 Describe precisely what makes it work. Return JSON:
 {{"length_s": 0, "hook": "what happens in the first 2 s", "layout": "screen layout (title bar, panels, split screen...)",
  "visuals": ["kinds of shots used"], "cuts_per_10s": 0, "captions": "style/position/colours",
@@ -162,13 +177,13 @@ def gate(mp4, sc, engine, tech_problems, voice="gemini"):
     refs = [{k: r.get(k) for k in ("url", "note", "hook", "layout", "visuals", "cuts_per_10s", "captions",
                                    "presenter", "music", "what_to_copy")} for r in bm.get("references", [])]
     from google.genai import types
-    voice_rule = ("ONE voice from start to end: the presenter clips and the Zoho-screen parts must sound like the SAME "
+    voice_rule = (f"ONE voice from start to end: the presenter clips and the {_QA_PART} parts must sound like the SAME "
                   "man (timbre, accent, pace, loudness). A different voice anywhere is a blocker." if voice == "gemini"
-                  else f"Today the Zoho-screen parts use a backup voice ('{voice}') because the AI-voice quota was used "
+                  else f"Today the {_QA_PART} parts use a backup voice ('{voice}') because the AI-voice quota was used "
                   "up - a different voice on the screen parts is expected and NOT a blocker, but every part must be "
                   "clear, natural and at the same loudness.")
     prompt = f"""You are the senior video editor AND the strict final QA for the YouTube channel "{CHANNEL_NAME}"
-(English AI + Zoho automation Shorts). Watch the attached Short second by second - picture AND sound - exactly like a
+({_QA_NICHE}). Watch the attached Short second by second - picture AND sound - exactly like a
 professional editor does before publishing. It is uploaded ONLY if it is as good as the best Shorts in the niche;
 when in doubt, it fails. Being strict here protects the channel.
 Expected title: "{sc.get('title', '')}". Expected top title text: "{sc.get('hook_text', '')}".
@@ -181,11 +196,10 @@ Editor's checklist - check EVERY point and give a timestamp (m:ss) for each defe
 2. Presenter: lips match every word, natural face and hands (no morphing, extra fingers), gestures fit the words,
    the SAME outfit and background in every presenter shot.
 3. Voice: {voice_rule} Also: no sudden loudness jump, click / pop, cut-off word, robotic word, silence over 0.8 s.
-4. Screens: the Zoho / AI / API screen shows what is being said at that moment, readable on a phone, the highlight is
-   on the right button / field, it looks like the real app.
+4. Screens: {_QA_SCREENS}.
 5. Captions: exactly the spoken words, in sync, never covering the face or the important part of the screen.
 6. Music: present but always quieter than the voice.
-7. Story: hook in the first 2 s, the fix is correct and complete, the video ends cleanly (no abrupt cut).
+7. Story: {_QA_STORY}.
 
 Score each criterion 0-100 compared with those references (70 = as good as an average reference, 90 = as good as the best):
 {json.dumps(CRITERIA, ensure_ascii=False, indent=1)}

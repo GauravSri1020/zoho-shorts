@@ -25,7 +25,7 @@ import traceback
 import urllib.request
 from pathlib import Path
 
-from .config import CH, CHANNEL_NAME, OUT_DIR, ROOT, LOCALES
+from .config import CH, CHANNEL_NAME, OUT_DIR, ROOT, LOCALES, IS_ZOHO, NICHE_ID
 
 JOBS = ROOT / "jobs"
 _F = CH.get("flow", {}) or {}
@@ -53,6 +53,10 @@ SKIP_STATUS = ("done", "uploaded", "uploaded_manually", "skip")
 FACE_BEATS = tuple(str(b).upper() for b in (_F.get("face_beats") or ["HOOK", "PROBLEM", "RESULT"]))
 DROP_BEATS = tuple(str(b).upper() for b in (_F.get("drop_beats") or ["CTA"]))
 MAX_WAITING = int(_F.get("max_waiting", 2))  # the scheduled daily run skips if this many Shorts still wait for clips
+# NICHE SWITCH (27 Oct 2026): words that differ per niche. Zoho values = exactly the old text.
+SCREEN_WORD = "Zoho screens" if IS_ZOHO else "Claude / tool screens"
+SCREEN_PART = "Zoho-screen" if IS_ZOHO else "screen"
+UPLOAD_TAGS = ["Zoho", "AI automation", "Shorts"] if IS_ZOHO else [str(t) for t in (CH.get("upload_tags") or ["Shorts"])]
 
 
 def _run(cmd):
@@ -252,7 +256,7 @@ def _body(job):
         "**Download** the video.",
         f"4. Open **[this upload link]({upload_link(job['id'])})** -> drag **all** the clips in -> **Commit changes**.",
         "   Any file names, any order: the robot listens to every clip and matches it to its line.",
-        "5. Done. The robot cuts, joins, hides the Flow watermark, adds Zoho screens + captions + music, checks the "
+        f"5. Done. The robot cuts, joins, hides the Flow watermark, adds {SCREEN_WORD} + captions + music, checks the "
         "quality and schedules it on YouTube. This issue closes by itself.", "",
         "Retake a bad clip? Just upload the new one too - the clip that matches its line best is used.",
         "", "---", "", *rows])
@@ -267,11 +271,21 @@ def prepare(count, do_upload):
     waiting = [p for p in JOBS.glob("*/job.json")] if JOBS.exists() else []
     waiting = [p for p in waiting
                if json.loads(p.read_text(encoding="utf-8")).get("status") == "waiting_for_clips"]
+    if not IS_ZOHO:  # niche switch: only this niche's own waiting Shorts count (old Zoho ones never block it)
+        waiting = [p for p in waiting
+                   if (json.loads(p.read_text(encoding="utf-8")).get("niche") or "zoho") == NICHE_ID]
     if count <= PER_DAY and len(waiting) >= MAX_WAITING:
         print(f"[flow] {len(waiting)} Shorts already wait for clips - no new one today")
         return
     st = state.load()
-    angles = writer.scout(research.fetch(st["covered_links"]), count + 2, st["problems"])
+    if IS_ZOHO:  # the Zoho niche, unchanged
+        angles = writer.scout(research.fetch(st["covered_links"]), count + 2, st["problems"])
+    else:  # niche switch: the rotation (4 wealth -> 1 problems) decides what kind of Short comes next
+        from . import niche_claude_wealth as nw
+        rot = st.setdefault("rotation", {}).get(NICHE_ID, 0)
+        kinds = nw.needed_kinds(rot, count)
+        print(f"[flow] niche {NICHE_ID}: rotation position {rot} -> next Shorts: {kinds}")
+        angles = writer.scout(research.fetch(st["covered_links"]), count + 2, st["problems"], kinds)
     print(f"[flow] scout found {len(angles)} angles")
     made, errors = 0, []
     for k, angle in enumerate(angles):
@@ -292,7 +306,7 @@ def prepare(count, do_upload):
             d = JOBS / job_id
             (d / "clips").mkdir(parents=True, exist_ok=True)
             (d / "clips" / ".keep").write_text("drop the Flow clips here\n")
-            job = {"id": job_id, "status": "waiting_for_clips", "upload": do_upload,
+            job = {"id": job_id, "niche": NICHE_ID, "status": "waiting_for_clips", "upload": do_upload,
                    "created": dt.datetime.utcnow().isoformat(timespec="seconds"),
                    "title": build_title(sc), "description": build_description(sc, angle),
                    "angle": {k2: v for k2, v in angle.items() if k2 != "story"}, "story": angle.get("story"),
@@ -310,6 +324,8 @@ def prepare(count, do_upload):
                                                       "pillar": angle.get("pillar"), "engine": "flow",
                                                       "job": job_id, "created": job["created"]}
             st["next_id"] += 1
+            if not IS_ZOHO:
+                st.setdefault("rotation", {})[NICHE_ID] = st["rotation"].get(NICHE_ID, 0) + 1
             made += 1
             where = issue.get("html_url") or f"https://github.com/{REPO}/blob/main/jobs/{job_id}/PROMPTS.md"
             notify.send(f"🎬 {CHANNEL_NAME}: a new Short needs {len(clips)} Flow clips.\n"
@@ -452,7 +468,7 @@ def _fill_app(job, lines):
         if hits:
             guess = hits[0][1]
             break
-    if not guess:
+    if not guess or not IS_ZOHO:  # niche switch: the Zoho-app guess only applies to Zoho Shorts
         return
     for l in lines:
         sp = l.get("screen")
@@ -560,6 +576,9 @@ def finish():
         if str(job.get("status", "")).lower() in SKIP_STATUS:
             print(f"[flow] {job['id']}: status {job.get('status')} - skipped")
             continue
+        if (job.get("niche") or "zoho") != NICHE_ID:  # niche switch: built by main.py with its own niche settings
+            print(f"[flow] {job['id']}: niche '{job.get('niche') or 'zoho'}' (active: {NICHE_ID}) - built separately")
+            continue
         files = _clip_files(d)
         need = len(job["clips"])
         if len(files) < need:
@@ -619,7 +638,7 @@ def finish():
                     print(f"[schedule] could not read the channel's scheduled videos: {str(e)[:160]}")
                     yt_times = []
                 when, slot = schedule.next_slot(st["slots"], youtube_times=yt_times)
-                tags = list(sc.get("tags") or []) + ["Zoho", "AI automation", "Shorts"]
+                tags = list(sc.get("tags") or []) + UPLOAD_TAGS
                 try:
                     loc = writer.localize(job["title"], job["description"], LOCALES)
                 except Exception as e:
@@ -636,7 +655,7 @@ def finish():
                 print(f"[flow] scheduled for {when:%d %b %I:%M %p} IST: https://youtube.com/shorts/{vid}")
             state.save(st)
             if job.get("_voice") not in (None, "gemini"):
-                msg += (f"\n\nℹ️ The Gemini voice quota was used up, so the Zoho-screen parts use the backup voice "
+                msg += (f"\n\nℹ️ The Gemini voice quota was used up, so the {SCREEN_PART} parts use the backup voice "
                         f"'{job['_voice']}' this time (your presenter clips keep your own voice).")
             _comment(job, msg)
             if job.get("issue"):

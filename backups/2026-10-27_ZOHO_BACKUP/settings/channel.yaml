@@ -1,0 +1,210 @@
+# =====================================================================================
+#  CHANNEL SETTINGS  -  sab kuch yahin se badlo (naam, niche, feeds, timing)
+#  Fully automatic: AI research, script, QA, AI voice, AI avatar (tere photo se), video, upload.
+#  AI avatar + AI voice -> YouTube ka 'altered or synthetic content' label har video pe ON rehta hai.
+#  12 Oct 2026: niche v2 = "AI + Zoho automation" (trending, AI agents, lead flow, APIs), global audience.
+#  Purani settings: git branch backup-2026-10-12-before-ai-niche
+# =====================================================================================
+
+channel:
+  name: "GSX Automation"         # shown on videos and in descriptions
+  handle: "@GSXAutomation"       # your YouTube @handle
+  language: "English"           # Hinglish | Hindi | English  (scripts + captions)
+  hashtags: ["Shorts", "Zoho", "AIAutomation", "ZohoCRM", "AIAgents"]
+  # Keep "Zoho" OUT of the channel name/logo (trademark). Using it in titles/tags to describe the topic is fine.
+  disclaimer: "Independent channel. Not affiliated with or endorsed by Zoho Corporation. Zoho is a trademark of Zoho Corporation."
+
+# What the channel is about. The agents read this to decide WHAT to make.
+niche:
+  topic: >-
+    AI-powered business automation with Zoho: connecting Claude, ChatGPT / OpenAI, Gemini and Zia agents to
+    Zoho CRM, Books, Desk, Creator, Social, Flow, Sign, Catalyst, Analytics, SalesIQ and their APIs
+  audience: >-
+    business owners, sales and ops managers, Zoho admins, consultants and developers in the Middle East (UAE, Saudi),
+    Europe, India and the US who want their business to run itself
+  promise: >-
+    every Short takes ONE real business problem (ideally one that is trending this week) and shows a working,
+    future-proof fix inside Zoho - preferably with AI doing the work (an AI agent, Claude or ChatGPT over MCP,
+    an AI step in Zoho Flow, a Deluge function calling an AI API, a widget, a custom API). Show the real menu,
+    the real API endpoint or the real prompt, so the viewer can copy it. It should make even a Zoho expert say
+    "I didn't know you could do that".
+  # Content mix. The scout picks the pillar for each Short by these weights (trending news always wins if strong).
+  pillars:
+    trending: {weight: 3, about: "this week's AI / tech / business news or deadline -> how to use it inside Zoho today"}
+    ai_agent: {weight: 3, about: "AI does the work in Zoho: Claude/ChatGPT via Zoho MCP, Zia Agent Studio agents, AI steps in Flow, LLM calls from Deluge"}
+    lead_flow: {weight: 2, about: "leads from every source (Facebook/Instagram ads via Zoho Social, WhatsApp, website forms, email, SalesIQ chat) land in Zoho CRM automatically, scored and routed by AI"}
+    dev_api: {weight: 2, about: "the developer view: which Zoho API / scope / endpoint / limit, custom APIs, webhooks, widgets, Catalyst functions, Zoho Sign API - with the exact call"}
+    problem_fix: {weight: 1, about: "a classic everyday Zoho pain fixed in 3 steps (workflow, blueprint, Deluge), upgraded with an AI twist where it helps"}
+  good_problems:
+    - "Sales manager exports CRM to Excel just to see which deals are stuck - Claude answers it live via Zoho MCP"
+    - "Facebook lead-ad leads reach the sales rep two days late - Zoho Social pushes them to CRM in real time and AI scores them"
+    - "Every inbound email is read and sorted by hand - a Zoho Flow AI step classifies it and creates the lead / ticket / bill"
+    - "Integration breaks with TOO_MANY_REQUESTS - Zoho CRM API credits and concurrency explained with the fix"
+    - "UAE e-invoicing deadline - where to switch it on in Zoho Books (menus only, no tax advice)"
+    - "A screen Zoho doesn't have - build a CRM widget with the JS SDK in 20 lines"
+  solution_types: # the scout picks one per Short
+    ai_agent: "an AI agent does it: Zia Agent Studio agent, or Claude / ChatGPT connected through Zoho MCP"
+    mcp: "connect an AI client (Claude, ChatGPT, any MCP client) to a Zoho MCP server and give it the job in plain English"
+    flow_ai: "a Zoho Flow with an AI step (OpenAI / Claude / Zia) between a trigger and a Zoho action"
+    deluge_ai: "a Deluge custom function that calls an AI API with invokeurl and writes the answer back"
+    native: "built-in settings: workflow rules, blueprint, validation, assignment rules, layouts, Zia features"
+    deluge: "a short Deluge custom function / schedule / button"
+    widget: "a Zoho widget (HTML + JS SDK) inside CRM / Desk / Creator"
+    api: "a REST call: Zoho API endpoint, custom API, webhook, Catalyst function, Zoho Sign API"
+  skip: "pricing/discount news, funding news, opinion pieces, rumours, anything without a practical fix"
+  safety: "no financial, tax or legal advice (for tax/e-invoicing topics show the menus only and say 'check with your tax advisor'); never show real customer data, real keys or tokens"
+  cta: "Follow {name} for AI + Zoho automations"
+
+# Real problems + Gaurav's own Zoho experience. The scout reads this every day (see research/problem_bank.yaml).
+problem_bank: "research/problem_bank.yaml"
+
+# Where the research agent looks for what is trending and what people are asking. Any RSS / Atom feed works.
+sources:
+  feeds:
+    # Zoho questions and news
+    - "https://www.reddit.com/r/zoho/new/.rss"
+    - "https://stackoverflow.com/feeds/tag/zoho"
+    - "https://stackoverflow.com/feeds/tag/zoho-deluge"
+    - "https://stackoverflow.com/feeds/tag/zoho-creator"
+    - "https://stackoverflow.com/feeds/tag/zoho-crm"
+    - "https://news.google.com/rss/search?hl=en&gl=US&ceid=US:en&q=Zoho+when:7d"
+    - "https://news.google.com/rss/search?hl=en&gl=US&ceid=US:en&q=Zoho+Zia+OR+%22Zoho+MCP%22+when:14d"
+    # AI news that can be turned into "use it inside Zoho today"
+    - "https://news.google.com/rss/search?hl=en&gl=US&ceid=US:en&q=%22AI+agents%22+CRM+OR+sales+when:3d"
+    - "https://news.google.com/rss/search?hl=en&gl=US&ceid=US:en&q=Claude+OR+ChatGPT+OR+OpenAI+OR+Gemini+launch+business+when:3d"
+    - "https://news.google.com/rss/search?hl=en&gl=US&ceid=US:en&q=%22Model+Context+Protocol%22+OR+MCP+server+when:7d"
+    - "https://hnrss.org/newest?q=MCP+OR+%22AI+agent%22+OR+CRM&points=50"
+    # People asking for automation help
+    - "https://www.reddit.com/r/CRM/new/.rss"
+    - "https://www.reddit.com/r/automation/new/.rss"
+    - "https://www.reddit.com/r/smallbusiness/search.rss?q=CRM+OR+automation+OR+leads&sort=new&restrict_sr=on"
+    # Region news (Middle East, Europe): deadlines and changes that hit every business
+    - "https://news.google.com/rss/search?hl=en-AE&gl=AE&ceid=AE:en&q=e-invoicing+OR+%22AI%22+business+UAE+when:7d"
+    - "https://news.google.com/rss/search?hl=en-GB&gl=GB&ceid=GB:en&q=e-invoicing+OR+%22AI+Act%22+business+Europe+when:7d"
+    # Google Trends (daily trending searches) - only items that match the keywords below are kept
+    - "https://trends.google.com/trending/rss?geo=US"
+    - "https://trends.google.com/trending/rss?geo=AE"
+    - "https://trends.google.com/trending/rss?geo=DE"
+  keywords: ["zoho", "deluge", "zia", "crm", "creator", "zoho books", "zoho desk", "widget", "blueprint", "workflow",
+             "ai agent", "agents", "mcp", "claude", "chatgpt", "openai", "gemini", "llm", "automation", "automate",
+             "lead", "leads", "sales", "whatsapp", "e-invoicing", "invoice", "api", "webhook", "no-code", "crm"]
+  lookback_days: 7
+  # If the feeds give nothing useful, the scout picks from the problem bank / its own knowledge.
+  evergreen_fallback: true
+
+# Shorts per day (each one goes into the next free slot)
+scripts:
+  per_day: 1
+  words_min: 110
+  words_max: 150
+
+# Titles + descriptions are also written in these languages and attached to every upload (YouTube shows the
+# viewer's language automatically). Audio and captions stay English.
+localize:
+  languages: ["ar", "de", "fr", "es", "hi"]
+
+# The presenter: YOU, made in Google Flow (your avatar + Veo 3.1 with its own voice) - see autopilot/flow.py
+flow:
+  per_day: 1                # Shorts prepared per day (each needs ~3-6 Flow clips; Veo 3.1 Fast ~20 credits each)
+  max_words_per_clip: 21    # ~7.8 s of brisk speech -> still fits one 8 s Flow clip (was 19)
+  speed: 1.15               # lifts the pace of every clip a little (voice + lips together), 1.0 = off (was 1.1)
+  max_batch: 14             # a manual daily run may prepare up to this many Shorts at once (a week)
+  presenter: "The man (my avatar)"   # how every prompt refers to you - select your avatar in Flow before pasting
+  # Accent for a global audience (Middle East + Europe + US + India). Change to "an Indian accent" for the old style.
+  accent: "a clear, neutral international accent"
+  voice_style: "Say this like a friendly, energetic YouTube tech explainer, clear natural English with a neutral international accent, brisk pace"
+  backup_voice: "en-GB-RyanNeural"
+  scene: "wearing a dark grey blazer over a navy t-shirt, in a bright modern office with soft daylight"
+  # 14 Oct 2026 (Gaurav): har Short alag look - smart-casual mix (kabhi casual, kabhi professional; na Gen-Z
+  # streetwear, na stiff suit-tie), alag-alag jagah (office ke bahar campus/park, street, terrace, lounge...).
+  # Ek look = ek Short ke saare clips (outfit + jagah same rehti hai), Shorts ke beech rotate hota hai.
+  looks:
+    - "wearing a navy unstructured blazer over a plain white t-shirt and dark chinos, on a tree-lined walkway of a modern corporate office campus in soft morning sun, glass office buildings behind him"
+    - "wearing a light blue oxford shirt with the sleeves rolled up, in a bright co-working space with large windows, wooden tables and plants"
+    - "wearing a charcoal overshirt over a black crew-neck t-shirt, in a modern tech startup office with exposed brick, plants and warm lights"
+    - "wearing an olive field jacket over a grey t-shirt, on a clean city sidewalk just outside a glass office tower, softly blurred street behind him"
+    - "wearing a white linen shirt with the top button open, on a sunny rooftop terrace with a city skyline behind him at golden hour"
+    - "wearing a navy blazer over a crisp white shirt with no tie, in a glass-walled high-rise office with a city skyline at golden hour behind him"
+    - "wearing a dark green polo shirt, in a cozy home office with bookshelves, a desk lamp and a monitor showing dashboards"
+    - "wearing a grey crew-neck knit sweater over a white collared shirt, in a glass meeting room with a whiteboard full of flow diagrams"
+    - "wearing a beige overshirt over a white t-shirt, at an outdoor cafe terrace table with a laptop, green trees and soft daylight behind him"
+    - "wearing a black polo shirt, in a premium business lounge with tall windows, leather chairs and a modern city view"
+    - "wearing a light grey blazer over a black t-shirt, in a bright modern office lobby with plants, a reception desk and natural light"
+    - "wearing a light denim shirt, in a landscaped office park courtyard with benches, trees and a modern building behind him"
+  # Shakal + body hamesha avatar ki reference photos jaisi - kabhi patla / mota nahi.
+  body: "His face, skin tone, hairstyle, beard, height and body build stay exactly as in my avatar's reference photos - the same natural average build, never slimmer and never heavier"
+  # Gesture / body language har clip mein alag (har line ke liye pool se ek chuna jaata hai, script ke text se).
+  # Research (14 Oct): talking-head Shorts mein presenter kabhi poora still nahi - halka walk-in, weight shift,
+  # haath ki movement, important baat se pehle chhota pause, ek dost se baat karne jaisa tone, ~15% zyada energy.
+  gestures:
+    HOOK:
+      - "walks a few relaxed steps toward the camera and stops, then raises one hand with an open palm on the first words"
+      - "turns from looking to the side to face the camera, leans in slightly and raises his eyebrows"
+      - "stands with relaxed shoulders, shakes his head once with a half smile and holds up one hand as if saying stop"
+      - "walks into the frame from the side, stops at the centre and points briefly at the camera with an easy smile"
+      - "leans one hand on a table or railing next to him, then straightens up and talks with a confident open gesture"
+    PROBLEM:
+      - "frowns slightly, sighs and spreads both hands palms up as if asking why this is still so hard"
+      - "rubs his forehead briefly, then drops his hand and talks with a tired, relatable expression"
+      - "counts the wasted hours on his fingers with a slightly annoyed face"
+      - "crosses his arms for a moment, then uncrosses them and gestures to the side in mild frustration"
+      - "shrugs with both shoulders and tilts his head, as if he has seen this problem a hundred times"
+    FIX:
+      - "nods confidently and counts the steps on his fingers"
+      - "taps his palm with two fingers as he lists each step"
+    STEP:
+      - "points to the side as if showing something on a screen next to him"
+      - "draws a small arrow in the air with one finger while he explains"
+    RESULT:
+      - "smiles and opens both arms wide"
+      - "relaxes his shoulders, smiles and gives a small satisfied nod with an open-hand gesture"
+      - "snaps his fingers once and smiles as if the problem just disappeared"
+      - "puts one hand in his pocket, smiles and gestures toward the camera with the other hand"
+      - "gives a short confident thumbs up near his chest and smiles"
+    CTA:
+      - "smiles warmly and points at the camera"
+    ANY:
+      - "explains with natural, lively hand gestures and shifts his weight a little"
+  watermark:                # Flow puts a visible watermark on every clip; the editor hides it
+    mode: "crop"            # crop = cut the bottom strip away | blur = blur the box below | none
+    crop_bottom: 0.10
+    box: [0.74, 0.88, 0.24, 0.10]
+
+# When videos go public (IST): FIXED times, max per_day videos a day (also counts videos already scheduled on
+# YouTube, incl. manual uploads). 13 Oct: Gaurav wants one morning (7-8 AM) + one night (9-10 PM) slot.
+# 07:30 IST = 06:00 UAE / 22:00 New York (day before), 21:30 IST = 20:00 UAE / 18:00 Europe (CEST) / 12:00 New York.
+schedule:
+  times: ["07:30", "21:30"]
+  per_day: 2
+  min_lead_minutes: 30
+
+# Captions / editing
+captions:
+  whisper_model: "small"
+  whisper_language: "en"
+  roman_captions: false
+  max_words: 3
+
+video:
+  max_seconds: 60
+
+labels:
+  hook_badge: ""
+
+youtube:
+  category_id: "28"     # 28 = Science & Technology
+  language: "en"
+
+# Benchmark agent: watches these Shorts (and the most-viewed Shorts for youtube_search) every 14 days,
+# then scores every new video against them. Upload happens ONLY if score >= min_score.
+benchmark:
+  min_score: 70  # 13 Oct: quality first (was 65)
+  min_criterion: 55  # any single QA criterion below this blocks the upload
+  youtube_search: "Zoho AI automation"
+  references:
+    - {url: "https://www.youtube.com/shorts/iw5N2XbH3m0", weight: 3, note: "MOST PREFERRED - title on top, video panel in the middle, caption box below, b-roll cuts"}
+    - {url: "https://www.youtube.com/shorts/SiT0DF2jkyw", weight: 2, note: "news-interview style, like this but with AI faces"}
+    - {url: "https://www.youtube.com/shorts/XtZQSylRrF4", weight: 2, note: "Zoho Books trainer talking head + illustration cutaways + highlighted captions"}
+    - {url: "https://www.youtube.com/shorts/9Yna9kWjysU", weight: 2, note: "Hindi step-by-step Zoho Books screen recording"}
+    - {url: "https://www.youtube.com/shorts/KQeXrvncz_k", weight: 1, note: "AI visuals, fast cuts, music"}
+    - {url: "https://www.youtube.com/shorts/Q9rWfCbDhk8", weight: 1, note: "AI visuals, music, strong hook"}

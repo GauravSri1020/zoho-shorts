@@ -23,6 +23,8 @@ from pathlib import Path
 
 import yaml
 
+from .config import CH, IS_ZOHO
+
 W, H, SCALE = 1000, 1100, 2  # panel size in the video; rendered at 2x so zooming stays sharp
 ROOT = Path(__file__).resolve().parent.parent
 REAL_DIR = ROOT / "assets" / "screens"
@@ -177,6 +179,23 @@ pre.resp{background:#0f2a1d;color:#c7f0d8}
 .real img{display:block;max-width:%(W)dpx;max-height:%(H)dpx}
 .real .t{position:absolute}
 """
+_NOTES_CSS = """/* notes: numbers / checklist card (Claude-wealth niche) */
+.notes{flex:1;display:flex;flex-direction:column;gap:16px;padding:34px 34px;background:#faf9f6}
+.notes h1{font-size:38px;margin-bottom:8px}
+.notes .row{display:flex;justify-content:space-between;align-items:center;gap:18px;background:#fff;border:2px solid #e7e3da;
+            border-radius:16px;padding:22px 24px;font-size:25px}
+.notes .row b{font-weight:800;color:#111827;text-align:right}
+.notes .row span{color:#4b5563}
+"""
+if not IS_ZOHO:  # niche switch: the Zoho screens keep exactly the old stylesheet
+    CSS += _NOTES_CSS
+# NICHE SWITCH (27 Oct 2026): labels drawn on the AI-chat / chain screens. Zoho values = exactly the old ones.
+_SL = {} if IS_ZOHO else (CH.get("screens") or {})
+CHAT_BADGE = _SL.get("chat_badge", "● Zoho connected")
+CHAT_TOOL = _SL.get("chat_tool", "Zoho CRM (MCP)")
+FLOW_LOGO = _SL.get("flow_logo", "Zoho <b>Flow</b>")
+FLOW_HEADING = _SL.get("flow_heading", "My Flows")
+DEFAULT_APP = _SL.get("default_app", "books")
 
 
 def _esc(x):
@@ -239,13 +258,17 @@ def normalize(spec, card="", beat=""):
         v, app = "code", "code"
     elif v == "flow" or (app == "flow" and spec.get("nodes")):
         v = "flow"
-    if v not in ("list", "form", "settings", "chat", "api", "code", "flow"):
+    if v not in ("list", "form", "settings", "chat", "api", "code", "flow") + (() if IS_ZOHO else ("notes",)):
         v = "list" if spec.get("rows") else "settings" if spec.get("toggles") else "form" if spec.get("fields") else \
             ("settings" if path[0].lower() in ("settings", "preferences", "setup") else "list")
     if v in ("list", "form", "settings") and app not in APPS:
-        app = "books" if not app else app
+        app = DEFAULT_APP if not app else app
+    if not IS_ZOHO and (v in ("list", "form", "settings", "notes") or app == "notes"):
+        v, app = "notes", "notes"  # niche switch: no Zoho app pages here - tables / fields become a numbers card
+        if not spec.get("rows") and spec.get("fields"):
+            spec["rows"] = spec["fields"]
     spec["app"], spec["view"] = app, v
-    if v in ("api", "code", "flow", "chat") and spec.get("heading") == path[-1] and path == ["Home"]:
+    if v in ("api", "code", "flow", "chat", "notes") and spec.get("heading") == path[-1] and path == ["Home"]:
         spec["heading"] = ""  # no fake "Home" title on API / code / flow / chat screens
     real = spec.get("real")
     spec["real"] = real if real and real in library() else None
@@ -354,7 +377,7 @@ def _chat_page(spec):
     click = spec.get("click") or ""
     who = "ChatGPT" if spec["app"] == "chatgpt" else "Claude"
     ac = "#10a37f" if who == "ChatGPT" else "#c96442"
-    tool = spec.get("tool") or "Zoho CRM (MCP)"
+    tool = spec.get("tool") or CHAT_TOOL
     msgs = spec.get("messages") or [["user", "Which deals over $10k have had no activity for 14 days?"],
                                     ["assistant", "Found 6 deals. Biggest: Al Noor Trading - $48,000, last touch 19 days ago."]]
     out = []
@@ -367,7 +390,7 @@ def _chat_page(spec):
                        f'<div {_tgt_in(click, text) if not _tgt_in(click, tool) else ""}>{_esc(text)}</div></div>')
     tip = f'<div class="tip" style="margin:0 28px 20px">Tip: {_esc(spec["tip"])}</div>' if spec.get("tip") else ""
     inner = (f'<div class="chat"><div class="bar"><span class="dot"></span>{who}'
-             f'<span class="conn" {_tgt_in(click, "connected")}>● Zoho connected</span></div>'
+             f'<span class="conn" {_tgt_in(click, "connected")}>{_esc(CHAT_BADGE)}</span></div>'
              f'<div class="msgs">{"".join(out)}</div>{tip}<div class="box">Reply...</div></div>')
     return _page(inner, ac, "#222")
 
@@ -431,9 +454,26 @@ def _flow_page(spec):
             out.append('<div class="arrow"></div>')
         out.append(f'<div class="node" {_tgt_in(click, n)}><em>{_esc(kind.strip().upper())}</em>{_esc(text.strip())}</div>')
     tip = f'<div class="tip" style="margin-top:30px;width:100%">Tip: {_esc(spec["tip"])}</div>' if spec.get("tip") else ""
-    inner = (f'<div class="top"><div class="logo">Zoho <b>Flow</b></div><div class="search">{_esc(spec.get("heading") or "My Flows")}</div></div>'
+    inner = (f'<div class="top"><div class="logo">{FLOW_LOGO}</div><div class="search">{_esc(spec.get("heading") or FLOW_HEADING)}</div></div>'
              f'<div class="chain">{"".join(out)}{tip}</div>')
     return _page(inner, APPS["flow"]["accent"], APPS["flow"]["side"])
+
+
+def _notes_page(spec):
+    """Numbers / checklist card: heading + up to 5 label-value rows (Claude-wealth niche)."""
+    click = spec.get("click") or ""
+    rows = []
+    for r in (spec.get("rows") or [])[:5]:
+        r = list(r) if isinstance(r, (list, tuple)) else [r]
+        a, b = (r + ["", ""])[:2]
+        if len(r) > 2:
+            b = " ".join(str(x) for x in r[1:])
+        rows.append(f'<div class="row" {_tgt_in(click, f"{a} {b}")}><span>{_esc(a)}</span><b>{_esc(b)}</b></div>')
+    tip = f'<div class="tip">Tip: {_esc(spec["tip"])}</div>' if spec.get("tip") else ""
+    head = spec.get("heading") or ""
+    inner = (f'<div class="notes">{f"<h1 {_tgt_in(click, head) if not rows else chr(32)}>{_esc(head)}</h1>" if head else ""}'
+             f'{"".join(rows)}{tip}</div>')
+    return _page(inner, "#c96442", "#222")
 
 
 def _real_page(spec):
@@ -460,7 +500,7 @@ def _real_page(spec):
 def build_html(spec):
     if spec.get("real"):
         return _real_page(spec)
-    return {"chat": _chat_page, "api": _api_page, "code": _code_page, "flow": _flow_page}.get(
+    return {"chat": _chat_page, "api": _api_page, "code": _code_page, "flow": _flow_page, "notes": _notes_page}.get(
         spec["view"], _app_page)(spec)
 
 

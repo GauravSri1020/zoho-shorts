@@ -22,7 +22,7 @@ import subprocess
 from pathlib import Path
 
 from . import music, screens
-from .config import CHANNEL_HANDLE, CHANNEL_NAME
+from .config import CHANNEL_HANDLE, CHANNEL_NAME, IS_ZOHO
 
 W, H, FPS = 1080, 1920, 30
 PX, PY, PW, PH = 40, 470, 1000, 1100  # middle panel (screen shots)
@@ -166,6 +166,9 @@ def _card(panel_mp4, bg, fg, frames, out):
 # ------------------------------------------------------------------ static layers
 def _app_label(sc, specs):
     """Top tag text: the script's own label ("Zoho CRM + Claude"), else from the first screen's app."""
+    if not IS_ZOHO:  # niche switch - below is the Zoho niche, unchanged
+        from .niche_claude_wealth import app_label
+        return app_label(sc, specs)
     import html as h
     lab = str(sc.get("app_label") or "").strip()
     if not lab and specs:

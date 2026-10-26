@@ -9,7 +9,39 @@ STATE_DIR = ROOT / "state"
 ASSETS_DIR = ROOT / "assets"
 OUT_DIR = ROOT / "out"
 
-CH = yaml.safe_load((ROOT / os.getenv("CHANNEL_FILE", "channel.yaml")).read_text(encoding="utf-8"))
+def _load(rel):
+    return yaml.safe_load((ROOT / rel).read_text(encoding="utf-8")) or {}
+
+
+def _merge(base, over):
+    """Niche file on top of the niche it extends, ONE level deep: a section the niche writes (channel, niche,
+    benchmark, ...) takes the base section and replaces only the keys the niche gives - so pillars, feeds,
+    solution types, references are the niche's own (never mixed with Zoho's), while the presenter / looks /
+    gestures / schedule / QA limits it does not mention come from the base."""
+    out = dict(base)
+    for k, v in (over or {}).items():
+        out[k] = {**out[k], **v} if isinstance(v, dict) and isinstance(out.get(k), dict) else v
+    return out
+
+
+# 27 Oct 2026 - NICHE SWITCH. channel.yaml = only the switch ("active_niche") + the list of niche files.
+# Every niche is its own file in niches/ (niches/zoho.yaml = the old channel.yaml, not one line changed).
+# One run can override it: env NICHE (GitHub: Run workflow -> niche). An old-style channel.yaml (no
+# active_niche) still works exactly as before = the Zoho niche.
+_SWITCH = _load(os.getenv("CHANNEL_FILE", "channel.yaml"))
+if "active_niche" in _SWITCH:
+    NICHES = dict(_SWITCH.get("niches") or {})
+    NICHE_ID = (os.getenv("NICHE") or "").strip() or str(_SWITCH["active_niche"]).strip()
+    if NICHE_ID not in NICHES:
+        raise SystemExit(f"niche '{NICHE_ID}' is not listed in channel.yaml -> niches ({', '.join(NICHES)})")
+    CH = _load(NICHES[NICHE_ID])
+    if CH.get("extends"):
+        CH = _merge(_load(NICHES[CH["extends"]]), {k: v for k, v in CH.items() if k != "extends"})
+else:
+    NICHES = {"zoho": os.getenv("CHANNEL_FILE", "channel.yaml")}
+    NICHE_ID = "zoho"
+    CH = _SWITCH
+IS_ZOHO = NICHE_ID == "zoho"
 
 CHANNEL_NAME = CH["channel"]["name"]
 CHANNEL_HANDLE = CH["channel"]["handle"]

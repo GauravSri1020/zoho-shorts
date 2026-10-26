@@ -15,7 +15,7 @@ from html import unescape
 import feedparser
 import yaml
 
-from .config import FEEDS, KEYWORDS, LOOKBACK_DAYS, PROBLEM_BANK
+from .config import FEEDS, KEYWORDS, LOOKBACK_DAYS, PROBLEM_BANK, IS_ZOHO
 
 _KW = [k.strip() for k in KEYWORDS if k.strip()]
 MATCH = re.compile(r"\b(" + "|".join(re.escape(k) for k in _KW) + r")\b", re.I) if _KW else None
@@ -63,9 +63,18 @@ def _bank(already_covered):
         if not p.get("problem") or link in already_covered:
             continue
         summary = " | ".join(f"{k}: {p[k]}" for k in ("pillar", "region", "product", "fix", "facts", "wow") if p.get(k))
-        out.append({"title": p["problem"], "link": link, "summary": summary[:900], "source": "GSX problem bank",
-                    "ts": time.time(), "trend": 0, "pillar": p.get("pillar", "")})
+        if not IS_ZOHO:  # niche switch: the Claude-wealth bank also carries steps, the catch and its source
+            extra = " | ".join(f"{k}: {p[k]}" for k in ("kind", "steps", "catch", "source") if p.get(k))
+            summary = (summary + " | " + extra if extra else summary)[:1600]
+        out.append({"title": p["problem"], "link": link, "summary": summary[:900] if IS_ZOHO else summary,
+                    "source": "GSX problem bank", "ts": time.time(), "trend": 0, "pillar": p.get("pillar", "")})
+        if not IS_ZOHO:
+            out[-1] |= {"kind": p.get("kind") or ("problems" if p.get("pillar") == "problems" else "wealth"),
+                        "order": p.get("order")}
     # round-robin over pillars, so the scout always sees a mix (AI agents, lead flow, API, regional, ...)
+    if not IS_ZOHO:  # Claude-wealth bank: the hand-ordered first Shorts ("order: 1..5") come first
+        out.sort(key=lambda it: (it.get("order") is None, it.get("order") or 0))
+        return out
     groups = {}
     for it in out:
         groups.setdefault(it["pillar"], []).append(it)

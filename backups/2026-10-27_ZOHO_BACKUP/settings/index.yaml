@@ -1,0 +1,1146 @@
+# =====================================================================================
+#  REAL ZOHO SCREENSHOTS  (from your own Zoho account - no customer data!)
+#  The script writer sees this list and uses a real screenshot when one fits a step ("real": "<key>").
+#  Without a fitting one, screens.py draws an illustration of the right Zoho app instead.
+#
+#  How to add one (Claude does this for you in the browser once you are logged in to Zoho):
+#    1. Put the PNG in assets/screens/<app>/<name>.png (e.g. 1600x1000, demo data only)
+#    2. Add an entry below:
+#         crm/leads_list:
+#           file: crm/leads_list.png
+#           size: [1600, 1000]                 # image width, height in pixels
+#           about: "Zoho CRM Leads list view with Lead Source column"
+#           targets:                           # clickable things: label -> [x, y, w, h] in image pixels
+#             "Create Lead": [1380, 92, 160, 44]
+#             "Lead Source": [880, 170, 140, 36]
+# =====================================================================================
+screens:
+  crm/mcp_server:
+    file: crm/mcp_server.png
+    size:
+    - 1540
+    - 688
+    about: 'Zoho CRM > MCP Server page: official MCP servers that let AI agents (Claude, ChatGPT) work on CRM data - Data Insights (read-only: search, forecasting, pipeline analysis) and Data Operations
+      (create/update records, convert leads, bulk ops), each with Install and View Detail'
+    targets:
+      Install:
+      - 805
+      - 505
+      - 120
+      - 52
+      Install Data Operations:
+      - 805
+      - 505
+      - 120
+      - 52
+      Install Data Insights:
+      - 52
+      - 505
+      - 120
+      - 52
+      View Detail:
+      - 186
+      - 515
+      - 134
+      - 32
+      Explore MCP Tools:
+      - 753
+      - 132
+      - 157
+      - 31
+      Data Operations:
+      - 878
+      - 220
+      - 224
+      - 37
+      Data Insights:
+      - 123
+      - 220
+      - 201
+      - 37
+  crm/leads_list:
+    file: crm/leads_list.png
+    size:
+    - 1568
+    - 632
+    about: Zoho CRM Leads module list view (All Leads) with Filter, Sort, Create Lead button and columns Lead Name, Company, Email, Phone; left sidebar shows Home, Reports, MCP Server and modules
+    targets:
+      Create Lead:
+      - 1391
+      - 98
+      - 121
+      - 47
+      Filter:
+      - 263
+      - 100
+      - 86
+      - 42
+      Sort:
+      - 345
+      - 103
+      - 75
+      - 38
+      Lead Name:
+      - 751
+      - 165
+      - 89
+      - 32
+      Company:
+      - 961
+      - 165
+      - 79
+      - 32
+      Email:
+      - 1172
+      - 165
+      - 50
+      - 32
+      Phone:
+      - 1383
+      - 165
+      - 56
+      - 32
+      MCP Server:
+      - 45
+      - 135
+      - 197
+      - 29
+      Reports:
+      - 45
+      - 97
+      - 197
+      - 29
+      Deals:
+      - 45
+      - 365
+      - 197
+      - 37
+      Contacts:
+      - 45
+      - 297
+      - 197
+      - 37
+      Search records:
+      - 1115
+      - 2
+      - 259
+      - 44
+  crm/workflow_rules:
+    file: crm/workflow_rules.png
+    size:
+    - 1568
+    - 632
+    about: 'Zoho CRM Setup > Automation > Workflow Rules list: Create Rule button, rule table (Rule Name, module, Execute On, Actions, Status toggle) and a banner for Catalyst-powered data processing'
+    targets:
+      Create Rule:
+      - 1446
+      - 266
+      - 122
+      - 46
+      Workflow Rules:
+      - 5
+      - 346
+      - 244
+      - 44
+      Big Deal Rule:
+      - 384
+      - 375
+      - 101
+      - 29
+      Explore Now:
+      - 980
+      - 195
+      - 113
+      - 38
+      Execute On:
+      - 826
+      - 329
+      - 92
+      - 29
+      Status:
+      - 1422
+      - 332
+      - 56
+      - 29
+      Actions:
+      - 38
+      - 387
+      - 65
+      - 29
+      Modules and Fields:
+      - 38
+      - 183
+      - 143
+      - 29
+  crm/webforms:
+    file: crm/webforms.png
+    size:
+    - 1568
+    - 632
+    about: Zoho CRM Setup > Channels > Webforms (empty state 'Turn your website visitors into customers') with New Form button and Auto-Response Rules tab - where website form leads are pushed into CRM
+    targets:
+      New Form:
+      - 869
+      - 562
+      - 111
+      - 46
+      Webforms:
+      - 5
+      - 346
+      - 244
+      - 44
+      Auto-Response Rules:
+      - 410
+      - 77
+      - 173
+      - 30
+      Webforms tab:
+      - 299
+      - 78
+      - 89
+      - 29
+      Chat:
+      - 38
+      - 386
+      - 54
+      - 29
+  crm/mcp_for_ai_agents:
+    file: crm/mcp_for_ai_agents.png
+    size:
+    - 1568
+    - 664
+    about: 'Zoho CRM Setup > Developer Hub > MCP for AI Agents: MCP servers Data Insights and Data Operations; the Install menu is open showing VS Code, Cursor, Other IDEs; the link icon on the card copies
+      the server URL for Claude/ChatGPT connectors'
+    targets:
+      Install:
+      - 948
+      - 510
+      - 103
+      - 46
+      VS Code:
+      - 953
+      - 550
+      - 149
+      - 44
+      Cursor:
+      - 953
+      - 583
+      - 149
+      - 44
+      Other IDEs:
+      - 953
+      - 616
+      - 149
+      - 44
+      Copy server link:
+      - 1503
+      - 279
+      - 50
+      - 50
+      MCP for AI Agents:
+      - 5
+      - 525
+      - 244
+      - 46
+      APIs and SDKs:
+      - 38
+      - 568
+      - 109
+      - 29
+      Catalyst Solutions:
+      - 38
+      - 602
+      - 135
+      - 29
+      Data Operations:
+      - 1009
+      - 271
+      - 191
+      - 33
+      Data Insights:
+      - 374
+      - 271
+      - 171
+      - 33
+      Explore MCP Tools:
+      - 904
+      - 195
+      - 134
+      - 28
+      View Detail:
+      - 1058
+      - 519
+      - 115
+      - 29
+  crm/api_names:
+    file: crm/api_names.png
+    size:
+    - 1568
+    - 632
+    about: 'Zoho CRM Setup > Developer Hub > APIs and SDKs > CRM API > API names: module display name vs API name (e.g. Meetings = Events), with Dashboard tab for API credit usage and SDKs tab'
+    targets:
+      API names:
+      - 428
+      - 136
+      - 140
+      - 37
+      Dashboard:
+      - 296
+      - 136
+      - 141
+      - 37
+      CRM API:
+      - 296
+      - 77
+      - 82
+      - 30
+      SDKs:
+      - 397
+      - 77
+      - 56
+      - 30
+      Events:
+      - 728
+      - 529
+      - 57
+      - 29
+      Meetings:
+      - 350
+      - 530
+      - 75
+      - 29
+      Leads:
+      - 728
+      - 314
+      - 52
+      - 29
+      APIs and SDKs:
+      - 5
+      - 560
+      - 244
+      - 44
+      MCP for AI Agents:
+      - 5
+      - 525
+      - 244
+      - 44
+      Search:
+      - 295
+      - 220
+      - 275
+      - 46
+  crm/catalyst_solutions:
+    file: crm/catalyst_solutions.png
+    size:
+    - 1568
+    - 600
+    about: 'Zoho CRM Setup > Developer Hub > Catalyst Solutions: pre-packaged Catalyst microservices for CRM, e.g. Zoho CRM Bulk Data Processor card with Learn More'
+    targets:
+      Learn More:
+      - 412
+      - 458
+      - 111
+      - 46
+      Zoho CRM Bulk Data Processor:
+      - 333
+      - 299
+      - 275
+      - 56
+      Catalyst Solutions:
+      - 5
+      - 594
+      - 244
+      - 44
+      MCP for AI Agents:
+      - 5
+      - 525
+      - 244
+      - 44
+  books/bills_list:
+    file: books/bills_list.png
+    size:
+    - 1568
+    - 653
+    about: 'Zoho Books > Purchases > Bills list (All Bills view, empty state). Top bar has the blue New button with dropdown, more-options menu, settings gear; left sidebar shows Purchases expanded with Bills selected. Used to see, filter and create vendor bills.'
+    targets:
+      New:
+      - 1368
+      - 66
+      - 69
+      - 33
+      New dropdown:
+      - 1436
+      - 66
+      - 30
+      - 33
+      More options:
+      - 1476
+      - 66
+      - 32
+      - 32
+      All Bills view:
+      - 239
+      - 65
+      - 102
+      - 33
+      Create a Bill:
+      - 794
+      - 540
+      - 145
+      - 43
+      Import Bills:
+      - 832
+      - 601
+      - 70
+      - 16
+      'Bills (sidebar)':
+      - 11
+      - 349
+      - 202
+      - 31
+      Purchases menu:
+      - 9
+      - 175
+      - 208
+      - 31
+      Settings gear:
+      - 1432
+      - 8
+      - 33
+      - 33
+      Search:
+      - 329
+      - 7
+      - 261
+      - 35
+  books/bill_new:
+    file: books/bill_new.png
+    size:
+    - 1568
+    - 710
+    about: 'Zoho Books > Purchases > Bills > + New: the New Bill form, top part. Fields Vendor Name (required, with search), Bill# (required), Order Number, Bill Date (required), Due Date, Payment Terms, Accounts Payable, Subject; footer buttons Save as Draft, Save as Open, Cancel, Make Recurring. Used to record a vendor bill.'
+    targets:
+      Vendor Name:
+      - 437
+      - 148
+      - 483
+      - 29
+      Vendor search:
+      - 948
+      - 144
+      - 35
+      - 35
+      'Bill#':
+      - 428
+      - 241
+      - 336
+      - 35
+      Order Number:
+      - 428
+      - 289
+      - 336
+      - 35
+      Bill Date:
+      - 428
+      - 337
+      - 336
+      - 35
+      Due Date:
+      - 428
+      - 385
+      - 336
+      - 35
+      Payment Terms:
+      - 988
+      - 388
+      - 116
+      - 29
+      Accounts Payable:
+      - 437
+      - 436
+      - 300
+      - 29
+      Subject:
+      - 428
+      - 531
+      - 336
+      - 33
+      Save as Draft:
+      - 240
+      - 662
+      - 105
+      - 33
+      Save as Open:
+      - 355
+      - 662
+      - 108
+      - 33
+      Cancel:
+      - 473
+      - 662
+      - 65
+      - 33
+      Make Recurring:
+      - 1365
+      - 662
+      - 144
+      - 33
+  books/settings_home:
+    file: books/settings_home.png
+    size:
+    - 1568
+    - 710
+    about: 'Zoho Books > Settings (gear icon) > All Settings home. Organization Settings tiles: Organization (Profile, Branding, Locations, Approvals...), Users & Roles, Taxes & Compliance, Setup & Configurations (General, Currencies, Payment Terms, Reminders, Portals), Customization (Transaction Number Series, PDF Templates, Email Notifications, Reporting Tags...), Automation (Workflow Rules, Workflow Actions, Workflow Logs, Schedules). Starting point for every configuration change.'
+    targets:
+      Workflow Rules:
+      - 1148
+      - 252
+      - 229
+      - 39
+      Workflow Actions:
+      - 1148
+      - 294
+      - 229
+      - 39
+      Schedules:
+      - 1148
+      - 376
+      - 229
+      - 39
+      Approvals:
+      - 112
+      - 459
+      - 229
+      - 39
+      Reminders:
+      - 630
+      - 417
+      - 229
+      - 39
+      Taxes:
+      - 371
+      - 450
+      - 229
+      - 39
+      General:
+      - 630
+      - 252
+      - 229
+      - 39
+      Transaction Number Series:
+      - 889
+      - 252
+      - 229
+      - 39
+      PDF Templates:
+      - 889
+      - 294
+      - 229
+      - 39
+      Users:
+      - 371
+      - 252
+      - 229
+      - 39
+      Search settings:
+      - 584
+      - 17
+      - 357
+      - 41
+      Close Settings:
+      - 1293
+      - 20
+      - 128
+      - 34
+  books/bill_custom_fields:
+    file: books/bill_custom_fields.png
+    size:
+    - 1568
+    - 710
+    about: 'Zoho Books > Settings > Module Settings > Purchases > Bills > Fields tab (field customization). Table of bill fields with Field Name, Data Type, Mandatory, Show in all PDFs, Status; tabs Fields, Validation Rules, Record Locking, Buttons, Related Lists; blue + New Field button and Custom Fields Usage 0/135. Used to add custom fields (e.g. Approver, Cost Centre) to bills.'
+    targets:
+      New Field:
+      - 1413
+      - 88
+      - 102
+      - 33
+      Custom Fields Usage:
+      - 1215
+      - 88
+      - 187
+      - 33
+      Fields tab:
+      - 247
+      - 139
+      - 67
+      - 38
+      Validation Rules tab:
+      - 314
+      - 139
+      - 130
+      - 38
+      Record Locking tab:
+      - 444
+      - 139
+      - 128
+      - 38
+      Buttons tab:
+      - 572
+      - 139
+      - 78
+      - 38
+      Related Lists tab:
+      - 649
+      - 139
+      - 110
+      - 38
+      Field Name column:
+      - 274
+      - 179
+      - 208
+      - 32
+      'Bill# field':
+      - 281
+      - 432
+      - 27
+      - 16
+      'Purchases (sidebar)':
+      - 31
+      - 575
+      - 72
+      - 23
+      'Automation (sidebar)':
+      - 31
+      - 354
+      - 77
+      - 23
+  books/workflow_rules:
+    file: books/workflow_rules.png
+    size:
+    - 1568
+    - 710
+    about: 'Zoho Books > Settings > Automation > Workflow Rules list (empty: ''There are no workflows''). Shows usage stats per day (Functions 0/1000, Webhooks 0/1000, Email Alerts 0/500), Module and Status filters, columns Name/Module/Description/Status, blue + New Workflow Rule button, View Logs, Change Execution Order. Used to automate actions (email alerts, field updates, webhooks, custom functions) when records like bills are created or edited.'
+    targets:
+      New Workflow Rule:
+      - 1352
+      - 188
+      - 162
+      - 33
+      View Logs:
+      - 1236
+      - 188
+      - 106
+      - 33
+      Change Execution Order:
+      - 1313
+      - 367
+      - 191
+      - 33
+      Configure Usage Limit Notification:
+      - 1269
+      - 279
+      - 235
+      - 21
+      Module filter:
+      - 333
+      - 367
+      - 54
+      - 33
+      'Workflow Rules (sidebar)':
+      - 4
+      - 389
+      - 221
+      - 38
+      'Workflow Actions (sidebar)':
+      - 4
+      - 431
+      - 221
+      - 38
+      'Workflow Logs (sidebar)':
+      - 4
+      - 473
+      - 221
+      - 38
+      'Schedules (sidebar)':
+      - 4
+      - 514
+      - 221
+      - 38
+      Name column:
+      - 267
+      - 417
+      - 34
+      - 18
+      Module column:
+      - 509
+      - 417
+      - 49
+      - 18
+      Status column:
+      - 1020
+      - 417
+      - 44
+      - 18
+  books/workflow_rule_new:
+    file: books/workflow_rule_new.png
+    size:
+    - 1568
+    - 710
+    about: 'Zoho Books > Settings > Automation > Workflow Rules > + New Workflow Rule dialog (step 1). Fields Workflow Rule Name (required), Description, Module (required dropdown, e.g. Bills); buttons Next and Cancel. First step of creating a workflow before choosing trigger, criteria and actions.'
+    targets:
+      Workflow Rule Name:
+      - 699
+      - 72
+      - 321
+      - 35
+      Description:
+      - 699
+      - 120
+      - 321
+      - 54
+      Module:
+      - 699
+      - 187
+      - 321
+      - 35
+      Next:
+      - 498
+      - 272
+      - 51
+      - 33
+      Cancel:
+      - 568
+      - 272
+      - 65
+      - 33
+      Close X:
+      - 1056
+      - 12
+      - 16
+      - 21
+  books/custom_functions:
+    file: books/custom_functions.png
+    size:
+    - 1568
+    - 710
+    about: 'Zoho Books > Settings > Automation > Workflow Actions > Functions (custom Deluge functions list, empty: ''There are no functions''). Sub-menu Email Alerts, In-app Notifications, Field Updates, Webhooks, Functions; Module filter; columns Name, Module, Description, Related Rules; blue + New button and Configure Failure Preferences. Used to write Deluge custom functions that workflow rules can run.'
+    targets:
+      New:
+      - 1422
+      - 187
+      - 66
+      - 33
+      New dropdown:
+      - 1486
+      - 187
+      - 28
+      - 33
+      Configure Failure Preferences:
+      - 1203
+      - 187
+      - 209
+      - 33
+      Module filter:
+      - 578
+      - 243
+      - 54
+      - 33
+      Email Alerts:
+      - 247
+      - 133
+      - 244
+      - 35
+      In-app Notifications:
+      - 247
+      - 168
+      - 244
+      - 35
+      Field Updates:
+      - 247
+      - 203
+      - 244
+      - 35
+      Webhooks:
+      - 247
+      - 238
+      - 244
+      - 35
+      Functions:
+      - 247
+      - 273
+      - 244
+      - 35
+      'Workflow Actions (sidebar)':
+      - 4
+      - 431
+      - 221
+      - 38
+      'Workflow Rules (sidebar)':
+      - 4
+      - 389
+      - 221
+      - 38
+  books/bill_approval_settings:
+    file: books/bill_approval_settings.png
+    size:
+    - 1568
+    - 653
+    about: 'Zoho Books > Settings > Organization > Approvals > Purchase Approval tab (not yet enabled). Shows ''Enable approval for purchase transactions'' with the blue Enable Purchase Approval button, tabs Sales / Purchase / Inventory Approval, and a banner offering the new per-module approval flow (Migrate Now). Used to require approval of bills and other purchase transactions before they are final.'
+    targets:
+      Enable Purchase Approval:
+      - 785
+      - 485
+      - 186
+      - 33
+      Sales Approval tab:
+      - 247
+      - 165
+      - 124
+      - 38
+      Purchase Approval tab:
+      - 371
+      - 165
+      - 150
+      - 39
+      Inventory Approval tab:
+      - 521
+      - 165
+      - 149
+      - 38
+      Migrate Now:
+      - 967
+      - 80
+      - 97
+      - 33
+      'Approvals (sidebar)':
+      - 4
+      - 376
+      - 221
+      - 38
+      Search settings:
+      - 609
+      - 17
+      - 306
+      - 41
+      Close Settings:
+      - 1375
+      - 20
+      - 128
+      - 34
+  books/invoices_list:
+    file: books/invoices_list.png
+    size:
+    - 1568
+    - 653
+    about: 'Zoho Books > Sales > Invoices list (All Invoices view, empty state ''It''s time to get paid!''). Blue + New button with dropdown, more-options menu, NEW INVOICE and NEW RECURRING INVOICE buttons, Import Invoices link; sidebar shows Sales expanded with Invoices selected. Used to create, send and track customer invoices.'
+    targets:
+      New:
+      - 1368
+      - 66
+      - 69
+      - 33
+      New dropdown:
+      - 1436
+      - 66
+      - 30
+      - 33
+      More options:
+      - 1476
+      - 66
+      - 32
+      - 32
+      All Invoices view:
+      - 239
+      - 65
+      - 140
+      - 33
+      New Invoice:
+      - 680
+      - 540
+      - 139
+      - 43
+      New Recurring Invoice:
+      - 834
+      - 540
+      - 219
+      - 43
+      Import Invoices:
+      - 818
+      - 601
+      - 96
+      - 16
+      'Invoices (sidebar)':
+      - 11
+      - 278
+      - 202
+      - 31
+      'Payments Received (sidebar)':
+      - 59
+      - 387
+      - 123
+      - 21
+      Sales menu:
+      - 22
+      - 143
+      - 70
+      - 21
+      Settings gear:
+      - 1432
+      - 8
+      - 33
+      - 33
+      Search:
+      - 329
+      - 7
+      - 261
+      - 35
+  books/payment_reminders:
+    file: books/payment_reminders.png
+    size:
+    - 1568
+    - 653
+    about: 'Zoho Books > Settings > Setup & Configurations > Reminders, Invoices tab (Bills tab next to it). Manual Reminders (Reminder For Overdue Invoices, Reminder For Sent Invoices, with edit pencils) and Automated Reminders (Payment Expected based on expected payment date; Reminder - 1/2/3 based on due date, each with schedule text and an on/off status toggle). Used to set up automatic payment reminder emails to customers.'
+    targets:
+      Invoices tab:
+      - 247
+      - 139
+      - 82
+      - 39
+      Bills tab:
+      - 329
+      - 139
+      - 56
+      - 38
+      Reminder For Overdue Invoices:
+      - 284
+      - 292
+      - 197
+      - 16
+      Edit overdue reminder:
+      - 1254
+      - 284
+      - 36
+      - 33
+      Payment Expected:
+      - 284
+      - 531
+      - 135
+      - 16
+      Payment Expected toggle:
+      - 1088
+      - 531
+      - 33
+      - 18
+      Reminder - 1:
+      - 284
+      - 619
+      - 79
+      - 16
+      Reminder - 1 toggle:
+      - 1088
+      - 619
+      - 33
+      - 18
+      'Reminders (sidebar)':
+      - 4
+      - 467
+      - 221
+      - 38
+  books/taxes_compliance:
+    file: books/taxes_compliance.png
+    size:
+    - 1568
+    - 653
+    about: 'Zoho Books > Settings > Taxes & Compliance > Taxes > GST Settings (India org). Sub-menu Tax Rates and GST Settings; the toggle ''Is your business registered for GST?'' is set to No, so GSTIN and e-invoicing options are not shown yet; sidebar also lists Direct Taxes and MSME Settings. Used to enable GST, tax rates and (once GST is on) e-invoicing.'
+    targets:
+      Tax Rates:
+      - 247
+      - 133
+      - 244
+      - 35
+      GST Settings:
+      - 247
+      - 168
+      - 244
+      - 35
+      GST registered toggle:
+      - 862
+      - 179
+      - 33
+      - 18
+      Find Accountants:
+      - 1389
+      - 94
+      - 126
+      - 21
+      'Taxes (sidebar)':
+      - 4
+      - 257
+      - 221
+      - 38
+      'Direct Taxes (sidebar)':
+      - 4
+      - 298
+      - 221
+      - 38
+      'MSME Settings (sidebar)':
+      - 4
+      - 340
+      - 221
+      - 38
+      'Taxes & Compliance (sidebar)':
+      - 4
+      - 213
+      - 221
+      - 39
+  books/developer_space:
+    file: books/developer_space.png
+    size:
+    - 1568
+    - 653
+    about: 'Zoho Books > Settings > Extension and Developer Data > Developer Data > Connections. Explains Connections (authenticate calls to third-party services from Deluge functions), Pre Defined vs Custom Connections, blue New Connection button; sidebar shows Developer Data expanded: Widgets, Incoming Webhooks, Connections, API Usage, Signals, Data Management. Used before writing custom functions that call external APIs.'
+    targets:
+      New Connection:
+      - 1389
+      - 88
+      - 126
+      - 33
+      View My Connections:
+      - 289
+      - 305
+      - 155
+      - 23
+      Pre Defined View All:
+      - 289
+      - 607
+      - 67
+      - 23
+      Custom View All:
+      - 810
+      - 630
+      - 67
+      - 23
+      'Developer Data (sidebar)':
+      - 4
+      - 345
+      - 221
+      - 39
+      'Widgets (sidebar)':
+      - 4
+      - 388
+      - 221
+      - 38
+      'Incoming Webhooks (sidebar)':
+      - 4
+      - 430
+      - 221
+      - 38
+      'Connections (sidebar)':
+      - 4
+      - 471
+      - 221
+      - 38
+      'API Usage (sidebar)':
+      - 4
+      - 513
+      - 221
+      - 38
+      'Integrations & Marketplace (sidebar)':
+      - 4
+      - 300
+      - 221
+      - 39
+  books/integrations:
+    file: books/integrations.png
+    size:
+    - 1568
+    - 653
+    about: 'Zoho Books > Settings > Extension and Developer Data > Integrations & Marketplace > Zoho Apps. List of Zoho app integrations (Zoho CRM, Zoho FSM, Bigin marked Active) each with a blue Connect button; sidebar lists Zoho Apps, WhatsApp, SMS Integrations, Bharat Connect, Uber for Business, Other Apps. Used to connect Books with other Zoho apps and third-party services.'
+    targets:
+      Zoho CRM Connect:
+      - 1406
+      - 181
+      - 75
+      - 33
+      Zoho FSM Connect:
+      - 1406
+      - 336
+      - 75
+      - 33
+      Bigin Connect:
+      - 1406
+      - 541
+      - 75
+      - 33
+      'Integrations & Marketplace (sidebar)':
+      - 4
+      - 345
+      - 221
+      - 39
+      'Zoho Apps (sidebar)':
+      - 4
+      - 389
+      - 221
+      - 38
+      'WhatsApp (sidebar)':
+      - 4
+      - 430
+      - 221
+      - 38
+      'SMS Integrations (sidebar)':
+      - 4
+      - 472
+      - 221
+      - 38
+      'Other Apps (sidebar)':
+      - 4
+      - 597
+      - 221
+      - 38
+  books/documents_inbox:
+    file: books/documents_inbox.png
+    size:
+    - 1568
+    - 653
+    about: 'Zoho Books > Documents > Inboxes > Files (document inbox). Autoscan Documents empty state (''Automatically capture data from your receipts'') with blue Enable Autoscan button; left panel All Documents, Inboxes (Files, Bank Statements), Folders with + / Create New Folder, Trash. Used to upload or email-in bills and receipts and auto-scan them into transactions.'
+    targets:
+      Enable Autoscan:
+      - 811
+      - 414
+      - 127
+      - 33
+      All Documents:
+      - 8
+      - 163
+      - 207
+      - 31
+      Files inbox:
+      - 8
+      - 246
+      - 207
+      - 31
+      Bank Statements:
+      - 8
+      - 279
+      - 207
+      - 31
+      Add folder:
+      - 198
+      - 333
+      - 12
+      - 23
+      Create New Folder:
+      - 53
+      - 419
+      - 117
+      - 16
+      Back:
+      - 15
+      - 71
+      - 48
+      - 18
+      Trash:
+      - 8
+      - 612
+      - 207
+      - 31
