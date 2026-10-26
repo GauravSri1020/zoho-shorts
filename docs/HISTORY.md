@@ -6,6 +6,17 @@ Is file ko har session ke end pe update karo, taaki agla chat yahin se shuru kar
 
 Gaurav jab bhi kuch bhi change karne bole: SABSE PEHLE backup - `backup-YYYY-MM-DD-<kya-badal-rahe-ho>` branch main se banao (aur agar video ka kaam hai to latest Short ka artifact download karo). Tabhi code chhuo. Kuch bigde to us branch se purana code wapas lo.
 
+## 27 Oct 2026 raat - pehla Claude-wealth Short end-to-end TEST (pass)
+
+- Gaurav: Claude ka koi scheduled task / artifact nahi chahiye; sab GitHub se chale; paid kuch nahi; Flow theek hai. "GSX Flow clips autopilot" task kabhi save hi nahi hua (computer approval nahi) - koi Claude scheduled task active nahi.
+- Run #141 (manual daily, niche claude_wealth, upload=no) -> job 20261026-1943-1, issue #78 "Turn Your Weekly Routine into Claude Skills You Can Sell" (bank order 1). Scout ne rotation sahi follow kiya.
+- Flow: Golu Sri (/u/1, srig9056) 65 credits; main gauravsri069 50 credits. Project "Oct 27 - 01:16" (flow.google.com/u/1/project/108da973-e1d6-47ba-907e-7c0c7f951eec). 3 clips x Veo 3.1 Fast (20) = 60 credits, 5 bache.
+- Flow UI (Oct 2026): New project -> prompt box ka settings chip: Video | Ingredients | 9:16 | model | x1. Models: Omni 1.1 Flash (12 credits / 8s 720p - naya, sasta, abhi test nahi), Veo 3.1 Lite / Fast (20) / Quality. Avatar: prompt box "+" -> asset list -> "Me" (Avatar) -> Add to prompt. Har send ke baad avatar hat jaata hai - har clip pe dobara lagao, aur list mein naye videos upar aate hain: naam dekh ke "Me" chuno (ek baar galti se video lag gaya tha, send se pehle pakda).
+- Clips -> GitHub: editor page pe fetch-hook (window.fetch wrap, video blobs), Download -> 720p; Flow page pe button -> window.open(upload page) -> us tab mein message listener + DataTransfer -> Commit to main. Teeno clips ek commit -> run #142 assemble -> QA PASS ("Short ready", upload=no isliye YouTube pe nahi gaya). Video: run 40390928994 artifact.
+- Clips ka contact sheet: ek hi look (navy blazer + skyline), koi burned-in subtitle nahi, gestures alag (stop-hand, hands, thumbs up).
+- #66 (Zoho) PROBLEM clip mein Veo ne garbled subtitles jala diye the - retake chahiye.
+- Open: Gaurav video dekhe (run 40390928994 -> Artifacts). Theek ho to us job ko upload karwana (job.json "upload": true + re-assemble, ya agle Shorts upload=yes). Daily 10:00 run script banata hai; clips abhi bhi browser se (Gaurav ya Claude in Chrome) - koi auto scheduler nahi, Gaurav ke kehne pe.
+
 ## 27 Oct 2026 - NICHE SWITCH: Zoho -> "Claude se wealth" (Zoho code waisa hi)
 
 Backup: branch `backup-2026-10-27-zoho-before-claude-wealth` (commit 2ad7606) + repo mein `backups/2026-10-27_ZOHO_BACKUP/` (README + "ZOHO BACKUP" logo + code + settings copy). Git tags proxy block karta hai, isliye tag nahi bana. Short artifacts (runs 24 Oct) is session se download nahi hue (GitHub ka blob storage host blocked) - videos YouTube pe already hain.
