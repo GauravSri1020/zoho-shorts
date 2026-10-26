@@ -6,6 +6,22 @@ Is file ko har session ke end pe update karo, taaki agla chat yahin se shuru kar
 
 Gaurav jab bhi kuch bhi change karne bole: SABSE PEHLE backup - `backup-YYYY-MM-DD-<kya-badal-rahe-ho>` branch main se banao (aur agar video ka kaam hai to latest Short ka artifact download karo). Tabhi code chhuo. Kuch bigde to us branch se purana code wapas lo.
 
+## 27 Oct 2026 - NICHE SWITCH: Zoho -> "Claude se wealth" (Zoho code waisa hi)
+
+Backup: branch `backup-2026-10-27-zoho-before-claude-wealth` (commit 2ad7606) + repo mein `backups/2026-10-27_ZOHO_BACKUP/` (README + "ZOHO BACKUP" logo + code + settings copy). Git tags proxy block karta hai, isliye tag nahi bana. Short artifacts (runs 24 Oct) is session se download nahi hue (GitHub ka blob storage host blocked) - videos YouTube pe already hain.
+
+- `channel.yaml` ab sirf SWITCH hai: `active_niche: claude_wealth`. Wapas Zoho = `active_niche: zoho` -> Commit. Ek run ke liye: Actions -> Run workflow -> niche.
+- `niches/zoho.yaml` = purana channel.yaml, ek line nahi badli. `niches/claude_wealth.yaml` `extends: zoho` (presenter, looks, gestures, schedule, QA limits wahi), apna niche/feeds/pillars/benchmark.
+- Code: har jagah `if not IS_ZOHO` switch; naya niche ka dimaag `autopilot/niche_claude_wealth.py`. Test: purane code vs naye code (NICHE=zoho) ke saare prompts, titles, descriptions, screens HTML, QA prompts byte-identical.
+- Har job.json mein `"niche"`; purane jobs = zoho. Assemble pehle active niche ke jobs banata hai, phir baaki niche ke jobs child run mein unki apni settings se (#66, #73 Zoho hi rahenge). Claude niche mein sirf apne waiting jobs gine jaate hain (Zoho ke 2 waiting jobs Claude ko nahi rokte).
+- Rotation: 4 wealth -> 1 problems (state.json `rotation.claude_wealth`). Pehle 5 bank mein `order` 1-5: Claude Skills bechna, Claude Code se "finish my app" service, local business AI intake automation, Claude Project se social media service, phir problems #1 = YouTube inauthentic-content / AI persona demonetization.
+- Research bank: `research/claude_wealth_bank.yaml` (har number ke saath source; trading sirf myth-busting).
+- Naya screen "notes" (numbers / checklist card). Claude niche mein Zoho app pages nahi banti.
+- Benchmark rubric alag file: `state/benchmark_claude_wealth.json`; workflow ab `state/*.json` commit karta hai.
+- Scheduled task "GSX Flow clips autopilot" (roz 11:05 IST, auto approval): Chrome mein Flow /u/1 -> clips -> GitHub upload. ABHI computer se bound NAHI hai -> Claude desktop app mein us task pe "Require this computer" on karna hai, warna cloud mein chalega aur Chrome nahi milega.
+- Galti: local dry-run ne asli issue #77 bana diya ("Sell your know-how as Claude Skills") - test hai, Gaurav close kare (Claude ko close karne ki permission nahi mili).
+- YouTube rule (support.google.com/youtube/answer/1311392): AI persona se health / legal / financial advice = monetization nahi. Isliye niche "kaise kamate hain" (business + tools) hai, kabhi stock/crypto/trading tip nahi. QA isko block karta hai.
+
 ## 24 Oct 2026 (shaam) - #47 + #46 scheduled, clips seedha git push se
 
 Backup: branch `backup-2026-10-24-before-47-clips`.
@@ -150,4 +166,4 @@ Shuru mein: SadTalker / photo motion avatar, Gemini TTS, research/script/QA agen
 
 ## Kaam ki files
 
-channel.yaml - saari settings. research/problem_bank.yaml - real problems (yahan apni add karo). autopilot/flow.py - prompts, clip matching, face/TTS timeline. autopilot/composer.py - final layout. autopilot/tts.py - screen-part voice. autopilot/screens.py - Zoho / AI chat / API / code screens. assets/screens/index.yaml - asli Zoho screenshots. autopilot/writer.py - script agents + translations. autopilot/research.py - feeds + trend score + problem bank. state/state.json - robot ka state. .github/workflows/autopilot.yml - daily 10 AM IST + assemble on clip upload.
+channel.yaml - NICHE SWITCH (active_niche). niches/<niche>.yaml - us niche ki saari settings. research/problem_bank.yaml - real problems (yahan apni add karo). autopilot/flow.py - prompts, clip matching, face/TTS timeline. autopilot/composer.py - final layout. autopilot/tts.py - screen-part voice. autopilot/screens.py - Zoho / AI chat / API / code screens. assets/screens/index.yaml - asli Zoho screenshots. autopilot/writer.py - script agents + translations. autopilot/research.py - feeds + trend score + problem bank. state/state.json - robot ka state. .github/workflows/autopilot.yml - daily 10 AM IST + assemble on clip upload.
