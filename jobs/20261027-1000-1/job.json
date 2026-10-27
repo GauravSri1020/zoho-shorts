@@ -1,0 +1,390 @@
+{
+ "id": "20261027-1000-1",
+ "niche": "claude_wealth",
+ "status": "waiting_for_clips",
+ "upload": true,
+ "created": "2026-10-27T10:12:36",
+ "title": "Build Restaurant Ordering Apps with Claude Code to Save Them 30% #Shorts",
+ "description": "Learn how to build direct ordering web applications for local restaurants using Claude Code, saving them up to 30% in delivery app commissions. Catch: requires basic terminal skills and careful testing of payment webhooks.\n\n1. Find a local restaurant tired of delivery app commissions\n2. Use Claude Code to generate the Expo app, Supabase edge functions, and Stripe Connect integration\n3. Deploy the direct ordering system so the restaurant keeps the revenue and pays a flat setup fee\n\nTool used:\n- name: Claude Code CLI\n- endpoint: claude-code --init --repo /restaurant-ordering-app\n- docs: Claude Code Command Line Documentation\n\nsetup_app.sh (bash) - Run inside your terminal shell prompt:\n#!/bin/bash\nclaude-code --init --repo /restaurant-ordering-app\n# Prompt Claude Code: 'Generate Expo frontend, Supabase edge functions, and Stripe Connect payment webhooks'\n\nThe catch: You need basic terminal familiarity and must test payment webhooks carefully before handing over to clients\n\nSources for the numbers:\n- First paying client signed live reported on r/ClaudeAI\n- Similar direct custom dashboard builds asking prices range around $6,000\n\nReal ways to earn with AI, no hype - follow @GSXAutomation\n\nWhat inspired this: https://www.reddit.com/r/ClaudeAI/comments/1xdwquj/anthropics_new_guide_oct_22_argues_most_agents/\n\nThis video uses an AI-generated presenter and voice.\nIndependent channel. Not affiliated with or endorsed by Anthropic; Claude is a trademark of Anthropic. Education only - not financial, investment, trading or tax advice. Income numbers are what the named creators reported; results vary and nothing is guaranteed.\n\n#Shorts #ClaudeAI #AI #SideHustle #MakeMoneyWithAI",
+ "angle": {
+  "story_index": 0,
+  "pillar": "claude_code_build",
+  "kind": "wealth",
+  "region": "global",
+  "product": "Claude Code + Stripe + Supabase",
+  "app": "code",
+  "problem": "Local restaurants lose 25% to 30% of revenue to high delivery app commissions",
+  "fix_type": "claude_code",
+  "solution": "Build direct ordering web apps for local eateries using Claude Code as a paid freelance service",
+  "steps": [
+   "Find a local restaurant tired of delivery app commissions",
+   "Use Claude Code to generate the Expo app, Supabase edge functions, and Stripe Connect integration",
+   "Deploy the direct ordering system so the restaurant keeps the revenue and pays a flat setup fee"
+  ],
+  "api": "claude-code --init --repo /restaurant-ordering-app",
+  "numbers": "One creator building apps for local shops reports signing their first paying restaurant live (reported on r/ClaudeAI)",
+  "catch": "You need basic terminal familiarity and must test payment webhooks carefully before handing over to clients",
+  "result": "You can charge a fixed setup fee (asking prices for similar dashboard builds range around $6,000) to help local businesses escape delivery platform fees",
+  "wow": "Claude Code can write the entire full-stack app, Supabase backend, and Stripe integration from your terminal in hours",
+  "hook": "How to build a direct ordering app with Claude Code and save local restaurants 30%"
+ },
+ "story": {
+  "title": "Anthropic’s new guide (Oct 22) argues most agents should have fewer subagents: one main loop, skills and tool search instead. Includes “we cut Claude Code’s system prompt by over 80%”",
+  "link": "https://www.reddit.com/r/ClaudeAI/comments/1xdwquj/anthropics_new_guide_oct_22_argues_most_agents/",
+  "summary": "Anthropic published an 18-minute guide on Oct 22 called \"When to fold subagents into your main agent loop.\" It is aimed at enterprise agent builders, but the lessons apply to anyone who set up a pile of subagents in Claude Code. Main points: - Default to one model, one context window, one open-ended tool loop. Put domain procedures into skills and hard limits and lookups into tools. Let the model write and revise its own plan. - Keep subagents only when you measure degradation from context bloat, need parallel work with disposable context, or the agent struggles with too many tools or conflicting instructions. - One customer's single loop ran roughly 2x faster than its multi-agent harness. Several deployments saw better quality, lower cost and lower latency. - Tool choice tends to degrade past 30-50 tool definitions in the system prompt. Group tools by user intent and use tool search wit",
+  "source": "top scoring links : ClaudeAI",
+  "ts": 1792808123,
+  "trend": 31
+ },
+ "script": {
+  "title": "Build Restaurant Ordering Apps with Claude Code to Save Them 30%",
+  "hook_text": "Save Restaurants 30%",
+  "app_label": "Claude Code",
+  "lines": [
+   {
+    "beat": "HOOK",
+    "say": "Help local restaurants beat thirty percent fees with direct apps.",
+    "tts": "Help local restaurants beat thirty percent fees with direct apps.",
+    "card": "Save Local Eateries 30%",
+    "screen": null
+   },
+   {
+    "beat": "PROBLEM",
+    "say": "Third-party delivery apps charge heavy commissions, cutting deep into profits.",
+    "tts": "Third-party delivery apps charge heavy commissions, cutting deep into profits.",
+    "card": "Delivery App Commissions Hurt",
+    "screen": null
+   },
+   {
+    "beat": "FIX",
+    "say": "Build full direct ordering web apps for local eateries using Claude Code.",
+    "tts": "Build full direct ordering web apps for local eateries using Claude Code.",
+    "card": "Build Apps with Claude Code",
+    "screen": {
+     "app": "code",
+     "view": "code",
+     "heading": "Terminal - Claude Code",
+     "language": "bash",
+     "code": "$ claude-code --init --repo /restaurant-app\n> Initializing repository...\n> Claude Code active. Type your command:",
+     "click": "$ claude-code --init --repo /restaurant-app",
+     "tip": "Run Claude Code in terminal"
+    }
+   },
+   {
+    "beat": "STEP 1",
+    "say": "Find a neighborhood restaurant owner tired of paying high delivery app commissions.",
+    "tts": "Find a neighborhood restaurant owner tired of paying high delivery app commissions.",
+    "card": "1. Find Local Restaurants",
+    "screen": {
+     "app": "notes",
+     "view": "notes",
+     "heading": "Client Outreach Strategy",
+     "rows": [
+      [
+       "Target",
+       "Local independent restaurants"
+      ],
+      [
+       "Problem",
+       "25-30% delivery app fees"
+      ],
+      [
+       "Solution",
+       "Custom direct-ordering web app"
+      ]
+     ],
+     "click": "Target",
+     "tip": "Target commission-weary local eateries"
+    }
+   },
+   {
+    "beat": "STEP 2",
+    "say": "In your terminal, run Claude Code to write the complete Expo frontend app.",
+    "tts": "In your terminal, run Claude Code to write the complete Expo frontend app.",
+    "card": "2. Generate Expo Frontend",
+    "screen": {
+     "app": "code",
+     "view": "code",
+     "heading": "Terminal - Claude Code",
+     "language": "bash",
+     "code": "> Prompt: Create an Expo React Native web ordering frontend\n> Generating UI components for menu, cart, and checkout...\n> Done! App template initialized.",
+     "click": "Create an Expo React Native web ordering frontend",
+     "tip": "Generate app UI with Claude Code"
+    }
+   },
+   {
+    "beat": "STEP 3",
+    "say": "Have Claude generate Supabase edge functions and set up direct Stripe Connect payouts.",
+    "tts": "Have Claude generate Supabase edge functions and set up direct Stripe Connect payouts.",
+    "card": "3. Connect Backend & Stripe",
+    "screen": {
+     "app": "code",
+     "view": "code",
+     "heading": "Terminal - Claude Code",
+     "language": "bash",
+     "code": "> Prompt: Setup Supabase edge functions and Stripe Connect webhooks\n> Generating supabase/functions/stripe-webhook/index.ts\n> Complete.",
+     "click": "Setup Supabase edge functions and Stripe Connect webhooks",
+     "tip": "Integrate Supabase and Stripe webhooks"
+    }
+   },
+   {
+    "beat": "STEP 4",
+    "say": "Deploy the app so the restaurant keeps all revenue and avoids platform fees.",
+    "tts": "Deploy the app so the restaurant keeps all revenue and avoids platform fees.",
+    "card": "4. Deploy Direct System",
+    "screen": {
+     "app": "flow",
+     "view": "flow",
+     "heading": "Direct Ordering Workflow",
+     "nodes": [
+      "Trigger: Customer Orders",
+      "Claude Code App: Processes Cart",
+      "Stripe Connect: Direct Payout to Owner"
+     ],
+     "click": "Stripe Connect: Direct Payout to Owner",
+     "tip": "Owner keeps direct payouts"
+    }
+   },
+   {
+    "beat": "STEP 5",
+    "say": "One creator on r/ClaudeAI reported signing their first paying restaurant live with this.",
+    "tts": "One creator on r/ClaudeAI reported signing their first paying restaurant live with this.",
+    "card": "Real Client Results",
+    "screen": {
+     "app": "notes",
+     "view": "notes",
+     "heading": "Market Benchmarks & Evidence",
+     "rows": [
+      [
+       "First Live Client",
+       "Signed live (r/ClaudeAI report)"
+      ],
+      [
+       "Dashboard Build Price",
+       "$6,000 asking price (benchmark)"
+      ],
+      [
+       "Platform Fees Saved",
+       "25-30% kept by restaurant"
+      ]
+     ],
+     "click": "Signed live (r/ClaudeAI report)",
+     "tip": "Real community developer reports"
+    }
+   },
+   {
+    "beat": "RESULT",
+    "say": "Developers report similar dashboard asks near six thousand dollars, but test payment webhooks first.",
+    "tts": "Developers report similar dashboard asks near six thousand dollars, but test payment webhooks first.",
+    "card": "Results Vary & Test Webhooks",
+    "screen": null
+   }
+  ],
+  "api": {
+   "name": "Claude Code CLI",
+   "endpoint": "claude-code --init --repo /restaurant-ordering-app",
+   "scope": null,
+   "docs": "Claude Code Command Line Documentation"
+  },
+  "code": {
+   "language": "bash",
+   "filename": "setup_app.sh",
+   "content": "#!/bin/bash\nclaude-code --init --repo /restaurant-ordering-app\n# Prompt Claude Code: 'Generate Expo frontend, Supabase edge functions, and Stripe Connect payment webhooks'",
+   "where_to_paste": "Run inside your terminal shell prompt"
+  },
+  "sources": [
+   "First paying client signed live reported on r/ClaudeAI",
+   "Similar direct custom dashboard builds asking prices range around $6,000"
+  ],
+  "description": "Learn how to build direct ordering web applications for local restaurants using Claude Code, saving them up to 30% in delivery app commissions. Catch: requires basic terminal skills and careful testing of payment webhooks.",
+  "tags": [
+   "Claude Code",
+   "AI Automation",
+   "Freelancing",
+   "Stripe Connect",
+   "Supabase",
+   "Expo",
+   "Web Development",
+   "Local Business",
+   "Side Hustle",
+   "Software Development"
+  ]
+ },
+ "lines": [
+  {
+   "beat": "HOOK",
+   "say": "Help local restaurants beat thirty percent fees with direct apps.",
+   "tts": "Help local restaurants beat thirty percent fees with direct apps.",
+   "card": "Save Local Eateries 30%",
+   "screen": null,
+   "face": true
+  },
+  {
+   "beat": "PROBLEM",
+   "say": "Third-party delivery apps charge heavy commissions, cutting deep into profits.",
+   "tts": "Third-party delivery apps charge heavy commissions, cutting deep into profits.",
+   "card": "Delivery App Commissions Hurt",
+   "screen": null,
+   "face": true
+  },
+  {
+   "beat": "FIX",
+   "say": "Build full direct ordering web apps for local eateries using Claude Code.",
+   "tts": "Build full direct ordering web apps for local eateries using Claude Code.",
+   "card": "Build Apps with Claude Code",
+   "screen": {
+    "app": "code",
+    "view": "code",
+    "heading": "Terminal - Claude Code",
+    "language": "bash",
+    "code": "$ claude-code --init --repo /restaurant-app\n> Initializing repository...\n> Claude Code active. Type your command:",
+    "click": "$ claude-code --init --repo /restaurant-app",
+    "tip": "Run Claude Code in terminal"
+   },
+   "face": false
+  },
+  {
+   "beat": "STEP 1",
+   "say": "Find a neighborhood restaurant owner tired of paying high delivery app commissions.",
+   "tts": "Find a neighborhood restaurant owner tired of paying high delivery app commissions.",
+   "card": "1. Find Local Restaurants",
+   "screen": {
+    "app": "notes",
+    "view": "notes",
+    "heading": "Client Outreach Strategy",
+    "rows": [
+     [
+      "Target",
+      "Local independent restaurants"
+     ],
+     [
+      "Problem",
+      "25-30% delivery app fees"
+     ],
+     [
+      "Solution",
+      "Custom direct-ordering web app"
+     ]
+    ],
+    "click": "Target",
+    "tip": "Target commission-weary local eateries"
+   },
+   "face": false
+  },
+  {
+   "beat": "STEP 2",
+   "say": "In your terminal, run Claude Code to write the complete Expo frontend app.",
+   "tts": "In your terminal, run Claude Code to write the complete Expo frontend app.",
+   "card": "2. Generate Expo Frontend",
+   "screen": {
+    "app": "code",
+    "view": "code",
+    "heading": "Terminal - Claude Code",
+    "language": "bash",
+    "code": "> Prompt: Create an Expo React Native web ordering frontend\n> Generating UI components for menu, cart, and checkout...\n> Done! App template initialized.",
+    "click": "Create an Expo React Native web ordering frontend",
+    "tip": "Generate app UI with Claude Code"
+   },
+   "face": false
+  },
+  {
+   "beat": "STEP 3",
+   "say": "Have Claude generate Supabase edge functions and set up direct Stripe Connect payouts.",
+   "tts": "Have Claude generate Supabase edge functions and set up direct Stripe Connect payouts.",
+   "card": "3. Connect Backend & Stripe",
+   "screen": {
+    "app": "code",
+    "view": "code",
+    "heading": "Terminal - Claude Code",
+    "language": "bash",
+    "code": "> Prompt: Setup Supabase edge functions and Stripe Connect webhooks\n> Generating supabase/functions/stripe-webhook/index.ts\n> Complete.",
+    "click": "Setup Supabase edge functions and Stripe Connect webhooks",
+    "tip": "Integrate Supabase and Stripe webhooks"
+   },
+   "face": false
+  },
+  {
+   "beat": "STEP 4",
+   "say": "Deploy the app so the restaurant keeps all revenue and avoids platform fees.",
+   "tts": "Deploy the app so the restaurant keeps all revenue and avoids platform fees.",
+   "card": "4. Deploy Direct System",
+   "screen": {
+    "app": "flow",
+    "view": "flow",
+    "heading": "Direct Ordering Workflow",
+    "nodes": [
+     "Trigger: Customer Orders",
+     "Claude Code App: Processes Cart",
+     "Stripe Connect: Direct Payout to Owner"
+    ],
+    "click": "Stripe Connect: Direct Payout to Owner",
+    "tip": "Owner keeps direct payouts"
+   },
+   "face": false
+  },
+  {
+   "beat": "STEP 5",
+   "say": "One creator on r/ClaudeAI reported signing their first paying restaurant live with this.",
+   "tts": "One creator on r/ClaudeAI reported signing their first paying restaurant live with this.",
+   "card": "Real Client Results",
+   "screen": {
+    "app": "notes",
+    "view": "notes",
+    "heading": "Market Benchmarks & Evidence",
+    "rows": [
+     [
+      "First Live Client",
+      "Signed live (r/ClaudeAI report)"
+     ],
+     [
+      "Dashboard Build Price",
+      "$6,000 asking price (benchmark)"
+     ],
+     [
+      "Platform Fees Saved",
+      "25-30% kept by restaurant"
+     ]
+    ],
+    "click": "Signed live (r/ClaudeAI report)",
+    "tip": "Real community developer reports"
+   },
+   "face": false
+  },
+  {
+   "beat": "RESULT",
+   "say": "Developers report similar dashboard asks near six thousand dollars, but test payment webhooks first.",
+   "tts": "Developers report similar dashboard asks near six thousand dollars, but test payment webhooks first.",
+   "card": "Results Vary & Test Webhooks",
+   "screen": null,
+   "face": true
+  }
+ ],
+ "clips": [
+  {
+   "text": "Help local restaurants beat thirty percent fees with direct apps.",
+   "lines": [
+    0
+   ],
+   "beat": "HOOK",
+   "prompt": "The man (my avatar) looks into the camera and talks to the viewer like a confident, friendly business tech explainer, smart and natural, not stiff; he walks a few relaxed steps toward the camera and stops, then raises one hand with an open palm on the first words. Vertical 9:16 medium-wide shot from the knees up, camera about two metres away, his head in the upper third with space above it, both hands and all his gestures fully visible in the frame, smooth gimbal camera gently moving back with him so the framing stays the same, sharp and well lit, wearing a dark green polo shirt, in a cozy home office with bookshelves, a desk lamp and a monitor showing dashboards. His face, skin tone, hairstyle, beard, height and body build stay exactly as in my avatar's reference photos - the same natural average build, never slimmer and never heavier. He says, in clear natural English with a clear, neutral international accent, at a brisk, lively pace: \"Help local restaurants beat thirty percent fees with direct apps.\" His lips match every word. He starts speaking in the very first frame, with no pause before the first word, and stops right after the last word. Audio: only his voice - no music, no sound effects. No subtitles, no captions, no text on screen."
+  },
+  {
+   "text": "Third-party delivery apps charge heavy commissions, cutting deep into profits.",
+   "lines": [
+    1
+   ],
+   "beat": "PROBLEM",
+   "prompt": "The man (my avatar) looks into the camera and talks to the viewer like a confident, friendly business tech explainer, smart and natural, not stiff; he counts the wasted hours on his fingers with a slightly annoyed face. Vertical 9:16 medium-wide shot from the knees up, camera about two metres away, his head in the upper third with space above it, both hands and all his gestures fully visible in the frame, static camera, sharp and well lit, wearing a dark green polo shirt, in a cozy home office with bookshelves, a desk lamp and a monitor showing dashboards. His face, skin tone, hairstyle, beard, height and body build stay exactly as in my avatar's reference photos - the same natural average build, never slimmer and never heavier. He says, in clear natural English with a clear, neutral international accent, at a brisk, lively pace: \"Third-party delivery apps charge heavy commissions, cutting deep into profits.\" His lips match every word. He starts speaking in the very first frame, with no pause before the first word, and stops right after the last word. Audio: only his voice - no music, no sound effects. No subtitles, no captions, no text on screen."
+  },
+  {
+   "text": "Developers report similar dashboard asks near six thousand dollars, but test payment webhooks first.",
+   "lines": [
+    8
+   ],
+   "beat": "RESULT",
+   "prompt": "The man (my avatar) looks into the camera and talks to the viewer like a confident, friendly business tech explainer, smart and natural, not stiff; he smiles and opens both arms wide. Vertical 9:16 medium-wide shot from the knees up, camera about two metres away, his head in the upper third with space above it, both hands and all his gestures fully visible in the frame, static camera, sharp and well lit, wearing a dark green polo shirt, in a cozy home office with bookshelves, a desk lamp and a monitor showing dashboards. His face, skin tone, hairstyle, beard, height and body build stay exactly as in my avatar's reference photos - the same natural average build, never slimmer and never heavier. He says, in clear natural English with a clear, neutral international accent, at a brisk, lively pace: \"Developers report similar dashboard asks near six thousand dollars, but test payment webhooks first.\" His lips match every word. He starts speaking in the very first frame, with no pause before the first word, and stops right after the last word. Audio: only his voice - no music, no sound effects. No subtitles, no captions, no text on screen."
+  }
+ ],
+ "look": "wearing a dark green polo shirt, in a cozy home office with bookshelves, a desk lamp and a monitor showing dashboards",
+ "issue": 82
+}

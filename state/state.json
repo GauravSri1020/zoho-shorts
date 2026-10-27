@@ -1,5 +1,5 @@
 {
- "next_id": 36,
+ "next_id": 37,
  "covered_links": [
   "https://www.reddit.com/r/Zoho/comments/1wzd94y/sales_order_or_invoice/",
   "https://www.reddit.com/r/Zoho/comments/1wwjbbr/accounting_of_travel_agent/",
@@ -27,7 +27,8 @@
   "https://news.google.com/rss/articles/CBMimAJBVV95cUxOdjNsbExGLURvdGNDazZaZ0ZjYWhOSDQtY2VEM3EwMVlRQ0FOblRxdzU1REp2UjQwRkxKcElpM2NqZ0FQM2pmTTIzanFaRkR5R0cyTS13Tzc1ZXJUV0xzNmd5RVZpZU9UNldmbUdNNUhNQnVvclpaMW5MYUE0V0RJc0F2dm55aXJkcFotc19oeUxWUWNfMlhrWm1JYk9sSE1SX2I4ODlZTXR1ZHJiMTJJbkZwY2RaRk14eHhrV2tZTWoyUTMzbFRKNk1vUHVIaXlLMGlUYjFmd0NVeVBQSGV0ZEluM0tubENSaDVoZDE3TGk4UUtDUThpV0xwSC1oQUxhdzhtd2FnaElFQmFhOGU0b1otcEhkMF9j?oc=5",
   "bank:support agents write the same answer 50 times a day",
   "https://news.google.com/rss/articles/CBMisAFBVV95cUxQWnJSQXpyY3U1c0RaeW04Qkk3aVJhWmVIVklNellwWURpQVphXzJCaFhZTHkyNnNhQ0JGMGM4bDBMM0NlTHFtcU9nVHVRNVJvR251NmM4cVAwLXlrT2Q0cU5LTHdKTDJXckpkREswU1ZfdFhVYmV2Q01nSGJ2R0QwcHRGbDZqaFR2YnZmd0E3OGZGSlJ6TXYxejAzLThnWXRDeXgxMEdfdnNFZ3d6ZlJIZg?oc=5",
-  "bank:you do one task better than most people every week but you h"
+  "bank:you do one task better than most people every week but you h",
+  "https://www.reddit.com/r/ClaudeAI/comments/1xdwquj/anthropics_new_guide_oct_22_argues_most_agents/"
  ],
  "problems": [
   "Zoho Books me online paid sales orders direct closed invoice me convert nahi hote.",
@@ -64,7 +65,8 @@
   "Sales managers export CRM deals to Excel and waste hours pivot-table filtering just to find stalled deals.",
   "Customer support agents spend half their day retyping the exact same answers to repetitive support tickets.",
   "Sales leaders want Claude to run CRM operations without writing custom REST API scripts",
-  "You know a repeated task cold every week, but have nothing to sell."
+  "You know a repeated task cold every week, but have nothing to sell.",
+  "Local restaurants lose 25% to 30% of revenue to high delivery app commissions"
  ],
  "scripts": {
   "S0001": {
@@ -376,6 +378,14 @@
    "engine": "flow",
    "job": "20261026-1943-1",
    "created": "2026-10-26T19:44:40"
+  },
+  "S0036": {
+   "problem": "Local restaurants lose 25% to 30% of revenue to high delivery app commissions",
+   "title": "Build Restaurant Ordering Apps with Claude Code to Save Them 30% #Shorts",
+   "pillar": "claude_code_build",
+   "engine": "flow",
+   "job": "20261027-1000-1",
+   "created": "2026-10-27T10:12:36"
   }
  },
  "slots": [
@@ -553,10 +563,10 @@
  "last_photo": "1_jacket.jpg",
  "photo_scenes": [],
  "photo_agent_error": "RuntimeError: image model unavailable: 404 NOT_FOUND. {'error': {'code': 404, 'm",
- "look_index": 30,
- "status_issue": 81,
- "status_line": "PIPELINE ideas=21 clips=2 editing=0 qa_failed=0 scheduled=0 published=24 total=24 today=0 next=-",
+ "look_index": 31,
+ "status_issue": 83,
+ "status_line": "PIPELINE ideas=21 clips=3 editing=0 qa_failed=0 scheduled=0 published=24 total=24 today=0 next=-",
  "rotation": {
-  "claude_wealth": 1
+  "claude_wealth": 2
  }
 }
