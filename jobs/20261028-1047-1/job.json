@@ -1,0 +1,340 @@
+{
+ "id": "20261028-1047-1",
+ "niche": "claude_wealth",
+ "status": "waiting_for_clips",
+ "upload": true,
+ "created": "2026-10-28T10:53:43",
+ "title": "How to Finish Stalled MVPs for Founders Using Claude Code #Shorts",
+ "description": "Non-technical founders frequently get stuck on login, Stripe webhooks, and deployment.\nUsing Claude Code, you can audit broken repositories, resolve edge cases, and ship working MVPs for clients.\nManual code testing is required to verify AI output and avoid shipping bugs.\n\n1. Clone the client's broken repo in your terminal and launch Claude Code with 'claude'\n2. Run: 'Inspect auth routes, implement Stripe webhook checkout verification, and add passing tests'\n3. Review git diff line-by-line, test environment variables locally, and deploy to Vercel\n\nTool used:\n- name: Claude Code CLI\n- endpoint: claude 'audit auth/stripe integration, fix missing edge cases, and ensure npm run build succeeds'\n- docs: Claude Code CLI Overview\n\naudit-prompt.sh (bash) - Run directly in your terminal inside the root directory of the client repository.:\nclaude 'audit auth/stripe integration, fix missing edge cases, and ensure npm run build succeeds'\n\nThe catch: Claude Code can hallucinate broken dependencies; manual code review and test coverage are non-negotiable.\n\nSources for the numbers:\n- Sabrina Ramonov (sabrina.dev)\n- aibusiness.vc\n\nReal ways to earn with AI, no hype - follow @GSXAutomation\n\nThis video uses an AI-generated presenter and voice.\nIndependent channel. Not affiliated with or endorsed by Anthropic; Claude is a trademark of Anthropic. Education only - not financial, investment, trading or tax advice. Income numbers are what the named creators reported; results vary and nothing is guaranteed.\n\n#Shorts #ClaudeAI #AI #SideHustle #MakeMoneyWithAI",
+ "angle": {
+  "story_index": 45,
+  "pillar": "claude_code_build",
+  "kind": "wealth",
+  "region": "global",
+  "product": "Claude Code",
+  "app": "code",
+  "problem": "Non-technical founders get stuck on authentication, payment webhooks, and deployment for half-built apps.",
+  "fix_type": "claude_code",
+  "solution": "Run a 'finish my MVP' service where Claude Code audits client repos, fixes auth and Stripe, and deploys.",
+  "steps": [
+   "Clone the client's broken repo in your terminal and launch Claude Code with 'claude'",
+   "Run: 'Inspect auth routes, implement Stripe webhook checkout verification, and add passing tests'",
+   "Review git diff line-by-line, test environment variables locally, and deploy to Vercel"
+  ],
+  "api": "claude 'audit auth/stripe integration, fix missing edge cases, and ensure npm run build succeeds'",
+  "numbers": "Sabrina Ramonov reports vibe-code agencies as viable; aibusiness.vc cites typical asking prices around $150/hr or $6,000 for dashboard builds (asking prices, not guaranteed income).",
+  "catch": "Claude Code can hallucinate broken dependencies; manual code review and test coverage are non-negotiable.",
+  "result": "You take a founder from a stalled local codebase to a deployed, paying MVP in days.",
+  "wow": "Claude Code indexes entire multi-directory repos and identifies missing environment configs within seconds.",
+  "hook": "Founders have half-built apps stuck on payments. You can ship them."
+ },
+ "story": {
+  "title": "Non-technical founders have half-built apps stuck on login, payments and deployment",
+  "link": "bank:nontechnical founders have halfbuilt apps stuck on login pay",
+  "summary": "pillar: claude_code_build | product: Claude Code | fix: Offer a 'finish my app' service: Claude Code reads their repo, fixes auth/payments, ships it | facts: Sabrina Ramonov lists a 'vibe code agency' (finishing half-built apps for non-technical founders stuck on auth, payments or deployment) as one of 12 ways to earn with Claude. aibusiness.vc quotes typical asking prices of about $6,000 for a dashboard project or $150/hour - asking prices, not measured earnings. | wow: Claude Code can read a whole unfamiliar repo and tell you what is broken before you write a line | kind: wealth | steps: ['Find founders with a stuck MVP (Upwork, indie-hacker communities, X / LinkedIn posts)', 'Clone their repo, open Claude Code in the terminal and ask it to explain the codebase and list what blocks launch', 'Fix one blocker at a time (auth, Stripe payments, deploy) - review and test every change yourself', 'Charge per milestone, then a small monthly fee for fixes'] | catch: You still need to understand code enough to review it - shipping untested AI code to a client is how you lose them | source: https://www.sabrina.dev/p/12-ways-to-make-money-with-claude",
+  "source": "GSX problem bank",
+  "ts": 1793184320.0133946,
+  "trend": 0,
+  "pillar": "claude_code_build",
+  "kind": "wealth",
+  "order": 2
+ },
+ "script": {
+  "title": "How to Finish Stalled MVPs for Founders Using Claude Code",
+  "hook_text": "Finish Stalled Apps With Claude",
+  "app_label": "Claude Code",
+  "lines": [
+   {
+    "beat": "HOOK",
+    "say": "Founders build half an app and get stuck on payments.",
+    "tts": "Founders build half an app and get stuck on payments.",
+    "card": "Stuck on half-built apps",
+    "screen": null
+   },
+   {
+    "beat": "PROBLEM",
+    "say": "Non-technical founders abandon great software projects when authentication, webhooks, and server deployment fail.",
+    "tts": "Non-technical founders abandon great software projects when authentication, webhooks, and server deployment fail.",
+    "card": "Auth and deployment block launch",
+    "screen": null
+   },
+   {
+    "beat": "FIX",
+    "say": "Offer a finish my MVP service using Claude Code directly inside your command line terminal.",
+    "tts": "Offer a finish my MVP service using Claude Code directly inside your command line terminal.",
+    "card": "Finish apps with Claude Code",
+    "screen": {
+     "app": "code",
+     "view": "code",
+     "heading": "Terminal - Claude Code",
+     "language": "bash",
+     "code": "$ git clone https://github.com/client/stalled-app.git\n$ cd stalled-app\n$ claude",
+     "click": "claude",
+     "tip": "Launch Claude Code in client repo"
+    }
+   },
+   {
+    "beat": "STEP 1",
+    "say": "First, clone the client repository in your local terminal and launch Claude Code with the command claude.",
+    "tts": "First, clone the client repository in your local terminal and launch Claude Code with the command claude.",
+    "card": "Step 1: Clone repo and launch",
+    "screen": {
+     "app": "code",
+     "view": "code",
+     "heading": "Terminal - Claude Code",
+     "language": "bash",
+     "code": "$ claude\n\n> Claude Code v1.0\n> Indexing repository files...\n> Found 42 files across 6 directories.\n> Ready. How can I help?",
+     "click": "Indexing repository files...",
+     "tip": "Indexes multi-directory repos instantly"
+    }
+   },
+   {
+    "beat": "STEP 2",
+    "say": "Type a prompt asking Claude to audit authentication, fix missing Stripe webhooks, and ensure builds pass.",
+    "tts": "Type a prompt asking Claude to audit authentication, fix missing Stripe webhooks, and ensure builds pass.",
+    "card": "Step 2: Audit and fix codebase",
+    "screen": {
+     "app": "code",
+     "view": "code",
+     "heading": "Terminal - Claude Code",
+     "language": "bash",
+     "code": "> claude 'audit auth/stripe integration, fix missing edge cases, and ensure npm run build succeeds'\n\n[+] Auditing src/app/api/auth/route.ts\n[+] Fixing Stripe webhook secret verification\n[+] Updated src/app/api/webhooks/stripe/route.ts\n[+] Build status: npm run build passed",
+     "click": "audit auth/stripe integration, fix missing edge cases, and ensure npm run build succeeds",
+     "tip": "Fixes auth and payment bugs"
+    }
+   },
+   {
+    "beat": "STEP 3",
+    "say": "Review the generated git diff line by line, set your local environment variables, and deploy to Vercel.",
+    "tts": "Review the generated git diff line by line, set your local environment variables, and deploy to Vercel.",
+    "card": "Step 3: Test diffs and deploy",
+    "screen": {
+     "app": "code",
+     "view": "code",
+     "heading": "Terminal - Claude Code",
+     "language": "bash",
+     "code": "$ git diff src/app/api/webhooks/stripe/route.ts\n$ npm run test\n$ vercel --prod\n\n[+] Production deployment complete: https://app.vercel.app",
+     "click": "vercel --prod",
+     "tip": "Review diffs and deploy safely"
+    }
+   },
+   {
+    "beat": "STEP 4",
+    "say": "AI Business reports typical agency asking prices around six thousand dollars per project, though earnings vary.",
+    "tts": "AI Business reports typical agency asking prices around six thousand dollars per project, though earnings vary.",
+    "card": "Asking rates for app completion",
+    "screen": {
+     "app": "notes",
+     "view": "notes",
+     "heading": "Agency Asking Price Benchmarks",
+     "rows": [
+      [
+       "Hourly asking rate",
+       "$150/hr (aibusiness.vc)"
+      ],
+      [
+       "Dashboard project price",
+       "$6,000 (aibusiness.vc)"
+      ],
+      [
+       "Business model",
+       "Vibe Code Agency (Sabrina Ramonov)"
+      ],
+      [
+       "Income guarantee",
+       "None - earnings depend on sales"
+      ]
+     ],
+     "click": "$6,000 (aibusiness.vc)",
+     "tip": "Asking prices from market reports"
+    }
+   },
+   {
+    "beat": "RESULT",
+    "say": "You convert a stalled local repo into a live MVP, but manual code testing remains critical.",
+    "tts": "You convert a stalled local repo into a live MVP, but manual code testing remains critical.",
+    "card": "Shipped MVP for real clients",
+    "screen": null
+   }
+  ],
+  "api": {
+   "name": "Claude Code CLI",
+   "endpoint": "claude 'audit auth/stripe integration, fix missing edge cases, and ensure npm run build succeeds'",
+   "scope": null,
+   "docs": "Claude Code CLI Overview"
+  },
+  "code": {
+   "language": "bash",
+   "filename": "audit-prompt.sh",
+   "content": "claude 'audit auth/stripe integration, fix missing edge cases, and ensure npm run build succeeds'",
+   "where_to_paste": "Run directly in your terminal inside the root directory of the client repository."
+  },
+  "sources": [
+   "Sabrina Ramonov (sabrina.dev)",
+   "aibusiness.vc"
+  ],
+  "description": "Non-technical founders frequently get stuck on login, Stripe webhooks, and deployment.\nUsing Claude Code, you can audit broken repositories, resolve edge cases, and ship working MVPs for clients.\nManual code testing is required to verify AI output and avoid shipping bugs.",
+  "tags": [
+   "Claude Code",
+   "Anthropic",
+   "Freelancing",
+   "MVP Development",
+   "Software Agency",
+   "Stripe Webhooks",
+   "Vercel Deployment",
+   "Web Development",
+   "Coding Tools",
+   "AI Automation"
+  ]
+ },
+ "lines": [
+  {
+   "beat": "HOOK",
+   "say": "Founders build half an app and get stuck on payments.",
+   "tts": "Founders build half an app and get stuck on payments.",
+   "card": "Stuck on half-built apps",
+   "screen": null,
+   "face": true
+  },
+  {
+   "beat": "PROBLEM",
+   "say": "Non-technical founders abandon great software projects when authentication, webhooks, and server deployment fail.",
+   "tts": "Non-technical founders abandon great software projects when authentication, webhooks, and server deployment fail.",
+   "card": "Auth and deployment block launch",
+   "screen": null,
+   "face": true
+  },
+  {
+   "beat": "FIX",
+   "say": "Offer a finish my MVP service using Claude Code directly inside your command line terminal.",
+   "tts": "Offer a finish my MVP service using Claude Code directly inside your command line terminal.",
+   "card": "Finish apps with Claude Code",
+   "screen": {
+    "app": "code",
+    "view": "code",
+    "heading": "Terminal - Claude Code",
+    "language": "bash",
+    "code": "$ git clone https://github.com/client/stalled-app.git\n$ cd stalled-app\n$ claude",
+    "click": "claude",
+    "tip": "Launch Claude Code in client repo"
+   },
+   "face": false
+  },
+  {
+   "beat": "STEP 1",
+   "say": "First, clone the client repository in your local terminal and launch Claude Code with the command claude.",
+   "tts": "First, clone the client repository in your local terminal and launch Claude Code with the command claude.",
+   "card": "Step 1: Clone repo and launch",
+   "screen": {
+    "app": "code",
+    "view": "code",
+    "heading": "Terminal - Claude Code",
+    "language": "bash",
+    "code": "$ claude\n\n> Claude Code v1.0\n> Indexing repository files...\n> Found 42 files across 6 directories.\n> Ready. How can I help?",
+    "click": "Indexing repository files...",
+    "tip": "Indexes multi-directory repos instantly"
+   },
+   "face": false
+  },
+  {
+   "beat": "STEP 2",
+   "say": "Type a prompt asking Claude to audit authentication, fix missing Stripe webhooks, and ensure builds pass.",
+   "tts": "Type a prompt asking Claude to audit authentication, fix missing Stripe webhooks, and ensure builds pass.",
+   "card": "Step 2: Audit and fix codebase",
+   "screen": {
+    "app": "code",
+    "view": "code",
+    "heading": "Terminal - Claude Code",
+    "language": "bash",
+    "code": "> claude 'audit auth/stripe integration, fix missing edge cases, and ensure npm run build succeeds'\n\n[+] Auditing src/app/api/auth/route.ts\n[+] Fixing Stripe webhook secret verification\n[+] Updated src/app/api/webhooks/stripe/route.ts\n[+] Build status: npm run build passed",
+    "click": "audit auth/stripe integration, fix missing edge cases, and ensure npm run build succeeds",
+    "tip": "Fixes auth and payment bugs"
+   },
+   "face": false
+  },
+  {
+   "beat": "STEP 3",
+   "say": "Review the generated git diff line by line, set your local environment variables, and deploy to Vercel.",
+   "tts": "Review the generated git diff line by line, set your local environment variables, and deploy to Vercel.",
+   "card": "Step 3: Test diffs and deploy",
+   "screen": {
+    "app": "code",
+    "view": "code",
+    "heading": "Terminal - Claude Code",
+    "language": "bash",
+    "code": "$ git diff src/app/api/webhooks/stripe/route.ts\n$ npm run test\n$ vercel --prod\n\n[+] Production deployment complete: https://app.vercel.app",
+    "click": "vercel --prod",
+    "tip": "Review diffs and deploy safely"
+   },
+   "face": false
+  },
+  {
+   "beat": "STEP 4",
+   "say": "AI Business reports typical agency asking prices around six thousand dollars per project, though earnings vary.",
+   "tts": "AI Business reports typical agency asking prices around six thousand dollars per project, though earnings vary.",
+   "card": "Asking rates for app completion",
+   "screen": {
+    "app": "notes",
+    "view": "notes",
+    "heading": "Agency Asking Price Benchmarks",
+    "rows": [
+     [
+      "Hourly asking rate",
+      "$150/hr (aibusiness.vc)"
+     ],
+     [
+      "Dashboard project price",
+      "$6,000 (aibusiness.vc)"
+     ],
+     [
+      "Business model",
+      "Vibe Code Agency (Sabrina Ramonov)"
+     ],
+     [
+      "Income guarantee",
+      "None - earnings depend on sales"
+     ]
+    ],
+    "click": "$6,000 (aibusiness.vc)",
+    "tip": "Asking prices from market reports"
+   },
+   "face": false
+  },
+  {
+   "beat": "RESULT",
+   "say": "You convert a stalled local repo into a live MVP, but manual code testing remains critical.",
+   "tts": "You convert a stalled local repo into a live MVP, but manual code testing remains critical.",
+   "card": "Shipped MVP for real clients",
+   "screen": null,
+   "face": true
+  }
+ ],
+ "clips": [
+  {
+   "text": "Founders build half an app and get stuck on payments.",
+   "lines": [
+    0
+   ],
+   "beat": "HOOK",
+   "prompt": "The man (my avatar) looks into the camera and talks to the viewer like a confident, friendly business tech explainer, smart and natural, not stiff; he stands with relaxed shoulders, shakes his head once with a half smile and holds up one hand as if saying stop. Vertical 9:16 medium-wide shot from the knees up, camera about two metres away, his head in the upper third with space above it, both hands and all his gestures fully visible in the frame, static camera, sharp and well lit, wearing a grey crew-neck knit sweater over a white collared shirt, in a glass meeting room with a whiteboard full of flow diagrams. His face, skin tone, hairstyle, beard, height and body build stay exactly as in my avatar's reference photos - the same natural average build, never slimmer and never heavier. He says, in clear natural English with a clear, neutral international accent, at a brisk, lively pace: \"Founders build half an app and get stuck on payments.\" His lips match every word. He starts speaking in the very first frame, with no pause before the first word, and stops right after the last word. Audio: only his voice - no music, no sound effects. No subtitles, no captions, no text on screen."
+  },
+  {
+   "text": "Non-technical founders abandon great software projects when authentication, webhooks, and server deployment fail.",
+   "lines": [
+    1
+   ],
+   "beat": "PROBLEM",
+   "prompt": "The man (my avatar) looks into the camera and talks to the viewer like a confident, friendly business tech explainer, smart and natural, not stiff; he counts the wasted hours on his fingers with a slightly annoyed face. Vertical 9:16 medium-wide shot from the knees up, camera about two metres away, his head in the upper third with space above it, both hands and all his gestures fully visible in the frame, static camera, sharp and well lit, wearing a grey crew-neck knit sweater over a white collared shirt, in a glass meeting room with a whiteboard full of flow diagrams. His face, skin tone, hairstyle, beard, height and body build stay exactly as in my avatar's reference photos - the same natural average build, never slimmer and never heavier. He says, in clear natural English with a clear, neutral international accent, at a brisk, lively pace: \"Non-technical founders abandon great software projects when authentication, webhooks, and server deployment fail.\" His lips match every word. He starts speaking in the very first frame, with no pause before the first word, and stops right after the last word. Audio: only his voice - no music, no sound effects. No subtitles, no captions, no text on screen."
+  },
+  {
+   "text": "You convert a stalled local repo into a live MVP, but manual code testing remains critical.",
+   "lines": [
+    7
+   ],
+   "beat": "RESULT",
+   "prompt": "The man (my avatar) looks into the camera and talks to the viewer like a confident, friendly business tech explainer, smart and natural, not stiff; he smiles and opens both arms wide. Vertical 9:16 medium-wide shot from the knees up, camera about two metres away, his head in the upper third with space above it, both hands and all his gestures fully visible in the frame, static camera, sharp and well lit, wearing a grey crew-neck knit sweater over a white collared shirt, in a glass meeting room with a whiteboard full of flow diagrams. His face, skin tone, hairstyle, beard, height and body build stay exactly as in my avatar's reference photos - the same natural average build, never slimmer and never heavier. He says, in clear natural English with a clear, neutral international accent, at a brisk, lively pace: \"You convert a stalled local repo into a live MVP, but manual code testing remains critical.\" His lips match every word. He starts speaking in the very first frame, with no pause before the first word, and stops right after the last word. Audio: only his voice - no music, no sound effects. No subtitles, no captions, no text on screen."
+  }
+ ],
+ "look": "wearing a grey crew-neck knit sweater over a white collared shirt, in a glass meeting room with a whiteboard full of flow diagrams",
+ "issue": 84
+}

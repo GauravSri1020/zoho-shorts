@@ -1,5 +1,5 @@
 {
- "next_id": 37,
+ "next_id": 38,
  "covered_links": [
   "https://www.reddit.com/r/Zoho/comments/1wzd94y/sales_order_or_invoice/",
   "https://www.reddit.com/r/Zoho/comments/1wwjbbr/accounting_of_travel_agent/",
@@ -28,7 +28,8 @@
   "bank:support agents write the same answer 50 times a day",
   "https://news.google.com/rss/articles/CBMisAFBVV95cUxQWnJSQXpyY3U1c0RaeW04Qkk3aVJhWmVIVklNellwWURpQVphXzJCaFhZTHkyNnNhQ0JGMGM4bDBMM0NlTHFtcU9nVHVRNVJvR251NmM4cVAwLXlrT2Q0cU5LTHdKTDJXckpkREswU1ZfdFhVYmV2Q01nSGJ2R0QwcHRGbDZqaFR2YnZmd0E3OGZGSlJ6TXYxejAzLThnWXRDeXgxMEdfdnNFZ3d6ZlJIZg?oc=5",
   "bank:you do one task better than most people every week but you h",
-  "https://www.reddit.com/r/ClaudeAI/comments/1xdwquj/anthropics_new_guide_oct_22_argues_most_agents/"
+  "https://www.reddit.com/r/ClaudeAI/comments/1xdwquj/anthropics_new_guide_oct_22_argues_most_agents/",
+  "bank:nontechnical founders have halfbuilt apps stuck on login pay"
  ],
  "problems": [
   "Zoho Books me online paid sales orders direct closed invoice me convert nahi hote.",
@@ -66,7 +67,8 @@
   "Customer support agents spend half their day retyping the exact same answers to repetitive support tickets.",
   "Sales leaders want Claude to run CRM operations without writing custom REST API scripts",
   "You know a repeated task cold every week, but have nothing to sell.",
-  "Local restaurants lose 25% to 30% of revenue to high delivery app commissions"
+  "Local restaurants lose 25% to 30% of revenue to high delivery app commissions",
+  "Non-technical founders get stuck on authentication, payment webhooks, and deployment for half-built apps."
  ],
  "scripts": {
   "S0001": {
@@ -386,6 +388,14 @@
    "engine": "flow",
    "job": "20261027-1000-1",
    "created": "2026-10-27T10:12:36"
+  },
+  "S0037": {
+   "problem": "Non-technical founders get stuck on authentication, payment webhooks, and deployment for half-built apps.",
+   "title": "How to Finish Stalled MVPs for Founders Using Claude Code #Shorts",
+   "pillar": "claude_code_build",
+   "engine": "flow",
+   "job": "20261028-1047-1",
+   "created": "2026-10-28T10:53:43"
   }
  },
  "slots": [
@@ -563,10 +573,10 @@
  "last_photo": "1_jacket.jpg",
  "photo_scenes": [],
  "photo_agent_error": "RuntimeError: image model unavailable: 404 NOT_FOUND. {'error': {'code': 404, 'm",
- "look_index": 31,
- "status_issue": 83,
- "status_line": "PIPELINE ideas=21 clips=3 editing=0 qa_failed=0 scheduled=0 published=24 total=24 today=0 next=-",
+ "look_index": 32,
+ "status_issue": 85,
+ "status_line": "PIPELINE ideas=21 clips=4 editing=0 qa_failed=0 scheduled=0 published=24 total=24 today=0 next=-",
  "rotation": {
-  "claude_wealth": 2
+  "claude_wealth": 3
  }
 }
