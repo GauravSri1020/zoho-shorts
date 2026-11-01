@@ -1,5 +1,5 @@
 {
- "next_id": 39,
+ "next_id": 40,
  "covered_links": [
   "https://www.reddit.com/r/Zoho/comments/1wzd94y/sales_order_or_invoice/",
   "https://www.reddit.com/r/Zoho/comments/1wwjbbr/accounting_of_travel_agent/",
@@ -29,7 +29,8 @@
   "https://news.google.com/rss/articles/CBMisAFBVV95cUxQWnJSQXpyY3U1c0RaeW04Qkk3aVJhWmVIVklNellwWURpQVphXzJCaFhZTHkyNnNhQ0JGMGM4bDBMM0NlTHFtcU9nVHVRNVJvR251NmM4cVAwLXlrT2Q0cU5LTHdKTDJXckpkREswU1ZfdFhVYmV2Q01nSGJ2R0QwcHRGbDZqaFR2YnZmd0E3OGZGSlJ6TXYxejAzLThnWXRDeXgxMEdfdnNFZ3d6ZlJIZg?oc=5",
   "bank:you do one task better than most people every week but you h",
   "https://www.reddit.com/r/ClaudeAI/comments/1xdwquj/anthropics_new_guide_oct_22_argues_most_agents/",
-  "bank:nontechnical founders have halfbuilt apps stuck on login pay"
+  "bank:nontechnical founders have halfbuilt apps stuck on login pay",
+  "https://news.google.com/rss/articles/CBMiZkFVX3lxTFB1QlQ5SXlDeF9EZUVLUWQySDd3Zkt2c1U2Wm1yM2lwS1hJZXhUbXMxU3NtVFJUbUVXVEVIRXZaaUM2Sm9vNHpsMncteUlFZUlaMW1OZEtub0VVVXh2ZUtWbkxWV28zQQ?oc=5"
  ],
  "problems": [
   "Zoho Books me online paid sales orders direct closed invoice me convert nahi hote.",
@@ -69,7 +70,8 @@
   "You know a repeated task cold every week, but have nothing to sell.",
   "Local restaurants lose 25% to 30% of revenue to high delivery app commissions",
   "Non-technical founders get stuck on authentication, payment webhooks, and deployment for half-built apps.",
-  "Video editors waste hours manually scrubbing transcripts to write cut lists, captions, and B-roll callouts for short-form repurposing."
+  "Video editors waste hours manually scrubbing transcripts to write cut lists, captions, and B-roll callouts for short-form repurposing.",
+  "Podcasters and coaches record weekly long-form episodes but lack the time to cut 30 short-form clips every month."
  ],
  "scripts": {
   "S0001": {
@@ -405,6 +407,14 @@
    "engine": "flow",
    "job": "20261101-1303-1",
    "created": "2026-11-01T13:09:18"
+  },
+  "S0039": {
+   "problem": "Podcasters and coaches record weekly long-form episodes but lack the time to cut 30 short-form clips every month.",
+   "title": "How to Sell Podcast Clipping Retainers with Claude & CapCut #Shorts",
+   "pillar": "creator_engine",
+   "engine": "flow",
+   "job": "20261101-1430-1",
+   "created": "2026-11-01T14:32:11"
   }
  },
  "slots": [
@@ -582,10 +592,10 @@
  "last_photo": "1_jacket.jpg",
  "photo_scenes": [],
  "photo_agent_error": "RuntimeError: image model unavailable: 404 NOT_FOUND. {'error': {'code': 404, 'm",
- "look_index": 33,
- "status_issue": 93,
- "status_line": "PIPELINE ideas=21 clips=3 editing=0 qa_failed=1 scheduled=0 published=24 total=24 today=0 next=-",
+ "look_index": 34,
+ "status_issue": 95,
+ "status_line": "PIPELINE ideas=21 clips=4 editing=0 qa_failed=0 scheduled=0 published=24 total=24 today=0 next=-",
  "rotation": {
-  "claude_wealth": 4
+  "claude_wealth": 5
  }
 }
