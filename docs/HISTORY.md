@@ -39,6 +39,17 @@ rumour ya illegal nahi. Zoho niche alag hi rahega (settings same).
 - Analytics (Oct 4-31): 1.4K views, 433 engaged, 12 likes, +12 subs (total 12), 2.8 watch hours; traffic 70.5%
   YouTube search, sirf 17.2% Shorts feed; 52.9% stayed / 47.1% swiped away. Top: UAE e-invoicing (157), ZATCA (91).
   YPP: 1,000 subs + 10M Shorts views / 90 din (1 Feb 2027 se naye applicants: 20M Shorts views ya 8,000 hrs).
+- Results: #66 (sirf hook clip) QA 58 - voice change 0:05 (avatar Indian accent -> narrator) -> status "skip" +
+  "parked" note (Gaurav run 41309204763 ka artifact dekhe; theek ho to owner_approved). Video-editing Short
+  20261101-1303-1: QA 66 -> fixes (Claude niche: TTS style + Flow accent Indian English, backup voice
+  en-IN-PrabhatNeural, gentle zoom 1.18 taaki text na kate, music 0.34) -> QA 65 (36 s). Gemini TTS quota aaj khatam
+  tha -> screen voice edge. Bacha blocker: avatar voice vs TTS voice (1-clip design mein hamesha switch hota hai).
+  Video Gaurav ko chat mein bheja; status qa_failed, upload=false. Haan bole to job.json owner_approved + upload true
+  -> assemble.
+- Naya: workflow har assemble ke baad Shorts ko branch `previews` pe copy karta hai (newest 6) - artifacts Claude
+  session se download nahi hote (blob host 403), previews branch se `git show origin/previews:<job>/short.mp4`.
+- Script mein ek number "Up to 50% reported by agency studies" - source naam nahi hai (rule todta hai). Agle scripts
+  ke liye QA ko "named source" pe aur strict karna hai.
 - Open: Gaurav PDF (exhibitors promote) - link "Missing files" deta hai, chat mein attach karna hai.
 
 ## 27 Oct 2026 raat - pehla Claude-wealth Short end-to-end TEST (pass)
