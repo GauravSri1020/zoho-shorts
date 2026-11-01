@@ -406,7 +406,9 @@
    "pillar": "freelance_speed",
    "engine": "flow",
    "job": "20261101-1303-1",
-   "created": "2026-11-01T13:09:18"
+   "created": "2026-11-01T13:09:18",
+   "video_id": "XlQM0Y3s8Ls",
+   "publish_at": "2026-11-01T21:30:00+05:30"
   },
   "S0039": {
    "problem": "Podcasters and coaches record weekly long-form episodes but lack the time to cut 30 short-form clips every month.",
@@ -414,7 +416,9 @@
    "pillar": "creator_engine",
    "engine": "flow",
    "job": "20261101-1430-1",
-   "created": "2026-11-01T14:32:11"
+   "created": "2026-11-01T14:32:11",
+   "video_id": "nvndlkV21F8",
+   "publish_at": "2026-11-02T07:30:00+05:30"
   }
  },
  "slots": [
@@ -585,6 +589,20 @@
    "minute": 1290,
    "video_id": "8Dqrvvh7n2I",
    "title": "Automate Handwritten Zoho Creator Orders with AI Vision #Shorts"
+  },
+  {
+   "date": "2026-11-01",
+   "window": "21:30",
+   "minute": 1290,
+   "video_id": "XlQM0Y3s8Ls",
+   "title": "How Video Editors Automate Repurposing Retainers With Claude #Shorts"
+  },
+  {
+   "date": "2026-11-02",
+   "window": "07:30",
+   "minute": 450,
+   "video_id": "nvndlkV21F8",
+   "title": "Sell Podcast Clips with Claude: $500 a Month per Client #Shorts"
   }
  ],
  "failures": {},
@@ -593,8 +611,8 @@
  "photo_scenes": [],
  "photo_agent_error": "RuntimeError: image model unavailable: 404 NOT_FOUND. {'error': {'code': 404, 'm",
  "look_index": 34,
- "status_issue": 99,
- "status_line": "PIPELINE ideas=21 clips=3 editing=0 qa_failed=1 scheduled=0 published=24 total=24 today=0 next=-",
+ "status_issue": 101,
+ "status_line": "PIPELINE ideas=21 clips=3 editing=0 qa_failed=0 scheduled=2 published=24 total=26 today=1 next=2026-11-01T21:30",
  "rotation": {
   "claude_wealth": 5
  }
