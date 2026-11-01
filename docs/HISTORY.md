@@ -6,6 +6,41 @@ Is file ko har session ke end pe update karo, taaki agla chat yahin se shuru kar
 
 Gaurav jab bhi kuch bhi change karne bole: SABSE PEHLE backup - `backup-YYYY-MM-DD-<kya-badal-rahe-ho>` branch main se banao (aur agar video ka kaam hai to latest Short ka artifact download karo). Tabhi code chhuo. Kuch bigde to us branch se purana code wapas lo.
 
+## 1 Nov 2026 - Claude niche v2 (1 clip + industry screens, 1.5x) + Zoho #66 from existing clip
+
+Backup: branch `backup-2026-11-01-before-zoho-and-claude-clips` (main jaisa tha, v1).
+
+Gaurav ne maanga: ab har Short mein sirf EK Flow clip (tera chehra, max 2), baaki Claude screens + text; pace 1.5x;
+zyada professional - alag jagah / background; har industry (video editing, marketing, healthcare, trading,
+logistics...) mein Claude se wealth / automation; real news / trending free Claude Skills GitHub repos; kuch fake,
+rumour ya illegal nahi. Zoho niche alag hi rahega (settings same).
+
+- Pipeline 28 Oct se ruka tha: 4 Shorts clips ka wait (Zoho #66 #73, Claude #82 #84) -> daily run skip.
+- `niches/claude_wealth.yaml` v2: `flow.face_beats: [HOOK]` (1 clip), `speed 1.5` + naya `tts_speed 1.5`
+  (screen voice bhi same pace), `max_waiting 4`, 8 outfits; `niche.industries` = 13 fields (id, name, accent
+  colour, about + safety, place). Naya pillar `open_source_skills` (trending free Claude Skills / MCP repos on
+  GitHub), trending weight 3, skip mein rumours / fake screenshots / illegal; nayi feeds (GitHub skills, industries).
+- flow.py: SPEED cap 1.6, TTS_SPEED (Zoho = 1.0, untouched), look = outfit + industry place (Claude niche),
+  env TOPIC (workflow input "topic") = us din ka hand-picked topic, industry rotation `state.rotation.claude_wealth_industry`.
+- niche_claude_wealth.py: scout ko industry order + topic; script mein sirf HOOK face, PROBLEM / FIX / STEP / RESULT
+  sab screens (PROBLEM = numbers / client chat card, RESULT = before/after + catch); mix of screen types.
+- composer.py `_layers_v2` (sirf Claude niche): dark navy card, industry colour glow + grid, industry naam upar.
+  Zoho card unchanged. Local render test: /tmp frame theek dikha.
+- Jobs: #66 #73 #82 #84 ab sirf HOOK clip maangte hain. #66 ke paas hook clip pehle se tha (Golu Sri) -> assemble
+  (upload=false, Gaurav pehle dekhe). 
+- Naya Short: run "daily" + topic "video editing with Claude" -> job 20261101-1303-1, issue #86 "How Video Editors
+  Automate Repurposing Retainers With Claude" (upload=false). Hook clip main ID (gauravsri069, flow.google.com
+  bina /u/1) se Veo 3.1 Fast (20 credits), project "Nov 01 - 18:40". Clip GitHub pe: page mein
+  performance entries se flow-content /video/ URL fetch -> blob -> button -> window.open(upload page) ->
+  postMessage(blob) -> DataTransfer -> Commit (koi download nahi hua).
+- Flow UI (1 Nov): naye project mein right side "Agent" panel khulta hai - band karo, prompt box mein "Agent" chip
+  off karo, tab settings chip (Video | 9:16 | model | x1) dikhta hai. Default model Omni 1.1 Flash + x2 - Veo 3.1 Fast
+  + x1 chuno.
+- Analytics (Oct 4-31): 1.4K views, 433 engaged, 12 likes, +12 subs (total 12), 2.8 watch hours; traffic 70.5%
+  YouTube search, sirf 17.2% Shorts feed; 52.9% stayed / 47.1% swiped away. Top: UAE e-invoicing (157), ZATCA (91).
+  YPP: 1,000 subs + 10M Shorts views / 90 din (1 Feb 2027 se naye applicants: 20M Shorts views ya 8,000 hrs).
+- Open: Gaurav PDF (exhibitors promote) - link "Missing files" deta hai, chat mein attach karna hai.
+
 ## 27 Oct 2026 raat - pehla Claude-wealth Short end-to-end TEST (pass)
 
 - Gaurav: Claude ka koi scheduled task / artifact nahi chahiye; sab GitHub se chale; paid kuch nahi; Flow theek hai. "GSX Flow clips autopilot" task kabhi save hi nahi hua (computer approval nahi) - koi Claude scheduled task active nahi.

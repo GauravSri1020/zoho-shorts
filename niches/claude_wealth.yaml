@@ -96,7 +96,8 @@ niche:
     ai_services: {weight: 3, kind: wealth, about: "AI automation / AI-agent services for local and small businesses: intake, follow-ups, reports, support - setup fee + monthly retainer"}
     freelance_speed: {weight: 2, kind: wealth, about: "freelancing with Claude doing the first 80%: writing, research reports, document extraction, translation - and where the human still adds the value"}
     creator_engine: {weight: 2, kind: wealth, about: "a content business with Claude (research, scripts, repurposing one video into 30 posts, newsletters) - the version that survives YouTube's inauthentic-content rules"}
-    trending: {weight: 2, kind: wealth, about: "this week's Claude / Anthropic launch or news -> one concrete way to earn from it today"}
+    trending: {weight: 3, kind: wealth, about: "this week's REAL Claude / Anthropic launch or news (named source) -> one concrete way to earn from it today"}
+    open_source_skills: {weight: 3, kind: wealth, about: "free Claude Skills / agent / MCP repos trending on GitHub (name the repo + its licence) -> how a freelancer or small business uses them for paid client work or to automate their own job, on their own computer"}
     problems: {weight: 1, kind: problems, about: "the problems, limits and myths: hallucinated facts, usage limits, API costs eating the margin, demonetized AI channels, fake 'Claude made $10k overnight trading' stories, clients who leave - and how pros handle each"}
   good_problems:
     - "You know a task cold but have no product - turn it into a bundle of Claude Skills and sell it on a one-page checkout"
@@ -114,7 +115,8 @@ niche:
     artifact: "a Claude artifact / mini web app made in chat and shared with a link"
     automation: "a chain: trigger -> Claude -> action (e.g. form -> Claude -> CRM / email / sheet) in n8n, Make or Zapier"
   skip: >-
-    get-rich-quick claims, trading signals, stock / crypto / betting picks, 'passive income' with no work, MLM,
+    rumours, unverified 'someone made $X' posts with no named person or source, fake or edited screenshots,
+    anything illegal (scraping against terms, piracy, spam, fake reviews, impersonation), get-rich-quick claims, trading signals, stock / crypto / betting picks, 'passive income' with no work, MLM,
     unverifiable screenshots of earnings, anything that breaks a platform's terms (spam, fake reviews, mass AI slop)
   safety: >-
     never give financial, investment, trading, banking or tax advice and never name a stock, coin or bet; trading /
@@ -151,6 +153,12 @@ scripts:
 
 sources:
   feeds:
+    # v2: free Claude Skills / agents / MCP repos people share on GitHub (trending open source)
+    - "https://news.google.com/rss/search?hl=en&gl=US&ceid=US:en&q=%22Claude%22+skills+GitHub+open+source+when:14d"
+    - "https://hnrss.org/newest?q=Claude+skills+OR+%22Claude+Code%22+github&points=30"
+    - "https://www.reddit.com/r/ClaudeAI/search.rss?q=github+OR+%22open+source%22+OR+skill&sort=top&t=week&restrict_sr=on"
+    # v2: Claude in industries (healthcare admin, logistics, marketing, video editing, finance tools)
+    - "https://news.google.com/rss/search?hl=en&gl=US&ceid=US:en&q=Claude+AI+(healthcare+OR+logistics+OR+marketing+OR+%22video+editing%22+OR+accounting)+when:14d"
     # Claude / Anthropic news + launches
     - "https://news.google.com/rss/search?hl=en&gl=US&ceid=US:en&q=Claude+Anthropic+when:7d"
     - "https://news.google.com/rss/search?hl=en&gl=US&ceid=US:en&q=%22Claude+Code%22+OR+%22Claude+Skills%22+when:14d"
@@ -169,7 +177,8 @@ sources:
     # Google Trends (only items matching the keywords below are kept)
     - "https://trends.google.com/trending/rss?geo=US"
     - "https://trends.google.com/trending/rss?geo=IN"
-  keywords: ["claude", "anthropic", "claude code", "skills", "skill", "mcp", "artifact", "side hustle", "side income",
+  keywords: ["claude", "anthropic", "github", "open source", "healthcare", "logistics", "marketing", "video editing",
+             "real estate", "e-commerce", "accounting", "trading", "claude code", "skills", "skill", "mcp", "artifact", "side hustle", "side income",
              "income", "freelance", "freelancing", "client", "clients", "saas", "mrr", "revenue", "agency",
              "ai agent", "agents", "automation", "automate", "make money", "earn", "monetization", "demonetized",
              "vibe coding", "vibe code", "prompt", "course"]
