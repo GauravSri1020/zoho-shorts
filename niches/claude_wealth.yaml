@@ -1,9 +1,22 @@
 # =====================================================================================
-#  NICHE: CLAUDE WEALTH  (27 Oct 2026)
-#  "Claude se log asli mein kaise kama rahe hain" + "Claude ki problems / limits / myths".
-#  Order: 4 wealth Shorts -> 1 problems Short -> repeat  (niche.rotation).
-#  Presenter (tera avatar), looks, gestures, schedule, captions, QA limits: sab niches/zoho.yaml se aata hai
-#  (extends: zoho). Yahan sirf wahi likha hai jo is niche mein alag hai.
+#  NICHE: CLAUDE WEALTH  v2  (1 Nov 2026)
+#  "Claude se har field mein kaise kama rahe hain / kaam automate kar rahe hain".
+#  v2 (Gaurav, 1 Nov): har Short = EK industry (video editing, marketing, healthcare admin, trading tools,
+#  logistics, real estate, e-commerce, legal, education, restaurants, HR, accounting, creators) -> uss field mein
+#  Claude se paisa / automation ka ek asli tareeka. Sirf EK Flow clip (HOOK, tera chehra); baaki pura Short
+#  Claude screens + text + industry ke hisaab se professional background. Pace 1.5x.
+#  Order: 4 wealth Shorts -> 1 problems Short -> repeat  (niche.rotation). Industries rotate (niche.industries).
+#  Presenter (tera avatar), gestures, schedule, captions, QA limits: niches/zoho.yaml se (extends: zoho).
+#  v1 (27 Oct) ka code: branch backup-2026-11-01-before-zoho-and-claude-clips.
+#
+#  IMPORTANT (YouTube rules, Oct 2026): monetization policy kehti hai ki AI-generated persona se sensitive topics
+#  (health, legal, FINANCIAL ADVICE) dene wale channels monetize nahi hote. Isliye ye channel "kaise kamate hain /
+#  kya banate hain" dikhata hai (business + tools), kabhi stock / crypto / trading tip ya "itna pakka kamaoge" nahi.
+#  Healthcare = sirf clinic ka ADMIN kaam (appointments, forms, billing), kabhi medical advice nahi.
+#  Trading = sirf "research / journal tool banao, decision tumhara", kabhi tip ya strategy nahi.
+# =====================================================================================
+
+extends: zoho). Yahan sirf wahi likha hai jo is niche mein alag hai.
 #
 #  IMPORTANT (YouTube rules, Oct 2026): monetization policy kehti hai ki AI-generated persona se sensitive topics
 #  (health, legal, FINANCIAL ADVICE) dene wale channels monetize nahi hote. Isliye ye channel "kaise kamate hain /
@@ -21,17 +34,60 @@ channel:
 
 niche:
   topic: >-
-    how real people earn money with Claude (Anthropic's AI): Claude Code apps and micro-SaaS, Claude Skills sold
-    as digital products, AI automation and AI-agent services for small businesses, freelance work (writing,
-    research, document processing) done faster, content businesses built with Claude - and the real problems,
-    limits, costs and myths of each
+    how real people in every industry earn money and automate their work with Claude (Anthropic's AI) - video
+    editing, marketing, healthcare admin, trading research tools, logistics, real estate, e-commerce, legal
+    paperwork, education, restaurants, HR and accounting: Claude Code apps, Claude Skills and Projects, AI
+    automation services, freelance work done faster - and the real problems, limits, costs and myths of each
   audience: >-
     freelancers, students, creators, developers, job holders and small-business owners in India, the Middle East,
     the US and Europe who want an extra income with AI and are tired of hype
   promise: >-
-    every Short takes ONE real way people earn with Claude and shows the exact workflow on screen - the prompt,
+    every Short takes ONE industry and ONE real way people there earn or save hours with Claude and shows the exact workflow on screen - the prompt,
     the Skill file, the Claude Code command or the tool chain - plus the honest numbers (who reported them) and
     the catch, so the viewer can try it today. No hype: what is real, what it costs, where it breaks.
+  # v2 (1 Nov 2026): every Short is about ONE industry, in this order (then it starts again). The place is where
+  # the presenter stands in the ONE Flow clip; "accent" colours that Short's screen background.
+  # Add a field = add a block here. Safety notes in "about" are read by the scout + scriptwriter.
+  industries:
+    - {id: video_editing, name: "Video editing", accent: "#8B5CF6",
+       about: "editors and agencies: Claude writes cut lists from transcripts, captions, B-roll lists, client briefs, Premiere / DaVinci scripts; sell faster editing packages and repurposing retainers",
+       place: "in a professional video editing suite with two large monitors showing a colour-graded timeline, soft blue ambient light"}
+    - {id: marketing, name: "Marketing", accent: "#EC4899",
+       about: "trade marketing, ads and social: campaign briefs, ad-copy variations, competitor research, monthly reports for clients as a retainer",
+       place: "in a modern marketing agency office with a wall of campaign mood boards and warm lights"}
+    - {id: healthcare_admin, name: "Healthcare admin", accent: "#14B8A6",
+       about: "clinic ADMIN only: appointment reminders, intake forms, insurance paperwork, review replies - sold as a monthly service to clinics. Never medical advice, never patient data on screen",
+       place: "in the bright, clean reception area of a modern private clinic, no patients visible"}
+    - {id: trading_tools, name: "Trading tools", accent: "#F59E0B",
+       about: "ONLY building tools: a trade journal, a news summariser, a backtest notebook with Claude Code - the viewer decides, can lose money; or myth-busting 'Claude made me rich trading'. Never a tip, signal or strategy",
+       place: "at a desk with three monitors showing generic charts in a calm, modern home office in the evening"}
+    - {id: logistics, name: "Logistics", accent: "#0EA5E9",
+       about: "freight and delivery businesses: Claude reads invoices / bills of lading, drafts shipment updates, builds a small tracking dashboard with Claude Code - sold as automation projects",
+       place: "in a modern warehouse office with a glass window over neatly stacked shelves, a forklift softly blurred in the background"}
+    - {id: real_estate, name: "Real estate", accent: "#22C55E",
+       about: "agents and brokers: listing descriptions, lead follow-ups, comparison sheets, WhatsApp replies - a setup + monthly service for agencies",
+       place: "in a bright, modern show apartment with large windows and a city view"}
+    - {id: ecommerce, name: "E-commerce", accent: "#F97316",
+       about: "online stores: product descriptions in bulk, customer-support replies, review analysis, a Claude Code inventory script",
+       place: "in a small e-commerce studio with packed parcels, a product photo light box and shelves of products"}
+    - {id: legal_docs, name: "Legal paperwork", accent: "#64748B",
+       about: "law firms and freelancers: contract first-pass summaries, clause checklists, document extraction - a human lawyer always signs off; never legal advice to the viewer",
+       place: "in a quiet law office with wooden bookshelves full of books and a tidy desk"}
+    - {id: education, name: "Education", accent: "#6366F1",
+       about: "tutors, coaches and course creators: lesson plans, quizzes, worksheets as a Claude Project, a Skill that grades in the teacher's rubric",
+       place: "in a bright online-teaching studio with a ring light, a whiteboard and bookshelves"}
+    - {id: restaurants, name: "Restaurants", accent: "#EF4444",
+       about: "restaurants and cafes: direct-order apps with Claude Code, menu engineering, review replies, staff rota - sold by local freelancers",
+       place: "in a stylish modern restaurant before opening hours, warm pendant lights and an open kitchen behind him"}
+    - {id: hr_recruiting, name: "HR & recruiting", accent: "#A855F7",
+       about: "recruiters and HR teams: job descriptions, CV screening checklists (human decides, no bias), onboarding docs - a recruiting-ops service",
+       place: "in a modern HR office meeting area with glass walls and plants"}
+    - {id: accounting, name: "Accounting", accent: "#10B981",
+       about: "bookkeepers and CAs: bank-statement categorising, invoice extraction, monthly client summaries - faster bookkeeping packages; never tax advice to the viewer",
+       place: "in a clean finance office with a large monitor showing spreadsheets and reports"}
+    - {id: creators, name: "Content creators", accent: "#E11D48",
+       about: "creators and small media businesses: research, scripts, one video into 30 posts, newsletters - the version that survives YouTube's inauthentic-content rules",
+       place: "in a creator studio with a camera on a tripod, LED light panels and acoustic panels on the wall"}
   # Content mix. Rotation decides WHICH KIND comes next; the weights decide the pillar inside "wealth".
   rotation: ["wealth", "wealth", "wealth", "wealth", "problems"]
   pillars:
@@ -68,6 +124,30 @@ niche:
   cta: "Follow {name} for real ways to earn with AI"
 
 problem_bank: "research/claude_wealth_bank.yaml"
+
+# v2 (1 Nov 2026, Gaurav): ONE Flow clip per Short (the HOOK, your face) - everything else is Claude screens + text
+# in the TTS voice. 1.5x pace (clip + screen voice together). Only this niche - the Zoho niche keeps its settings.
+flow:
+  face_beats: ["HOOK"]        # lines spoken on camera (one clip). Two clips max: ["HOOK", "RESULT"]
+  max_words_per_clip: 18      # the hook fits one 8 s clip with room to spare
+  speed: 1.5                  # Flow clip pace (voice + lips together)
+  tts_speed: 1.5              # screen-part voice pace - same as the clip so the voice never changes speed
+  max_waiting: 4              # old v1 Shorts waiting for clips do not block new ones
+  # Outfits rotate per Short; the PLACE comes from the Short's industry (niche.industries -> place).
+  outfits:
+    - "a navy unstructured blazer over a plain white t-shirt"
+    - "a light blue oxford shirt with the sleeves rolled up"
+    - "a charcoal overshirt over a black crew-neck t-shirt"
+    - "a white linen shirt with the top button open"
+    - "a navy blazer over a crisp white shirt with no tie"
+    - "a grey crew-neck knit sweater over a white collared shirt"
+    - "a black polo shirt"
+    - "a light grey blazer over a black t-shirt"
+
+scripts:
+  per_day: 1
+  words_min: 100
+  words_max: 140
 
 sources:
   feeds:

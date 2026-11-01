@@ -39,7 +39,9 @@ SHOT = (_F.get("shot") or "Vertical 9:16 medium-wide shot from the knees up, cam
         "his head in the upper third with space above it, both hands and all his gestures fully visible in the "
         "frame").strip()
 LOOKS = [str(x).strip() for x in (_F.get("looks") or []) if str(x).strip()] or [SCENE]  # one look per Short, rotated
-SPEED = max(1.0, min(1.25, float(_F.get("speed", 1.1))))  # lifts Veo's slow delivery a little (voice + lips together)
+SPEED = max(1.0, min(1.6, float(_F.get("speed", 1.1))))  # lifts Veo's slow delivery (voice + lips together); v2 claude niche 1.5
+# screen-part (TTS) voice pace. 1.0 = untouched (Zoho niche). Claude niche v2: same as SPEED, so the pace never jumps.
+TTS_SPEED = max(1.0, min(1.6, float(_F.get("tts_speed", 1.0))))
 LEAD, TAIL = float(_F.get("lead_seconds", 0.04)), float(_F.get("tail_seconds", 0.18))
 _WM = _F.get("watermark", {}) or {}
 WM_MODE = str(_WM.get("mode", "crop")).lower()  # crop | blur | none
@@ -284,8 +286,12 @@ def prepare(count, do_upload):
         from . import niche_claude_wealth as nw
         rot = st.setdefault("rotation", {}).get(NICHE_ID, 0)
         kinds = nw.needed_kinds(rot, count)
-        print(f"[flow] niche {NICHE_ID}: rotation position {rot} -> next Shorts: {kinds}")
-        angles = writer.scout(research.fetch(st["covered_links"]), count + 2, st["problems"], kinds)
+        inds = nw.needed_industries(st["rotation"].get(NICHE_ID + "_industry", 0), count)
+        topic = os.getenv("TOPIC", "").strip()  # Run workflow -> topic: this exact Short, today
+        print(f"[flow] niche {NICHE_ID}: rotation position {rot} -> next Shorts: {kinds} / industries "
+              f"{[i.get('id') for i in inds]}" + (f" / topic: {topic}" if topic else ""))
+        angles = writer.scout(research.fetch(st["covered_links"]), count + 2, st["problems"], kinds,
+                              industries=inds, topic=topic)
     print(f"[flow] scout found {len(angles)} angles")
     made, errors = 0, []
     for k, angle in enumerate(angles):
@@ -295,11 +301,16 @@ def prepare(count, do_upload):
         print(f"\n[flow] === [{angle.get('pillar', '')}] {angle.get('problem')}")
         try:
             sc = writer.approved_script(angle)
+            if not IS_ZOHO and angle.get("industry"):  # niche v2: the composer colours the screens by industry
+                sc["industry"] = angle["industry"]
             lines = keep_lines(_lines(sc))
             clips = chunks(lines)
             if not clips:
                 raise RuntimeError("script has no spoken lines")
-            look = LOOKS[st.get("look_index", 0) % len(LOOKS)]  # same look in every clip of this Short
+            if IS_ZOHO:
+                look = LOOKS[st.get("look_index", 0) % len(LOOKS)]  # same look in every clip of this Short
+            else:  # niche v2: the place comes from the Short's industry, the outfit rotates
+                look = nw.look_for(angle, st.get("look_index", 0)) or LOOKS[st.get("look_index", 0) % len(LOOKS)]
             st["look_index"] = st.get("look_index", 0) + 1
             for c in clips:
                 c["prompt"] = prompt(c["text"], c["beat"], look)
@@ -326,6 +337,9 @@ def prepare(count, do_upload):
             st["next_id"] += 1
             if not IS_ZOHO:
                 st.setdefault("rotation", {})[NICHE_ID] = st["rotation"].get(NICHE_ID, 0) + 1
+                if not os.getenv("TOPIC", "").strip():  # a hand-picked topic does not use up an industry slot
+                    k = NICHE_ID + "_industry"
+                    st["rotation"][k] = st["rotation"].get(k, 0) + 1
             made += 1
             where = issue.get("html_url") or f"https://github.com/{REPO}/blob/main/jobs/{job_id}/PROMPTS.md"
             notify.send(f"🎬 {CHANNEL_NAME}: a new Short needs {len(clips)} Flow clips.\n"
@@ -541,6 +555,11 @@ def tts_part(text, out_v: Path, out_a: Path, wav=None):
         shutil.copy(wav, tmp)
     else:
         tts.speak(text, tmp, RATE)
+    if TTS_SPEED > 1.0:  # niche v2: screen voice at the same pace as the clip (pitch stays the same)
+        fast = tmp.with_name(tmp.stem + "_x.wav")
+        _run(_ff("-i", str(tmp), "-af", f"atempo={TTS_SPEED:.3f}", "-ac", "1", "-ar", str(RATE),
+                 "-c:a", "pcm_s16le", str(fast)))
+        fast.replace(tmp)
     length = _dur(tmp) + 0.12
     frames = max(int(round(length * FPS)), 1)
     length = frames / FPS

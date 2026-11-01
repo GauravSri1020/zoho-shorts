@@ -1,7 +1,7 @@
 {
  "id": "20261024-0903-1",
  "status": "waiting_for_clips",
- "upload": true,
+ "upload": false,
  "created": "2026-10-24T09:10:10",
  "title": "Automate Support Replies with Zoho Desk and Claude #Shorts",
  "description": "Learn how to integrate Claude with Zoho Desk using Deluge custom functions to automatically draft private support responses and cut ticket resolution time.\n\n1. In Zoho Desk, go to Setup -› Automation -› Workflow Rules and create a rule on Tickets upon 'Created'.\n2. Add a Custom Function using invokeurl to send ticket description and subject to Claude API (api.anthropic.com/v1/messages).\n3. Use zoho.desk.createComment() to inject the generated AI response into the ticket as an internal private comment for agent 1-click review.\n\nAPI / tool used:\n- name: Anthropic Messages API\n- endpoint: POST https://api.anthropic.com/v1/messages\n- scope: None\n- docs: Anthropic API Reference\n\nCode (deluge) - Zoho Desk Setup › Automation › Workflow Actions › Functions:\nticketId = input.ticketId;\nsubject = input.subject;\ndescription = input.description;\n\npromptText = \"Draft a helpful customer support reply for this ticket. Subject: \" + subject + \"\\nDescription: \" + description;\n\nmsg = Map();\nmsg.put(\"role\", \"user\");\nmsg.put(\"content\", promptText);\n\nmessagesList = List();\nmessagesList.add(msg);\n\npayload = Map();\npayload.put(\"model\", \"claude-3-5-sonnet-20241022\");\npayload.put(\"max_tokens\", 300);\npayload.put(\"messages\", messagesList);\n\nheadersMap = Map();\nheadersMap.put(\"x-api-key\", \"YOUR_CLAUDE_API_KEY\");\nheadersMap.put(\"anthropic-version\", \"2023-06-01\");\nheadersMap.put(\"content-type\", \"application/json\");\n\nresponse = invokeurl\n[\n\turl: \"https://api.anthropic.com/v1/messages\"\n\ttype: POST\n\tparameters: payload.toString()\n\theaders: headersMap\n];\n\naiReply = response.get(\"content\").get(0).get(\"text\");\n\ncommentBody = Map();\ncommentBody.put(\"content\", aiReply);\ncommentBody.put(\"isPublic\", false);\n\ndeskHeaders = Map();\ndeskHeaders.put(\"orgId\", \"YOUR_ORG_ID\");\ndeskHeaders.put(\"Content-Type\", \"application/json\");\n\ndeskResponse = invokeurl\n[\n\turl: \"https://desk.zoho.com/api/v1/tickets/\" + ticketId + \"/comments\"\n\ttype: POST\n\tparameters: commentBody.toString()\n\theaders: deskHeaders\n\tconnection: \"zohodesk\"\n];\n\nAI + Zoho automations every day - follow @GSXAutomation\n\nThis video uses an AI-generated presenter and voice.\nIndependent channel. Not affiliated with or endorsed by Zoho Corporation. Zoho is a trademark of Zoho Corporation.\n\n#Shorts #Zoho #AIAutomation #ZohoCRM #AIAgents",
@@ -260,7 +260,7 @@
    "tts": "Customer support agents waste hours retyping repetitive technical answers instead of handling complex client escalations.",
    "card": "Wasting agent hours",
    "screen": null,
-   "face": true
+   "face": false
   },
   {
    "beat": "FIX",
@@ -426,7 +426,7 @@
    "tts": "Cut ticket resolution time in half while keeping human oversight on every single AI response.",
    "card": "Faster resolution time",
    "screen": null,
-   "face": true
+   "face": false
   }
  ],
  "clips": [
@@ -437,22 +437,6 @@
    ],
    "beat": "HOOK",
    "prompt": "The man (my avatar) looks into the camera and talks to the viewer like a confident, friendly business tech explainer, smart and natural, not stiff; he walks a few relaxed steps toward the camera and stops, then raises one hand with an open palm on the first words. Vertical 9:16 medium-wide shot from the knees up, camera about two metres away, his head in the upper third with space above it, both hands and all his gestures fully visible in the frame, smooth gimbal camera gently moving back with him so the framing stays the same, sharp and well lit, wearing an olive field jacket over a grey t-shirt, on a clean city sidewalk just outside a glass office tower, softly blurred street behind him. His face, skin tone, hairstyle, beard, height and body build stay exactly as in my avatar's reference photos - the same natural average build, never slimmer and never heavier. He says, in clear natural English with a clear, neutral international accent, at a brisk, lively pace: \"Your support reps are typing the exact same troubleshooting reply fifty times every single day.\" His lips match every word. He starts speaking in the very first frame, with no pause before the first word, and stops right after the last word. Audio: only his voice - no music, no sound effects. No subtitles, no captions, no text on screen."
-  },
-  {
-   "text": "Customer support agents waste hours retyping repetitive technical answers instead of handling complex client escalations.",
-   "lines": [
-    1
-   ],
-   "beat": "PROBLEM",
-   "prompt": "The man (my avatar) looks into the camera and talks to the viewer like a confident, friendly business tech explainer, smart and natural, not stiff; he crosses his arms for a moment, then uncrosses them and gestures to the side in mild frustration. Vertical 9:16 medium-wide shot from the knees up, camera about two metres away, his head in the upper third with space above it, both hands and all his gestures fully visible in the frame, static camera, sharp and well lit, wearing an olive field jacket over a grey t-shirt, on a clean city sidewalk just outside a glass office tower, softly blurred street behind him. His face, skin tone, hairstyle, beard, height and body build stay exactly as in my avatar's reference photos - the same natural average build, never slimmer and never heavier. He says, in clear natural English with a clear, neutral international accent, at a brisk, lively pace: \"Customer support agents waste hours retyping repetitive technical answers instead of handling complex client escalations.\" His lips match every word. He starts speaking in the very first frame, with no pause before the first word, and stops right after the last word. Audio: only his voice - no music, no sound effects. No subtitles, no captions, no text on screen."
-  },
-  {
-   "text": "Cut ticket resolution time in half while keeping human oversight on every single AI response.",
-   "lines": [
-    6
-   ],
-   "beat": "RESULT",
-   "prompt": "The man (my avatar) looks into the camera and talks to the viewer like a confident, friendly business tech explainer, smart and natural, not stiff; he smiles and opens both arms wide. Vertical 9:16 medium-wide shot from the knees up, camera about two metres away, his head in the upper third with space above it, both hands and all his gestures fully visible in the frame, static camera, sharp and well lit, wearing an olive field jacket over a grey t-shirt, on a clean city sidewalk just outside a glass office tower, softly blurred street behind him. His face, skin tone, hairstyle, beard, height and body build stay exactly as in my avatar's reference photos - the same natural average build, never slimmer and never heavier. He says, in clear natural English with a clear, neutral international accent, at a brisk, lively pace: \"Cut ticket resolution time in half while keeping human oversight on every single AI response.\" His lips match every word. He starts speaking in the very first frame, with no pause before the first word, and stops right after the last word. Audio: only his voice - no music, no sound effects. No subtitles, no captions, no text on screen."
   }
  ],
  "look": "wearing an olive field jacket over a grey t-shirt, on a clean city sidewalk just outside a glass office tower, softly blurred street behind him",

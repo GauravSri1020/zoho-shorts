@@ -12,12 +12,49 @@ Same pipeline, same presenter, same editor and QA strictness - only WHAT the age
 """
 import json
 
-from .config import CHANNEL_NAME, CHANNEL_HANDLE, LANGUAGE, NICHE, PILLARS, SCRIPT_WORDS, EVERGREEN_FALLBACK, \
+from .config import CH, CHANNEL_NAME, CHANNEL_HANDLE, LANGUAGE, NICHE, PILLARS, SCRIPT_WORDS, EVERGREEN_FALLBACK, \
     DISCLAIMER, HASHTAGS
 
 # what the screen part of a Short can show in this niche (autopilot/screens.py draws each one)
 APPS = ("claude", "code", "flow", "api", "notes")
 ROTATION = [str(x).lower() for x in (NICHE.get("rotation") or ["wealth"])]
+
+# v2 (1 Nov 2026): every Short = ONE industry (niche.industries, rotated). Its "place" is where the presenter stands in
+# the one Flow clip, its "accent" colours the screen background. Only the HOOK is on camera (flow.face_beats).
+INDUSTRIES = [dict(x) for x in (NICHE.get("industries") or []) if isinstance(x, dict) and x.get("id")]
+_IND = {x["id"]: x for x in INDUSTRIES}
+OUTFITS = [str(x).strip() for x in ((CH.get("flow") or {}).get("outfits") or []) if str(x).strip()]
+FACE_ONLY_HOOK = [str(b).upper() for b in ((CH.get("flow") or {}).get("face_beats") or [])] == ["HOOK"]
+
+
+def industry(iid):
+    return _IND.get(str(iid or "").strip().lower().replace(" ", "_").replace("-", "_"))
+
+
+def needed_industries(start, n):
+    """The next n industries of the rotation (spare angles reuse them)."""
+    if not INDUSTRIES:
+        return []
+    return [INDUSTRIES[(start + i) % len(INDUSTRIES)] for i in range(max(n, 1))]
+
+
+def look_for(angle, idx):
+    """'wearing <outfit>, <industry place>' - the outfit rotates per Short, the place fits the industry."""
+    ind = industry(angle.get("industry"))
+    if not ind or not ind.get("place"):
+        return None
+    outfit = OUTFITS[idx % len(OUTFITS)] if OUTFITS else "a smart-casual shirt"
+    return f"wearing {outfit}, {ind['place']}"
+
+
+def accent_for(sc):
+    ind = industry((sc or {}).get("industry"))
+    return (ind or {}).get("accent") or "#D97757"
+
+
+def industry_name(sc):
+    ind = industry((sc or {}).get("industry"))
+    return (ind or {}).get("name") or ""
 
 SAFETY = NICHE.get("safety", "")
 HARD_RULES = f"""HARD RULES (a Short that breaks one is never published):
@@ -68,8 +105,20 @@ def _solution_types():
 
 
 # ---------------------------------------------------------------- 1. Scout
-def scout(candidates, n, past_problems, kinds=None):
+def _industry_lines(inds):
+    return "\n".join(f'   - "{x["id"]}" ({x.get("name", "")}): {x.get("about", "")}' for x in inds)
+
+
+def scout(candidates, n, past_problems, kinds=None, industries=None, topic=""):
     kinds = kinds or needed_kinds(0, n)
+    industries = industries or needed_industries(0, len(kinds))
+    if topic:  # hand-picked topic (Run workflow -> topic): exactly this Short first
+        want = (f"THE CREATOR PICKED TODAY'S TOPIC - the FIRST angle MUST be exactly this, kind \"wealth\": "
+                f"\"{topic}\". Pick the matching industry id from the list below (or the closest). Then 2 spare angles.")
+    else:
+        want = ("Industry of each requested Short, same order: "
+                + json.dumps([x["id"] for x in industries[:len(kinds)]]) + ". Spare angles: any other industry.")
+    all_inds = _industry_lines(INDUSTRIES) or "   - (any industry)"
     listing = "\n".join(
         f"[{i}] (trend {c.get('trend', 0)}) {c['title']} | {c['source']} | {c['summary'][:700]}"
         for i, c in enumerate(candidates))
@@ -81,7 +130,11 @@ def scout(candidates, n, past_problems, kinds=None):
 Our promise: {NICHE['promise']}
 
 We need exactly these Shorts, in this order (kind of each): {json.dumps(kinds)}
-- "wealth" = ONE real way people earn with Claude, shown as a workflow the viewer can copy today.
+{want}
+Every Short is about ONE industry - a real person / business in that field earns more or saves hours with Claude:
+{all_inds}
+- "wealth" = ONE real way people in that industry earn with Claude (or automate their work and sell that
+  speed), shown as a workflow the viewer can copy today.
 - "problems" = ONE real problem / limit / myth of earning with Claude, and how pros handle it.
 Then add 2 spare angles of the same kinds.
 
@@ -107,6 +160,7 @@ Do not repeat these recent topics:
 Return JSON:
 {{"angles": [{{
   "story_index": 0,
+  "industry": "{' | '.join(_IND) or 'any'}",
   "pillar": "{' | '.join(PILLARS)}",
   "kind": "wealth | problems",
   "region": "global | india | gcc | europe | us",
@@ -140,11 +194,38 @@ ITEMS (news, community posts, problem bank):
         else:
             continue
         a["kind"] = kind_of(a.get("pillar")) if a.get("pillar") in PILLARS else str(a.get("kind") or "wealth")
+        ind = industry(a.get("industry"))
+        a["industry"] = ind["id"] if ind else (industries[len(out) % len(industries)]["id"] if industries else "")
         out.append(a)
+    if topic:
+        return out  # the hand-picked topic is already first
     return order_angles(out, kinds)
 
 
 # ---------------------------------------------------------------- 2. Scriptwriter
+def _industry_text(angle):
+    ind = industry(angle.get("industry"))
+    return f"{ind.get('name')} - {ind.get('about', '')}" if ind else "(general)"
+
+
+def _layout_text():
+    if FACE_ONLY_HOOK:  # v2: one Flow clip (the hook), everything else on screen
+        return """The video opens with the creator's lip-synced AI avatar saying ONLY the HOOK (one short clip, keep it
+under 14 words). EVERY other line (PROBLEM, FIX, every STEP, RESULT) is a professional screen with the exact text
+highlighted while the voice says it: PROBLEM shows the pain (a numbers card: hours lost, money left on the table,
+WITH who reported it - or the client's message in a Claude chat); RESULT shows a before / after card with the honest
+catch as the last row. Every STEP is ONE concrete action and its "screen" shows exactly that. Use a MIX of screen
+types across the Short (chat, file / terminal, chain, numbers card) - never the same type twice in a row if avoidable."""
+    return """The video switches between the creator's lip-synced AI avatar and screens:
+HOOK / PROBLEM / RESULT lines show the presenter talking to camera (keep them SHORT: they cost video credits);
+FIX and every STEP line show a screen where that action happens, with the exact text highlighted while the
+voice says it. So every STEP is ONE concrete action and its "screen" shows exactly that."""
+
+
+def _screen_lines_text():
+    return "EVERY line except HOOK" if FACE_ONLY_HOOK else "FIX and every STEP line"
+
+
 def write_script(angle):
     lo, hi = SCRIPT_WORDS
     s = angle.get("story")
@@ -167,12 +248,10 @@ def write_script(angle):
 Audience: {NICHE['audience']}. Plain international English, friendly and smart, no slang, amounts in USD
 (or "about 8 lakh rupees" only if the source gives INR). It must feel like a smart friend showing what really
 works, not a guru selling a course.
-The video switches between the creator's lip-synced AI avatar and screens:
-HOOK / PROBLEM / RESULT lines show the presenter talking to camera (keep them SHORT: they cost video credits);
-FIX and every STEP line show a screen where that action happens, with the exact text highlighted while the
-voice says it. So every STEP is ONE concrete action and its "screen" shows exactly that.
+{_layout_text()}
 
 THE ANGLE
+Industry: {_industry_text(angle)}
 Kind: {angle.get('kind')}   Pillar: {angle.get('pillar')}   Tool: {angle.get('product')}
 Situation: {angle.get('problem')}
 Method: {angle.get('solution')}
@@ -192,7 +271,7 @@ NO CTA line: never ask to follow, like or subscribe. No greeting, no intro.
 RULES
 - {lo}-{hi} words total in "say". Short sentences. "say" is Roman-script {LANGUAGE}. "tts" = the same as "say".
 - "card": 2-7 word on-screen text for that line, e.g. "Skill = one SKILL.md file" or "$99 x bundle".
-- "screen" (FIX and every STEP line) - pick what the viewer must SEE:
+- "screen" ({_screen_lines_text()}) - pick what the viewer must SEE:
   * a Claude chat: "app" "claude", "view" "chat", "messages": [["user", "the exact prompt to copy"],
     ["assistant", "short realistic answer"]], "tool": "the Claude feature used, e.g. 'Project: Client voice' or
     'Skill: youtube-script'".
@@ -216,7 +295,7 @@ Return JSON:
  "app_label": "short label for the top tag, e.g. 'Claude Skills' or 'Claude Code'",
  "lines": [{{"beat": "HOOK|PROBLEM|FIX|STEP 1|STEP 2|STEP 3|STEP 4|RESULT", "say": "Roman text",
             "tts": "text for the voice engine", "card": "on-screen text",
-            "screen": null or (for FIX / STEP lines) {{"app": "...", "view": "...", "heading": "...",
+            "screen": null (HOOK only) or {{"app": "...", "view": "...", "heading": "...",
                        "rows": [["...", "..."]], "messages": [["user", "..."], ["assistant", "..."]], "tool": "...",
                        "method": "POST", "url": "...", "headers": [["...", "..."]], "body": "...", "response": "...",
                        "language": "markdown", "code": "...", "nodes": ["..."],
@@ -243,7 +322,8 @@ Fix the JSON script below. Checklist:
 4. LENGTH: total words in "say" must be {lo}-{hi} (now {wc}). Cut filler, keep hook and steps; remove any CTA / follow line.
 5. HOOK: first line is a punchy curiosity / problem line under 12 words. No greeting.
 6. CODE / SKILL / API: minimal, correct, safe (no real keys, nothing that spends money or deletes data).
-7. SCREENS: every FIX / STEP screen shows what its line talks about, and its "click" text really appears on it.
+7. SCREENS: every {_screen_lines_text()} has a screen that shows what its line talks about, and its "click" text
+   really appears on it. The industry stays the same all through the Short.
 8. Roman-script {LANGUAGE} in "say"; every line keeps "beat", "say", "tts" and "card".
 {HARD_RULES}
 Return the corrected JSON only, same structure.

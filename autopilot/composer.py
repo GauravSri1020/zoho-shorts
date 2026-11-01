@@ -215,6 +215,64 @@ def _layers(hook, workdir: Path, app_label="Zoho"):
     return bg, fg
 
 
+def _layers_v2(hook, workdir: Path, app_label, sc):
+    """Claude niche v2 (1 Nov 2026): deep navy card with soft glows in the industry's colour, a fine grid, the
+    industry name + tool in the top tag, white hook title. Same geometry as _layers (panel at PX, PY), so the
+    screen panel, zoom and captions work exactly the same."""
+    from playwright.sync_api import sync_playwright
+    from PIL import Image, ImageDraw
+    from .niche_claude_wealth import accent_for, industry_name
+    import html as h
+    acc = accent_for(sc)
+    ind = h.escape(industry_name(sc).upper())
+    hook = (hook or "").strip()
+    size = 78 if len(hook) <= 22 else 66 if len(hook) <= 34 else 56
+    tag = f"@{CHANNEL_HANDLE.lstrip('@')}" if CHANNEL_HANDLE else CHANNEL_NAME
+    chip = f'<div class="ind">{ind}</div>' if ind else ""
+    bg_html = f"""<html><head><meta charset="utf-8"><style>
+    body{{margin:0;width:{W}px;height:{H}px;overflow:hidden;font-family:'Noto Sans','Inter',sans-serif;
+         background:linear-gradient(165deg,#0B1020 0%,#121A33 55%,#0B1020 100%)}}
+    .g1{{position:absolute;width:900px;height:900px;left:-260px;top:-300px;border-radius:50%;
+         background:radial-gradient(circle,{acc}66 0%,transparent 65%)}}
+    .g2{{position:absolute;width:1000px;height:1000px;right:-380px;bottom:-360px;border-radius:50%;
+         background:radial-gradient(circle,{acc}40 0%,transparent 62%)}}
+    .grid{{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.045) 1px,transparent 1px),
+           linear-gradient(90deg,rgba(255,255,255,.045) 1px,transparent 1px);background-size:60px 60px}}
+    .ind{{position:absolute;top:58px;left:0;right:0;text-align:center;color:{acc};font-weight:800;font-size:28px;
+          letter-spacing:6px}}
+    .tag{{position:absolute;top:110px;left:0;right:0;text-align:center}}
+    .tag span{{display:inline-block;background:rgba(255,255,255,.10);border:2px solid rgba(255,255,255,.18);
+              color:#fff;font-weight:700;font-size:30px;padding:10px 26px;border-radius:40px;letter-spacing:.5px}}
+    .tag b{{color:#FFC93C}}
+    .title{{position:absolute;top:196px;left:60px;right:60px;height:250px;display:flex;align-items:center;
+            justify-content:center;text-align:center;font-weight:900;font-size:{size}px;line-height:1.08;color:#fff;
+            text-shadow:0 6px 24px rgba(0,0,0,.45)}}
+    .title em{{font-style:normal;color:{acc}}}
+    .shadow{{position:absolute;left:{PX}px;top:{PY}px;width:{PW}px;height:{PH}px;border-radius:36px;
+             box-shadow:0 0 0 3px {acc}AA,0 24px 70px rgba(0,0,0,.6),0 0 90px {acc}55;background:#000}}
+    </style></head><body><div class="g1"></div><div class="g2"></div><div class="grid"></div>{chip}
+    <div class="tag"><span>{tag} · <b>{app_label}</b></span></div>
+    <div class="title"><div>{_title_html(hook)}</div></div><div class="shadow"></div></body></html>"""
+    bg, fg = workdir / "bg.png", workdir / "fg.png"
+    with sync_playwright() as p:
+        b = p.chromium.launch(args=["--no-sandbox"])
+        pg = b.new_page(viewport={"width": W, "height": H})
+        pg.set_content(bg_html)
+        pg.screenshot(path=str(bg))
+        b.close()
+    # foreground = the same background with a rounded hole where the panel is (+ a thin white frame), so the
+    # panel's corners are rounded on the gradient too (a flat colour mask would show as a band here)
+    top = PY - 40
+    over = Image.open(bg).convert("RGBA").crop((0, top, W, top + PH + 80))
+    mask = Image.new("L", over.size, 255)
+    ImageDraw.Draw(mask).rounded_rectangle((PX, 40, PX + PW - 1, 40 + PH - 1), radius=36, fill=0)
+    over.putalpha(mask)
+    ImageDraw.Draw(over).rounded_rectangle((PX, 40, PX + PW - 1, 40 + PH - 1), radius=36,
+                                           outline=(255, 255, 255, 235), width=5)
+    over.save(fg)
+    return bg, fg
+
+
 def _title_html(hook):
     import html as h
     ws = hook.split()
@@ -309,7 +367,10 @@ def render(sc, lines, words, avatar_mp4, voice_wav, workdir: Path, out_path: Pat
     hook = sc.get("hook_text") or sc.get("title", "")
     bg = fg = None
     if specs:
-        bg, fg = _layers(hook, workdir, _app_label(sc, specs))
+        if IS_ZOHO:  # the Zoho niche, unchanged
+            bg, fg = _layers(hook, workdir, _app_label(sc, specs))
+        else:  # niche v2: dark, professional card coloured by the Short's industry
+            bg, fg = _layers_v2(hook, workdir, _app_label(sc, specs), sc)
 
     clips, fb = [], [round(s["t0"] * FPS) for s in segs] + [round(dur * FPS)]
     for k, s in enumerate(segs):

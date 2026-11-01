@@ -107,9 +107,9 @@ def _pillars():
 
 
 # ---------------------------------------------------------------- 1. Scout
-def scout(candidates, n, past_problems, kinds=None):
+def scout(candidates, n, past_problems, kinds=None, industries=None, topic=""):
     if not IS_ZOHO:  # niche switch - everything below is the Zoho niche, unchanged
-        return _niche().scout(candidates, n, past_problems, kinds)
+        return _niche().scout(candidates, n, past_problems, kinds, industries=industries, topic=topic)
     listing = "\n".join(
         f"[{i}] (trend {c.get('trend', 0)}) {c['title']} | {c['source']} | {c['summary'][:400]}"
         for i, c in enumerate(candidates))

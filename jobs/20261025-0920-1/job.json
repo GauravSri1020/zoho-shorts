@@ -180,7 +180,7 @@
    "tts": "Sales teams waste hours manual-logging activities when conversational AI could handle pipeline tasks.",
    "card": "Manual CRM Work Slows Teams",
    "screen": null,
-   "face": true
+   "face": false
   },
   {
    "beat": "FIX",
@@ -266,7 +266,7 @@
    "tts": "Claude queries your CRM, returns the matching records, and creates the tasks automatically without opening a browser.",
    "card": "Automated CRM Actions via AI",
    "screen": null,
-   "face": true
+   "face": false
   }
  ],
  "clips": [
@@ -277,22 +277,6 @@
    ],
    "beat": "HOOK",
    "prompt": "The man (my avatar) looks into the camera and talks to the viewer like a confident, friendly business tech explainer, smart and natural, not stiff; he turns from looking to the side to face the camera, leans in slightly and raises his eyebrows. Vertical 9:16 medium-wide shot from the knees up, camera about two metres away, his head in the upper third with space above it, both hands and all his gestures fully visible in the frame, static camera, sharp and well lit, wearing a white linen shirt with the top button open, on a sunny rooftop terrace with a city skyline behind him at golden hour. His face, skin tone, hairstyle, beard, height and body build stay exactly as in my avatar's reference photos - the same natural average build, never slimmer and never heavier. He says, in clear natural English with a clear, neutral international accent, at a brisk, lively pace: \"Tired of writing custom API scripts just to automate Zoho CRM?\" His lips match every word. He starts speaking in the very first frame, with no pause before the first word, and stops right after the last word. Audio: only his voice - no music, no sound effects. No subtitles, no captions, no text on screen."
-  },
-  {
-   "text": "Sales teams waste hours manual-logging activities when conversational AI could handle pipeline tasks.",
-   "lines": [
-    1
-   ],
-   "beat": "PROBLEM",
-   "prompt": "The man (my avatar) looks into the camera and talks to the viewer like a confident, friendly business tech explainer, smart and natural, not stiff; he shrugs with both shoulders and tilts his head, as if he has seen this problem a hundred times. Vertical 9:16 medium-wide shot from the knees up, camera about two metres away, his head in the upper third with space above it, both hands and all his gestures fully visible in the frame, static camera, sharp and well lit, wearing a white linen shirt with the top button open, on a sunny rooftop terrace with a city skyline behind him at golden hour. His face, skin tone, hairstyle, beard, height and body build stay exactly as in my avatar's reference photos - the same natural average build, never slimmer and never heavier. He says, in clear natural English with a clear, neutral international accent, at a brisk, lively pace: \"Sales teams waste hours manual-logging activities when conversational AI could handle pipeline tasks.\" His lips match every word. He starts speaking in the very first frame, with no pause before the first word, and stops right after the last word. Audio: only his voice - no music, no sound effects. No subtitles, no captions, no text on screen."
-  },
-  {
-   "text": "Claude queries your CRM, returns the matching records, and creates the tasks automatically without opening a browser.",
-   "lines": [
-    7
-   ],
-   "beat": "RESULT",
-   "prompt": "The man (my avatar) looks into the camera and talks to the viewer like a confident, friendly business tech explainer, smart and natural, not stiff; he puts one hand in his pocket, smiles and gestures toward the camera with the other hand. Vertical 9:16 medium-wide shot from the knees up, camera about two metres away, his head in the upper third with space above it, both hands and all his gestures fully visible in the frame, static camera, sharp and well lit, wearing a white linen shirt with the top button open, on a sunny rooftop terrace with a city skyline behind him at golden hour. His face, skin tone, hairstyle, beard, height and body build stay exactly as in my avatar's reference photos - the same natural average build, never slimmer and never heavier. He says, in clear natural English with a clear, neutral international accent, at a brisk, lively pace: \"Claude queries your CRM, returns the matching records, and creates the tasks automatically without opening a browser.\" His lips match every word. He starts speaking in the very first frame, with no pause before the first word, and stops right after the last word. Audio: only his voice - no music, no sound effects. No subtitles, no captions, no text on screen."
   }
  ],
  "look": "wearing a white linen shirt with the top button open, on a sunny rooftop terrace with a city skyline behind him at golden hour",
