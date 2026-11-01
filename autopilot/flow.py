@@ -646,6 +646,16 @@ def finish():
             # Gaurav watched this exact Short and said "upload it" -> job.json "owner_approved": true.
             # Only that one job skips the QA block; every other Short stays as strict as before.
             owner_ok = bool(job.get("owner_approved")) and not report["approved"]
+            # v4 (Gaurav 1 Nov: "schedule everything, I unschedule what I don't like"): in a niche with
+            # benchmark.publish_floor the QA SCORE no longer blocks - but a broken video still never goes out
+            # (QA could not watch it, technical problems, black frames, or a score under the floor).
+            floor = (CH.get("benchmark") or {}).get("publish_floor")
+            if floor is not None and not report["approved"] and not report.get("fatal") \
+                    and not report.get("tech_problems") and not report.get("black_frames") \
+                    and float(report.get("overall") or 0) >= float(floor):
+                print(f"[qa] {job['id']}: score {report['overall']} < {report['min_score']} but no technical problem "
+                      f"and >= publish_floor {floor} - scheduling, Gaurav reviews it on YouTube")
+                owner_ok = True
             if owner_ok:
                 print(f"[qa] {job['id']}: QA said no ({report['overall']}/{report['min_score']}), "
                       f"but Gaurav approved it by hand (owner_approved) - uploading")

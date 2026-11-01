@@ -238,6 +238,9 @@ screens:
 upload_tags: ["Claude AI", "make money with AI", "AI side hustle", "Shorts"]
 
 benchmark:
+  # v4 (Gaurav 1 Nov): schedule every Short that is technically clean; he unschedules on YouTube what he does not like.
+  # Black frames / technical problems / QA not able to watch / score under this floor still block.
+  publish_floor: 55
   youtube_search: "make money with Claude AI"
   references:
     - {url: "https://youtu.be/FEjkiSwSoc8", weight: 2, note: "Patrick Dang - 'laziest way to make money with Claude at night': first-person experiment hook, honest twist (sell services to businesses)"}
