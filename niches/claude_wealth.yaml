@@ -45,6 +45,34 @@ niche:
     every Short takes ONE industry and ONE real way people there earn or save hours with Claude and shows the exact workflow on screen - the prompt,
     the Skill file, the Claude Code command or the tool chain - plus the honest numbers (who reported them) and
     the catch, so the viewer can try it today. No hype: what is real, what it costs, where it breaks.
+  # v4 (1 Nov 2026 night, Gaurav): WHO the Short is for. Segments rotate (one per Short, 2 Shorts a day); the
+  # industry list below only adds colour / examples. "format" replaces the money recipe for that segment.
+  # Safety is part of every "about": education only, never a buy / sell tip, never guaranteed income.
+  segments:
+    - {id: beginner_free, name: "Earn with free tools", accent: "#22C55E",
+       audience: "people earning 3-6 lakh a year or students who want extra income and will not pay for tools",
+       about: "a skill or small service they can start this week using ONLY free tools (Claude free plan, CapCut free, Canva free, Google Sheets): video editing for local shops, captions, resumes, social posts. Rupee or dollar price ranges only with a named source (Fiverr / Upwork listings, a rate guide)",
+       format: money}
+    - {id: b2b_ceo, name: "Business owners", accent: "#3B82F6",
+       audience: "founders, CEOs and small-business owners who want more revenue or lower costs",
+       about: "a 2-hour Claude research session that finds money in their own business: pricing review, churned-customer win-back, supplier cost comparison, a new market or product line, a competitor teardown. Show the exact prompts and what to do with the answer",
+       format: "HOOK (max 12 words: the money a business finds, e.g. 'Most owners leave 10% profit in their price list') -> PROBLEM (one line: where the money hides) -> STEP 1..4 (four Claude moves, each an exact prompt on a Claude chat screen and what to do with the answer) -> RESULT (one line: the honest catch + the first move today)"}
+    - {id: investor_research, name: "Research before you invest", accent: "#F59E0B",
+       audience: "salaried professionals earning 10-30 lakh a year who want to invest or protect their money",
+       about: "EDUCATION ONLY: how to RESEARCH with Claude before deciding - an IPO red-flag checklist from the offer document, the real cost of gold / silver / digital gold (making charges, GST, spread), comparing health-insurance fine print (waiting periods, room-rent limits, exclusions), reading a mutual-fund factsheet. Never names a stock, IPO, coin or fund as a pick, never says buy / sell / returns; always ends with 'you decide - check with a SEBI-registered adviser'",
+       format: "HOOK (max 12 words: a costly mistake people make, e.g. 'Most people overpay for gold every Diwali') -> PROBLEM (one line: the hidden cost or risk, with a named source) -> STEP 1..4 (Claude does the research: exact prompts on Claude chat screens, a checklist card) -> RESULT (one line: 'Claude does the homework, you decide - talk to a SEBI-registered adviser')"}
+    - {id: developer_side, name: "Developers & freelancers", accent: "#8B5CF6",
+       audience: "developers, editors and designers with a job who have 2-4 free hours a day",
+       about: "a paid side project built with Claude Code or Claude: a lead-generation tool for local businesses, client websites, automation for agencies, freelance gigs on Upwork / Fiverr / Toptal - price ranges with named sources",
+       format: money}
+    - {id: simple_phone, name: "Only a phone", accent: "#EC4899",
+       audience: "people with only a smartphone and little English - keep every word very simple",
+       about: "very simple earning or saving ideas with the free Claude app on a phone: WhatsApp replies for a shop, writing product posts, translating, a simple resume - short sentences, no jargon",
+       format: money}
+    - {id: claude_tips, name: "Claude tricks", accent: "#D97757",
+       audience: "anyone who uses AI at work",
+       about: "one real Claude feature or free GitHub Claude Skill / MCP repo that saves hours or earns money this week (named repo / launch), shown step by step",
+       format: "HOOK (max 12 words: what it does for you) -> PROBLEM (one line) -> STEP 1..4 (how to use it, exact clicks / prompts on screen) -> RESULT (one line: how it saves time or earns, the catch)"}
   # v2 (1 Nov 2026): every Short is about ONE industry, in this order (then it starts again). The place is where
   # the presenter stands in the ONE Flow clip; "accent" colours that Short's screen background.
   # Add a field = add a block here. Safety notes in "about" are read by the scout + scriptwriter.
@@ -131,6 +159,10 @@ problem_bank: "research/claude_wealth_bank.yaml"
 # in the TTS voice. 1.5x pace (clip + screen voice together). Only this niche - the Zoho niche keeps its settings.
 flow:
   face_beats: ["HOOK"]        # lines spoken on camera (one clip). Two clips max: ["HOOK", "RESULT"]
+  # v4: the scheduled daily run makes Shorts WITHOUT a Flow clip (screens + one voice) so 2 Shorts a day go out even
+  # with zero Flow credits. Run workflow -> face: yes = with your face clip (HOOK) as before.
+  faceless: true
+  per_day: 2
   max_words_per_clip: 18      # the hook fits one 8 s clip with room to spare
   speed: 1.5                  # Flow clip pace (voice + lips together)
   tts_speed: 1.5              # screen-part voice pace - same as the clip so the voice never changes speed
@@ -152,7 +184,7 @@ flow:
     - "a light grey blazer over a black t-shirt"
 
 scripts:
-  per_day: 1
+  per_day: 2              # v4: 2 Shorts a day (07:30 + 21:30 IST slots)
   words_min: 110          # v3 money recipe: ~40-55 s at 1.5x, never over 60 s
   words_max: 150
 

@@ -53,6 +53,11 @@ W, H, FPS, RATE = 720, 1280, 30, 44100
 SKIP_STATUS = ("done", "uploaded", "uploaded_manually", "skip")
 # Your face (Flow clips) only where it matters; everything else is the Zoho screen with the same voice (tts.py).
 FACE_BEATS = tuple(str(b).upper() for b in (_F.get("face_beats") or ["HOOK", "PROBLEM", "RESULT"]))
+# v4 (1 Nov 2026): faceless Shorts - no Flow clip at all (every line = screen + one TTS voice), so the robot can publish
+# every day with zero Flow credits. Env FACE=yes (Run workflow -> face) makes a Short with the face clip(s) again.
+FACELESS = bool(_F.get("faceless")) and os.getenv("FACE", "").strip().lower() not in ("1", "yes", "true", "y")
+if FACELESS:
+    FACE_BEATS = ()
 DROP_BEATS = tuple(str(b).upper() for b in (_F.get("drop_beats") or ["CTA"]))
 MAX_WAITING = int(_F.get("max_waiting", 2))  # the scheduled daily run skips if this many Shorts still wait for clips
 # NICHE SWITCH (27 Oct 2026): words that differ per niche. Zoho values = exactly the old text.
@@ -287,11 +292,13 @@ def prepare(count, do_upload):
         rot = st.setdefault("rotation", {}).get(NICHE_ID, 0)
         kinds = nw.needed_kinds(rot, count)
         inds = nw.needed_industries(st["rotation"].get(NICHE_ID + "_industry", 0), count)
+        segs = nw.needed_segments(st["rotation"].get(NICHE_ID + "_segment", 0), count)
         topic = os.getenv("TOPIC", "").strip()  # Run workflow -> topic: this exact Short, today
         print(f"[flow] niche {NICHE_ID}: rotation position {rot} -> next Shorts: {kinds} / industries "
-              f"{[i.get('id') for i in inds]}" + (f" / topic: {topic}" if topic else ""))
+              f"{[i.get('id') for i in inds]} / segments {[x.get('id') for x in segs]}"
+              + (f" / topic: {topic}" if topic else "") + (" / faceless" if FACELESS else " / with face clip"))
         angles = writer.scout(research.fetch(st["covered_links"]), count + 2, st["problems"], kinds,
-                              industries=inds, topic=topic)
+                              industries=inds, topic=topic, segments=segs)
     print(f"[flow] scout found {len(angles)} angles")
     made, errors = 0, []
     for k, angle in enumerate(angles):
@@ -303,9 +310,11 @@ def prepare(count, do_upload):
             sc = writer.approved_script(angle)
             if not IS_ZOHO and angle.get("industry"):  # niche v2: the composer colours the screens by industry
                 sc["industry"] = angle["industry"]
+            if not IS_ZOHO and angle.get("segment"):  # niche v4: segment (audience) colour + label win
+                sc["segment"] = angle["segment"]
             lines = keep_lines(_lines(sc))
             clips = chunks(lines)
-            if not clips:
+            if not clips and not FACELESS:
                 raise RuntimeError("script has no spoken lines")
             if IS_ZOHO:
                 look = LOOKS[st.get("look_index", 0) % len(LOOKS)]  # same look in every clip of this Short
@@ -317,13 +326,15 @@ def prepare(count, do_upload):
             d = JOBS / job_id
             (d / "clips").mkdir(parents=True, exist_ok=True)
             (d / "clips" / ".keep").write_text("drop the Flow clips here\n")
-            job = {"id": job_id, "niche": NICHE_ID, "status": "waiting_for_clips", "upload": do_upload,
+            job = {"id": job_id, "niche": NICHE_ID, "status": "waiting_for_clips" if clips else "ready",
+                   "upload": do_upload,
                    "created": dt.datetime.utcnow().isoformat(timespec="seconds"),
                    "title": build_title(sc), "description": build_description(sc, angle),
                    "angle": {k2: v for k2, v in angle.items() if k2 != "story"}, "story": angle.get("story"),
                    "script": sc, "lines": lines, "clips": clips, "look": look}
             body = _body(job)
-            issue = _gh("POST", "/issues", {"title": f"🎬 Today's Short: {job['title'][:70]} ({len(clips)} Flow clips)",
+            issue = _gh("POST", "/issues", {"title": f"🎬 Today's Short: {job['title'][:70]} "
+                                                     + (f"({len(clips)} Flow clips)" if clips else "(no clip needed)"),
                                             "body": body, "assignees": [REPO.split("/")[0]]})
             job["issue"] = issue.get("number")
             (d / "job.json").write_text(json.dumps(job, ensure_ascii=False, indent=1), encoding="utf-8")
@@ -338,11 +349,11 @@ def prepare(count, do_upload):
             if not IS_ZOHO:
                 st.setdefault("rotation", {})[NICHE_ID] = st["rotation"].get(NICHE_ID, 0) + 1
                 if not os.getenv("TOPIC", "").strip():  # a hand-picked topic does not use up an industry slot
-                    k = NICHE_ID + "_industry"
-                    st["rotation"][k] = st["rotation"].get(k, 0) + 1
+                    for k in (NICHE_ID + "_industry", NICHE_ID + "_segment"):
+                        st["rotation"][k] = st["rotation"].get(k, 0) + 1
             made += 1
             where = issue.get("html_url") or f"https://github.com/{REPO}/blob/main/jobs/{job_id}/PROMPTS.md"
-            notify.send(f"🎬 {CHANNEL_NAME}: a new Short needs {len(clips)} Flow clips.\n"
+            if clips: notify.send(f"🎬 {CHANNEL_NAME}: a new Short needs {len(clips)} Flow clips.\n"
                         f"Prompts: {where}\nUpload: {upload_link(job_id)}")
             print(f"[flow] job {job_id}: {len(clips)} clips -> {where}")
         except Exception as e:

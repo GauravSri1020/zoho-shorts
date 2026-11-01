@@ -131,6 +131,8 @@ def main(argv=None):
     try:
         if a.task == "daily":  # script + Flow prompts -> GitHub issue (you make the clips in Flow)
             flow.prepare(max(1, a.count), not a.no_upload)
+            if flow.FACELESS:  # v4: faceless Shorts need no clip -> build, QA and schedule them right away
+                flow.finish()
         elif a.task == "assemble":  # your Flow clips -> finished Short -> QA -> YouTube
             flow.finish()
             _assemble_other_niches()

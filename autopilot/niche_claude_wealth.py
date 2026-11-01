@@ -25,6 +25,22 @@ INDUSTRIES = [dict(x) for x in (NICHE.get("industries") or []) if isinstance(x, 
 _IND = {x["id"]: x for x in INDUSTRIES}
 OUTFITS = [str(x).strip() for x in ((CH.get("flow") or {}).get("outfits") or []) if str(x).strip()]
 FACE_ONLY_HOOK = [str(b).upper() for b in ((CH.get("flow") or {}).get("face_beats") or [])] == ["HOOK"]
+import os as _os
+FACELESS = bool((CH.get("flow") or {}).get("faceless")) and \
+    _os.getenv("FACE", "").strip().lower() not in ("1", "yes", "true", "y")
+# v4: audience segments (niche.segments) - who the Short is for; rotated, one per Short
+SEGMENTS = [dict(x) for x in (NICHE.get("segments") or []) if isinstance(x, dict) and x.get("id")]
+_SEG = {x["id"]: x for x in SEGMENTS}
+
+
+def segment(sid):
+    return _SEG.get(str(sid or "").strip().lower().replace(" ", "_").replace("-", "_"))
+
+
+def needed_segments(start, n):
+    if not SEGMENTS:
+        return []
+    return [SEGMENTS[(start + i) % len(SEGMENTS)] for i in range(max(n, 1))]
 
 
 def industry(iid):
@@ -48,13 +64,15 @@ def look_for(angle, idx):
 
 
 def accent_for(sc):
+    seg = segment((sc or {}).get("segment"))
     ind = industry((sc or {}).get("industry"))
-    return (ind or {}).get("accent") or "#D97757"
+    return (seg or {}).get("accent") or (ind or {}).get("accent") or "#D97757"
 
 
 def industry_name(sc):
+    seg = segment((sc or {}).get("segment"))
     ind = industry((sc or {}).get("industry"))
-    return (ind or {}).get("name") or ""
+    return (seg or {}).get("name") or (ind or {}).get("name") or ""
 
 SAFETY = NICHE.get("safety", "")
 HARD_RULES = f"""HARD RULES (a Short that breaks one is never published):
@@ -109,9 +127,15 @@ def _industry_lines(inds):
     return "\n".join(f'   - "{x["id"]}" ({x.get("name", "")}): {x.get("about", "")}' for x in inds)
 
 
-def scout(candidates, n, past_problems, kinds=None, industries=None, topic=""):
+def _segment_lines(segs):
+    return "\n".join(f'   - "{x["id"]}" ({x.get("name", "")}) for {x.get("audience", "")}: {x.get("about", "")}'
+                     for x in segs)
+
+
+def scout(candidates, n, past_problems, kinds=None, industries=None, topic="", segments=None):
     kinds = kinds or needed_kinds(0, n)
     industries = industries or needed_industries(0, len(kinds))
+    segments = segments or needed_segments(0, len(kinds))
     if topic:  # hand-picked topic (Run workflow -> topic): exactly this Short first
         want = (f"THE CREATOR PICKED TODAY'S TOPIC - the FIRST angle MUST be exactly this, kind \"wealth\": "
                 f"\"{topic}\". Pick the matching industry id from the list below (or the closest). Then 2 spare angles.")
@@ -119,6 +143,11 @@ def scout(candidates, n, past_problems, kinds=None, industries=None, topic=""):
         want = ("Industry of each requested Short, same order: "
                 + json.dumps([x["id"] for x in industries[:len(kinds)]]) + ". Spare angles: any other industry.")
     all_inds = _industry_lines(INDUSTRIES) or "   - (any industry)"
+    if segments and not topic:
+        want += ("\nAUDIENCE SEGMENT of each requested Short, same order (this matters MORE than the industry): "
+                 + json.dumps([x["id"] for x in segments[:len(kinds)]]) + ". Segments:\n" + _segment_lines(SEGMENTS))
+    elif SEGMENTS:
+        want += "\nPick the best matching audience segment id:\n" + _segment_lines(SEGMENTS)
     listing = "\n".join(
         f"[{i}] (trend {c.get('trend', 0)}) {c['title']} | {c['source']} | {c['summary'][:700]}"
         for i, c in enumerate(candidates))
@@ -162,6 +191,7 @@ Return JSON:
 {{"angles": [{{
   "story_index": 0,
   "industry": "{' | '.join(_IND) or 'any'}",
+  "segment": "{' | '.join(_SEG) or 'any'}",
   "pillar": "{' | '.join(PILLARS)}",
   "kind": "wealth | problems",
   "region": "global | india | gcc | europe | us",
@@ -197,6 +227,8 @@ ITEMS (news, community posts, problem bank):
         a["kind"] = kind_of(a.get("pillar")) if a.get("pillar") in PILLARS else str(a.get("kind") or "wealth")
         ind = industry(a.get("industry"))
         a["industry"] = ind["id"] if ind else (industries[len(out) % len(industries)]["id"] if industries else "")
+        sg = segment(a.get("segment"))
+        a["segment"] = sg["id"] if sg else (segments[len(out) % len(segments)]["id"] if segments else "")
         out.append(a)
     if topic:
         return out  # the hand-picked topic is already first
@@ -231,6 +263,11 @@ def _industry_text(angle):
 
 
 def _layout_text():
+    if FACELESS:  # v4: no presenter at all - every line is a screen, one voice
+        return """There is NO presenter in this video: EVERY line, including the HOOK, is a professional screen with the
+exact text highlighted while one voice reads it. HOOK screen = a notes card whose "heading" is the hook promise (big)
+and at most 2 rows (e.g. the money or time number + its source). Other lines as below. Every STEP is ONE concrete
+action and its "screen" shows exactly that. Use a MIX of screen types (Claude chat, file / terminal, chain, money card)."""
     if FACE_ONLY_HOOK:  # v2: one Flow clip (the hook), everything else on screen
         return """The video opens with the creator's lip-synced AI avatar saying ONLY the HOOK (one short clip, keep it
 under 14 words). EVERY other line (SELL, CLIENTS, PROBLEM, FIX, every STEP, MATH, RESULT) is a professional screen with the exact text
@@ -245,6 +282,8 @@ voice says it. So every STEP is ONE concrete action and its "screen" shows exact
 
 
 def _screen_lines_text():
+    if FACELESS:
+        return "EVERY line including HOOK"
     return "EVERY line except HOOK" if FACE_ONLY_HOOK else "FIX and every STEP line"
 
 
@@ -258,9 +297,11 @@ def write_script(angle):
     else:
         source = "SOURCE: evergreen angle, no news source. Do not mention any news and use no unsourced numbers."
     is_problem = str(angle.get("kind")) == "problems"
+    seg = segment(angle.get("segment")) or {}
     shape = ("HOOK (the myth / problem as a punch, max 10 words) -> PROBLEM (ONE short line: what goes wrong, max 14 "
              "words) -> FIX (1 line: how pros handle it) -> STEP 1..3 (the exact checks / settings / prompts on screen) "
-             "-> RESULT (ONE short line, max 14 words: the takeaway)") if is_problem else MONEY_SHAPE
+             "-> RESULT (ONE short line, max 14 words: the takeaway)") if is_problem else (
+             MONEY_SHAPE if str(seg.get("format") or "money") == "money" else str(seg["format"]))
     prompt = f"""Write ONE YouTube Short script for "{CHANNEL_NAME}" in natural spoken {LANGUAGE}.
 Audience: {NICHE['audience']}. Plain international English, friendly and smart, no slang, amounts in USD
 (or "about 8 lakh rupees" only if the source gives INR). It must feel like a smart friend showing what really
@@ -268,7 +309,7 @@ works, not a guru selling a course.
 {_layout_text()}
 
 THE ANGLE
-Industry: {_industry_text(angle)}
+Segment: {seg.get("name", "")}   Industry: {_industry_text(angle)}
 Kind: {angle.get('kind')}   Pillar: {angle.get('pillar')}   Tool: {angle.get('product')}
 Situation: {angle.get('problem')}
 Method: {angle.get('solution')}
@@ -283,7 +324,9 @@ Hook idea: {angle.get('hook')}
 {source}
 
 STRUCTURE: {shape}.
-{"" if is_problem else _MONEY_RULES}
+{"" if is_problem or str(seg.get("format") or "money") != "money" else _MONEY_RULES}
+AUDIENCE OF THIS SHORT: {seg.get("audience") or NICHE["audience"]}. {seg.get("about", "")}
+{"Use VERY simple words, short sentences (a 12-year-old must understand)." if seg.get("id") == "simple_phone" else ""}
 NO CTA line: never ask to follow, like or subscribe. No greeting, no intro.
 
 RULES
@@ -313,7 +356,7 @@ Return JSON:
  "app_label": "short label for the top tag, e.g. 'Claude Skills' or 'Claude Code'",
  "lines": [{{"beat": "HOOK|SELL|CLIENTS|PROBLEM|FIX|STEP 1|STEP 2|STEP 3|MATH|RESULT", "say": "Roman text",
             "tts": "text for the voice engine", "card": "on-screen text",
-            "screen": null (HOOK only) or {{"app": "...", "view": "...", "heading": "...",
+            "screen": {"(every line)" if FACELESS else "null (HOOK only) or"} {{"app": "...", "view": "...", "heading": "...",
                        "rows": [["...", "..."]], "messages": [["user", "..."], ["assistant", "..."]], "tool": "...",
                        "method": "POST", "url": "...", "headers": [["...", "..."]], "body": "...", "response": "...",
                        "language": "markdown", "code": "...", "nodes": ["..."],

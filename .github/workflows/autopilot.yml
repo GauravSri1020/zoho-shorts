@@ -21,6 +21,9 @@ on:
       niche:
         description: "niche for this run only (empty = channel.yaml active_niche; zoho | claude_wealth)"
         default: ""
+      face:
+        description: "daily (claude_wealth): yes = Short with your Flow face clip (HOOK); empty = faceless (screens only)"
+        default: ""
       topic:
         description: "daily (claude_wealth): make THIS topic today, e.g. 'how to earn with video editing using Claude' (empty = rotation)"
         default: ""
@@ -40,7 +43,8 @@ jobs:
     env:
       PYTHONUNBUFFERED: "1"
       NICHE: ${{ github.event.inputs.niche || '' }}   # niche switch: empty = channel.yaml -> active_niche
-      TOPIC: ${{ github.event.inputs.topic || '' }}   # niche v2: hand-picked topic for a manual daily run
+      TOPIC: ${{ github.event.inputs.topic || '' }}
+      FACE: ${{ github.event.inputs.face || '' }}   # niche v2: hand-picked topic for a manual daily run
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
       YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
@@ -83,13 +87,13 @@ jobs:
 
       - name: Install ffmpeg + fonts
         timeout-minutes: 8         # apt mirrors sometimes hang; fail fast instead of waiting hours
-        if: steps.t.outputs.task == 'assemble'
+        if: steps.t.outputs.task == 'assemble' || steps.t.outputs.task == 'daily'
         run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg fonts-noto-core fonts-dejavu-core
       - name: Install browser for the Zoho Books screens
-        if: steps.t.outputs.task == 'assemble'
+        if: steps.t.outputs.task == 'assemble' || steps.t.outputs.task == 'daily'
         run: python -m playwright install --with-deps chromium
       - name: Cache the caption model
-        if: steps.t.outputs.task == 'assemble'
+        if: steps.t.outputs.task == 'assemble' || steps.t.outputs.task == 'daily'
         uses: actions/cache@v4
         with:
           path: ~/.cache/huggingface
@@ -102,7 +106,7 @@ jobs:
           python -m autopilot.main ${{ steps.t.outputs.task }} ${{ steps.t.outputs.args }}
 
       - name: Keep the Shorts as downloadable artifacts (7 days)
-        if: always() && steps.t.outputs.task == 'assemble'
+        if: always() && (steps.t.outputs.task == 'assemble' || steps.t.outputs.task == 'daily')
         uses: actions/upload-artifact@v4
         with:
           name: shorts-${{ github.run_id }}
@@ -114,7 +118,7 @@ jobs:
           if-no-files-found: ignore
 
       - name: Preview copy of the Shorts (branch "previews" - Claude can fetch it, Gaurav can open it on GitHub)
-        if: always() && steps.t.outputs.task == 'assemble'
+        if: always() && (steps.t.outputs.task == 'assemble' || steps.t.outputs.task == 'daily')
         run: |
           shopt -s globstar nullglob
           files=(out/**/short.mp4)

@@ -373,6 +373,8 @@ Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
             if not IS_ZOHO:  # niche v3 money format
                 label = {"SELL": "WHAT TO SELL", "CLIENTS": "FIRST CLIENT", "MATH": "THE MONEY", "RESULT": "THE CATCH",
                          "FIX": "HOW", "PROBLEM": "WHY IT PAYS"}.get(beat.split(" ")[0], label)
+            if not IS_ZOHO and beat.startswith("HOOK"):
+                continue  # faceless hook card: no chip
             ev.append(f"Dialogue: 2,{_ts(s['t0'])},{_ts(s['t1'])},Chip,,0,0,0,,{{\\pos({PX + 28},{PY + PH - 92})}} {_e(label)} ")
     path.write_text(head + "\n".join(ev) + "\n", encoding="utf-8")
 
