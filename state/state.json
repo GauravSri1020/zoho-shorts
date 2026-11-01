@@ -1,5 +1,5 @@
 {
- "next_id": 40,
+ "next_id": 44,
  "covered_links": [
   "https://www.reddit.com/r/Zoho/comments/1wzd94y/sales_order_or_invoice/",
   "https://www.reddit.com/r/Zoho/comments/1wwjbbr/accounting_of_travel_agent/",
@@ -30,7 +30,11 @@
   "bank:you do one task better than most people every week but you h",
   "https://www.reddit.com/r/ClaudeAI/comments/1xdwquj/anthropics_new_guide_oct_22_argues_most_agents/",
   "bank:nontechnical founders have halfbuilt apps stuck on login pay",
-  "https://news.google.com/rss/articles/CBMiZkFVX3lxTFB1QlQ5SXlDeF9EZUVLUWQySDd3Zkt2c1U2Wm1yM2lwS1hJZXhUbXMxU3NtVFJUbUVXVEVIRXZaaUM2Sm9vNHpsMncteUlFZUlaMW1OZEtub0VVVXh2ZUtWbkxWV28zQQ?oc=5"
+  "https://news.google.com/rss/articles/CBMiZkFVX3lxTFB1QlQ5SXlDeF9EZUVLUWQySDd3Zkt2c1U2Wm1yM2lwS1hJZXhUbXMxU3NtVFJUbUVXVEVIRXZaaUM2Sm9vNHpsMncteUlFZUlaMW1OZEtub0VVVXh2ZUtWbkxWV28zQQ?oc=5",
+  "https://news.google.com/rss/articles/CBMiugFBVV95cUxQYUI0c2ZwTFBRdFMzQTlFa1FXb2ZraE5seGExWENGaDc5d0FpNzdEemtiaVlXSGNnT2V4NGQwUUpSS005TXNsdjl3LVFtYllrd2xla3lrZDQ1eWc3Y1RVMUIxdXFZWmVyc1l5Z0VQQWJPRlZvNVpkbG91ZEpfWV9weWpMdjJjcUM5VDFsb2xSaU5OT2taOXFIa3IzcldWa25ybzJJdlJYVjk0OXh2Mko4ZUpibk8wNzFhcXc?oc=5",
+  "https://news.google.com/rss/articles/CBMiaEFVX3lxTE5va3NCQ1NINmlOLW0yNmdUZzRnQzAyMjMyRmpNdURMbDRicFR5VkZpclNlY2c1V1BKdTQyNGpZNXJ6WGJnM3FoR3hLNGFHQ2Fxdm9Zblh2UjJNTVVwMUhzTGNJcFZyQXd6?oc=5",
+  "https://news.google.com/rss/articles/CBMiogFBVV95cUxObjJqYTE0ZGVsdGk1cklsaDg2R2wxa2pvU3BtdnEzSkIxNFNqRGgzcVZrOGVBd09vUW1ubEdMQWFURUNPU3dyRjJ4RlhhbWx5Vkp5R2thMkhCVmRnQkZvZTNyTG1hZkFYN1lkQWNlU0lMRlpHTkJSZ2c0enUxQUFCZVhHWlUzZElsOFZFWS1SMUYzRXhmcndnemg1ZXRtbERNdVE?oc=5",
+  "https://news.google.com/rss/articles/CBMiggFBVV95cUxPQzNjSzFxdkV0bHhHRjg1cUQ0SEFabmZUbnF1VU1CTnpTemdGM0l1Tmk3RkRsYzJNRG85MDY0Ul9LQm54a0dQZWdTZ2JZM3pDc2pqLTRyVjVpU3hnUl9mXzhxX0loYTJBYVhWWUZqQmlUc1p4aFpUX2E5blVwcGJRUnR3?oc=5"
  ],
  "problems": [
   "Zoho Books me online paid sales orders direct closed invoice me convert nahi hote.",
@@ -71,7 +75,11 @@
   "Local restaurants lose 25% to 30% of revenue to high delivery app commissions",
   "Non-technical founders get stuck on authentication, payment webhooks, and deployment for half-built apps.",
   "Video editors waste hours manually scrubbing transcripts to write cut lists, captions, and B-roll callouts for short-form repurposing.",
-  "Podcasters and coaches record weekly long-form episodes but lack the time to cut 30 short-form clips every month."
+  "Podcasters and coaches record weekly long-form episodes but lack the time to cut 30 short-form clips every month.",
+  "Local business owners want short-form video clips from long recordings but cannot afford traditional video agency rates.",
+  "Clinic owners lose thousands in monthly revenue to high patient no-shows and unhandled after-hours intake messages.",
+  "Real estate brokers lose qualified property buyers because sales agents take hours to respond to WhatsApp inquiries.",
+  "Creators launching faceless AI channels with 100% raw Claude scripts get hit with YouTube inauthentic-content demonetization."
  ],
  "scripts": {
   "S0001": {
@@ -419,6 +427,38 @@
    "created": "2026-11-01T14:32:11",
    "video_id": "nvndlkV21F8",
    "publish_at": "2026-11-02T07:30:00+05:30"
+  },
+  "S0040": {
+   "problem": "Local business owners want short-form video clips from long recordings but cannot afford traditional video agency rates.",
+   "title": "Turn long videos into paid short reels with free Claude #Shorts",
+   "pillar": "freelance_speed",
+   "engine": "flow",
+   "job": "20261101-1538-1",
+   "created": "2026-11-01T15:40:25"
+  },
+  "S0041": {
+   "problem": "Clinic owners lose thousands in monthly revenue to high patient no-shows and unhandled after-hours intake messages.",
+   "title": "Automating Clinic Intake: How to Build Revenue Systems with Claude #Shorts",
+   "pillar": "ai_services",
+   "engine": "flow",
+   "job": "20261101-1540-2",
+   "created": "2026-11-01T15:42:56"
+  },
+  "S0042": {
+   "problem": "Real estate brokers lose qualified property buyers because sales agents take hours to respond to WhatsApp inquiries.",
+   "title": "Build a Real Estate WhatsApp Bot in Claude Code #Shorts",
+   "pillar": "claude_code_build",
+   "engine": "flow",
+   "job": "20261101-1546-4",
+   "created": "2026-11-01T15:47:54"
+  },
+  "S0043": {
+   "problem": "Creators launching faceless AI channels with 100% raw Claude scripts get hit with YouTube inauthentic-content demonetization.",
+   "title": "Why AI YouTube Channels Get Demonetized #Shorts",
+   "pillar": "problems",
+   "engine": "flow",
+   "job": "20261101-1547-5",
+   "created": "2026-11-01T15:50:07"
   }
  },
  "slots": [
@@ -610,10 +650,12 @@
  "last_photo": "1_jacket.jpg",
  "photo_scenes": [],
  "photo_agent_error": "RuntimeError: image model unavailable: 404 NOT_FOUND. {'error': {'code': 404, 'm",
- "look_index": 34,
- "status_issue": 101,
- "status_line": "PIPELINE ideas=21 clips=3 editing=0 qa_failed=0 scheduled=2 published=24 total=26 today=1 next=2026-11-01T21:30",
+ "look_index": 38,
+ "status_issue": 106,
+ "status_line": "PIPELINE ideas=21 clips=3 editing=2 qa_failed=2 scheduled=1 published=25 total=26 today=1 next=2026-11-02T07:30",
  "rotation": {
-  "claude_wealth": 5
+  "claude_wealth": 9,
+  "claude_wealth_industry": 4,
+  "claude_wealth_segment": 4
  }
 }

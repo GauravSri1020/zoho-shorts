@@ -1,0 +1,584 @@
+{
+ "id": "20261101-1538-1",
+ "niche": "claude_wealth",
+ "status": "ready",
+ "upload": true,
+ "created": "2026-11-01T15:40:25",
+ "title": "Turn long videos into paid short reels with free Claude #Shorts",
+ "description": "Turn long podcasts into short video packages using free Claude and CapCut. Learn how to extract cut lists, create auto-captions, and offer video editing services to local businesses.\n\n1. Copy raw video transcript text into the free Claude chat with a short-form extraction prompt\n2. Get exact cut timestamps, hook options, and text-caption highlights in under 2 minutes\n3. Import clips into free CapCut desktop app, apply auto-captions, and render short videos\n\nTool used:\n- name: Claude Chat\n- endpoint: Extract the 3 most engaging hook moments with exact timestamps from this raw transcript and format a short-form cut list for reels.\n- docs: Claude Free Chat\n\nprompt.md (markdown) - Free Claude chat input box:\nExtract the 3 most engaging hook moments with exact timestamps from this raw transcript and format a short-form cut list for reels.\n\nThe catch: Free Claude account caps message usage during peak hours, so you must batch script requests.\n\nSources for the numbers:\n- Fiverr listings\n\nReal ways to earn with AI, no hype - follow @GSXAutomation\n\nWhat inspired this: https://news.google.com/rss/articles/CBMiugFBVV95cUxQYUI0c2ZwTFBRdFMzQTlFa1FXb2ZraE5seGExWENGaDc5d0FpNzdEemtiaVlXSGNnT2V4NGQwUUpSS005TXNsdjl3LVFtYllrd2xla3lrZDQ1eWc3Y1RVMUIxdXFZWmVyc1l5Z0VQQWJPRlZvNVpkbG91ZEpfWV9weWpMdjJjcUM5VDFsb2xSaU5OT2taOXFIa3IzcldWa25ybzJJdlJYVjk0OXh2Mko4ZUpibk8wNzFhcXc?oc=5\n\nThis video uses an AI-generated presenter and voice.\nIndependent channel. Not affiliated with or endorsed by Anthropic; Claude is a trademark of Anthropic. Education only - not financial, investment, trading or tax advice. Income numbers are what the named creators reported; results vary and nothing is guaranteed.\n\n#Shorts #ClaudeAI #AI #SideHustle #MakeMoneyWithAI",
+ "angle": {
+  "story_index": 0,
+  "industry": "video_editing",
+  "segment": "beginner_free",
+  "pillar": "freelance_speed",
+  "kind": "wealth",
+  "region": "india",
+  "product": "Claude Free + CapCut Free",
+  "app": "claude",
+  "problem": "Local business owners want short-form video clips from long recordings but cannot afford traditional video agency rates.",
+  "fix_type": "claude_chat",
+  "solution": "Feed long video transcripts into free Claude to generate precise timestamps, cut lists, and hooks, then edit using free CapCut.",
+  "steps": [
+   "Copy raw video transcript text into the free Claude chat with a short-form extraction prompt",
+   "Get exact cut timestamps, hook options, and text-caption highlights in under 2 minutes",
+   "Import clips into free CapCut desktop app, apply auto-captions, and render short videos"
+  ],
+  "api": "Extract the 3 most engaging hook moments with exact timestamps from this raw transcript and format a short-form cut list for reels.",
+  "numbers": "Fiverr listings show beginners charging ₹1,000 to ₹2,500 ($15–$30) per short video package using free tools.",
+  "catch": "Free Claude account caps message usage during peak hours, so you must batch script requests.",
+  "result": "Turn one long podcast or client interview into 5 short videos in an afternoon with zero software subscription fees.",
+  "wow": "Claude cuts transcript review time down by 80% without needing paid video AI extensions.",
+  "hook": "Turn long videos into paid short reels without spending a rupee on tools."
+ },
+ "story": {
+  "title": "Malicious Claude Code extension in Cursor's marketplace attempted remote access and data theft - The Decoder",
+  "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxQYUI0c2ZwTFBRdFMzQTlFa1FXb2ZraE5seGExWENGaDc5d0FpNzdEemtiaVlXSGNnT2V4NGQwUUpSS005TXNsdjl3LVFtYllrd2xla3lrZDQ1eWc3Y1RVMUIxdXFZWmVyc1l5Z0VQQWJPRlZvNVpkbG91ZEpfWV9weWpMdjJjcUM5VDFsb2xSaU5OT2taOXFIa3IzcldWa25ybzJJdlJYVjk0OXh2Mko4ZUpibk8wNzFhcXc?oc=5",
+  "summary": "Malicious Claude Code extension in Cursor's marketplace attempted remote access and data theft The Decoder",
+  "source": "\"\"Claude Code\" OR \"Claude Skills\" when:14d\" - Google News",
+  "ts": 1793384441,
+  "trend": 36
+ },
+ "script": {
+  "title": "Turn long videos into paid short reels with free Claude",
+  "hook_text": "Edit videos with free AI",
+  "app_label": "Claude Free",
+  "lines": [
+   {
+    "beat": "HOOK",
+    "say": "Turn long videos into paid short reels without paying for tools.",
+    "tts": "Turn long videos into paid short reels without paying for tools.",
+    "card": "Free short-form workflow",
+    "screen": {
+     "app": "notes",
+     "view": "notes",
+     "heading": "Short Video Service",
+     "source": "Fiverr listings",
+     "rows": [
+      [
+       "Target",
+       "Local business owners"
+      ],
+      [
+       "Package rate",
+       "$15 to $30 (Fiverr)"
+      ],
+      [
+       "Tool cost",
+       "Zero"
+      ]
+     ],
+     "messages": null,
+     "tool": null,
+     "method": null,
+     "url": null,
+     "headers": null,
+     "body": null,
+     "response": null,
+     "language": null,
+     "code": null,
+     "nodes": null,
+     "click": "Package rate",
+     "tip": "Earn with free tools"
+    }
+   },
+   {
+    "beat": "SELL",
+    "say": "Local business owners want short clips from long video podcasts but lack time, while video editing agencies charge huge rates.",
+    "tts": "Local business owners want short clips from long video podcasts but lack time, while video editing agencies charge huge rates.",
+    "card": "Agency rates vs free AI",
+    "screen": {
+     "app": "notes",
+     "view": "notes",
+     "heading": "The Opportunity",
+     "source": "Fiverr rate guide",
+     "rows": [
+      [
+       "Problem",
+       "Podcasters need short clips"
+      ],
+      [
+       "Agency cost",
+       "High monthly retainer"
+      ],
+      [
+       "Your setup",
+       "Claude Free plus CapCut"
+      ]
+     ],
+     "messages": null,
+     "tool": null,
+     "method": null,
+     "url": null,
+     "headers": null,
+     "body": null,
+     "response": null,
+     "language": null,
+     "code": null,
+     "nodes": null,
+     "click": "Claude Free plus CapCut",
+     "tip": "No software cost"
+    }
+   },
+   {
+    "beat": "CLIENTS",
+    "say": "You can offer short video repurposing to local creators by extracting hooks from their raw interview transcripts.",
+    "tts": "You can offer short video repurposing to local creators by extracting hooks from their raw interview transcripts.",
+    "card": "Repurpose long transcripts",
+    "screen": {
+     "app": "claude",
+     "view": "chat",
+     "heading": "Claude Outreach Assistant",
+     "rows": null,
+     "messages": [
+      [
+       "user",
+       "Write a short polite DM offering a free sample short clip to a local cafe owner."
+      ],
+      [
+       "assistant",
+       "Hi! I cut your recent podcast into a free 30-second reel. Let me know if you want the link!"
+      ]
+     ],
+     "tool": "Claude Chat",
+     "method": null,
+     "url": null,
+     "headers": null,
+     "body": null,
+     "response": null,
+     "language": null,
+     "code": null,
+     "nodes": null,
+     "click": "Write a short polite DM",
+     "tip": "Use AI for outreach"
+    }
+   },
+   {
+    "beat": "STEP 1",
+    "say": "First, copy the raw YouTube transcript into free Claude chat and ask for the three most engaging hook timestamps.",
+    "tts": "First, copy the raw YouTube transcript into free Claude chat and ask for the three most engaging hook timestamps.",
+    "card": "Extract exact cut timestamps",
+    "screen": {
+     "app": "claude",
+     "view": "chat",
+     "heading": "Transcript Processing",
+     "rows": null,
+     "messages": [
+      [
+       "user",
+       "Extract the 3 most engaging hook moments with exact timestamps from this raw transcript and format a short-form cut list for reels."
+      ],
+      [
+       "assistant",
+       "1. 02:15 - Hook: Stop wasting time\n2. 05:40 - Hook: The real secret\n3. 11:20 - Hook: One simple rule"
+      ]
+     ],
+     "tool": "Claude Free",
+     "method": null,
+     "url": null,
+     "headers": null,
+     "body": null,
+     "response": null,
+     "language": null,
+     "code": null,
+     "nodes": null,
+     "click": "Extract the 3 most engaging",
+     "tip": "Cuts review time by 80%"
+    }
+   },
+   {
+    "beat": "STEP 2",
+    "say": "Second, import those timestamps into the free CapCut desktop app, generate auto-captions, and export five finished short clips.",
+    "tts": "Second, import those timestamps into the free CapCut desktop app, generate auto-captions, and export five finished short clips.",
+    "card": "CapCut auto-captions",
+    "screen": {
+     "app": "flow",
+     "view": "flow",
+     "heading": "Workflow Chain",
+     "rows": null,
+     "messages": null,
+     "tool": "Video Editing Pipeline",
+     "method": null,
+     "url": null,
+     "headers": null,
+     "body": null,
+     "response": null,
+     "language": null,
+     "code": null,
+     "nodes": [
+      "Trigger: Raw transcript",
+      "Claude: Cut list & timestamps",
+      "CapCut Free: Auto-captions & render",
+      "Client: Delivered short reel"
+     ],
+     "click": "CapCut Free",
+     "tip": "Fast desktop workflow"
+    }
+   },
+   {
+    "beat": "MATH",
+    "say": "Fiverr listings show freelancers charging fifteen to thirty dollars per short package, cutting transcript review time by eighty percent.",
+    "tts": "Fiverr listings show freelancers charging fifteen to thirty dollars per short package, cutting transcript review time by eighty percent.",
+    "card": "$15-$30 package rate (Fiverr)",
+    "screen": {
+     "app": "notes",
+     "view": "notes",
+     "heading": "Market Rates",
+     "source": "Fiverr listings",
+     "rows": [
+      [
+       "Package price",
+       "$15 to $30 (Fiverr)"
+      ],
+      [
+       "Time saved",
+       "80 percent (user estimate)"
+      ],
+      [
+       "Results",
+       "Vary by client and skill"
+      ]
+     ],
+     "messages": null,
+     "tool": null,
+     "method": null,
+     "url": null,
+     "headers": null,
+     "body": null,
+     "response": null,
+     "language": null,
+     "code": null,
+     "nodes": null,
+     "click": "Package price",
+     "tip": "Results vary by client"
+    }
+   },
+   {
+    "beat": "RESULT",
+    "say": "Free Claude accounts cap messages during peak hours, so batch your transcript requests in advance. Earnings vary by client and experience.",
+    "tts": "Free Claude accounts cap messages during peak hours, so batch your transcript requests in advance. Earnings vary by client and experience.",
+    "card": "Batch requests to avoid caps",
+    "screen": {
+     "app": "notes",
+     "view": "notes",
+     "heading": "Platform Limits & Reality",
+     "source": "Claude free tier limits",
+     "rows": [
+      [
+       "Catch",
+       "Free message limits"
+      ],
+      [
+       "Workaround",
+       "Batch script requests"
+      ],
+      [
+       "Earnings",
+       "Vary by client and skill"
+      ]
+     ],
+     "messages": null,
+     "tool": null,
+     "method": null,
+     "url": null,
+     "headers": null,
+     "body": null,
+     "response": null,
+     "language": null,
+     "code": null,
+     "nodes": null,
+     "click": "Batch script requests",
+     "tip": "Zero software subscription fees"
+    }
+   }
+  ],
+  "api": {
+   "name": "Claude Chat",
+   "endpoint": "Extract the 3 most engaging hook moments with exact timestamps from this raw transcript and format a short-form cut list for reels.",
+   "scope": null,
+   "docs": "Claude Free Chat"
+  },
+  "code": {
+   "language": "markdown",
+   "filename": "prompt.md",
+   "content": "Extract the 3 most engaging hook moments with exact timestamps from this raw transcript and format a short-form cut list for reels.",
+   "where_to_paste": "Free Claude chat input box"
+  },
+  "sources": [
+   "Fiverr listings"
+  ],
+  "description": "Turn long podcasts into short video packages using free Claude and CapCut. Learn how to extract cut lists, create auto-captions, and offer video editing services to local businesses.",
+  "tags": [
+   "claude",
+   "capcut",
+   "videoediting",
+   "freelance",
+   "contentcreation",
+   "ai",
+   "sidehustle",
+   "reels",
+   "productivity",
+   "shortform"
+  ],
+  "industry": "video_editing",
+  "segment": "beginner_free"
+ },
+ "lines": [
+  {
+   "beat": "HOOK",
+   "say": "Turn long videos into paid short reels without paying for tools.",
+   "tts": "Turn long videos into paid short reels without paying for tools.",
+   "card": "Free short-form workflow",
+   "screen": {
+    "app": "notes",
+    "view": "notes",
+    "heading": "Short Video Service",
+    "source": "Fiverr listings",
+    "rows": [
+     [
+      "Target",
+      "Local business owners"
+     ],
+     [
+      "Package rate",
+      "$15 to $30 (Fiverr)"
+     ],
+     [
+      "Tool cost",
+      "Zero"
+     ]
+    ],
+    "messages": null,
+    "tool": null,
+    "method": null,
+    "url": null,
+    "headers": null,
+    "body": null,
+    "response": null,
+    "language": null,
+    "code": null,
+    "nodes": null,
+    "click": "Package rate",
+    "tip": "Earn with free tools"
+   },
+   "face": false
+  },
+  {
+   "beat": "SELL",
+   "say": "Local business owners want short clips from long video podcasts but lack time, while video editing agencies charge huge rates.",
+   "tts": "Local business owners want short clips from long video podcasts but lack time, while video editing agencies charge huge rates.",
+   "card": "Agency rates vs free AI",
+   "screen": {
+    "app": "notes",
+    "view": "notes",
+    "heading": "The Opportunity",
+    "source": "Fiverr rate guide",
+    "rows": [
+     [
+      "Problem",
+      "Podcasters need short clips"
+     ],
+     [
+      "Agency cost",
+      "High monthly retainer"
+     ],
+     [
+      "Your setup",
+      "Claude Free plus CapCut"
+     ]
+    ],
+    "messages": null,
+    "tool": null,
+    "method": null,
+    "url": null,
+    "headers": null,
+    "body": null,
+    "response": null,
+    "language": null,
+    "code": null,
+    "nodes": null,
+    "click": "Claude Free plus CapCut",
+    "tip": "No software cost"
+   },
+   "face": false
+  },
+  {
+   "beat": "CLIENTS",
+   "say": "You can offer short video repurposing to local creators by extracting hooks from their raw interview transcripts.",
+   "tts": "You can offer short video repurposing to local creators by extracting hooks from their raw interview transcripts.",
+   "card": "Repurpose long transcripts",
+   "screen": {
+    "app": "claude",
+    "view": "chat",
+    "heading": "Claude Outreach Assistant",
+    "rows": null,
+    "messages": [
+     [
+      "user",
+      "Write a short polite DM offering a free sample short clip to a local cafe owner."
+     ],
+     [
+      "assistant",
+      "Hi! I cut your recent podcast into a free 30-second reel. Let me know if you want the link!"
+     ]
+    ],
+    "tool": "Claude Chat",
+    "method": null,
+    "url": null,
+    "headers": null,
+    "body": null,
+    "response": null,
+    "language": null,
+    "code": null,
+    "nodes": null,
+    "click": "Write a short polite DM",
+    "tip": "Use AI for outreach"
+   },
+   "face": false
+  },
+  {
+   "beat": "STEP 1",
+   "say": "First, copy the raw YouTube transcript into free Claude chat and ask for the three most engaging hook timestamps.",
+   "tts": "First, copy the raw YouTube transcript into free Claude chat and ask for the three most engaging hook timestamps.",
+   "card": "Extract exact cut timestamps",
+   "screen": {
+    "app": "claude",
+    "view": "chat",
+    "heading": "Transcript Processing",
+    "rows": null,
+    "messages": [
+     [
+      "user",
+      "Extract the 3 most engaging hook moments with exact timestamps from this raw transcript and format a short-form cut list for reels."
+     ],
+     [
+      "assistant",
+      "1. 02:15 - Hook: Stop wasting time\n2. 05:40 - Hook: The real secret\n3. 11:20 - Hook: One simple rule"
+     ]
+    ],
+    "tool": "Claude Free",
+    "method": null,
+    "url": null,
+    "headers": null,
+    "body": null,
+    "response": null,
+    "language": null,
+    "code": null,
+    "nodes": null,
+    "click": "Extract the 3 most engaging",
+    "tip": "Cuts review time by 80%"
+   },
+   "face": false
+  },
+  {
+   "beat": "STEP 2",
+   "say": "Second, import those timestamps into the free CapCut desktop app, generate auto-captions, and export five finished short clips.",
+   "tts": "Second, import those timestamps into the free CapCut desktop app, generate auto-captions, and export five finished short clips.",
+   "card": "CapCut auto-captions",
+   "screen": {
+    "app": "flow",
+    "view": "flow",
+    "heading": "Workflow Chain",
+    "rows": null,
+    "messages": null,
+    "tool": "Video Editing Pipeline",
+    "method": null,
+    "url": null,
+    "headers": null,
+    "body": null,
+    "response": null,
+    "language": null,
+    "code": null,
+    "nodes": [
+     "Trigger: Raw transcript",
+     "Claude: Cut list & timestamps",
+     "CapCut Free: Auto-captions & render",
+     "Client: Delivered short reel"
+    ],
+    "click": "CapCut Free",
+    "tip": "Fast desktop workflow"
+   },
+   "face": false
+  },
+  {
+   "beat": "MATH",
+   "say": "Fiverr listings show freelancers charging fifteen to thirty dollars per short package, cutting transcript review time by eighty percent.",
+   "tts": "Fiverr listings show freelancers charging fifteen to thirty dollars per short package, cutting transcript review time by eighty percent.",
+   "card": "$15-$30 package rate (Fiverr)",
+   "screen": {
+    "app": "notes",
+    "view": "notes",
+    "heading": "Market Rates",
+    "source": "Fiverr listings",
+    "rows": [
+     [
+      "Package price",
+      "$15 to $30 (Fiverr)"
+     ],
+     [
+      "Time saved",
+      "80 percent (user estimate)"
+     ],
+     [
+      "Results",
+      "Vary by client and skill"
+     ]
+    ],
+    "messages": null,
+    "tool": null,
+    "method": null,
+    "url": null,
+    "headers": null,
+    "body": null,
+    "response": null,
+    "language": null,
+    "code": null,
+    "nodes": null,
+    "click": "Package price",
+    "tip": "Results vary by client"
+   },
+   "face": false
+  },
+  {
+   "beat": "RESULT",
+   "say": "Free Claude accounts cap messages during peak hours, so batch your transcript requests in advance. Earnings vary by client and experience.",
+   "tts": "Free Claude accounts cap messages during peak hours, so batch your transcript requests in advance. Earnings vary by client and experience.",
+   "card": "Batch requests to avoid caps",
+   "screen": {
+    "app": "notes",
+    "view": "notes",
+    "heading": "Platform Limits & Reality",
+    "source": "Claude free tier limits",
+    "rows": [
+     [
+      "Catch",
+      "Free message limits"
+     ],
+     [
+      "Workaround",
+      "Batch script requests"
+     ],
+     [
+      "Earnings",
+      "Vary by client and skill"
+     ]
+    ],
+    "messages": null,
+    "tool": null,
+    "method": null,
+    "url": null,
+    "headers": null,
+    "body": null,
+    "response": null,
+    "language": null,
+    "code": null,
+    "nodes": null,
+    "click": "Batch script requests",
+    "tip": "Zero software subscription fees"
+   },
+   "face": false
+  }
+ ],
+ "clips": [],
+ "look": "wearing a charcoal overshirt over a black crew-neck t-shirt, in a professional video editing suite with two large monitors showing a colour-graded timeline, soft blue ambient light",
+ "issue": 102
+}
