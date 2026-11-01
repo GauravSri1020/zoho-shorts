@@ -52,21 +52,27 @@ niche:
     - {id: video_editing, name: "Video editing", accent: "#8B5CF6",
        about: "editors and agencies: Claude writes cut lists from transcripts, captions, B-roll lists, client briefs, Premiere / DaVinci scripts; sell faster editing packages and repurposing retainers",
        place: "in a professional video editing suite with two large monitors showing a colour-graded timeline, soft blue ambient light"}
-    - {id: marketing, name: "Marketing", accent: "#EC4899",
-       about: "trade marketing, ads and social: campaign briefs, ad-copy variations, competitor research, monthly reports for clients as a retainer",
-       place: "in a modern marketing agency office with a wall of campaign mood boards and warm lights"}
     - {id: healthcare_admin, name: "Healthcare admin", accent: "#14B8A6",
        about: "clinic ADMIN only: appointment reminders, intake forms, insurance paperwork, review replies - sold as a monthly service to clinics. Never medical advice, never patient data on screen",
        place: "in the bright, clean reception area of a modern private clinic, no patients visible"}
     - {id: trading_tools, name: "Trading tools", accent: "#F59E0B",
        about: "ONLY building tools: a trade journal, a news summariser, a backtest notebook with Claude Code - the viewer decides, can lose money; or myth-busting 'Claude made me rich trading'. Never a tip, signal or strategy",
        place: "at a desk with three monitors showing generic charts in a calm, modern home office in the evening"}
-    - {id: logistics, name: "Logistics", accent: "#0EA5E9",
-       about: "freight and delivery businesses: Claude reads invoices / bills of lading, drafts shipment updates, builds a small tracking dashboard with Claude Code - sold as automation projects",
-       place: "in a modern warehouse office with a glass window over neatly stacked shelves, a forklift softly blurred in the background"}
     - {id: real_estate, name: "Real estate", accent: "#22C55E",
        about: "agents and brokers: listing descriptions, lead follow-ups, comparison sheets, WhatsApp replies - a setup + monthly service for agencies",
        place: "in a bright, modern show apartment with large windows and a city view"}
+    - {id: restaurants, name: "Restaurants", accent: "#EF4444",
+       about: "restaurants and cafes: direct-order apps with Claude Code, menu engineering, review replies, staff rota - sold by local freelancers",
+       place: "in a stylish modern restaurant before opening hours, warm pendant lights and an open kitchen behind him"}
+    - {id: creators, name: "Content creators", accent: "#E11D48",
+       about: "creators and small media businesses: research, scripts, one video into 30 posts, newsletters - the version that survives YouTube's inauthentic-content rules",
+       place: "in a creator studio with a camera on a tripod, LED light panels and acoustic panels on the wall"}
+    - {id: marketing, name: "Marketing", accent: "#EC4899",
+       about: "trade marketing, ads and social: campaign briefs, ad-copy variations, competitor research, monthly reports for clients as a retainer",
+       place: "in a modern marketing agency office with a wall of campaign mood boards and warm lights"}
+    - {id: logistics, name: "Logistics", accent: "#0EA5E9",
+       about: "freight and delivery businesses: Claude reads invoices / bills of lading, drafts shipment updates, builds a small tracking dashboard with Claude Code - sold as automation projects",
+       place: "in a modern warehouse office with a glass window over neatly stacked shelves, a forklift softly blurred in the background"}
     - {id: ecommerce, name: "E-commerce", accent: "#F97316",
        about: "online stores: product descriptions in bulk, customer-support replies, review analysis, a Claude Code inventory script",
        place: "in a small e-commerce studio with packed parcels, a product photo light box and shelves of products"}
@@ -76,18 +82,12 @@ niche:
     - {id: education, name: "Education", accent: "#6366F1",
        about: "tutors, coaches and course creators: lesson plans, quizzes, worksheets as a Claude Project, a Skill that grades in the teacher's rubric",
        place: "in a bright online-teaching studio with a ring light, a whiteboard and bookshelves"}
-    - {id: restaurants, name: "Restaurants", accent: "#EF4444",
-       about: "restaurants and cafes: direct-order apps with Claude Code, menu engineering, review replies, staff rota - sold by local freelancers",
-       place: "in a stylish modern restaurant before opening hours, warm pendant lights and an open kitchen behind him"}
     - {id: hr_recruiting, name: "HR & recruiting", accent: "#A855F7",
        about: "recruiters and HR teams: job descriptions, CV screening checklists (human decides, no bias), onboarding docs - a recruiting-ops service",
        place: "in a modern HR office meeting area with glass walls and plants"}
     - {id: accounting, name: "Accounting", accent: "#10B981",
        about: "bookkeepers and CAs: bank-statement categorising, invoice extraction, monthly client summaries - faster bookkeeping packages; never tax advice to the viewer",
        place: "in a clean finance office with a large monitor showing spreadsheets and reports"}
-    - {id: creators, name: "Content creators", accent: "#E11D48",
-       about: "creators and small media businesses: research, scripts, one video into 30 posts, newsletters - the version that survives YouTube's inauthentic-content rules",
-       place: "in a creator studio with a camera on a tripod, LED light panels and acoustic panels on the wall"}
   # Content mix. Rotation decides WHICH KIND comes next; the weights decide the pillar inside "wealth".
   rotation: ["wealth", "wealth", "wealth", "wealth", "problems"]
   pillars:
@@ -97,7 +97,7 @@ niche:
     freelance_speed: {weight: 2, kind: wealth, about: "freelancing with Claude doing the first 80%: writing, research reports, document extraction, translation - and where the human still adds the value"}
     creator_engine: {weight: 2, kind: wealth, about: "a content business with Claude (research, scripts, repurposing one video into 30 posts, newsletters) - the version that survives YouTube's inauthentic-content rules"}
     trending: {weight: 3, kind: wealth, about: "this week's REAL Claude / Anthropic launch or news (named source) -> one concrete way to earn from it today"}
-    open_source_skills: {weight: 3, kind: wealth, about: "free Claude Skills / agent / MCP repos trending on GitHub (name the repo + its licence) -> how a freelancer or small business uses them for paid client work or to automate their own job, on their own computer"}
+    open_source_skills: {weight: 4, kind: wealth, about: "free Claude Skills / agent / MCP repos trending on GitHub (name the repo + its licence) -> how a freelancer or small business uses them for paid client work or to automate their own job, on their own computer"}
     problems: {weight: 1, kind: problems, about: "the problems, limits and myths: hallucinated facts, usage limits, API costs eating the margin, demonetized AI channels, fake 'Claude made $10k overnight trading' stories, clients who leave - and how pros handle each"}
   good_problems:
     - "You know a task cold but have no product - turn it into a bundle of Claude Skills and sell it on a one-page checkout"
