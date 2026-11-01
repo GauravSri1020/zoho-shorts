@@ -138,8 +138,32 @@ def _avatar_full(av, t0, frames, zoom, out):
           f"[a]scale={W}:{H}:force_original_aspect_ratio=increase,crop={W}:{H},boxblur=30:2,setsar=1[bg];"
           f"[b]scale={zw}:{zh}:force_original_aspect_ratio=decrease:flags=lanczos,setsar=1[fg0];"
           f"[bg][fg0]overlay=(W-w)/2:(H-h)*0.35,crop={W}:{H}:(iw-{W})/2:(ih-{H})*0.35,setsar=1[v]")
+    if not IS_ZOHO:  # niche v3: Veo sometimes burns garbled subtitles into the bottom of the clip (1 Nov: "500s$000
+        # Cladess a morth"). A dark lower band (our captions sit on it) covers that area on every presenter shot.
+        band = _lower_band(Path(out).parent)
+        fc = fc.replace(",setsar=1[v]", ",setsar=1[v0];[v0][1:v]overlay=0:0[v]")
+        _run(_ff("-ss", f"{t0:.3f}", "-i", str(av), "-loop", "1", "-i", str(band), "-filter_complex", fc,
+                 "-map", "[v]", "-frames:v", str(frames), *ENC, str(out)))
+        return
     _run(_ff("-ss", f"{t0:.3f}", "-i", str(av), "-filter_complex", fc, "-map", "[v]",
              "-frames:v", str(frames), *ENC, str(out)))
+
+
+def _lower_band(workdir: Path):
+    """Full-frame PNG: transparent on top, a soft fade into near-black over the bottom ~27% of the frame."""
+    from PIL import Image
+    png = Path(workdir) / "lower_band.png"
+    if png.exists():
+        return png
+    im = Image.new("RGBA", (W, H), (0, 0, 0, 0))
+    top, solid = int(H * 0.68), int(H * 0.79)  # fade 68-79 %, fully solid below (Veo's subtitle zone is ~80-93 %)
+    px = im.load()
+    for y in range(top, H):
+        a = 255 if y >= solid else int(255 * (y - top) / max(solid - top, 1))
+        for x in range(W):
+            px[x, y] = (8, 10, 22, a)
+    im.save(png)
+    return png
 
 
 def _still_clip(png, frames, out, z0=1.0, z1=1.04, cx=None, cy=None, reach=0.7):
