@@ -458,7 +458,9 @@
    "pillar": "problems",
    "engine": "flow",
    "job": "20261101-1547-5",
-   "created": "2026-11-01T15:50:07"
+   "created": "2026-11-01T15:50:07",
+   "video_id": "SYjVdwaN0JQ",
+   "publish_at": "2026-11-02T21:30:00+05:30"
   }
  },
  "slots": [
@@ -643,6 +645,13 @@
    "minute": 450,
    "video_id": "nvndlkV21F8",
    "title": "Sell Podcast Clips with Claude: $500 a Month per Client #Shorts"
+  },
+  {
+   "date": "2026-11-02",
+   "window": "21:30",
+   "minute": 1290,
+   "video_id": "SYjVdwaN0JQ",
+   "title": "Why AI YouTube Channels Get Demonetized #Shorts"
   }
  ],
  "failures": {},
@@ -651,8 +660,8 @@
  "photo_scenes": [],
  "photo_agent_error": "RuntimeError: image model unavailable: 404 NOT_FOUND. {'error': {'code': 404, 'm",
  "look_index": 38,
- "status_issue": 106,
- "status_line": "PIPELINE ideas=21 clips=3 editing=2 qa_failed=2 scheduled=1 published=25 total=26 today=1 next=2026-11-02T07:30",
+ "status_issue": 108,
+ "status_line": "PIPELINE ideas=24 clips=3 editing=0 qa_failed=3 scheduled=2 published=25 total=27 today=1 next=2026-11-02T07:30",
  "rotation": {
   "claude_wealth": 9,
   "claude_wealth_industry": 4,
