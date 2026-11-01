@@ -1,7 +1,7 @@
 {
  "id": "20261101-1303-1",
  "niche": "claude_wealth",
- "status": "qa_failed",
+ "status": "skip",
  "upload": false,
  "created": "2026-11-01T13:09:18",
  "title": "How Video Editors Automate Repurposing Retainers With Claude #Shorts",
@@ -422,5 +422,6 @@
   }
  ],
  "look": "wearing a navy unstructured blazer over a plain white t-shirt, in a professional video editing suite with two large monitors showing a colour-graded timeline, soft blue ambient light",
- "issue": 86
+ "issue": 86,
+ "parked": "1 Nov: Gaurav rejected (not about money, screens looked fake). Replaced by the v3 money-recipe format."
 }

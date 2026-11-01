@@ -187,8 +187,52 @@ _NOTES_CSS = """/* notes: numbers / checklist card (Claude-wealth niche) */
 .notes .row b{font-weight:800;color:#111827;text-align:right}
 .notes .row span{color:#4b5563}
 """
+# v3 (1 Nov 2026, Gaurav: "screens don't look like Claude, the crop / grey is ugly"): a clean Claude-app look -
+# warm cream page, serif answer text, beige user bubble, the rounded "Reply to Claude..." box - and a big, bold
+# money card. Highlight = a yellow marker behind the words (no grey dimming, no red box). Claude niche only.
+_V3_CSS = """
+body{background:#FAF9F5}
+.illu{color:#b9b3a6}
+.hl{outline:none;box-shadow:none;background:linear-gradient(transparent 8%,#FFE58A 8%,#FFE58A 92%,transparent 92%) !important;
+    border-radius:6px}
+.cl{flex:1;display:flex;flex-direction:column;background:#FAF9F5;color:#1F1E1D;height:100%}
+.cl .top{height:96px;display:flex;align-items:center;gap:16px;padding:0 32px;font-size:29px;color:#3D3929;
+         border-bottom:1px solid #ECE9E0}
+.cl .spark{width:46px;height:46px;flex:none}
+.cl .ttl{font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.cl .proj{margin-left:auto;font-size:22px;color:#6B6455;background:#F0EEE6;border-radius:10px;padding:7px 14px;white-space:nowrap}
+.cl .msgs{flex:1;padding:40px 36px 10px;display:flex;flex-direction:column;gap:38px;overflow:hidden}
+.cl .u{align-self:flex-end;max-width:84%;background:#F0EEE6;border-radius:22px;padding:24px 28px;font-size:35px;line-height:1.35;
+       color:#1F1E1D}
+.cl .a{display:flex;gap:18px;align-items:flex-start}
+.cl .a .spark{margin-top:8px;width:42px;height:42px}
+.cl .a .txt{font-family:'Noto Serif','DejaVu Serif',Georgia,serif;font-size:37px;line-height:1.45;color:#1F1E1D;white-space:pre-wrap}
+.cl .chip{display:inline-flex;gap:8px;align-items:center;font-family:'Noto Sans',sans-serif;font-size:23px;font-weight:600;
+          color:#6B6455;border:1.5px solid #E2DED3;border-radius:10px;padding:6px 12px;margin-bottom:12px;background:#fff}
+.cl .box{margin:14px 30px 110px;border:1.5px solid #E2DED3;border-radius:26px;background:#fff;padding:22px 24px 16px;
+         box-shadow:0 2px 10px rgba(60,50,30,.06)}
+.cl .box .ph{font-size:30px;color:#A39E91}
+.cl .box .bar{display:flex;align-items:center;gap:12px;margin-top:20px;font-size:19px;color:#6B6455}
+.cl .box .plus{width:38px;height:38px;border:1.5px solid #E2DED3;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:24px}
+.cl .box .send{margin-left:auto;width:42px;height:42px;border-radius:12px;background:#C6613F;color:#fff;display:flex;align-items:center;
+               justify-content:center;font-size:24px;font-weight:700}
+.money{flex:1;display:flex;flex-direction:column;justify-content:center;padding:50px 44px 120px;background:#FAF9F5;gap:26px}
+.money .kick{font-size:30px;font-weight:800;letter-spacing:4px;color:#C6613F}
+.money h1{font-size:62px;line-height:1.12;font-weight:900;color:#1F1E1D;margin:0 0 6px}
+.money .row{display:flex;justify-content:space-between;align-items:baseline;gap:20px;padding:30px 6px;border-bottom:2px dashed #E2DED3;font-size:36px}
+.money .row span{color:#5E5849}
+.money .row b{font-size:44px;font-weight:900;color:#1F1E1D;text-align:right}
+.money .row.total b{color:#1F8A4C;font-size:60px}
+.money .src{margin-top:18px;font-size:24px;color:#8A8474;line-height:1.4}
+.chain{background:#FAF9F5;justify-content:center;padding:40px 44px 120px}
+.node{font-size:33px;padding:28px 28px;border:2px solid #E2DED3;border-radius:18px}
+.node em{font-size:20px;background:#C6613F;padding:7px 12px}
+.arrow{height:52px;background:#D9CFC0}.arrow:after{border-top-color:#D9CFC0}
+.money .tip{background:#FFF4D6;border:2px solid #F2D27A;color:#5B4500;font-size:30px}
+"""
 if not IS_ZOHO:  # niche switch: the Zoho screens keep exactly the old stylesheet
     CSS += _NOTES_CSS
+    CSS += _V3_CSS.replace("%", "%%")
 # NICHE SWITCH (27 Oct 2026): labels drawn on the AI-chat / chain screens. Zoho values = exactly the old ones.
 _SL = {} if IS_ZOHO else (CH.get("screens") or {})
 CHAT_BADGE = _SL.get("chat_badge", "● Zoho connected")
@@ -395,6 +439,58 @@ def _chat_page(spec):
     return _page(inner, ac, "#222")
 
 
+SPARK = ('<svg class="spark" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"><g stroke="#D97757" stroke-width="4.2" '
+         'stroke-linecap="round">' + "".join(
+             f'<line x1="20" y1="20" x2="{20 + 15 * __import__("math").cos(a * 0.5236):.1f}" '
+             f'y2="{20 + 15 * __import__("math").sin(a * 0.5236):.1f}"/>' for a in range(12)) + '</g></svg>')
+
+
+def _chat_page_v3(spec):
+    """Claude niche v3: looks like the Claude app (cream, serif answer, beige user bubble, reply box)."""
+    click = spec.get("click") or ""
+    tool = str(spec.get("tool") or "").strip()
+    title = spec.get("heading") or "New chat"
+    msgs = spec.get("messages") or [["user", "Write me 3 cold DMs for local gyms."], ["assistant", "Here are 3 short DMs..."]]
+    out = []
+    for m in msgs[:3]:
+        role, text = (list(m) + [""])[:2] if isinstance(m, (list, tuple)) else (m.get("role"), m.get("text"))
+        text = str(text)
+        if str(role).lower().startswith("u"):
+            out.append(f'<div class="u" {_tgt_in(click, text)}>{_esc(text)}</div>')
+        else:
+            chip = f'<div class="chip">{_esc(tool)}</div><br>' if tool else ""
+            out.append(f'<div class="a">{SPARK}<div class="txt">{chip}<span {_tgt_in(click, text)}>{_esc(text)}</span></div></div>')
+    proj = f'<span class="proj">{_esc(tool)}</span>' if tool else ""
+    inner = (f'<div class="cl"><div class="top">{SPARK}<span class="ttl">{_esc(title)}</span>{proj}</div>'
+             f'<div class="msgs">{"".join(out)}</div>'
+             f'<div class="box"><div class="ph">Reply to Claude...</div><div class="bar"><span class="plus">+</span>'
+             f'<span>Claude</span><span class="send">&uarr;</span></div></div></div>')
+    return _page(inner, "#C6613F", "#222", illu=False)
+
+
+def _money_page(spec):
+    """Claude niche v3: the money card - what you sell, price, clients, total - big and bold."""
+    click = spec.get("click") or ""
+    rows = []
+    rr = [list(r) if isinstance(r, (list, tuple)) else [r] for r in (spec.get("rows") or [])][:5]
+    for k, r in enumerate(rr):
+        a, b = (r + ["", ""])[:2]
+        if len(r) > 2:
+            b = " ".join(str(x) for x in r[1:])
+        total = k == len(rr) - 1 and any(w in str(a).lower() for w in ("total", "month", "= ", "income", "revenue"))
+        rows.append(f'<div class="row{" total" if total else ""}" {_tgt_in(click, f"{a} {b}")}><span>{_esc(a)}</span>'
+                    f'<b>{_esc(b)}</b></div>')
+    kick = {"SELL": "WHAT YOU SELL", "CLIENTS": "FIRST CLIENT", "MATH": "THE MONEY", "RESULT": "THE CATCH"}.get(
+        str(spec.get("beat") or "").upper().split(" ")[0], "")
+    src = f'<div class="src">Source: {_esc(spec["source"])}</div>' if spec.get("source") else ""
+    tip = f'<div class="tip">{_esc(spec["tip"])}</div>' if spec.get("tip") else ""
+    head = spec.get("heading") or ""
+    inner = (f'<div class="money">{f"<div class=kick>{kick}</div>" if kick else ""}'
+             f'{f"<h1 {_tgt_in(click, head) if not rows else chr(32)}>{_esc(head)}</h1>" if head else ""}'
+             f'{"".join(rows)}{tip}{src}</div>')
+    return _page(inner, "#C6613F", "#222", illu=False)
+
+
 def _kv(rows, click):
     return "".join(f'<div class="kv" {_tgt_in(click, a)}><b>{_esc(a)}:</b> {_esc(b)}</div>'
                    for a, b in [(list(r) + [""])[:2] for r in (rows or [])][:4])
@@ -500,6 +596,9 @@ def _real_page(spec):
 def build_html(spec):
     if spec.get("real"):
         return _real_page(spec)
+    if not IS_ZOHO:  # niche v3: Claude-app chat + money card
+        return {"chat": _chat_page_v3, "api": _api_page, "code": _code_page, "flow": _flow_page,
+                "notes": _money_page}.get(spec["view"], _money_page)(spec)
     return {"chat": _chat_page, "api": _api_page, "code": _code_page, "flow": _flow_page, "notes": _notes_page}.get(
         spec["view"], _app_page)(spec)
 
@@ -536,6 +635,8 @@ def render(specs, outdir: Path):
             plain, hl = outdir / f"screen{i:02d}_a.png", outdir / f"screen{i:02d}_b.png"
             pg.screenshot(path=str(plain))
             box = pg.evaluate(JS_HL)
+            if not IS_ZOHO:  # niche v3: marker highlight only, no arrow cursor
+                pg.evaluate("() => document.querySelectorAll('.cursor').forEach(c => c.remove())")
             pg.screenshot(path=str(hl))
             res.append({"plain": plain, "hl": hl, "box": box})
         b.close()

@@ -133,8 +133,9 @@ We need exactly these Shorts, in this order (kind of each): {json.dumps(kinds)}
 {want}
 Every Short is about ONE industry - a real person / business in that field earns more or saves hours with Claude:
 {all_inds}
-- "wealth" = ONE real way people in that industry earn with Claude (or automate their work and sell that
-  speed), shown as a workflow the viewer can copy today.
+- "wealth" = ONE paid service or product in that industry that the VIEWER can sell this week (who pays, what,
+  the price range WITH a named source), where Claude does most of the work. Not "use Claude to organise / learn" -
+  someone must pay money for the result.
 - "problems" = ONE real problem / limit / myth of earning with Claude, and how pros handle it.
 Then add 2 spare angles of the same kinds.
 
@@ -203,6 +204,27 @@ ITEMS (news, community posts, problem bank):
 
 
 # ---------------------------------------------------------------- 2. Scriptwriter
+# v3 (1 Nov 2026, Gaurav: "the viewer must be able to MAKE MONEY after watching - a Claude Project is not wealth"):
+# every wealth Short is a money recipe the viewer can start today, in under 60 s.
+MONEY_SHAPE = (
+    "HOOK (max 12 words, said on camera: WHO pays HOW MUCH for WHAT, honest, e.g. 'Podcasters pay $500 a month for "
+    "this - Claude does most of the work') -> SELL (one line: the exact service / product the viewer sells, to whom, "
+    "and the price range WITH its named source; screen = money card: You sell / Who buys / Price + \"source\") -> "
+    "CLIENTS (one line: where to find the first buyer + Claude writes the outreach; screen = Claude chat with the exact "
+    "prompt and a short realistic DM) -> STEP 1 (Claude does the actual work: screen = Claude chat with the exact prompt "
+    "and a realistic answer) -> STEP 2 (how it is delivered: screen = chain Trigger -> Claude -> tool -> client) -> MATH "
+    "(one line: example month at the LOW end of the sourced price minus tool costs; screen = money card whose last row "
+    "is the monthly total, \"source\" says 'example maths, not a promise') -> RESULT (one line: the honest catch + the "
+    "one thing to do this week; screen = money card 'Hard part / Do this week / You need')")
+_MONEY_RULES = """MONEY RECIPE RULES (v3):
+- It must be a way to EARN: a service or product someone pays for. "Use Claude to organise / learn / write notes" is NOT a
+  Short. A Claude feature (Project, Skill, artifact) is only a tool inside the recipe, never the topic.
+- One price range with a named source (rate guide, marketplace listings, a named creator's public report). No source =
+  do not use the number; say "set your own price" instead. Never invent clients, earnings or screenshots.
+- Concrete: real tool names (CapCut, Canva, Gumroad, Upwork, LinkedIn, n8n...), real prompts the viewer can copy.
+- Total "say" 110-150 words (about 40-55 s at our pace). Beats exactly: HOOK, SELL, CLIENTS, STEP 1, STEP 2, MATH, RESULT."""
+
+
 def _industry_text(angle):
     ind = industry(angle.get("industry"))
     return f"{ind.get('name')} - {ind.get('about', '')}" if ind else "(general)"
@@ -211,7 +233,7 @@ def _industry_text(angle):
 def _layout_text():
     if FACE_ONLY_HOOK:  # v2: one Flow clip (the hook), everything else on screen
         return """The video opens with the creator's lip-synced AI avatar saying ONLY the HOOK (one short clip, keep it
-under 14 words). EVERY other line (PROBLEM, FIX, every STEP, RESULT) is a professional screen with the exact text
+under 14 words). EVERY other line (SELL, CLIENTS, PROBLEM, FIX, every STEP, MATH, RESULT) is a professional screen with the exact text
 highlighted while the voice says it: PROBLEM shows the pain (a numbers card: hours lost, money left on the table,
 WITH who reported it - or the client's message in a Claude chat); RESULT shows a before / after card with the honest
 catch as the last row. Every STEP is ONE concrete action and its "screen" shows exactly that. Use a MIX of screen
@@ -237,13 +259,8 @@ def write_script(angle):
         source = "SOURCE: evergreen angle, no news source. Do not mention any news and use no unsourced numbers."
     is_problem = str(angle.get("kind")) == "problems"
     shape = ("HOOK (the myth / problem as a punch, max 10 words) -> PROBLEM (ONE short line: what goes wrong, max 14 "
-             "words) -> FIX (1 line: how pros handle it) -> STEP 1..4 (the exact checks / settings / prompts on screen) "
-             "-> RESULT (ONE short line, max 14 words: the takeaway)") if is_problem else (
-             "HOOK (curiosity, max 10 words, no hype) -> PROBLEM (ONE short line: the situation, max 14 words) -> "
-             "FIX (1 line: the method, name the Claude tool) -> STEP 1..4 (the workflow on screen: the exact prompt, "
-             "Skill, command or chain; one step shows the honest numbers card with who reported them) -> RESULT "
-             "(ONE short line, max 14 words: realistic outcome + the catch, e.g. 'works if you already have an "
-             "audience - start with one client')")
+             "words) -> FIX (1 line: how pros handle it) -> STEP 1..3 (the exact checks / settings / prompts on screen) "
+             "-> RESULT (ONE short line, max 14 words: the takeaway)") if is_problem else MONEY_SHAPE
     prompt = f"""Write ONE YouTube Short script for "{CHANNEL_NAME}" in natural spoken {LANGUAGE}.
 Audience: {NICHE['audience']}. Plain international English, friendly and smart, no slang, amounts in USD
 (or "about 8 lakh rupees" only if the source gives INR). It must feel like a smart friend showing what really
@@ -266,6 +283,7 @@ Hook idea: {angle.get('hook')}
 {source}
 
 STRUCTURE: {shape}.
+{"" if is_problem else _MONEY_RULES}
 NO CTA line: never ask to follow, like or subscribe. No greeting, no intro.
 
 RULES
@@ -281,7 +299,7 @@ RULES
   * a tool chain: "app" "flow", "view" "flow", "heading", "nodes": ["Trigger: ...", "Claude: ...", "Action: ..."].
   * an API call: "app" "api", "view" "api", "method", "url" (real Anthropic API URL), "headers"
     [["x-api-key", "****"]], "body", "response".
-  * a numbers / checklist card: "app" "notes", "view" "notes", "heading", "rows": [["label", "value"], ...]
+  * a money / numbers card: "app" "notes", "view" "notes", "heading", "source" (who reported the number), "rows": [["label", "value"], ...]
     (max 5 rows; every money row ends with its source, e.g. ["Bundle price", "$99 (creator's report)"]).
   "click": EXACT text to highlight (must appear on that screen). "tip": max 8 words.
 {HARD_RULES}
@@ -293,7 +311,7 @@ Return JSON:
  "title": "YouTube title, max 70 chars, curiosity + honest (no 'guaranteed', no '$10k/month easy'), may name Claude",
  "hook_text": "max 6 words shown big at the top of the video",
  "app_label": "short label for the top tag, e.g. 'Claude Skills' or 'Claude Code'",
- "lines": [{{"beat": "HOOK|PROBLEM|FIX|STEP 1|STEP 2|STEP 3|STEP 4|RESULT", "say": "Roman text",
+ "lines": [{{"beat": "HOOK|SELL|CLIENTS|PROBLEM|FIX|STEP 1|STEP 2|STEP 3|MATH|RESULT", "say": "Roman text",
             "tts": "text for the voice engine", "card": "on-screen text",
             "screen": null (HOOK only) or {{"app": "...", "view": "...", "heading": "...",
                        "rows": [["...", "..."]], "messages": [["user", "..."], ["assistant", "..."]], "tool": "...",

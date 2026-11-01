@@ -153,8 +153,8 @@ flow:
 
 scripts:
   per_day: 1
-  words_min: 100
-  words_max: 140
+  words_min: 110          # v3 money recipe: ~40-55 s at 1.5x, never over 60 s
+  words_max: 150
 
 sources:
   feeds:

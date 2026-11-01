@@ -346,6 +346,9 @@ Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
         if s["kind"] == "screen":
             beat = str(lines[s["line"]].get("beat", "")).upper()
             label = beat if beat.startswith("STEP") else "HOW TO FIX" if beat.startswith("FIX") else beat
+            if not IS_ZOHO:  # niche v3 money format
+                label = {"SELL": "WHAT TO SELL", "CLIENTS": "FIRST CLIENT", "MATH": "THE MONEY", "RESULT": "THE CATCH",
+                         "FIX": "HOW", "PROBLEM": "WHY IT PAYS"}.get(beat.split(" ")[0], label)
             ev.append(f"Dialogue: 2,{_ts(s['t0'])},{_ts(s['t1'])},Chip,,0,0,0,,{{\\pos({PX + 28},{PY + PH - 92})}} {_e(label)} ")
     path.write_text(head + "\n".join(ev) + "\n", encoding="utf-8")
 
@@ -387,7 +390,7 @@ def render(sc, lines, words, avatar_mp4, voice_wav, workdir: Path, out_path: Pat
         z1 = max(1.4, min(1.8, PW / (2.4 * max(w, 60))))
         fa = min(max(int(frames * 0.45), int(0.6 * FPS)), int(2.4 * FPS)) if frames > 30 else 0
         if not IS_ZOHO:  # niche v2 (1.5x pace = short lines): gentle zoom so no text is cut off at the edges, and
-            z1 = 1.18    # the whole screen stays readable longer
+            z1 = 1.04    # v3: almost no zoom - the whole screen stays readable, nothing cut off
             fa = min(max(int(frames * 0.55), int(0.6 * FPS)), int(2.6 * FPS)) if frames > 30 else 0
         # first show the WHOLE screen (where are we?), then zoom to the click near the end of the spoken line
         parts = []
