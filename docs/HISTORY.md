@@ -6,6 +6,32 @@ Is file ko har session ke end pe update karo, taaki agla chat yahin se shuru kar
 
 Gaurav jab bhi kuch bhi change karne bole: SABSE PEHLE backup - `backup-YYYY-MM-DD-<kya-badal-rahe-ho>` branch main se banao (aur agar video ka kaam hai to latest Short ka artifact download karo). Tabhi code chhuo. Kuch bigde to us branch se purana code wapas lo.
 
+## 1 Nov 2026 raat - Claude niche v3 "money recipe" (Gaurav ne v2 reject kiya)
+
+Backup: branch `backup-2026-11-01-before-money-format`.
+Gaurav ka feedback (v2 video-editing Short): "samajh nahi aaya kya hai / kyun; wealth se related nahi; Claude Project se
+koi wealth nahi banta; screens bekaar, Claude jaisi nahi lagti; crop / grey kharab; credits waste". Chahiye: jo video
+dekhe woh paise kamaye - 60 s ke andar.
+- Script (niche_claude_wealth.py MONEY_SHAPE + _MONEY_RULES): HOOK (face: kaun kitna pay karta hai kis cheez ke liye) ->
+  SELL (kya becho, kisko, price range + named source) -> CLIENTS (pehla client kahan + Claude DM likhe) -> STEP 1 (Claude
+  asli kaam, exact prompt) -> STEP 2 (delivery chain) -> MATH (example month, source ke low end pe, "not a promise")
+  -> RESULT (catch + is hafte kya karo). 110-150 words. Scout: "wealth" = koi paid service / product jo viewer bech sake.
+- Screens v3 (screens.py _chat_page_v3 / _money_page, sirf Claude niche): Claude app jaisa cream chat (serif answer,
+  beige user bubble, "Reply to Claude..." box), bada bold money card (total green), chain bada; highlight = yellow
+  marker (grey dim + red box + cursor hata diye); composer zoom ~1.04 (crop nahi); labels WHAT TO SELL / FIRST CLIENT /
+  STEP / THE MONEY / THE CATCH.
+- Presenter shot pe dark lower band (composer._lower_band): Veo ne hook clip mein garbled subtitles jala diye the
+  ("500s$000 Cladess a morth") - band unhe chhupata hai, captions us par.
+- Topic order (Gaurav): video editing -> local business services (healthcare admin, real estate, restaurants) -> free
+  GitHub Claude Skills (open_source_skills weight 4) -> trading tools (no tips).
+- Job 20261101-1430-1 (issue #94) "Sell Podcast Clips with Claude: $500 a Month per Client": hook / MATH / STEP 1 haath se
+  theek kiye (AI ne "$1,500 according to ClipSpeed" aur "< 6 hours" gadha tha). Source: ClipSpeed rate guide 2026
+  ($500-$2,000/month). Hook clip main ID se (20 credits; main pe ab 10 bache, reset 2 Nov 3:45 PM). Video 34 s,
+  Gaurav ko bheja. QA 60-67 (voice: Gemini TTS quota khatam -> edge voice; "presenter sirf hook mein"). upload=false.
+- Rejected v2 job 20261101-1303-1 -> status skip.
+- Next: Gemini TTS quota wapas aane par (kal) 20261101-1430-1 dobara assemble (status qa_failed -> rebuild hota hai) ->
+  voice match behtar. Gaurav haan bole to owner_approved + upload true.
+
 ## 1 Nov 2026 - Claude niche v2 (1 clip + industry screens, 1.5x) + Zoho #66 from existing clip
 
 Backup: branch `backup-2026-11-01-before-zoho-and-claude-clips` (main jaisa tha, v1).
