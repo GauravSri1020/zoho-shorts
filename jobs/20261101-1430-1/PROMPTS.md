@@ -1,4 +1,4 @@
-## 🎬 How to Sell Podcast Clipping Retainers with Claude & CapCut #Shorts
+## 🎬 Sell Podcast Clips with Claude: $500 a Month per Client #Shorts
 
 **1 Flow clips** · Short `20261101-1430-1` · 2026-11-01
 
@@ -18,8 +18,8 @@ Retake a bad clip? Just upload the new one too - the clip that matches its line 
 
 ### Clip 1 of 1
 
-> Podcasters pay fifteen hundred a month for Shorts, according to ClipSpeed.
+> Podcasters pay five hundred dollars a month for this. Claude does most of the work.
 
 ```text
-The man (my avatar) looks into the camera and talks to the viewer like a confident, friendly business tech explainer, smart and natural, not stiff; he leans one hand on a table or railing next to him, then straightens up and talks with a confident open gesture. Vertical 9:16 medium-wide shot from the knees up, camera about two metres away, his head in the upper third with space above it, both hands and all his gestures fully visible in the frame, static camera, sharp and well lit, wearing a light blue oxford shirt with the sleeves rolled up, in a professional video editing suite with two large monitors showing a colour-graded timeline, soft blue ambient light. His face, skin tone, hairstyle, beard, height and body build stay exactly as in my avatar's reference photos - the same natural average build, never slimmer and never heavier. He says, in clear natural English with a natural, clear Indian English accent, at a brisk, lively pace: "Podcasters pay fifteen hundred a month for Shorts, according to ClipSpeed." His lips match every word. He starts speaking in the very first frame, with no pause before the first word, and stops right after the last word. Audio: only his voice - no music, no sound effects. No subtitles, no captions, no text on screen.
+The man (my avatar) looks into the camera and talks to the viewer like a confident, friendly business tech explainer, smart and natural, not stiff; he leans one hand on a table or railing next to him, then straightens up and talks with a confident open gesture. Vertical 9:16 medium-wide shot from the knees up, camera about two metres away, his head in the upper third with space above it, both hands and all his gestures fully visible in the frame, static camera, sharp and well lit, wearing a light blue oxford shirt with the sleeves rolled up, in a professional video editing suite with two large monitors showing a colour-graded timeline, soft blue ambient light. His face, skin tone, hairstyle, beard, height and body build stay exactly as in my avatar's reference photos - the same natural average build, never slimmer and never heavier. He says, in clear natural English with a natural, clear Indian English accent, at a brisk, lively pace: "Podcasters pay five hundred dollars a month for this. Claude does most of the work." His lips match every word. He starts speaking in the very first frame, with no pause before the first word, and stops right after the last word. Audio: only his voice - no music, no sound effects. No subtitles, no captions, no text on screen.
 ```
