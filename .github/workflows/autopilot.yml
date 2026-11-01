@@ -2,7 +2,7 @@ name: GSX Automation Shorts
 
 on:
   schedule:
-    - cron: "30 4 * * *"     # 10:00 IST -> today's script + Flow prompts -> GitHub issue (GitHub e-mails you)
+    - cron: "0 9 * * *"      # 14:30 IST (after the Gemini free quota resets ~13:30 IST) -> 2 Shorts written, built, scheduled
     - cron: "40 */3 * * *"   # every 3 hours -> reply to new comments
   push:                      # you uploaded the Flow clips -> assemble the Short
     branches: [main]
@@ -73,7 +73,7 @@ jobs:
             echo "args=$ARGS" >> $GITHUB_OUTPUT
           elif [ "${{ github.event_name }}" = "push" ]; then
             echo "task=assemble" >> $GITHUB_OUTPUT
-          elif [ "${{ github.event.schedule }}" = "30 4 * * *" ]; then
+          elif [ "${{ github.event.schedule }}" = "0 9 * * *" ]; then
             echo "task=daily" >> $GITHUB_OUTPUT
           else
             echo "task=comments" >> $GITHUB_OUTPUT

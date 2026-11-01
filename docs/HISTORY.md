@@ -27,6 +27,12 @@ roz 2 videos, poore hafte ka stock; credits na ho to bhi video jaaye (bina chehr
   kathas re-upload = copyright + reused content - nahi; original Krishna kahaniyan (public domain) alag channel pe
   behtar. Face clips sirf jab Claude session open ho (Flow Chrome mein chalta hai).
 - Batches: daily count 4 (2 QA pass, 2 QA fail -> rebuild) + count 6 queued.
+- Batch result (1 Nov raat): 10 Shorts scheduled 1-6 Nov (07:30 + 21:30 IST) - list in state.json slots. QA noisy
+  (same video 92 / 63) -> Claude niche `benchmark.publish_floor: 55`: technically clean Shorts schedule even under 70.
+- Limits hit: YouTube "exceeded the number of videos they may upload" (~10-11 uploads / day for this channel) -
+  1640-6 retries in the next run; Gemini free quota 429 by night -> daily cron moved 10:00 -> 14:30 IST ("0 9 * * *"),
+  after the quota reset (~13:30 IST). Pending runs in the "autopilot" group get cancelled when another run queues
+  (one pending max) - re-dispatch after the running one finishes.
 
 ## 1 Nov 2026 raat - Claude niche v3 "money recipe" (Gaurav ne v2 reject kiya)
 
