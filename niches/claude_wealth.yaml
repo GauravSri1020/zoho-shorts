@@ -127,6 +127,8 @@ niche:
     trending: {weight: 3, kind: wealth, about: "this week's REAL Claude / Anthropic launch or news (named source) -> one concrete way to earn from it today"}
     open_source_skills: {weight: 4, kind: wealth, about: "free Claude Skills / agent / MCP repos trending on GitHub (name the repo + its licence) -> how a freelancer or small business uses them for paid client work or to automate their own job, on their own computer"}
     problems: {weight: 1, kind: problems, about: "the problems, limits and myths: hallucinated facts, usage limits, API costs eating the margin, demonetized AI channels, fake 'Claude made $10k overnight trading' stories, clients who leave - and how pros handle each"}
+  # Hook styles from the channels Gaurav watches (1 Nov): "I tried the laziest way to...", "How I'd start ... with Claude
+  # in 2026", "do this at night after your job - no face", "the real money is selling it to businesses".
   good_problems:
     - "You know a task cold but have no product - turn it into a bundle of Claude Skills and sell it on a one-page checkout"
     - "Founder stuck on auth, payments and deployment of a half-built app - finish it with Claude Code as a paid service"
@@ -238,6 +240,9 @@ upload_tags: ["Claude AI", "make money with AI", "AI side hustle", "Shorts"]
 benchmark:
   youtube_search: "make money with Claude AI"
   references:
+    - {url: "https://youtu.be/FEjkiSwSoc8", weight: 2, note: "Patrick Dang - 'laziest way to make money with Claude at night': first-person experiment hook, honest twist (sell services to businesses)"}
+    - {url: "https://youtu.be/LlhTEttKcwQ", weight: 2, note: "Mark Tilbury - 'I tried the LAZIEST way to make money with AI' (8.4M views): curiosity + experiment framing"}
+    - {url: "https://youtu.be/4z_RDr5py10", weight: 1, note: "Ishan Sharma - 'How I'd start a business with Claude Code in 2026': Indian audience, business framing"}
     - {url: "https://www.youtube.com/shorts/iw5N2XbH3m0", weight: 3, note: "MOST PREFERRED layout - title on top, video panel in the middle, caption box below, b-roll cuts"}
     - {url: "https://www.youtube.com/shorts/8bhVsbA4sUA", weight: 2, note: "make-money-with-Claude Short: hook style and pacing of the niche"}
     - {url: "https://www.youtube.com/shorts/KQeXrvncz_k", weight: 1, note: "AI visuals, fast cuts, music"}

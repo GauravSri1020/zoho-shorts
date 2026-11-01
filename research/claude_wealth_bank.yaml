@@ -199,3 +199,53 @@ problems:
     fix: "Make Claude Code write tests first, review every diff, never give it production keys"
     facts: "aibusiness.vc notes the often-quoted 55% speed gain comes from a single-task 2022 study; real client projects with changing requirements gain less. Review and testing are your job."
     source: "https://aibusiness.vc/solo/make-money-with-claude-ai"
+
+  # ================================================================ 1 Nov 2026 - from the channels Gaurav watches
+  # Patterns that work (Mark Tilbury 8.4M views, Patrick Dang 111K in 5 days, Ishan Sharma 251K): first-person
+  # experiment hooks ("I tried the LAZIEST way to make money with Claude"), "at night after your job / no face",
+  # and the honest twist "the real money is selling the service to BUSINESSES, not affiliate links".
+  - pillar: ai_services
+    kind: wealth
+    segment: beginner_free
+    product: Claude + Meta Ad Library + a free video / image tool
+    problem: "You want a side income at night after your job, without showing your face"
+    fix: "Run a small 'AI ad studio': Claude researches a brand's competitors in the free Meta Ad Library and writes ad scripts; you make sample ads and sell monthly ad creation to that brand"
+    steps:
+      - "Pick one brand niche (e.g. fitness wearables, local real estate agents)"
+      - "Open the free Meta Ad Library, copy what 3 competitors run, paste into Claude: 'what angles and hooks repeat? write 5 new ad scripts'"
+      - "Make 2-3 sample ads with free tools, send them to the brand as a free sample"
+      - "Offer a monthly package (strategy + scripts + variations)"
+    facts: "Patrick Dang (YouTube, 'I Tried the LAZIEST Way to Make Money with Claude AI at Night', Oct 2026) says the real money is selling AI ad / content services to businesses rather than affiliate links, demonstrates competitor research with Claude in the Meta Ad Library, and says around $2,000 a month per client is what many charge. Asking prices he reports, not guaranteed earnings."
+    wow: "The Meta Ad Library is free and shows every ad a competitor is running right now"
+    catch: "Landing the first client is the hard part - send free samples first; results vary"
+    source: "https://youtu.be/FEjkiSwSoc8"
+  - pillar: claude_code_build
+    kind: wealth
+    segment: developer_side
+    product: Claude Code
+    problem: "Local businesses still have no proper website and you have 2-4 free hours a day"
+    fix: "Build simple business websites with Claude Code and sell them to local shops, clinics and coaches"
+    steps:
+      - "Find 10 local businesses on Google Maps with no website or a broken one"
+      - "Ask Claude Code to build a one-page site from their Google listing (services, timings, WhatsApp button)"
+      - "Deploy free (GitHub Pages / Netlify) and show them the live demo link"
+      - "Charge a one-time build fee + a small monthly fee for updates"
+    facts: "Easy AI Coding (YouTube, 'How to Create a Website Using Claude Code to Make Money', Oct 2026) shows a beginner building a full website with Claude Code and selling website building as a service. Price: set your own - check local Fiverr / Upwork listings for website builds."
+    wow: "A working demo site in their own name before the first call closes the sale"
+    catch: "You must still check the site on mobile and keep their contact details correct"
+    source: "https://youtu.be/PGNt9vJ3odo"
+  - pillar: claude_code_build
+    kind: wealth
+    segment: b2b_ceo
+    product: Claude Code + Claude
+    problem: "A founder wants to start a new AI-first business line without hiring a dev team"
+    fix: "Use Claude to research and validate one business idea, then Claude Code to build the first version in days"
+    steps:
+      - "Ask Claude for 10 problems people pay to solve in your industry, with where they complain online"
+      - "Pick one, ask Claude to draft the offer, price and landing page copy"
+      - "Build the first version with Claude Code, put it in front of 10 real customers"
+      - "Only build more when someone pays"
+    facts: "Ishan Sharma with Sanskar Tiwari (YouTube, 'How I'd Start a Business With Claude Code in 2026 (Full Course)', 2.19M-subscriber channel, Oct 2026) walk through building a money-making business with Claude Code end to end. No income number - do not invent one."
+    wow: "Validate with paying customers before writing serious code"
+    catch: "Most ideas fail validation - that is the point, it saves months"
+    source: "https://youtu.be/4z_RDr5py10"
