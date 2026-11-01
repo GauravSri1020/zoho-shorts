@@ -2,7 +2,7 @@
  "id": "20261101-1430-1",
  "niche": "claude_wealth",
  "status": "qa_failed",
- "upload": false,
+ "upload": true,
  "created": "2026-11-01T14:32:11",
  "title": "Sell Podcast Clips with Claude: $500 a Month per Client #Shorts",
  "description": "Podcasters have already done the hardest part by talking; you sell distribution without recording a frame. Claude extracts timestamped clips from transcripts, and CapCut formats them. The catch: automated cut lists can cut speakers mid-sentence, so manual audio verification is required.\n\n1. Upload the full episode transcript into Claude to extract 10 timestamped cut points with high-retention hook titles.\n2. Import the timestamps into CapCut, apply auto-subtitles and dynamic b-roll, and export 30 vertical clips.\n3. Use Claude to draft tailored cold DMs offering 3 free sample clips to podcast hosts on Instagram and LinkedIn.\n\nTool used:\n- name: Claude Chat Transcript Scanner\n- endpoint: Scan this podcast transcript. Find 10 standalone segments under 60 seconds with strong curiosity hooks. Output: start/end timestamps, a viral hook title, and a 1-sentence reason why viewers will watch.\n- docs: Claude Prompt Engineering Guide\n\npodcast-clipping-prompt.md (markdown) - Paste into Claude Chat alongside your transcript:\nScan this podcast transcript. Find 10 standalone segments under 60 seconds with strong curiosity hooks.\n\nOutput format:\n1. Start and end timestamps\n2. A viral hook title for vertical video\n3. A 1-sentence reason why viewers will watch\n\nThe catch: Automated cut lists can cut speakers mid-sentence; you still have to verify audio pacing and visual hooks manually.\n\nSources for the numbers:\n- ClipSpeed clipping rate guide 2026\n\nReal ways to earn with AI, no hype - follow @GSXAutomation\n\nWhat inspired this: https://news.google.com/rss/articles/CBMiZkFVX3lxTFB1QlQ5SXlDeF9EZUVLUWQySDd3Zkt2c1U2Wm1yM2lwS1hJZXhUbXMxU3NtVFJUbUVXVEVIRXZaaUM2Sm9vNHpsMncteUlFZUlaMW1OZEtub0VVVXh2ZUtWbkxWV28zQQ?oc=5\n\nThis video uses an AI-generated presenter and voice.\nIndependent channel. Not affiliated with or endorsed by Anthropic; Claude is a trademark of Anthropic. Education only - not financial, investment, trading or tax advice. Income numbers are what the named creators reported; results vary and nothing is guaranteed.\n\n#Shorts #ClaudeAI #AI #SideHustle #MakeMoneyWithAI",
@@ -423,5 +423,6 @@
   }
  ],
  "look": "wearing a light blue oxford shirt with the sleeves rolled up, in a professional video editing suite with two large monitors showing a colour-graded timeline, soft blue ambient light",
- "issue": 94
+ "issue": 94,
+ "owner_approved": true
 }

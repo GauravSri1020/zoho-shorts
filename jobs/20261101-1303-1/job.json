@@ -1,8 +1,8 @@
 {
  "id": "20261101-1303-1",
  "niche": "claude_wealth",
- "status": "skip",
- "upload": false,
+ "status": "qa_failed",
+ "upload": true,
  "created": "2026-11-01T13:09:18",
  "title": "How Video Editors Automate Repurposing Retainers With Claude #Shorts",
  "description": "Video editors waste hours finding hooks in long podcasts. Learn how to use Claude Projects with timestamped transcripts to generate clip cut lists and B-roll cues. Note: Accurate timestamped captions are required; individual results vary.\n\n1. Upload the full video transcript with timestamps into a Claude Project containing your editing templates\n2. Prompt Claude to identify high-retention hooks and format a timed cut list with visual B-roll suggestions\n3. Export the cut list straight into Premiere Pro or DaVinci Resolve to deliver fast repurposing packages\n\nTool used:\n- name: Claude Projects\n- endpoint: Extract 5 short clips with timestamps and B-roll cues from this transcript.\n- docs: Claude Projects Knowledge Documentation\n\nREPURPOSE_PROMPT.md (markdown) - Paste into your Claude Project chat with the transcript attached:\nAnalyze the attached timestamped transcript and extract the top 5 high-retention clips (30-60 seconds).\nFor each clip provide:\n1. Exact start and end timestamps\n2. Hook verbatim spoken dialogue\n3. 3 specific B-roll visual ideas matching the pacing.\n\nThe catch: Claude reads text transcripts only; you must generate accurate timestamped captions before running the workflow.\n\nSources for the numbers:\n- Agency editing case studies on transcript-based AI edit preparation workflows\n- Anthropic Claude Projects documentation\n\nReal ways to earn with AI, no hype - follow @GSXAutomation\n\nThis video uses an AI-generated presenter and voice.\nIndependent channel. Not affiliated with or endorsed by Anthropic; Claude is a trademark of Anthropic. Education only - not financial, investment, trading or tax advice. Income numbers are what the named creators reported; results vary and nothing is guaranteed.\n\n#Shorts #ClaudeAI #AI #SideHustle #MakeMoneyWithAI",
@@ -423,5 +423,5 @@
  ],
  "look": "wearing a navy unstructured blazer over a plain white t-shirt, in a professional video editing suite with two large monitors showing a colour-graded timeline, soft blue ambient light",
  "issue": 86,
- "parked": "1 Nov: Gaurav rejected (not about money, screens looked fake). Replaced by the v3 money-recipe format."
+ "owner_approved": true
 }
