@@ -1,6 +1,6 @@
 {
  "id": "20261024-0903-1",
- "status": "qa_failed",
+ "status": "skip",
  "upload": false,
  "created": "2026-10-24T09:10:10",
  "title": "Automate Support Replies with Zoho Desk and Claude #Shorts",
@@ -440,5 +440,6 @@
   }
  ],
  "look": "wearing an olive field jacket over a grey t-shirt, on a clean city sidewalk just outside a glass office tower, softly blurred street behind him",
- "issue": 66
+ "issue": 66,
+ "parked": "1 Nov: built once (QA 58, voice change at 0:05). Parked so it is not rebuilt every run - set status waiting_for_clips to rebuild, or owner_approved after Gaurav watches run 41309204763"
 }
