@@ -28,7 +28,8 @@ W, H, FPS = 1080, 1920, 30
 PX, PY, PW, PH = 40, 470, 1000, 1100  # middle panel (screen shots)
 CAP_Y = 1640  # caption centre (above the YouTube Shorts UI at the bottom)
 BG, INK, ACCENT = "#F3ECE0", "#1E2433", "#2F6FEB"
-AVATAR_ZOOMS = [1.0, 1.04, 1.0, 1.06]  # gentle variety between avatar cuts (never a tight face crop)
+AVATAR_ZOOMS = [1.0, 1.04, 1.0, 1.06]
+MUSIC_VOL = 0.22 if IS_ZOHO else 0.34  # niche v2: QA said the music was hard to hear (still ducked under the voice)  # gentle variety between avatar cuts (never a tight face crop)
 
 
 def _run(cmd):
@@ -384,8 +385,11 @@ def render(sc, lines, words, avatar_mp4, voice_wav, workdir: Path, out_path: Pat
         x, y, w, h = sh["box"]
         cx, cy = x + w / 2, y + h / 2
         z1 = max(1.4, min(1.8, PW / (2.4 * max(w, 60))))
-        # first show the WHOLE screen (where are we?), then zoom to the click near the end of the spoken line
         fa = min(max(int(frames * 0.45), int(0.6 * FPS)), int(2.4 * FPS)) if frames > 30 else 0
+        if not IS_ZOHO:  # niche v2 (1.5x pace = short lines): gentle zoom so no text is cut off at the edges, and
+            z1 = 1.18    # the whole screen stays readable longer
+            fa = min(max(int(frames * 0.55), int(0.6 * FPS)), int(2.6 * FPS)) if frames > 30 else 0
+        # first show the WHOLE screen (where are we?), then zoom to the click near the end of the spoken line
         parts = []
         if fa:
             a = workdir / f"p{k:02d}a.mp4"
@@ -418,7 +422,7 @@ def render(sc, lines, words, avatar_mp4, voice_wav, workdir: Path, out_path: Pat
     mus = music.pick(dur + 1, workdir, seed)
     ass_arg = str(ass.resolve()).replace(":", r"\:").replace("'", r"\'")
     fc = (f"[0:v]ass='{ass_arg}'[v];"
-          f"[2:a]aformat=sample_rates=44100:channel_layouts=stereo,volume=0.22[m];"
+          f"[2:a]aformat=sample_rates=44100:channel_layouts=stereo,volume={MUSIC_VOL:.2f}[m];"
           f"[1:a]aformat=sample_rates=44100:channel_layouts=stereo,asplit=2[vo][sc];"
           f"[m][sc]sidechaincompress=threshold=0.03:ratio=8:attack=20:release=400[md];"
           f"[vo][md]amix=inputs=2:duration=first:normalize=0,alimiter=limit=0.95[aout]")

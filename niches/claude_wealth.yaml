@@ -138,6 +138,7 @@ flow:
   # 1 Nov QA (Zoho #66): the avatar clip speaks with Gaurav's Indian English accent, the screen voice sounded American
   # -> "voice change" blocker right after the hook. Same accent in both now (Flow prompt + Gemini TTS style).
   accent: "a natural, clear Indian English accent"
+  backup_voice: "en-IN-PrabhatNeural"   # when the Gemini TTS quota is out: Indian English male (was en-GB-RyanNeural)
   voice_style: "Say this like a friendly, energetic YouTube tech explainer, a young Indian man speaking clear natural English with a light Indian accent, warm and confident, brisk pace"
   # Outfits rotate per Short; the PLACE comes from the Short's industry (niche.industries -> place).
   outfits:
