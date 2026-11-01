@@ -1,0 +1,324 @@
+{
+ "id": "20261101-1640-6",
+ "niche": "claude_wealth",
+ "status": "ready",
+ "upload": true,
+ "created": "2026-11-01T16:41:50",
+ "title": "Build E-commerce Inventory Tools with Claude Code #Shorts",
+ "description": "E-commerce store owners spend hours building custom inventory alerts. Learn how to build narrow automated inventory tracking scripts using Claude Code.\n\n1. Identify a repetitive inventory or order tracking bottleneck for an online store\n2. Use Claude Code in your terminal to build a custom CLI or web script\n3. Test the script against live store data exports and package it as a paid tool\n\nTool used:\n- name: Claude Code\n- endpoint: claude code --prompt 'Build a Node.js script that flags low stock items'\n- docs: Claude Code Documentation\n\ninventory_script.sh (bash) - Your terminal directory:\nclaude code --prompt 'Build a Node.js script that flags low stock items from Shopify CSV exports and emails a daily report'\n\nThe catch: APIs change frequently, requiring ongoing script maintenance and error handling\n\nSources for the numbers:\n- Sabrina Ramonov\n\nReal ways to earn with AI, no hype - follow @GSXAutomation\n\nThis video uses an AI-generated presenter and voice.\nIndependent channel. Not affiliated with or endorsed by Anthropic; Claude is a trademark of Anthropic. Education only - not financial, investment, trading or tax advice. Income numbers are what the named creators reported; results vary and nothing is guaranteed.\n\n#Shorts #ClaudeAI #AI #SideHustle #MakeMoneyWithAI",
+ "angle": {
+  "story_index": 53,
+  "industry": "ecommerce",
+  "segment": "investor_research",
+  "pillar": "claude_code_build",
+  "kind": "wealth",
+  "region": "global",
+  "product": "Claude Code",
+  "app": "code",
+  "problem": "E-commerce store owners spend hours building custom inventory alerts and order scripts manually",
+  "fix_type": "claude_code",
+  "solution": "Build narrow automated inventory tracking scripts using Claude Code for online retailers",
+  "steps": [
+   "Identify a repetitive inventory or order tracking bottleneck for an online store",
+   "Use Claude Code in your terminal to build a custom CLI or web script",
+   "Test the script against live store data exports and package it as a paid tool"
+  ],
+  "api": "claude code --prompt 'Build a Node.js script that flags low stock items from Shopify CSV exports and emails a daily report'",
+  "numbers": "Sabrina Ramonov notes that building micro-tools for known niches is a high-upside path for developers",
+  "catch": "APIs change frequently, requiring ongoing script maintenance and error handling",
+  "result": "A specialized software utility sold directly to e-commerce store owners",
+  "wow": "Building custom tools is now so fast that distribution is your only real bottleneck",
+  "hook": "Why building software is easy now—and why most developers fail anyway."
+ },
+ "story": {
+  "title": "Everyone wants a SaaS but nobody finishes one",
+  "link": "bank:everyone wants a saas but nobody finishes one",
+  "summary": "pillar: claude_code_build | product: Claude Code | fix: Build ONE tiny tool for ONE niche with Claude Code and charge monthly | facts: Sabrina Ramonov: vibe-coding your own SaaS is the highest-upside path, but getting to the first $10K monthly recurring revenue is the hardest step. Pick a niche you already know so you can find the first 10 users. | kind: wealth | catch: Building is now the easy part - distribution is the real work",
+  "source": "GSX problem bank",
+  "ts": 1793550649.4935603,
+  "trend": 0,
+  "pillar": "claude_code_build",
+  "kind": "wealth",
+  "order": null
+ },
+ "script": {
+  "title": "Build E-commerce Inventory Tools with Claude Code",
+  "hook_text": "Why most developers fail",
+  "app_label": "Claude Code",
+  "lines": [
+   {
+    "beat": "HOOK",
+    "say": "Why building software is easy today, but why most e-commerce developers still struggle to earn.",
+    "tts": "Why building software is easy today, but why most e-commerce developers still struggle to earn.",
+    "card": "Software is easy now",
+    "screen": {
+     "app": "notes",
+     "view": "notes",
+     "heading": "Why building software is easy now",
+     "rows": [
+      [
+       "Difficulty",
+       "Building is fast"
+      ],
+      [
+       "Failure point",
+       "Distribution"
+      ]
+     ],
+     "click": "easy now",
+     "tip": "Focus on distribution."
+    }
+   },
+   {
+    "beat": "PROBLEM",
+    "say": "E-commerce store owners spend hours building custom inventory alerts and order scripts manually every single week.",
+    "tts": "E-commerce store owners spend hours building custom inventory alerts and order scripts manually every single week.",
+    "card": "Store bottleneck",
+    "screen": {
+     "app": "code",
+     "view": "code",
+     "heading": "Manual Inventory Check",
+     "rows": [
+      [
+       "Task",
+       "Stock alerts"
+      ],
+      [
+       "Time",
+       "Hours wasted"
+      ]
+     ],
+     "click": "manual",
+     "tip": "Identify repetitive tasks."
+    }
+   },
+   {
+    "beat": "STEP 1",
+    "say": "Open your terminal and find a repetitive inventory or order tracking bottleneck for an online store.",
+    "tts": "Open your terminal and find a repetitive inventory or order tracking bottleneck for an online store.",
+    "card": "Find inventory bottleneck",
+    "screen": {
+     "app": "code",
+     "view": "code",
+     "language": "markdown",
+     "heading": "SKILL.md",
+     "code": "# Goal\nIdentify repetitive inventory tasks\nfor online stores.",
+     "click": "bottleneck",
+     "tip": "Target a real problem."
+    }
+   },
+   {
+    "beat": "STEP 2",
+    "say": "Type claude code in your terminal, then run your prompt to build a custom CLI script.",
+    "tts": "Type claude code in your terminal, then run your prompt to build a custom CLI script.",
+    "card": "Claude Code terminal",
+    "screen": {
+     "app": "code",
+     "view": "code",
+     "language": "bash",
+     "heading": "Terminal - Claude Code",
+     "code": "claude code --prompt 'Build a Node.js script that flags low stock items from Shopify CSV exports'",
+     "click": "Claude Code",
+     "tip": "Let Claude write the code."
+    }
+   },
+   {
+    "beat": "STEP 3",
+    "say": "Test the script against live store data exports, check for errors, and package it as a utility.",
+    "tts": "Test the script against live store data exports, check for errors, and package it as a utility.",
+    "card": "Test script data",
+    "screen": {
+     "app": "code",
+     "view": "code",
+     "language": "python",
+     "heading": "test_script.py",
+     "rows": null,
+     "code": "import csv\n\ndef test_inventory():\n    print('Testing CSV export...')\n\ntest_inventory()",
+     "click": "Test your script",
+     "tip": "Verify data integrity."
+    }
+   },
+   {
+    "beat": "RESULT",
+    "say": "Sabrina Ramonov notes that micro tools offer high upside, but APIs change frequently, requiring ongoing script maintenance.",
+    "tts": "Sabrina Ramonov notes that micro tools offer high upside, but APIs change frequently, requiring ongoing script maintenance.",
+    "card": "Maintenance is key",
+    "screen": {
+     "app": "notes",
+     "view": "notes",
+     "heading": "The Catch",
+     "source": "Sabrina Ramonov",
+     "rows": [
+      [
+       "API Updates",
+       "Frequent changes"
+      ],
+      [
+       "Real Work",
+       "Distribution"
+      ]
+     ],
+     "click": "distribution",
+     "tip": "Plan for maintenance."
+    }
+   }
+  ],
+  "api": {
+   "name": "Claude Code",
+   "endpoint": "claude code --prompt 'Build a Node.js script that flags low stock items'",
+   "scope": null,
+   "docs": "Claude Code Documentation"
+  },
+  "code": {
+   "language": "bash",
+   "filename": "inventory_script.sh",
+   "content": "claude code --prompt 'Build a Node.js script that flags low stock items from Shopify CSV exports and emails a daily report'",
+   "where_to_paste": "Your terminal directory"
+  },
+  "sources": [
+   "Sabrina Ramonov"
+  ],
+  "description": "E-commerce store owners spend hours building custom inventory alerts. Learn how to build narrow automated inventory tracking scripts using Claude Code.",
+  "tags": [
+   "Claude Code",
+   "AI automation",
+   "E-commerce",
+   "Node.js",
+   "Shopify",
+   "Inventory tracking",
+   "CLI tools",
+   "Developer tools",
+   "Sabrina Ramonov",
+   "Software building"
+  ],
+  "industry": "ecommerce",
+  "segment": "investor_research"
+ },
+ "lines": [
+  {
+   "beat": "HOOK",
+   "say": "Why building software is easy today, but why most e-commerce developers still struggle to earn.",
+   "tts": "Why building software is easy today, but why most e-commerce developers still struggle to earn.",
+   "card": "Software is easy now",
+   "screen": {
+    "app": "notes",
+    "view": "notes",
+    "heading": "Why building software is easy now",
+    "rows": [
+     [
+      "Difficulty",
+      "Building is fast"
+     ],
+     [
+      "Failure point",
+      "Distribution"
+     ]
+    ],
+    "click": "easy now",
+    "tip": "Focus on distribution."
+   },
+   "face": false
+  },
+  {
+   "beat": "PROBLEM",
+   "say": "E-commerce store owners spend hours building custom inventory alerts and order scripts manually every single week.",
+   "tts": "E-commerce store owners spend hours building custom inventory alerts and order scripts manually every single week.",
+   "card": "Store bottleneck",
+   "screen": {
+    "app": "code",
+    "view": "code",
+    "heading": "Manual Inventory Check",
+    "rows": [
+     [
+      "Task",
+      "Stock alerts"
+     ],
+     [
+      "Time",
+      "Hours wasted"
+     ]
+    ],
+    "click": "manual",
+    "tip": "Identify repetitive tasks."
+   },
+   "face": false
+  },
+  {
+   "beat": "STEP 1",
+   "say": "Open your terminal and find a repetitive inventory or order tracking bottleneck for an online store.",
+   "tts": "Open your terminal and find a repetitive inventory or order tracking bottleneck for an online store.",
+   "card": "Find inventory bottleneck",
+   "screen": {
+    "app": "code",
+    "view": "code",
+    "language": "markdown",
+    "heading": "SKILL.md",
+    "code": "# Goal\nIdentify repetitive inventory tasks\nfor online stores.",
+    "click": "bottleneck",
+    "tip": "Target a real problem."
+   },
+   "face": false
+  },
+  {
+   "beat": "STEP 2",
+   "say": "Type claude code in your terminal, then run your prompt to build a custom CLI script.",
+   "tts": "Type claude code in your terminal, then run your prompt to build a custom CLI script.",
+   "card": "Claude Code terminal",
+   "screen": {
+    "app": "code",
+    "view": "code",
+    "language": "bash",
+    "heading": "Terminal - Claude Code",
+    "code": "claude code --prompt 'Build a Node.js script that flags low stock items from Shopify CSV exports'",
+    "click": "Claude Code",
+    "tip": "Let Claude write the code."
+   },
+   "face": false
+  },
+  {
+   "beat": "STEP 3",
+   "say": "Test the script against live store data exports, check for errors, and package it as a utility.",
+   "tts": "Test the script against live store data exports, check for errors, and package it as a utility.",
+   "card": "Test script data",
+   "screen": {
+    "app": "code",
+    "view": "code",
+    "language": "python",
+    "heading": "test_script.py",
+    "rows": null,
+    "code": "import csv\n\ndef test_inventory():\n    print('Testing CSV export...')\n\ntest_inventory()",
+    "click": "Test your script",
+    "tip": "Verify data integrity."
+   },
+   "face": false
+  },
+  {
+   "beat": "RESULT",
+   "say": "Sabrina Ramonov notes that micro tools offer high upside, but APIs change frequently, requiring ongoing script maintenance.",
+   "tts": "Sabrina Ramonov notes that micro tools offer high upside, but APIs change frequently, requiring ongoing script maintenance.",
+   "card": "Maintenance is key",
+   "screen": {
+    "app": "notes",
+    "view": "notes",
+    "heading": "The Catch",
+    "source": "Sabrina Ramonov",
+    "rows": [
+     [
+      "API Updates",
+      "Frequent changes"
+     ],
+     [
+      "Real Work",
+      "Distribution"
+     ]
+    ],
+    "click": "distribution",
+    "tip": "Plan for maintenance."
+   },
+   "face": false
+  }
+ ],
+ "clips": [],
+ "look": "wearing a charcoal overshirt over a black crew-neck t-shirt, in a small e-commerce studio with packed parcels, a product photo light box and shelves of products",
+ "issue": 113
+}
