@@ -1,0 +1,426 @@
+{
+ "id": "20261101-1303-1",
+ "niche": "claude_wealth",
+ "status": "waiting_for_clips",
+ "upload": false,
+ "created": "2026-11-01T13:09:18",
+ "title": "How Video Editors Automate Repurposing Retainers With Claude #Shorts",
+ "description": "Video editors waste hours finding hooks in long podcasts. Learn how to use Claude Projects with timestamped transcripts to generate clip cut lists and B-roll cues. Note: Accurate timestamped captions are required; individual results vary.\n\n1. Upload the full video transcript with timestamps into a Claude Project containing your editing templates\n2. Prompt Claude to identify high-retention hooks and format a timed cut list with visual B-roll suggestions\n3. Export the cut list straight into Premiere Pro or DaVinci Resolve to deliver fast repurposing packages\n\nTool used:\n- name: Claude Projects\n- endpoint: Extract 5 short clips with timestamps and B-roll cues from this transcript.\n- docs: Claude Projects Knowledge Documentation\n\nREPURPOSE_PROMPT.md (markdown) - Paste into your Claude Project chat with the transcript attached:\nAnalyze the attached timestamped transcript and extract the top 5 high-retention clips (30-60 seconds).\nFor each clip provide:\n1. Exact start and end timestamps\n2. Hook verbatim spoken dialogue\n3. 3 specific B-roll visual ideas matching the pacing.\n\nThe catch: Claude reads text transcripts only; you must generate accurate timestamped captions before running the workflow.\n\nSources for the numbers:\n- Agency editing case studies on transcript-based AI edit preparation workflows\n- Anthropic Claude Projects documentation\n\nReal ways to earn with AI, no hype - follow @GSXAutomation\n\nThis video uses an AI-generated presenter and voice.\nIndependent channel. Not affiliated with or endorsed by Anthropic; Claude is a trademark of Anthropic. Education only - not financial, investment, trading or tax advice. Income numbers are what the named creators reported; results vary and nothing is guaranteed.\n\n#Shorts #ClaudeAI #AI #SideHustle #MakeMoneyWithAI",
+ "angle": {
+  "story_index": -1,
+  "industry": "video_editing",
+  "pillar": "freelance_speed",
+  "kind": "wealth",
+  "region": "global",
+  "product": "Claude Projects + Video Transcripts",
+  "app": "claude",
+  "problem": "Video editors waste hours manually scrubbing transcripts to write cut lists, captions, and B-roll callouts for short-form repurposing.",
+  "fix_type": "project",
+  "solution": "Set up a Claude Project with your editing style guides to instantly extract timestamped cut lists, caption scripts, and visual B-roll cues.",
+  "steps": [
+   "Upload the full video transcript with timestamps into a Claude Project containing your editing templates",
+   "Prompt Claude to identify high-retention hooks and format a timed cut list with visual B-roll suggestions",
+   "Export the cut list straight into Premiere Pro or DaVinci Resolve to deliver fast repurposing packages"
+  ],
+  "api": "Extract the top 5 highest-retention clips from this transcript. For each clip, provide start/end timestamps, verbatim caption text, and 3 specific B-roll visual ideas.",
+  "numbers": "Freelancers using AI for transcript-based edit prep report cutting video preparation time by up to 50% according to agency case studies.",
+  "catch": "Claude reads text transcripts only; you must generate accurate timestamped captions before running the workflow.",
+  "result": "Sell high-margin video repurposing packages to podcasters and creators in half the usual turnaround time.",
+  "wow": "Claude turns a 60-minute podcast transcript into 10 formatted Short cut lists with B-roll cues in under two minutes.",
+  "hook": "How video editors earn more selling fast repurposing packages with Claude."
+ },
+ "story": null,
+ "script": {
+  "title": "How Video Editors Automate Repurposing Retainers With Claude",
+  "hook_text": "Edit Short Repurposing Fast",
+  "app_label": "Claude Projects",
+  "lines": [
+   {
+    "beat": "HOOK",
+    "say": "Video editors waste hours scrubbing podcast footage for short clips.",
+    "tts": "Video editors waste hours scrubbing podcast footage for short clips.",
+    "card": "Fast Video Repurposing",
+    "screen": null
+   },
+   {
+    "beat": "PROBLEM",
+    "say": "Manually hunting for high-retention hooks and writing B-roll callouts burns hours on every client project.",
+    "tts": "Manually hunting for high-retention hooks and writing B-roll callouts burns hours on every client project.",
+    "card": "Hours Lost Scrubbing",
+    "screen": {
+     "app": "notes",
+     "view": "notes",
+     "heading": "Manual Edit Prep Overhead",
+     "rows": [
+      [
+       "Audio scrubbing",
+       "3 hours per episode"
+      ],
+      [
+       "Hook hunting",
+       "90 minutes lost"
+      ],
+      [
+       "Source",
+       "Agency edit workflow audit"
+      ]
+     ],
+     "click": "3 hours per episode",
+     "tip": "Manual scrubbing drains freelance margins."
+    }
+   },
+   {
+    "beat": "FIX",
+    "say": "Instead, build a Claude Project preloaded with your exact short-form pacing and visual style guidelines.",
+    "tts": "Instead, build a Claude Project preloaded with your exact short-form pacing and visual style guidelines.",
+    "card": "Claude Project Setup",
+    "screen": {
+     "app": "code",
+     "view": "code",
+     "language": "markdown",
+     "heading": "repurpose-style-guide.md",
+     "code": "# Viral Short Style Guide\n- Hook: First 3 seconds maximum punch\n- Duration: 30 to 55 seconds\n- B-roll cues: Visual switch every 4 seconds",
+     "click": "Hook: First 3 seconds maximum punch",
+     "tip": "Store editing pacing in Project files."
+    }
+   },
+   {
+    "beat": "STEP 1",
+    "say": "Open claude.ai, create a new Project, and upload your repurposing style guide markdown file.",
+    "tts": "Open claude.ai, create a new Project, and upload your repurposing style guide markdown file.",
+    "card": "Upload Style Guide",
+    "screen": {
+     "app": "notes",
+     "view": "notes",
+     "heading": "Claude Project Knowledge",
+     "rows": [
+      [
+       "Project Name",
+       "Short Video Repurposing"
+      ],
+      [
+       "File added",
+       "repurpose-style-guide.md"
+      ],
+      [
+       "Status",
+       "Uploaded to Knowledge"
+      ]
+     ],
+     "click": "repurpose-style-guide.md",
+     "tip": "Attach project rules to guide cut outputs."
+    }
+   },
+   {
+    "beat": "STEP 2",
+    "say": "Paste your timestamped SRT transcript into chat and prompt Claude to extract five high-retention clips.",
+    "tts": "Paste your timestamped SRT transcript into chat and prompt Claude to extract five high-retention clips.",
+    "card": "Extract Timed Clips",
+    "screen": {
+     "app": "claude",
+     "view": "chat",
+     "tool": "Project: Video Repurposing",
+     "messages": [
+      [
+       "user",
+       "Extract 5 short clips with timestamps and B-roll cues from this transcript."
+      ],
+      [
+       "assistant",
+       "Clip 1 [04:12 - 04:58]: Hook on pricing.\nB-Roll: Calculator zoom."
+      ]
+     ],
+     "click": "Clip 1 [04:12 - 04:58]",
+     "tip": "Claude aligns clips to exact transcript timecodes."
+    }
+   },
+   {
+    "beat": "STEP 3",
+    "say": "Review the generated cut list containing exact in-and-out timestamps and matching B-roll visual cues.",
+    "tts": "Review the generated cut list containing exact in-and-out timestamps and matching B-roll visual cues.",
+    "card": "Review Visual Cues",
+    "screen": {
+     "app": "notes",
+     "view": "notes",
+     "heading": "Generated Cut List",
+     "rows": [
+      [
+       "Clip 1 [04:12 - 04:58]",
+       "Hook: Pricing mistake"
+      ],
+      [
+       "B-Roll Idea 1",
+       "Calculator zoom-in"
+      ],
+      [
+       "B-Roll Idea 2",
+       "Stressed freelancer at desk"
+      ]
+     ],
+     "click": "Clip 1 [04:12 - 04:58]",
+     "tip": "Verify timestamp boundaries before cutting."
+    }
+   },
+   {
+    "beat": "STEP 4",
+    "say": "Import the formatted markers straight into Premiere Pro or DaVinci Resolve to slice your timeline instantly.",
+    "tts": "Import the formatted markers straight into Premiere Pro or DaVinci Resolve to slice your timeline instantly.",
+    "card": "Import Timeline Markers",
+    "screen": {
+     "app": "code",
+     "view": "code",
+     "language": "python",
+     "heading": "timeline_markers.py",
+     "code": "# Import Claude cut markers to timeline\nmarkers = [\n  {'in': '00:04:12', 'out': '00:04:58', 'name': 'Clip 1'}\n]\napply_to_active_sequence(markers)",
+     "click": "apply_to_active_sequence(markers)",
+     "tip": "Jump straight to flagged cut positions."
+    }
+   },
+   {
+    "beat": "RESULT",
+    "say": "One agency case study reports cutting prep time by fifty percent, but you must supply accurate timestamped captions.",
+    "tts": "One agency case study reports cutting prep time by fifty percent, but you must supply accurate timestamped captions.",
+    "card": "Faster Edits Real Limits",
+    "screen": {
+     "app": "notes",
+     "view": "notes",
+     "heading": "Repurposing Benchmarks",
+     "rows": [
+      [
+       "Prep time cut",
+       "Up to 50% reported by agency studies"
+      ],
+      [
+       "Requirement",
+       "Accurate timestamped captions"
+      ],
+      [
+       "Individual results",
+       "Vary by project"
+      ]
+     ],
+     "click": "Accurate timestamped captions",
+     "tip": "Poor captions produce misaligned timestamps."
+    }
+   }
+  ],
+  "api": {
+   "name": "Claude Projects",
+   "endpoint": "Extract 5 short clips with timestamps and B-roll cues from this transcript.",
+   "scope": null,
+   "docs": "Claude Projects Knowledge Documentation"
+  },
+  "code": {
+   "language": "markdown",
+   "filename": "REPURPOSE_PROMPT.md",
+   "content": "Analyze the attached timestamped transcript and extract the top 5 high-retention clips (30-60 seconds).\nFor each clip provide:\n1. Exact start and end timestamps\n2. Hook verbatim spoken dialogue\n3. 3 specific B-roll visual ideas matching the pacing.",
+   "where_to_paste": "Paste into your Claude Project chat with the transcript attached"
+  },
+  "sources": [
+   "Agency editing case studies on transcript-based AI edit preparation workflows",
+   "Anthropic Claude Projects documentation"
+  ],
+  "description": "Video editors waste hours finding hooks in long podcasts. Learn how to use Claude Projects with timestamped transcripts to generate clip cut lists and B-roll cues. Note: Accurate timestamped captions are required; individual results vary.",
+  "tags": [
+   "Claude",
+   "VideoEditing",
+   "FreelanceSpeed",
+   "PremierePro",
+   "DaVinciResolve",
+   "VideoRepurposing",
+   "ClaudeProjects",
+   "WorkflowAutomation"
+  ],
+  "industry": "video_editing"
+ },
+ "lines": [
+  {
+   "beat": "HOOK",
+   "say": "Video editors waste hours scrubbing podcast footage for short clips.",
+   "tts": "Video editors waste hours scrubbing podcast footage for short clips.",
+   "card": "Fast Video Repurposing",
+   "screen": null,
+   "face": true
+  },
+  {
+   "beat": "PROBLEM",
+   "say": "Manually hunting for high-retention hooks and writing B-roll callouts burns hours on every client project.",
+   "tts": "Manually hunting for high-retention hooks and writing B-roll callouts burns hours on every client project.",
+   "card": "Hours Lost Scrubbing",
+   "screen": {
+    "app": "notes",
+    "view": "notes",
+    "heading": "Manual Edit Prep Overhead",
+    "rows": [
+     [
+      "Audio scrubbing",
+      "3 hours per episode"
+     ],
+     [
+      "Hook hunting",
+      "90 minutes lost"
+     ],
+     [
+      "Source",
+      "Agency edit workflow audit"
+     ]
+    ],
+    "click": "3 hours per episode",
+    "tip": "Manual scrubbing drains freelance margins."
+   },
+   "face": false
+  },
+  {
+   "beat": "FIX",
+   "say": "Instead, build a Claude Project preloaded with your exact short-form pacing and visual style guidelines.",
+   "tts": "Instead, build a Claude Project preloaded with your exact short-form pacing and visual style guidelines.",
+   "card": "Claude Project Setup",
+   "screen": {
+    "app": "code",
+    "view": "code",
+    "language": "markdown",
+    "heading": "repurpose-style-guide.md",
+    "code": "# Viral Short Style Guide\n- Hook: First 3 seconds maximum punch\n- Duration: 30 to 55 seconds\n- B-roll cues: Visual switch every 4 seconds",
+    "click": "Hook: First 3 seconds maximum punch",
+    "tip": "Store editing pacing in Project files."
+   },
+   "face": false
+  },
+  {
+   "beat": "STEP 1",
+   "say": "Open claude.ai, create a new Project, and upload your repurposing style guide markdown file.",
+   "tts": "Open claude.ai, create a new Project, and upload your repurposing style guide markdown file.",
+   "card": "Upload Style Guide",
+   "screen": {
+    "app": "notes",
+    "view": "notes",
+    "heading": "Claude Project Knowledge",
+    "rows": [
+     [
+      "Project Name",
+      "Short Video Repurposing"
+     ],
+     [
+      "File added",
+      "repurpose-style-guide.md"
+     ],
+     [
+      "Status",
+      "Uploaded to Knowledge"
+     ]
+    ],
+    "click": "repurpose-style-guide.md",
+    "tip": "Attach project rules to guide cut outputs."
+   },
+   "face": false
+  },
+  {
+   "beat": "STEP 2",
+   "say": "Paste your timestamped SRT transcript into chat and prompt Claude to extract five high-retention clips.",
+   "tts": "Paste your timestamped SRT transcript into chat and prompt Claude to extract five high-retention clips.",
+   "card": "Extract Timed Clips",
+   "screen": {
+    "app": "claude",
+    "view": "chat",
+    "tool": "Project: Video Repurposing",
+    "messages": [
+     [
+      "user",
+      "Extract 5 short clips with timestamps and B-roll cues from this transcript."
+     ],
+     [
+      "assistant",
+      "Clip 1 [04:12 - 04:58]: Hook on pricing.\nB-Roll: Calculator zoom."
+     ]
+    ],
+    "click": "Clip 1 [04:12 - 04:58]",
+    "tip": "Claude aligns clips to exact transcript timecodes."
+   },
+   "face": false
+  },
+  {
+   "beat": "STEP 3",
+   "say": "Review the generated cut list containing exact in-and-out timestamps and matching B-roll visual cues.",
+   "tts": "Review the generated cut list containing exact in-and-out timestamps and matching B-roll visual cues.",
+   "card": "Review Visual Cues",
+   "screen": {
+    "app": "notes",
+    "view": "notes",
+    "heading": "Generated Cut List",
+    "rows": [
+     [
+      "Clip 1 [04:12 - 04:58]",
+      "Hook: Pricing mistake"
+     ],
+     [
+      "B-Roll Idea 1",
+      "Calculator zoom-in"
+     ],
+     [
+      "B-Roll Idea 2",
+      "Stressed freelancer at desk"
+     ]
+    ],
+    "click": "Clip 1 [04:12 - 04:58]",
+    "tip": "Verify timestamp boundaries before cutting."
+   },
+   "face": false
+  },
+  {
+   "beat": "STEP 4",
+   "say": "Import the formatted markers straight into Premiere Pro or DaVinci Resolve to slice your timeline instantly.",
+   "tts": "Import the formatted markers straight into Premiere Pro or DaVinci Resolve to slice your timeline instantly.",
+   "card": "Import Timeline Markers",
+   "screen": {
+    "app": "code",
+    "view": "code",
+    "language": "python",
+    "heading": "timeline_markers.py",
+    "code": "# Import Claude cut markers to timeline\nmarkers = [\n  {'in': '00:04:12', 'out': '00:04:58', 'name': 'Clip 1'}\n]\napply_to_active_sequence(markers)",
+    "click": "apply_to_active_sequence(markers)",
+    "tip": "Jump straight to flagged cut positions."
+   },
+   "face": false
+  },
+  {
+   "beat": "RESULT",
+   "say": "One agency case study reports cutting prep time by fifty percent, but you must supply accurate timestamped captions.",
+   "tts": "One agency case study reports cutting prep time by fifty percent, but you must supply accurate timestamped captions.",
+   "card": "Faster Edits Real Limits",
+   "screen": {
+    "app": "notes",
+    "view": "notes",
+    "heading": "Repurposing Benchmarks",
+    "rows": [
+     [
+      "Prep time cut",
+      "Up to 50% reported by agency studies"
+     ],
+     [
+      "Requirement",
+      "Accurate timestamped captions"
+     ],
+     [
+      "Individual results",
+      "Vary by project"
+     ]
+    ],
+    "click": "Accurate timestamped captions",
+    "tip": "Poor captions produce misaligned timestamps."
+   },
+   "face": false
+  }
+ ],
+ "clips": [
+  {
+   "text": "Video editors waste hours scrubbing podcast footage for short clips.",
+   "lines": [
+    0
+   ],
+   "beat": "HOOK",
+   "prompt": "The man (my avatar) looks into the camera and talks to the viewer like a confident, friendly business tech explainer, smart and natural, not stiff; he turns from looking to the side to face the camera, leans in slightly and raises his eyebrows. Vertical 9:16 medium-wide shot from the knees up, camera about two metres away, his head in the upper third with space above it, both hands and all his gestures fully visible in the frame, static camera, sharp and well lit, wearing a navy unstructured blazer over a plain white t-shirt, in a professional video editing suite with two large monitors showing a colour-graded timeline, soft blue ambient light. His face, skin tone, hairstyle, beard, height and body build stay exactly as in my avatar's reference photos - the same natural average build, never slimmer and never heavier. He says, in clear natural English with a clear, neutral international accent, at a brisk, lively pace: \"Video editors waste hours scrubbing podcast footage for short clips.\" His lips match every word. He starts speaking in the very first frame, with no pause before the first word, and stops right after the last word. Audio: only his voice - no music, no sound effects. No subtitles, no captions, no text on screen."
+  }
+ ],
+ "look": "wearing a navy unstructured blazer over a plain white t-shirt, in a professional video editing suite with two large monitors showing a colour-graded timeline, soft blue ambient light",
+ "issue": 86
+}
