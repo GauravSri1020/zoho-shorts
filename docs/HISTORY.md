@@ -6,6 +6,28 @@ Is file ko har session ke end pe update karo, taaki agla chat yahin se shuru kar
 
 Gaurav jab bhi kuch bhi change karne bole: SABSE PEHLE backup - `backup-YYYY-MM-DD-<kya-badal-rahe-ho>` branch main se banao (aur agar video ka kaam hai to latest Short ka artifact download karo). Tabhi code chhuo. Kuch bigde to us branch se purana code wapas lo.
 
+## 1 Nov 2026 raat (21:00+) - v4: faceless 2/day + audience segments + YouTube schedule
+
+Gaurav: dono Claude Shorts YouTube pe schedule karo; wealth niche B2B (CEO / business owner) + salaried investor
+(IPO, gold/silver Diwali, insurance) + 3-6 lakh wale free tools se kamaayein + sirf phone wale (simple) + developers;
+roz 2 videos, poore hafte ka stock; credits na ho to bhi video jaaye (bina chehra); Zoho niche alag file mein rahe.
+- Scheduled (owner_approved): video editing 1303-1 -> 1 Nov 9:30 PM IST (XlQM0Y3s8Ls, QA 95 Gemini voice);
+  podcast clips 1430-1 -> 2 Nov 7:30 AM (nvndlkV21F8, QA 58, Gaurav approved).
+- `niches/claude_wealth.yaml`: `niche.segments` (beginner_free, b2b_ceo, investor_research, developer_side,
+  simple_phone, claude_tips) - har ek ka audience, about (safety ke saath), accent, format (money recipe ya apna).
+  Rotation `state.rotation.claude_wealth_segment`. `flow.faceless: true` + `flow.per_day 2` + `scripts.per_day 2`.
+- Faceless: FACE_BEATS khaali -> koi Flow clip nahi, har line screen + ek hi TTS voice (voice-change problem khatam);
+  job status "ready"; daily run hi build + QA + schedule karta hai (workflow daily pe bhi ffmpeg / browser install).
+  Run workflow input `face: yes` = chehre wala Short (HOOK clip) jaise pehle.
+- Fix: same run mein bane faceless job ko `_still_pending` "already finished" samajhta tha -> upload nahi hota tha.
+- Research (Gaurav ke channels): Patrick Dang "laziest way to make money with Claude at night" (AI ad studio,
+  ~$2K/month/client, Meta Ad Library), Mark Tilbury "laziest way with AI" 8.4M, Ishan Sharma "start a business with
+  Claude Code 2026", Easy AI Coding (websites with Claude Code). 3 recipes bank mein + benchmark references.
+- Gaurav ko bataya (policy): investing = sirf "Claude se research", kabhi buy/sell tip nahi; doosron ke podcasts /
+  kathas re-upload = copyright + reused content - nahi; original Krishna kahaniyan (public domain) alag channel pe
+  behtar. Face clips sirf jab Claude session open ho (Flow Chrome mein chalta hai).
+- Batches: daily count 4 (2 QA pass, 2 QA fail -> rebuild) + count 6 queued.
+
 ## 1 Nov 2026 raat - Claude niche v3 "money recipe" (Gaurav ne v2 reject kiya)
 
 Backup: branch `backup-2026-11-01-before-money-format`.
