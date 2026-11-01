@@ -211,11 +211,15 @@ problems:
     problem: "You want a side income at night after your job, without showing your face"
     fix: "Run a small 'AI ad studio': Claude researches a brand's competitors in the free Meta Ad Library and writes ad scripts; you make sample ads and sell monthly ad creation to that brand"
     steps:
-      - "Pick one brand niche (e.g. fitness wearables, local real estate agents)"
-      - "Open the free Meta Ad Library, copy what 3 competitors run, paste into Claude: 'what angles and hooks repeat? write 5 new ad scripts'"
-      - "Make 2-3 sample ads with free tools, send them to the brand as a free sample"
-      - "Offer a monthly package (strategy + scripts + variations)"
-    facts: "Patrick Dang (YouTube, 'I Tried the LAZIEST Way to Make Money with Claude AI at Night', Oct 2026) says the real money is selling AI ad / content services to businesses rather than affiliate links, demonstrates competitor research with Claude in the Meta Ad Library, and says around $2,000 a month per client is what many charge. Asking prices he reports, not guaranteed earnings."
+      - "Pick a model that passes 4 tests: easy for a beginner, doable nights / weekends, AI does most of the work, a client is realistic within 30 days -> an AI-powered SERVICE (with your human touch)"
+      - "Research the top ads: free Meta Ad Library -> what 3 competitors of the brand run; paste into Claude: 'which angles and hooks repeat? write 5 new ads in this brand's style'"
+      - "Recreate the best ads in the client's style, then refine (that is the human part)"
+      - "Price it: ask Claude 'research the going market rate for creating static ads for brands'"
+      - "Close: a short LinkedIn DM to the owner + a 2-minute Loom video showing the sample ads you already made for them"
+    facts: "Patrick Dang (YouTube, 'I Tried the LAZIEST Way to Make Money with Claude AI at Night', Oct 2026) says the real money is selling AI ad / content services to businesses rather than affiliate links, demonstrates competitor research with Claude in the Meta Ad Library, and says around $2,000 a month per client is what many charge. His playbook: 4 criteria (beginner-easy, nights /
+      weekends, AI does most work, client within 30 days), research -> recreate -> refine competitor ads, ask Claude for
+      the market rate, cold outreach on LinkedIn with a Loom video of the sample. Asking prices he reports, not
+      guaranteed earnings."
     wow: "The Meta Ad Library is free and shows every ad a competitor is running right now"
     catch: "Landing the first client is the hard part - send free samples first; results vary"
     source: "https://youtu.be/FEjkiSwSoc8"
