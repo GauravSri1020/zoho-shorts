@@ -587,6 +587,11 @@ def _still_pending(job_id):
     """True unless another (parallel) run already finished this Short: its job folder is gone from origin/main.
     Prevents the same Short being uploaded twice when two clip uploads trigger two assemble runs."""
     try:
+        # v4: a faceless Short is written AND built in the same daily run - its folder is not committed yet, so it
+        # cannot have been finished by another run
+        if subprocess.run(["git", "ls-files", "--error-unmatch", f"jobs/{job_id}/job.json"], cwd=ROOT,
+                          capture_output=True).returncode != 0:
+            return True
         subprocess.run(["git", "fetch", "-q", "origin", "main"], cwd=ROOT, check=True, timeout=60)
         r = subprocess.run(["git", "cat-file", "-e", f"origin/main:jobs/{job_id}/job.json"], cwd=ROOT)
         return r.returncode == 0
