@@ -135,6 +135,10 @@ flow:
   speed: 1.5                  # Flow clip pace (voice + lips together)
   tts_speed: 1.5              # screen-part voice pace - same as the clip so the voice never changes speed
   max_waiting: 4              # old v1 Shorts waiting for clips do not block new ones
+  # 1 Nov QA (Zoho #66): the avatar clip speaks with Gaurav's Indian English accent, the screen voice sounded American
+  # -> "voice change" blocker right after the hook. Same accent in both now (Flow prompt + Gemini TTS style).
+  accent: "a natural, clear Indian English accent"
+  voice_style: "Say this like a friendly, energetic YouTube tech explainer, a young Indian man speaking clear natural English with a light Indian accent, warm and confident, brisk pace"
   # Outfits rotate per Short; the PLACE comes from the Short's industry (niche.industries -> place).
   outfits:
     - "a navy unstructured blazer over a plain white t-shirt"
