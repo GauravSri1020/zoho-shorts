@@ -1,32 +1,35 @@
 {
- "updated": "2026-10-10T21:17:56",
+ "updated": "2026-11-01T13:35:15",
  "references": [
   {
-   "length_s": 80,
-   "hook": "Close-up of the interviewer setting up the conversation about Zoho's culture of innovation and why it never goes public.",
-   "layout": "Title banner at the top ('Our CEO, Manikandan Vembu on why Zoho will never go public'), video content panel in the middle with talking head and b-roll inserts, and a caption box at the bottom displaying active subtitles.",
+   "length_s": 82,
+   "hook": "Interviewer opens directly with core premise: 'At the heart of Zoho is this culture of innovation...' paired with a permanent header stating why Zoho will never go public.",
+   "layout": "3-tier vertical stack: permanent top header banner, 1:1 square video frame in the center, and a dedicated caption box with brand logo footer at the bottom.",
    "visuals": [
-    "Talking head of female interviewer",
-    "Talking head of male CEO Manikandan Vembu",
-    "B-roll footage of employees working on laptops",
-    "Robotics lab and engineering equipment",
-    "Aerial drone shots of city and landscape"
+    "Medium shot of interviewer speaking into podcast microphone",
+    "Medium shot of interviewee (CEO) responding",
+    "B-roll: Remote employee typing on laptop outdoors",
+    "B-roll: Close-up typing hands",
+    "B-roll: Lab R&D testing (robotic arm, wheeled rover, circuit wiring)",
+    "B-roll: Aerial drone view of town/infrastructure",
+    "Split-screen view (interviewee left, interviewer right)"
    ],
-   "cuts_per_10s": 3,
-   "captions": "White text with dark background inside a rounded beige caption box placed right below the middle video panel.",
-   "presenter": "Professional interviewer in a white sleeveless top asking questions, and Manikandan Vembu in a maroon shirt with a beard speaking calmly and confidently in an indoor studio setup.",
-   "music": "Subtle background interview track, low volume, not overpowering the dialogue.",
-   "on_screen_text": "Top title: 'Our CEO, Manikandan Vembu on why Zoho will never go public', CNBC TV18 logo at the bottom.",
+   "cuts_per_10s": 2.8,
+   "captions": "Dark charcoal text centered inside a light beige rounded rectangular box placed near the lower third of the screen.",
+   "presenter": "Female CNBC interviewer with animated hand gestures paired with Manikandan Vembu (CEO) wearing a red shirt and full beard, speaking candidly and conversationally.",
+   "music": "Subtle, low-volume ambient instrumental background music.",
+   "on_screen_text": "Top title banner: 'Our CEO, Manikandan Vembu on why Zoho will never go public', bottom logo: 'CNBC TV18', end screen: Animated 'ZOHO' logo.",
    "what_to_copy": [
-    "Clean three-tier vertical layout (title on top, video middle, captions bottom)",
-    "Frequent b-roll cuts matching the CEO's spoken words (R&D, robotics, talent pool)",
-    "Clear, readable sentence-by-sentence caption box",
-    "Professional interview framing with high-quality audio",
-    "Pacing that keeps engagement high throughout a longer short"
+    "Permanent top title card stating the core question or takeaway throughout the entire video",
+    "Dedicated background box for captions to ensure high contrast and readability",
+    "Inserting relevant 2-3 second B-roll footage (e.g. workflow execution, tech in action) every 10-15 seconds to break up headshots",
+    "Split-screen presentation when showing context/reaction",
+    "Clean background aesthetic with branded logo placement at top/bottom"
    ],
    "avoid": [
-    "Overcrowding the screen with too many graphical elements",
-    "Extraneous sound effects that distract from the interview audio"
+    "TV network logos/watermarks (CNBC TV18)",
+    "Long unedited talking-head segments without cutaways or screen changes",
+    "Unrelated macro aerial shots that don't directly illustrate the spoken point"
    ],
    "url": "https://www.youtube.com/shorts/iw5N2XbH3m0",
    "weight": 3,
@@ -34,27 +37,28 @@
   },
   {
    "length_s": 99,
-   "hook": "A woman in a red top gestures and asks a question in an interview setting, establishing the topic immediately.",
-   "layout": "Vertical split-screen video with a red/blue horizontal accent bar dividing two distinct interviewee/interviewer shots.",
+   "hook": "Interviewer directly poses a question about language controversies in India.",
+   "layout": "Vertical split screen (50/50 stacked): top panel for interviewer/presenter, bottom panel for guest/expert.",
    "visuals": [
-    "Medium shot of female interviewer in red top talking and gesturing",
-    "Medium shot of male interviewee in light pink shirt responding with hand gestures"
+    "Stacked dual camera interview feed",
+    "Simultaneous live presenter and guest framing"
    ],
-   "cuts_per_10s": 0.5,
-   "captions": "None visible on screen in this clip.",
-   "presenter": "Two professional speakers in a television news studio setup; calm, conversational tone with expressive hand gestures.",
-   "music": "None",
-   "on_screen_text": "NEWS18 logo in the top right corner",
+   "cuts_per_10s": 0.0,
+   "captions": "None present in video",
+   "presenter": "Top box features female anchor in red polo asking questions; bottom box features male expert in pink shirt responding with hand gestures.",
+   "music": "None; broadcast interview dialogue only.",
+   "on_screen_text": "News network logo ('NEWS 18') in top right corner of upper panel.",
    "what_to_copy": [
-    "Clean split-screen interview framing",
-    "Professional news studio aesthetic",
-    "Expressive hand gestures by speakers",
-    "Clear, conversational tone of delivery",
-    "Direct eye contact with the viewer/interviewer"
+    "Vertical 50/50 split-screen layout displaying AI avatar/host and application screen simultaneously.",
+    "Active reaction visibility where non-speaking presenter nods and listens while explanation plays.",
+    "Clean dividing line separating the speaker panel from the demonstration/guest panel.",
+    "Professional studio-style lighting aesthetic for the avatar backdrop.",
+    "Conversational Q&A narrative structure (problem asked in top panel, step-by-step solution explained in bottom panel)."
    ],
    "avoid": [
-    "Unrelated news channel branding",
-    "Static, unmoving camera angles for too long without cuts"
+    "Omitting subtitles/captions on mobile Short format.",
+    "Lack of on-screen topic titles or headline banners summarizing the problem.",
+    "Static, motionless avatars without head movements or nods when listening."
    ],
    "url": "https://www.youtube.com/shorts/SiT0DF2jkyw",
    "weight": 2,
@@ -62,34 +66,29 @@
   },
   {
    "length_s": 49,
-   "hook": "Talking head in black tee addressing the viewer directly with a numbered checklist illustration popping in at 0:02",
-   "layout": "Vertical 9:16 talking-head with periodic illustrative cutaways replacing the talking head",
+   "hook": "Presenter immediately states the exact high-value problem/step: 'The first thing you should check before starting the finalization in Zoho books.' with an instant cut to a visual checklist.",
+   "layout": "Full-screen vertical framing, alternating between talking head and minimalist 2D vector infographic cutaways, ending on a branded CTA outro screen.",
    "visuals": [
-    "Talking head speaker in black tee",
-    "Illustrated man with checklist and pens (0:01)",
-    "Illustrated figures with large exclamation mark (0:20)",
-    "Cloud Books Academy logo/outro animation (0:44)"
+    "Medium close-up talking head of certified trainer against a clean neutral background",
+    "2D flat vector animations illustrating the concept (checklist, exclamation warning)",
+    "Animated YouTube subscribe / bell notification outro screen"
    ],
-   "cuts_per_10s": 2,
-   "captions": "Large bold yellow text with black outline at the bottom center, highlighted yellow words as spoken",
-   "presenter": "Indian woman in black polo shirt with certified trainer badge, direct eye contact, energetic delivery",
-   "music": "None",
-   "on_screen_text": [
-    "The first thing you should check before starting the finalization in Zoho books.",
-    "NO: 1 A customer balance sitting under an expense account.",
-    "NO: 2 A personal expense booked as business expense.",
-    "NO: 3 A large amount is sitting in generic account."
-   ],
+   "cuts_per_10s": 1.2,
+   "captions": "Lower-third centered yellow banner with dark bold text, synchronized word-by-word highlighting and embedded list numbers ('NO: 1', 'NO: 2', 'NO: 3').",
+   "presenter": "Professional Zoho certified trainer wearing branded apparel, speaking directly and authoritatively to the camera with natural hand gestures.",
+   "music": "None; crisp, clear voiceover-first audio with zero background distractions.",
+   "on_screen_text": "Live caption banner at the bottom displaying spoken words and numbered checklist points; outro branding with 'Cloud Books Academy'.",
    "what_to_copy": [
-    "Use illustrated cutaways to visually anchor abstract accounting points",
-    "Highlight key words in captions dynamically as spoken",
-    "Numbered problem/error examples (NO: 1, NO: 2)",
-    "Branded outro with subscribe/like call to action",
-    "Start with a direct hook addressing the viewer's immediate pain point"
+    "Lead with an immediate, specific checklist or audit tip relevant to accountants/bookkeepers (e.g., Year-end finalization checklist in Zoho Books).",
+    "Structure tips into explicit numbered micro-points (Point 1, Point 2, Point 3) so viewers follow the logic easily.",
+    "Use a high-contrast lower-third banner for captions that remains readable across mobile screens.",
+    "Include credential branding on the avatar/host (e.g., Zoho specialist badge/logo) to build instant technical authority.",
+    "Conclude with a distinct, clean outro card directing viewers to subscribe or follow for more practical Zoho tips."
    ],
    "avoid": [
-    "Dead silence between cuts",
-    "Monotone delivery"
+    "Relying solely on abstract corporate vector illustrations instead of showing the real Zoho Books software screens and menus.",
+    "Long uninterrupted stretches of talking head (over 10 seconds) without screen changes, zoom punches, or UI highlights.",
+    "Generic background walls without dynamic visual interest or contextual ERP elements."
    ],
    "url": "https://www.youtube.com/shorts/XtZQSylRrF4",
    "weight": 2,
@@ -97,29 +96,28 @@
   },
   {
    "length_s": 126,
-   "hook": "AI avatar greets viewers in Hindi and introduces entering salary payments in Zoho Books",
-   "layout": "Vertical 9:16 layout split between AI creator presenter intro and Zoho Books app screen recording",
+   "hook": "Bold Hindi title banner detailing employee salary payment in Zoho Books.",
+   "layout": "Vertical mobile screen recording centered with black side borders.",
    "visuals": [
-    "AI avatar presenter in front of studio backdrop",
-    "Zoho Books app interface screen capture",
-    "Highlight animations tapping menu items and form fields"
+    "Graphic title card",
+    "Mobile app screen recording"
    ],
-   "cuts_per_10s": 1,
-   "captions": "None used, relying purely on Hindi voiceover explanation",
-   "presenter": "3D AI avatar wearing business attire, speaking in Hindi with natural hand gestures",
-   "music": "None",
-   "on_screen_text": "ENTER EMPLOYEE SALARY PAYMENT in Zoho Books (Hindi), Record Payment form screen headings",
+   "cuts_per_10s": 0.2,
+   "captions": "No auto-captions or subtitle overlays included.",
+   "presenter": "Off-screen female narrator providing voiceover in Hindi.",
+   "music": "Low volume background music track.",
+   "on_screen_text": "Cover title graphic and native Zoho Books mobile UI text.",
    "what_to_copy": [
-    "AI avatar greeting and topic introduction at start",
-    "Clear screen recording demonstrating exact navigation steps",
-    "Real-world business scenario example (Rahul's salary)",
-    "Highlighted taps on phone screen interface",
-    "Hindi language voiceover targeting local business owners"
+    "Vertical screen recording formatted for mobile short-form video.",
+    "Clear step-by-step navigation to the 'Record Expense' section.",
+    "Selecting exact expense accounts ('Salaries and Employee Wages').",
+    "Adding specific transaction notes for audit clarity.",
+    "Showing final expense summary page for confirmation."
    ],
    "avoid": [
-    "Missing caption subtitles for hearing-impaired viewers",
-    "Unnecessary background music distracting from the tutorial",
-    "Typing typos during live demo"
+    "On-screen typing errors during search.",
+    "Unedited loading delays.",
+    "Missing visual captions for silent viewing."
    ],
    "url": "https://www.youtube.com/shorts/9Yna9kWjysU",
    "weight": 2,
@@ -127,217 +125,216 @@
   },
   {
    "length_s": 25,
-   "hook": "An amazed emoji animation and an upbeat opening statement about Zoho beating giants like Google and Microsoft.",
-   "layout": "Vertical 9:16 format with rapid background replacements, split-screen video collages, and dynamic foreground elements.",
+   "hook": "An exploding-head emoji bursts into a cutout of Zoho founder Sridhar Vembu against a cinematic sunrise, paired with high-energy dialogue calling out Zoho's bold moves.",
+   "layout": "Full-screen vertical 9:16 canvas utilizing cutouts layered over dynamic backgrounds, switching to a 3-tier split screen montage during real-world b-roll.",
    "visuals": [
-    "AI avatars of leaders (Modi, Xi Jinping)",
-    "Zoho software and logo overlays",
-    "Chinese cityscapes and transport ads",
-    "Stock footage of Chinese citizens and maps with shipping boxes",
-    "Animated app icon comparisons (WhatsApp vs Arattai)"
+    "Cutout figures of tech founders and world leaders layered on stylized backdrops",
+    "Animated app icons with cross (X) and checkmark badges",
+    "Three-panel vertical montage showcasing real-world Zoho ads on Shanghai buses and subways",
+    "Animated geographic 3D map with flying shipping cargo box animations",
+    "High-energy reaction clips and stock b-roll synced to voiceover beats"
    ],
-   "cuts_per_10s": 5,
-   "captions": "Bilingual Hinglish captions with highlighted keywords appearing centrally in bold fonts.",
-   "presenter": "The creator's AI avatar appears alongside political figures, engaging viewers with expressive gestures and a conversational voiceover.",
-   "music": "Upbeat, energetic background track that matches the rapid pacing of the video.",
-   "on_screen_text": "ZOHO, Ulaa, Google, Arattai, Zoho CRM, China, India flags and logos.",
+   "cuts_per_10s": 4,
+   "captions": "No standard word-by-word auto-captions; uses graphical text labels, brand logos, and status markers (green checkmark, red cross) placed directly above relevant subjects.",
+   "presenter": "No live-action presenter on camera; driven by an energetic, conversational voiceover with animated cutout portraits representing the subjects being discussed.",
+   "music": "Driving, upbeat background beat synced to narration, maintaining continuous rhythm throughout the short.",
+   "on_screen_text": "Zoho and app logos, 'Zoho in China' caption boxes, and 'Arattai' comparison labels with green check/red ban indicators.",
    "what_to_copy": [
-    "Fast-paced visual storytelling with high cut frequency",
-    "Using AI avatar presenters for relatable delivery",
-    "Dynamic split-screen layouts to show multiple examples at once",
-    "Clear highlighting of rival apps vs promoted apps",
-    "Engaging hooks within the first 2 seconds"
+    "Use instant visual hooks with character cutouts and expressive icons instead of static intro screens.",
+    "Overlay clear green checkmark vs. red X graphic badges to show 'problem vs. solution' or 'bad vs. good tool' instantly.",
+    "Incorporate 3-tier split screen panels to show multiple Zoho software features/screens simultaneously.",
+    "Add animated motion graphics (like moving data boxes or workflow arrows) over maps or screens to illustrate process flows.",
+    "Keep energetic background music looping tightly under crisp, enthusiastic narration to maintain pacing."
    ],
    "avoid": [
-    "Overcrowded text overlays",
-    "Slow-moving transitions",
-    "Cluttered background visuals that distract from the main point"
+    "Omitting captions/subtitles entirely (viewer retention drops without readable English text captions on technical Shorts).",
+    "Using unrelated meme clips or political imagery that dilute focused B2B/software credibility.",
+    "Overloading the visual space with competing animated cutouts without clear focal points."
    ],
    "url": "https://www.youtube.com/shorts/KQeXrvncz_k",
    "weight": 1,
    "note": "AI visuals, fast cuts, music"
   },
   {
-   "length_s": 50,
-   "hook": "Zoho India launch revelation with dramatic map overlays and energetic Hindi voiceover.",
-   "layout": "Vertical 9:16 layout with dynamic central imagery, overlays, and animated text banners.",
+   "length_s": 51,
+   "hook": "A 3D cutout hand punches the screen over a satellite map of India with PM Modi holding a 3D Zoho logo and a dramatic question asking why India hid Zoho from the world.",
+   "layout": "Full-screen vertical 9:16 collage layout featuring animated satellite maps, floating 3D logos, cutouts with drop shadows, and cinematic AI image inserts.",
    "visuals": [
-    "Animated geopolitical maps with India and USA highlights",
-    "AI avatar and caricature graphics of political figures (Modi, Trump)",
-    "News headlines and mock social media cards",
-    "Scenic and business graphics representing Zoho and AdventNet",
-    "Person sitting in front of computer icons illustration"
+    "3D satellite globe and map zoom animations",
+    "Cutout photos of public figures and leaders with animated scaling and shake effects",
+    "AI-generated cinematic concept art (military scenes, angry corporate figures, stressed office worker)",
+    "3D textured brand logos and app icon clusters",
+    "Mockup news cards and newspaper headline banners"
    ],
-   "cuts_per_10s": 3,
-   "captions": "Large, bold Hindi subtitle text highlighting key words in bright colors (yellow, red) in the lower-center.",
-   "presenter": "No live presenter; AI-generated talking head caricatures and voiceover commentary.",
-   "music": "High-energy cinematic background music with moderate volume.",
-   "on_screen_text": [
-    "ZOHO",
-    "LUNCHED",
-    "AGUST 2025",
-    "GEO-WILD",
-    "EXTRA 25% PRICE NO INDIA PRODUCTS",
-    "50% TARIFF TO IN",
-    "SANCTION",
-    "Zoho Corp was founded in 1996",
-    "2009 YEAR",
-    "NEWS / THE CEO MAGAZINE!",
-    "ASHWINI VAISHNAW DITCHES GLOBAL TOOLS, SHIFTS TO ZOHO & BACKS SWADESHI PUSH",
-    "SANCTIONS"
-   ],
+   "cuts_per_10s": 9,
+   "captions": "No standard speech-to-text subtitles; relies entirely on animated graphic callouts, headline cards, and pop-up sticker text.",
+   "presenter": "No live host; driven by a dramatic, authoritative Hindi voiceover paired with animated cutouts of public figures (Narendra Modi, Donald Trump, Sridhar Vembu).",
+   "music": "Intense cinematic percussion and suspenseful background track with dramatic whoosh and impact sound effects on transitions.",
+   "on_screen_text": "3D 'ZOHO' logo blocks, 'LUNCHED' stamp, 'AGUST 2025', 'EXTRA 25% PRICE NO INDIA PRODUCTS', 'SANCTION', 'AdventNet', 'GEO-NEWS' cards.",
    "what_to_copy": [
-    "Strong geopolitical hook in the first 2 seconds",
-    "High-contrast color pop captions for Hindi voiceovers",
-    "Dynamic map overlays and animated news cards to explain business events",
-    "Fast-paced transitions matching the energetic Hindi narration",
-    "Clear narrative arc explaining a problem and its local solution"
+    "High-stakes narrative hook in the first 2 seconds that turns a dry software topic into an intriguing mystery",
+    "Fast visual pacing with dynamic transitions and asset pops every 1 to 1.5 seconds",
+    "Tangible 3D logo styling (isometric Zoho letter blocks) that makes software tools look physical and prominent",
+    "Impact sound effects (thuds, swooshes, pop clicks) layered tightly over a driving cinematic music track",
+    "Emotional storytelling framing (problem -> conflict -> domestic software solution) to keep B2B topics captivating"
    ],
    "avoid": [
-    "Cluttered background elements that hide text",
-    "Static scenes lasting longer than 4 seconds"
+    "Clickbait geopolitical conspiracy framing that damages professional B2B software credibility",
+    "Missing auto-captions/subtitles, which hurts retention for viewers watching on mute",
+    "Typos in on-screen graphics (e.g., 'LUNCHED' instead of launched, 'AGUST')",
+    "Completely omitting real product UI/software screen footage when solving software problems"
    ],
    "url": "https://www.youtube.com/shorts/Q9rWfCbDhk8",
    "weight": 1,
    "note": "AI visuals, music, strong hook"
   },
   {
-   "length_s": 66,
-   "hook": "A woman working on a laptop in a busy textile shop, immediately showing the real business context and pain point.",
-   "layout": "Dynamic vertical video layout with character-driven narrative cuts between shop floor, laptop screens, and direct-to-camera advice.",
+   "length_s": 35,
+   "hook": "Stylized Dubai-inspired neon cityscape illustration fades in under a glowing AI search query prompt asking 'Ask anything about your business...' with punchy bold text: 'YOUR BUSINESS. POWERED BY AI.'",
+   "layout": "Vertical 9:16 layout with deep purple dark-mode gradient; top floating translucent UI card (interactive dashboard mockup), bottom third reserved for high-impact bold headline text and 01/05 sequence counters; clean white CTA outro screen.",
    "visuals": [
-    "Medium shots of women working on laptop in textile store",
-    "Close-ups of store owner talking to the camera",
-    "Older men using calculators/ledgers in traditional shop settings",
-    "Tablet and laptop screen close-ups showing Zoho Books dashboards and charts",
-    "Contact card and professional closing graphic"
+    "Sleek vector city skyline animation with particle effects",
+    "Simulated AI chatbot prompt bar with animated typing cursor",
+    "Connected system bubble node diagram ('Zoho <--> AI')",
+    "Animated mock dashboards: Cash flow line graph, Gantt project timeline, inventory bar chart, donut reporting chart, procurement workflow nodes",
+    "Minimal corporate brand outro screen with partner badge"
    ],
-   "cuts_per_10s": 2,
-   "captions": "Minimal captions emphasizing key takeaways in Hindi, clean font overlay.",
-   "presenter": "A professional CA in a blazer explaining solutions naturally and authoritatively inside a retail fabric store.",
-   "music": "Subtle upbeat background instrumental, low volume so voiceover is crystal clear.",
-   "on_screen_text": "Switch your textile business to cloud accounting, Virtual CFO Umbrella Packages, CA Satish Borkar contact info.",
+   "cuts_per_10s": 3.4,
+   "captions": "No auto-generated subtitle captions; message is delivered via integrated dynamic on-screen typography (bold white and electric violet) synced with voiceover beats.",
+   "presenter": "No on-screen presenter; smooth, authoritative male AI/commercial voiceover driving the product story.",
+   "music": "Deep ambient tech-synth background track with subtle futuristic UI whooshes, clicks, and pop sound effects.",
+   "on_screen_text": [
+    "YOUR BUSINESS. POWERED BY AI.",
+    "ZOHO + AI INTEGRATION.",
+    "01 / 05 FINANCE.",
+    "02 / 05 PROJECTS.",
+    "03 / 05 INVENTORY.",
+    "04 / 05 REPORTING.",
+    "05 / 05 AUTOMATION.",
+    "LESS MANUAL WORK. SMARTER DECISIONS.",
+    "GET YOUR DEMO TODAY | www.sysvera.com"
+   ],
    "what_to_copy": [
-    "Start with an authentic business problem in a real shop setting",
-    "Use a professional presenter in industry-appropriate attire (blazer)",
-    "Intercut software dashboard close-ups to prove the solution",
-    "Address specific niche pain points (GSTIN per branch, marketplace settlements)",
-    "End with a clear contact card CTA"
+    "Rapid 'numbered carousel' sequence (01/05 Finance, 02/05 Projects...) with a bottom progress indicator bar to create momentum and boost completion rate",
+    "Glassmorphism dark UI mockups displaying real Zoho use cases instead of cluttered, low-res native screen recordings",
+    "Crisp UI micro-sound effects (pops, ticks, whooshes) accenting every visual state change and graph draw",
+    "High-contrast color scheme: midnight purple background (#120b2b) paired with neon teal and lilac accents for an ultra-premium tech aesthetic",
+    "Clear end-card structure with concise value proposition, phone/URL contact details, and official Zoho Partner verification"
    ],
    "avoid": [
-    "Generic stock footage that doesn't match the textile niche",
-    "Monotonous one-angle shots without screen inserts"
+    "Completely omitting captions when users watch without audio (add animated subtitle overlays)",
+    "Pure brand animation without showing actual practical screenshots or recognizable Zoho Books workflows",
+    "Lengthy outro splash screen lasting more than 4 seconds without active storytelling"
    ],
-   "url": "https://www.youtube.com/shorts/IKukU5AhH10",
+   "url": "https://www.youtube.com/shorts/pG33IJnJ7Y4",
    "weight": 1,
-   "note": "Online Settlement Match नहीं होता? New Branch, New GSTIN | Textile #Shorts"
+   "note": "Manage Your Business by Asking AI | Zoho + Claude &amp; ChatGPT Integration | SysVera"
   },
   {
-   "length_s": 5,
-   "hook": "Lists 7 clear steps on how to earn money with Zoho Books while sitting at a desk with a laptop.",
-   "layout": "Centered text list at the top, presenter with laptop in the lower section.",
+   "length_s": 10,
+   "hook": "High-contrast split visual with prominent yellow bold text announcing India's first indigenous AI chip backed by Zoho.",
+   "layout": "Three-part vertical news card: top third shows team photo, middle third displays summary text with highlighted keywords, bottom third shows close-up product photo of the chip.",
    "visuals": [
-    "medium shot of presenter at desk",
-    "zooming list of steps appearing sequentially"
+    "Static news infographic layout",
+    "Team press photo",
+    "Macro 3D render of semiconductor microchip"
    ],
    "cuts_per_10s": 0,
-   "captions": "White sans-serif font with black outline, centered near the top of the frame.",
-   "presenter": "A young man wearing a pink shirt and glasses, typing and looking at his laptop.",
-   "music": "Upbeat background electronic track at moderate volume.",
-   "on_screen_text": "How to Earn Money with Zoho Books, 1. Get Certified, 2. Setup Business, 3. Create Account, 4. Define Niche, 5. Build Presence, 6. Get Clients, 7. Scale & Automate",
+   "captions": "No auto-captions; embedded graphic text uses clean sans-serif white body font with bold yellow accent highlights on dark background.",
+   "presenter": "None; entirely graphic-based static post with team photo displayed.",
+   "music": "Cinematic ambient choir/epic pad music playing in the background.",
+   "on_screen_text": "Zoho-Backed Kerala-based startup Netrasemi unveiled India's first indigenous AI system-on-chip (SoC), the A2000... Designed in India, the chip is built for smart cameras and other AI devices...",
    "what_to_copy": [
-    "clear numbered step-by-step list",
-    "professional desk and laptop setup",
-    "upbeat background music",
-    "concise actionable title",
-    "clean text styling for readability"
+    "High-contrast color scheme using bright yellow highlight accents over white text on pure black background",
+    "Clear visual hierarchy: context/brand image on top, key message in center, proof/product visual at the bottom",
+    "Highlighting exact entity and trigger keywords ('Zoho-Backed', 'India's first indigenous AI chip') to instantly hook readers",
+    "Concise bullet-point style micro-paragraphs that distill complex tech news into two readable sentences",
+    "Atmospheric, epic background audio to give tech and automation announcements weight and importance"
    ],
    "avoid": [
-    "static unmoving lists without progressive reveal",
-    "low lighting"
+    "Completely static video frames with zero kinetic motion or animated transitions",
+    "Lack of spoken voiceover narration or presenter explanation",
+    "Dense paragraph text that risks audience dropping off before finishing reading"
    ],
-   "url": "https://www.youtube.com/shorts/D5flsOBBAbM",
+   "url": "https://www.youtube.com/shorts/nzEqNqDXYZ4",
    "weight": 1,
-   "note": "Want to Earn From Zoho Books ? #shorts #zoho #earnmoney #finance"
+   "note": "India Unveils First Indigenous AI Chip A2000 🇮🇳🤖 #shorts #currentaffair91 #AI #news #india #zoho"
   },
   {
-   "length_s": 45,
-   "hook": "A person talks about Tally accountants versus Zoho accountants, creating an immediate professional dilemma.",
-   "layout": "Vertical 9:16 video format with moving background images and AI avatar speaker in center frame.",
+   "length_s": 62,
+   "hook": "Split-screen opening with 'zomato is not a food delivery company anymore' text overlay over delivery footage and host delivery statement.",
+   "layout": "Vertical 9:16 split screen: Top 50% displays relevant B-roll, news clips, logos, product screenshots, and stock footage; Bottom 50% features host with microphone and branded mug.",
    "visuals": [
-    "AI avatar speaker talking directly to camera",
-    "Stock footage of accountants with Tally hiring sign",
-    "Person using Zoho software on laptop",
-    "Frustrated accountant at computer",
-    "Global landmarks (Statue of Liberty, Big Ben) indicating international reach"
+    "Talking head host speaking directly to camera",
+    "B-roll footage of food delivery drivers",
+    "TV/Interview clips of company founder",
+    "Logo grid graphics of competitor B2B brands",
+    "News segment screenshots & headlines",
+    "Product website screen recordings",
+    "Stock footage of office workers, code, and financial handshakes",
+    "Red graphic crosses (X) striking out expensive investments/large support teams"
    ],
-   "cuts_per_10s": 3,
-   "captions": "Center-aligned Hinglish subtitles with black background banners, yellow highlight on key words.",
-   "presenter": "Clean-shaven man in glasses and green polo shirt, speaking expressively in Hinglish.",
-   "music": "Subtle upbeat background track that doesn't overpower the voiceover.",
-   "on_screen_text": "TALLY ACCOUNTANT REQUIRED, ACCOUNTANT HIRING NOW, ZOHO, Tally, Zoho Books",
+   "cuts_per_10s": 5.5,
+   "captions": "Center-aligned white sans-serif bold text with subtle drop shadow on lower half, highlighting phrase-by-phrase in lowercase Hindi/Hinglish text.",
+   "presenter": "Female creator in orange t-shirt sitting at a desk with a podcast microphone and mug, speaking energetically with expressive hand gestures.",
+   "music": "Continuous low-volume energetic tech/synth background track beneath clear voiceover.",
+   "on_screen_text": "Large bold overlay text ('zomato is not a food delivery company anymore', 'SERIOUS THREAT', 'HEAVY INVESTMENT', 'EDTECH', 'BANKING'), brand logos (Zoho, Freshdesk, Zomato), news ticker graphic.",
    "what_to_copy": [
-    "Use Hinglish voiceover addressing common professional pain points",
-    "Include stock images/videos of software interfaces and job situations",
-    "Highlight key search terms and brand logos in captions",
-    "Keep cuts dynamic every 3-4 seconds to maintain viewer engagement",
-    "End with a clear call to action to learn Zoho Books and follow"
+    "Split-screen design: Keep avatar/host in bottom half, reserve top 50% for high-speed Zoho screen recordings and visual proof.",
+    "Contrasting red 'X' graphic overlays when explaining outdated/expensive legacy methods before showing the efficient fix.",
+    "News/article snippet callouts to build authority and context before diving into the tool/feature.",
+    "Fast visual pacing on top half (cut/change every 1.5 - 2 seconds) while keeping presenter consistent at bottom.",
+    "Punchy hook stating a industry-shifting claim within the first 2 seconds."
    ],
    "avoid": [
-    "Monotone voiceover delivery",
-    "Static visuals that last longer than 5 seconds",
-    "Overcrowded text screens"
+    "Non-English language content (target audience requires English).",
+    "Broad business/tech news storytelling without actionable step-by-step Zoho walkthroughs.",
+    "Static top frame lasting longer than 3 seconds without motion or visual updates."
    ],
-   "url": "https://www.youtube.com/shorts/lLYNYCasnkc",
+   "url": "https://www.youtube.com/shorts/KKRv1bRVbhY",
    "weight": 1,
-   "note": "Confused between Tally &amp; Zoho Books? #shorts #zohobooks #zoho #account"
+   "note": "Zomato Ne Zoho Ko Challenge Kar Diya? 😳 AI Tool FREE! #Zomato #NuggetAI #DeepinderGoyal"
   },
   {
-   "length_s": 70,
-   "hook": "Creator points upwards in excitement next to a complex Zoho automation flowchart, declaring 'This automation right here saves accountants thousands of hours'",
-   "layout": "Vertical 9:16 split screen: top half displays live workflow builder diagrams and API configuration panels inside Zoho Books / Make.com, bottom half features the presenter talking directly to camera from his home office",
+   "length_s": 172,
+   "hook": "Host asks 'What is the biggest breakthrough in AI accounting this week?' directly to camera.",
+   "layout": "9:16 vertical short; full-screen talking head alternating with split-screen (B-roll/graphics on top, presenter below).",
    "visuals": [
-    "Animated workflow node diagram zooming in and out",
-    "Close-up screen recordings of API endpoint configurations, headers, and query strings in Zoho Books",
-    "Presenter talking head framing from chest up wearing a branded black t-shirt and headset",
-    "Point-and-explain hand gestures"
+    "Talking head medium close-up",
+    "Split-screen B-roll of planning and coding",
+    "Animated integration diagrams and logos"
    ],
-   "cuts_per_10s": 2,
-   "captions": "Dynamic animated captions centered in the lower third with white text and color highlights (red, purple, green) on key words (THOUSANDS, HOURS, AUTOMATION), bold san-serif font with subtle drop shadow",
-   "presenter": "Male creator in his late 20s/early 30s with reddish-brown hair, wearing a black t-shirt with a bull logo and a Rode microphone clipped to his collar, expressive conversational delivery, highly engaging and energetic",
-   "music": "Upbeat, low-volume background tech beat that maintains momentum without distracting from voiceover",
-   "on_screen_text": [
-    "Get Bank Transactions",
-    "Zoho Books",
-    "Router",
-    "Break",
-    "v3/banktransactions/uncategorized"
-   ],
+   "cuts_per_10s": 4,
+   "captions": "Lower-third center, bold white text with red keyphrase highlights, synced word-by-word.",
+   "presenter": "Energetic male host in black t-shirt, speaking conversationally with hand gestures.",
+   "music": "Low-volume ambient background electronic synth track.",
+   "on_screen_text": "Dynamic animated captions; logo pop-ups (QuickBooks, Xero, Gusto, ADP).",
    "what_to_copy": [
-    "Show the actual configuration panel (API URL, parameters) for 2-3 seconds to establish technical credibility",
-    "Use a clear split-screen format showing workflow builder on top and presenter on bottom",
-    "Emphasize time savings ('thousands of hours') immediately in the hook for accountant/fintech audience",
-    "Highlight pain points ('categorizing transactions manually') before presenting the automated fix",
-    "Keep energy high and conversational throughout the walkthrough"
+    "Direct question hook in the first 2 seconds",
+    "Split-screen layout pairing host explanation with B-roll/diagrams",
+    "Word-by-word captions with high-contrast red word highlighting",
+    "Clean visual diagrams mapping software integrations",
+    "Quick cut cadence every 2 to 3 seconds"
    ],
    "avoid": [
-    "Letting the screen recording run without presenter audio commentary",
-    "Static camera angles that never zoom or reframe",
-    "Overcrowded workflow diagrams without pointing out specific nodes"
+    "Static talking-head shots without visual cuts or B-roll",
+    "Long unedited audio monologues without graphic callouts"
    ],
-   "url": "https://www.youtube.com/shorts/jBDJOmlO62A",
+   "url": "https://www.youtube.com/shorts/JAkPMyxDH4s",
    "weight": 1,
-   "note": "This Zoho Books Automation Saves Accountants Thousands of Hours"
+   "note": "Connect UNLIMITED QuickBooks &amp; Xero Entities to Claude 🤯"
   }
  ],
  "criteria": {
   "hook": "first 2 seconds: is the problem clear and does it stop the scroll? (big title + spoken hook)",
-  "avatar": "presenter looks like a real person talking: lips match the words, natural face, not a frozen photo",
-  "zoho_screens": "the Zoho Books steps are SHOWN on screen, the exact button/field is highlighted, readable",
+  "avatar": "presenter looks like a real person talking: lips match every word, natural face and hands (no morphing, extra fingers, frozen photo), gestures fit the words",
+  "continuity": "clean editing: no black / blank / frozen frame anywhere, no glitch or broken cut, the presenter has the SAME outfit and background in every shot, no Flow watermark, nothing cut off at the edges",
+  "voice": "one consistent, natural voice (same timbre, accent, pace and loudness in presenter and screen parts), no cut-off words, clicks, robotic words or dead air",
+  "zoho_screens": "the Zoho / AI / API steps are SHOWN on screen at the moment they are said, the exact button / field is highlighted, readable on a phone",
   "pacing": "visual change every 2-4 s, no dead time, length fits the content (25-60 s)",
-  "captions": "readable, in sync, match the speech exactly, not covering important parts",
-  "audio": "clear voice, natural English, music present but quiet under the voice",
-  "value": "a Zoho Books user learns a real, correct fix they can follow",
+  "captions": "readable, in sync, match the speech exactly, never covering the face or the important part of the screen",
+  "audio": "clear voice, music present but always quieter than the voice",
+  "value": "the viewer learns a real, correct fix they can follow",
   "polish": "looks as professional as the reference Shorts (layout, fonts, colours, no glitches)"
  }
 }
