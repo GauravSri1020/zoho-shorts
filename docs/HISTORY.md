@@ -27,6 +27,13 @@ Chahiye: title likha ho + meri photo + main Claude screen dikha raha hoon (jaise
 - QA prompt: pehla ~1 s cover jaan-boojh ke hai - frozen frame nahi.
 - Test (local): 3 purane scripts se covers + ek poora render (24.9 s = voice length, cover 0-1 s, phir Short).
 - Pehla asli Short with cover: agla daily run (14:30 IST). Jo Shorts pehle se YouTube pe schedule hain unpe cover nahi.
+- 2/3 Nov raat: Gaurav ke kehne pe bacha Short 20261101-1640-6 (E-commerce Inventory Tools) cover ke saath assemble
+  (run 41500013914): QA 89/70, scheduled 6 Nov 09:30 PM IST (jIzVVIZkDg8). Custom thumbnail API ne 403 diya
+  ("doesn't have permissions to upload and set custom video thumbnails") = channel custom thumbnails ke liye
+  verified nahi -> Gaurav youtube.com/verify (phone) kare; tab tak Short ka pehla frame hi cover hai.
+- Us cover mein 2 kami dikhi, aage ke liye fix: "E-" / "COMMERCE" hyphen pe toota (ab hyphen wale shabd nahi tootte)
+  aur khaali code screen ("// your code here") chuni gayi (ab chat > Claude Code command > code > chain > numbers,
+  khaali screen kabhi nahi). Uploaded video mein purana cover hi hai.
 
 ## 1 Nov 2026 raat (21:00+) - v4: faceless 2/day + audience segments + YouTube schedule
 

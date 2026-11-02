@@ -81,7 +81,12 @@ def money_badge(sc, text):
 
 
 def _title_html(text):
-    """*marked* words (from the writer) or money / numbers go on the yellow marker; else the last 2 words."""
+    """*marked* words (from the writer) or money / numbers go on the yellow marker; else the last 2 words.
+    Hyphenated words (E-commerce) never break at the hyphen."""
+    return re.sub(r"(\S*\w-\w\S*)", r'<span style="white-space:nowrap">\1</span>', _title_html0(text))
+
+
+def _title_html0(text):
     if "*" in text:
         out = re.sub(r"\*([^*]+)\*", lambda m: f"<mark>{h.escape(m.group(1))}</mark>", h.escape(text).replace("&#x27;", "'"))
         return out.replace("*", "")
@@ -212,9 +217,25 @@ def cover(sc, workdir: Path, screen_png=None, accent="#D97757", handle="", label
 
 
 def screen_for_cover(specs, shots):
-    """The Short's best screen for the cover: a Claude chat first, then code / chain, else the first screen."""
+    """The Short's best screen for the cover: a Claude chat with messages first, then real code / a chain / an API
+    call / a numbers card - never an empty one (3 Nov: a code screen with no code showed '// your code here')."""
     if not shots:
         return None
-    order = {"claude": 0, "code": 1, "flow": 2, "api": 3}
-    best = min(range(len(specs)), key=lambda i: (order.get(specs[i].get("app", ""), 9), i))
+
+    def rank(i):
+        sp = specs[i] or {}
+        app = sp.get("app", "")
+        if app in ("claude", "chatgpt") and sp.get("messages"):
+            return 0
+        code = str(sp.get("code") or "")
+        if app == "code" and code.strip() and "your code here" not in code:
+            return 1 if "claude" in code.lower() else 1.5  # a Claude Code command beats a random file
+        if app == "flow" and sp.get("nodes"):
+            return 2
+        if app == "api" and sp.get("url"):
+            return 3
+        if sp.get("rows"):
+            return 4
+        return 9
+    best = min(range(min(len(specs), len(shots))), key=lambda i: (rank(i), i))
     return shots[best].get("plain")
