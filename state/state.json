@@ -524,7 +524,9 @@
    "pillar": "claude_code_build",
    "engine": "flow",
    "job": "20261101-1640-6",
-   "created": "2026-11-01T16:41:50"
+   "created": "2026-11-01T16:41:50",
+   "video_id": "jIzVVIZkDg8",
+   "publish_at": "2026-11-06T21:30:00+05:30"
   }
  },
  "slots": [
@@ -765,6 +767,13 @@
    "minute": 450,
    "video_id": "sp6yUNtI9Gk",
    "title": "Run a Free AI Ad Studio with Claude #Shorts"
+  },
+  {
+   "date": "2026-11-06",
+   "window": "21:30",
+   "minute": 1290,
+   "video_id": "jIzVVIZkDg8",
+   "title": "Build E-commerce Inventory Tools with Claude Code #Shorts"
   }
  ],
  "failures": {},
@@ -773,8 +782,8 @@
  "photo_scenes": [],
  "photo_agent_error": "RuntimeError: image model unavailable: 404 NOT_FOUND. {'error': {'code': 404, 'm",
  "look_index": 43,
- "status_issue": 116,
- "status_line": "PIPELINE ideas=24 clips=3 editing=1 qa_failed=0 scheduled=8 published=26 total=34 today=2 next=2026-11-02T21:30",
+ "status_issue": 118,
+ "status_line": "PIPELINE ideas=24 clips=3 editing=0 qa_failed=0 scheduled=8 published=27 total=35 today=2 next=2026-11-03T07:30",
  "rotation": {
   "claude_wealth": 14,
   "claude_wealth_industry": 9,
