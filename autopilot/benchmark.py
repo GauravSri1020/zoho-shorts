@@ -182,6 +182,9 @@ def gate(mp4, sc, engine, tech_problems, voice="gemini"):
                   else f"Today the {_QA_PART} parts use a backup voice ('{voice}') because the AI-voice quota was used "
                   "up - a different voice on the screen parts is expected and NOT a blocker, but every part must be "
                   "clear, natural and at the same loudness.")
+    _COVER_NOTE = ("" if IS_ZOHO else "   NOTE: the first ~1 s is the Short's THUMBNAIL COVER on purpose (big title, the creator's photo, "
+                   "the Claude screen, slow push-in, the hook voice already playing, then a fade into the video) - it "
+                   "is not a frozen frame or a missing caption; judge it as the hook: does it stop the scroll?\n")
     prompt = f"""You are the senior video editor AND the strict final QA for the YouTube channel "{CHANNEL_NAME}"
 ({_QA_NICHE}). Watch the attached Short second by second - picture AND sound - exactly like a
 professional editor does before publishing. It is uploaded ONLY if it is as good as the best Shorts in the niche;
@@ -193,7 +196,7 @@ What the reference Shorts do (learned by watching them): {json.dumps(refs, ensur
 
 Editor's checklist - check EVERY point and give a timestamp (m:ss) for each defect:
 1. Picture: any black, blank or frozen frame (even 0.1 s), flash, glitch, broken cut, Flow watermark, head / hands cut off.
-2. Presenter: lips match every word, natural face and hands (no morphing, extra fingers), gestures fit the words,
+{_COVER_NOTE}2. Presenter: lips match every word, natural face and hands (no morphing, extra fingers), gestures fit the words,
    the SAME outfit and background in every presenter shot.
 3. Voice: {voice_rule} Also: no sudden loudness jump, click / pop, cut-off word, robotic word, silence over 0.8 s.
 4. Screens: {_QA_SCREENS}.

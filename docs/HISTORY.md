@@ -6,6 +6,28 @@ Is file ko har session ke end pe update karo, taaki agla chat yahin se shuru kar
 
 Gaurav jab bhi kuch bhi change karne bole: SABSE PEHLE backup - `backup-YYYY-MM-DD-<kya-badal-rahe-ho>` branch main se banao (aur agar video ka kaam hai to latest Short ka artifact download karo). Tabhi code chhuo. Kuch bigde to us branch se purana code wapas lo.
 
+## 2 Nov 2026 raat - Shorts ka THUMBNAIL / cover (Gaurav ka chehra + title + Claude screen)
+
+Backup: branch `backup-2026-11-02-before-shorts-thumbnail` (change se pehle ka main).
+Gaurav: Shorts feed mein jo pehla frame dikhta hai wahi "thumbnail" hai - wo ek plain screen card tha, koi rukta nahi.
+Chahiye: title likha ho + meri photo + main Claude screen dikha raha hoon (jaise "WhatsApp automation on real estate").
+- Naya `autopilot/thumbnail.py`: 1080x1920 cover - bada uppercase title (key words yellow marker pe), Gaurav ka
+  cut-out (neeche, ek side), Short ki apni Claude screen tilted card mein (chat > code > chain > pehli screen),
+  yellow arrow, aur "$2,000 PER MONTH" sticker jab title / SELL / MATH card mein price ho. Rang = segment accent.
+- Photos: `assets/presenter/` (5 poses: point_up, point_you, wow, open_hands, arms_crossed) - uske apne Flow avatar
+  clips se frame nikaal ke rembg (u2net_human_seg) se background hataya, Veo watermark crop. index.yaml = side.
+  Nayi pose: transparent PNG + ek line index.yaml mein. Pose title ke hash se rotate hoti hai.
+- composer.py (sirf Claude niche, Zoho waisa hi): Short ka pehla ~1 s = cover (halka zoom-in, hook voice neeche chal
+  rahi, phir 0.2 s fade) -> feed / grid mein pehla frame hi thumbnail. Length / voice sync same. Cover fail ho to
+  Short bina cover ke banta hai (kabhi block nahi).
+- Upload ke baad `g.set_thumbnail` cover.jpg ko custom thumbnail bhi lagata hai (best effort; channel phone-verified
+  na ho ya Shorts ignore kare to sirf log). cover.jpg artifacts + previews branch mein bhi.
+- Writer (Claude niche) ab `thumb_text` deta hai (3-6 words, *key words* stars mein). Purane scripts: title se
+  chhota text (":" / "that" pe kaat, max 7 words, "with Claude" hata ke).
+- QA prompt: pehla ~1 s cover jaan-boojh ke hai - frozen frame nahi.
+- Test (local): 3 purane scripts se covers + ek poora render (24.9 s = voice length, cover 0-1 s, phir Short).
+- Pehla asli Short with cover: agla daily run (14:30 IST). Jo Shorts pehle se YouTube pe schedule hain unpe cover nahi.
+
 ## 1 Nov 2026 raat (21:00+) - v4: faceless 2/day + audience segments + YouTube schedule
 
 Gaurav: dono Claude Shorts YouTube pe schedule karo; wealth niche B2B (CEO / business owner) + salaried investor

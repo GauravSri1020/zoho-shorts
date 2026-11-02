@@ -70,6 +70,18 @@ def upload(yt, video_path, title, description, tags, publish_at, localizations=N
     return resp["id"]
 
 
+def set_thumbnail(yt, video_id, jpg):
+    """Custom thumbnail (cover.jpg). Best effort: YouTube may refuse it (channel not phone-verified, or Shorts
+    feed ignoring it) - the Short already OPENS on the same cover, so a refusal is only logged, never fatal."""
+    try:
+        yt.thumbnails().set(videoId=video_id, media_body=MediaFileUpload(str(jpg), mimetype="image/jpeg")).execute()
+        print(f"[yt] thumbnail set for {video_id}")
+        return True
+    except Exception as e:
+        print(f"[yt] thumbnail not set ({str(e)[:200]}) - the Short still opens on its cover frame")
+        return False
+
+
 def scheduled_times(yt, days_back=3):
     """[(video_id, aware datetime)] of every upload that is scheduled (private + publishAt) or went public in the
     last days_back days. The scheduler counts these so a day never gets more than schedule.per_day videos - also

@@ -114,6 +114,7 @@ jobs:
             out/**/short.mp4
             out/**/short.json
             out/**/qa.json
+            out/**/cover.jpg
           retention-days: 7
           if-no-files-found: ignore
 
@@ -127,7 +128,7 @@ jobs:
           tmp=$(mktemp -d)
           git clone -q --depth 1 -b previews "$remote" "$tmp" 2>/dev/null || { git init -q "$tmp"; git -C "$tmp" checkout -q -b previews; }
           rm -rf "$tmp/.git"
-          for f in "${files[@]}"; do d=$(dirname "$f"); id=$(basename "$d"); mkdir -p "$tmp/$id"; cp "$f" "$tmp/$id/"; cp "$d"/qa.json "$d"/short.json "$tmp/$id/" 2>/dev/null || true; done
+          for f in "${files[@]}"; do d=$(dirname "$f"); id=$(basename "$d"); mkdir -p "$tmp/$id"; cp "$f" "$tmp/$id/"; cp "$d"/qa.json "$d"/short.json "$d"/cover.jpg "$tmp/$id/" 2>/dev/null || true; done
           cd "$tmp" && ls -1dt */ | tail -n +7 | xargs -r rm -rf   # keep the newest 6 Shorts
           git init -q && git checkout -q -b previews && git add -A
           git -c user.name=shorts-bot -c user.email=shorts-bot@users.noreply.github.com commit -qm "previews $(date -u +%F-%H%M) run ${GITHUB_RUN_ID}"

@@ -353,6 +353,7 @@ Return JSON:
 {{
  "title": "YouTube title, max 70 chars, curiosity + honest (no 'guaranteed', no '$10k/month easy'), may name Claude",
  "hook_text": "max 6 words shown big at the top of the video",
+ "thumb_text": "3-6 words for the THUMBNAIL (huge letters + creator photo + Claude screen): WHO / WHAT money, e.g. 'WhatsApp Bot for *Real Estate*' or '*$500/mo* Podcast Clip Service' - wrap the 1-3 key words in *stars* (they get a yellow marker); honest, no 'easy money'",
  "app_label": "short label for the top tag, e.g. 'Claude Skills' or 'Claude Code'",
  "lines": [{{"beat": "HOOK|SELL|CLIENTS|PROBLEM|FIX|STEP 1|STEP 2|STEP 3|MATH|RESULT", "say": "Roman text",
             "tts": "text for the voice engine", "card": "on-screen text",

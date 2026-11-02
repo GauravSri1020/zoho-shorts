@@ -14,6 +14,7 @@ Two kinds of shots, cut together:
       | +----------------------------+ |
       +--------------------------------+
 Word-timed captions at the bottom for the whole video, soft background music ducked under the voice.
+Claude niche: the first ~1 s is the thumbnail cover (autopilot/thumbnail.py: title + Gaurav + Claude screen).
 """
 import json
 import random
@@ -298,6 +299,21 @@ def _layers_v2(hook, workdir: Path, app_label, sc):
     return bg, fg
 
 
+def _cover(sc, specs, shots, workdir: Path):
+    """Thumbnail cover (autopilot/thumbnail.py) - Claude niche only; the Zoho niche stays exactly as it was.
+    A cover problem never blocks a Short: it is then simply built without the cover, as before."""
+    if IS_ZOHO:
+        return None
+    try:
+        from . import thumbnail
+        from .niche_claude_wealth import accent_for
+        return thumbnail.cover(sc, workdir, thumbnail.screen_for_cover(specs, shots), accent=accent_for(sc),
+                               handle=CHANNEL_HANDLE, label="Claude")
+    except Exception as e:
+        print(f"[cover] skipped: {str(e)[:200]}")
+        return None
+
+
 def _title_html(hook):
     import html as h
     ws = hook.split()
@@ -450,12 +466,23 @@ def render(sc, lines, words, avatar_mp4, voice_wav, workdir: Path, out_path: Pat
     build_ass(words, lines, times, segs, ass, hook)
     mus = music.pick(dur + 1, workdir, seed)
     ass_arg = str(ass.resolve()).replace(":", r"\:").replace("'", r"\'")
-    fc = (f"[0:v]ass='{ass_arg}'[v];"
+    cover = _cover(sc, specs, shots, workdir)
+    cin, cfc = [], ""
+    if cover:  # 2 Nov 2026: the Short OPENS on its thumbnail (title + Gaurav + Claude screen) - that first frame is
+        # what the Shorts feed / channel grid shows. ~1 s with a gentle push-in (never a frozen frame), the hook voice
+        # already plays under it, then it fades into the Short. Video length / voice sync do not change.
+        from .thumbnail import INTRO
+        n = int(INTRO * FPS)
+        cin = ["-loop", "1", "-framerate", str(FPS), "-t", f"{INTRO:.2f}", "-i", str(cover)]
+        cfc = (f"[3:v]scale={W * 2}:{H * 2},zoompan=z='1+0.045*on/{n}':x='iw/2-iw/zoom/2':y='ih/2-ih/zoom/2':d=1:"
+               f"s={W}x{H}:fps={FPS},format=yuva420p,fade=t=out:st={INTRO - 0.2:.2f}:d=0.2:alpha=1[cv];"
+               f"[vc][cv]overlay=0:0:eof_action=pass[v];")
+    fc = (f"[0:v]ass='{ass_arg}'[{'vc' if cover else 'v'}];{cfc}"
           f"[2:a]aformat=sample_rates=44100:channel_layouts=stereo,volume={MUSIC_VOL:.2f}[m];"
           f"[1:a]aformat=sample_rates=44100:channel_layouts=stereo,asplit=2[vo][sc];"
           f"[m][sc]sidechaincompress=threshold=0.03:ratio=8:attack=20:release=400[md];"
           f"[vo][md]amix=inputs=2:duration=first:normalize=0,alimiter=limit=0.95[aout]")
-    _run(_ff("-i", str(video), "-i", str(voice_wav), "-stream_loop", "-1", "-i", str(mus),
+    _run(_ff("-i", str(video), "-i", str(voice_wav), "-stream_loop", "-1", "-i", str(mus), *cin,
              "-filter_complex", fc, "-map", "[v]", "-map", "[aout]",
              "-t", f"{dur:.3f}", "-c:v", "libx264", "-preset", "medium", "-crf", "19", "-pix_fmt", "yuv420p",
              "-r", str(FPS), "-c:a", "aac", "-b:a", "192k", "-movflags", "+faststart", str(out_path)))

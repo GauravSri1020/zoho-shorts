@@ -555,6 +555,8 @@ def build(job, files, work: Path):
     words = editor.align_to_script(editor.transcribe(voice, work), script_text, voice)
     mp4 = work / "short.mp4"
     composer.render(job["script"], lines, words, av, voice, work / "edit", mp4, timeline=timeline)
+    if (work / "edit" / "cover.jpg").exists():  # thumbnail next to short.mp4 (artifacts / previews / YouTube)
+        shutil.copy(work / "edit" / "cover.jpg", work / "cover.jpg")
     return mp4, notes
 
 
@@ -691,6 +693,8 @@ def finish():
                     loc = {}
                 vid = g.upload(yt, mp4, job["title"], job["description"], tags, schedule.to_rfc3339_utc(when),
                                localizations=loc)
+                if (work / "cover.jpg").exists():  # 2 Nov 2026: the cover (title + Gaurav + Claude screen)
+                    g.set_thumbnail(yt, vid, work / "cover.jpg")
                 st["slots"].append(slot | {"video_id": vid, "title": job["title"]})
                 for v in st["scripts"].values():
                     if v.get("job") == job["id"]:

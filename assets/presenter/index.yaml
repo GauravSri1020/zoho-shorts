@@ -1,0 +1,11 @@
+# Gaurav's presenter cut-outs for the Shorts cover / thumbnail (autopilot/thumbnail.py).
+# Cut from his own Flow avatar clips (jobs/*/clips), background removed (rembg u2net_human_seg), Veo watermark cropped.
+# side: where he stands on the cover - left / right (screen goes on the other side) or any.
+# width: optional, px on the 1080 px wide cover (default 760).
+# Add a new pose: transparent PNG here (waist-up, bottom edge = cut) + one line below.
+poses:
+  - {file: point_up.png, side: left, mood: "pointing at the screen, smiling"}
+  - {file: point_you.png, side: any, mood: "pointing at the viewer"}
+  - {file: wow.png, side: any, mood: "surprised / curious"}
+  - {file: open_hands.png, side: any, mood: "open hands, explaining"}
+  - {file: arms_crossed.png, side: any, mood: "confident, white shirt"}
