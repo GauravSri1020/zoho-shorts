@@ -1,5 +1,5 @@
 {
- "next_id": 49,
+ "next_id": 51,
  "covered_links": [
   "https://www.reddit.com/r/Zoho/comments/1wzd94y/sales_order_or_invoice/",
   "https://www.reddit.com/r/Zoho/comments/1wwjbbr/accounting_of_travel_agent/",
@@ -39,7 +39,9 @@
   "bank:local businesses still have no proper website and you have 2",
   "bank:small businesses want to post daily but nobody has time to w",
   "bank:you want a side income at night after your job without showi",
-  "bank:everyone wants a saas but nobody finishes one"
+  "bank:everyone wants a saas but nobody finishes one",
+  "bank:businesses drown in invoices contracts and forms that someon",
+  "bank:busy professionals waste 10 hours a week on the same tasks"
  ],
  "problems": [
   "Zoho Books me online paid sales orders direct closed invoice me convert nahi hote.",
@@ -89,7 +91,9 @@
   "Restaurant owners struggle with inventory recipes and menu variants that waste food and time",
   "Small businesses want to post daily on social media but nobody has time to write 30 posts",
   "Local businesses waste money on ads that fail because they don't know what their competitors are doing",
-  "E-commerce store owners spend hours building custom inventory alerts and order scripts manually"
+  "E-commerce store owners spend hours building custom inventory alerts and order scripts manually",
+  "Claude confidently invents case citations and wrong clause interpretations that end up in client documents",
+  "Tutors and course creators spend hours building quizzes and grading assignments manually"
  ],
  "scripts": {
   "S0001": {
@@ -527,6 +531,26 @@
    "created": "2026-11-01T16:41:50",
    "video_id": "jIzVVIZkDg8",
    "publish_at": "2026-11-06T21:30:00+05:30"
+  },
+  "S0049": {
+   "problem": "Claude confidently invents case citations and wrong clause interpretations that end up in client documents",
+   "title": "Claude Legal Summaries: Earn $1K Retainers Without Practising Law #Shorts",
+   "pillar": "freelance_speed",
+   "engine": "flow",
+   "job": "20261103-1651-1",
+   "created": "2026-11-03T16:53:06",
+   "video_id": "Z-x-EdkHGQA",
+   "publish_at": "2026-11-07T07:30:00+05:30"
+  },
+  "S0050": {
+   "problem": "Tutors and course creators spend hours building quizzes and grading assignments manually",
+   "title": "Build Custom Claude AI Assistants for Tutors (Step by Step) #Shorts",
+   "pillar": "skills_product",
+   "engine": "flow",
+   "job": "20261103-1653-2",
+   "created": "2026-11-03T16:56:09",
+   "video_id": "5C7yruP-A60",
+   "publish_at": "2026-11-07T21:30:00+05:30"
   }
  },
  "slots": [
@@ -774,6 +798,20 @@
    "minute": 1290,
    "video_id": "jIzVVIZkDg8",
    "title": "Build E-commerce Inventory Tools with Claude Code #Shorts"
+  },
+  {
+   "date": "2026-11-07",
+   "window": "07:30",
+   "minute": 450,
+   "video_id": "Z-x-EdkHGQA",
+   "title": "Claude Legal Summaries: Earn $1K Retainers Without Practising Law #Shorts"
+  },
+  {
+   "date": "2026-11-07",
+   "window": "21:30",
+   "minute": 1290,
+   "video_id": "5C7yruP-A60",
+   "title": "Build Custom Claude AI Assistants for Tutors (Step by Step) #Shorts"
   }
  ],
  "failures": {},
@@ -781,12 +819,12 @@
  "last_photo": "1_jacket.jpg",
  "photo_scenes": [],
  "photo_agent_error": "RuntimeError: image model unavailable: 404 NOT_FOUND. {'error': {'code': 404, 'm",
- "look_index": 43,
- "status_issue": 119,
- "status_line": "PIPELINE ideas=24 clips=3 editing=0 qa_failed=0 scheduled=7 published=28 total=35 today=2 next=2026-11-03T21:30",
+ "look_index": 45,
+ "status_issue": 122,
+ "status_line": "PIPELINE ideas=24 clips=3 editing=0 qa_failed=0 scheduled=8 published=29 total=37 today=2 next=2026-11-04T07:30",
  "rotation": {
-  "claude_wealth": 14,
-  "claude_wealth_industry": 9,
-  "claude_wealth_segment": 9
+  "claude_wealth": 16,
+  "claude_wealth_industry": 11,
+  "claude_wealth_segment": 11
  }
 }
