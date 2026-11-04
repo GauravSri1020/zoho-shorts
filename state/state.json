@@ -1,5 +1,5 @@
 {
- "next_id": 51,
+ "next_id": 53,
  "covered_links": [
   "https://www.reddit.com/r/Zoho/comments/1wzd94y/sales_order_or_invoice/",
   "https://www.reddit.com/r/Zoho/comments/1wwjbbr/accounting_of_travel_agent/",
@@ -41,7 +41,9 @@
   "bank:you want a side income at night after your job without showi",
   "bank:everyone wants a saas but nobody finishes one",
   "bank:businesses drown in invoices contracts and forms that someon",
-  "bank:busy professionals waste 10 hours a week on the same tasks"
+  "bank:busy professionals waste 10 hours a week on the same tasks",
+  "https://news.google.com/rss/articles/CBMirwJBVV95cUxOQmtwU201Rm8zX2dFeGRGay0wY0F2UVZ2V0wydFFNVEU1Q1d1SzJlQmgwT0JhUnB3eHF2X3BmdGFQZ2dMajR4UHp1by1rUmlMZHBqd2Z1VkRwYlRhVmkxUG9GWE93X3JNd3dFbExob0VPcl9KN1czbFlJdXpqbTJxU1hCTTNSMWIxaEs4SHdoYVAwMlI2cEQ3dDlVVUF0bDdnV0RDOTBnQWpmUGJtSmZLOWQ5QUItTDhxWlN2ZEdhMTNuMGEwQ0gweDZvVWRLRWVZQ1BMeTNETzA2MTlwTnAxYXEyNTFFRFZUZTl1eDJMV0hCVExYRkFnazFKZjBybGRlQ2JWUG9BM2Y4U0MzOVF0NEJVRDV4RVNHNDBKczBRbk03di0zV0ppd1A2N3lCZ1k?oc=5",
+  "https://news.google.com/rss/articles/CBMiuwFBVV95cUxPbkRTbnBaVVk2ZEkzamZJZXpfMWlpWDJuRXJLa3RnUEI2SGJvYVJrd3dhUWhsRUh0Qi1NS0x1ZnJDTUNsY0FpUkVOaGpraTRzXy1ZV2g1bFhMemdEeWUwZzI1QkxRNExMSmxKUzYyeEEtUzJqTG1nS1NrcGRrWTRuMHhrcHJQQ1B6OFlwbXVjVXoxQjYzUTdJb0NCRFF4Q0lfUmRrd2ZMSXdtS25YR25HVjN2OU52SEp3Sncw?oc=5"
  ],
  "problems": [
   "Zoho Books me online paid sales orders direct closed invoice me convert nahi hote.",
@@ -93,7 +95,9 @@
   "Local businesses waste money on ads that fail because they don't know what their competitors are doing",
   "E-commerce store owners spend hours building custom inventory alerts and order scripts manually",
   "Claude confidently invents case citations and wrong clause interpretations that end up in client documents",
-  "Tutors and course creators spend hours building quizzes and grading assignments manually"
+  "Tutors and course creators spend hours building quizzes and grading assignments manually",
+  "HR recruiters spend 15 hours a week manually parsing candidate resumes against complex job rubrics.",
+  "Local shop owners waste weekends retyping raw bank statement exports into spreadsheet accounting categories."
  ],
  "scripts": {
   "S0001": {
@@ -551,6 +555,26 @@
    "created": "2026-11-03T16:56:09",
    "video_id": "5C7yruP-A60",
    "publish_at": "2026-11-07T21:30:00+05:30"
+  },
+  "S0051": {
+   "problem": "HR recruiters spend 15 hours a week manually parsing candidate resumes against complex job rubrics.",
+   "title": "Automate Resume Screening with Claude Skills (No-Code HR Ops) #Shorts",
+   "pillar": "open_source_skills",
+   "engine": "flow",
+   "job": "20261104-1648-1",
+   "created": "2026-11-04T16:52:31",
+   "video_id": "EGdx-HcnXqQ",
+   "publish_at": "2026-11-08T07:30:00+05:30"
+  },
+  "S0052": {
+   "problem": "Local shop owners waste weekends retyping raw bank statement exports into spreadsheet accounting categories.",
+   "title": "Turn Bank Statements Into CSV Fast Using Free Claude #Shorts",
+   "pillar": "freelance_speed",
+   "engine": "flow",
+   "job": "20261104-1652-2",
+   "created": "2026-11-04T16:54:30",
+   "video_id": "LXFqrAll-ec",
+   "publish_at": "2026-11-08T21:30:00+05:30"
   }
  },
  "slots": [
@@ -812,6 +836,20 @@
    "minute": 1290,
    "video_id": "5C7yruP-A60",
    "title": "Build Custom Claude AI Assistants for Tutors (Step by Step) #Shorts"
+  },
+  {
+   "date": "2026-11-08",
+   "window": "07:30",
+   "minute": 450,
+   "video_id": "EGdx-HcnXqQ",
+   "title": "Automate Resume Screening with Claude Skills (No-Code HR Ops) #Shorts"
+  },
+  {
+   "date": "2026-11-08",
+   "window": "21:30",
+   "minute": 1290,
+   "video_id": "LXFqrAll-ec",
+   "title": "Turn Bank Statements Into CSV Fast Using Free Claude #Shorts"
   }
  ],
  "failures": {},
@@ -819,12 +857,12 @@
  "last_photo": "1_jacket.jpg",
  "photo_scenes": [],
  "photo_agent_error": "RuntimeError: image model unavailable: 404 NOT_FOUND. {'error': {'code': 404, 'm",
- "look_index": 45,
- "status_issue": 123,
- "status_line": "PIPELINE ideas=24 clips=3 editing=0 qa_failed=0 scheduled=7 published=30 total=37 today=2 next=2026-11-04T21:30",
+ "look_index": 47,
+ "status_issue": 126,
+ "status_line": "PIPELINE ideas=24 clips=3 editing=0 qa_failed=0 scheduled=8 published=31 total=39 today=2 next=2026-11-05T07:30",
  "rotation": {
-  "claude_wealth": 16,
-  "claude_wealth_industry": 11,
-  "claude_wealth_segment": 11
+  "claude_wealth": 18,
+  "claude_wealth_industry": 13,
+  "claude_wealth_segment": 13
  }
 }
