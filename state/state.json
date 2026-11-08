@@ -877,8 +877,8 @@
  "photo_scenes": [],
  "photo_agent_error": "RuntimeError: image model unavailable: 404 NOT_FOUND. {'error': {'code': 404, 'm",
  "look_index": 48,
- "status_issue": 133,
- "status_line": "PIPELINE ideas=24 clips=3 editing=0 qa_failed=0 scheduled=3 published=37 total=40 today=2 next=2026-11-08T07:30",
+ "status_issue": 134,
+ "status_line": "PIPELINE ideas=24 clips=3 editing=0 qa_failed=0 scheduled=2 published=38 total=40 today=2 next=2026-11-08T21:30",
  "rotation": {
   "claude_wealth": 19,
   "claude_wealth_industry": 14,
