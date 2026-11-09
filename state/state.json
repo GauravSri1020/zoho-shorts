@@ -1,5 +1,5 @@
 {
- "next_id": 54,
+ "next_id": 56,
  "covered_links": [
   "https://www.reddit.com/r/Zoho/comments/1wzd94y/sales_order_or_invoice/",
   "https://www.reddit.com/r/Zoho/comments/1wwjbbr/accounting_of_travel_agent/",
@@ -44,7 +44,9 @@
   "bank:busy professionals waste 10 hours a week on the same tasks",
   "https://news.google.com/rss/articles/CBMirwJBVV95cUxOQmtwU201Rm8zX2dFeGRGay0wY0F2UVZ2V0wydFFNVEU1Q1d1SzJlQmgwT0JhUnB3eHF2X3BmdGFQZ2dMajR4UHp1by1rUmlMZHBqd2Z1VkRwYlRhVmkxUG9GWE93X3JNd3dFbExob0VPcl9KN1czbFlJdXpqbTJxU1hCTTNSMWIxaEs4SHdoYVAwMlI2cEQ3dDlVVUF0bDdnV0RDOTBnQWpmUGJtSmZLOWQ5QUItTDhxWlN2ZEdhMTNuMGEwQ0gweDZvVWRLRWVZQ1BMeTNETzA2MTlwTnAxYXEyNTFFRFZUZTl1eDJMV0hCVExYRkFnazFKZjBybGRlQ2JWUG9BM2Y4U0MzOVF0NEJVRDV4RVNHNDBKczBRbk03di0zV0ppd1A2N3lCZ1k?oc=5",
   "https://news.google.com/rss/articles/CBMiuwFBVV95cUxPbkRTbnBaVVk2ZEkzamZJZXpfMWlpWDJuRXJLa3RnUEI2SGJvYVJrd3dhUWhsRUh0Qi1NS0x1ZnJDTUNsY0FpUkVOaGpraTRzXy1ZV2g1bFhMemdEeWUwZzI1QkxRNExMSmxKUzYyeEEtUzJqTG1nS1NrcGRrWTRuMHhrcHJQQ1B6OFlwbXVjVXoxQjYzUTdJb0NCRFF4Q0lfUmRrd2ZMSXdtS25YR25HVjN2OU52SEp3Sncw?oc=5",
-  "https://news.google.com/rss/articles/CBMijwFBVV95cUxPM1hFNlQ5dlVoQWpSeV9fOUp5eERaU0w1RzZHSC1VT3lFY0pzN0JhS3A2MHN3TlpwSFhiT2dvQ3VYc3ZfOUkxUWN3YktDVEN0bWEtVVJVUVAxeWNLQWRIc2tXbWpkYWFKeUh0NHpEUnlXS3hwRmI3UGpjc2pqODdvaEZ1dGlGckIzMWhrTThjcw?oc=5"
+  "https://news.google.com/rss/articles/CBMijwFBVV95cUxPM1hFNlQ5dlVoQWpSeV9fOUp5eERaU0w1RzZHSC1VT3lFY0pzN0JhS3A2MHN3TlpwSFhiT2dvQ3VYc3ZfOUkxUWN3YktDVEN0bWEtVVJVUVAxeWNLQWRIc2tXbWpkYWFKeUh0NHpEUnlXS3hwRmI3UGpjc2pqODdvaEZ1dGlGckIzMWhrTThjcw?oc=5",
+  "bank:viral posts say claude turned 2000 into 12000 overnight trad",
+  "bank:developers want a side project that pays not another todo ap"
  ],
  "problems": [
   "Zoho Books me online paid sales orders direct closed invoice me convert nahi hote.",
@@ -99,7 +101,9 @@
   "Tutors and course creators spend hours building quizzes and grading assignments manually",
   "HR recruiters spend 15 hours a week manually parsing candidate resumes against complex job rubrics.",
   "Local shop owners waste weekends retyping raw bank statement exports into spreadsheet accounting categories.",
-  "Health-tech investors and clinic owners assume Claude can process patient intake and insurance coding automatically without legal risk."
+  "Health-tech investors and clinic owners assume Claude can process patient intake and insurance coding automatically without legal risk.",
+  "Clinic owners and health-tech investors assume Claude can process patient intake and insurance coding automatically without legal risk.",
+  "Developers build generic side apps that generate zero revenue because they solve no paying problem."
  ],
  "scripts": {
   "S0001": {
@@ -587,6 +591,26 @@
    "created": "2026-11-05T17:19:17",
    "video_id": "GZifHGCyctY",
    "publish_at": "2026-11-09T07:30:00+05:30"
+  },
+  "S0054": {
+   "problem": "Clinic owners and health-tech investors assume Claude can process patient intake and insurance coding automatically without legal risk.",
+   "title": "Can Claude Run Clinic Admin Without Legal Risk? #Shorts",
+   "pillar": "problems",
+   "engine": "flow",
+   "job": "20261109-1928-1",
+   "created": "2026-11-09T19:37:44",
+   "video_id": "Dy6NqlXLRtM",
+   "publish_at": "2026-11-10T07:30:00+05:30"
+  },
+  "S0055": {
+   "problem": "Developers build generic side apps that generate zero revenue because they solve no paying problem.",
+   "title": "Build a Paid Claude API Document Extraction Tool #Shorts",
+   "pillar": "claude_code_build",
+   "engine": "flow",
+   "job": "20261109-1937-2",
+   "created": "2026-11-09T19:51:28",
+   "video_id": "6-nZhetyLJ4",
+   "publish_at": "2026-11-10T21:30:00+05:30"
   }
  },
  "slots": [
@@ -869,6 +893,20 @@
    "minute": 450,
    "video_id": "GZifHGCyctY",
    "title": "Is Healthcare AI Admin Safe? Audit Before You Build #Shorts"
+  },
+  {
+   "date": "2026-11-10",
+   "window": "07:30",
+   "minute": 450,
+   "video_id": "Dy6NqlXLRtM",
+   "title": "Can Claude Run Clinic Admin Without Legal Risk? #Shorts"
+  },
+  {
+   "date": "2026-11-10",
+   "window": "21:30",
+   "minute": 1290,
+   "video_id": "6-nZhetyLJ4",
+   "title": "Build a Paid Claude API Document Extraction Tool #Shorts"
   }
  ],
  "failures": {},
@@ -876,12 +914,12 @@
  "last_photo": "1_jacket.jpg",
  "photo_scenes": [],
  "photo_agent_error": "RuntimeError: image model unavailable: 404 NOT_FOUND. {'error': {'code': 404, 'm",
- "look_index": 48,
- "status_issue": 137,
- "status_line": "PIPELINE ideas=24 clips=3 editing=0 qa_failed=0 scheduled=0 published=40 total=40 today=1 next=-",
+ "look_index": 50,
+ "status_issue": 140,
+ "status_line": "PIPELINE ideas=24 clips=3 editing=0 qa_failed=0 scheduled=2 published=40 total=42 today=2 next=2026-11-10T07:30",
  "rotation": {
-  "claude_wealth": 19,
-  "claude_wealth_industry": 14,
-  "claude_wealth_segment": 14
+  "claude_wealth": 21,
+  "claude_wealth_industry": 16,
+  "claude_wealth_segment": 16
  }
 }
