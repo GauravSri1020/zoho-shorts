@@ -27,12 +27,12 @@ STYLE = str(_F.get("voice_style", "Say this like a friendly, energetic YouTube t
 BACKUP_VOICE = str(_F.get("backup_voice", "en-GB-RyanNeural"))
 PIPER_VOICE = str(_F.get("piper_voice", "en_US-ryan-high"))
 PIPER_DIR = Path(os.getenv("PIPER_DIR", str(Path.home() / ".cache" / "piper")))
-# 10 Nov 2026: the 2.5 preview TTS models now answer generate_content + speech_config with 400 "Unknown name
-# speechConfig" (every Short fell back to the edge voice). Current models = Gemini 3.8 TTS (Sep 2026) through the
-# Interactions API (client.interactions.create), same prebuilt voices (Achird is still there). Old ones stay last.
+# 10 Nov 2026: 400 "Unknown name speechConfig" = google-genai 3.x talks to API v1 by default (fixed: v1beta in
+# _gemini). The 2.5 models (the voice of every earlier Short) stay first; Gemini 3.8 TTS through the Interactions
+# API (client.interactions.create, same prebuilt voices incl. Achird) is the fallback.
 MODELS = [m for m in [os.getenv("TTS_MODEL", ""), *(_F.get("tts_models") or []),
-                      "gemini-3.8-flash-tts", "gemini-3.8-flash-lite-tts", "gemini-3.1-flash-tts-preview",
-                      "gemini-2.5-flash-preview-tts", "gemini-2.5-pro-preview-tts"] if m]
+                      "gemini-2.5-flash-preview-tts", "gemini-2.5-pro-preview-tts",
+                      "gemini-3.8-flash-tts", "gemini-3.8-flash-lite-tts", "gemini-3.1-flash-tts-preview"] if m]
 MODELS = list(dict.fromkeys(MODELS))  # no duplicates
 
 _DAY_OUT = set()  # Gemini TTS models whose DAILY quota is used up in this run
@@ -94,7 +94,9 @@ def _gemini(text, raw: Path):
     from google.genai import types
     if not GEMINI_API_KEY:
         raise RuntimeError("GEMINI_API_KEY missing")
-    client = genai.Client(api_key=GEMINI_API_KEY)
+    # google-genai 3.x defaults to API "v1", which has no speechConfig (-> 400 "Unknown name speechConfig" since
+    # ~Nov 2026). TTS lives in v1beta.
+    client = genai.Client(api_key=GEMINI_API_KEY, http_options=types.HttpOptions(api_version="v1beta"))
     models = [m for m in MODELS if m not in _DAY_OUT]
     last, waited, attempt = None, 0.0, 0
     while models and attempt < 8:
