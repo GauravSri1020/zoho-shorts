@@ -27,7 +27,11 @@ STYLE = str(_F.get("voice_style", "Say this like a friendly, energetic YouTube t
 BACKUP_VOICE = str(_F.get("backup_voice", "en-GB-RyanNeural"))
 PIPER_VOICE = str(_F.get("piper_voice", "en_US-ryan-high"))
 PIPER_DIR = Path(os.getenv("PIPER_DIR", str(Path.home() / ".cache" / "piper")))
+# 10 Nov 2026: the 2.5 preview TTS models now answer generate_content + speech_config with 400 "Unknown name
+# speechConfig" (every Short fell back to the edge voice). Current models = Gemini 3.8 TTS (Sep 2026) through the
+# Interactions API (client.interactions.create), same prebuilt voices (Achird is still there). Old ones stay last.
 MODELS = [m for m in [os.getenv("TTS_MODEL", ""), *(_F.get("tts_models") or []),
+                      "gemini-3.8-flash-tts", "gemini-3.8-flash-lite-tts", "gemini-3.1-flash-tts-preview",
                       "gemini-2.5-flash-preview-tts", "gemini-2.5-pro-preview-tts"] if m]
 MODELS = list(dict.fromkeys(MODELS))  # no duplicates
 
@@ -57,6 +61,34 @@ def _retry_after(msg, default=20.0):
     return min(float(m.group(1)) + 1.0, 65.0) if m else default
 
 
+def _interactions_model(model):
+    return model.startswith(("gemini-3.8", "gemini-3.1")) and model.endswith(("-tts", "-tts-preview"))
+
+
+def _gemini_interactions(client, model, text, raw: Path):
+    """Gemini 3.x TTS (Interactions API): the verbatim line in "input", the delivery style as a speech_metadata
+    annotation (so the style is never read aloud), the prebuilt voice in generation_config.speech_config.
+    Unary answer = audio/wav (RIFF, 24 kHz mono 16-bit), base64 in interaction.output_audio.data."""
+    import base64
+    it = client.interactions.create(
+        model=model,
+        input=[{"type": "user_input",
+                "content": [{"type": "text", "text": text,
+                             "annotations": [{"type": "speech_metadata", "style": STYLE}]}]}],
+        response_format={"type": "audio"},
+        generation_config={"speech_config": [{"voice": VOICE}]})
+    audio = getattr(it, "output_audio", None)
+    data = getattr(audio, "data", None) if audio is not None else None
+    if isinstance(data, str):
+        data = base64.b64decode(data)
+    if not data or len(data) < 4800:  # < 0.1 s of audio = nothing usable came back
+        raise RuntimeError("Gemini returned no audio")
+    if data[:4] == b"RIFF":
+        raw.write_bytes(data)
+    else:  # headerless 16-bit PCM (older default) -> wrap it
+        _pcm_to_wav(data, raw, 24000)
+
+
 def _gemini(text, raw: Path):
     from google import genai
     from google.genai import types
@@ -69,6 +101,9 @@ def _gemini(text, raw: Path):
         model = models[attempt % len(models)]
         attempt += 1
         try:
+            if _interactions_model(model):
+                _gemini_interactions(client, model, text, raw)
+                return
             r = client.models.generate_content(
                 model=model, contents=f"{STYLE}: {text}",
                 config=types.GenerateContentConfig(

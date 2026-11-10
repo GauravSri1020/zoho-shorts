@@ -124,10 +124,21 @@ def _assemble_other_niches():
 
 def main(argv=None):
     p = argparse.ArgumentParser()
-    p.add_argument("task", choices=["daily", "comments", "assemble"])
+    p.add_argument("task", choices=["daily", "comments", "assemble", "ttstest"])
     p.add_argument("--count", type=int, default=SCRIPTS_PER_DAY)
     p.add_argument("--no-upload", action="store_true")
     a = p.parse_args(argv)
+    if a.task == "ttstest":  # 10 Nov 2026: check the Gemini screen voice without building a Short
+        import wave
+        from pathlib import Path
+        from . import tts
+        out = Path(OUT_DIR) / "tts_test.raw.wav"
+        out.parent.mkdir(parents=True, exist_ok=True)
+        tts._gemini("Zoho Campaigns now supports MCP, so a connected AI agent can build campaigns for you.", out)
+        with wave.open(str(out)) as w:
+            print(f"[ttstest] OK - Gemini voice {tts.VOICE}: {w.getnframes() / w.getframerate():.1f} s, "
+                  f"{w.getframerate()} Hz (models tried in order: {tts.MODELS})")
+        return 0
     try:
         if a.task == "daily":  # script + Flow prompts -> GitHub issue (you make the clips in Flow)
             flow.prepare(max(1, a.count), not a.no_upload)
