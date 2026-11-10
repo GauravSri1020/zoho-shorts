@@ -1,0 +1,650 @@
+{
+ "id": "20261110-1149-2",
+ "niche": "zoho",
+ "status": "waiting_for_clips",
+ "upload": true,
+ "created": "2026-11-10T11:54:06",
+ "title": "Zoho Analytics AI Agents: Instant Insights Explained #Shorts",
+ "description": "Learn how to configure the new AI agents and data layers in Zoho Analytics for automated reporting and faster insights.\n\n1. Open Zoho Analytics and navigate to your workspace settings\n2. Enable the new AI agents and data layer integration options\n3. Ask natural language questions to generate automated reports\n\nAI + Zoho automations every day - follow @GSXAutomation\n\nWhat inspired this: https://news.google.com/rss/articles/CBMihwFBVV95cUxQQkVrOG9kQWRfQlJwNmRQU0dlVEliMUt0eWhOdHYzbF91QzFRNUNCQmhyZHRHMm9VQTlfZ0lhODlLWHJqNUt1ZURLZkVQcjNaaWxhWWU5UEtOWTJMa0ZRVm53amZadWU5NWRsZWVvR3BKd1kwR3JlbkNhOUhsaXd6X0hSX0laem8?oc=5\n\nThis video uses an AI-generated presenter and voice.\nIndependent channel. Not affiliated with or endorsed by Zoho Corporation. Zoho is a trademark of Zoho Corporation.\n\n#Shorts #Zoho #AIAutomation #ZohoCRM #AIAgents",
+ "angle": {
+  "story_index": 1,
+  "pillar": "trending",
+  "region": "global",
+  "product": "Zoho Analytics",
+  "app": "analytics",
+  "problem": "Business analytics lacks automated AI insights across complex data layers.",
+  "fix_type": "native",
+  "solution": "Configure the new AI agents and data layers inside Zoho Analytics.",
+  "steps": [
+   "Open Zoho Analytics and navigate to your workspace settings",
+   "Enable the new AI agents and data layer integration options",
+   "Ask natural language questions to generate automated reports"
+  ],
+  "api": null,
+  "result": "Faster enterprise data querying without manual report building.",
+  "wow": "Zoho Analytics now packs native AI agents and advanced data layers for instant insights.",
+  "hook": "Zoho Analytics just added AI agents - here is how to use them!"
+ },
+ "story": {
+  "title": "India’s Zoho adds AI agents and data layers to Analytics",
+  "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxQQkVrOG9kQWRfQlJwNmRQU0dlVEliMUt0eWhOdHYzbF91QzFRNUNCQmhyZHRHMm9VQTlfZ0lhODlLWHJqNUt1ZURLZkVQcjNaaWxhWWU5UEtOWTJMa0ZRVm53amZadWU5NWRsZWVvR3BKd1kwR3JlbkNhOUhsaXd6X0hSX0laem8?oc=5",
+  "summary": "India’s Zoho adds AI agents and data layers to Analytics Tech in Asia",
+  "source": "Tech in Asia",
+  "ts": 1794287880,
+  "type": "news",
+  "publishers": 3,
+  "trend": 16,
+  "age_hours": 6,
+  "score": 20
+ },
+ "script": {
+  "title": "Zoho Analytics AI Agents: Instant Insights Explained",
+  "hook_text": "Zoho Analytics adds AI agents",
+  "app_label": "Zoho Analytics AI",
+  "lines": [
+   {
+    "beat": "HOOK",
+    "say": "Zoho Analytics just added AI agents - here is how to use them!",
+    "tts": "Zoho Analytics just added AI agents - here is how to use them!",
+    "card": "Zoho Analytics AI Update",
+    "screen": null
+   },
+   {
+    "beat": "PROBLEM",
+    "say": "Business analytics lacks automated AI insights across complex data layers.",
+    "tts": "Business analytics lacks automated AI insights across complex data layers.",
+    "card": "Manual Analytics Bottlenecks",
+    "screen": null
+   },
+   {
+    "beat": "FIX",
+    "say": "Configure the new AI agents and data layers inside Zoho Analytics.",
+    "tts": "Configure the new AI agents and data layers inside Zoho Analytics.",
+    "card": "Zoho Analytics Setup",
+    "screen": {
+     "app": "analytics",
+     "view": "settings",
+     "path": [
+      "Settings",
+      "AI Agents"
+     ],
+     "heading": "Analytics Settings",
+     "columns": [
+      "Feature Name",
+      "Status"
+     ],
+     "rows": [
+      [
+       "AI Agents",
+       "Disabled"
+      ],
+      [
+       "Data Layers",
+       "Active"
+      ]
+     ],
+     "fields": [
+      [
+       "Workspace Name",
+       "Global Enterprise"
+      ]
+     ],
+     "toggles": [
+      [
+       "Enable AI Agents",
+       false
+      ]
+     ],
+     "messages": null,
+     "tool": null,
+     "method": null,
+     "url": null,
+     "headers": null,
+     "body": null,
+     "response": null,
+     "language": null,
+     "nodes": null,
+     "real": null,
+     "click": "Enable AI Agents",
+     "tip": "Turn on native analytics AI."
+    }
+   },
+   {
+    "beat": "STEP 1",
+    "say": "Open Zoho Analytics and navigate to your workspace settings.",
+    "tts": "Open Zoho Analytics and navigate to your workspace settings.",
+    "card": "Workspace Settings",
+    "screen": {
+     "app": "analytics",
+     "view": "settings",
+     "path": [
+      "Workspace",
+      "Settings"
+     ],
+     "heading": "Workspace Configuration",
+     "columns": [
+      "Setting",
+      "Value"
+     ],
+     "rows": [
+      [
+       "Workspace",
+       "Global Enterprise"
+      ],
+      [
+       "Owner",
+       "admin@enterprise.com"
+      ]
+     ],
+     "fields": [
+      [
+       "Workspace Title",
+       "Global Enterprise"
+      ]
+     ],
+     "toggles": [],
+     "messages": null,
+     "tool": null,
+     "method": null,
+     "url": null,
+     "headers": null,
+     "body": null,
+     "response": null,
+     "language": null,
+     "nodes": null,
+     "real": null,
+     "click": "Workspace Settings",
+     "tip": "Access workspace administration."
+    }
+   },
+   {
+    "beat": "STEP 2",
+    "say": "Enable the new AI agents and data layer integration options.",
+    "tts": "Enable the new AI agents and data layer integration options.",
+    "card": "Enable AI & Layers",
+    "screen": {
+     "app": "analytics",
+     "view": "settings",
+     "path": [
+      "Workspace Settings",
+      "AI Integration"
+     ],
+     "heading": "AI & Data Layers",
+     "columns": [
+      "Integration",
+      "Status"
+     ],
+     "rows": [
+      [
+       "AI Agents",
+       "Ready"
+      ],
+      [
+       "Data Layers",
+       "Configured"
+      ]
+     ],
+     "fields": [
+      [
+       "Model Engine",
+       "Zoho Copilot"
+      ]
+     ],
+     "toggles": [
+      [
+       "Activate Data Layers",
+       true
+      ]
+     ],
+     "messages": null,
+     "tool": null,
+     "method": null,
+     "url": null,
+     "headers": null,
+     "body": null,
+     "response": null,
+     "language": null,
+     "nodes": null,
+     "real": null,
+     "click": "Activate Data Layers",
+     "tip": "Connect advanced data layers."
+    }
+   },
+   {
+    "beat": "STEP 3",
+    "say": "Review your agent capabilities and activate auto-generated reports.",
+    "tts": "Review your agent capabilities and activate auto-generated reports.",
+    "card": "Native AI Integration",
+    "screen": {
+     "app": "analytics",
+     "view": "settings",
+     "path": [
+      "AI Agents",
+      "Capabilities"
+     ],
+     "heading": "Agent Capabilities",
+     "columns": [
+      "Capability",
+      "State"
+     ],
+     "rows": [
+      [
+       "Natural Query",
+       "Enabled"
+      ],
+      [
+       "Automated Reports",
+       "Active"
+      ]
+     ],
+     "fields": [
+      [
+       "Default Agent",
+       "Analytics Assistant"
+      ]
+     ],
+     "toggles": [
+      [
+       "Auto Generate Reports",
+       true
+      ]
+     ],
+     "messages": null,
+     "tool": null,
+     "method": null,
+     "url": null,
+     "headers": null,
+     "body": null,
+     "response": null,
+     "language": null,
+     "nodes": null,
+     "real": null,
+     "click": "Auto Generate Reports",
+     "tip": "Leverage built-in AI agents."
+    }
+   },
+   {
+    "beat": "STEP 4",
+    "say": "Ask natural language questions to generate automated reports.",
+    "tts": "Ask natural language questions to generate automated reports.",
+    "card": "Natural Language Query",
+    "screen": {
+     "app": "analytics",
+     "view": "settings",
+     "path": [
+      "AI Assistant",
+      "Query"
+     ],
+     "heading": "Ask Analytics",
+     "columns": [],
+     "rows": [],
+     "fields": [
+      [
+       "Query Input",
+       "Show Q3 regional revenue breakdown"
+      ]
+     ],
+     "toggles": [],
+     "messages": [
+      [
+       "user",
+       "Show Q3 regional revenue breakdown"
+      ],
+      [
+       "assistant",
+       "Generated regional revenue report for Q3."
+      ]
+     ],
+     "tool": "Zoho Analytics AI Agent",
+     "method": null,
+     "url": null,
+     "headers": null,
+     "body": null,
+     "response": null,
+     "language": null,
+     "nodes": null,
+     "real": null,
+     "click": "Query Input",
+     "tip": "Type plain questions for reports."
+    }
+   },
+   {
+    "beat": "RESULT",
+    "say": "Faster enterprise data querying without manual report building.",
+    "tts": "Faster enterprise data querying without manual report building.",
+    "card": "Automated Insights Result",
+    "screen": null
+   }
+  ],
+  "api": null,
+  "code": null,
+  "test_before_recording": [
+   "Verify your Zoho Analytics workspace has AI features enabled",
+   "Check that data layers are connected properly"
+  ],
+  "description": "Learn how to configure the new AI agents and data layers in Zoho Analytics for automated reporting and faster insights.",
+  "tags": [
+   "ZohoAnalytics",
+   "AIAgents",
+   "DataLayers",
+   "BusinessIntelligence",
+   "ZohoAI",
+   "Analytics",
+   "TechNews",
+   "Automation",
+   "EnterpriseAI",
+   "Reports"
+  ]
+ },
+ "lines": [
+  {
+   "beat": "HOOK",
+   "say": "Zoho Analytics just added AI agents - here is how to use them!",
+   "tts": "Zoho Analytics just added AI agents - here is how to use them!",
+   "card": "Zoho Analytics AI Update",
+   "screen": null,
+   "face": true
+  },
+  {
+   "beat": "PROBLEM",
+   "say": "Business analytics lacks automated AI insights across complex data layers.",
+   "tts": "Business analytics lacks automated AI insights across complex data layers.",
+   "card": "Manual Analytics Bottlenecks",
+   "screen": null,
+   "face": true
+  },
+  {
+   "beat": "FIX",
+   "say": "Configure the new AI agents and data layers inside Zoho Analytics.",
+   "tts": "Configure the new AI agents and data layers inside Zoho Analytics.",
+   "card": "Zoho Analytics Setup",
+   "screen": {
+    "app": "analytics",
+    "view": "settings",
+    "path": [
+     "Settings",
+     "AI Agents"
+    ],
+    "heading": "Analytics Settings",
+    "columns": [
+     "Feature Name",
+     "Status"
+    ],
+    "rows": [
+     [
+      "AI Agents",
+      "Disabled"
+     ],
+     [
+      "Data Layers",
+      "Active"
+     ]
+    ],
+    "fields": [
+     [
+      "Workspace Name",
+      "Global Enterprise"
+     ]
+    ],
+    "toggles": [
+     [
+      "Enable AI Agents",
+      false
+     ]
+    ],
+    "messages": null,
+    "tool": null,
+    "method": null,
+    "url": null,
+    "headers": null,
+    "body": null,
+    "response": null,
+    "language": null,
+    "nodes": null,
+    "real": null,
+    "click": "Enable AI Agents",
+    "tip": "Turn on native analytics AI."
+   },
+   "face": false
+  },
+  {
+   "beat": "STEP 1",
+   "say": "Open Zoho Analytics and navigate to your workspace settings.",
+   "tts": "Open Zoho Analytics and navigate to your workspace settings.",
+   "card": "Workspace Settings",
+   "screen": {
+    "app": "analytics",
+    "view": "settings",
+    "path": [
+     "Workspace",
+     "Settings"
+    ],
+    "heading": "Workspace Configuration",
+    "columns": [
+     "Setting",
+     "Value"
+    ],
+    "rows": [
+     [
+      "Workspace",
+      "Global Enterprise"
+     ],
+     [
+      "Owner",
+      "admin@enterprise.com"
+     ]
+    ],
+    "fields": [
+     [
+      "Workspace Title",
+      "Global Enterprise"
+     ]
+    ],
+    "toggles": [],
+    "messages": null,
+    "tool": null,
+    "method": null,
+    "url": null,
+    "headers": null,
+    "body": null,
+    "response": null,
+    "language": null,
+    "nodes": null,
+    "real": null,
+    "click": "Workspace Settings",
+    "tip": "Access workspace administration."
+   },
+   "face": false
+  },
+  {
+   "beat": "STEP 2",
+   "say": "Enable the new AI agents and data layer integration options.",
+   "tts": "Enable the new AI agents and data layer integration options.",
+   "card": "Enable AI & Layers",
+   "screen": {
+    "app": "analytics",
+    "view": "settings",
+    "path": [
+     "Workspace Settings",
+     "AI Integration"
+    ],
+    "heading": "AI & Data Layers",
+    "columns": [
+     "Integration",
+     "Status"
+    ],
+    "rows": [
+     [
+      "AI Agents",
+      "Ready"
+     ],
+     [
+      "Data Layers",
+      "Configured"
+     ]
+    ],
+    "fields": [
+     [
+      "Model Engine",
+      "Zoho Copilot"
+     ]
+    ],
+    "toggles": [
+     [
+      "Activate Data Layers",
+      true
+     ]
+    ],
+    "messages": null,
+    "tool": null,
+    "method": null,
+    "url": null,
+    "headers": null,
+    "body": null,
+    "response": null,
+    "language": null,
+    "nodes": null,
+    "real": null,
+    "click": "Activate Data Layers",
+    "tip": "Connect advanced data layers."
+   },
+   "face": false
+  },
+  {
+   "beat": "STEP 3",
+   "say": "Review your agent capabilities and activate auto-generated reports.",
+   "tts": "Review your agent capabilities and activate auto-generated reports.",
+   "card": "Native AI Integration",
+   "screen": {
+    "app": "analytics",
+    "view": "settings",
+    "path": [
+     "AI Agents",
+     "Capabilities"
+    ],
+    "heading": "Agent Capabilities",
+    "columns": [
+     "Capability",
+     "State"
+    ],
+    "rows": [
+     [
+      "Natural Query",
+      "Enabled"
+     ],
+     [
+      "Automated Reports",
+      "Active"
+     ]
+    ],
+    "fields": [
+     [
+      "Default Agent",
+      "Analytics Assistant"
+     ]
+    ],
+    "toggles": [
+     [
+      "Auto Generate Reports",
+      true
+     ]
+    ],
+    "messages": null,
+    "tool": null,
+    "method": null,
+    "url": null,
+    "headers": null,
+    "body": null,
+    "response": null,
+    "language": null,
+    "nodes": null,
+    "real": null,
+    "click": "Auto Generate Reports",
+    "tip": "Leverage built-in AI agents."
+   },
+   "face": false
+  },
+  {
+   "beat": "STEP 4",
+   "say": "Ask natural language questions to generate automated reports.",
+   "tts": "Ask natural language questions to generate automated reports.",
+   "card": "Natural Language Query",
+   "screen": {
+    "app": "analytics",
+    "view": "settings",
+    "path": [
+     "AI Assistant",
+     "Query"
+    ],
+    "heading": "Ask Analytics",
+    "columns": [],
+    "rows": [],
+    "fields": [
+     [
+      "Query Input",
+      "Show Q3 regional revenue breakdown"
+     ]
+    ],
+    "toggles": [],
+    "messages": [
+     [
+      "user",
+      "Show Q3 regional revenue breakdown"
+     ],
+     [
+      "assistant",
+      "Generated regional revenue report for Q3."
+     ]
+    ],
+    "tool": "Zoho Analytics AI Agent",
+    "method": null,
+    "url": null,
+    "headers": null,
+    "body": null,
+    "response": null,
+    "language": null,
+    "nodes": null,
+    "real": null,
+    "click": "Query Input",
+    "tip": "Type plain questions for reports."
+   },
+   "face": false
+  },
+  {
+   "beat": "RESULT",
+   "say": "Faster enterprise data querying without manual report building.",
+   "tts": "Faster enterprise data querying without manual report building.",
+   "card": "Automated Insights Result",
+   "screen": null,
+   "face": true
+  }
+ ],
+ "clips": [
+  {
+   "text": "Zoho Analytics just added AI agents - here is how to use them!",
+   "lines": [
+    0
+   ],
+   "beat": "HOOK",
+   "prompt": "The man (my avatar) looks into the camera and talks to the viewer like a confident, friendly business tech explainer, smart and natural, not stiff; he walks into the frame from the side, stops at the centre and points briefly at the camera with an easy smile. Vertical 9:16 medium-wide shot from the knees up, camera about two metres away, his head in the upper third with space above it, both hands and all his gestures fully visible in the frame, smooth gimbal camera gently moving back with him so the framing stays the same, sharp and well lit, wearing an olive field jacket over a grey t-shirt, on a clean city sidewalk just outside a glass office tower, softly blurred street behind him. His face, skin tone, hairstyle, beard, height and body build stay exactly as in my avatar's reference photos - the same natural average build, never slimmer and never heavier. He says, in clear natural English with a clear, neutral international accent, at a brisk, lively pace: \"Zoho Analytics just added AI agents - here is how to use them!\" His lips match every word. He starts speaking in the very first frame, with no pause before the first word, and stops right after the last word. Audio: only his voice - no music, no sound effects. No subtitles, no captions, no text on screen."
+  },
+  {
+   "text": "Business analytics lacks automated AI insights across complex data layers.",
+   "lines": [
+    1
+   ],
+   "beat": "PROBLEM",
+   "prompt": "The man (my avatar) looks into the camera and talks to the viewer like a confident, friendly business tech explainer, smart and natural, not stiff; he shrugs with both shoulders and tilts his head, as if he has seen this problem a hundred times. Vertical 9:16 medium-wide shot from the knees up, camera about two metres away, his head in the upper third with space above it, both hands and all his gestures fully visible in the frame, static camera, sharp and well lit, wearing an olive field jacket over a grey t-shirt, on a clean city sidewalk just outside a glass office tower, softly blurred street behind him. His face, skin tone, hairstyle, beard, height and body build stay exactly as in my avatar's reference photos - the same natural average build, never slimmer and never heavier. He says, in clear natural English with a clear, neutral international accent, at a brisk, lively pace: \"Business analytics lacks automated AI insights across complex data layers.\" His lips match every word. He starts speaking in the very first frame, with no pause before the first word, and stops right after the last word. Audio: only his voice - no music, no sound effects. No subtitles, no captions, no text on screen."
+  },
+  {
+   "text": "Faster enterprise data querying without manual report building.",
+   "lines": [
+    7
+   ],
+   "beat": "RESULT",
+   "prompt": "The man (my avatar) looks into the camera and talks to the viewer like a confident, friendly business tech explainer, smart and natural, not stiff; he smiles and opens both arms wide. Vertical 9:16 medium-wide shot from the knees up, camera about two metres away, his head in the upper third with space above it, both hands and all his gestures fully visible in the frame, static camera, sharp and well lit, wearing an olive field jacket over a grey t-shirt, on a clean city sidewalk just outside a glass office tower, softly blurred street behind him. His face, skin tone, hairstyle, beard, height and body build stay exactly as in my avatar's reference photos - the same natural average build, never slimmer and never heavier. He says, in clear natural English with a clear, neutral international accent, at a brisk, lively pace: \"Faster enterprise data querying without manual report building.\" His lips match every word. He starts speaking in the very first frame, with no pause before the first word, and stops right after the last word. Audio: only his voice - no music, no sound effects. No subtitles, no captions, no text on screen."
+  }
+ ],
+ "look": "wearing an olive field jacket over a grey t-shirt, on a clean city sidewalk just outside a glass office tower, softly blurred street behind him",
+ "issue": 145
+}

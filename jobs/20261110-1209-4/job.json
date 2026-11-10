@@ -1,0 +1,463 @@
+{
+ "id": "20261110-1209-4",
+ "niche": "zoho",
+ "status": "waiting_for_clips",
+ "upload": true,
+ "created": "2026-11-10T12:11:54",
+ "title": "Arattai gets MapmyIndia integration for instant mapping! #Shorts",
+ "description": "Learn how to use Zoho Arattai's new MapmyIndia integration to open shared location pins directly inside Mappls without switching apps.\n\n1. Open a chat in Zoho's Arattai messaging app\n2. Tap on the received shared location pin\n3. Launch it directly inside the Mappls navigation interface\n\nAI + Zoho automations every day - follow @GSXAutomation\n\nWhat inspired this: https://news.google.com/rss/articles/CBMizgFBVV95cUxNQUFVeVpaTDRvXzgzMllGU2hBeVdaSU9HeDJha1A4S1k2UFh4aUdRVVdxcVpQNWx2Z3RqYlhKenhqSGxkS0FXb003YWR3Z21qcmIwV1B4NmJMTGRwOWVDQnhvMmZ5eXdsNHg1bV9MOHRReExvTjQ4SXZHWXRzWWMxamhEcl91azh5eGVQNzJ0UFVZTUU1ZWlGSkwxVnNEWmJscy1VLVN4THRaTF9VTXRMWlpJbEs0UjByaUVjN1R6a1VDb0l1d0RzTjc4aVF1d9IB1gFBVV95cUxNSzdyUG5TZ1FHWXpzZUFZMzVqTjBGc1d1MlFpWEJtbzBORVNzZUtqdGJIQ1hBb0l1SC0zUUVhdHNlUmpGM24tSGlBLXRNLXQ1QzFmbU9NSHJWZGtfa0RWSXJlWkNwTWVqR1RjY3g5eVhETDdKd2xNM1lMUzM4aFRxNVBhcnU3R19hX2hFS3BHZkZnZkhXRE1sT2xxZEY0M2ZCSDJOWV9mNkFrWDYyZWRLMlpfc3hMRUVoSkptYmg0M1VGZ2h1NHRoSkZBazJTcEI0UFNWZllR?oc=5\n\nThis video uses an AI-generated presenter and voice.\nIndependent channel. Not affiliated with or endorsed by Zoho Corporation. Zoho is a trademark of Zoho Corporation.\n\n#Shorts #Zoho #AIAutomation #ZohoCRM #AIAgents",
+ "angle": {
+  "story_index": 14,
+  "pillar": "trending",
+  "region": "global",
+  "product": "Arattai",
+  "app": "code",
+  "problem": "Sharing locations across messaging apps requires clunky workarounds.",
+  "fix_type": "native",
+  "solution": "Open shared location pins directly inside Mappls using Arattai's MapmyIndia integration.",
+  "steps": [
+   "Open a chat in Zoho's Arattai messaging app",
+   "Tap on the received shared location pin",
+   "Launch it directly inside the Mappls navigation interface"
+  ],
+  "api": null,
+  "result": "Seamless location opening without switching mapping tools.",
+  "wow": "Arattai now integrates directly with MapmyIndia for instant location mapping.",
+  "hook": "Arattai got MapmyIndia integration - here's how to use it!"
+ },
+ "story": {
+  "title": "Zoho's Arattai Gets MapmyIndia Integration: Now Open Shared Locations Directly In Mappls",
+  "link": "https://news.google.com/rss/articles/CBMizgFBVV95cUxNQUFVeVpaTDRvXzgzMllGU2hBeVdaSU9HeDJha1A4S1k2UFh4aUdRVVdxcVpQNWx2Z3RqYlhKenhqSGxkS0FXb003YWR3Z21qcmIwV1B4NmJMTGRwOWVDQnhvMmZ5eXdsNHg1bV9MOHRReExvTjQ4SXZHWXRzWWMxamhEcl91azh5eGVQNzJ0UFVZTUU1ZWlGSkwxVnNEWmJscy1VLVN4THRaTF9VTXRMWlpJbEs0UjByaUVjN1R6a1VDb0l1d0RzTjc4aVF1d9IB1gFBVV95cUxNSzdyUG5TZ1FHWXpzZUFZMzVqTjBGc1d1MlFpWEJtbzBORVNzZUtqdGJIQ1hBb0l1SC0zUUVhdHNlUmpGM24tSGlBLXRNLXQ1QzFmbU9NSHJWZGtfa0RWSXJlWkNwTWVqR1RjY3g5eVhETDdKd2xNM1lMUzM4aFRxNVBhcnU3R19hX2hFS3BHZkZnZkhXRE1sT2xxZEY0M2ZCSDJOWV9mNkFrWDYyZWRLMlpfc3hMRUVoSkptYmg0M1VGZ2h1NHRoSkZBazJTcEI0UFNWZllR?oc=5",
+  "summary": "Zoho's Arattai Gets MapmyIndia Integration: Now Open Shared Locations Directly In Mappls NDTV Profit",
+  "source": "NDTV Profit",
+  "ts": 1793722694,
+  "type": "news",
+  "publishers": 1,
+  "trend": 15,
+  "age_hours": 163,
+  "score": 10
+ },
+ "script": {
+  "title": "Arattai gets MapmyIndia integration for instant mapping!",
+  "hook_text": "Zoho just launched MapmyIndia integration in Arattai to fix clunky location sharing!",
+  "app_label": "Zoho Arattai",
+  "lines": [
+   {
+    "beat": "HOOK",
+    "say": "Zoho just launched MapmyIndia integration in Arattai to fix clunky location sharing. Now, instead of struggling with complicated workarounds when sharing locations across messaging apps, you can easily open shared location pins directly inside Mappls. Let's walk through how this powerful new feature works step by step.",
+    "tts": "Zoho just launched MapmyIndia integration in Arattai to fix clunky location sharing. Now, instead of struggling with complicated workarounds when sharing locations across messaging apps, you can easily open shared location pins directly inside Mappls. Let's walk through how this powerful new feature works step by step.",
+    "card": "Zoho Arattai MapmyIndia Update",
+    "screen": null
+   },
+   {
+    "beat": "PROBLEM",
+    "say": "Sharing locations across messaging apps usually requires clunky workarounds, forcing you to copy coordinates or switch manually between different navigation platforms every single time you receive a pin from someone.",
+    "tts": "Sharing locations across messaging apps usually requires clunky workarounds, forcing you to copy coordinates or switch manually between different navigation platforms every single time you receive a pin from someone.",
+    "card": "Clunky location sharing",
+    "screen": null
+   },
+   {
+    "beat": "FIX",
+    "say": "Zoho solves this annoyance completely by integrating MapmyIndia directly into Arattai, allowing you to open shared location pins instantly inside the Mappls navigation interface with just a single tap.",
+    "tts": "Zoho solves this annoyance completely by integrating MapmyIndia directly into Arattai, allowing you to open shared location pins instantly inside the Mappls navigation interface with just a single tap.",
+    "card": "MapmyIndia inside Arattai",
+    "screen": {
+     "app": "salesiq",
+     "view": "settings",
+     "path": [
+      "Arattai",
+      "Chats"
+     ],
+     "heading": "Arattai Messaging",
+     "columns": [],
+     "rows": [],
+     "fields": [],
+     "toggles": [],
+     "messages": [],
+     "tool": null,
+     "method": null,
+     "url": null,
+     "headers": null,
+     "body": null,
+     "response": null,
+     "language": null,
+     "nodes": null,
+     "real": null,
+     "click": "Open a chat",
+     "tip": "Access Arattai messaging app"
+    }
+   },
+   {
+    "beat": "STEP 1",
+    "say": "To get started, simply open any active chat inside Zoho's Arattai messaging application where you have received a location pin from your contact.",
+    "tts": "To get started, simply open any active chat inside Zoho's Arattai messaging application where you have received a location pin from your contact.",
+    "card": "Open Arattai Chat",
+    "screen": {
+     "app": "salesiq",
+     "view": "list",
+     "path": [
+      "Arattai",
+      "Chats"
+     ],
+     "heading": "Active Chats",
+     "columns": [
+      "Name",
+      "Last Message"
+     ],
+     "rows": [
+      [
+       "Al Noor Trading",
+       "Shared a location pin"
+      ]
+     ],
+     "fields": [],
+     "toggles": [],
+     "messages": [],
+     "tool": null,
+     "method": null,
+     "url": null,
+     "headers": null,
+     "body": null,
+     "response": null,
+     "language": null,
+     "nodes": null,
+     "real": null,
+     "click": "Al Noor Trading",
+     "tip": "Select chat with shared location"
+    }
+   },
+   {
+    "beat": "STEP 2",
+    "say": "Next, locate the message containing the shared location and tap directly on the received pin to view more details.",
+    "tts": "Next, locate the message containing the shared location and tap directly on the received pin to view more details.",
+    "card": "Tap location pin",
+    "screen": {
+     "app": "salesiq",
+     "view": "form",
+     "path": [
+      "Arattai",
+      "Chat",
+      "Location"
+     ],
+     "heading": "Chat Message",
+     "columns": [],
+     "rows": [],
+     "fields": [
+      [
+       "Shared Pin",
+       "Downtown Dubai Office"
+      ]
+     ],
+     "toggles": [],
+     "messages": [],
+     "tool": null,
+     "method": null,
+     "url": null,
+     "headers": null,
+     "body": null,
+     "response": null,
+     "language": null,
+     "nodes": null,
+     "real": null,
+     "click": "Shared Pin",
+     "tip": "Click the location marker"
+    }
+   },
+   {
+    "beat": "STEP 3",
+    "say": "Finally, launch the location directly inside the Mappls navigation interface with a single click to begin your route calculation immediately.",
+    "tts": "Finally, launch the location directly inside the Mappls navigation interface with a single click to begin your route calculation immediately.",
+    "card": "Launch in Mappls",
+    "screen": {
+     "app": "salesiq",
+     "view": "settings",
+     "path": [
+      "Mappls",
+      "Navigation"
+     ],
+     "heading": "Mappls Navigation",
+     "columns": [],
+     "rows": [],
+     "fields": [
+      [
+       "Destination",
+       "Downtown Dubai"
+      ]
+     ],
+     "toggles": [],
+     "messages": [],
+     "tool": "MapmyIndia Integration",
+     "method": null,
+     "url": null,
+     "headers": null,
+     "body": null,
+     "response": null,
+     "language": null,
+     "nodes": null,
+     "real": null,
+     "click": "Launch in Mappls",
+     "tip": "Arattai now integrates directly with MapmyIndia for instant location mapping."
+    }
+   },
+   {
+    "beat": "RESULT",
+    "say": "Enjoy seamless location opening without ever having to switch between multiple mapping tools.",
+    "tts": "Enjoy seamless location opening without ever having to switch between multiple mapping tools.",
+    "card": "Seamless mapping",
+    "screen": null
+   }
+  ],
+  "api": null,
+  "code": null,
+  "test_before_recording": [
+   "Ensure Arattai app is updated to the latest version",
+   "Verify MapmyIndia / Mappls app is installed on your device"
+  ],
+  "description": "Learn how to use Zoho Arattai's new MapmyIndia integration to open shared location pins directly inside Mappls without switching apps.",
+  "tags": [
+   "Arattai",
+   "Zoho",
+   "MapmyIndia",
+   "Mappls",
+   "LocationSharing",
+   "Messaging",
+   "Integration",
+   "Navigation",
+   "Productivity",
+   "TechNews"
+  ]
+ },
+ "lines": [
+  {
+   "beat": "HOOK",
+   "say": "Zoho just launched MapmyIndia integration in Arattai to fix clunky location sharing. Now, instead of struggling with complicated workarounds when sharing locations across messaging apps, you can easily open shared location pins directly inside Mappls. Let's walk through how this powerful new feature works step by step.",
+   "tts": "Zoho just launched MapmyIndia integration in Arattai to fix clunky location sharing. Now, instead of struggling with complicated workarounds when sharing locations across messaging apps, you can easily open shared location pins directly inside Mappls. Let's walk through how this powerful new feature works step by step.",
+   "card": "Zoho Arattai MapmyIndia Update",
+   "screen": null,
+   "face": true
+  },
+  {
+   "beat": "PROBLEM",
+   "say": "Sharing locations across messaging apps usually requires clunky workarounds, forcing you to copy coordinates or switch manually between different navigation platforms every single time you receive a pin from someone.",
+   "tts": "Sharing locations across messaging apps usually requires clunky workarounds, forcing you to copy coordinates or switch manually between different navigation platforms every single time you receive a pin from someone.",
+   "card": "Clunky location sharing",
+   "screen": null,
+   "face": true
+  },
+  {
+   "beat": "FIX",
+   "say": "Zoho solves this annoyance completely by integrating MapmyIndia directly into Arattai, allowing you to open shared location pins instantly inside the Mappls navigation interface with just a single tap.",
+   "tts": "Zoho solves this annoyance completely by integrating MapmyIndia directly into Arattai, allowing you to open shared location pins instantly inside the Mappls navigation interface with just a single tap.",
+   "card": "MapmyIndia inside Arattai",
+   "screen": {
+    "app": "salesiq",
+    "view": "settings",
+    "path": [
+     "Arattai",
+     "Chats"
+    ],
+    "heading": "Arattai Messaging",
+    "columns": [],
+    "rows": [],
+    "fields": [],
+    "toggles": [],
+    "messages": [],
+    "tool": null,
+    "method": null,
+    "url": null,
+    "headers": null,
+    "body": null,
+    "response": null,
+    "language": null,
+    "nodes": null,
+    "real": null,
+    "click": "Open a chat",
+    "tip": "Access Arattai messaging app"
+   },
+   "face": false
+  },
+  {
+   "beat": "STEP 1",
+   "say": "To get started, simply open any active chat inside Zoho's Arattai messaging application where you have received a location pin from your contact.",
+   "tts": "To get started, simply open any active chat inside Zoho's Arattai messaging application where you have received a location pin from your contact.",
+   "card": "Open Arattai Chat",
+   "screen": {
+    "app": "salesiq",
+    "view": "list",
+    "path": [
+     "Arattai",
+     "Chats"
+    ],
+    "heading": "Active Chats",
+    "columns": [
+     "Name",
+     "Last Message"
+    ],
+    "rows": [
+     [
+      "Al Noor Trading",
+      "Shared a location pin"
+     ]
+    ],
+    "fields": [],
+    "toggles": [],
+    "messages": [],
+    "tool": null,
+    "method": null,
+    "url": null,
+    "headers": null,
+    "body": null,
+    "response": null,
+    "language": null,
+    "nodes": null,
+    "real": null,
+    "click": "Al Noor Trading",
+    "tip": "Select chat with shared location"
+   },
+   "face": false
+  },
+  {
+   "beat": "STEP 2",
+   "say": "Next, locate the message containing the shared location and tap directly on the received pin to view more details.",
+   "tts": "Next, locate the message containing the shared location and tap directly on the received pin to view more details.",
+   "card": "Tap location pin",
+   "screen": {
+    "app": "salesiq",
+    "view": "form",
+    "path": [
+     "Arattai",
+     "Chat",
+     "Location"
+    ],
+    "heading": "Chat Message",
+    "columns": [],
+    "rows": [],
+    "fields": [
+     [
+      "Shared Pin",
+      "Downtown Dubai Office"
+     ]
+    ],
+    "toggles": [],
+    "messages": [],
+    "tool": null,
+    "method": null,
+    "url": null,
+    "headers": null,
+    "body": null,
+    "response": null,
+    "language": null,
+    "nodes": null,
+    "real": null,
+    "click": "Shared Pin",
+    "tip": "Click the location marker"
+   },
+   "face": false
+  },
+  {
+   "beat": "STEP 3",
+   "say": "Finally, launch the location directly inside the Mappls navigation interface with a single click to begin your route calculation immediately.",
+   "tts": "Finally, launch the location directly inside the Mappls navigation interface with a single click to begin your route calculation immediately.",
+   "card": "Launch in Mappls",
+   "screen": {
+    "app": "salesiq",
+    "view": "settings",
+    "path": [
+     "Mappls",
+     "Navigation"
+    ],
+    "heading": "Mappls Navigation",
+    "columns": [],
+    "rows": [],
+    "fields": [
+     [
+      "Destination",
+      "Downtown Dubai"
+     ]
+    ],
+    "toggles": [],
+    "messages": [],
+    "tool": "MapmyIndia Integration",
+    "method": null,
+    "url": null,
+    "headers": null,
+    "body": null,
+    "response": null,
+    "language": null,
+    "nodes": null,
+    "real": null,
+    "click": "Launch in Mappls",
+    "tip": "Arattai now integrates directly with MapmyIndia for instant location mapping."
+   },
+   "face": false
+  },
+  {
+   "beat": "RESULT",
+   "say": "Enjoy seamless location opening without ever having to switch between multiple mapping tools.",
+   "tts": "Enjoy seamless location opening without ever having to switch between multiple mapping tools.",
+   "card": "Seamless mapping",
+   "screen": null,
+   "face": true
+  }
+ ],
+ "clips": [
+  {
+   "text": "Zoho just launched MapmyIndia integration in Arattai to fix clunky location sharing.",
+   "lines": [
+    0
+   ],
+   "beat": "HOOK",
+   "prompt": "The man (my avatar) looks into the camera and talks to the viewer like a confident, friendly business tech explainer, smart and natural, not stiff; he stands with relaxed shoulders, shakes his head once with a half smile and holds up one hand as if saying stop. Vertical 9:16 medium-wide shot from the knees up, camera about two metres away, his head in the upper third with space above it, both hands and all his gestures fully visible in the frame, static camera, sharp and well lit, wearing a white linen shirt with the top button open, on a sunny rooftop terrace with a city skyline behind him at golden hour. His face, skin tone, hairstyle, beard, height and body build stay exactly as in my avatar's reference photos - the same natural average build, never slimmer and never heavier. He says, in clear natural English with a clear, neutral international accent, at a brisk, lively pace: \"Zoho just launched MapmyIndia integration in Arattai to fix clunky location sharing.\" His lips match every word. He starts speaking in the very first frame, with no pause before the first word, and stops right after the last word. Audio: only his voice - no music, no sound effects. No subtitles, no captions, no text on screen."
+  },
+  {
+   "text": "Now, instead of struggling with complicated workarounds when sharing locations across messaging apps,",
+   "lines": [
+    0
+   ],
+   "beat": "HOOK",
+   "prompt": "The man (my avatar) looks into the camera and talks to the viewer like a confident, friendly business tech explainer, smart and natural, not stiff; he walks into the frame from the side, stops at the centre and points briefly at the camera with an easy smile. Vertical 9:16 medium-wide shot from the knees up, camera about two metres away, his head in the upper third with space above it, both hands and all his gestures fully visible in the frame, smooth gimbal camera gently moving back with him so the framing stays the same, sharp and well lit, wearing a white linen shirt with the top button open, on a sunny rooftop terrace with a city skyline behind him at golden hour. His face, skin tone, hairstyle, beard, height and body build stay exactly as in my avatar's reference photos - the same natural average build, never slimmer and never heavier. He says, in clear natural English with a clear, neutral international accent, at a brisk, lively pace: \"Now, instead of struggling with complicated workarounds when sharing locations across messaging apps,\" His lips match every word. He starts speaking in the very first frame, with no pause before the first word, and stops right after the last word. Audio: only his voice - no music, no sound effects. No subtitles, no captions, no text on screen."
+  },
+  {
+   "text": "you can easily open shared location pins directly inside Mappls.",
+   "lines": [
+    0
+   ],
+   "beat": "HOOK",
+   "prompt": "The man (my avatar) looks into the camera and talks to the viewer like a confident, friendly business tech explainer, smart and natural, not stiff; he leans one hand on a table or railing next to him, then straightens up and talks with a confident open gesture. Vertical 9:16 medium-wide shot from the knees up, camera about two metres away, his head in the upper third with space above it, both hands and all his gestures fully visible in the frame, static camera, sharp and well lit, wearing a white linen shirt with the top button open, on a sunny rooftop terrace with a city skyline behind him at golden hour. His face, skin tone, hairstyle, beard, height and body build stay exactly as in my avatar's reference photos - the same natural average build, never slimmer and never heavier. He says, in clear natural English with a clear, neutral international accent, at a brisk, lively pace: \"you can easily open shared location pins directly inside Mappls.\" His lips match every word. He starts speaking in the very first frame, with no pause before the first word, and stops right after the last word. Audio: only his voice - no music, no sound effects. No subtitles, no captions, no text on screen."
+  },
+  {
+   "text": "Let's walk through how this powerful new feature works step by step.",
+   "lines": [
+    0
+   ],
+   "beat": "HOOK",
+   "prompt": "The man (my avatar) looks into the camera and talks to the viewer like a confident, friendly business tech explainer, smart and natural, not stiff; he walks a few relaxed steps toward the camera and stops, then raises one hand with an open palm on the first words. Vertical 9:16 medium-wide shot from the knees up, camera about two metres away, his head in the upper third with space above it, both hands and all his gestures fully visible in the frame, smooth gimbal camera gently moving back with him so the framing stays the same, sharp and well lit, wearing a white linen shirt with the top button open, on a sunny rooftop terrace with a city skyline behind him at golden hour. His face, skin tone, hairstyle, beard, height and body build stay exactly as in my avatar's reference photos - the same natural average build, never slimmer and never heavier. He says, in clear natural English with a clear, neutral international accent, at a brisk, lively pace: \"Let's walk through how this powerful new feature works step by step.\" His lips match every word. He starts speaking in the very first frame, with no pause before the first word, and stops right after the last word. Audio: only his voice - no music, no sound effects. No subtitles, no captions, no text on screen."
+  },
+  {
+   "text": "Sharing locations across messaging apps usually requires clunky workarounds,",
+   "lines": [
+    1
+   ],
+   "beat": "PROBLEM",
+   "prompt": "The man (my avatar) looks into the camera and talks to the viewer like a confident, friendly business tech explainer, smart and natural, not stiff; he shrugs with both shoulders and tilts his head, as if he has seen this problem a hundred times. Vertical 9:16 medium-wide shot from the knees up, camera about two metres away, his head in the upper third with space above it, both hands and all his gestures fully visible in the frame, static camera, sharp and well lit, wearing a white linen shirt with the top button open, on a sunny rooftop terrace with a city skyline behind him at golden hour. His face, skin tone, hairstyle, beard, height and body build stay exactly as in my avatar's reference photos - the same natural average build, never slimmer and never heavier. He says, in clear natural English with a clear, neutral international accent, at a brisk, lively pace: \"Sharing locations across messaging apps usually requires clunky workarounds,\" His lips match every word. He starts speaking in the very first frame, with no pause before the first word, and stops right after the last word. Audio: only his voice - no music, no sound effects. No subtitles, no captions, no text on screen."
+  },
+  {
+   "text": "forcing you to copy coordinates or switch manually between different navigation platforms every single time you receive a pin from someone.",
+   "lines": [
+    1
+   ],
+   "beat": "PROBLEM",
+   "prompt": "The man (my avatar) looks into the camera and talks to the viewer like a confident, friendly business tech explainer, smart and natural, not stiff; he crosses his arms for a moment, then uncrosses them and gestures to the side in mild frustration. Vertical 9:16 medium-wide shot from the knees up, camera about two metres away, his head in the upper third with space above it, both hands and all his gestures fully visible in the frame, static camera, sharp and well lit, wearing a white linen shirt with the top button open, on a sunny rooftop terrace with a city skyline behind him at golden hour. His face, skin tone, hairstyle, beard, height and body build stay exactly as in my avatar's reference photos - the same natural average build, never slimmer and never heavier. He says, in clear natural English with a clear, neutral international accent, at a brisk, lively pace: \"forcing you to copy coordinates or switch manually between different navigation platforms every single time you receive a pin from someone.\" His lips match every word. He starts speaking in the very first frame, with no pause before the first word, and stops right after the last word. Audio: only his voice - no music, no sound effects. No subtitles, no captions, no text on screen."
+  },
+  {
+   "text": "Enjoy seamless location opening without ever having to switch between multiple mapping tools.",
+   "lines": [
+    6
+   ],
+   "beat": "RESULT",
+   "prompt": "The man (my avatar) looks into the camera and talks to the viewer like a confident, friendly business tech explainer, smart and natural, not stiff; he snaps his fingers once and smiles as if the problem just disappeared. Vertical 9:16 medium-wide shot from the knees up, camera about two metres away, his head in the upper third with space above it, both hands and all his gestures fully visible in the frame, static camera, sharp and well lit, wearing a white linen shirt with the top button open, on a sunny rooftop terrace with a city skyline behind him at golden hour. His face, skin tone, hairstyle, beard, height and body build stay exactly as in my avatar's reference photos - the same natural average build, never slimmer and never heavier. He says, in clear natural English with a clear, neutral international accent, at a brisk, lively pace: \"Enjoy seamless location opening without ever having to switch between multiple mapping tools.\" His lips match every word. He starts speaking in the very first frame, with no pause before the first word, and stops right after the last word. Audio: only his voice - no music, no sound effects. No subtitles, no captions, no text on screen."
+  }
+ ],
+ "look": "wearing a white linen shirt with the top button open, on a sunny rooftop terrace with a city skyline behind him at golden hour",
+ "issue": 146
+}

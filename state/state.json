@@ -1,5 +1,5 @@
 {
- "next_id": 57,
+ "next_id": 59,
  "covered_links": [
   "https://www.reddit.com/r/Zoho/comments/1wzd94y/sales_order_or_invoice/",
   "https://www.reddit.com/r/Zoho/comments/1wwjbbr/accounting_of_travel_agent/",
@@ -47,7 +47,9 @@
   "https://news.google.com/rss/articles/CBMijwFBVV95cUxPM1hFNlQ5dlVoQWpSeV9fOUp5eERaU0w1RzZHSC1VT3lFY0pzN0JhS3A2MHN3TlpwSFhiT2dvQ3VYc3ZfOUkxUWN3YktDVEN0bWEtVVJVUVAxeWNLQWRIc2tXbWpkYWFKeUh0NHpEUnlXS3hwRmI3UGpjc2pqODdvaEZ1dGlGckIzMWhrTThjcw?oc=5",
   "bank:viral posts say claude turned 2000 into 12000 overnight trad",
   "bank:developers want a side project that pays not another todo ap",
-  "https://news.google.com/rss/articles/CBMinAFBVV95cUxQaDdIeHVidzJpQWRtaFRUd3VQVnA2Wm95V0FzVVBfQ3NpQmpTbElZWDVva3VIVHphdC13VFJOUzB3MXBIR2JNczZnVVFkM1NQNlZndV9yNEdEd1Z2OU9NSXhVNlpHOHl4UlFUcXVRbG5ubmU0QjYwUnBOT1hkTVpCNWpCem01d1JMM0U0MDVTak81UkxCTFRSRlNpa0k?oc=5"
+  "https://news.google.com/rss/articles/CBMinAFBVV95cUxQaDdIeHVidzJpQWRtaFRUd3VQVnA2Wm95V0FzVVBfQ3NpQmpTbElZWDVva3VIVHphdC13VFJOUzB3MXBIR2JNczZnVVFkM1NQNlZndV9yNEdEd1Z2OU9NSXhVNlpHOHl4UlFUcXVRbG5ubmU0QjYwUnBOT1hkTVpCNWpCem01d1JMM0U0MDVTak81UkxCTFRSRlNpa0k?oc=5",
+  "https://news.google.com/rss/articles/CBMihwFBVV95cUxQQkVrOG9kQWRfQlJwNmRQU0dlVEliMUt0eWhOdHYzbF91QzFRNUNCQmhyZHRHMm9VQTlfZ0lhODlLWHJqNUt1ZURLZkVQcjNaaWxhWWU5UEtOWTJMa0ZRVm53amZadWU5NWRsZWVvR3BKd1kwR3JlbkNhOUhsaXd6X0hSX0laem8?oc=5",
+  "https://news.google.com/rss/articles/CBMizgFBVV95cUxNQUFVeVpaTDRvXzgzMllGU2hBeVdaSU9HeDJha1A4S1k2UFh4aUdRVVdxcVpQNWx2Z3RqYlhKenhqSGxkS0FXb003YWR3Z21qcmIwV1B4NmJMTGRwOWVDQnhvMmZ5eXdsNHg1bV9MOHRReExvTjQ4SXZHWXRzWWMxamhEcl91azh5eGVQNzJ0UFVZTUU1ZWlGSkwxVnNEWmJscy1VLVN4THRaTF9VTXRMWlpJbEs0UjByaUVjN1R6a1VDb0l1d0RzTjc4aVF1d9IB1gFBVV95cUxNSzdyUG5TZ1FHWXpzZUFZMzVqTjBGc1d1MlFpWEJtbzBORVNzZUtqdGJIQ1hBb0l1SC0zUUVhdHNlUmpGM24tSGlBLXRNLXQ1QzFmbU9NSHJWZGtfa0RWSXJlWkNwTWVqR1RjY3g5eVhETDdKd2xNM1lMUzM4aFRxNVBhcnU3R19hX2hFS3BHZkZnZkhXRE1sT2xxZEY0M2ZCSDJOWV9mNkFrWDYyZWRLMlpfc3hMRUVoSkptYmg0M1VGZ2h1NHRoSkZBazJTcEI0UFNWZllR?oc=5"
  ],
  "problems": [
   "Zoho Books me online paid sales orders direct closed invoice me convert nahi hote.",
@@ -105,7 +107,9 @@
   "Health-tech investors and clinic owners assume Claude can process patient intake and insurance coding automatically without legal risk.",
   "Clinic owners and health-tech investors assume Claude can process patient intake and insurance coding automatically without legal risk.",
   "Developers build generic side apps that generate zero revenue because they solve no paying problem.",
-  "Managing multichannel customer outreach across WhatsApp and email requires tedious manual campaign creation."
+  "Managing multichannel customer outreach across WhatsApp and email requires tedious manual campaign creation.",
+  "Business analytics lacks automated AI insights across complex data layers.",
+  "Sharing locations across messaging apps requires clunky workarounds."
  ],
  "scripts": {
   "S0001": {
@@ -623,6 +627,22 @@
    "created": "2026-11-10T10:10:49",
    "video_id": "q4Fsi7ctYDY",
    "publish_at": "2026-11-11T07:30:00+05:30"
+  },
+  "S0057": {
+   "problem": "Business analytics lacks automated AI insights across complex data layers.",
+   "title": "Zoho Analytics AI Agents: Instant Insights Explained #Shorts",
+   "pillar": "trending",
+   "engine": "flow",
+   "job": "20261110-1149-2",
+   "created": "2026-11-10T11:54:06"
+  },
+  "S0058": {
+   "problem": "Sharing locations across messaging apps requires clunky workarounds.",
+   "title": "Arattai gets MapmyIndia integration for instant mapping! #Shorts",
+   "pillar": "trending",
+   "engine": "flow",
+   "job": "20261110-1209-4",
+   "created": "2026-11-10T12:11:54"
   }
  },
  "slots": [
@@ -933,9 +953,9 @@
  "last_photo": "1_jacket.jpg",
  "photo_scenes": [],
  "photo_agent_error": "RuntimeError: image model unavailable: 404 NOT_FOUND. {'error': {'code': 404, 'm",
- "look_index": 51,
- "status_issue": 144,
- "status_line": "PIPELINE ideas=27 clips=1 editing=0 qa_failed=0 scheduled=2 published=41 total=43 today=2 next=2026-11-10T21:30",
+ "look_index": 53,
+ "status_issue": 147,
+ "status_line": "PIPELINE ideas=27 clips=3 editing=0 qa_failed=0 scheduled=2 published=41 total=43 today=2 next=2026-11-10T21:30",
  "rotation": {
   "claude_wealth": 21,
   "claude_wealth_industry": 16,
