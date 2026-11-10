@@ -6,6 +6,25 @@ Is file ko har session ke end pe update karo, taaki agla chat yahin se shuru kar
 
 Gaurav jab bhi kuch bhi change karne bole: SABSE PEHLE backup - `backup-YYYY-MM-DD-<kya-badal-rahe-ho>` branch main se banao (aur agar video ka kaam hai to latest Short ka artifact download karo). Tabhi code chhuo. Kuch bigde to us branch se purana code wapas lo.
 
+## 10 Nov 2026 (5) - pehla Zoho trending Short scheduled (Zoho Campaigns AI agents)
+
+Gaurav: "check karke video bana ke upload kar do, dono Flow accounts mein se jo marzi".
+- Job 20261110-1008-2 ki script news ke asli facts se dobara likhi (IT Brief 30 Oct / Techeconomy 5 Nov: Campaigns
+  mein MCP se AI agent workflows - build / schedule / analyse, permissions + approval; native WhatsApp campaigns;
+  frequency capping email + SMS + WhatsApp; paid plans $4/month). Menu naam news mein nahi -> steps general (AI chat
+  + flow screens). 141 words. Issue #142 update (REST API; gh GraphQL is session se blocked).
+- Flow: Golu Sri (/u/1) pe sirf 55 credits (reset 13 Nov) -> MAIN account gauravsri069 (1,050 credits) use kiya.
+  Project "Nov 10 - 16:16" (flow.google.com/u/0/project/3eae42b3-bb38-434e-9b4e-1075a0e7c30f), Veo 3.1 Fast x3 = 60.
+  Avatar "Me": har clip pe dobara; dhyan - naya video list mein upar aata hai aur list khisakti hai.
+- Clips -> GitHub bina download: fetch + createObjectURL wrap (blob pakdo) + HTMLAnchorElement.click block (Gaurav
+  ke computer pe koi file save nahi) -> button -> window.open(upload page) -> listener -> postMessage -> DataTransfer
+  -> Commit (918603a). Text match 1.00 / 1.00 / 0.85.
+- Run 42803008520: QA 95/70 -> YouTube https://youtube.com/shorts/q4Fsi7ctYDY, public 11 Nov 07:30 IST, titles
+  ar/de/fr/es/hi.
+- BUG (open): Gemini TTS 400 INVALID_ARGUMENT "Unknown name speechConfig" (quota nahi!) on
+  gemini-2.5-flash/pro-preview-tts -> screen lines backup voice edge (avatar se alag awaaz). Fix: current Gemini TTS
+  model / API format check karo (tts.py MODELS + speech_config), google-genai 3.0.0.
+
 ## 10 Nov 2026 (4) - pehla Zoho-trending run + QA ko news dikhana
 
 Run 42792655507 (count 2): research ne asli Zoho news pakdi (Vembu AI jobs 5 publishers, Zoho Analytics AI agents
