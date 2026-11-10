@@ -620,7 +620,9 @@
    "pillar": "trending",
    "engine": "flow",
    "job": "20261110-1008-2",
-   "created": "2026-11-10T10:10:49"
+   "created": "2026-11-10T10:10:49",
+   "video_id": "q4Fsi7ctYDY",
+   "publish_at": "2026-11-11T07:30:00+05:30"
   }
  },
  "slots": [
@@ -917,6 +919,13 @@
    "minute": 1290,
    "video_id": "6-nZhetyLJ4",
    "title": "Build a Paid Claude API Document Extraction Tool #Shorts"
+  },
+  {
+   "date": "2026-11-11",
+   "window": "07:30",
+   "minute": 450,
+   "video_id": "q4Fsi7ctYDY",
+   "title": "Zoho Campaigns Just Got AI Agents + WhatsApp #Shorts"
   }
  ],
  "failures": {},
@@ -925,8 +934,8 @@
  "photo_scenes": [],
  "photo_agent_error": "RuntimeError: image model unavailable: 404 NOT_FOUND. {'error': {'code': 404, 'm",
  "look_index": 51,
- "status_issue": 143,
- "status_line": "PIPELINE ideas=27 clips=2 editing=0 qa_failed=0 scheduled=1 published=41 total=42 today=2 next=2026-11-10T21:30",
+ "status_issue": 144,
+ "status_line": "PIPELINE ideas=27 clips=1 editing=0 qa_failed=0 scheduled=2 published=41 total=43 today=2 next=2026-11-10T21:30",
  "rotation": {
   "claude_wealth": 21,
   "claude_wealth_industry": 16,
