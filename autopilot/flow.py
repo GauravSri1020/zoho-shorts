@@ -344,7 +344,7 @@ def prepare(count, do_upload):
             if not clips and not FACELESS:
                 raise RuntimeError("script has no spoken lines")
             if IS_ZOHO:
-                look = pick_look(st)  # same look in every clip of this Short, a new one for every Short
+                look = pick_look(st) if clips else ""  # one look for every clip of this Short; a new one per Short
             else:  # niche v2: the place comes from the Short's industry, the outfit rotates
                 look = nw.look_for(angle, st.get("look_index", 0)) or LOOKS[st.get("look_index", 0) % len(LOOKS)]
             st["look_index"] = st.get("look_index", 0) + 1

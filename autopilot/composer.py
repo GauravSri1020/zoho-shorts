@@ -418,7 +418,13 @@ def render(sc, lines, words, avatar_mp4, voice_wav, workdir: Path, out_path: Pat
         if s["kind"] == "screen":
             l = lines[s["line"]]
             idx[s["line"]] = len(specs)
-            specs.append(screens.normalize(_spec_for(lines, s["line"]), l.get("card", ""), l.get("beat", "")))
+            spec = _spec_for(lines, s["line"])
+            if IS_ZOHO and not l.get("screen") and str(l.get("beat", "")).upper().startswith(("HOOK", "PROBLEM", "RESULT")):
+                # 10 Nov 2026: faceless Zoho Short -> Gaurav's photo card with the line's caption (no Flow clip here)
+                app = str(sc.get("app_label") or "")
+                spec = {"app": "presenter", "text": l.get("card") or l.get("say", "")[:60], "seed": sc.get("title", ""),
+                        "accent": _ZOHO_ACCENT.get(next((k for k in _ZOHO_ACCENT if k in app.lower()), ""), "#E42527")}
+            specs.append(screens.normalize(spec, l.get("card", ""), l.get("beat", "")))
     shots = screens.render(specs, workdir / "screens") if specs else []
     hook = sc.get("hook_text") or sc.get("title", "")
     bg = fg = None

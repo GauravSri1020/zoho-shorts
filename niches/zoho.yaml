@@ -106,7 +106,7 @@ sources:
 
 # Shorts per day (each one goes into the next free slot)
 scripts:
-  per_day: 1
+  per_day: 2
   words_min: 110
   words_max: 150
 
@@ -117,7 +117,11 @@ localize:
 
 # The presenter: YOU, made in Google Flow (your avatar + Veo 3.1 with its own voice) - see autopilot/flow.py
 flow:
-  per_day: 1                # Shorts prepared per day (each needs ~3-6 Flow clips; Veo 3.1 Fast ~20 credits each)
+  # 10 Nov 2026 (Gaurav: "sab git mein, Claude pe kuch nahi"): roz ke Shorts BINA Flow clips banenge - GitHub hi
+  # script + screens + Gaurav ki photo wale cards (HOOK / PROBLEM / RESULT) + cover + Gemini voice bana ke
+  # schedule karta hai. Avatar wala Short jab chahiye: Actions -> Run workflow -> face = yes (Flow prompts issue mein).
+  faceless: true
+  per_day: 2                # Shorts per daily run (faceless = no Flow credits; 2 schedule slots a day)
   max_words_per_clip: 21    # ~7.8 s of brisk speech -> still fits one 8 s Flow clip (was 19)
   speed: 1.15               # lifts the pace of every clip a little (voice + lips together), 1.0 = off (was 1.1)
   max_batch: 14             # a manual daily run may prepare up to this many Shorts at once (a week)

@@ -17,6 +17,7 @@ A spec, e.g.
 Each step becomes two PNGs (plain + target highlighted) and the bounding box of the highlighted target,
 so the editor can zoom the "camera" onto it.
 """
+import re
 import html
 import json
 from pathlib import Path
@@ -294,6 +295,10 @@ def normalize(spec, card="", beat=""):
     app = str(spec.get("app") or "").strip().lower()
     app = ALIASES.get(app, app.replace("zoho ", ""))
     v = str(spec.get("view") or "").lower()
+    if app == "presenter" or v == "presenter":  # 10 Nov 2026: faceless Zoho Shorts - Gaurav's photo + the line's card
+        spec.update(app="presenter", view="presenter", heading="", click="", tip="", real=None, beat=beat)
+        spec.setdefault("text", card)
+        return spec
     if app in ("claude", "chatgpt") or spec.get("messages"):
         v = "chat"
     elif app == "api" or (spec.get("url") and spec.get("method")):
@@ -599,8 +604,45 @@ def build_html(spec):
     if not IS_ZOHO:  # niche v3: Claude-app chat + money card
         return {"chat": _chat_page_v3, "api": _api_page, "code": _code_page, "flow": _flow_page,
                 "notes": _money_page}.get(spec["view"], _money_page)(spec)
-    return {"chat": _chat_page, "api": _api_page, "code": _code_page, "flow": _flow_page, "notes": _notes_page}.get(
-        spec["view"], _app_page)(spec)
+    return {"chat": _chat_page, "api": _api_page, "code": _code_page, "flow": _flow_page, "notes": _notes_page,
+            "presenter": _presenter_page}.get(spec["view"], _app_page)(spec)
+
+
+def _presenter_page(spec):
+    """Faceless Zoho Shorts (10 Nov 2026): HOOK / PROBLEM / RESULT lines show Gaurav's own photo (cut-outs from his
+    Flow avatar clips, assets/presenter) with the line's card as a big caption - the screens carry the steps."""
+    import hashlib
+    import html as h
+    from . import thumbnail
+    ps = [p for p in thumbnail.poses() if (thumbnail.POSE_DIR / p.get("file", "")).exists()]
+    key = int(hashlib.md5((str(spec.get("seed", "")) + str(spec.get("beat", ""))).encode()).hexdigest()[:8], 16)
+    pose = ps[key % len(ps)] if ps else None
+    acc = spec.get("accent") or "#E42527"
+    text = re.sub(r"^\s*new\s*[:!-]\s*", "", str(spec.get("text") or ""), flags=re.I).strip()  # chip already says NEW
+    ws = text.split()
+    k = 2 if len(ws) >= 4 else 1
+    title = (h.escape(" ".join(ws[:-k])) + f' <mark>{h.escape(" ".join(ws[-k:]))}</mark>') if ws else ""
+    me = (f'<img class="me" src="{(thumbnail.POSE_DIR / pose["file"]).resolve().as_uri()}">' if pose else "")
+    beat = str(spec.get("beat", "")).split(" ")[0].upper()
+    chip = {"HOOK": "NEW", "PROBLEM": "THE PROBLEM", "RESULT": "THE RESULT"}.get(beat, "")
+    return f"""<!doctype html><html><head><meta charset="utf-8"><style>
+    @font-face{{font-family:Pop;src:url('{thumbnail.FONT.resolve().as_uri()}')}}
+    body{{margin:0;width:{W}px;height:{H}px;overflow:hidden;position:relative;font-family:Pop,'Noto Sans',sans-serif;
+         background:linear-gradient(170deg,#0B1124 0%,#16203F 60%,#0B1124 100%)}}
+    .g{{position:absolute;width:900px;height:900px;right:-300px;bottom:-280px;border-radius:50%;
+        background:radial-gradient(circle,{acc}77 0%,transparent 62%)}}
+    .chip{{position:absolute;top:46px;left:50px;background:{acc};color:#fff;font-size:30px;padding:10px 24px;
+           border-radius:30px;letter-spacing:2px}}
+    .t{{position:absolute;top:120px;left:50px;right:50px;color:#fff;font-size:76px;line-height:1.08;
+        text-transform:uppercase;text-shadow:0 6px 0 #000}}
+    .t mark{{background:#FFD400;color:#0B1124;text-shadow:none;padding:0 12px;border-radius:12px;
+             -webkit-box-decoration-break:clone;box-decoration-break:clone}}
+    .me{{position:absolute;bottom:0;left:50%;transform:translateX(-50%);height:640px;
+         filter:drop-shadow(0 0 24px rgba(0,0,0,.7)) drop-shadow(0 0 3px {acc})}}
+    </style></head><body><div class="g"></div>{f'<div class="chip">{chip}</div>' if chip else ""}
+    <div data-target style="position:absolute;inset:0"></div><div class="t" id="t">{title}</div>{me}
+    <script>const t=document.getElementById('t');let s=84;while(s>44&&t.scrollHeight>380){{s-=4;t.style.fontSize=s+'px';}}</script>
+    </body></html>"""
 
 
 CURSOR = ('<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 2l7.5 19 2.6-7.6L21 11z" '
@@ -635,8 +677,10 @@ def render(specs, outdir: Path):
             plain, hl = outdir / f"screen{i:02d}_a.png", outdir / f"screen{i:02d}_b.png"
             pg.screenshot(path=str(plain))
             box = pg.evaluate(JS_HL)
-            if not IS_ZOHO:  # niche v3: marker highlight only, no arrow cursor
-                pg.evaluate("() => document.querySelectorAll('.cursor').forEach(c => c.remove())")
+            if not IS_ZOHO or spec.get("view") == "presenter":  # no arrow cursor (presenter card: no highlight)
+                pg.evaluate("() => document.querySelectorAll('.cursor,.hl').forEach(c => c.remove())"
+                            if spec.get("view") == "presenter" else
+                            "() => document.querySelectorAll('.cursor').forEach(c => c.remove())")
             pg.screenshot(path=str(hl))
             res.append({"plain": plain, "hl": hl, "box": box})
         b.close()

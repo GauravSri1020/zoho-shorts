@@ -18,6 +18,9 @@ on:
       upload:
         description: "upload to YouTube? (yes/no)"
         default: "no"
+      face:
+        description: "daily: yes = Short with YOUR Flow avatar clips (prompts in the issue); empty = faceless (photo cards + screens)"
+        default: ""
 
 permissions:
   contents: write
@@ -33,6 +36,7 @@ jobs:
     timeout-minutes: 90
     env:
       PYTHONUNBUFFERED: "1"
+      FACE: ${{ github.event.inputs.face || '' }}   # yes = Flow avatar Short; empty = faceless (10 Nov 2026)
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
       YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
