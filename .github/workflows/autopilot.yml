@@ -18,15 +18,6 @@ on:
       upload:
         description: "upload to YouTube? (yes/no)"
         default: "no"
-      niche:
-        description: "niche for this run only (empty = channel.yaml active_niche; zoho | claude_wealth)"
-        default: ""
-      face:
-        description: "daily (claude_wealth): yes = Short with your Flow face clip (HOOK); empty = faceless (screens only)"
-        default: ""
-      topic:
-        description: "daily (claude_wealth): make THIS topic today, e.g. 'how to earn with video editing using Claude' (empty = rotation)"
-        default: ""
 
 permissions:
   contents: write
@@ -42,9 +33,6 @@ jobs:
     timeout-minutes: 90
     env:
       PYTHONUNBUFFERED: "1"
-      NICHE: ${{ github.event.inputs.niche || '' }}   # niche switch: empty = channel.yaml -> active_niche
-      TOPIC: ${{ github.event.inputs.topic || '' }}
-      FACE: ${{ github.event.inputs.face || '' }}   # niche v2: hand-picked topic for a manual daily run
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
       YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}

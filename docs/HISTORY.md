@@ -6,6 +6,23 @@ Is file ko har session ke end pe update karo, taaki agla chat yahin se shuru kar
 
 Gaurav jab bhi kuch bhi change karne bole: SABSE PEHLE backup - `backup-YYYY-MM-DD-<kya-badal-rahe-ho>` branch main se banao (aur agar video ka kaam hai to latest Short ka artifact download karo). Tabhi code chhuo. Kuch bigde to us branch se purana code wapas lo.
 
+## 10 Nov 2026 - SIRF ZOHO NICHE (Claude-wealth niche hata diya)
+
+Backup: branch `backup-2026-11-10-before-zoho-only` (change se pehle ka main - Claude niche wapas chahiye to yahin se).
+Gaurav: aage se sirf Zoho wala niche chalega, baaki niches nahi chahiye; sirf Zoho ki videos bane aur upload hon.
+- `channel.yaml`: `active_niche: zoho`, niches list mein sirf `zoho`. Koi aur niche (env NICHE) ab error deta hai.
+- Hataye: `niches/claude_wealth.yaml`, `research/claude_wealth_bank.yaml`, `autopilot/niche_claude_wealth.py`,
+  `autopilot/thumbnail.py` (cover sirf Claude niche ka tha), `state/benchmark_claude_wealth.json`.
+- Workflow "Run workflow" se `niche`, `face`, `topic` inputs hataye (sirf Claude niche ke the).
+- Claude ke 2 jobs jo clips ka wait kar rahe the (20261027-1000-1, 20261028-1047-1) -> status `skip`. Zaroori tha:
+  Zoho ka daily run 2 waiting Shorts pe ruk jaata hai (flow.max_waiting 2), aur ye dono bhi gine ja rahe the.
+  Ab sirf Zoho ka 20261025-0920-1 wait kar raha hai.
+- Code ke `if not IS_ZOHO` branches waise hi chhode (ab kabhi nahi chalte) - Zoho path ek line bhi nahi badla.
+  Test: saare autopilot modules Zoho settings pe import hote hain.
+- YouTube pe pehle se scheduled Claude Short (6-nZhetyLJ4, 10 Nov 21:30 IST) repo se nahi rukta - YouTube Studio
+  mein private / delete karna hai agar nahi chahiye.
+- Zoho niche = roz 1 Short (flow.per_day 1), jisme Gaurav ke Flow clips lagte hain (jaise 27 Oct se pehle).
+
 ## 2 Nov 2026 raat - Shorts ka THUMBNAIL / cover (Gaurav ka chehra + title + Claude screen)
 
 Backup: branch `backup-2026-11-02-before-shorts-thumbnail` (change se pehle ka main).

@@ -1,18 +1,13 @@
 # =====================================================================================
-#  NICHE SWITCH  -  GSX Automation  (27 Oct 2026)
+#  NICHE  -  GSX Automation
 #
-#  Kaunsa niche chalega, sirf yahan badlo. Baaki har niche ki settings apni file mein hain:
-#     zoho          -> niches/zoho.yaml           (purana AI + Zoho automation flow, ek bhi line nahi badli)
-#     claude_wealth -> niches/claude_wealth.yaml  (Claude se income / wealth + Claude ki problems)
-#
-#  Wapas Zoho pe:   active_niche: zoho   -> Commit. Bas.
-#  Sirf ek run ke liye: Actions -> GSX Automation Shorts -> Run workflow -> niche.
-#  Purane (Zoho) Shorts jo clips ka wait kar rahe hain, Zoho wale code se hi bante hain - switch se farak nahi padta.
+#  10 Nov 2026: Gaurav - ab sirf ZOHO niche chalega. Claude-wealth niche hata diya
+#  (purana code: git branch backup-2026-11-10-before-zoho-only).
+#     zoho -> niches/zoho.yaml   (AI + Zoho automation flow)
 #  Zoho backup: backups/2026-10-27_ZOHO_BACKUP/ + git branch backup-2026-10-27-zoho-before-claude-wealth
 # =====================================================================================
 
-active_niche: claude_wealth
+active_niche: zoho
 
 niches:
   zoho: niches/zoho.yaml
-  claude_wealth: niches/claude_wealth.yaml
