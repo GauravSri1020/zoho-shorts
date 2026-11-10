@@ -151,9 +151,29 @@ def _hours_old(it):
     return max(0, int((time.time() - it["ts"]) / 3600))
 
 
-def fetch(already_covered, lookback_days=LOOKBACK_DAYS):
+_GENERIC = {"zoho", "new", "adds", "add", "launches", "launch", "announces", "india", "indias", "with", "platform",
+            "update", "updates", "gets", "now", "business", "businesses"}
+
+
+def _story_terms(title):
+    """Key words of a headline: no 'zoho' / generic verbs, plural folded (agents -> agent)."""
+    out = set()
+    for t in _terms(title):
+        if " " in t or t in _GENERIC:
+            continue
+        out.add(t[:-1] if len(t) > 4 and t.endswith("s") else t)
+    return out
+
+
+def _same_story(a_terms, b_terms):
+    common = a_terms & b_terms
+    return len(common) >= 2 and len(common) / max(1, min(len(a_terms), len(b_terms))) >= 0.5
+
+
+def fetch(already_covered, lookback_days=LOOKBACK_DAYS, covered_titles=None):
     covered = set(already_covered)
     seen_titles = set()
+    done = [_story_terms(x) for x in (covered_titles or [])[-30:] if x]  # the last ~2 weeks of Shorts
     if TRENDING_ONLY:
         # 10 Nov 2026 (Gaurav): ONLY trending news. News = fresh (news_max_age_hours) and ranked by how many
         # different publishers / sources carry the same story + how new it is. Community questions are kept
@@ -161,6 +181,10 @@ def fetch(already_covered, lookback_days=LOOKBACK_DAYS):
         news = _read(FEEDS, time.time() - NEWS_MAX_AGE_HOURS * 3600, covered, seen_titles, "news")
         community = _read(COMMUNITY_FEEDS, time.time() - lookback_days * 86400, covered, seen_titles, "question")
         news = _cluster(news)
+        before = len(news)  # 10 Nov 2026: a story that already became a Short never comes back (other link / publisher)
+        news = [it for it in news if not any(_same_story(_story_terms(it["title"]), d) for d in done)]
+        if before != len(news):
+            print(f"[research] {before - len(news)} news stories skipped - already made into a Short")
         _trend_scores(news + community)
         for it in news:
             h = _hours_old(it)

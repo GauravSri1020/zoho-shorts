@@ -88,6 +88,33 @@ def ask_text(prompt, temperature=0.6):
     return ""
 
 
+def news_facts(story):
+    """10 Nov 2026: a headline alone made the writer invent menus ("Settings > AI Agents > Link Data Source").
+    Before writing, Gemini + Google Search collects the REAL facts of the news (what launched, exact feature names,
+    where it is in the product IF official docs say so, plans / availability, dates). Added to the story summary, so
+    the writer AND the QA agent check against them. Empty string if search is not available today."""
+    from google.genai import types as _t
+    prompt = (f"Search the web for this Zoho news and list ONLY verified facts, with the source site after each fact:\n"
+              f"NEWS: {story.get('title')} ({story.get('source')})\n\n"
+              "1. What exactly Zoho launched / changed and when. 2. The exact names of new features. "
+              "3. Where a user finds or switches it on in the product - ONLY if an official Zoho page or help doc says "
+              "it (exact menu path); otherwise write 'menu path: not published'. 4. Plans / pricing / availability / "
+              "regions / preview status. 5. Anything a business can do with it today. "
+              "Max 15 short bullet lines. No guesses, no marketing words.")
+    for model in _MODELS:
+        try:
+            r = _gemini().models.generate_content(
+                model=model, contents=prompt,
+                config=_t.GenerateContentConfig(temperature=0.1, tools=[_t.Tool(google_search=_t.GoogleSearch())]))
+            text = (r.text or "").strip()
+            if len(text) > 120:
+                print(f"[facts] {len(text)} chars from Google Search ({model})")
+                return text[:2500]
+        except Exception as e:
+            print(f"[facts] {model} failed: {str(e)[:140]}")
+    return ""
+
+
 def word_count(text):
     return len(re.sub(r"\[[^\]]*\]", "", text or "").split())
 
@@ -235,13 +262,22 @@ def write_script(angle):
         return _niche().write_script(angle)
     lo, hi = SCRIPT_WORDS
     s = angle.get("story")
+    if s and TRENDING_ONLY and s.get("type") == "news" and not s.get("facts_checked"):
+        facts = news_facts(s)
+        s["facts_checked"] = True  # the same dict goes to the QA agent -> it checks against the facts too
+        if facts:
+            s["summary"] = f"VERIFIED FACTS (Google Search):\n{facts}\n\nRSS: {s.get('summary', '')}"[:3200]
     if s and s.get("source") == "GSX problem bank":
         source = f"SOURCE: the creator's problem bank (verified facts):\n{s['title']}\n{s['summary']}"
     elif s and TRENDING_ONLY and s.get("type") == "news":
         source = (f"SOURCE = TRENDING ZOHO NEWS ({s.get('age_hours', '?')} hours old, {s.get('publishers', 1)} "
                   f"publishers): {s['title']} - {s['source']}\n"
                   f"{s['summary']}\nThe HOOK must open on this news (what just happened), then show what it means "
-                  f"for a Zoho business and how to use / handle it in Zoho today. State only facts from this news.")
+                  f"for a Zoho business and how to use / handle it in Zoho today. State only facts from this news.\n"
+                  f"SCREENS: a Zoho app page (view list / form / settings with a menu path) ONLY when that exact menu "
+                  f"path is in the facts above. A new feature without a published menu path is shown as a 'flow' "
+                  f"chain of what happens, or an AI chat (Claude / ChatGPT over Zoho MCP) - never an invented "
+                  f"settings page or button name.")
     elif s:
         source = f"SOURCE (the question/news this came from): {s['title']} - {s['source']}\n{s['summary']}"
     else:
@@ -376,6 +412,8 @@ def _news_qa_rules(angle):
 - reject if a menu / button name for a NEW feature from the news is not in the news text and you are not sure it
   exists: then the step must be described generally ("open the new AI agent workflows in Campaigns")
 - reject if the hook does not clearly say what Zoho just launched / changed
+- reject if a Zoho app screen (list / form / settings) shows a menu path or button for the NEW feature that is not
+  in the facts below - it must then be a flow chain or AI chat screen instead
 NEWS ({s.get('age_hours', '?')} hours old): {s.get('title', '')} - {s.get('source', '')}
 {s.get('summary', '')[:900]}
 """

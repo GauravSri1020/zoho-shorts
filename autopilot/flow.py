@@ -313,7 +313,8 @@ def prepare(count, do_upload):
         return
     st = state.load()
     if IS_ZOHO:  # the Zoho niche, unchanged
-        angles = writer.scout(research.fetch(st["covered_links"]), count + 2, st["problems"])
+        angles = writer.scout(research.fetch(st["covered_links"], covered_titles=st.get("covered_titles")),
+                              count + 2, st["problems"])
     else:  # niche switch: the rotation (4 wealth -> 1 problems) decides what kind of Short comes next
         from . import niche_claude_wealth as nw
         rot = st.setdefault("rotation", {}).get(NICHE_ID, 0)
@@ -369,6 +370,9 @@ def prepare(count, do_upload):
             st["problems"].append(angle["problem"])
             if angle.get("story"):
                 st["covered_links"].append(angle["story"]["link"])
+                # 10 Nov 2026: the same story comes back from another publisher / link -> remember the title too
+                st.setdefault("covered_titles", []).append(angle["story"].get("title", ""))
+                st["covered_titles"] = st["covered_titles"][-200:]
             st["scripts"][f"S{st['next_id']:04d}"] = {"problem": angle["problem"], "title": job["title"],
                                                       "pillar": angle.get("pillar"), "engine": "flow",
                                                       "job": job_id, "created": job["created"]}
