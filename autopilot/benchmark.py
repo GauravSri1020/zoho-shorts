@@ -182,9 +182,9 @@ def gate(mp4, sc, engine, tech_problems, voice="gemini"):
                   else f"Today the {_QA_PART} parts use a backup voice ('{voice}') because the AI-voice quota was used "
                   "up - a different voice on the screen parts is expected and NOT a blocker, but every part must be "
                   "clear, natural and at the same loudness.")
-    _COVER_NOTE = ("" if IS_ZOHO else "   NOTE: the first ~1 s is the Short's THUMBNAIL COVER on purpose (big title, the creator's photo, "
-                   "the Claude screen, slow push-in, the hook voice already playing, then a fade into the video) - it "
-                   "is not a frozen frame or a missing caption; judge it as the hook: does it stop the scroll?\n")
+    _COVER_NOTE = ("   NOTE: the first ~1 s is the Short's THUMBNAIL COVER on purpose (big title, the creator's photo, "
+                   "the Short's own screen, slow push-in, the hook voice already playing, then a fade into the video) - it "
+                   "is not a frozen frame or a missing caption; judge it as the hook: does it stop the scroll?\n")  # 10 Nov: Zoho too
     prompt = f"""You are the senior video editor AND the strict final QA for the YouTube channel "{CHANNEL_NAME}"
 ({_QA_NICHE}). Watch the attached Short second by second - picture AND sound - exactly like a
 professional editor does before publishing. It is uploaded ONLY if it is as good as the best Shorts in the niche;

@@ -304,6 +304,7 @@ Return JSON:
 {{
  "title": "YouTube title, max 70 chars, problem/fix led, honest, may name the trending tool (Claude, ChatGPT, AI agent)",
  "hook_text": "max 6 words shown big at the top of the video",
+ "thumb_text": "3-6 words for the thumbnail cover (the first second): the news or the problem as a caption, e.g. 'Zoho *Analytics* got AI agents' - put the 1-2 key words in *stars*",
  "app_label": "short label for the top tag, e.g. 'Zoho CRM + Claude' or 'Zoho Flow AI'",
  "lines": [{{"beat": "HOOK|PROBLEM|FIX|STEP 1|STEP 2|STEP 3|STEP 4|RESULT", "say": "Roman text",
             "tts": "text for the voice engine", "card": "on-screen text",

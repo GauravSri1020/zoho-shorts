@@ -6,6 +6,23 @@ Is file ko har session ke end pe update karo, taaki agla chat yahin se shuru kar
 
 Gaurav jab bhi kuch bhi change karne bole: SABSE PEHLE backup - `backup-YYYY-MM-DD-<kya-badal-rahe-ho>` branch main se banao (aur agar video ka kaam hai to latest Short ka artifact download karo). Tabhi code chhuo. Kuch bigde to us branch se purana code wapas lo.
 
+## 10 Nov 2026 (7) - 2nd Short + har Short pe COVER + har Short ka naya LOOK
+
+Backups: `backup-2026-11-10-before-apt-retry`, `backup-2026-11-10-before-zoho-cover-looks`.
+- Daily run (count 2): 20261110-1149-2 (Zoho Analytics AI agents) facts se dobara likha (Ask Zia ke 6 agents,
+  semantic layer, Analytics MCP server, AI observability, prices unchanged); 20261110-1209-4 (Arattai + MapmyIndia,
+  consumer news, galat SalesIQ screens, 7 clips) skip + issue #146 close. Flow main account, project "Nov 10 - 17:43",
+  3 clips -> QA 95/70 -> https://youtube.com/shorts/JiV57TU0m98, public 11 Nov 21:30 IST (Gemini voice, no backup).
+- Workflow: ffmpeg/fonts apt install 2 baar 8 min pe atka -> ab 3 short tries (timeout 150/240 s, Acquire retries).
+- COVER (Gaurav: "Shorts ke shuru mein meri photo + problem caption, bas starting mein"): `autopilot/thumbnail.py`
+  wapas (Zoho-only cleanup mein hata tha). Zoho Shorts ka pehla ~1 s = cover (Gaurav cut-out + bada caption +
+  Short ki apni screen + arrow), phir fade. Rang Zoho product se (`composer._ZOHO_ACCENT`), label = app_label.
+  Writer ab `thumb_text` deta hai (3-6 words, *key words*). QA ko cover note Zoho pe bhi. cover.jpg custom thumbnail
+  bhi try hota hai (channel verified nahi to sirf log). Fix: cover pe screen sides se kat'ti thi -> full width.
+- LOOK (Gaurav: "har video ka look alag" = sirf outfit + jagah): `flow.outfits` (20) x `flow.places` (20) in
+  niches/zoho.yaml; `flow.pick_look` = kabhi use na hua combination (state `used_looks`), pichhli video se na same
+  outfit na same jagah, kam use hue pehle. Aaj ke 2 looks seed kiye. Test: 30 looks unique.
+
 ## 10 Nov 2026 (6) - Gemini screen voice FIX
 
 Backup: branch `backup-2026-11-10-before-tts-fix`.

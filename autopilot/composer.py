@@ -14,7 +14,7 @@ Two kinds of shots, cut together:
       | +----------------------------+ |
       +--------------------------------+
 Word-timed captions at the bottom for the whole video, soft background music ducked under the voice.
-Claude niche: the first ~1 s is the thumbnail cover (autopilot/thumbnail.py: title + Gaurav + Claude screen).
+Every Short: the first ~1 s is the thumbnail cover (autopilot/thumbnail.py: caption + Gaurav + the Short's screen).
 """
 import json
 import random
@@ -300,18 +300,28 @@ def _layers_v2(hook, workdir: Path, app_label, sc):
 
 
 def _cover(sc, specs, shots, workdir: Path):
-    """Thumbnail cover (autopilot/thumbnail.py) - Claude niche only; the Zoho niche stays exactly as it was.
+    """Thumbnail cover (autopilot/thumbnail.py): the first ~1 s of the Short = Gaurav's photo + the news / problem as a
+    big caption + the Short's own screen. 10 Nov 2026: on for the Zoho niche too (Gaurav: every Short opens on it).
     A cover problem never blocks a Short: it is then simply built without the cover, as before."""
-    if IS_ZOHO:
-        return None
     try:
         from . import thumbnail
+        if IS_ZOHO:
+            app = str(sc.get("app_label") or "Zoho")
+            accent = _ZOHO_ACCENT.get(next((k for k in _ZOHO_ACCENT if k in app.lower()), ""), "#E42527")
+            return thumbnail.cover(sc, workdir, thumbnail.screen_for_cover(specs, shots), accent=accent,
+                                   handle=CHANNEL_HANDLE, label=app[:32])
         from .niche_claude_wealth import accent_for
         return thumbnail.cover(sc, workdir, thumbnail.screen_for_cover(specs, shots), accent=accent_for(sc),
                                handle=CHANNEL_HANDLE, label="Claude")
     except Exception as e:
         print(f"[cover] skipped: {str(e)[:200]}")
         return None
+
+
+# cover glow colour per Zoho product (else Zoho red)
+_ZOHO_ACCENT = {"crm": "#E42527", "books": "#2E7D32", "analytics": "#1E88E5", "campaigns": "#F57C00",
+                "desk": "#00897B", "flow": "#7E57C2", "creator": "#C2185B", "social": "#0288D1",
+                "salesiq": "#FF7043", "sign": "#3949AB", "inventory": "#6D4C41", "people": "#00ACC1"}
 
 
 def _title_html(hook):

@@ -969,5 +969,15 @@
   "claude_wealth": 21,
   "claude_wealth_industry": 16,
   "claude_wealth_segment": 16
- }
+ },
+ "used_looks": [
+  [
+   2,
+   2
+  ],
+  [
+   3,
+   3
+  ]
+ ]
 }

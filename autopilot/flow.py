@@ -39,6 +39,33 @@ SHOT = (_F.get("shot") or "Vertical 9:16 medium-wide shot from the knees up, cam
         "his head in the upper third with space above it, both hands and all his gestures fully visible in the "
         "frame").strip()
 LOOKS = [str(x).strip() for x in (_F.get("looks") or []) if str(x).strip()] or [SCENE]  # one look per Short, rotated
+OUTFITS = [str(x).strip() for x in (_F.get("outfits") or []) if str(x).strip()]
+PLACES = [str(x).strip() for x in (_F.get("places") or []) if str(x).strip()]
+
+
+def pick_look(st):
+    """10 Nov 2026 (Gaurav): every Short gets its OWN look - an outfit x place combination never used before
+    (state "used_looks"), and never the same outfit or the same place as the Short before it.
+    Without outfits/places in the niche file: the old rotation through "looks"."""
+    if not (OUTFITS and PLACES):
+        return LOOKS[st.get("look_index", 0) % len(LOOKS)]
+    import hashlib
+    used = st.setdefault("used_looks", [])
+    last = used[-1] if used else [-1, -1]
+    combos = [(o, p) for o in range(len(OUTFITS)) for p in range(len(PLACES))
+              if [o, p] not in used and o != last[0] and p != last[1]]
+    if not combos:  # all used (400 Shorts) -> start over, still never like the last one
+        used.clear()
+        combos = [(o, p) for o in range(len(OUTFITS)) for p in range(len(PLACES)) if o != last[0] and p != last[1]]
+    # spread: prefer the outfit and the place used least so far, then a stable pseudo-random pick
+    oc = {o: sum(1 for u in used if u[0] == o) for o in range(len(OUTFITS))}
+    pc = {p: sum(1 for u in used if u[1] == p) for p in range(len(PLACES))}
+    best = min(oc[o] + pc[p] for o, p in combos)
+    combos = [c for c in combos if oc[c[0]] + pc[c[1]] == best]
+    k = int(hashlib.md5(str(st.get("next_id", 0)).encode()).hexdigest()[:8], 16)
+    o, p = combos[k % len(combos)]
+    used.append([o, p])
+    return f"wearing {OUTFITS[o]}, {PLACES[p]}"
 SPEED = max(1.0, min(1.6, float(_F.get("speed", 1.1))))  # lifts Veo's slow delivery (voice + lips together); v2 claude niche 1.5
 # screen-part (TTS) voice pace. 1.0 = untouched (Zoho niche). Claude niche v2: same as SPEED, so the pace never jumps.
 TTS_SPEED = max(1.0, min(1.6, float(_F.get("tts_speed", 1.0))))
@@ -317,7 +344,7 @@ def prepare(count, do_upload):
             if not clips and not FACELESS:
                 raise RuntimeError("script has no spoken lines")
             if IS_ZOHO:
-                look = LOOKS[st.get("look_index", 0) % len(LOOKS)]  # same look in every clip of this Short
+                look = pick_look(st)  # same look in every clip of this Short, a new one for every Short
             else:  # niche v2: the place comes from the Short's industry, the outfit rotates
                 look = nw.look_for(angle, st.get("look_index", 0)) or LOOKS[st.get("look_index", 0) % len(LOOKS)]
             st["look_index"] = st.get("look_index", 0) + 1
