@@ -1,35 +1,36 @@
 {
  "id": "20261110-1008-2",
  "niche": "zoho",
- "status": "skip",
+ "status": "waiting_for_clips",
  "upload": true,
  "created": "2026-11-10T10:10:49",
- "title": "Automate WhatsApp Marketing with Zoho AI Agents #Shorts",
- "description": "Learn how to use the new Zoho Marketing Automation AI agents to automate your WhatsApp customer outreach and boost engagement by 40%.\n\n1. Navigate to Marketing Automation and select WhatsApp Channels.\n2. Enable the AI Agent assistant for copy generation and audience segmentation.\n3. Set triggers so AI agents generate personalized WhatsApp follow-ups based on user actions.\n\nAPI / tool used:\n- name: Zoho Marketing Automation WhatsApp API\n- endpoint: Zia AI Agent Framework\n- scope: ZohoMarketingAutomation.campaigns.ALL\n- docs: Zoho Marketing Automation Help\n\nAI + Zoho automations every day - follow @GSXAutomation\n\nWhat inspired this: https://news.google.com/rss/articles/CBMinAFBVV95cUxQaDdIeHVidzJpQWRtaFRUd3VQVnA2Wm95V0FzVVBfQ3NpQmpTbElZWDVva3VIVHphdC13VFJOUzB3MXBIR2JNczZnVVFkM1NQNlZndV9yNEdEd1Z2OU9NSXhVNlpHOHl4UlFUcXVRbG5ubmU0QjYwUnBOT1hkTVpCNWpCem01d1JMM0U0MDVTak81UkxCTFRSRlNpa0k?oc=5\n\nThis video uses an AI-generated presenter and voice.\nIndependent channel. Not affiliated with or endorsed by Zoho Corporation. Zoho is a trademark of Zoho Corporation.\n\n#Shorts #Zoho #AIAutomation #ZohoCRM #AIAgents",
+ "title": "Zoho Campaigns Just Got AI Agents + WhatsApp #Shorts",
+ "description": "Zoho just rebuilt Zoho Campaigns: AI agent workflows through MCP, native WhatsApp campaigns and frequency capping across email, SMS and WhatsApp. Here is how to put an AI agent to work on your campaigns while you keep the final approval.\n\n1. First, connect your AI client to Zoho Campaigns through MCP, and give it only the permissions you want.\n2. Then ask in plain English, like: build a re-engagement campaign for contacts who stopped opening our emails.\n3. Add a WhatsApp step with an approved template, and turn on frequency capping across email, SMS and WhatsApp.\n4. Finally, review the draft, send yourself a test, then approve and schedule it.\n\nAPI / tool used:\n- name: Zoho Campaigns AI agent workflows\n- endpoint: Model Context Protocol (MCP) support in Zoho Campaigns\n- docs: Zoho Campaigns help\n\nAI + Zoho automations every day - follow @GSXAutomation\n\nWhat inspired this: https://itbrief.com.au/story/zoho-adds-ai-agent-workflows-to-campaigns-platform\n\nThis video uses an AI-generated presenter and voice.\nIndependent channel. Not affiliated with or endorsed by Zoho Corporation. Zoho is a trademark of Zoho Corporation.\n\n#Shorts #Zoho #AIAutomation #ZohoCRM #AIAgents",
  "angle": {
   "story_index": 2,
   "pillar": "trending",
   "region": "global",
-  "product": "Zoho Marketing Automation",
+  "product": "Zoho Campaigns",
   "app": "campaigns",
-  "problem": "Managing multichannel customer outreach across WhatsApp and email requires tedious manual campaign creation.",
+  "problem": "Most teams still build every email, SMS and WhatsApp campaign by hand, and customers get the same message three times.",
   "fix_type": "ai_agent",
-  "solution": "Deploy AI agents inside Zoho's updated marketing platform to automate WhatsApp content creation and targeting.",
+  "solution": "Let a connected AI agent build, schedule and analyse campaigns in Zoho Campaigns over MCP, with your approval.",
   "steps": [
-   "Navigate to Marketing Automation and select WhatsApp Channels.",
-   "Enable the AI Agent assistant for copy generation and audience segmentation.",
-   "Set triggers so AI agents generate personalized WhatsApp follow-ups based on user actions."
+   "First, connect your AI client to Zoho Campaigns through MCP, and give it only the permissions you want.",
+   "Then ask in plain English, like: build a re-engagement campaign for contacts who stopped opening our emails.",
+   "Add a WhatsApp step with an approved template, and turn on frequency capping across email, SMS and WhatsApp.",
+   "Finally, review the draft, send yourself a test, then approve and schedule it."
   ],
-  "api": "Zoho Marketing Automation WhatsApp API + Zia AI Agent",
-  "result": "Increases campaign engagement rates by 40% with zero manual copy writing.",
-  "wow": "AI agents now write personalized WhatsApp message variations tailored to each customer segment live.",
-  "hook": "Zoho upgraded its marketing platform with WhatsApp AI agents today."
+  "api": "Zoho Campaigns MCP support (AI agent workflows)",
+  "result": "AI agents do the campaign busywork; you approve. Paid plans from $4 a month.",
+  "wow": "Zoho Campaigns now works with AI agents over MCP and caps messages across email, SMS and WhatsApp.",
+  "hook": "Zoho just rebuilt Campaigns. AI agents can now prepare your campaigns, and WhatsApp is built right in."
  },
  "story": {
-  "title": "Zoho upgrades marketing platform with WhatsApp, AI agent capabilities",
-  "link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQaDdIeHVidzJpQWRtaFRUd3VQVnA2Wm95V0FzVVBfQ3NpQmpTbElZWDVva3VIVHphdC13VFJOUzB3MXBIR2JNczZnVVFkM1NQNlZndV9yNEdEd1Z2OU9NSXhVNlpHOHl4UlFUcXVRbG5ubmU0QjYwUnBOT1hkTVpCNWpCem01d1JMM0U0MDVTak81UkxCTFRSRlNpa0k?oc=5",
-  "summary": "Zoho upgrades marketing platform with WhatsApp, AI agent capabilities Businessamlive",
-  "source": "Businessamlive",
+  "title": "Zoho adds AI agent workflows to Campaigns platform",
+  "link": "https://itbrief.com.au/story/zoho-adds-ai-agent-workflows-to-campaigns-platform",
+  "summary": "Zoho rebuilt Zoho Campaigns (reported 30 Oct - 5 Nov 2026): AI agent workflows through Model Context Protocol (MCP) support - connected AI agents build, schedule and analyse campaigns from plain-English instructions, limited to the permissions the business sets, with review and approval; examples: a seasonal campaign for an existing segment, adapting a top past campaign, a re-engagement campaign for inactive contacts. Native WhatsApp marketing: bulk campaigns with approved templates, WhatsApp steps in automated workflows. Frequency capping across email, SMS and WhatsApp. Zia Content Analyser drafts subject lines and copy. Live Zoho CRM sync. Paid plans from $4 a month; SMS / WhatsApp need message credits; free plan up to 500 contacts.",
+  "source": "IT Brief Australia",
   "ts": 1794215101,
   "type": "news",
   "publishers": 3,
@@ -38,259 +39,310 @@
   "score": 20
  },
  "script": {
-  "title": "Automate WhatsApp Marketing with Zoho AI Agents",
-  "hook_text": "Manual WhatsApp marketing wastes time",
-  "app_label": "Zoho Marketing Automation",
+  "title": "Zoho Campaigns Just Got AI Agents + WhatsApp",
+  "hook_text": "Zoho Campaigns got AI agents",
+  "app_label": "Zoho Campaigns + AI agent",
   "lines": [
    {
     "beat": "HOOK",
-    "say": "Managing manual WhatsApp outreach across segments wastes hours and drops engagement.",
-    "tts": "Managing manual WhatsApp outreach across segments wastes hours and drops engagement.",
-    "card": "Manual WhatsApp Outreach",
+    "say": "Zoho just rebuilt Campaigns. AI agents can now prepare your campaigns, and WhatsApp is built right in.",
+    "tts": "Zoho just rebuilt Campaigns. AI agents can now prepare your campaigns, and WhatsApp is built right in.",
+    "card": "NEW: Zoho Campaigns + AI agents",
     "screen": null
    },
    {
     "beat": "PROBLEM",
-    "say": "Writing personalized campaign copy for every custom customer group manually is exhausting and impossible to scale.",
-    "tts": "Writing personalized campaign copy for every custom customer group manually is exhausting and impossible to scale.",
-    "card": "Manual Outreach Fails",
+    "say": "Most teams still build every email, SMS and WhatsApp campaign by hand, and customers get the same message three times.",
+    "tts": "Most teams still build every email, SMS and WhatsApp campaign by hand, and customers get the same message three times.",
+    "card": "Same message, 3 channels",
     "screen": null
    },
    {
     "beat": "FIX",
-    "say": "You can deploy Zia AI agents inside Zoho Marketing Automation to automate WhatsApp copy creation and audience targeting.",
-    "tts": "You can deploy Zia AI agents inside Zoho Marketing Automation to automate WhatsApp copy creation and audience targeting.",
-    "card": "Deploy Zia AI Agents",
+    "say": "Zoho Campaigns now supports MCP, so a connected AI agent can build, schedule and analyse campaigns for you.",
+    "tts": "Zoho Campaigns now supports MCP, so a connected AI agent can build, schedule and analyse campaigns for you.",
+    "card": "Campaigns supports MCP",
     "screen": {
-     "app": "campaigns",
-     "view": "settings",
-     "path": [
-      "Marketing Automation",
-      "AI Assistant"
+     "app": "claude",
+     "view": "chat",
+     "messages": [
+      [
+       "user",
+       "Build a re-engagement campaign for contacts who stopped opening our emails. Draft only, I'll approve it."
+      ],
+      [
+       "assistant",
+       "Done: I found the inactive contacts segment and drafted the campaign in Zoho Campaigns. It is waiting for your approval."
+      ]
      ],
-     "heading": "AI Agent Settings",
-     "click": "Enable AI Agent",
-     "tip": "Turn on Zia for marketing"
+     "tool": "Zoho Campaigns MCP",
+     "click": "Zoho Campaigns MCP",
+     "tip": "AI drafts, you approve"
     }
    },
    {
     "beat": "STEP 1",
-    "say": "First, navigate to your Zoho Marketing Automation dashboard, go to Channels, and click WhatsApp Channels to manage your platform.",
-    "tts": "First, navigate to your Zoho Marketing Automation dashboard, go to Channels, and click WhatsApp Channels to manage your platform.",
-    "card": "Select WhatsApp Channels",
+    "say": "First, connect your AI client to Zoho Campaigns through MCP, and give it only the permissions you want.",
+    "tts": "First, connect your AI client to Zoho Campaigns through MCP, and give it only the permissions you want.",
+    "card": "Connect via MCP",
     "screen": {
-     "app": "campaigns",
-     "view": "list",
-     "path": [
-      "Marketing Automation",
-      "Channels"
+     "app": "flow",
+     "view": "flow",
+     "heading": "AI agent permissions",
+     "nodes": [
+      "AI client: Claude / ChatGPT",
+      "MCP: Zoho Campaigns",
+      "Permissions: draft + schedule only"
      ],
-     "heading": "Channels",
-     "click": "WhatsApp Channels",
-     "tip": "Select your WhatsApp integration"
+     "click": "Permissions: draft + schedule only",
+     "tip": "Limit what the agent can do"
     }
    },
    {
     "beat": "STEP 2",
-    "say": "Next, open AI Agent Assistant and click Enable AI Agent to start automated copy generation and customer audience segmentation.",
-    "tts": "Next, open AI Agent Assistant and click Enable AI Agent to start automated copy generation and customer audience segmentation.",
-    "card": "Enable AI Segmentation",
+    "say": "Then ask in plain English, like: build a re-engagement campaign for contacts who stopped opening our emails.",
+    "tts": "Then ask in plain English, like: build a re-engagement campaign for contacts who stopped opening our emails.",
+    "card": "Ask in plain English",
     "screen": {
-     "app": "campaigns",
-     "view": "settings",
-     "path": [
-      "Channels",
-      "WhatsApp",
-      "AI Agent"
+     "app": "claude",
+     "view": "chat",
+     "messages": [
+      [
+       "user",
+       "Build a re-engagement campaign for contacts who stopped opening our emails."
+      ],
+      [
+       "assistant",
+       "Draft ready in Zoho Campaigns: segment selected, subject line and copy written. Approve to schedule?"
+      ]
      ],
-     "heading": "AI Agent Assistant",
-     "click": "Enable AI Agent",
-     "tip": "AI writes your message variations"
+     "tool": "Zoho Campaigns MCP",
+     "click": "Approve to schedule?",
+     "tip": "Plain English is enough"
     }
    },
    {
     "beat": "STEP 3",
-    "say": "Finally, open Journey Builder, add Trigger User Action, and click Generate Content to send personalized automated follow-ups.",
-    "tts": "Finally, open Journey Builder, add Trigger User Action, and click Generate Content to send personalized automated follow-ups.",
-    "card": "Configure AI Triggers",
+    "say": "Add a WhatsApp step with an approved template, and turn on frequency capping across email, SMS and WhatsApp.",
+    "tts": "Add a WhatsApp step with an approved template, and turn on frequency capping across email, SMS and WhatsApp.",
+    "card": "WhatsApp + frequency capping",
     "screen": {
-     "app": "campaigns",
-     "view": "journey",
-     "path": [
-      "Marketing Automation",
-      "Journeys"
-     ],
-     "heading": "Journey Builder",
+     "app": "flow",
+     "view": "flow",
+     "heading": "Re-engagement workflow",
      "nodes": [
-      "Trigger: User Action",
-      "AI: Generate Content",
-      "Action: Send WhatsApp"
+      "Email: we miss you",
+      "WhatsApp: approved template",
+      "Frequency capping: email + SMS + WhatsApp"
      ],
-     "click": "Generate Content",
-     "tip": "AI triggers on user events"
+     "click": "Frequency capping: email + SMS + WhatsApp",
+     "tip": "No more triple messages"
+    }
+   },
+   {
+    "beat": "STEP 4",
+    "say": "Finally, review the draft, send yourself a test, then approve and schedule it.",
+    "tts": "Finally, review the draft, send yourself a test, then approve and schedule it.",
+    "card": "Review > Test > Approve",
+    "screen": {
+     "app": "flow",
+     "view": "flow",
+     "heading": "Before it goes out",
+     "nodes": [
+      "Review draft",
+      "Send test",
+      "Approve + schedule"
+     ],
+     "click": "Approve + schedule",
+     "tip": "You keep the final say"
     }
    },
    {
     "beat": "RESULT",
-    "say": "This automated workflow can increase campaign engagement rates by forty percent without writing manual copy.",
-    "tts": "This automated workflow can increase campaign engagement rates by forty percent without writing manual copy.",
-    "card": "40% Higher Engagement",
+    "say": "The agent does the busywork, you keep the final say, and paid plans still start at four dollars a month.",
+    "tts": "The agent does the busywork, you keep the final say, and paid plans still start at four dollars a month.",
+    "card": "Paid plans from $4/month",
     "screen": null
    }
   ],
   "api": {
-   "name": "Zoho Marketing Automation WhatsApp API",
-   "endpoint": "Zia AI Agent Framework",
-   "scope": "ZohoMarketingAutomation.campaigns.ALL",
-   "docs": "Zoho Marketing Automation Help"
+   "name": "Zoho Campaigns AI agent workflows",
+   "endpoint": "Model Context Protocol (MCP) support in Zoho Campaigns",
+   "scope": null,
+   "docs": "Zoho Campaigns help"
   },
   "code": null,
   "test_before_recording": [
-   "Verify WhatsApp channel connectivity",
-   "Check AI credit availability in Zoho"
+   "Check that your Zoho Campaigns account shows the new AI agent / MCP option",
+   "WhatsApp needs an approved template and message credits"
   ],
-  "description": "Learn how to use the new Zoho Marketing Automation AI agents to automate your WhatsApp customer outreach and boost engagement by 40%.",
+  "description": "Zoho just rebuilt Zoho Campaigns: AI agent workflows through MCP, native WhatsApp campaigns and frequency capping across email, SMS and WhatsApp. Here is how to put an AI agent to work on your campaigns while you keep the final approval.",
   "tags": [
    "Zoho",
+   "ZohoCampaigns",
+   "AIAgents",
+   "MCP",
+   "WhatsAppMarketing",
+   "EmailMarketing",
    "MarketingAutomation",
-   "WhatsApp",
-   "AI",
-   "Zia",
-   "Automation",
-   "CX",
-   "DigitalMarketing",
-   "TechTrends",
-   "CRM"
+   "Zia"
   ]
  },
  "lines": [
   {
    "beat": "HOOK",
-   "say": "Managing manual WhatsApp outreach across segments wastes hours and drops engagement.",
-   "tts": "Managing manual WhatsApp outreach across segments wastes hours and drops engagement.",
-   "card": "Manual WhatsApp Outreach",
+   "say": "Zoho just rebuilt Campaigns. AI agents can now prepare your campaigns, and WhatsApp is built right in.",
+   "tts": "Zoho just rebuilt Campaigns. AI agents can now prepare your campaigns, and WhatsApp is built right in.",
+   "card": "NEW: Zoho Campaigns + AI agents",
    "screen": null,
    "face": true
   },
   {
    "beat": "PROBLEM",
-   "say": "Writing personalized campaign copy for every custom customer group manually is exhausting and impossible to scale.",
-   "tts": "Writing personalized campaign copy for every custom customer group manually is exhausting and impossible to scale.",
-   "card": "Manual Outreach Fails",
+   "say": "Most teams still build every email, SMS and WhatsApp campaign by hand, and customers get the same message three times.",
+   "tts": "Most teams still build every email, SMS and WhatsApp campaign by hand, and customers get the same message three times.",
+   "card": "Same message, 3 channels",
    "screen": null,
    "face": true
   },
   {
    "beat": "FIX",
-   "say": "You can deploy Zia AI agents inside Zoho Marketing Automation to automate WhatsApp copy creation and audience targeting.",
-   "tts": "You can deploy Zia AI agents inside Zoho Marketing Automation to automate WhatsApp copy creation and audience targeting.",
-   "card": "Deploy Zia AI Agents",
+   "say": "Zoho Campaigns now supports MCP, so a connected AI agent can build, schedule and analyse campaigns for you.",
+   "tts": "Zoho Campaigns now supports MCP, so a connected AI agent can build, schedule and analyse campaigns for you.",
+   "card": "Campaigns supports MCP",
    "screen": {
-    "app": "campaigns",
-    "view": "settings",
-    "path": [
-     "Marketing Automation",
-     "AI Assistant"
+    "app": "claude",
+    "view": "chat",
+    "messages": [
+     [
+      "user",
+      "Build a re-engagement campaign for contacts who stopped opening our emails. Draft only, I'll approve it."
+     ],
+     [
+      "assistant",
+      "Done: I found the inactive contacts segment and drafted the campaign in Zoho Campaigns. It is waiting for your approval."
+     ]
     ],
-    "heading": "AI Agent Settings",
-    "click": "Enable AI Agent",
-    "tip": "Turn on Zia for marketing"
+    "tool": "Zoho Campaigns MCP",
+    "click": "Zoho Campaigns MCP",
+    "tip": "AI drafts, you approve"
    },
    "face": false
   },
   {
    "beat": "STEP 1",
-   "say": "First, navigate to your Zoho Marketing Automation dashboard, go to Channels, and click WhatsApp Channels to manage your platform.",
-   "tts": "First, navigate to your Zoho Marketing Automation dashboard, go to Channels, and click WhatsApp Channels to manage your platform.",
-   "card": "Select WhatsApp Channels",
+   "say": "First, connect your AI client to Zoho Campaigns through MCP, and give it only the permissions you want.",
+   "tts": "First, connect your AI client to Zoho Campaigns through MCP, and give it only the permissions you want.",
+   "card": "Connect via MCP",
    "screen": {
-    "app": "campaigns",
-    "view": "list",
-    "path": [
-     "Marketing Automation",
-     "Channels"
+    "app": "flow",
+    "view": "flow",
+    "heading": "AI agent permissions",
+    "nodes": [
+     "AI client: Claude / ChatGPT",
+     "MCP: Zoho Campaigns",
+     "Permissions: draft + schedule only"
     ],
-    "heading": "Channels",
-    "click": "WhatsApp Channels",
-    "tip": "Select your WhatsApp integration"
+    "click": "Permissions: draft + schedule only",
+    "tip": "Limit what the agent can do"
    },
    "face": false
   },
   {
    "beat": "STEP 2",
-   "say": "Next, open AI Agent Assistant and click Enable AI Agent to start automated copy generation and customer audience segmentation.",
-   "tts": "Next, open AI Agent Assistant and click Enable AI Agent to start automated copy generation and customer audience segmentation.",
-   "card": "Enable AI Segmentation",
+   "say": "Then ask in plain English, like: build a re-engagement campaign for contacts who stopped opening our emails.",
+   "tts": "Then ask in plain English, like: build a re-engagement campaign for contacts who stopped opening our emails.",
+   "card": "Ask in plain English",
    "screen": {
-    "app": "campaigns",
-    "view": "settings",
-    "path": [
-     "Channels",
-     "WhatsApp",
-     "AI Agent"
+    "app": "claude",
+    "view": "chat",
+    "messages": [
+     [
+      "user",
+      "Build a re-engagement campaign for contacts who stopped opening our emails."
+     ],
+     [
+      "assistant",
+      "Draft ready in Zoho Campaigns: segment selected, subject line and copy written. Approve to schedule?"
+     ]
     ],
-    "heading": "AI Agent Assistant",
-    "click": "Enable AI Agent",
-    "tip": "AI writes your message variations"
+    "tool": "Zoho Campaigns MCP",
+    "click": "Approve to schedule?",
+    "tip": "Plain English is enough"
    },
    "face": false
   },
   {
    "beat": "STEP 3",
-   "say": "Finally, open Journey Builder, add Trigger User Action, and click Generate Content to send personalized automated follow-ups.",
-   "tts": "Finally, open Journey Builder, add Trigger User Action, and click Generate Content to send personalized automated follow-ups.",
-   "card": "Configure AI Triggers",
+   "say": "Add a WhatsApp step with an approved template, and turn on frequency capping across email, SMS and WhatsApp.",
+   "tts": "Add a WhatsApp step with an approved template, and turn on frequency capping across email, SMS and WhatsApp.",
+   "card": "WhatsApp + frequency capping",
    "screen": {
-    "app": "campaigns",
-    "view": "journey",
-    "path": [
-     "Marketing Automation",
-     "Journeys"
-    ],
-    "heading": "Journey Builder",
+    "app": "flow",
+    "view": "flow",
+    "heading": "Re-engagement workflow",
     "nodes": [
-     "Trigger: User Action",
-     "AI: Generate Content",
-     "Action: Send WhatsApp"
+     "Email: we miss you",
+     "WhatsApp: approved template",
+     "Frequency capping: email + SMS + WhatsApp"
     ],
-    "click": "Generate Content",
-    "tip": "AI triggers on user events"
+    "click": "Frequency capping: email + SMS + WhatsApp",
+    "tip": "No more triple messages"
+   },
+   "face": false
+  },
+  {
+   "beat": "STEP 4",
+   "say": "Finally, review the draft, send yourself a test, then approve and schedule it.",
+   "tts": "Finally, review the draft, send yourself a test, then approve and schedule it.",
+   "card": "Review > Test > Approve",
+   "screen": {
+    "app": "flow",
+    "view": "flow",
+    "heading": "Before it goes out",
+    "nodes": [
+     "Review draft",
+     "Send test",
+     "Approve + schedule"
+    ],
+    "click": "Approve + schedule",
+    "tip": "You keep the final say"
    },
    "face": false
   },
   {
    "beat": "RESULT",
-   "say": "This automated workflow can increase campaign engagement rates by forty percent without writing manual copy.",
-   "tts": "This automated workflow can increase campaign engagement rates by forty percent without writing manual copy.",
-   "card": "40% Higher Engagement",
+   "say": "The agent does the busywork, you keep the final say, and paid plans still start at four dollars a month.",
+   "tts": "The agent does the busywork, you keep the final say, and paid plans still start at four dollars a month.",
+   "card": "Paid plans from $4/month",
    "screen": null,
    "face": true
   }
  ],
  "clips": [
   {
-   "text": "Managing manual WhatsApp outreach across segments wastes hours and drops engagement.",
+   "text": "Zoho just rebuilt Campaigns. AI agents can now prepare your campaigns, and WhatsApp is built right in.",
    "lines": [
     0
    ],
    "beat": "HOOK",
-   "prompt": "The man (my avatar) looks into the camera and talks to the viewer like a confident, friendly business tech explainer, smart and natural, not stiff; he turns from looking to the side to face the camera, leans in slightly and raises his eyebrows. Vertical 9:16 medium-wide shot from the knees up, camera about two metres away, his head in the upper third with space above it, both hands and all his gestures fully visible in the frame, static camera, sharp and well lit, wearing a charcoal overshirt over a black crew-neck t-shirt, in a modern tech startup office with exposed brick, plants and warm lights. His face, skin tone, hairstyle, beard, height and body build stay exactly as in my avatar's reference photos - the same natural average build, never slimmer and never heavier. He says, in clear natural English with a clear, neutral international accent, at a brisk, lively pace: \"Managing manual WhatsApp outreach across segments wastes hours and drops engagement.\" His lips match every word. He starts speaking in the very first frame, with no pause before the first word, and stops right after the last word. Audio: only his voice - no music, no sound effects. No subtitles, no captions, no text on screen."
+   "prompt": "The man (my avatar) looks into the camera and talks to the viewer like a confident, friendly business tech explainer, smart and natural, not stiff; he walks into the frame from the side, stops at the centre and points briefly at the camera with an easy smile. Vertical 9:16 medium-wide shot from the knees up, camera about two metres away, his head in the upper third with space above it, both hands and all his gestures fully visible in the frame, smooth gimbal camera gently moving back with him so the framing stays the same, sharp and well lit, wearing a charcoal overshirt over a black crew-neck t-shirt, in a modern tech startup office with exposed brick, plants and warm lights. His face, skin tone, hairstyle, beard, height and body build stay exactly as in my avatar's reference photos - the same natural average build, never slimmer and never heavier. He says, in clear natural English with a clear, neutral international accent, at a brisk, lively pace: \"Zoho just rebuilt Campaigns. AI agents can now prepare your campaigns, and WhatsApp is built right in.\" His lips match every word. He starts speaking in the very first frame, with no pause before the first word, and stops right after the last word. Audio: only his voice - no music, no sound effects. No subtitles, no captions, no text on screen."
   },
   {
-   "text": "Writing personalized campaign copy for every custom customer group manually is exhausting and impossible to scale.",
+   "text": "Most teams still build every email, SMS and WhatsApp campaign by hand, and customers get the same message three times.",
    "lines": [
     1
    ],
    "beat": "PROBLEM",
-   "prompt": "The man (my avatar) looks into the camera and talks to the viewer like a confident, friendly business tech explainer, smart and natural, not stiff; he shrugs with both shoulders and tilts his head, as if he has seen this problem a hundred times. Vertical 9:16 medium-wide shot from the knees up, camera about two metres away, his head in the upper third with space above it, both hands and all his gestures fully visible in the frame, static camera, sharp and well lit, wearing a charcoal overshirt over a black crew-neck t-shirt, in a modern tech startup office with exposed brick, plants and warm lights. His face, skin tone, hairstyle, beard, height and body build stay exactly as in my avatar's reference photos - the same natural average build, never slimmer and never heavier. He says, in clear natural English with a clear, neutral international accent, at a brisk, lively pace: \"Writing personalized campaign copy for every custom customer group manually is exhausting and impossible to scale.\" His lips match every word. He starts speaking in the very first frame, with no pause before the first word, and stops right after the last word. Audio: only his voice - no music, no sound effects. No subtitles, no captions, no text on screen."
+   "prompt": "The man (my avatar) looks into the camera and talks to the viewer like a confident, friendly business tech explainer, smart and natural, not stiff; he frowns slightly, sighs and spreads both hands palms up as if asking why this is still so hard. Vertical 9:16 medium-wide shot from the knees up, camera about two metres away, his head in the upper third with space above it, both hands and all his gestures fully visible in the frame, static camera, sharp and well lit, wearing a charcoal overshirt over a black crew-neck t-shirt, in a modern tech startup office with exposed brick, plants and warm lights. His face, skin tone, hairstyle, beard, height and body build stay exactly as in my avatar's reference photos - the same natural average build, never slimmer and never heavier. He says, in clear natural English with a clear, neutral international accent, at a brisk, lively pace: \"Most teams still build every email, SMS and WhatsApp campaign by hand, and customers get the same message three times.\" His lips match every word. He starts speaking in the very first frame, with no pause before the first word, and stops right after the last word. Audio: only his voice - no music, no sound effects. No subtitles, no captions, no text on screen."
   },
   {
-   "text": "This automated workflow can increase campaign engagement rates by forty percent without writing manual copy.",
+   "text": "The agent does the busywork, you keep the final say, and paid plans still start at four dollars a month.",
    "lines": [
-    6
+    7
    ],
    "beat": "RESULT",
-   "prompt": "The man (my avatar) looks into the camera and talks to the viewer like a confident, friendly business tech explainer, smart and natural, not stiff; he puts one hand in his pocket, smiles and gestures toward the camera with the other hand. Vertical 9:16 medium-wide shot from the knees up, camera about two metres away, his head in the upper third with space above it, both hands and all his gestures fully visible in the frame, static camera, sharp and well lit, wearing a charcoal overshirt over a black crew-neck t-shirt, in a modern tech startup office with exposed brick, plants and warm lights. His face, skin tone, hairstyle, beard, height and body build stay exactly as in my avatar's reference photos - the same natural average build, never slimmer and never heavier. He says, in clear natural English with a clear, neutral international accent, at a brisk, lively pace: \"This automated workflow can increase campaign engagement rates by forty percent without writing manual copy.\" His lips match every word. He starts speaking in the very first frame, with no pause before the first word, and stops right after the last word. Audio: only his voice - no music, no sound effects. No subtitles, no captions, no text on screen."
+   "prompt": "The man (my avatar) looks into the camera and talks to the viewer like a confident, friendly business tech explainer, smart and natural, not stiff; he gives a short confident thumbs up near his chest and smiles. Vertical 9:16 medium-wide shot from the knees up, camera about two metres away, his head in the upper third with space above it, both hands and all his gestures fully visible in the frame, static camera, sharp and well lit, wearing a charcoal overshirt over a black crew-neck t-shirt, in a modern tech startup office with exposed brick, plants and warm lights. His face, skin tone, hairstyle, beard, height and body build stay exactly as in my avatar's reference photos - the same natural average build, never slimmer and never heavier. He says, in clear natural English with a clear, neutral international accent, at a brisk, lively pace: \"The agent does the busywork, you keep the final say, and paid plans still start at four dollars a month.\" His lips match every word. He starts speaking in the very first frame, with no pause before the first word, and stops right after the last word. Audio: only his voice - no music, no sound effects. No subtitles, no captions, no text on screen."
   }
  ],
  "look": "wearing a charcoal overshirt over a black crew-neck t-shirt, in a modern tech startup office with exposed brick, plants and warm lights",
