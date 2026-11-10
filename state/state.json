@@ -1,5 +1,5 @@
 {
- "next_id": 56,
+ "next_id": 57,
  "covered_links": [
   "https://www.reddit.com/r/Zoho/comments/1wzd94y/sales_order_or_invoice/",
   "https://www.reddit.com/r/Zoho/comments/1wwjbbr/accounting_of_travel_agent/",
@@ -46,7 +46,8 @@
   "https://news.google.com/rss/articles/CBMiuwFBVV95cUxPbkRTbnBaVVk2ZEkzamZJZXpfMWlpWDJuRXJLa3RnUEI2SGJvYVJrd3dhUWhsRUh0Qi1NS0x1ZnJDTUNsY0FpUkVOaGpraTRzXy1ZV2g1bFhMemdEeWUwZzI1QkxRNExMSmxKUzYyeEEtUzJqTG1nS1NrcGRrWTRuMHhrcHJQQ1B6OFlwbXVjVXoxQjYzUTdJb0NCRFF4Q0lfUmRrd2ZMSXdtS25YR25HVjN2OU52SEp3Sncw?oc=5",
   "https://news.google.com/rss/articles/CBMijwFBVV95cUxPM1hFNlQ5dlVoQWpSeV9fOUp5eERaU0w1RzZHSC1VT3lFY0pzN0JhS3A2MHN3TlpwSFhiT2dvQ3VYc3ZfOUkxUWN3YktDVEN0bWEtVVJVUVAxeWNLQWRIc2tXbWpkYWFKeUh0NHpEUnlXS3hwRmI3UGpjc2pqODdvaEZ1dGlGckIzMWhrTThjcw?oc=5",
   "bank:viral posts say claude turned 2000 into 12000 overnight trad",
-  "bank:developers want a side project that pays not another todo ap"
+  "bank:developers want a side project that pays not another todo ap",
+  "https://news.google.com/rss/articles/CBMinAFBVV95cUxQaDdIeHVidzJpQWRtaFRUd3VQVnA2Wm95V0FzVVBfQ3NpQmpTbElZWDVva3VIVHphdC13VFJOUzB3MXBIR2JNczZnVVFkM1NQNlZndV9yNEdEd1Z2OU9NSXhVNlpHOHl4UlFUcXVRbG5ubmU0QjYwUnBOT1hkTVpCNWpCem01d1JMM0U0MDVTak81UkxCTFRSRlNpa0k?oc=5"
  ],
  "problems": [
   "Zoho Books me online paid sales orders direct closed invoice me convert nahi hote.",
@@ -103,7 +104,8 @@
   "Local shop owners waste weekends retyping raw bank statement exports into spreadsheet accounting categories.",
   "Health-tech investors and clinic owners assume Claude can process patient intake and insurance coding automatically without legal risk.",
   "Clinic owners and health-tech investors assume Claude can process patient intake and insurance coding automatically without legal risk.",
-  "Developers build generic side apps that generate zero revenue because they solve no paying problem."
+  "Developers build generic side apps that generate zero revenue because they solve no paying problem.",
+  "Managing multichannel customer outreach across WhatsApp and email requires tedious manual campaign creation."
  ],
  "scripts": {
   "S0001": {
@@ -611,6 +613,14 @@
    "created": "2026-11-09T19:51:28",
    "video_id": "6-nZhetyLJ4",
    "publish_at": "2026-11-10T21:30:00+05:30"
+  },
+  "S0056": {
+   "problem": "Managing multichannel customer outreach across WhatsApp and email requires tedious manual campaign creation.",
+   "title": "Automate WhatsApp Marketing with Zoho AI Agents #Shorts",
+   "pillar": "trending",
+   "engine": "flow",
+   "job": "20261110-1008-2",
+   "created": "2026-11-10T10:10:49"
   }
  },
  "slots": [
@@ -914,9 +924,9 @@
  "last_photo": "1_jacket.jpg",
  "photo_scenes": [],
  "photo_agent_error": "RuntimeError: image model unavailable: 404 NOT_FOUND. {'error': {'code': 404, 'm",
- "look_index": 50,
- "status_issue": 141,
- "status_line": "PIPELINE ideas=24 clips=3 editing=0 qa_failed=0 scheduled=1 published=41 total=42 today=2 next=2026-11-10T21:30",
+ "look_index": 51,
+ "status_issue": 143,
+ "status_line": "PIPELINE ideas=27 clips=2 editing=0 qa_failed=0 scheduled=1 published=41 total=42 today=2 next=2026-11-10T21:30",
  "rotation": {
   "claude_wealth": 21,
   "claude_wealth_industry": 16,
