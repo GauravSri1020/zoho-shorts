@@ -6,6 +6,19 @@ Is file ko har session ke end pe update karo, taaki agla chat yahin se shuru kar
 
 Gaurav jab bhi kuch bhi change karne bole: SABSE PEHLE backup - `backup-YYYY-MM-DD-<kya-badal-rahe-ho>` branch main se banao (aur agar video ka kaam hai to latest Short ka artifact download karo). Tabhi code chhuo. Kuch bigde to us branch se purana code wapas lo.
 
+## 10 Nov 2026 (6) - Gemini screen voice FIX
+
+Backup: branch `backup-2026-11-10-before-tts-fix`.
+- Asli wajah: google-genai 3.0.0 (requirements `>=1.0` -> runner latest leta hai) ka default API ab `v1` hai; `v1` mein
+  speechConfig field hi nahi -> 400 "Unknown name speechConfig" -> har Short ki screen lines backup voice (edge).
+  Quota ki problem nahi thi.
+- Fix `tts.py`: TTS client `http_options=HttpOptions(api_version="v1beta")`. Models: 2.5 flash/pro preview (pehle
+  wali Achird awaaz) pehle, phir Gemini 3.8 Flash / Flash-Lite TTS + 3.1 Interactions API (`client.interactions
+  .create`, style = speech_metadata annotation) fallback. (Interactions pe 3.8 abhi "model not found" deta hai.)
+- `python -m autopilot.main ttstest` (Run workflow -> task `ttstest`): Short banaye bina voice check. Run 42805726805:
+  OK, Achird 6.4 s via gemini-2.5-flash-preview-tts.
+- Scheduled Short q4Fsi7ctYDY (11 Nov 07:30) abhi bhi edge voice wala hai - Gaurav decide kare: rakhe ya rebuild.
+
 ## 10 Nov 2026 (5) - pehla Zoho trending Short scheduled (Zoho Campaigns AI agents)
 
 Gaurav: "check karke video bana ke upload kar do, dono Flow accounts mein se jo marzi".
