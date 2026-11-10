@@ -59,6 +59,11 @@ FEEDS = CH["sources"].get("feeds", [])
 KEYWORDS = CH["sources"].get("keywords", [])
 LOOKBACK_DAYS = int(CH["sources"].get("lookback_days", 10))
 EVERGREEN_FALLBACK = bool(CH["sources"].get("evergreen_fallback", True))
+# 10 Nov 2026 (Gaurav): every Short must be built on TRENDING NEWS. feeds = news, community_feeds = what people ask
+# (used only as proof that the pain is real, never as the topic). No problem bank / evergreen topics then.
+COMMUNITY_FEEDS = CH["sources"].get("community_feeds", [])
+TRENDING_ONLY = bool(CH["sources"].get("trending_only", False))
+NEWS_MAX_AGE_HOURS = int(CH["sources"].get("news_max_age_hours", LOOKBACK_DAYS * 24))
 
 _S = CH.get("scripts", {})
 SCRIPTS_PER_DAY = int(os.getenv("SCRIPTS_PER_DAY") or _S.get("per_day", 2))

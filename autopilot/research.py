@@ -3,6 +3,7 @@
 1. Feeds (channel.yaml -> sources.feeds): Zoho questions, AI news, automation questions, region news, Google Trends.
    Each item gets a "trend" score = how many OTHER items (from other sources) talk about the same key terms,
    so a topic that is everywhere this week ranks first.
+   10 Nov 2026: sources.trending_only = only fresh news is a topic (see fetch); community feeds = context only.
 2. Problem bank (research/problem_bank.yaml): real problems + Gaurav's own Zoho experience. Never-used ones are
    added as candidates every day, so the scout always has strong material even when the feeds are quiet.
 """
@@ -15,7 +16,8 @@ from html import unescape
 import feedparser
 import yaml
 
-from .config import FEEDS, KEYWORDS, LOOKBACK_DAYS, PROBLEM_BANK, IS_ZOHO
+from .config import (FEEDS, KEYWORDS, LOOKBACK_DAYS, PROBLEM_BANK, IS_ZOHO, COMMUNITY_FEEDS, TRENDING_ONLY,
+                     NEWS_MAX_AGE_HOURS)
 
 _KW = [k.strip() for k in KEYWORDS if k.strip()]
 MATCH = re.compile(r"\b(" + "|".join(re.escape(k) for k in _KW) + r")\b", re.I) if _KW else None
@@ -86,11 +88,9 @@ def _bank(already_covered):
     return mixed
 
 
-def fetch(already_covered, lookback_days=LOOKBACK_DAYS):
-    cutoff = time.time() - lookback_days * 86400
-    covered = set(already_covered)
-    items, seen_titles = [], set()
-    for url in FEEDS:
+def _read(urls, cutoff, covered, seen_titles, kind):
+    items = []
+    for url in urls:
         try:
             feed = feedparser.parse(url, request_headers={"User-Agent": "Mozilla/5.0 (shorts-research-bot)"})
         except Exception as e:  # one bad feed must not stop the run
@@ -104,6 +104,8 @@ def fetch(already_covered, lookback_days=LOOKBACK_DAYS):
             ts = calendar.timegm(t) if t else None
             if ts and ts < cutoff:
                 continue
+            if kind == "news" and not ts and TRENDING_ONLY:  # news without a date cannot prove it is fresh
+                continue
             title = _clean(e.get("title", ""))
             link = e.get("link", "")
             summary = _clean(e.get("summary", ""))[:900]
@@ -111,12 +113,48 @@ def fetch(already_covered, lookback_days=LOOKBACK_DAYS):
                 continue
             if MATCH and not MATCH.search(title + " " + summary):
                 continue
+            src = source
+            m = re.match(r"(.+?)\s+-\s+([^-]{2,60})$", title) if "news.google" in url else None
+            if m:  # Google News: "Headline - Publisher" -> the publisher is the real source
+                title, src = m.group(1).strip(), m.group(2).strip()
             key = _norm_title(title)
             if key in seen_titles:
                 continue
             seen_titles.add(key)
-            items.append({"title": title, "link": link, "summary": summary,
-                          "source": source, "ts": ts or time.time()})
+            items.append({"title": title, "link": link, "summary": summary, "source": src,
+                          "ts": ts or time.time(), "type": kind})
+    return items
+
+
+def _hours_old(it):
+    return max(0, int((time.time() - it["ts"]) / 3600))
+
+
+def fetch(already_covered, lookback_days=LOOKBACK_DAYS):
+    covered = set(already_covered)
+    seen_titles = set()
+    if TRENDING_ONLY:
+        # 10 Nov 2026 (Gaurav): ONLY trending news. News = fresh (news_max_age_hours) and ranked by how many
+        # different publishers / sources carry the same story + how new it is. Community questions are kept
+        # separately, only as proof that people feel the pain. No problem bank, no evergreen topics.
+        news = _read(FEEDS, time.time() - NEWS_MAX_AGE_HOURS * 3600, covered, seen_titles, "news")
+        community = _read(COMMUNITY_FEEDS, time.time() - lookback_days * 86400, covered, seen_titles, "question")
+        _trend_scores(news + community)
+        for it in news:
+            h = _hours_old(it)
+            it["age_hours"] = h
+            it["score"] = it["trend"] * 2 + (4 if h <= 24 else 2 if h <= 48 else 1 if h <= 72 else 0)
+        news.sort(key=lambda x: (x["score"], x["ts"]), reverse=True)
+        community.sort(key=lambda x: (x["trend"], x["ts"]), reverse=True)
+        news, community = news[:40], community[:12]
+        print(f"[research] TRENDING ONLY: {len(news)} fresh news items (top score {news[0]['score'] if news else 0}), "
+              f"{len(community)} community questions as context")
+        for it in news[:8]:
+            print(f"[research]   score {it['score']:>2} | {it['age_hours']:>3}h | {it['title'][:90]} ({it['source']})")
+        return news + community
+    cutoff = time.time() - lookback_days * 86400
+    items = _read(FEEDS, cutoff, covered, seen_titles, "news") + _read(COMMUNITY_FEEDS, cutoff, covered,
+                                                                     seen_titles, "question")
     _trend_scores(items)
     # trending first, then newest
     items.sort(key=lambda x: (x["trend"], x["ts"]), reverse=True)

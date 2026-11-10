@@ -6,6 +6,24 @@ Is file ko har session ke end pe update karo, taaki agla chat yahin se shuru kar
 
 Gaurav jab bhi kuch bhi change karne bole: SABSE PEHLE backup - `backup-YYYY-MM-DD-<kya-badal-rahe-ho>` branch main se banao (aur agar video ka kaam hai to latest Short ka artifact download karo). Tabhi code chhuo. Kuch bigde to us branch se purana code wapas lo.
 
+## 10 Nov 2026 (2) - SIRF TRENDING NEWS pe Shorts (research + scout)
+
+Backup: branch `backup-2026-11-10-before-trending-research`.
+Gaurav: "mujhe trending news per hi chahiye, niche research aur acchi karo, agent sirf trending chizein uthaye".
+- `niches/zoho.yaml -> sources`: `trending_only: true`, `news_max_age_hours: 96`, `evergreen_fallback: false`.
+  `feeds` = sirf news (Zoho launches, OpenAI / Anthropic / Gemini launches, AI agents, MCP, Salesforce / HubSpot AI,
+  WhatsApp / Meta lead ads, e-invoicing UAE / Saudi / Europe / India, TechCrunch AI, The Verge AI, HN front page,
+  Google Trends US / AE / IN / DE). `community_feeds` = reddit / stackoverflow (sirf proof, kabhi topic nahi).
+  `trending` pillar weight 10.
+- `research.py`: trending mode mein news ka score = (kitne alag sources wahi story chala rahe) x2 + freshness
+  (24h +4, 48h +2, 72h +1). Bina date wali news nahi. Google News title se publisher alag. Problem bank band.
+  Log mein top 8 news score + age ke saath dikhti hain.
+- `writer.py` scout: upar HARD RULE - har angle ek NEWS item pe, hook mein news ka naam, sirf news ke facts;
+  community / evergreen / story_index -1 wale angles code mein drop. Script writer ko bhi "TRENDING NEWS (x hours
+  old)" source milta hai aur hook news se khulta hai. Fresh news na mile to us din Short nahi banta (run fail
+  "no Short prepared") - random topic se behtar.
+- Mock test: 6 din purani news drop, publisher parse, community + evergreen angle drop - sab sahi.
+
 ## 10 Nov 2026 - SIRF ZOHO NICHE (Claude-wealth niche hata diya)
 
 Backup: branch `backup-2026-11-10-before-zoho-only` (change se pehle ka main - Claude niche wapas chahiye to yahin se).

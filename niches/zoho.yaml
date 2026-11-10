@@ -30,7 +30,7 @@ niche:
     "I didn't know you could do that".
   # Content mix. The scout picks the pillar for each Short by these weights (trending news always wins if strong).
   pillars:
-    trending: {weight: 3, about: "this week's AI / tech / business news or deadline -> how to use it inside Zoho today"}
+    trending: {weight: 10, about: "ALWAYS (10 Nov 2026): this week's AI / tech / business news or deadline -> how to use it inside Zoho today"}
     ai_agent: {weight: 3, about: "AI does the work in Zoho: Claude/ChatGPT via Zoho MCP, Zia Agent Studio agents, AI steps in Flow, LLM calls from Deluge"}
     lead_flow: {weight: 2, about: "leads from every source (Facebook/Instagram ads via Zoho Social, WhatsApp, website forms, email, SalesIQ chat) land in Zoho CRM automatically, scored and routed by AI"}
     dev_api: {weight: 2, about: "the developer view: which Zoho API / scope / endpoint / limit, custom APIs, webhooks, widgets, Catalyst functions, Zoho Sign API - with the exact call"}
@@ -58,39 +58,58 @@ niche:
 # Real problems + Gaurav's own Zoho experience. The scout reads this every day (see research/problem_bank.yaml).
 problem_bank: "research/problem_bank.yaml"
 
-# Where the research agent looks for what is trending and what people are asking. Any RSS / Atom feed works.
+# Where the research agent looks for what is trending. Any RSS / Atom feed works.
+# 10 Nov 2026 (Gaurav): SIRF TRENDING NEWS pe Shorts. "feeds" = news (topic hamesha yahin se), "community_feeds" =
+# log kya pooch rahe hain (sirf proof ki problem real hai, kabhi topic nahi). Problem bank / evergreen band.
 sources:
+  trending_only: true
+  news_max_age_hours: 96      # 4 din se purani news topic nahi banegi
   feeds:
-    # Zoho questions and news
+    # Zoho's own news and launches
+    - "https://news.google.com/rss/search?hl=en&gl=US&ceid=US:en&q=Zoho+when:7d"
+    - "https://news.google.com/rss/search?hl=en&gl=US&ceid=US:en&q=Zoho+Zia+OR+%22Zoho+MCP%22+OR+%22Zoho+CRM%22+when:7d"
+    - "https://news.google.com/rss/search?hl=en-IN&gl=IN&ceid=IN:en&q=Zoho+launch+OR+announces+when:7d"
+    # Big AI launches this week -> "use it inside Zoho today"
+    - "https://news.google.com/rss/search?hl=en&gl=US&ceid=US:en&q=OpenAI+OR+ChatGPT+launch+OR+announces+when:3d"
+    - "https://news.google.com/rss/search?hl=en&gl=US&ceid=US:en&q=Anthropic+OR+Claude+launch+OR+announces+when:3d"
+    - "https://news.google.com/rss/search?hl=en&gl=US&ceid=US:en&q=%22Google+Gemini%22+launch+OR+announces+when:3d"
+    - "https://news.google.com/rss/search?hl=en&gl=US&ceid=US:en&q=%22AI+agents%22+OR+%22agentic+AI%22+business+when:3d"
+    - "https://news.google.com/rss/search?hl=en&gl=US&ceid=US:en&q=%22Model+Context+Protocol%22+OR+%22MCP+server%22+when:7d"
+    # CRM competitors' AI moves (the Zoho answer to them)
+    - "https://news.google.com/rss/search?hl=en&gl=US&ceid=US:en&q=Salesforce+OR+HubSpot+OR+%22Microsoft+Dynamics%22+AI+agent+when:3d"
+    # WhatsApp / Meta lead ads changes that hit every sales team
+    - "https://news.google.com/rss/search?hl=en&gl=US&ceid=US:en&q=%22WhatsApp+Business%22+OR+%22Meta+lead+ads%22+OR+%22WhatsApp+API%22+when:7d"
+    # Region news (Middle East, Europe, India): deadlines and changes that hit every business
+    - "https://news.google.com/rss/search?hl=en-AE&gl=AE&ceid=AE:en&q=e-invoicing+OR+%22AI%22+business+UAE+OR+Saudi+when:7d"
+    - "https://news.google.com/rss/search?hl=en-GB&gl=GB&ceid=GB:en&q=e-invoicing+mandate+OR+%22AI+Act%22+business+Europe+when:7d"
+    - "https://news.google.com/rss/search?hl=en-IN&gl=IN&ceid=IN:en&q=e-invoicing+OR+GST+OR+%22AI%22+SME+India+when:3d"
+    # Tech news desks (AI)
+    - "https://techcrunch.com/category/artificial-intelligence/feed/"
+    - "https://www.theverge.com/rss/ai-artificial-intelligence/index.xml"
+    - "https://hnrss.org/frontpage?points=150"
+    - "https://hnrss.org/newest?q=MCP+OR+%22AI+agent%22+OR+CRM&points=50"
+    # Google Trends (daily trending searches) - only items that match the keywords below are kept
+    - "https://trends.google.com/trending/rss?geo=US"
+    - "https://trends.google.com/trending/rss?geo=AE"
+    - "https://trends.google.com/trending/rss?geo=IN"
+    - "https://trends.google.com/trending/rss?geo=DE"
+  community_feeds:
+    # What people ask (proof that the pain is real - never the topic itself)
     - "https://www.reddit.com/r/zoho/new/.rss"
     - "https://stackoverflow.com/feeds/tag/zoho"
     - "https://stackoverflow.com/feeds/tag/zoho-deluge"
     - "https://stackoverflow.com/feeds/tag/zoho-creator"
     - "https://stackoverflow.com/feeds/tag/zoho-crm"
-    - "https://news.google.com/rss/search?hl=en&gl=US&ceid=US:en&q=Zoho+when:7d"
-    - "https://news.google.com/rss/search?hl=en&gl=US&ceid=US:en&q=Zoho+Zia+OR+%22Zoho+MCP%22+when:14d"
-    # AI news that can be turned into "use it inside Zoho today"
-    - "https://news.google.com/rss/search?hl=en&gl=US&ceid=US:en&q=%22AI+agents%22+CRM+OR+sales+when:3d"
-    - "https://news.google.com/rss/search?hl=en&gl=US&ceid=US:en&q=Claude+OR+ChatGPT+OR+OpenAI+OR+Gemini+launch+business+when:3d"
-    - "https://news.google.com/rss/search?hl=en&gl=US&ceid=US:en&q=%22Model+Context+Protocol%22+OR+MCP+server+when:7d"
-    - "https://hnrss.org/newest?q=MCP+OR+%22AI+agent%22+OR+CRM&points=50"
-    # People asking for automation help
     - "https://www.reddit.com/r/CRM/new/.rss"
     - "https://www.reddit.com/r/automation/new/.rss"
     - "https://www.reddit.com/r/smallbusiness/search.rss?q=CRM+OR+automation+OR+leads&sort=new&restrict_sr=on"
-    # Region news (Middle East, Europe): deadlines and changes that hit every business
-    - "https://news.google.com/rss/search?hl=en-AE&gl=AE&ceid=AE:en&q=e-invoicing+OR+%22AI%22+business+UAE+when:7d"
-    - "https://news.google.com/rss/search?hl=en-GB&gl=GB&ceid=GB:en&q=e-invoicing+OR+%22AI+Act%22+business+Europe+when:7d"
-    # Google Trends (daily trending searches) - only items that match the keywords below are kept
-    - "https://trends.google.com/trending/rss?geo=US"
-    - "https://trends.google.com/trending/rss?geo=AE"
-    - "https://trends.google.com/trending/rss?geo=DE"
   keywords: ["zoho", "deluge", "zia", "crm", "creator", "zoho books", "zoho desk", "widget", "blueprint", "workflow",
-             "ai agent", "agents", "mcp", "claude", "chatgpt", "openai", "gemini", "llm", "automation", "automate",
-             "lead", "leads", "sales", "whatsapp", "e-invoicing", "invoice", "api", "webhook", "no-code", "crm"]
+             "ai agent", "agents", "agentic", "mcp", "claude", "anthropic", "chatgpt", "openai", "gemini", "llm",
+             "copilot", "automation", "automate", "lead", "leads", "sales", "salesforce", "hubspot", "whatsapp",
+             "e-invoicing", "invoice", "invoicing", "gst", "api", "webhook", "no-code", "crm"]
   lookback_days: 7
-  # If the feeds give nothing useful, the scout picks from the problem bank / its own knowledge.
-  evergreen_fallback: true
+  # Trending only: never a problem-bank / evergreen topic. No fresh news = no Short that day (better than a random one).
+  evergreen_fallback: false
 
 # Shorts per day (each one goes into the next free slot)
 scripts:
