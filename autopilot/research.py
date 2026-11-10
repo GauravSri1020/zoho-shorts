@@ -17,7 +17,7 @@ import feedparser
 import yaml
 
 from .config import (FEEDS, KEYWORDS, LOOKBACK_DAYS, PROBLEM_BANK, IS_ZOHO, COMMUNITY_FEEDS, TRENDING_ONLY,
-                     NEWS_MAX_AGE_HOURS)
+                     NEWS_MAX_AGE_HOURS, NEWS_MUST_MENTION)
 
 _KW = [k.strip() for k in KEYWORDS if k.strip()]
 MATCH = re.compile(r"\b(" + "|".join(re.escape(k) for k in _KW) + r")\b", re.I) if _KW else None
@@ -113,6 +113,9 @@ def _read(urls, cutoff, covered, seen_titles, kind):
                 continue
             if MATCH and not MATCH.search(title + " " + summary):
                 continue
+            if kind == "news" and NEWS_MUST_MENTION and not any(
+                    re.search(r"\b" + re.escape(w) + r"\b", (title + " " + summary).lower()) for w in NEWS_MUST_MENTION):
+                continue  # 10 Nov 2026: only news ABOUT Zoho (not general AI news)
             src = source
             m = re.match(r"(.+?)\s+-\s+([^-]{2,60})$", title) if "news.google" in url else None
             if m:  # Google News: "Headline - Publisher" -> the publisher is the real source
@@ -124,6 +127,24 @@ def _read(urls, cutoff, covered, seen_titles, kind):
             items.append({"title": title, "link": link, "summary": summary, "source": src,
                           "ts": ts or time.time(), "type": kind})
     return items
+
+
+def _cluster(news):
+    """The same story from many publishers = ONE item (the freshest copy) with "publishers" = how many carry it.
+    That count is the real trend signal, and the scout then sees many different stories instead of 8 copies."""
+    out = []
+    for it in sorted(news, key=lambda x: x["ts"], reverse=True):
+        terms = {t for t in _terms(it["title"]) if " " not in t}
+        for o in out:
+            if terms and len(terms & o["_t"]) / max(1, min(len(terms), len(o["_t"]))) >= 0.5:
+                o["publishers"].add(it["source"])
+                break
+        else:
+            out.append(dict(it, _t=terms, publishers={it["source"]}))
+    for o in out:
+        o.pop("_t")
+        o["publishers"] = len(o["publishers"])
+    return out
 
 
 def _hours_old(it):
@@ -139,18 +160,21 @@ def fetch(already_covered, lookback_days=LOOKBACK_DAYS):
         # separately, only as proof that people feel the pain. No problem bank, no evergreen topics.
         news = _read(FEEDS, time.time() - NEWS_MAX_AGE_HOURS * 3600, covered, seen_titles, "news")
         community = _read(COMMUNITY_FEEDS, time.time() - lookback_days * 86400, covered, seen_titles, "question")
+        news = _cluster(news)
         _trend_scores(news + community)
         for it in news:
             h = _hours_old(it)
             it["age_hours"] = h
-            it["score"] = it["trend"] * 2 + (4 if h <= 24 else 2 if h <= 48 else 1 if h <= 72 else 0)
+            it["score"] = (it["publishers"] - 1) * 3 + min(it["trend"], 10) + (
+                4 if h <= 24 else 3 if h <= 48 else 2 if h <= 72 else 1 if h <= 120 else 0)
         news.sort(key=lambda x: (x["score"], x["ts"]), reverse=True)
         community.sort(key=lambda x: (x["trend"], x["ts"]), reverse=True)
         news, community = news[:40], community[:12]
         print(f"[research] TRENDING ONLY: {len(news)} fresh news items (top score {news[0]['score'] if news else 0}), "
               f"{len(community)} community questions as context")
         for it in news[:8]:
-            print(f"[research]   score {it['score']:>2} | {it['age_hours']:>3}h | {it['title'][:90]} ({it['source']})")
+            print(f"[research]   score {it['score']:>2} | {it['age_hours']:>3}h | {it['publishers']} publishers | "
+                  f"{it['title'][:90]} ({it['source']})")
         return news + community
     cutoff = time.time() - lookback_days * 86400
     items = _read(FEEDS, cutoff, covered, seen_titles, "news") + _read(COMMUNITY_FEEDS, cutoff, covered,

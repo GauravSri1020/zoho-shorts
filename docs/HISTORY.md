@@ -6,6 +6,20 @@ Is file ko har session ke end pe update karo, taaki agla chat yahin se shuru kar
 
 Gaurav jab bhi kuch bhi change karne bole: SABSE PEHLE backup - `backup-YYYY-MM-DD-<kya-badal-rahe-ho>` branch main se banao (aur agar video ka kaam hai to latest Short ka artifact download karo). Tabhi code chhuo. Kuch bigde to us branch se purana code wapas lo.
 
+## 10 Nov 2026 (3) - sirf ZOHO ki trending news
+
+Gaurav: "zoho ki trending news ko pakadna hai". Pehle run (cancel kiya, kuch commit nahi hua) mein top 8 news
+saari ek hi Claude Fable 5.2 launch ki copies thi - Zoho ki ek bhi nahi.
+- `sources.news_must_mention: ["zoho"]` - news mein "zoho" na ho to topic nahi. Feeds ab sirf Zoho news: Google
+  News "Zoho" (US / IN / AE / GB), Zoho launches / announces, Zia / Zoho MCP / Zoho AI, Zoho CRM / One / Books /
+  Desk, partnership / integration / pricing, India (Arattai, Zoho Mail, Vembu, GST, Zoho Payments), Gulf (ZATCA /
+  UAE e-invoicing), HN "Zoho", Google Trends IN / US / AE. `news_max_age_hours: 168`.
+- `research._cluster`: ek hi story ke kai publishers = EK item, `publishers` = kitne chhaap rahe (asli trend).
+  Score = (publishers-1) x3 + min(trend,10) + freshness (24h +4 ... 120h +1).
+- Scout HARD RULE ab "TRENDING ZOHO NEWS": launch / feature / integration / pricing / compliance / Zoho viral;
+  revenue / funding / awards jaisi news skip jab tak usme user ke kaam ka feature na ho.
+- Mock test: Claude news drop, 3 copies -> 1 item (3 publishers, top), 9 din purani drop.
+
 ## 10 Nov 2026 (2) - SIRF TRENDING NEWS pe Shorts (research + scout)
 
 Backup: branch `backup-2026-11-10-before-trending-research`.

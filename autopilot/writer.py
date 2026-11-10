@@ -109,23 +109,26 @@ def _pillars():
 # ---------------------------------------------------------------- 1. Scout
 def _trending_rules(candidates, n):
     """10 Nov 2026 (Gaurav): ONLY trending news. These rules go on top of the scout prompt and win over it."""
-    news = [f"[{i}] {c.get('age_hours', '?')}h old, score {c.get('score', 0)}, trend {c.get('trend', 0)}: "
+    news = [f"[{i}] {c.get('age_hours', '?')}h old, score {c.get('score', 0)}, {c.get('publishers', 1)} publishers: "
             f"{c['title']} | {c['source']}" for i, c in enumerate(candidates) if c.get("type") == "news"]
-    return f"""HARD RULE FOR TODAY (it overrides everything below): this channel ONLY makes Shorts about TRENDING NEWS.
-- Every angle MUST be built on ONE of the NEWS items listed here (its story_index), published in the last few days.
-  Prefer the highest score (= many publishers carry it + it is very fresh). Big AI launches (OpenAI, Anthropic /
-  Claude, Google Gemini, Microsoft, Meta), AI-agent / MCP news, Zoho's own announcements, CRM competitors' AI moves
-  (Salesforce, HubSpot, Microsoft Dynamics), WhatsApp / Meta lead-ads changes and e-invoicing / compliance deadlines
-  are the best ones.
-- The angle = "THIS just happened -> here is what it means for a business on Zoho, and how to use / handle it in
-  Zoho today". The hook MUST name the news (e.g. "OpenAI just launched X - here's how to plug it into Zoho CRM").
-- Use only facts that are in the news item. Never invent dates, numbers, features or prices.
+    return f"""HARD RULE FOR TODAY (it overrides everything below): this channel ONLY makes Shorts about TRENDING ZOHO NEWS.
+- Every angle MUST be built on ONE of the ZOHO NEWS items listed here (its story_index), published in the last days.
+  Prefer the highest score (= many publishers carry it + it is very fresh).
+- Best Zoho news: a Zoho launch / update / new feature (Zia, Zia agents, Zoho MCP, Zoho CRM, Books, Desk, Flow,
+  Creator, Analytics, Zoho One ...), a new integration or partnership, a plan / pricing / limit change, a compliance
+  change Zoho now supports (e-invoicing, GST, ZATCA ...), or Zoho itself trending (a Zoho app going viral, a big
+  adoption story). Skip Zoho stories with nothing a Zoho user can DO (revenue, funding, opinions, awards) unless
+  they point to a real feature the viewer can use today.
+- The angle = "Zoho just did / announced THIS -> what it means for your business -> how to use / set it up in Zoho
+  today". The hook MUST name the news (e.g. "Zoho just launched X - here's how to switch it on in 20 seconds").
+- Use only facts that are in the news item. Never invent dates, numbers, features, menus or prices; if the news
+  does not say where a setting is, describe it generally.
 - Community questions (reddit / stackoverflow) may only support the problem; they can NEVER be the story_index.
-- NO evergreen / problem-bank / generic Zoho tips. story_index -1 is NOT allowed. If fewer than {n} news items can
-  be turned into a real, honest Zoho fix, return fewer angles (even zero) - never fill up with non-news topics.
+- NO evergreen / problem-bank / generic Zoho tips. story_index -1 is NOT allowed. If fewer than {n} Zoho news items
+  can be turned into a real, honest Short, return fewer angles (even zero) - never fill up with non-news topics.
 - Set "pillar" to "trending".
 NEWS ITEMS (best first):
-{chr(10).join(news) or "(no fresh news today)"}"""
+{chr(10).join(news) or "(no fresh Zoho news today)"}"""
 
 
 def scout(candidates, n, past_problems, kinds=None, industries=None, topic="", segments=None):
@@ -235,7 +238,8 @@ def write_script(angle):
     if s and s.get("source") == "GSX problem bank":
         source = f"SOURCE: the creator's problem bank (verified facts):\n{s['title']}\n{s['summary']}"
     elif s and TRENDING_ONLY and s.get("type") == "news":
-        source = (f"SOURCE = TRENDING NEWS ({s.get('age_hours', '?')} hours old): {s['title']} - {s['source']}\n"
+        source = (f"SOURCE = TRENDING ZOHO NEWS ({s.get('age_hours', '?')} hours old, {s.get('publishers', 1)} "
+                  f"publishers): {s['title']} - {s['source']}\n"
                   f"{s['summary']}\nThe HOOK must open on this news (what just happened), then show what it means "
                   f"for a Zoho business and how to use / handle it in Zoho today. State only facts from this news.")
     elif s:

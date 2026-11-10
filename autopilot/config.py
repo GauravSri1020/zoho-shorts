@@ -64,6 +64,7 @@ EVERGREEN_FALLBACK = bool(CH["sources"].get("evergreen_fallback", True))
 COMMUNITY_FEEDS = CH["sources"].get("community_feeds", [])
 TRENDING_ONLY = bool(CH["sources"].get("trending_only", False))
 NEWS_MAX_AGE_HOURS = int(CH["sources"].get("news_max_age_hours", LOOKBACK_DAYS * 24))
+NEWS_MUST_MENTION = [str(k).lower() for k in (CH["sources"].get("news_must_mention") or [])]  # e.g. ["zoho"]
 
 _S = CH.get("scripts", {})
 SCRIPTS_PER_DAY = int(os.getenv("SCRIPTS_PER_DAY") or _S.get("per_day", 2))
