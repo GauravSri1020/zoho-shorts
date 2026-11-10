@@ -6,6 +6,29 @@ Is file ko har session ke end pe update karo, taaki agla chat yahin se shuru kar
 
 Gaurav jab bhi kuch bhi change karne bole: SABSE PEHLE backup - `backup-YYYY-MM-DD-<kya-badal-rahe-ho>` branch main se banao (aur agar video ka kaam hai to latest Short ka artifact download karo). Tabhi code chhuo. Kuch bigde to us branch se purana code wapas lo.
 
+## 10 Nov 2026 (8) - SAB GITHUB MEIN: roz faceless Shorts + avatar jab chahiye
+
+Gaurav: "mujhe ye git me chahiye, Claude pe kuch nahi rakhna". Flow ka API nahi -> avatar clips GitHub se nahi ban
+sakte. Gaurav ka faisla: "Dono: free roz + avatar jab main chahu". Backup: `backup-2026-11-10-before-zoho-faceless`.
+- `niches/zoho.yaml`: `flow.faceless: true`, `flow.per_day 2`, `scripts.per_day 2`. Daily run (14:30 IST) = research
+  -> facts -> script -> QA -> screens + Gaurav ki photo wale cards + cover + Gemini voice -> video QA -> YouTube
+  schedule. Koi Flow credit, koi Claude nahi.
+- Avatar Short: Actions -> GSX Automation Shorts -> Run workflow -> task daily, face `yes`, upload `yes` -> issue mein
+  Flow prompts -> Gaurav Flow mein clips banaye -> issue ke upload link se daale -> assemble + schedule. (workflow
+  input `face` wapas.)
+- `screens._presenter_page` (view "presenter"): HOOK / PROBLEM / RESULT bina screen ke = Gaurav ki cut-out photo
+  (assets/presenter, pose title ke hash se) + line ka card caption + chip NEW / THE PROBLEM / THE RESULT.
+- `writer.news_facts`: Gemini + Google Search grounding se news ke asli facts (feature names, menu path sirf agar
+  official doc mein) -> writer + QA dono ko. Writer + QA rule: naye feature ka menu facts mein nahi to settings page
+  nahi, flow chain / AI chat screen.
+- Duplicate story fix: `state.covered_titles` + `research._story_terms/_same_story` (zoho / generic shabd hata ke,
+  plural fold, >=2 common + 50%) -> pichhle 30 Shorts ki story dobara nahi.
+- Test runs (upload=no): 42838749565 faceless Short ban gaya (cover, photo cards, QA 94.5) - par menus bane-banaye
+  aur topic duplicate tha -> upar wale fix. 42842538728: dedupe OK (2 skip), lekin Gemini daily quota khatam (429)
+  -> facts nahi chale, QA ne dono scripts reject kiye (sahi). Facts step pehli baar 11 Nov 14:30 run mein chalega.
+- Dhyan: jis din achhi Zoho news nahi, us din Short nahi banta (run "no Short prepared" - jaan-boojh ke). Bahut
+  testing se Gemini free quota jaldi khatam hota hai.
+
 ## 10 Nov 2026 (7) - 2nd Short + har Short pe COVER + har Short ka naya LOOK
 
 Backups: `backup-2026-11-10-before-apt-retry`, `backup-2026-11-10-before-zoho-cover-looks`.
