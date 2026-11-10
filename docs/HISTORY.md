@@ -6,6 +6,21 @@ Is file ko har session ke end pe update karo, taaki agla chat yahin se shuru kar
 
 Gaurav jab bhi kuch bhi change karne bole: SABSE PEHLE backup - `backup-YYYY-MM-DD-<kya-badal-rahe-ho>` branch main se banao (aur agar video ka kaam hai to latest Short ka artifact download karo). Tabhi code chhuo. Kuch bigde to us branch se purana code wapas lo.
 
+## 10 Nov 2026 (4) - pehla Zoho-trending run + QA ko news dikhana
+
+Run 42792655507 (count 2): research ne asli Zoho news pakdi (Vembu AI jobs 5 publishers, Zoho Analytics AI agents
+3, Zoho Campaigns WhatsApp + AI agents 3). Gemini bahut 503 / 504 / 429 (quota khatam) -> ~55 min.
+4 angles: 3 script QA mein fail (galat Analytics API endpoint, Campaigns ka "Zia" engine nahi, Zoho ka restaurant POS
+nahi - QA ne sahi pakda). 1 bana: job 20261110-1008-2 "Automate WhatsApp Marketing with Zoho AI Agents" (issue #142).
+- Lekin usme news Zoho CAMPAIGNS ki thi, script mein "Zoho Marketing Automation", shayad bane-banaye menus
+  ("AI Agent Assistant -> Enable AI Agent") aur "40% engagement" jo kisi source mein nahi -> status `skip`
+  (CLAUDE.md rule 3: galat Zoho steps upload nahi). Gaurav is ke clips na banaye.
+- Fix: `writer._news_qa_rules` - trending mode mein QA agent ko news (title + summary) milti hai; reject agar
+  product news se alag, koi number / % / price news mein nahi, naye feature ke menu ka naam pakka nahi, ya hook
+  mein news nahi. (Pehle QA ko story bheji hi nahi jaati thi.)
+- Agla: daily run 14:30 IST (Gemini quota reset ~13:30 IST) naye QA ke saath. Zoho Campaigns news (30 Oct - 5 Nov)
+  ab bhi 7 din window mein hai.
+
 ## 10 Nov 2026 (3) - sirf ZOHO ki trending news
 
 Gaurav: "zoho ki trending news ko pakadna hai". Pehle run (cancel kiya, kuch commit nahi hua) mein top 8 news

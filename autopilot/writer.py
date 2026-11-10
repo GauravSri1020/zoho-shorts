@@ -361,6 +361,25 @@ SCRIPT:
 
 
 # ---------------------------------------------------------------- 3b. QA agent (replaces human review)
+def _news_qa_rules(angle):
+    """10 Nov 2026: in trending mode the QA agent sees the news the Short is built on and checks it against it.
+    (First trending run: the news was about Zoho CAMPAIGNS, the script said Zoho Marketing Automation, invented
+    menus and a '40% more engagement' number that is in no source - QA could not catch it without the news.)"""
+    s = angle.get("story") or {}
+    if not (TRENDING_ONLY and s.get("type") == "news"):
+        return ""
+    return f"""- THE NEWS this Short is built on is below. Reject if the script names a different Zoho product than the
+  news (e.g. the news is about Zoho Campaigns but the script says Zoho Marketing Automation)
+- reject if it states ANY number, percentage, price, date or result ("increase engagement by 40%") that is not
+  written in the news text below - results must be described without invented numbers
+- reject if a menu / button name for a NEW feature from the news is not in the news text and you are not sure it
+  exists: then the step must be described generally ("open the new AI agent workflows in Campaigns")
+- reject if the hook does not clearly say what Zoho just launched / changed
+NEWS ({s.get('age_hours', '?')} hours old): {s.get('title', '')} - {s.get('source', '')}
+{s.get('summary', '')[:900]}
+"""
+
+
 def qa_script(script, angle):
     """A second, independent agent grades the script. Returns {"approved": bool, "issues": [...]}"""
     lo, hi = SCRIPT_WORDS
@@ -378,7 +397,7 @@ Reject (approved=false) if ANY of these is true:
 - total words in "say" outside {lo}-{hi}, or the first line is not a punchy problem hook
 - anything misleading, clickbait, or against: {NICHE.get('safety', '')}
 - it mentions or implies affiliation with Zoho Corporation, Anthropic or OpenAI
-
+{_news_qa_rules(angle)}
 Return JSON: {{"approved": true|false, "score": 1-10, "issues": ["specific problem + how to fix"]}}
 
 ANGLE: {json.dumps({k: v for k, v in angle.items() if k != 'story'}, ensure_ascii=False)}
