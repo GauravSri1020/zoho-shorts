@@ -74,9 +74,18 @@ jobs:
       - run: pip install -r requirements.txt
 
       - name: Install ffmpeg + fonts
-        timeout-minutes: 8         # apt mirrors sometimes hang; fail fast instead of waiting hours
+        timeout-minutes: 16        # apt mirrors sometimes hang (10 Nov: twice in one day) -> 3 short tries below
         if: steps.t.outputs.task == 'assemble' || steps.t.outputs.task == 'daily'
-        run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg fonts-noto-core fonts-dejavu-core
+        run: |
+          APT="-o Acquire::Retries=3 -o Acquire::http::Timeout=30 -o Acquire::https::Timeout=30"
+          for i in 1 2 3; do
+            if timeout 150 sudo apt-get $APT update -qq && \
+               timeout 240 sudo apt-get $APT install -y -qq ffmpeg fonts-noto-core fonts-dejavu-core; then
+              exit 0
+            fi
+            echo "apt try $i failed - retrying"; sleep 10
+          done
+          exit 1
       - name: Install browser for the Zoho Books screens
         if: steps.t.outputs.task == 'assemble' || steps.t.outputs.task == 'daily'
         run: python -m playwright install --with-deps chromium
