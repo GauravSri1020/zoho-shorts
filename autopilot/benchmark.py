@@ -178,7 +178,7 @@ def gate(mp4, sc, engine, tech_problems, voice="gemini"):
                                    "presenter", "music", "what_to_copy")} for r in bm.get("references", [])]
     from google.genai import types
     voice_rule = (f"ONE voice from start to end: the presenter clips and the {_QA_PART} parts must sound like the SAME "
-                  "man (timbre, accent, pace, loudness). A different voice anywhere is a blocker." if voice == "gemini"
+                  "man (timbre, accent, pace, loudness). A different voice anywhere is a blocker." if voice in ("gemini", "match")
                   else f"Today the {_QA_PART} parts use a backup voice ('{voice}') because the AI-voice quota was used "
                   "up - a different voice on the screen parts is expected and NOT a blocker, but every part must be "
                   "clear, natural and at the same loudness.")
@@ -226,7 +226,7 @@ Return JSON: {{"scores": {{"hook": 0, ...}}, "blockers": ["criterion names"], "o
         if report["black_frames"]:
             blockers.append("continuity")
             report["issues"] += [f"black / blank picture at {x}" for x in report["black_frames"]]
-        if report["voice_changes"] and voice == "gemini":
+        if report["voice_changes"] and voice in ("gemini", "match"):
             blockers.append("voice")
             report["issues"] += [f"voice changes at {x}" for x in report["voice_changes"]]
         low = [k for k, v in report["scores"].items() if isinstance(v, (int, float)) and v < MIN_CRITERION]

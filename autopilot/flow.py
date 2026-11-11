@@ -620,9 +620,16 @@ def build(job, files, work: Path):
         tdir = work / "tts"
         tdir.mkdir(parents=True, exist_ok=True)
         outs = [tdir / f"line{i:02d}.wav" for i, _ in screen]
-        job["_voice"] = tts.speak_all([t for _, t in screen], outs, RATE)
+        # 11 Nov 2026: with Flow avatar clips the screen voice must sound like Gaurav's avatar (Indian English). Gemini's
+        # voices sound American (QA voice 30-40 on the Hotelogix Short) -> the Indian edge voice comes first there.
+        # QA still checks strictly that it is the SAME-sounding man ("match"); faceless Shorts keep Gemini first.
+        avatar = any(l.get("face") for l in lines)
+        order = ("edge", "gemini", "piper") if avatar else ("gemini", "edge", "piper")
+        job["_voice"] = tts.speak_all([t for _, t in screen], outs, RATE, order=order)
         voiced = {i: o for (i, _), o in zip(screen, outs)}
-        if job["_voice"] != "gemini":
+        if avatar and job["_voice"] == order[0]:
+            job["_voice"] = "match"  # the chosen voice -> QA keeps the strict one-voice rule
+        elif job["_voice"] != "gemini":
             print(f"[flow] screen parts use the backup voice '{job['_voice']}' (Gemini TTS out of quota)")
     for i, l in enumerate(lines):
         if l["face"]:
@@ -795,7 +802,7 @@ def finish():
                        f"Video file: {run_link} (Artifacts).")
                 print(f"[flow] scheduled for {when:%d %b %I:%M %p} IST: https://youtube.com/shorts/{vid}")
             state.save(st)
-            if job.get("_voice") not in (None, "gemini"):
+            if job.get("_voice") not in (None, "gemini", "match"):
                 msg += (f"\n\nℹ️ The Gemini voice quota was used up, so the {SCREEN_PART} parts use the backup voice "
                         f"'{job['_voice']}' this time (your presenter clips keep your own voice).")
             _comment(job, msg)

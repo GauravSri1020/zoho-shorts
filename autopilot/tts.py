@@ -241,13 +241,13 @@ def _says(wav: Path, text):
     return difflib.SequenceMatcher(None, norm(heard), norm(text)).ratio()
 
 
-def speak_all(texts, outs, rate=44100):
+def speak_all(texts, outs, rate=44100, order=("gemini", "edge", "piper")):
     """Every screen line of ONE Short in ONE voice. Gemini first (the same voice as your Flow avatar). Only if
     Gemini is really out (daily quota used up / down) are ALL lines re-voiced with the next provider - a Short
     never mixes voices line by line. Every line is checked by ear (whisper); a badly spoken line is made again.
     Returns the provider used: "gemini" | "edge" | "piper"."""
     errors = []
-    for name in ("gemini", "edge", "piper"):
+    for name in order:
         if name in _DEAD:
             continue
         try:
