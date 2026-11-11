@@ -144,15 +144,21 @@ def _trending_rules(candidates, n):
 - Best Zoho news: a Zoho launch / update / new feature (Zia, Zia agents, Zoho MCP, Zoho CRM, Books, Desk, Flow,
   Creator, Analytics, Zoho One ...), a new integration or partnership, a plan / pricing / limit change, a compliance
   change Zoho now supports (e-invoicing, GST, ZATCA ...), or Zoho itself trending (a Zoho app going viral, a big
-  adoption story). Skip Zoho stories with nothing a Zoho user can DO (revenue, funding, opinions, awards) unless
-  they point to a real feature the viewer can use today.
+  adoption story).
+- ALSO GOOD (11 Nov 2026): a new integration / partnership ("Hotelogix now connects to Zoho Books" -> what it means
+  for hotels and how the connected flow works), and a customer story with a concrete result ("Optiven cut software
+  costs 40% with Zoho" -> how a business does the same consolidation in Zoho), a telco / reseller launching Zoho
+  for its business customers (-> what those businesses get and the first automation to set up).
+- Skip only stories with nothing a Zoho user can DO or learn (court cases, investors, funding, personal opinions,
+  "alternatives to Zoho" lists, job / HR gossip).
 - The angle = "Zoho just did / announced THIS -> what it means for your business -> how to use / set it up in Zoho
   today". The hook MUST name the news (e.g. "Zoho just launched X - here's how to switch it on in 20 seconds").
 - Use only facts that are in the news item. Never invent dates, numbers, features, menus or prices; if the news
   does not say where a setting is, describe it generally.
 - Community questions (reddit / stackoverflow) may only support the problem; they can NEVER be the story_index.
-- NO evergreen / problem-bank / generic Zoho tips. story_index -1 is NOT allowed. If fewer than {n} Zoho news items
-  can be turned into a real, honest Short, return fewer angles (even zero) - never fill up with non-news topics.
+- NO evergreen / problem-bank / generic Zoho tips. story_index -1 is NOT allowed. Return {n} angles when {n} news
+  items qualify; fewer only when fewer qualify - but if ANY news item above is a launch, integration, partnership or
+  customer story, at least one angle is expected.
 - Set "pillar" to "trending".
 NEWS ITEMS (best first):
 {chr(10).join(news) or "(no fresh Zoho news today)"}"""
