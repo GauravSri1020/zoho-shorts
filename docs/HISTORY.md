@@ -6,6 +6,22 @@ Is file ko har session ke end pe update karo, taaki agla chat yahin se shuru kar
 
 Gaurav jab bhi kuch bhi change karne bole: SABSE PEHLE backup - `backup-YYYY-MM-DD-<kya-badal-rahe-ho>` branch main se banao (aur agar video ka kaam hai to latest Short ka artifact download karo). Tabhi code chhuo. Kuch bigde to us branch se purana code wapas lo.
 
+## 11 Nov 2026 (2) - raat: apt mirror down, Gemini overload, Hotelogix avatar job
+
+- GitHub ke Ubuntu apt mirror ghanton down: ffmpeg + browser install steps ab `continue-on-error` (apt errors log
+  mein dikhte hain, update fail ho to bhi install try). Script / Flow prompts bina ffmpeg ke bante hain; video bina
+  ffmpeg ke khud fail hoti hai (kuch kharab upload nahi). GitHub release se static ffmpeg wala fix permission check
+  ne roka - nahi lagaya.
+- Run 43048656552 ~90 min: Gemini 503 high demand + 504 (5 min each) -> har script QA round ~6 min; facts step
+  (Google Search grounding) free key pe hamesha 429 -> facts nahi milte -> QA ne bane-banaye CRM fields reject kiye
+  (sahi). Cancel kiya. Fix: Gemini timeout 5 -> 2 min. OPEN: facts ke liye grounding ke bina raasta chahiye (article
+  text khud fetch karna).
+- Scout ab integrations / partnerships / customer stories bhi le sakta hai (pehle 0 angles).
+- Claude ne khud: job 20261111-1633-1 "Hotelogix + Zoho Books: Hotel Accounts on Autopilot" (issue #153), facts =
+  Hotelogix marketplace ka official Zoho Books page; 3 avatar clips, look naye generator se. Flow clips abhi
+  BAAKI - Chrome panel ne jawab nahi diya. Agla step: Flow (main account gauravsri069, ~930 credits) mein #153 ke 3
+  prompts -> clips -> upload link -> assemble. Agar clips nahi bane to kal subah ka run ise faceless bana dega.
+
 ## 11 Nov 2026 - SUBAH script, din mein Flow avatar (Claude), warna faceless + har Short ka naya HULIYA
 
 Backup: `backup-2026-11-11-before-morning-avatar-looks`.
