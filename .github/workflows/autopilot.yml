@@ -106,7 +106,11 @@ jobs:
           exit 1
       - name: Install browser for the Zoho Books screens
         if: steps.t.outputs.task == 'assemble' || steps.t.outputs.task == 'daily' || steps.t.outputs.task == 'fallback'
-        run: python -m playwright install --with-deps chromium
+        # 11 Nov 2026: --with-deps uses apt too (mirror outage) -> scripts / Flow prompts must not wait for it; a video
+        # without the browser fails on its own (never uploaded broken)
+        continue-on-error: true
+        timeout-minutes: 12
+        run: python -m playwright install --with-deps chromium || python -m playwright install chromium
       - name: Cache the caption model
         if: steps.t.outputs.task == 'assemble' || steps.t.outputs.task == 'daily' || steps.t.outputs.task == 'fallback'
         uses: actions/cache@v4
