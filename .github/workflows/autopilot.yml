@@ -91,11 +91,14 @@ jobs:
         run: |
           APT="-o Acquire::Retries=3 -o Acquire::http::Timeout=30 -o Acquire::https::Timeout=30"
           for i in 1 2 3; do
-            if timeout 150 sudo apt-get $APT update -qq && \
-               timeout 240 sudo apt-get $APT install -y -qq ffmpeg fonts-noto-core fonts-dejavu-core; then
+            # 11 Nov 2026: show apt's own messages (the silent -qq hid why it failed); a failed update (one slow
+            # mirror / extra repo) must not stop the install from the lists that did download
+            timeout 150 sudo apt-get $APT update 2>&1 | grep -E "^(Err|W:|E:)" | head -20 || true
+            if timeout 240 sudo apt-get $APT install -y -qq ffmpeg fonts-noto-core fonts-dejavu-core 2>&1 | tail -5 \
+               && command -v ffmpeg >/dev/null; then
               exit 0
             fi
-            echo "apt try $i failed - retrying"; sleep 10
+            echo "apt try $i failed - retrying"; sleep 15
           done
           exit 1
       - name: Install browser for the Zoho Books screens
