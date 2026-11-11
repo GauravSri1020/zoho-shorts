@@ -6,6 +6,24 @@ Is file ko har session ke end pe update karo, taaki agla chat yahin se shuru kar
 
 Gaurav jab bhi kuch bhi change karne bole: SABSE PEHLE backup - `backup-YYYY-MM-DD-<kya-badal-rahe-ho>` branch main se banao (aur agar video ka kaam hai to latest Short ka artifact download karo). Tabhi code chhuo. Kuch bigde to us branch se purana code wapas lo.
 
+## 11-12 Nov 2026 raat - Books Short mein Flow screens (galti) -> asli screenshots; CRM Short
+
+Gaurav: "Zoho Books ke video mein Zoho Flow ki screen laga ke QA pass kar diya; mere diye screenshots use karo".
+Backup: `backup-2026-11-11-before-real-screens-guard`.
+- Galti: writer rule (mera, 10 Nov) "naye feature ke liye flow chain" -> har Short mein Zoho Flow logo wali screens;
+  QA product check nahi karta tha.
+- Fix: `composer._product_screen` (doosre app / Flow chain wali screen -> Short ke product ka best-match ASLI
+  screenshot assets/screens, warna usi product ka page); writer: sirf Short ke product ki screens, real pehle, Flow
+  chain sirf Zoho Flow Short mein; script QA + video QA: wrong-product screen = blocker (zoho_screens < 40).
+- `job.replaces`: rebuild upload se pehle purani video PRIVATE (delete nahi) + uska slot free.
+- Hotelogix Short dobara (Books invoices list / integrations / GST settings real): QA 94 ->
+  https://youtube.com/shorts/4JwXRwzbq28, 12 Nov 07:30 IST; purana IKAd19yW0lE private.
+- Naya: job 20261111-1800-1 "Zoho CRM Now Sets Itself Up From One Sentence" (official Zoho post: 5 native
+  customization agents, Setup > Zia > Models > Zoho Hosted LLM, "Customize with Agent", "Authorize Agent"), 3 Flow
+  clips (main account) -> QA 92 -> https://youtube.com/shorts/louAaBoyLT4, 12 Nov 21:30 IST.
+- Credits aaj: 6 clips = 120. 12 Nov ke dono slots bhar gaye; 13 Nov ke scripts 12 Nov 07:17 ka run banayega.
+- Agla topic idea: Zoho CRM Cadences WhatsApp follow-ups (official post) - facts abhi padhne baaki.
+
 ## 11 Nov 2026 (3) - Hotelogix Short SCHEDULED + avatar voice rule
 
 - Flow (main account, project "Nov 11 - 22:32"): 3 clips #153 -> assemble. QA 65/70: sirf awaaz ka farq (avatar "Me" =
