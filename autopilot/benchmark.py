@@ -179,8 +179,8 @@ def gate(mp4, sc, engine, tech_problems, voice="gemini"):
     from google.genai import types
     voice_rule = (f"ONE voice from start to end: the presenter clips and the {_QA_PART} parts must sound like the SAME "
                   "man (timbre, accent, pace, loudness). A different voice anywhere is a blocker." if voice in ("gemini", "match")
-                  else f"Today the {_QA_PART} parts use a backup voice ('{voice}') because the AI-voice quota was used "
-                  "up - a different voice on the screen parts is expected and NOT a blocker, but every part must be "
+                  else f"The {_QA_PART} parts use a separate narrator voice ('{voice}') on purpose (the presenter clips keep "
+                  "the creator's own voice) - a different voice on the screen parts is expected and NOT a blocker, but every part must be "
                   "clear, natural and at the same loudness.")
     _COVER_NOTE = ("   NOTE: the first ~1 s is the Short's THUMBNAIL COVER on purpose (big title, the creator's photo, "
                    "the Short's own screen, slow push-in, the hook voice already playing, then a fade into the video) - it "

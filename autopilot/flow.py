@@ -627,8 +627,8 @@ def build(job, files, work: Path):
         order = ("edge", "gemini", "piper") if avatar else ("gemini", "edge", "piper")
         job["_voice"] = tts.speak_all([t for _, t in screen], outs, RATE, order=order)
         voiced = {i: o for (i, _), o in zip(screen, outs)}
-        if avatar and job["_voice"] == order[0]:
-            job["_voice"] = "match"  # the chosen voice -> QA keeps the strict one-voice rule
+        if avatar:  # 11 Nov 2026 (Gaurav): "farq chalega" - a different screen voice is OK in avatar Shorts;
+            pass    # QA gets the edge voice name -> voice difference is not a blocker, everything else stays strict
         elif job["_voice"] != "gemini":
             print(f"[flow] screen parts use the backup voice '{job['_voice']}' (Gemini TTS out of quota)")
     for i, l in enumerate(lines):
@@ -802,7 +802,7 @@ def finish():
                        f"Video file: {run_link} (Artifacts).")
                 print(f"[flow] scheduled for {when:%d %b %I:%M %p} IST: https://youtube.com/shorts/{vid}")
             state.save(st)
-            if job.get("_voice") not in (None, "gemini", "match"):
+            if job.get("_voice") not in (None, "gemini", "match") and not any(l.get("face") for l in job.get("lines", [])):
                 msg += (f"\n\nℹ️ The Gemini voice quota was used up, so the {SCREEN_PART} parts use the backup voice "
                         f"'{job['_voice']}' this time (your presenter clips keep your own voice).")
             _comment(job, msg)

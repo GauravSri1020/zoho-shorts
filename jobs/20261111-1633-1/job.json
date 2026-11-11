@@ -1,7 +1,7 @@
 {
  "id": "20261111-1633-1",
  "niche": "zoho",
- "status": "qa_failed",
+ "status": "waiting_for_clips",
  "upload": true,
  "created": "2026-11-11T16:33:57",
  "title": "Hotelogix + Zoho Books: Hotel Accounts on Autopilot #Shorts",
@@ -375,5 +375,6 @@
   }
  ],
  "look": "wearing teal henley t-shirt under an open dark blazer, in a modern clinic reception with white walls, plants and soft daylight; in this whole video he has a short neatly trimmed beard, short neat side-parted hair, thin black rectangular glasses - exactly the same in every shot of this video",
- "issue": 153
+ "issue": 153,
+ "owner_approved": true
 }
