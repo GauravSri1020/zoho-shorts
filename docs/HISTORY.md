@@ -6,6 +6,22 @@ Is file ko har session ke end pe update karo, taaki agla chat yahin se shuru kar
 
 Gaurav jab bhi kuch bhi change karne bole: SABSE PEHLE backup - `backup-YYYY-MM-DD-<kya-badal-rahe-ho>` branch main se banao (aur agar video ka kaam hai to latest Short ka artifact download karo). Tabhi code chhuo. Kuch bigde to us branch se purana code wapas lo.
 
+## 11 Nov 2026 - SUBAH script, din mein Flow avatar (Claude), warna faceless + har Short ka naya HULIYA
+
+Backup: `backup-2026-11-11-before-morning-avatar-looks`.
+- 10 Nov ka "0 9" cron 11 Nov ko GitHub ne chalaya hi nahi (11 Nov ke saare runs sirf comments) -> koi faceless Short
+  nahi bana. Ab cron `47 1` (07:17 IST) + backup `13 3` (08:43 IST), full hour se door.
+- Gaurav ka naya flow: subah research + script + Flow prompts (issue). Default = AVATAR (`flow.faceless: false`).
+  Gaurav din mein ek baar Flow tab kholta hai -> Claude clips bana ke upload -> GitHub assemble + schedule.
+  Flow credit nahi / clips nahi aaye -> `flow.fallback()`: agle subah ke run mein (20 h) ya Run workflow task
+  `fallback`, hours 0 -> wahi script FACELESS (photo cards + screens + Gemini voice) + issue comment. 4 din se purana
+  waiting job = stale -> skip. Run workflow face `no` = seedha faceless. 20261025-0920-1 (Oct) -> skip.
+- Huliya (`flow.look_parts`): outfit = rang (18) x kapda (14), kabhi repeat nahi (state used_outfits); jagah 36 (outdoor
+  flag), sab use hone tak repeat nahi (used_places); beard (5) x hair (6) x chashma (5, sunglasses sirf outdoor),
+  pichhle Short se alag (last_grooming). Prompt: "in this whole video he has ... - exactly the same in every shot".
+  `flow.body`: face / skin / height / build avatar jaisa (hair + beard ab look se); NO tilak, mala, beads, thread,
+  religious cheez, earrings, bracelets - professional.
+
 ## 10 Nov 2026 (8) - SAB GITHUB MEIN: roz faceless Shorts + avatar jab chahiye
 
 Gaurav: "mujhe ye git me chahiye, Claude pe kuch nahi rakhna". Flow ka API nahi -> avatar clips GitHub se nahi ban

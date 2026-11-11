@@ -124,7 +124,8 @@ def _assemble_other_niches():
 
 def main(argv=None):
     p = argparse.ArgumentParser()
-    p.add_argument("task", choices=["daily", "comments", "assemble", "ttstest"])
+    p.add_argument("task", choices=["daily", "comments", "assemble", "ttstest", "fallback"])
+    p.add_argument("--hours", type=float, default=20.0, help="fallback: build faceless after this many hours")
     p.add_argument("--count", type=int, default=SCRIPTS_PER_DAY)
     p.add_argument("--no-upload", action="store_true")
     a = p.parse_args(argv)
@@ -140,7 +141,12 @@ def main(argv=None):
                   f"{w.getframerate()} Hz (models tried in order: {tts.MODELS})")
         return 0
     try:
-        if a.task == "daily":  # script + Flow prompts -> GitHub issue (you make the clips in Flow)
+        if a.task == "fallback":  # 11 Nov 2026: Shorts whose Flow clips did not come -> faceless now
+            flow.fallback(a.hours)
+            flow.finish()
+        elif a.task == "daily":  # script + Flow prompts -> GitHub issue (Claude / Gaurav make the clips in Flow)
+            if flow.fallback(20.0):  # yesterday's Shorts still without clips -> faceless first (frees the slots)
+                flow.finish()
             flow.prepare(max(1, a.count), not a.no_upload)
             if flow.FACELESS:  # v4: faceless Shorts need no clip -> build, QA and schedule them right away
                 flow.finish()

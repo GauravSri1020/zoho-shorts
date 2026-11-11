@@ -39,33 +39,57 @@ SHOT = (_F.get("shot") or "Vertical 9:16 medium-wide shot from the knees up, cam
         "his head in the upper third with space above it, both hands and all his gestures fully visible in the "
         "frame").strip()
 LOOKS = [str(x).strip() for x in (_F.get("looks") or []) if str(x).strip()] or [SCENE]  # one look per Short, rotated
-OUTFITS = [str(x).strip() for x in (_F.get("outfits") or []) if str(x).strip()]
-PLACES = [str(x).strip() for x in (_F.get("places") or []) if str(x).strip()]
+_LK = _F.get("look_parts") or {}
+GARMENTS = [str(x).strip() for x in (_LK.get("garments") or []) if str(x).strip()]
+COLOURS = [str(x).strip() for x in (_LK.get("colours") or []) if str(x).strip()]
+PLACES = [x if isinstance(x, dict) else {"text": str(x)} for x in (_LK.get("places") or []) if x]
+BEARDS = [str(x).strip() for x in (_LK.get("beards") or []) if str(x).strip()]
+HAIRS = [str(x).strip() for x in (_LK.get("hair") or []) if str(x).strip()]
+EYEWEAR = [str(x).strip() for x in (_LK.get("eyewear") or []) if str(x).strip()]
+SUNGLASSES = [str(x).strip() for x in (_LK.get("sunglasses") or []) if str(x).strip()]
+OUTFITS = [str(x).strip() for x in (_F.get("outfits") or []) if str(x).strip()]  # old fixed list (fallback only)
 
 
 def pick_look(st):
-    """10 Nov 2026 (Gaurav): every Short gets its OWN look - an outfit x place combination never used before
-    (state "used_looks"), and never the same outfit or the same place as the Short before it.
-    Without outfits/places in the niche file: the old rotation through "looks"."""
-    if not (OUTFITS and PLACES):
-        return LOOKS[st.get("look_index", 0) % len(LOOKS)]
+    """11 Nov 2026 (Gaurav): every Short gets its OWN look and nothing is ever reused:
+    - outfit = colour x garment, never worn before (state used_outfits)
+    - place never used again until every place was used once (state used_places)
+    - beard / hair / glasses (sunglasses only outdoors) change every Short, never the same mix as the Short before
+    The look is written ONCE per Short and goes into every clip's prompt -> identical in every shot of that Short.
+    Without look_parts in the niche file: the old rotation through "looks"."""
     import hashlib
-    used = st.setdefault("used_looks", [])
-    last = used[-1] if used else [-1, -1]
-    combos = [(o, p) for o in range(len(OUTFITS)) for p in range(len(PLACES))
-              if [o, p] not in used and o != last[0] and p != last[1]]
-    if not combos:  # all used (400 Shorts) -> start over, still never like the last one
-        used.clear()
-        combos = [(o, p) for o in range(len(OUTFITS)) for p in range(len(PLACES)) if o != last[0] and p != last[1]]
-    # spread: prefer the outfit and the place used least so far, then a stable pseudo-random pick
-    oc = {o: sum(1 for u in used if u[0] == o) for o in range(len(OUTFITS))}
-    pc = {p: sum(1 for u in used if u[1] == p) for p in range(len(PLACES))}
-    best = min(oc[o] + pc[p] for o, p in combos)
-    combos = [c for c in combos if oc[c[0]] + pc[c[1]] == best]
-    k = int(hashlib.md5(str(st.get("next_id", 0)).encode()).hexdigest()[:8], 16)
-    o, p = combos[k % len(combos)]
-    used.append([o, p])
-    return f"wearing {OUTFITS[o]}, {PLACES[p]}"
+    if not (GARMENTS and COLOURS and PLACES):
+        return LOOKS[st.get("look_index", 0) % len(LOOKS)]
+    rnd = int(hashlib.md5(str(st.get("next_id", 0)).encode()).hexdigest()[:12], 16)
+    # outfit: a colour x garment combination never worn
+    worn = set(st.setdefault("used_outfits", []))
+    fits = [f"{c} {g}" for g in GARMENTS for c in COLOURS if f"{c} {g}" not in worn]
+    last = st["used_outfits"][-1] if st["used_outfits"] else ""
+    fresh = [f for f in fits if not any(w in last for w in f.split()[-2:])] or fits  # not the same garment twice
+    if not fresh:
+        st["used_outfits"], fresh = [], [f"{c} {g}" for g in GARMENTS for c in COLOURS]
+    outfit = fresh[rnd % len(fresh)]
+    st["used_outfits"].append(outfit)
+    # place: not used again until all were used
+    used_p = st.setdefault("used_places", [])
+    free = [i for i in range(len(PLACES)) if i not in used_p] or list(range(len(PLACES)))
+    if len(free) == len(PLACES):
+        used_p.clear()
+    pi = free[(rnd // 7) % len(free)]
+    used_p.append(pi)
+    place = PLACES[pi]
+    outdoor = bool(place.get("outdoor"))
+    # grooming: beard x hair x glasses, never the same mix as the Short before
+    prev = st.get("last_grooming") or []
+    mixes = [(b, h, e) for b in range(len(BEARDS) or 1) for h in range(len(HAIRS) or 1)
+             for e in range(len(EYEWEAR) + (len(SUNGLASSES) if outdoor else 0) or 1)
+             if [b, h, e] != prev and (not prev or (b != prev[0] and h != prev[1]))]
+    b, h, e = mixes[(rnd // 31) % len(mixes)]
+    st["last_grooming"] = [b, h, e]
+    glasses = (EYEWEAR + (SUNGLASSES if outdoor else []))[e] if (EYEWEAR or SUNGLASSES) else ""
+    groom = ", ".join(x for x in ((BEARDS[b] if BEARDS else ""), (HAIRS[h] if HAIRS else ""), glasses) if x)
+    return (f"wearing {outfit}, {place['text']}; in this whole video he has {groom} - exactly the same in every "
+            f"shot of this video")
 SPEED = max(1.0, min(1.6, float(_F.get("speed", 1.1))))  # lifts Veo's slow delivery (voice + lips together); v2 claude niche 1.5
 # screen-part (TTS) voice pace. 1.0 = untouched (Zoho niche). Claude niche v2: same as SPEED, so the pace never jumps.
 TTS_SPEED = max(1.0, min(1.6, float(_F.get("tts_speed", 1.0))))
@@ -82,7 +106,11 @@ SKIP_STATUS = ("done", "uploaded", "uploaded_manually", "skip")
 FACE_BEATS = tuple(str(b).upper() for b in (_F.get("face_beats") or ["HOOK", "PROBLEM", "RESULT"]))
 # v4 (1 Nov 2026): faceless Shorts - no Flow clip at all (every line = screen + one TTS voice), so the robot can publish
 # every day with zero Flow credits. Env FACE=yes (Run workflow -> face) makes a Short with the face clip(s) again.
-FACELESS = bool(_F.get("faceless")) and os.getenv("FACE", "").strip().lower() not in ("1", "yes", "true", "y")
+# 11 Nov 2026: Zoho default = AVATAR Shorts again (Claude makes the Flow clips when Gaurav opens the Flow tab);
+# FACE=no forces faceless, FACE=yes forces avatar; a Short whose clips never came is built faceless by fallback().
+_FACE = os.getenv("FACE", "").strip().lower()
+FACELESS = (_FACE in ("no", "0", "false", "n", "faceless")
+            or (bool(_F.get("faceless")) and _FACE not in ("1", "yes", "true", "y")))
 if FACELESS:
     FACE_BEATS = ()
 DROP_BEATS = tuple(str(b).upper() for b in (_F.get("drop_beats") or ["CTA"]))
@@ -394,6 +422,39 @@ def prepare(count, do_upload):
             state.save(st)
     if not made:
         raise RuntimeError("no Short prepared: " + "; ".join(errors[-3:]))
+
+
+def fallback(min_age_h=20.0):
+    """11 Nov 2026 (Gaurav: "Flow mein credit nahi bacha to faceless, warna mera face"): a Zoho Short whose Flow
+    clips did not come within min_age_h hours is built FACELESS (Gaurav's photo cards + screens + one Gemini voice)
+    and scheduled. Older than 4 days = stale news -> skipped. Returns how many jobs were switched."""
+    switched = 0
+    for jf in sorted(JOBS.glob("*/job.json")) if JOBS.exists() else []:
+        job = json.loads(jf.read_text(encoding="utf-8"))
+        if job.get("status") != "waiting_for_clips" or (job.get("niche") or "zoho") != NICHE_ID:
+            continue
+        if _clip_files(jf.parent):
+            continue  # Gaurav / Claude already started uploading clips -> leave it
+        try:
+            made = dt.datetime.strptime(job["id"][:13], "%Y%m%d-%H%M").replace(tzinfo=dt.timezone.utc)
+        except Exception:
+            continue
+        age = (dt.datetime.now(dt.timezone.utc) - made).total_seconds() / 3600
+        if age > 96:
+            job["status"] = "skip"
+            print(f"[flow] {job['id']}: {age:.0f} h old, news is stale - skipped")
+        elif age >= min_age_h:
+            for ln in job.get("lines", []):
+                ln["face"] = False
+            job.update(clips=[], faceless_fallback=True)
+            switched += 1
+            print(f"[flow] {job['id']}: no Flow clips after {age:.0f} h -> built FACELESS")
+            _comment(job, "🙂 No Flow clips came for this Short, so it is built **faceless** now (your photo cards + "
+                          "Zoho screens + the Gemini voice) and scheduled.")
+        else:
+            continue
+        jf.write_text(json.dumps(job, ensure_ascii=False, indent=1), encoding="utf-8")
+    return switched
 
 
 # ------------------------------------------------------------------ clips -> finished Short

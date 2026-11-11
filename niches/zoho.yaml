@@ -117,11 +117,12 @@ localize:
 
 # The presenter: YOU, made in Google Flow (your avatar + Veo 3.1 with its own voice) - see autopilot/flow.py
 flow:
-  # 10 Nov 2026 (Gaurav: "sab git mein, Claude pe kuch nahi"): roz ke Shorts BINA Flow clips banenge - GitHub hi
-  # script + screens + Gaurav ki photo wale cards (HOOK / PROBLEM / RESULT) + cover + Gemini voice bana ke
-  # schedule karta hai. Avatar wala Short jab chahiye: Actions -> Run workflow -> face = yes (Flow prompts issue mein).
-  faceless: true
-  per_day: 2                # Shorts per daily run (faceless = no Flow credits; 2 schedule slots a day)
+  # 11 Nov 2026 (Gaurav): subah research + script + Flow prompts (issue). Default = AVATAR Short: Gaurav din mein ek
+  # baar Flow tab kholta hai, Claude wahan clips bana ke upload karta hai -> GitHub assemble + schedule. Flow mein
+  # credit nahi / clips nahi aaye -> fallback(): 20 h baad (agle subah ka run) ya Run workflow task "fallback"
+  # (hours 0) -> wahi script FACELESS (photo cards + screens + Gemini voice). Run workflow face = no -> seedha faceless.
+  faceless: false
+  per_day: 2                # Shorts per daily run (2 schedule slots a day)
   max_words_per_clip: 21    # ~7.8 s of brisk speech -> still fits one 8 s Flow clip (was 19)
   speed: 1.15               # lifts the pace of every clip a little (voice + lips together), 1.0 = off (was 1.1)
   max_batch: 14             # a manual daily run may prepare up to this many Shorts at once (a week)
@@ -147,52 +148,76 @@ flow:
     - "wearing a black polo shirt, in a premium business lounge with tall windows, leather chairs and a modern city view"
     - "wearing a light grey blazer over a black t-shirt, in a bright modern office lobby with plants, a reception desk and natural light"
     - "wearing a light denim shirt, in a landscaped office park courtyard with benches, trees and a modern building behind him"
-  # 10 Nov 2026 (Gaurav): har video ka look ALAG - outfit x jagah ka naya combination, kabhi repeat nahi
-  # (state.json -> used_looks). Lagatar do videos mein na outfit same, na jagah. "looks" upar = sirf fallback.
-  outfits:
-    - "a navy unstructured blazer over a plain white t-shirt and dark chinos"
-    - "a light blue oxford shirt with the sleeves rolled up"
-    - "a charcoal overshirt over a black crew-neck t-shirt"
-    - "an olive field jacket over a grey t-shirt"
-    - "a white linen shirt with the top button open"
-    - "a navy blazer over a crisp white shirt with no tie"
-    - "a dark green polo shirt"
-    - "a grey crew-neck knit sweater over a white collared shirt"
-    - "a beige overshirt over a white t-shirt"
-    - "a black polo shirt"
-    - "a light grey blazer over a black t-shirt"
-    - "a light denim shirt"
-    - "a maroon henley t-shirt"
-    - "a camel suede jacket over a white t-shirt"
-    - "a sky blue linen kurta with the sleeves folded once"
-    - "a black zip-up bomber jacket over a white t-shirt"
-    - "a mustard knit polo shirt"
-    - "a checked flannel shirt in blue and grey, open over a white t-shirt"
-    - "a slim-fit charcoal suit with a light blue shirt and no tie"
-    - "a navy quarter-zip pullover over a white collared shirt"
-  places:
-    - "on a tree-lined walkway of a modern corporate office campus in soft morning sun, glass office buildings behind him"
-    - "in a bright co-working space with large windows, wooden tables and plants"
-    - "in a modern tech startup office with exposed brick, plants and warm lights"
-    - "on a clean city sidewalk just outside a glass office tower, softly blurred street behind him"
-    - "on a sunny rooftop terrace with a city skyline behind him at golden hour"
-    - "in a glass-walled high-rise office with a city skyline behind him"
-    - "in a cozy home office with bookshelves, a desk lamp and a monitor showing dashboards"
-    - "in a glass meeting room with a whiteboard full of flow diagrams"
-    - "at an outdoor cafe terrace table with a laptop, green trees and soft daylight behind him"
-    - "in a premium business lounge with tall windows, leather chairs and a modern city view"
-    - "in a bright modern office lobby with plants, a reception desk and natural light"
-    - "in a landscaped office park courtyard with benches, trees and a modern building behind him"
-    - "in a small podcast studio with acoustic panels, a microphone arm and soft purple accent lights"
-    - "in a modern warehouse office with neat shelves and boxes softly blurred behind him"
-    - "in a bright retail store after hours, tidy shelves and warm lights behind him"
-    - "in a calm library-style reading room with tall wooden shelves and green desk lamps"
-    - "on a modern glass footbridge between office buildings, city lights softly blurred behind him"
-    - "in a minimal white studio with a large monitor showing charts and a single plant"
-    - "in a busy open-plan office with people working softly blurred in the background"
-    - "on a seaside promenade with palm trees and modern towers behind him in the late afternoon"
+  # 11 Nov 2026 (Gaurav): har Short ka look ALAG aur kuch bhi dobara nahi - outfit = rang x kapda (kabhi repeat
+  # nahi, state used_outfits), jagah tab tak repeat nahi jab tak saari use na ho (used_places), beard / hair /
+  # chashma har Short badalta hai (pichhle Short jaisa mix nahi). Ek Short ke saare clips mein EK hi look.
+  look_parts:
+    garments:
+      - "unstructured blazer over a plain white t-shirt"
+      - "oxford shirt with the sleeves neatly rolled up"
+      - "overshirt over a black crew-neck t-shirt"
+      - "field jacket over a grey t-shirt"
+      - "linen shirt with the top button open"
+      - "blazer over a crisp white shirt with no tie"
+      - "polo shirt"
+      - "crew-neck knit sweater over a white collared shirt"
+      - "quarter-zip pullover over a white collared shirt"
+      - "suit with a white shirt and no tie"
+      - "bomber jacket over a white t-shirt"
+      - "henley t-shirt under an open dark blazer"
+      - "denim jacket over a white t-shirt"
+      - "nehru-collar jacket over a white shirt"
+    colours: ["navy", "charcoal", "olive green", "light blue", "beige", "black", "dark green", "maroon", "camel",
+              "steel grey", "sky blue", "teal", "mustard", "burgundy", "slate blue", "cream", "chocolate brown",
+              "forest green"]
+    places:
+      - {text: "on a tree-lined walkway of a modern corporate office campus in soft morning sun, glass buildings behind him", outdoor: true}
+      - {text: "in a bright co-working space with large windows, wooden tables and plants"}
+      - {text: "in a modern tech startup office with exposed brick, plants and warm lights"}
+      - {text: "on a clean city sidewalk just outside a glass office tower, softly blurred street behind him", outdoor: true}
+      - {text: "on a sunny rooftop terrace with a city skyline behind him at golden hour", outdoor: true}
+      - {text: "in a glass-walled high-rise office with a city skyline behind him"}
+      - {text: "in a cozy home office with bookshelves, a desk lamp and a monitor showing dashboards"}
+      - {text: "in a glass meeting room with a whiteboard full of flow diagrams"}
+      - {text: "at an outdoor cafe terrace table with a laptop, green trees and soft daylight behind him", outdoor: true}
+      - {text: "in a premium business lounge with tall windows, leather chairs and a modern city view"}
+      - {text: "in a bright modern office lobby with plants, a reception desk and natural light"}
+      - {text: "in a landscaped office park courtyard with benches, trees and a modern building behind him", outdoor: true}
+      - {text: "in a small podcast studio with acoustic panels, a microphone arm and soft purple accent lights"}
+      - {text: "in a modern warehouse office with neat shelves and boxes softly blurred behind him"}
+      - {text: "in a bright retail store after hours, tidy shelves and warm lights behind him"}
+      - {text: "in a calm library-style reading room with tall wooden shelves and green desk lamps"}
+      - {text: "on a modern glass footbridge between office buildings, city lights softly blurred behind him", outdoor: true}
+      - {text: "in a minimal white studio with a large monitor showing charts and a single plant"}
+      - {text: "in a busy open-plan office with people working softly blurred in the background"}
+      - {text: "on a seaside promenade with palm trees and modern towers behind him in the late afternoon", outdoor: true}
+      - {text: "in a conference hall foyer with a large blank screen and soft stage lights behind him"}
+      - {text: "in a modern bank-style business branch with glass desks and soft daylight"}
+      - {text: "in a bright product design studio with sketches and laptops on a long table"}
+      - {text: "in a hotel business centre with dark wood, brass lamps and big windows"}
+      - {text: "on a quiet university campus lawn with modern buildings behind him", outdoor: true}
+      - {text: "in a modern factory office overlooking a clean production floor through glass"}
+      - {text: "in a sunlit corner office with a view over green hills"}
+      - {text: "in a modern airport business lounge with planes softly blurred behind the windows"}
+      - {text: "at a standing desk in a sleek dark-themed office with soft blue monitor glow"}
+      - {text: "in a modern clinic reception with white walls, plants and soft daylight"}
+      - {text: "on a balcony of a modern office building with a busy city street far below", outdoor: true}
+      - {text: "in a modern restaurant before opening, clean tables and warm pendant lights behind him"}
+      - {text: "in a startup event space with colourful wall graphics and bean bags softly blurred"}
+      - {text: "in a spacious loft office with big industrial windows and long wooden tables"}
+      - {text: "in a modern logistics control room with large screens softly blurred behind him"}
+      - {text: "under a modern glass atrium full of daylight and tall indoor plants"}
+    beards: ["a neat light stubble", "a short neatly trimmed beard", "a full well-groomed beard",
+             "a sharp short boxed beard", "a clean-shaven face with no beard"]
+    hair: ["short neat side-parted hair", "a modern textured quiff", "short slicked-back hair",
+           "a clean short crew cut", "neatly combed-back medium-length hair", "a short fade with a little volume on top"]
+    eyewear: ["no glasses", "no glasses", "thin black rectangular glasses", "clear-frame modern glasses",
+              "thin gold round-frame glasses"]
+    sunglasses: ["classic dark aviator sunglasses", "black wayfarer sunglasses"]   # only for outdoor places
   # Shakal + body hamesha avatar ki reference photos jaisi - kabhi patla / mota nahi.
-  body: "His face, skin tone, hairstyle, beard, height and body build stay exactly as in my avatar's reference photos - the same natural average build, never slimmer and never heavier"
+  # 11 Nov 2026: beard / hair / glasses ab har Short ka look decide karta hai (ek video mein sab shots same).
+  # Professional: koi tilak, mala, dhaaga, religious cheez nahi (QA ne aise clips pass kiye the).
+  body: "His face, skin tone, height and body build stay exactly as in my avatar's reference photos - the same natural average build, never slimmer and never heavier. Clean professional business look: no tilak or any mark on his forehead, no necklace, mala, beads, thread or religious accessory, no earrings, no bracelets"
   # Gesture / body language har clip mein alag (har line ke liye pool se ek chuna jaata hai, script ke text se).
   # Research (14 Oct): talking-head Shorts mein presenter kabhi poora still nahi - halka walk-in, weight shift,
   # haath ki movement, important baat se pehle chhota pause, ek dost se baat karne jaisa tone, ~15% zyada energy.
