@@ -6,6 +6,18 @@ Is file ko har session ke end pe update karo, taaki agla chat yahin se shuru kar
 
 Gaurav jab bhi kuch bhi change karne bole: SABSE PEHLE backup - `backup-YYYY-MM-DD-<kya-badal-rahe-ho>` branch main se banao (aur agar video ka kaam hai to latest Short ka artifact download karo). Tabhi code chhuo. Kuch bigde to us branch se purana code wapas lo.
 
+## 11 Nov 2026 (3) - Hotelogix Short SCHEDULED + avatar voice rule
+
+- Flow (main account, project "Nov 11 - 22:32"): 3 clips #153 -> assemble. QA 65/70: sirf awaaz ka farq (avatar "Me" =
+  Gaurav ki Indian English awaaz; screen parts Gemini Achird ya edge en-IN-PrabhatNeural dono ko QA "American / doosra
+  aadmi" kehta). Gaurav: "awaaz change hai to rehne de, upload kar" + aage "farq chalega".
+- Code: avatar Shorts mein screen voice order edge (en-IN-PrabhatNeural) -> gemini -> piper; QA ko voice ka naam milta
+  hai -> awaaz ka farq blocker NAHI (baaki sab strict). Faceless Shorts: Gemini pehle, one-voice rule strict.
+- Job 20261111-1633-1 `owner_approved` -> https://youtube.com/shorts/IKAd19yW0lE, public 12 Nov 07:30 IST.
+  Credits aaj: 3 clips = 60 (sab isi video mein lage).
+- Gaurav naraz: bahut time laga (apt mirror + Gemini overload + QA voice rebuilds). Agla: 12 Nov 07:17 run 2 scripts
+  banayega -> Gaurav Flow tab khole -> Claude clips + upload -> schedule; ab awaaz se rebuild nahi hoga.
+
 ## 11 Nov 2026 (2) - raat: apt mirror down, Gemini overload, Hotelogix avatar job
 
 - GitHub ke Ubuntu apt mirror ghanton down: ffmpeg + browser install steps ab `continue-on-error` (apt errors log
