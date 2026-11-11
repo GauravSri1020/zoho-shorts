@@ -280,10 +280,12 @@ def write_script(angle):
                   f"publishers): {s['title']} - {s['source']}\n"
                   f"{s['summary']}\nThe HOOK must open on this news (what just happened), then show what it means "
                   f"for a Zoho business and how to use / handle it in Zoho today. State only facts from this news.\n"
-                  f"SCREENS: a Zoho app page (view list / form / settings with a menu path) ONLY when that exact menu "
-                  f"path is in the facts above. A new feature without a published menu path is shown as a 'flow' "
-                  f"chain of what happens, or an AI chat (Claude / ChatGPT over Zoho MCP) - never an invented "
-                  f"settings page or button name.")
+                  f"SCREENS (11 Nov 2026, Gaurav): every screen shows THE PRODUCT OF THIS SHORT (a Zoho Books Short = "
+                  f"Zoho Books screens, a CRM Short = CRM screens). Use a REAL screenshot ('real': key from the list "
+                  f"of real screenshots) whenever one of that product fits the step; else that product's own app "
+                  f"page (app = the product). NEVER a Zoho Flow 'flow' chain unless the Short is about Zoho Flow, and "
+                  f"never a screen of a different Zoho app. Button / menu names only when they are in the facts or in "
+                  f"the real screenshot - never invent one.")
     elif s:
         source = f"SOURCE (the question/news this came from): {s['title']} - {s['source']}\n{s['summary']}"
     else:
@@ -418,8 +420,9 @@ def _news_qa_rules(angle):
 - reject if a menu / button name for a NEW feature from the news is not in the news text and you are not sure it
   exists: then the step must be described generally ("open the new AI agent workflows in Campaigns")
 - reject if the hook does not clearly say what Zoho just launched / changed
-- reject if a Zoho app screen (list / form / settings) shows a menu path or button for the NEW feature that is not
-  in the facts below - it must then be a flow chain or AI chat screen instead
+- reject if a Zoho app screen shows a menu path or button for the NEW feature that is not in the facts below or in
+  a real screenshot
+- reject if any screen is NOT the product of this Short (e.g. a Zoho Flow chain or a CRM page in a Zoho Books Short)
 NEWS ({s.get('age_hours', '?')} hours old): {s.get('title', '')} - {s.get('source', '')}
 {s.get('summary', '')[:900]}
 """

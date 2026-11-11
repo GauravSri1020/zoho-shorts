@@ -34,7 +34,9 @@ CRITERIA = {
     "voice": "one consistent, natural voice (same timbre, accent, pace and loudness in presenter and screen parts), "
              "no cut-off words, clicks, robotic words or dead air",
     "zoho_screens": "the Zoho / AI / API steps are SHOWN on screen at the moment they are said, the exact button / "
-                    "field is highlighted, readable on a phone",
+                    "field is highlighted, readable on a phone, and EVERY screen is the product the Short talks about "
+                    "(a Zoho Books Short shows Zoho Books, never a Zoho Flow / other-app screen) - a wrong-product "
+                    "screen scores this under 40",
     "pacing": "visual change every 2-4 s, no dead time, length fits the content (25-60 s)",
     "captions": "readable, in sync, match the speech exactly, never covering the face or the important part of the screen",
     "audio": "clear voice, music present but always quieter than the voice",

@@ -778,6 +778,16 @@ def finish():
             msg = f"✅ Short ready. Video: {run_link} (Artifacts)."
             if job.get("upload", True):
                 yt = g.youtube()
+                old = job.get("replaces")  # 11 Nov 2026: a fixed rebuild replaces its earlier upload (made PRIVATE,
+                if old and not job.get("replaced_done"):  # not deleted - reversible) and takes over its slot
+                    try:
+                        yt.videos().update(part="status", body={"id": old, "status": {
+                            "privacyStatus": "private", "selfDeclaredMadeForKids": False}}).execute()
+                        st["slots"] = [x for x in st["slots"] if x.get("video_id") != old]
+                        job["replaced_done"] = True
+                        print(f"[yt] old upload {old} set to PRIVATE (replaced by this rebuild)")
+                    except Exception as e:
+                        print(f"[yt] could not make {old} private: {str(e)[:200]}")
                 try:  # what is really on the channel (manual uploads, other runs) also counts -> max 2 a day
                     yt_times = g.scheduled_times(yt)
                 except Exception as e:

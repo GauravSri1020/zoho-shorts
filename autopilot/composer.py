@@ -75,6 +75,37 @@ def _is_screen(line):
     return beat.startswith("STEP") and bool(line.get("screen"))
 
 
+def _product_screen(spec, sc, line):
+    """11 Nov 2026 (Gaurav): a Zoho Books Short showed Zoho Flow chains on every step. Every screen must be THE
+    PRODUCT of the Short: a spec of another app (or a 'flow' chain in a non-Flow Short) is replaced by the product's
+    best-matching REAL screenshot (assets/screens), else by the product's own drawn app page."""
+    if not IS_ZOHO or not spec:
+        return spec
+    label = str(sc.get("app_label") or "").lower()
+    prod = next((a for a in ("books", "crm", "campaigns", "analytics", "desk", "creator", "inventory", "people",
+                             "salesiq", "social", "sign", "flow", "bigin", "one") if a in label), "")
+    app = str(spec.get("app") or "").lower().replace("zoho ", "")
+    view = str(spec.get("view") or "").lower()
+    if not prod or prod == "flow" or app in ("claude", "chatgpt", "api", "code", "presenter") or spec.get("real"):
+        return spec
+    if app == prod and view != "flow":
+        return spec
+    lib = screens.library()
+    words = set(re.findall(r"[a-z]{4,}", (line.get("say", "") + " " + line.get("card", "")).lower()))
+    best, score = None, 0
+    for key, v in lib.items():
+        if not key.startswith(prod + "/"):
+            continue
+        sc_ = len(words & set(re.findall(r"[a-z]{4,}", (key + " " + str(v.get("about", ""))).lower())))
+        if sc_ > score:
+            best, score = key, sc_
+    if best:
+        print(f"[screens] '{line.get('beat')}': {app or '?'}/{view or '?'} screen in a {prod} Short -> real {best}")
+        return {"real": best, "app": prod, "click": "", "tip": spec.get("tip", "")}
+    print(f"[screens] '{line.get('beat')}': {app or '?'}/{view or '?'} screen in a {prod} Short -> {prod} app page")
+    return {"app": prod, "view": "settings", "path": [line.get("card") or "Settings"], "tip": spec.get("tip", "")}
+
+
 def _spec_for(lines, i):
     """The line's own screen spec, else the next one's (FIX usually leads into STEP 1), else the previous one."""
     if lines[i].get("screen"):
@@ -418,7 +449,7 @@ def render(sc, lines, words, avatar_mp4, voice_wav, workdir: Path, out_path: Pat
         if s["kind"] == "screen":
             l = lines[s["line"]]
             idx[s["line"]] = len(specs)
-            spec = _spec_for(lines, s["line"])
+            spec = _product_screen(_spec_for(lines, s["line"]), sc, l)
             if IS_ZOHO and not l.get("screen") and str(l.get("beat", "")).upper().startswith(("HOOK", "PROBLEM", "RESULT")):
                 # 10 Nov 2026: faceless Zoho Short -> Gaurav's photo card with the line's caption (no Flow clip here)
                 app = str(sc.get("app_label") or "")
