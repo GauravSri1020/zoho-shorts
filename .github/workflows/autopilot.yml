@@ -87,10 +87,13 @@ jobs:
 
       - name: Install ffmpeg + fonts
         timeout-minutes: 16        # apt mirrors sometimes hang (10 Nov: twice in one day) -> 3 short tries below
+        # 11 Nov 2026: the mirror was down for hours. Writing scripts + Flow prompts needs no ffmpeg, so the run goes
+        # on; building a video without ffmpeg fails on its own (nothing broken is ever uploaded).
+        continue-on-error: true
         if: steps.t.outputs.task == 'assemble' || steps.t.outputs.task == 'daily' || steps.t.outputs.task == 'fallback'
         run: |
           APT="-o Acquire::Retries=3 -o Acquire::http::Timeout=30 -o Acquire::https::Timeout=30"
-          for i in 1 2 3; do
+          for i in 1 2; do
             # 11 Nov 2026: show apt's own messages (the silent -qq hid why it failed); a failed update (one slow
             # mirror / extra repo) must not stop the install from the lists that did download
             timeout 150 sudo apt-get $APT update 2>&1 | grep -E "^(Err|W:|E:)" | head -20 || true
