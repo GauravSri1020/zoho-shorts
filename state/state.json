@@ -1,5 +1,5 @@
 {
- "next_id": 61,
+ "next_id": 62,
  "covered_links": [
   "https://www.reddit.com/r/Zoho/comments/1wzd94y/sales_order_or_invoice/",
   "https://www.reddit.com/r/Zoho/comments/1wwjbbr/accounting_of_travel_agent/",
@@ -51,7 +51,8 @@
   "https://news.google.com/rss/articles/CBMihwFBVV95cUxQQkVrOG9kQWRfQlJwNmRQU0dlVEliMUt0eWhOdHYzbF91QzFRNUNCQmhyZHRHMm9VQTlfZ0lhODlLWHJqNUt1ZURLZkVQcjNaaWxhWWU5UEtOWTJMa0ZRVm53amZadWU5NWRsZWVvR3BKd1kwR3JlbkNhOUhsaXd6X0hSX0laem8?oc=5",
   "https://news.google.com/rss/articles/CBMizgFBVV95cUxNQUFVeVpaTDRvXzgzMllGU2hBeVdaSU9HeDJha1A4S1k2UFh4aUdRVVdxcVpQNWx2Z3RqYlhKenhqSGxkS0FXb003YWR3Z21qcmIwV1B4NmJMTGRwOWVDQnhvMmZ5eXdsNHg1bV9MOHRReExvTjQ4SXZHWXRzWWMxamhEcl91azh5eGVQNzJ0UFVZTUU1ZWlGSkwxVnNEWmJscy1VLVN4THRaTF9VTXRMWlpJbEs0UjByaUVjN1R6a1VDb0l1d0RzTjc4aVF1d9IB1gFBVV95cUxNSzdyUG5TZ1FHWXpzZUFZMzVqTjBGc1d1MlFpWEJtbzBORVNzZUtqdGJIQ1hBb0l1SC0zUUVhdHNlUmpGM24tSGlBLXRNLXQ1QzFmbU9NSHJWZGtfa0RWSXJlWkNwTWVqR1RjY3g5eVhETDdKd2xNM1lMUzM4aFRxNVBhcnU3R19hX2hFS3BHZkZnZkhXRE1sT2xxZEY0M2ZCSDJOWV9mNkFrWDYyZWRLMlpfc3hMRUVoSkptYmg0M1VGZ2h1NHRoSkZBazJTcEI0UFNWZllR?oc=5",
   "https://news.google.com/rss/articles/CBMioAJBVV95cUxQcTVfSjVYMkxSVWNkQWhLeGhId1RkWE9IalU5UnA2b0hzZFlNeEsyazlaZC1nWlZzaXJfbF9pdVc0U3RoLWRTcHJLOVk5ajc5MDhycGt1XzVaa0VucXV0NS0xcDE2Snpvck4xbmJYUzJrN3VfcGN3OUU4cEZHQS1kcWJhejZacUE4dC1aOWtieUdNZkRhX0MyVnFKWWNpc1RtRTBfVVBQQXhGUHVHQndSVHdLV1ZjS0JpVUxSeHRoaC1BUnNVNDNPajJfQ1hBaVVNV0NxNmp3UVc4YTdyb2xnY1hUYWFseWc3dXY3SWp6MTdBSEpWcEtnS1UxbzR6ekpPWXdKcDZfVzFGNmFPSlQxMzBpb3l2UmNGdVY2VFJFYzI?oc=5",
-  "https://www.hotelogix.com/marketplace/product/zoho-books"
+  "https://www.hotelogix.com/marketplace/product/zoho-books",
+  "https://help.zoho.com/portal/en/community/topic/introducing-native-agents-configure-your-crm-with-natural-language"
  ],
  "problems": [
   "Zoho Books me online paid sales orders direct closed invoice me convert nahi hote.",
@@ -113,7 +114,8 @@
   "Business analytics lacks automated AI insights across complex data layers.",
   "Sharing locations across messaging apps requires clunky workarounds.",
   "Business intelligence insights sit isolated from automated actions inside AI agents.",
-  "Most small hotels still retype every guest bill into accounting at night, and GST mistakes slip in."
+  "Most small hotels still retype every guest bill into accounting at night, and GST mistakes slip in.",
+  "Setting up roles, permissions and sharing rules usually means clicking through dozens of settings screens."
  ],
  "scripts": {
   "S0001": {
@@ -1005,17 +1007,20 @@
   "Zoho upgrades marketing platform with WhatsApp, AI agent capabilities",
   "India's Zoho adds AI agents and data layers to Analytics",
   "Zoho Analytics adds agentic AI layer for business data",
-  "Hotelogix and Zoho Books Partner to Deliver a Connected Operations and Finance Platform for Hotels"
+  "Hotelogix and Zoho Books Partner to Deliver a Connected Operations and Finance Platform for Hotels",
+  "Introducing native agents: Configure your Zoho CRM with natural language"
  ],
  "used_outfits": [
-  "teal henley t-shirt under an open dark blazer"
+  "teal henley t-shirt under an open dark blazer",
+  "light blue blazer over a crisp white shirt with no tie"
  ],
  "used_places": [
-  29
+  29,
+  21
  ],
  "last_grooming": [
+  4,
   1,
-  0,
-  2
+  1
  ]
 }
