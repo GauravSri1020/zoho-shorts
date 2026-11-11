@@ -129,8 +129,10 @@ flow:
   presenter: "The man (my avatar)"   # how every prompt refers to you - select your avatar in Flow before pasting
   # Accent for a global audience (Middle East + Europe + US + India). Change to "an Indian accent" for the old style.
   accent: "a clear, neutral international accent"
-  voice_style: "Say this like a friendly, energetic YouTube tech explainer, clear natural English with a neutral international accent, brisk pace"
-  backup_voice: "en-GB-RyanNeural"
+  # 11 Nov 2026: the Flow avatar speaks with Gaurav's own (Indian English) voice -> the screen voice must match it,
+  # or QA fails the Short for a voice change (Hotelogix Short: voice 40/100 with the neutral / American-sounding voice).
+  voice_style: "Say this like a friendly, energetic YouTube tech explainer from India: clear natural English with a light Indian accent, warm male voice, brisk pace"
+  backup_voice: "en-IN-PrabhatNeural"
   scene: "wearing a dark grey blazer over a navy t-shirt, in a bright modern office with soft daylight"
   # 14 Oct 2026 (Gaurav): har Short alag look - smart-casual mix (kabhi casual, kabhi professional; na Gen-Z
   # streetwear, na stiff suit-tie), alag-alag jagah (office ke bahar campus/park, street, terrace, lounge...).
