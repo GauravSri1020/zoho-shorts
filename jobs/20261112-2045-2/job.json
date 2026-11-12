@@ -1,0 +1,314 @@
+{
+  "id": "20261112-2045-2",
+  "niche": "zoho",
+  "status": "waiting_for_clips",
+  "upload": true,
+  "created": "2026-11-12T20:45:00",
+  "title": "Under AED 50M? Your UAE E-Invoicing Deadline Is March 31 #Shorts",
+  "description": "UAE e-invoicing for businesses with revenue below AED 50 million: appoint an accredited service provider (ASP) by 31 March 2027; e-invoicing becomes mandatory on 1 July 2027. Government entities: ASP by 31 March 2027, mandatory from 1 October 2027.\n\n1. Collect each business customer's TRN, Peppol ID, address and VAT treatment.\n2. Zoho Books > Settings > Taxes & Compliance > E-Invoicing > Setup Now.\n3. Appoint Zoho Software Trading LLC (a Ministry of Finance accredited ASP) in EmaraTax before 31 March 2027, then click Verify & Complete Setup in Zoho Books.\n\nAlways confirm your own dates with the Ministry of Finance (mof.gov.ae/einvoicing).\n\nAI + Zoho automations every day - follow @GSXAutomation\n\nWhat inspired this: https://www.zoho.com/en-mea/techbizz/e-invoicing-uae-deadlines-penalties-requirements.html\n\nThis video uses an AI-generated presenter and voice.\nIndependent channel. Not affiliated with or endorsed by Zoho Corporation. Zoho is a trademark of Zoho Corporation.\n\n#Shorts #Zoho #ZohoBooks #UAEeInvoicing #UAE",
+  "angle": {
+    "story_index": 0,
+    "pillar": "trending",
+    "region": "gulf",
+    "product": "Zoho Books",
+    "app": "books",
+    "problem": "UAE businesses under AED 50M must appoint an ASP by 31 Mar 2027 and go live 1 Jul 2027.",
+    "fix_type": "native",
+    "solution": "Prepare customer data and set up e-invoicing in Zoho Books, appointing Zoho as ASP in EmaraTax.",
+    "steps": [
+      "Collect each buyer's TRN, Peppol ID, address, VAT treatment",
+      "Zoho Books > Settings > Taxes & Compliance > E-Invoicing > Setup Now",
+      "Appoint Zoho Software Trading LLC in EmaraTax, Verify & Complete Setup"
+    ],
+    "api": null,
+    "result": "Ready months before the 1 Jul 2027 go-live.",
+    "wow": "Zoho Books is both the accounting tool and the accredited provider.",
+    "hook": "SME UAE e-invoicing deadline: ASP by 31 Mar 2027."
+  },
+  "story": {
+    "title": "UAE e-invoicing: Deadlines, penalties, and how to prepare (Zoho TechBizz, 28 Oct 2026)",
+    "link": "https://www.zoho.com/en-mea/techbizz/e-invoicing-uae-deadlines-penalties-requirements.html",
+    "summary": "Revenue AED 50M or more: appoint an ASP by 30 October 2026, e-invoicing mandatory from 1 January 2027. Revenue below AED 50M: ASP by 31 March 2027, mandatory from 1 July 2027. Government entities: ASP by 31 March 2027, mandatory from 1 October 2027. Penalties (Cabinet Decision No. 106 of 2025): missing the ASP deadline AED 5,000 per month or part of a month (one day late counts as a full month); late or missing e-invoices and credit notes AED 100 each, capped at AED 5,000 per month. Zoho Software Trading LLC is a Ministry of Finance accredited eInvoicing service provider (ASP); Zoho Books Professional and higher plans in the UAE include the first 100 e-invoicing transactions free. Collect each buyer's TRN, Peppol ID, address and VAT treatment. Zoho Books setup: Settings > Taxes & Compliance > E-Invoicing > Setup Now, verify Registered Business Name, TIN, TRN, address; appoint Zoho Software Trading LLC in EmaraTax; back in Zoho Books tick that EmaraTax and ASP setup is done and click Verify & Complete Setup.",
+    "source": "Zoho TechBizz + Zoho Blog + Zoho Books help",
+    "ts": 1794497000,
+    "type": "news",
+    "publishers": 3,
+    "trend": 15,
+    "age_hours": 24,
+    "score": 20,
+    "facts_checked": true,
+    "facts_note": "Facts checked by Claude 12 Nov 2026 against zoho.com/en-mea/techbizz/e-invoicing-uae-deadlines-penalties-requirements.html, zoho.com/blog/general/uae-einvoicing.html, zoho.com/ae/books/e-invoicing/ and Zoho Books UAE setup article (zoho.com.cn/books/articles/set1014.html). Job written by hand (Gaurav approved)."
+  },
+  "script": {
+    "title": "Under AED 50M? Your UAE E-Invoicing Deadline Is March 31",
+    "hook_text": "SMEs: March 31 Deadline",
+    "thumb_text": "*Under AED 50M?* Your e-invoicing deadline",
+    "app_label": "Zoho Books UAE",
+    "lines": [
+      {
+        "beat": "HOOK",
+        "say": "Under fifty million dirhams in revenue? Your UAE e-invoicing clock is already running.",
+        "tts": "Under fifty million dirhams in revenue? Your UAE e-invoicing clock is already running.",
+        "card": "Under AED 50M?",
+        "screen": null
+      },
+      {
+        "beat": "PROBLEM",
+        "say": "You must appoint an accredited provider by March thirty-first, and go live on July first.",
+        "tts": "You must appoint an accredited provider by March thirty-first, and go live on July first.",
+        "card": "ASP by Mar 31, 2027",
+        "screen": null
+      },
+      {
+        "beat": "FIX",
+        "say": "Do it inside Zoho Books, because Zoho is an accredited provider itself.",
+        "tts": "Do it inside Zoho Books, because Zoho is an accredited provider itself.",
+        "card": "Zoho Books = ASP",
+        "screen": {
+          "app": "books",
+          "view": "settings",
+          "path": [
+            "Settings",
+            "Taxes & Compliance",
+            "E-Invoicing"
+          ],
+          "click": "Setup Now",
+          "tip": "Zoho is an accredited ASP"
+        }
+      },
+      {
+        "beat": "STEP 1",
+        "say": "First, collect each business customer's TRN, Peppol ID, address and VAT treatment.",
+        "tts": "First, collect each business customer's TRN, Peppol ID, address and VAT treatment.",
+        "card": "Collect Customer TRNs",
+        "screen": {
+          "app": "books",
+          "view": "settings",
+          "path": [
+            "Settings",
+            "Taxes & Compliance",
+            "E-Invoicing",
+            "Customer Details"
+          ],
+          "click": "Save",
+          "tip": "Every buyer needs these",
+          "fields": [
+            [
+              "Customer TRN",
+              "15 digits"
+            ],
+            [
+              "Peppol ID",
+              "Required"
+            ],
+            [
+              "VAT Treatment",
+              "Set per customer"
+            ]
+          ]
+        }
+      },
+      {
+        "beat": "STEP 2",
+        "say": "Then in Zoho Books, open Settings, E-Invoicing under Taxes and Compliance, and click Setup Now.",
+        "tts": "Then in Zoho Books, open Settings, E-Invoicing under Taxes and Compliance, and click Setup Now.",
+        "card": "Settings > E-Invoicing",
+        "screen": {
+          "app": "books",
+          "view": "settings",
+          "path": [
+            "Settings",
+            "Taxes & Compliance",
+            "E-Invoicing"
+          ],
+          "click": "Setup Now",
+          "tip": "Click Setup Now"
+        }
+      },
+      {
+        "beat": "STEP 3",
+        "say": "Appoint Zoho Software Trading LLC in EmaraTax before March thirty-first, then verify the setup in Zoho Books.",
+        "tts": "Appoint Zoho Software Trading LLC in EmaraTax before March thirty-first, then verify the setup in Zoho Books.",
+        "card": "Appoint Before Mar 31",
+        "screen": {
+          "app": "books",
+          "view": "settings",
+          "path": [
+            "Settings",
+            "Taxes & Compliance",
+            "E-Invoicing"
+          ],
+          "click": "Verify & Complete Setup",
+          "tip": "Verify after EmaraTax"
+        }
+      },
+      {
+        "beat": "RESULT",
+        "say": "Set it up now, test a few e-invoices, and July first is just another day.",
+        "tts": "Set it up now, test a few e-invoices, and July first is just another day.",
+        "card": "Ready for July 1",
+        "screen": null
+      }
+    ],
+    "api": null,
+    "code": null,
+    "test_before_recording": [
+      "Use a Zoho Books UAE organisation with VAT (TRN) enabled",
+      "EmaraTax access is needed to appoint the ASP"
+    ],
+    "description": "UAE e-invoicing for businesses with revenue below AED 50 million: appoint an accredited service provider (ASP) by 31 March 2027; e-invoicing becomes mandatory on 1 July 2027. Government entities: ASP by 31 March 2027, mandatory from 1 October 2027.\n\n1. Collect each business customer's TRN, Peppol ID, address and VAT treatment.\n2. Zoho Books > Settings > Taxes & Compliance > E-Invoicing > Setup Now.\n3. Appoint Zoho Software Trading LLC (a Ministry of Finance accredited ASP) in EmaraTax before 31 March 2027, then click Verify & Complete Setup in Zoho Books.\n\nAlways confirm your own dates with the Ministry of Finance (mof.gov.ae/einvoicing).",
+    "tags": [
+      "UAEeInvoicing",
+      "ZohoBooks",
+      "SME",
+      "EmaraTax",
+      "Peppol",
+      "FTA",
+      "UAEVAT",
+      "ASP",
+      "eInvoicing",
+      "Dubai"
+    ]
+  },
+  "lines": [
+    {
+      "beat": "HOOK",
+      "say": "Under fifty million dirhams in revenue? Your UAE e-invoicing clock is already running.",
+      "tts": "Under fifty million dirhams in revenue? Your UAE e-invoicing clock is already running.",
+      "card": "Under AED 50M?",
+      "screen": null,
+      "face": true
+    },
+    {
+      "beat": "PROBLEM",
+      "say": "You must appoint an accredited provider by March thirty-first, and go live on July first.",
+      "tts": "You must appoint an accredited provider by March thirty-first, and go live on July first.",
+      "card": "ASP by Mar 31, 2027",
+      "screen": null,
+      "face": true
+    },
+    {
+      "beat": "FIX",
+      "say": "Do it inside Zoho Books, because Zoho is an accredited provider itself.",
+      "tts": "Do it inside Zoho Books, because Zoho is an accredited provider itself.",
+      "card": "Zoho Books = ASP",
+      "screen": {
+        "app": "books",
+        "view": "settings",
+        "path": [
+          "Settings",
+          "Taxes & Compliance",
+          "E-Invoicing"
+        ],
+        "click": "Setup Now",
+        "tip": "Zoho is an accredited ASP"
+      },
+      "face": false
+    },
+    {
+      "beat": "STEP 1",
+      "say": "First, collect each business customer's TRN, Peppol ID, address and VAT treatment.",
+      "tts": "First, collect each business customer's TRN, Peppol ID, address and VAT treatment.",
+      "card": "Collect Customer TRNs",
+      "screen": {
+        "app": "books",
+        "view": "settings",
+        "path": [
+          "Settings",
+          "Taxes & Compliance",
+          "E-Invoicing",
+          "Customer Details"
+        ],
+        "click": "Save",
+        "tip": "Every buyer needs these",
+        "fields": [
+          [
+            "Customer TRN",
+            "15 digits"
+          ],
+          [
+            "Peppol ID",
+            "Required"
+          ],
+          [
+            "VAT Treatment",
+            "Set per customer"
+          ]
+        ]
+      },
+      "face": false
+    },
+    {
+      "beat": "STEP 2",
+      "say": "Then in Zoho Books, open Settings, E-Invoicing under Taxes and Compliance, and click Setup Now.",
+      "tts": "Then in Zoho Books, open Settings, E-Invoicing under Taxes and Compliance, and click Setup Now.",
+      "card": "Settings > E-Invoicing",
+      "screen": {
+        "app": "books",
+        "view": "settings",
+        "path": [
+          "Settings",
+          "Taxes & Compliance",
+          "E-Invoicing"
+        ],
+        "click": "Setup Now",
+        "tip": "Click Setup Now"
+      },
+      "face": false
+    },
+    {
+      "beat": "STEP 3",
+      "say": "Appoint Zoho Software Trading LLC in EmaraTax before March thirty-first, then verify the setup in Zoho Books.",
+      "tts": "Appoint Zoho Software Trading LLC in EmaraTax before March thirty-first, then verify the setup in Zoho Books.",
+      "card": "Appoint Before Mar 31",
+      "screen": {
+        "app": "books",
+        "view": "settings",
+        "path": [
+          "Settings",
+          "Taxes & Compliance",
+          "E-Invoicing"
+        ],
+        "click": "Verify & Complete Setup",
+        "tip": "Verify after EmaraTax"
+      },
+      "face": false
+    },
+    {
+      "beat": "RESULT",
+      "say": "Set it up now, test a few e-invoices, and July first is just another day.",
+      "tts": "Set it up now, test a few e-invoices, and July first is just another day.",
+      "card": "Ready for July 1",
+      "screen": null,
+      "face": true
+    }
+  ],
+  "clips": [
+    {
+      "text": "Under fifty million dirhams in revenue? Your UAE e-invoicing clock is already running.",
+      "lines": [
+        0
+      ],
+      "beat": "HOOK",
+      "prompt": "The man (my avatar) looks into the camera and talks to the viewer like a confident, friendly business tech explainer, smart and natural, not stiff; he leans in slightly towards the camera with a serious but friendly look, one hand open. Vertical 9:16 medium-wide shot from the knees up, camera about two metres away, his head in the upper third with space above it, both hands and all his gestures fully visible in the frame, static camera, sharp and well lit, wearing a navy quarter-zip pullover over a light blue collared shirt, in a sunny modern co-working space with wooden tables, plants and large windows; in this whole video he has a light stubble beard, short neat side-swept hair, thin black rectangular glasses - exactly the same in every shot of this video. His face, skin tone, height and body build stay exactly as in my avatar's reference photos - the same natural average build, never slimmer and never heavier. Clean professional business look: no tilak or any mark on his forehead, no necklace, mala, beads, thread or religious accessory, no earrings, no bracelets. He says, in clear natural English with a clear, neutral international accent, at a brisk, lively pace: \"Under fifty million dirhams in revenue? Your UAE e-invoicing clock is already running.\" His lips match every word. He starts speaking in the very first frame, with no pause before the first word, and stops right after the last word. Audio: only his voice - no music, no sound effects. No subtitles, no captions, no text on screen."
+    },
+    {
+      "text": "You must appoint an accredited provider by March thirty-first, and go live on July first.",
+      "lines": [
+        1
+      ],
+      "beat": "PROBLEM",
+      "prompt": "The man (my avatar) looks into the camera and talks to the viewer like a confident, friendly business tech explainer, smart and natural, not stiff; he raises one hand and counts on his fingers, then points at the camera. Vertical 9:16 medium-wide shot from the knees up, camera about two metres away, his head in the upper third with space above it, both hands and all his gestures fully visible in the frame, static camera, sharp and well lit, wearing a navy quarter-zip pullover over a light blue collared shirt, in a sunny modern co-working space with wooden tables, plants and large windows; in this whole video he has a light stubble beard, short neat side-swept hair, thin black rectangular glasses - exactly the same in every shot of this video. His face, skin tone, height and body build stay exactly as in my avatar's reference photos - the same natural average build, never slimmer and never heavier. Clean professional business look: no tilak or any mark on his forehead, no necklace, mala, beads, thread or religious accessory, no earrings, no bracelets. He says, in clear natural English with a clear, neutral international accent, at a brisk, lively pace: \"You must appoint an accredited provider by March thirty-first, and go live on July first.\" His lips match every word. He starts speaking in the very first frame, with no pause before the first word, and stops right after the last word. Audio: only his voice - no music, no sound effects. No subtitles, no captions, no text on screen."
+    },
+    {
+      "text": "Set it up now, test a few e-invoices, and July first is just another day.",
+      "lines": [
+        6
+      ],
+      "beat": "RESULT",
+      "prompt": "The man (my avatar) looks into the camera and talks to the viewer like a confident, friendly business tech explainer, smart and natural, not stiff; he nods once with a confident smile and gives a small thumbs up. Vertical 9:16 medium-wide shot from the knees up, camera about two metres away, his head in the upper third with space above it, both hands and all his gestures fully visible in the frame, static camera, sharp and well lit, wearing a navy quarter-zip pullover over a light blue collared shirt, in a sunny modern co-working space with wooden tables, plants and large windows; in this whole video he has a light stubble beard, short neat side-swept hair, thin black rectangular glasses - exactly the same in every shot of this video. His face, skin tone, height and body build stay exactly as in my avatar's reference photos - the same natural average build, never slimmer and never heavier. Clean professional business look: no tilak or any mark on his forehead, no necklace, mala, beads, thread or religious accessory, no earrings, no bracelets. He says, in clear natural English with a clear, neutral international accent, at a brisk, lively pace: \"Set it up now, test a few e-invoices, and July first is just another day.\" His lips match every word. He starts speaking in the very first frame, with no pause before the first word, and stops right after the last word. Audio: only his voice - no music, no sound effects. No subtitles, no captions, no text on screen."
+    }
+  ],
+  "look": "wearing a navy quarter-zip pullover over a light blue collared shirt, in a sunny modern co-working space with wooden tables, plants and large windows; in this whole video he has a light stubble beard, short neat side-swept hair, thin black rectangular glasses - exactly the same in every shot of this video",
+  "issue": null
+}
