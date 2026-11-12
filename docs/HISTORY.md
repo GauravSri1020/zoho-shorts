@@ -6,6 +6,17 @@ Is file ko har session ke end pe update karo, taaki agla chat yahin se shuru kar
 
 Gaurav jab bhi kuch bhi change karne bole: SABSE PEHLE backup - `backup-YYYY-MM-DD-<kya-badal-rahe-ho>` branch main se banao (aur agar video ka kaam hai to latest Short ka artifact download karo). Tabhi code chhuo. Kuch bigde to us branch se purana code wapas lo.
 
+## 12 Nov 2026 shaam - #159 script theek karke upload, #160 skip (fake/galat news)
+
+Gaurav: "Flow se videos bana ke sab YouTube pe upload karo; fake news nahi daalni - theek ho sake to theek karo, warna skip". Backup: backup-2026-11-12-before-fix-159-skip-160.
+
+- #160 (20261112-0917-4, Zoho Analytics): story = NewsBytes "Zoho Analytics ~20% annual growth target" = revenue news, koi naya feature nahi; hook ise "launch" bata raha tha. Analytics AI agents Short 11 Nov ko already gaya. -> status skip (+ skip_reason), issue close. Koi clip nahi bana.
+- #159 (20261112-0904-2, Optiven): news asli (TV47 11 Nov: Optiven ne Zoho One - Mail/WorkDrive/Cliq/Desk/Forms/Campaigns/Creator - liya, Head of ICT: software cost 40% kam) par CRM/Books article mein nahi. Script mein galat: "today", "up to 40%" sabke liye promise, "under three minutes", "Closed Won pe auto draft invoice" (native nahi). Claude ne job.json haath se theek kiya: hook "Optiven cut its software costs forty percent by moving its teams onto one Zoho stack", steps Zoho Books help doc se (Settings > Integrations & Marketplace > Zoho Apps > Zoho CRM; customers + items sync; CRM deal se estimates/invoices), RESULT bina number. Title "Stop Paying Twice: Connect Zoho CRM and Zoho Books".
+- Flow main account (gauravsri069), project "Nov 12 - 19:42", Veo 3.1 Fast x3 = 60 credits. Naya Flow UI: prompt box + -> "Me" (Avatar) -> Add to prompt; settings chip Video 720p 8s 9:16 x1. Clip URL: editor kholne pe performance entries mein flow-content.google/video/<id> (signed) -> fetch blob -> button -> window.open(upload page) -> postMessage -> DataTransfer -> Commit.
+- Run 43236091873 -> https://youtube.com/shorts/FJdJEHMpdQw, public 13 Nov 07:30 IST.
+- Seekh: scout ab bhi revenue/growth news utha raha hai aur writer case-study ka number sabke liye promise bana deta hai. Fix (code mein abhi NAHI kiya): QA rule - case study number sirf us company ke naam se, "today" sirf <24h news pe, revenue/growth-target news = skip.
+- Open: 13 Nov 21:30 slot khaali (#160 skip). Agla: replacement Short (Run workflow daily count 1) ya kal ka 07:17 run.
+
 ## 11-12 Nov 2026 raat - Books Short mein Flow screens (galti) -> asli screenshots; CRM Short
 
 Gaurav: "Zoho Books ke video mein Zoho Flow ki screen laga ke QA pass kar diya; mere diye screenshots use karo".
