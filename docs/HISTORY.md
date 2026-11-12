@@ -6,6 +6,17 @@ Is file ko har session ke end pe update karo, taaki agla chat yahin se shuru kar
 
 Gaurav jab bhi kuch bhi change karne bole: SABSE PEHLE backup - `backup-YYYY-MM-DD-<kya-badal-rahe-ho>` branch main se banao (aur agar video ka kaam hai to latest Short ka artifact download karo). Tabhi code chhuo. Kuch bigde to us branch se purana code wapas lo.
 
+## 12 Nov 2026 raat - UAE e-invoicing series (3 Shorts, haath se jobs) + channel audit
+
+Gaurav: "kal ke liye news dhoondh (US / Middle East), jo keywords search hote hain wahi pakdo, monetize karna hai". Backup: backup-2026-11-12-before-manual-einvoicing-jobs.
+
+- Channel audit (Studio, 28 din): 1,559 views, 3.1 h watch, 74% YouTube SEARCH, 17.6% Shorts feed (39% viewed). Top: UAE E-Invoicing setup (172), Payment Reminders (105), ZATCA Phase 2 (103) = Gulf compliance how-to jeet raha hai. Monetization: abhi 1K subs + 4K h ya 10M Shorts views/90d; 1 Feb 2027 se naye applicants 8K h ya 20M.
+- Robot mein topic input nahi -> Claude ne 3 job.json haath se banaye (0904-2 jaisa schema, issue null): 20261112-2045-1 (Jan 1 2027 go-live + Zoho = MoF ASP + Books setup), -2 (AED 50M se kam: ASP 31 Mar 2027, live 1 Jul 2027), -3 (penalties AED 5,000/month, AED 100/invoice). Facts: Zoho TechBizz 28 Oct 2026, Zoho blog, Zoho Books UAE setup article.
+- Flow main account project "Nov 12 - 19:42": 9 clips (3 looks). Clips -> GitHub: editor ka Download -> 720p fetch wrap + anchor click block (kuch save nahi hota), clips outfit ke rang / contact sheet se job mein baante.
+- BUG mila: YouTube description mein "<" ya ">" = 400 "invalid video description" -> upload fail, job qa_failed. Fix: description mein "›". DHYAN: state save (-X theirs) ne pehla fix overwrite kar diya tha -> dobara lagaya + status waiting_for_clips + Run workflow task assemble.
+- Scheduled: qJyJzgDmXr8 (SME deadline, 13 Nov 21:30 IST), EWP-iKwLy60 (penalties, 14 Nov), aHYXCihA-UM (Jan 1 setup, 14 Nov). QA 93 / 92 / 91.6. Screen voice = edge (Gemini TTS quota khatam).
+- TODO code: writer/build_description mein < > hatao; workflow input "topic" (Claude ka haath ka job band ho); long-video branch (Gaurav strategy chunega).
+
 ## 12 Nov 2026 shaam - #159 script theek karke upload, #160 skip (fake/galat news)
 
 Gaurav: "Flow se videos bana ke sab YouTube pe upload karo; fake news nahi daalni - theek ho sake to theek karo, warna skip". Backup: backup-2026-11-12-before-fix-159-skip-160.
