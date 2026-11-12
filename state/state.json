@@ -670,7 +670,9 @@
    "pillar": "trending",
    "engine": "flow",
    "job": "20261112-0904-2",
-   "created": "2026-11-12T09:08:17"
+   "created": "2026-11-12T09:08:17",
+   "video_id": "FJdJEHMpdQw",
+   "publish_at": "2026-11-13T07:30:00+05:30"
   },
   "S0063": {
    "problem": "Enterprise leadership teams wait days for BI analysts to build custom SQL reports across sales and financial data sources.",
@@ -1003,6 +1005,13 @@
    "minute": 1290,
    "video_id": "louAaBoyLT4",
    "title": "Zoho CRM Now Sets Itself Up From One Sentence #Shorts"
+  },
+  {
+   "date": "2026-11-13",
+   "window": "07:30",
+   "minute": 450,
+   "video_id": "FJdJEHMpdQw",
+   "title": "Stop Paying Twice: Connect Zoho CRM and Zoho Books #Shorts"
   }
  ],
  "failures": {},
@@ -1011,8 +1020,8 @@
  "photo_scenes": [],
  "photo_agent_error": "RuntimeError: image model unavailable: 404 NOT_FOUND. {'error': {'code': 404, 'm",
  "look_index": 56,
- "status_issue": 161,
- "status_line": "PIPELINE ideas=27 clips=2 editing=0 qa_failed=0 scheduled=1 published=45 total=46 today=2 next=2026-11-12T21:30",
+ "status_issue": 162,
+ "status_line": "PIPELINE ideas=27 clips=0 editing=0 qa_failed=0 scheduled=2 published=45 total=47 today=2 next=2026-11-12T21:30",
  "rotation": {
   "claude_wealth": 21,
   "claude_wealth_industry": 16,
