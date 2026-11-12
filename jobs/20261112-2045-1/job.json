@@ -1,0 +1,314 @@
+{
+  "id": "20261112-2045-1",
+  "niche": "zoho",
+  "status": "waiting_for_clips",
+  "upload": true,
+  "created": "2026-11-12T20:45:00",
+  "title": "UAE E-Invoicing Goes Live Jan 1: Set It Up in Zoho Books #Shorts",
+  "description": "UAE e-invoicing becomes mandatory on 1 January 2027 for businesses with revenue of AED 50 million or more (ASP appointment deadline was 30 October 2026). Zoho Software Trading LLC is a UAE Ministry of Finance accredited e-invoicing service provider (ASP), so you can e-invoice from inside Zoho Books.\n\n1. Zoho Books > Settings > Taxes & Compliance > E-Invoicing > Setup Now.\n2. Verify your Registered Business Name, TIN, TRN and address.\n3. In EmaraTax, appoint Zoho Software Trading LLC as your ASP, then come back to Zoho Books and click Verify & Complete Setup.\n\nZoho Books UAE Professional and higher plans include the first 100 e-invoicing transactions free. Always confirm your own dates with the Ministry of Finance (mof.gov.ae/einvoicing).\n\nAI + Zoho automations every day - follow @GSXAutomation\n\nWhat inspired this: https://www.zoho.com/en-mea/techbizz/e-invoicing-uae-deadlines-penalties-requirements.html\n\nThis video uses an AI-generated presenter and voice.\nIndependent channel. Not affiliated with or endorsed by Zoho Corporation. Zoho is a trademark of Zoho Corporation.\n\n#Shorts #Zoho #ZohoBooks #UAEeInvoicing #UAE",
+  "angle": {
+    "story_index": 0,
+    "pillar": "trending",
+    "region": "gulf",
+    "product": "Zoho Books",
+    "app": "books",
+    "problem": "Businesses over AED 50M must e-invoice through an accredited provider from 1 Jan 2027; a PDF is no longer enough.",
+    "fix_type": "native",
+    "solution": "Zoho Books is a MoF-accredited ASP: set up e-invoicing in Settings > Taxes & Compliance > E-Invoicing and appoint Zoho in EmaraTax.",
+    "steps": [
+      "Zoho Books > Settings > Taxes & Compliance > E-Invoicing > Setup Now",
+      "Verify Registered Business Name, TIN, TRN, address",
+      "Appoint Zoho Software Trading LLC in EmaraTax, then Verify & Complete Setup"
+    ],
+    "api": null,
+    "result": "E-invoicing ready before the 1 Jan 2027 go-live, first 100 e-invoices free on Professional+.",
+    "wow": "Accounting software and accredited provider in one tool.",
+    "hook": "UAE e-invoicing is mandatory from 1 Jan 2027 for AED 50M+ businesses."
+  },
+  "story": {
+    "title": "UAE e-invoicing: Deadlines, penalties, and how to prepare (Zoho TechBizz, 28 Oct 2026)",
+    "link": "https://www.zoho.com/en-mea/techbizz/e-invoicing-uae-deadlines-penalties-requirements.html",
+    "summary": "Revenue AED 50M or more: appoint an ASP by 30 October 2026, e-invoicing mandatory from 1 January 2027. Revenue below AED 50M: ASP by 31 March 2027, mandatory from 1 July 2027. Government entities: ASP by 31 March 2027, mandatory from 1 October 2027. Penalties (Cabinet Decision No. 106 of 2025): missing the ASP deadline AED 5,000 per month or part of a month (one day late counts as a full month); late or missing e-invoices and credit notes AED 100 each, capped at AED 5,000 per month. Zoho Software Trading LLC is a Ministry of Finance accredited eInvoicing service provider (ASP); Zoho Books Professional and higher plans in the UAE include the first 100 e-invoicing transactions free. Collect each buyer's TRN, Peppol ID, address and VAT treatment. Zoho Books setup: Settings > Taxes & Compliance > E-Invoicing > Setup Now, verify Registered Business Name, TIN, TRN, address; appoint Zoho Software Trading LLC in EmaraTax; back in Zoho Books tick that EmaraTax and ASP setup is done and click Verify & Complete Setup.",
+    "source": "Zoho TechBizz + Zoho Blog + Zoho Books help",
+    "ts": 1794497000,
+    "type": "news",
+    "publishers": 3,
+    "trend": 15,
+    "age_hours": 24,
+    "score": 20,
+    "facts_checked": true,
+    "facts_note": "Facts checked by Claude 12 Nov 2026 against zoho.com/en-mea/techbizz/e-invoicing-uae-deadlines-penalties-requirements.html, zoho.com/blog/general/uae-einvoicing.html, zoho.com/ae/books/e-invoicing/ and Zoho Books UAE setup article (zoho.com.cn/books/articles/set1014.html). Job written by hand (Gaurav approved)."
+  },
+  "script": {
+    "title": "UAE E-Invoicing Goes Live Jan 1: Set It Up in Zoho Books",
+    "hook_text": "UAE E-Invoicing Starts Jan 1",
+    "thumb_text": "*UAE e-invoicing* Jan 1 - Zoho Books setup",
+    "app_label": "Zoho Books UAE",
+    "lines": [
+      {
+        "beat": "HOOK",
+        "say": "UAE e-invoicing becomes mandatory on January first for businesses over fifty million dirhams.",
+        "tts": "UAE e-invoicing becomes mandatory on January first for businesses over fifty million dirhams.",
+        "card": "E-Invoicing: Jan 1, 2027",
+        "screen": null
+      },
+      {
+        "beat": "PROBLEM",
+        "say": "A PDF invoice won't count anymore. It has to go through an accredited provider.",
+        "tts": "A PDF invoice won't count anymore. It has to go through an accredited provider.",
+        "card": "PDF Is Not Enough",
+        "screen": null
+      },
+      {
+        "beat": "FIX",
+        "say": "Zoho is on the Finance Ministry's accredited provider list, so you can do it inside Zoho Books.",
+        "tts": "Zoho is on the Finance Ministry's accredited provider list, so you can do it inside Zoho Books.",
+        "card": "Zoho = Accredited ASP",
+        "screen": {
+          "app": "books",
+          "view": "settings",
+          "path": [
+            "Settings",
+            "Taxes & Compliance",
+            "E-Invoicing"
+          ],
+          "click": "Setup Now",
+          "tip": "Zoho Books is an accredited ASP"
+        }
+      },
+      {
+        "beat": "STEP 1",
+        "say": "In Zoho Books, open Settings, then E-Invoicing under Taxes and Compliance, and click Setup Now.",
+        "tts": "In Zoho Books, open Settings, then E-Invoicing under Taxes and Compliance, and click Setup Now.",
+        "card": "Settings > E-Invoicing",
+        "screen": {
+          "app": "books",
+          "view": "settings",
+          "path": [
+            "Settings",
+            "Taxes & Compliance",
+            "E-Invoicing"
+          ],
+          "click": "Setup Now",
+          "tip": "Click Setup Now"
+        }
+      },
+      {
+        "beat": "STEP 2",
+        "say": "Verify your registered business name, TIN, TRN and address.",
+        "tts": "Verify your registered business name, TIN, TRN and address.",
+        "card": "Verify Your Details",
+        "screen": {
+          "app": "books",
+          "view": "settings",
+          "path": [
+            "Settings",
+            "Taxes & Compliance",
+            "E-Invoicing",
+            "Verify Your Details"
+          ],
+          "click": "Next",
+          "tip": "Check TIN and TRN",
+          "fields": [
+            [
+              "Registered Business Name",
+              "Your legal name"
+            ],
+            [
+              "TIN",
+              "First 10 digits of TRN"
+            ],
+            [
+              "TRN",
+              "15-digit TRN"
+            ]
+          ]
+        }
+      },
+      {
+        "beat": "STEP 3",
+        "say": "In EmaraTax, appoint Zoho Software Trading LLC as your provider, then come back and click Verify and Complete Setup.",
+        "tts": "In EmaraTax, appoint Zoho Software Trading LLC as your provider, then come back and click Verify and Complete Setup.",
+        "card": "Appoint Zoho in EmaraTax",
+        "screen": {
+          "app": "books",
+          "view": "settings",
+          "path": [
+            "Settings",
+            "Taxes & Compliance",
+            "E-Invoicing"
+          ],
+          "click": "Verify & Complete Setup",
+          "tip": "Finish after EmaraTax"
+        }
+      },
+      {
+        "beat": "RESULT",
+        "say": "Professional plans and above include your first hundred e-invoices free, so test before January.",
+        "tts": "Professional plans and above include your first hundred e-invoices free, so test before January.",
+        "card": "100 E-Invoices Free",
+        "screen": null
+      }
+    ],
+    "api": null,
+    "code": null,
+    "test_before_recording": [
+      "Use a Zoho Books UAE organisation with VAT (TRN) enabled",
+      "EmaraTax access is needed to appoint the ASP"
+    ],
+    "description": "UAE e-invoicing becomes mandatory on 1 January 2027 for businesses with revenue of AED 50 million or more (ASP appointment deadline was 30 October 2026). Zoho Software Trading LLC is a UAE Ministry of Finance accredited e-invoicing service provider (ASP), so you can e-invoice from inside Zoho Books.\n\n1. Zoho Books > Settings > Taxes & Compliance > E-Invoicing > Setup Now.\n2. Verify your Registered Business Name, TIN, TRN and address.\n3. In EmaraTax, appoint Zoho Software Trading LLC as your ASP, then come back to Zoho Books and click Verify & Complete Setup.\n\nZoho Books UAE Professional and higher plans include the first 100 e-invoicing transactions free. Always confirm your own dates with the Ministry of Finance (mof.gov.ae/einvoicing).",
+    "tags": [
+      "UAEeInvoicing",
+      "ZohoBooks",
+      "EmaraTax",
+      "Peppol",
+      "PINTAE",
+      "FTA",
+      "UAEVAT",
+      "ASP",
+      "eInvoicing",
+      "Dubai"
+    ]
+  },
+  "lines": [
+    {
+      "beat": "HOOK",
+      "say": "UAE e-invoicing becomes mandatory on January first for businesses over fifty million dirhams.",
+      "tts": "UAE e-invoicing becomes mandatory on January first for businesses over fifty million dirhams.",
+      "card": "E-Invoicing: Jan 1, 2027",
+      "screen": null,
+      "face": true
+    },
+    {
+      "beat": "PROBLEM",
+      "say": "A PDF invoice won't count anymore. It has to go through an accredited provider.",
+      "tts": "A PDF invoice won't count anymore. It has to go through an accredited provider.",
+      "card": "PDF Is Not Enough",
+      "screen": null,
+      "face": true
+    },
+    {
+      "beat": "FIX",
+      "say": "Zoho is on the Finance Ministry's accredited provider list, so you can do it inside Zoho Books.",
+      "tts": "Zoho is on the Finance Ministry's accredited provider list, so you can do it inside Zoho Books.",
+      "card": "Zoho = Accredited ASP",
+      "screen": {
+        "app": "books",
+        "view": "settings",
+        "path": [
+          "Settings",
+          "Taxes & Compliance",
+          "E-Invoicing"
+        ],
+        "click": "Setup Now",
+        "tip": "Zoho Books is an accredited ASP"
+      },
+      "face": false
+    },
+    {
+      "beat": "STEP 1",
+      "say": "In Zoho Books, open Settings, then E-Invoicing under Taxes and Compliance, and click Setup Now.",
+      "tts": "In Zoho Books, open Settings, then E-Invoicing under Taxes and Compliance, and click Setup Now.",
+      "card": "Settings > E-Invoicing",
+      "screen": {
+        "app": "books",
+        "view": "settings",
+        "path": [
+          "Settings",
+          "Taxes & Compliance",
+          "E-Invoicing"
+        ],
+        "click": "Setup Now",
+        "tip": "Click Setup Now"
+      },
+      "face": false
+    },
+    {
+      "beat": "STEP 2",
+      "say": "Verify your registered business name, TIN, TRN and address.",
+      "tts": "Verify your registered business name, TIN, TRN and address.",
+      "card": "Verify Your Details",
+      "screen": {
+        "app": "books",
+        "view": "settings",
+        "path": [
+          "Settings",
+          "Taxes & Compliance",
+          "E-Invoicing",
+          "Verify Your Details"
+        ],
+        "click": "Next",
+        "tip": "Check TIN and TRN",
+        "fields": [
+          [
+            "Registered Business Name",
+            "Your legal name"
+          ],
+          [
+            "TIN",
+            "First 10 digits of TRN"
+          ],
+          [
+            "TRN",
+            "15-digit TRN"
+          ]
+        ]
+      },
+      "face": false
+    },
+    {
+      "beat": "STEP 3",
+      "say": "In EmaraTax, appoint Zoho Software Trading LLC as your provider, then come back and click Verify and Complete Setup.",
+      "tts": "In EmaraTax, appoint Zoho Software Trading LLC as your provider, then come back and click Verify and Complete Setup.",
+      "card": "Appoint Zoho in EmaraTax",
+      "screen": {
+        "app": "books",
+        "view": "settings",
+        "path": [
+          "Settings",
+          "Taxes & Compliance",
+          "E-Invoicing"
+        ],
+        "click": "Verify & Complete Setup",
+        "tip": "Finish after EmaraTax"
+      },
+      "face": false
+    },
+    {
+      "beat": "RESULT",
+      "say": "Professional plans and above include your first hundred e-invoices free, so test before January.",
+      "tts": "Professional plans and above include your first hundred e-invoices free, so test before January.",
+      "card": "100 E-Invoices Free",
+      "screen": null,
+      "face": true
+    }
+  ],
+  "clips": [
+    {
+      "text": "UAE e-invoicing becomes mandatory on January first for businesses over fifty million dirhams.",
+      "lines": [
+        0
+      ],
+      "beat": "HOOK",
+      "prompt": "The man (my avatar) looks into the camera and talks to the viewer like a confident, friendly business tech explainer, smart and natural, not stiff; he walks into the frame from the side, stops at the centre and points briefly at the camera with an easy smile. Vertical 9:16 medium-wide shot from the knees up, camera about two metres away, his head in the upper third with space above it, both hands and all his gestures fully visible in the frame, smooth gimbal camera gently moving back with him so the framing stays the same, sharp and well lit, wearing a charcoal grey crew-neck sweater over a white collared shirt, in a bright modern Dubai office with glass walls and a city skyline view; in this whole video he has a short neatly trimmed beard, short textured crop hair, no glasses - exactly the same in every shot of this video. His face, skin tone, height and body build stay exactly as in my avatar's reference photos - the same natural average build, never slimmer and never heavier. Clean professional business look: no tilak or any mark on his forehead, no necklace, mala, beads, thread or religious accessory, no earrings, no bracelets. He says, in clear natural English with a clear, neutral international accent, at a brisk, lively pace: \"UAE e-invoicing becomes mandatory on January first for businesses over fifty million dirhams.\" His lips match every word. He starts speaking in the very first frame, with no pause before the first word, and stops right after the last word. Audio: only his voice - no music, no sound effects. No subtitles, no captions, no text on screen."
+    },
+    {
+      "text": "A PDF invoice won't count anymore. It has to go through an accredited provider.",
+      "lines": [
+        1
+      ],
+      "beat": "PROBLEM",
+      "prompt": "The man (my avatar) looks into the camera and talks to the viewer like a confident, friendly business tech explainer, smart and natural, not stiff; he shrugs with both shoulders and tilts his head, as if he has seen this problem a hundred times. Vertical 9:16 medium-wide shot from the knees up, camera about two metres away, his head in the upper third with space above it, both hands and all his gestures fully visible in the frame, static camera, sharp and well lit, wearing a charcoal grey crew-neck sweater over a white collared shirt, in a bright modern Dubai office with glass walls and a city skyline view; in this whole video he has a short neatly trimmed beard, short textured crop hair, no glasses - exactly the same in every shot of this video. His face, skin tone, height and body build stay exactly as in my avatar's reference photos - the same natural average build, never slimmer and never heavier. Clean professional business look: no tilak or any mark on his forehead, no necklace, mala, beads, thread or religious accessory, no earrings, no bracelets. He says, in clear natural English with a clear, neutral international accent, at a brisk, lively pace: \"A PDF invoice won't count anymore. It has to go through an accredited provider.\" His lips match every word. He starts speaking in the very first frame, with no pause before the first word, and stops right after the last word. Audio: only his voice - no music, no sound effects. No subtitles, no captions, no text on screen."
+    },
+    {
+      "text": "Professional plans and above include your first hundred e-invoices free, so test before January.",
+      "lines": [
+        6
+      ],
+      "beat": "RESULT",
+      "prompt": "The man (my avatar) looks into the camera and talks to the viewer like a confident, friendly business tech explainer, smart and natural, not stiff; he smiles and opens both arms wide. Vertical 9:16 medium-wide shot from the knees up, camera about two metres away, his head in the upper third with space above it, both hands and all his gestures fully visible in the frame, static camera, sharp and well lit, wearing a charcoal grey crew-neck sweater over a white collared shirt, in a bright modern Dubai office with glass walls and a city skyline view; in this whole video he has a short neatly trimmed beard, short textured crop hair, no glasses - exactly the same in every shot of this video. His face, skin tone, height and body build stay exactly as in my avatar's reference photos - the same natural average build, never slimmer and never heavier. Clean professional business look: no tilak or any mark on his forehead, no necklace, mala, beads, thread or religious accessory, no earrings, no bracelets. He says, in clear natural English with a clear, neutral international accent, at a brisk, lively pace: \"Professional plans and above include your first hundred e-invoices free, so test before January.\" His lips match every word. He starts speaking in the very first frame, with no pause before the first word, and stops right after the last word. Audio: only his voice - no music, no sound effects. No subtitles, no captions, no text on screen."
+    }
+  ],
+  "look": "wearing a charcoal grey crew-neck sweater over a white collared shirt, in a bright modern Dubai office with glass walls and a city skyline view; in this whole video he has a short neatly trimmed beard, short textured crop hair, no glasses - exactly the same in every shot of this video",
+  "issue": null
+}
