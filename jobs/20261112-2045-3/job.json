@@ -1,0 +1,304 @@
+{
+  "id": "20261112-2045-3",
+  "niche": "zoho",
+  "status": "waiting_for_clips",
+  "upload": true,
+  "created": "2026-11-12T20:45:00",
+  "title": "UAE E-Invoicing Fines: AED 5,000 a Month (Avoid Them in Zoho Books) #Shorts",
+  "description": "UAE e-invoicing penalties (Cabinet Decision No. 106 of 2025): missing the deadline to appoint an accredited service provider (ASP) costs AED 5,000 per month or part of a month - even one day late counts as a full month. Late or missing e-invoices and credit notes cost AED 100 each, capped at AED 5,000 per month.\n\nDeadlines: revenue AED 50M or more - mandatory from 1 January 2027; below AED 50M - ASP by 31 March 2027, mandatory from 1 July 2027.\n\n1. Zoho Books > Settings > Taxes & Compliance > E-Invoicing > Setup Now.\n2. Appoint Zoho Software Trading LLC (Ministry of Finance accredited ASP) in EmaraTax.\n3. Click Verify & Complete Setup, then send invoices through Peppol from Zoho Books.\n\nNot tax or legal advice - confirm with your tax advisor and mof.gov.ae/einvoicing.\n\nAI + Zoho automations every day - follow @GSXAutomation\n\nWhat inspired this: https://www.zoho.com/en-mea/techbizz/e-invoicing-uae-deadlines-penalties-requirements.html\n\nThis video uses an AI-generated presenter and voice.\nIndependent channel. Not affiliated with or endorsed by Zoho Corporation. Zoho is a trademark of Zoho Corporation.\n\n#Shorts #Zoho #ZohoBooks #UAEeInvoicing #UAE",
+  "angle": {
+    "story_index": 0,
+    "pillar": "trending",
+    "region": "gulf",
+    "product": "Zoho Books",
+    "app": "books",
+    "problem": "UAE e-invoicing fines: AED 5,000 per month for a missed ASP deadline, AED 100 per late e-invoice.",
+    "fix_type": "native",
+    "solution": "Set up e-invoicing in Zoho Books and appoint Zoho as ASP in EmaraTax.",
+    "steps": [
+      "Check your deadline (1 Jan 2027 or ASP by 31 Mar 2027)",
+      "Zoho Books > Settings > Taxes & Compliance > E-Invoicing > Setup Now",
+      "Appoint Zoho Software Trading LLC in EmaraTax, Verify & Complete Setup"
+    ],
+    "api": null,
+    "result": "No penalty months.",
+    "wow": "One day late counts as a full month.",
+    "hook": "UAE e-invoicing fines are AED 5,000 a month."
+  },
+  "story": {
+    "title": "UAE e-invoicing: Deadlines, penalties, and how to prepare (Zoho TechBizz, 28 Oct 2026)",
+    "link": "https://www.zoho.com/en-mea/techbizz/e-invoicing-uae-deadlines-penalties-requirements.html",
+    "summary": "Revenue AED 50M or more: appoint an ASP by 30 October 2026, e-invoicing mandatory from 1 January 2027. Revenue below AED 50M: ASP by 31 March 2027, mandatory from 1 July 2027. Government entities: ASP by 31 March 2027, mandatory from 1 October 2027. Penalties (Cabinet Decision No. 106 of 2025): missing the ASP deadline AED 5,000 per month or part of a month (one day late counts as a full month); late or missing e-invoices and credit notes AED 100 each, capped at AED 5,000 per month. Zoho Software Trading LLC is a Ministry of Finance accredited eInvoicing service provider (ASP); Zoho Books Professional and higher plans in the UAE include the first 100 e-invoicing transactions free. Collect each buyer's TRN, Peppol ID, address and VAT treatment. Zoho Books setup: Settings > Taxes & Compliance > E-Invoicing > Setup Now, verify Registered Business Name, TIN, TRN, address; appoint Zoho Software Trading LLC in EmaraTax; back in Zoho Books tick that EmaraTax and ASP setup is done and click Verify & Complete Setup.",
+    "source": "Zoho TechBizz + Zoho Blog + Zoho Books help",
+    "ts": 1794497000,
+    "type": "news",
+    "publishers": 3,
+    "trend": 15,
+    "age_hours": 24,
+    "score": 20,
+    "facts_checked": true,
+    "facts_note": "Facts checked by Claude 12 Nov 2026 against zoho.com/en-mea/techbizz/e-invoicing-uae-deadlines-penalties-requirements.html, zoho.com/blog/general/uae-einvoicing.html, zoho.com/ae/books/e-invoicing/ and Zoho Books UAE setup article (zoho.com.cn/books/articles/set1014.html). Job written by hand (Gaurav approved)."
+  },
+  "script": {
+    "title": "UAE E-Invoicing Fines: AED 5,000 a Month (Avoid Them in Zoho Books)",
+    "hook_text": "AED 5,000 Fines",
+    "thumb_text": "*AED 5,000 a month* e-invoicing fines",
+    "app_label": "Zoho Books UAE",
+    "lines": [
+      {
+        "beat": "HOOK",
+        "say": "Missing your UAE e-invoicing provider deadline costs five thousand dirhams for every month.",
+        "tts": "Missing your UAE e-invoicing provider deadline costs five thousand dirhams for every month.",
+        "card": "AED 5,000 / Month",
+        "screen": null
+      },
+      {
+        "beat": "PROBLEM",
+        "say": "And each late or missing e-invoice is another hundred dirhams, up to five thousand a month.",
+        "tts": "And each late or missing e-invoice is another hundred dirhams, up to five thousand a month.",
+        "card": "AED 100 per Invoice",
+        "screen": null
+      },
+      {
+        "beat": "FIX",
+        "say": "Avoid both by setting up e-invoicing in Zoho Books, an accredited provider.",
+        "tts": "Avoid both by setting up e-invoicing in Zoho Books, an accredited provider.",
+        "card": "Set Up in Zoho Books",
+        "screen": {
+          "app": "books",
+          "view": "settings",
+          "path": [
+            "Settings",
+            "Taxes & Compliance",
+            "E-Invoicing"
+          ],
+          "click": "Setup Now",
+          "tip": "Zoho is an accredited ASP"
+        }
+      },
+      {
+        "beat": "STEP 1",
+        "say": "Check your date: over fifty million dirhams goes live January first; smaller businesses appoint by March thirty-first.",
+        "tts": "Check your date: over fifty million dirhams goes live January first; smaller businesses appoint by March thirty-first.",
+        "card": "Know Your Deadline",
+        "screen": {
+          "app": "books",
+          "view": "settings",
+          "path": [
+            "Settings",
+            "Taxes & Compliance",
+            "E-Invoicing"
+          ],
+          "click": "Setup Now",
+          "tip": "Two deadlines",
+          "fields": [
+            [
+              "Revenue AED 50M+",
+              "Live 1 Jan 2027"
+            ],
+            [
+              "Below AED 50M",
+              "ASP by 31 Mar 2027"
+            ]
+          ]
+        }
+      },
+      {
+        "beat": "STEP 2",
+        "say": "In Zoho Books, open Settings, E-Invoicing under Taxes and Compliance, and click Setup Now.",
+        "tts": "In Zoho Books, open Settings, E-Invoicing under Taxes and Compliance, and click Setup Now.",
+        "card": "Settings > E-Invoicing",
+        "screen": {
+          "app": "books",
+          "view": "settings",
+          "path": [
+            "Settings",
+            "Taxes & Compliance",
+            "E-Invoicing"
+          ],
+          "click": "Setup Now",
+          "tip": "Click Setup Now"
+        }
+      },
+      {
+        "beat": "STEP 3",
+        "say": "Appoint Zoho Software Trading LLC in EmaraTax, then click Verify and Complete Setup in Zoho Books.",
+        "tts": "Appoint Zoho Software Trading LLC in EmaraTax, then click Verify and Complete Setup in Zoho Books.",
+        "card": "Appoint + Verify",
+        "screen": {
+          "app": "books",
+          "view": "settings",
+          "path": [
+            "Settings",
+            "Taxes & Compliance",
+            "E-Invoicing"
+          ],
+          "click": "Verify & Complete Setup",
+          "tip": "Finish the setup"
+        }
+      },
+      {
+        "beat": "RESULT",
+        "say": "Even one day late counts as a full month, so do it this week.",
+        "tts": "Even one day late counts as a full month, so do it this week.",
+        "card": "1 Day Late = 1 Month",
+        "screen": null
+      }
+    ],
+    "api": null,
+    "code": null,
+    "test_before_recording": [
+      "Use a Zoho Books UAE organisation with VAT (TRN) enabled",
+      "EmaraTax access is needed to appoint the ASP"
+    ],
+    "description": "UAE e-invoicing penalties (Cabinet Decision No. 106 of 2025): missing the deadline to appoint an accredited service provider (ASP) costs AED 5,000 per month or part of a month - even one day late counts as a full month. Late or missing e-invoices and credit notes cost AED 100 each, capped at AED 5,000 per month.\n\nDeadlines: revenue AED 50M or more - mandatory from 1 January 2027; below AED 50M - ASP by 31 March 2027, mandatory from 1 July 2027.\n\n1. Zoho Books > Settings > Taxes & Compliance > E-Invoicing > Setup Now.\n2. Appoint Zoho Software Trading LLC (Ministry of Finance accredited ASP) in EmaraTax.\n3. Click Verify & Complete Setup, then send invoices through Peppol from Zoho Books.\n\nNot tax or legal advice - confirm with your tax advisor and mof.gov.ae/einvoicing.",
+    "tags": [
+      "UAEeInvoicing",
+      "Penalties",
+      "ZohoBooks",
+      "EmaraTax",
+      "Peppol",
+      "FTA",
+      "UAEVAT",
+      "ASP",
+      "Compliance",
+      "Dubai"
+    ]
+  },
+  "lines": [
+    {
+      "beat": "HOOK",
+      "say": "Missing your UAE e-invoicing provider deadline costs five thousand dirhams for every month.",
+      "tts": "Missing your UAE e-invoicing provider deadline costs five thousand dirhams for every month.",
+      "card": "AED 5,000 / Month",
+      "screen": null,
+      "face": true
+    },
+    {
+      "beat": "PROBLEM",
+      "say": "And each late or missing e-invoice is another hundred dirhams, up to five thousand a month.",
+      "tts": "And each late or missing e-invoice is another hundred dirhams, up to five thousand a month.",
+      "card": "AED 100 per Invoice",
+      "screen": null,
+      "face": true
+    },
+    {
+      "beat": "FIX",
+      "say": "Avoid both by setting up e-invoicing in Zoho Books, an accredited provider.",
+      "tts": "Avoid both by setting up e-invoicing in Zoho Books, an accredited provider.",
+      "card": "Set Up in Zoho Books",
+      "screen": {
+        "app": "books",
+        "view": "settings",
+        "path": [
+          "Settings",
+          "Taxes & Compliance",
+          "E-Invoicing"
+        ],
+        "click": "Setup Now",
+        "tip": "Zoho is an accredited ASP"
+      },
+      "face": false
+    },
+    {
+      "beat": "STEP 1",
+      "say": "Check your date: over fifty million dirhams goes live January first; smaller businesses appoint by March thirty-first.",
+      "tts": "Check your date: over fifty million dirhams goes live January first; smaller businesses appoint by March thirty-first.",
+      "card": "Know Your Deadline",
+      "screen": {
+        "app": "books",
+        "view": "settings",
+        "path": [
+          "Settings",
+          "Taxes & Compliance",
+          "E-Invoicing"
+        ],
+        "click": "Setup Now",
+        "tip": "Two deadlines",
+        "fields": [
+          [
+            "Revenue AED 50M+",
+            "Live 1 Jan 2027"
+          ],
+          [
+            "Below AED 50M",
+            "ASP by 31 Mar 2027"
+          ]
+        ]
+      },
+      "face": false
+    },
+    {
+      "beat": "STEP 2",
+      "say": "In Zoho Books, open Settings, E-Invoicing under Taxes and Compliance, and click Setup Now.",
+      "tts": "In Zoho Books, open Settings, E-Invoicing under Taxes and Compliance, and click Setup Now.",
+      "card": "Settings > E-Invoicing",
+      "screen": {
+        "app": "books",
+        "view": "settings",
+        "path": [
+          "Settings",
+          "Taxes & Compliance",
+          "E-Invoicing"
+        ],
+        "click": "Setup Now",
+        "tip": "Click Setup Now"
+      },
+      "face": false
+    },
+    {
+      "beat": "STEP 3",
+      "say": "Appoint Zoho Software Trading LLC in EmaraTax, then click Verify and Complete Setup in Zoho Books.",
+      "tts": "Appoint Zoho Software Trading LLC in EmaraTax, then click Verify and Complete Setup in Zoho Books.",
+      "card": "Appoint + Verify",
+      "screen": {
+        "app": "books",
+        "view": "settings",
+        "path": [
+          "Settings",
+          "Taxes & Compliance",
+          "E-Invoicing"
+        ],
+        "click": "Verify & Complete Setup",
+        "tip": "Finish the setup"
+      },
+      "face": false
+    },
+    {
+      "beat": "RESULT",
+      "say": "Even one day late counts as a full month, so do it this week.",
+      "tts": "Even one day late counts as a full month, so do it this week.",
+      "card": "1 Day Late = 1 Month",
+      "screen": null,
+      "face": true
+    }
+  ],
+  "clips": [
+    {
+      "text": "Missing your UAE e-invoicing provider deadline costs five thousand dirhams for every month.",
+      "lines": [
+        0
+      ],
+      "beat": "HOOK",
+      "prompt": "The man (my avatar) looks into the camera and talks to the viewer like a confident, friendly business tech explainer, smart and natural, not stiff; he leans in slightly towards the camera with a serious but friendly look, one hand open. Vertical 9:16 medium-wide shot from the knees up, camera about two metres away, his head in the upper third with space above it, both hands and all his gestures fully visible in the frame, static camera, sharp and well lit, wearing a white linen shirt with the sleeves rolled up, on a modern office rooftop terrace in Dubai at golden hour with the skyline behind him; in this whole video he has a medium full beard neatly shaped, short slicked-back hair, no glasses - exactly the same in every shot of this video. His face, skin tone, height and body build stay exactly as in my avatar's reference photos - the same natural average build, never slimmer and never heavier. Clean professional business look: no tilak or any mark on his forehead, no necklace, mala, beads, thread or religious accessory, no earrings, no bracelets. He says, in clear natural English with a clear, neutral international accent, at a brisk, lively pace: \"Missing your UAE e-invoicing provider deadline costs five thousand dirhams for every month.\" His lips match every word. He starts speaking in the very first frame, with no pause before the first word, and stops right after the last word. Audio: only his voice - no music, no sound effects. No subtitles, no captions, no text on screen."
+    },
+    {
+      "text": "And each late or missing e-invoice is another hundred dirhams, up to five thousand a month.",
+      "lines": [
+        1
+      ],
+      "beat": "PROBLEM",
+      "prompt": "The man (my avatar) looks into the camera and talks to the viewer like a confident, friendly business tech explainer, smart and natural, not stiff; he shrugs with both shoulders and tilts his head, as if he has seen this problem a hundred times. Vertical 9:16 medium-wide shot from the knees up, camera about two metres away, his head in the upper third with space above it, both hands and all his gestures fully visible in the frame, static camera, sharp and well lit, wearing a white linen shirt with the sleeves rolled up, on a modern office rooftop terrace in Dubai at golden hour with the skyline behind him; in this whole video he has a medium full beard neatly shaped, short slicked-back hair, no glasses - exactly the same in every shot of this video. His face, skin tone, height and body build stay exactly as in my avatar's reference photos - the same natural average build, never slimmer and never heavier. Clean professional business look: no tilak or any mark on his forehead, no necklace, mala, beads, thread or religious accessory, no earrings, no bracelets. He says, in clear natural English with a clear, neutral international accent, at a brisk, lively pace: \"And each late or missing e-invoice is another hundred dirhams, up to five thousand a month.\" His lips match every word. He starts speaking in the very first frame, with no pause before the first word, and stops right after the last word. Audio: only his voice - no music, no sound effects. No subtitles, no captions, no text on screen."
+    },
+    {
+      "text": "Even one day late counts as a full month, so do it this week.",
+      "lines": [
+        6
+      ],
+      "beat": "RESULT",
+      "prompt": "The man (my avatar) looks into the camera and talks to the viewer like a confident, friendly business tech explainer, smart and natural, not stiff; he raises one hand and counts on his fingers, then points at the camera. Vertical 9:16 medium-wide shot from the knees up, camera about two metres away, his head in the upper third with space above it, both hands and all his gestures fully visible in the frame, static camera, sharp and well lit, wearing a white linen shirt with the sleeves rolled up, on a modern office rooftop terrace in Dubai at golden hour with the skyline behind him; in this whole video he has a medium full beard neatly shaped, short slicked-back hair, no glasses - exactly the same in every shot of this video. His face, skin tone, height and body build stay exactly as in my avatar's reference photos - the same natural average build, never slimmer and never heavier. Clean professional business look: no tilak or any mark on his forehead, no necklace, mala, beads, thread or religious accessory, no earrings, no bracelets. He says, in clear natural English with a clear, neutral international accent, at a brisk, lively pace: \"Even one day late counts as a full month, so do it this week.\" His lips match every word. He starts speaking in the very first frame, with no pause before the first word, and stops right after the last word. Audio: only his voice - no music, no sound effects. No subtitles, no captions, no text on screen."
+    }
+  ],
+  "look": "wearing a white linen shirt with the sleeves rolled up, on a modern office rooftop terrace in Dubai at golden hour with the skyline behind him; in this whole video he has a medium full beard neatly shaped, short slicked-back hair, no glasses - exactly the same in every shot of this video",
+  "issue": null
+}
