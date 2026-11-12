@@ -1,7 +1,8 @@
 {
  "id": "20261112-0917-4",
  "niche": "zoho",
- "status": "waiting_for_clips",
+ "status": "skip",
+  "skip_reason": "Claude 12 Nov (Gaurav approved): story is Zoho Analytics revenue-growth target (NewsBytes), no new feature; hook called it a launch = misleading. Analytics AI agents Short already published 11 Nov.",
  "upload": true,
  "created": "2026-11-12T09:20:01",
  "title": "Zoho Analytics AI Reports: Build Executive Dashboards in Seconds #Shorts",
