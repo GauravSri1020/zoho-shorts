@@ -1,0 +1,534 @@
+{
+ "id": "20261112-0917-4",
+ "niche": "zoho",
+ "status": "waiting_for_clips",
+ "upload": true,
+ "created": "2026-11-12T09:20:01",
+ "title": "Zoho Analytics AI Reports: Build Executive Dashboards in Seconds #Shorts",
+ "description": "Learn how Zoho Analytics uses Zia Insights and natural language prompts to replace manual SQL report building with instant executive summaries.\n\n1. In Zoho Analytics, import workspaces from Zoho CRM and Zoho Books into a unified data model.\n2. Open Ask Zia and query complex revenue variance and customer metrics in plain English.\n3. Click Auto-Generate Insights to let Zia attach narrative diagnostic summaries alongside visual trend charts.\n\nAPI / tool used:\n- name: Ask Zia Natural Language Query Engine\n- endpoint: POST /restapi/v2/analytics/workspaces/YOUR_ORG_ID/askzia\n- scope: ZohoAnalytics.fullaccess.all\n- docs: Zoho Analytics API Documentation\n\nAI + Zoho automations every day - follow @GSXAutomation\n\nWhat inspired this: https://news.google.com/rss/articles/CBMivwFBVV95cUxPcGppX3hqR08xREJhbXNnQ09jcUZncUxzOEc2VERTZnRXOXRMUGE0akdmUlNMV1NGeTNBcFc3dlJUMmc1QjY5QTFlQ0lWRE5xcDJJZkNzNXRWOHIwenpBWVctM3VUT19iaUcyaEEyaU5TcW1lZi1GX3Q3NFJMc1lGbnpUZDk1VWUwR1RHSDliMUtOazVpcU5NTWE1UFVXdllYZE42V0ZSdkl3UFZzcElnUkd3NUhYN1NZM3BXb0N5VQ?oc=5\n\nThis video uses an AI-generated presenter and voice.\nIndependent channel. Not affiliated with or endorsed by Zoho Corporation. Zoho is a trademark of Zoho Corporation.\n\n#Shorts #Zoho #AIAutomation #ZohoCRM #AIAgents",
+ "angle": {
+  "story_index": 10,
+  "pillar": "trending",
+  "region": "global",
+  "product": "Zoho Analytics | Zia AI",
+  "app": "analytics",
+  "problem": "Enterprise leadership teams wait days for BI analysts to build custom SQL reports across sales and financial data sources.",
+  "fix_type": "ai_agent",
+  "solution": "Use Zia Insights and natural language prompts in Zoho Analytics to auto-generate predictive dashboards and executive summary reports.",
+  "steps": [
+   "In Zoho Analytics, import workspaces from Zoho CRM and Zoho Books into a unified data model.",
+   "Open Ask Zia and query complex revenue variance and customer metrics in plain English.",
+   "Click Auto-Generate Insights to let Zia attach narrative diagnostic summaries alongside visual trend charts."
+  ],
+  "api": "Ask Zia natural language query engine inside Zoho Analytics workspace",
+  "result": "Replaces manual SQL report building with instant, natural-language executive insights.",
+  "wow": "Zia Insights automatically writes plain-English narrative summaries explaining sudden financial trends in your charts.",
+  "hook": "Zoho Analytics targets enterprise growth—here is Zia's top reporting trick."
+ },
+ "story": {
+  "title": "Zoho Analytics targets nearly 20% annual growth courting enterprise clients",
+  "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxPcGppX3hqR08xREJhbXNnQ09jcUZncUxzOEc2VERTZnRXOXRMUGE0akdmUlNMV1NGeTNBcFc3dlJUMmc1QjY5QTFlQ0lWRE5xcDJJZkNzNXRWOHIwenpBWVctM3VUT19iaUcyaEEyaU5TcW1lZi1GX3Q3NFJMc1lGbnpUZDk1VWUwR1RHSDliMUtOazVpcU5NTWE1UFVXdllYZE42V0ZSdkl3UFZzcElnUkd3NUhYN1NZM3BXb0N5VQ?oc=5",
+  "summary": "Zoho Analytics targets nearly 20% annual growth courting enterprise clients NewsBytes",
+  "source": "NewsBytes",
+  "ts": 1793874011,
+  "type": "news",
+  "publishers": 1,
+  "trend": 11,
+  "age_hours": 166,
+  "score": 10,
+  "facts_checked": true
+ },
+ "script": {
+  "title": "Zoho Analytics AI Reports: Build Executive Dashboards in Seconds",
+  "hook_text": "Zoho Analytics just launched new enterprise growth initiatives targeting nearly 20% annual expansion.",
+  "thumb_text": "Zoho *Analytics* AI Executive Reports",
+  "app_label": "Zoho Analytics",
+  "lines": [
+   {
+    "beat": "HOOK",
+    "say": "Zoho Analytics just launched new enterprise growth initiatives targeting nearly 20% annual expansion while stopping days of waiting for custom SQL reports.",
+    "tts": "Zoho Analytics just launched new enterprise growth initiatives targeting nearly 20% annual expansion while stopping days of waiting for custom SQL reports.",
+    "card": "Zoho Analytics Targets Enterprise Growth",
+    "screen": null
+   },
+   {
+    "beat": "PROBLEM",
+    "say": "When executive leaders need quick answers across sales and financial data, manual report creation causes serious operational bottlenecks for growing businesses.",
+    "tts": "When executive leaders need quick answers across sales and financial data, manual report creation causes serious operational bottlenecks for growing businesses.",
+    "card": "Manual Reporting Causes Bottlenecks",
+    "screen": null
+   },
+   {
+    "beat": "FIX",
+    "say": "You can solve this instantly by using Zia Insights inside Zoho Analytics to accelerate your workflow.",
+    "tts": "You can solve this instantly by using Zia Insights inside Zoho Analytics to accelerate your workflow.",
+    "card": "Use Zia AI In Zoho Analytics",
+    "screen": {
+     "app": "analytics",
+     "view": "settings",
+     "path": [
+      "Zoho Analytics",
+      "Workspaces"
+     ],
+     "heading": "Unified Data Model",
+     "columns": [
+      "Source",
+      "Status",
+      "Records"
+     ],
+     "rows": [
+      [
+       "Zoho CRM",
+       "Active",
+       "45,210"
+      ],
+      [
+       "Zoho Books",
+       "Synced",
+       "12,840"
+      ]
+     ],
+     "fields": [],
+     "toggles": [],
+     "messages": [],
+     "tool": null,
+     "method": null,
+     "url": null,
+     "headers": [],
+     "body": null,
+     "response": null,
+     "language": null,
+     "nodes": [],
+     "real": null,
+     "click": "Workspaces",
+     "tip": "Connect enterprise data sources"
+    }
+   },
+   {
+    "beat": "STEP 1",
+    "say": "First, open your Zoho Analytics workspace, navigate to Data Sources, and import data from Zoho CRM and Zoho Books into one unified model.",
+    "tts": "First, open your Zoho Analytics workspace, navigate to Data Sources, and import data from Zoho CRM and Zoho Books into one unified model.",
+    "card": "Import CRM & Books Data",
+    "screen": {
+     "app": "analytics",
+     "view": "settings",
+     "path": [
+      "Data Sources",
+      "Import Data"
+     ],
+     "heading": "Data Sources",
+     "columns": [
+      "Module",
+      "Connected",
+      "Last Sync"
+     ],
+     "rows": [
+      [
+       "Deals & Accounts",
+       "Yes",
+       "Just now"
+      ],
+      [
+       "Invoices & Bills",
+       "Yes",
+       "2 mins ago"
+      ]
+     ],
+     "fields": [
+      [
+       "Workspace Name",
+       "Enterprise Data Model"
+      ]
+     ],
+     "toggles": [],
+     "messages": [],
+     "tool": null,
+     "method": null,
+     "url": null,
+     "headers": [],
+     "body": null,
+     "response": null,
+     "language": null,
+     "nodes": [],
+     "real": null,
+     "click": "Import Data",
+     "tip": "Merge sales and finance data"
+    }
+   },
+   {
+    "beat": "STEP 2",
+    "say": "Next, click Ask Zia on the top navigation bar and ask your detailed revenue variance question in plain English.",
+    "tts": "Next, click Ask Zia on the top navigation bar and ask your detailed revenue variance question in plain English.",
+    "card": "Ask Zia Revenue Questions",
+    "screen": {
+     "app": "analytics",
+     "view": "chat",
+     "path": [
+      "Ask Zia"
+     ],
+     "heading": "Ask Zia Assistant",
+     "columns": [],
+     "rows": [],
+     "fields": [],
+     "toggles": [],
+     "messages": [
+      [
+       "user",
+       "Show monthly revenue variance between North Region and South Region"
+      ],
+      [
+       "assistant",
+       "Generated comparative trend chart for regional accounts."
+      ]
+     ],
+     "tool": "Ask Zia Natural Language Query Engine",
+     "method": null,
+     "url": null,
+     "headers": [],
+     "body": null,
+     "response": null,
+     "language": null,
+     "nodes": [],
+     "real": null,
+     "click": "Ask Zia",
+     "tip": "Query using plain English"
+    }
+   },
+   {
+    "beat": "STEP 3",
+    "say": "Finally, click Auto-Generate Insights so Zia automatically generates visual trend charts paired with plain-English narrative diagnostic summaries.",
+    "tts": "Finally, click Auto-Generate Insights so Zia automatically generates visual trend charts paired with plain-English narrative diagnostic summaries.",
+    "card": "Auto-Generate Narrative Insights",
+    "screen": {
+     "app": "analytics",
+     "view": "form",
+     "path": [
+      "Dashboard",
+      "Auto-Generate Insights"
+     ],
+     "heading": "Executive Summary Report",
+     "columns": [
+      "Metric",
+      "Q3 Value",
+      "Status"
+     ],
+     "rows": [
+      [
+       "North Region",
+       "$142,500",
+       "Growing"
+      ],
+      [
+       "South Region",
+       "$98,200",
+       "Stable"
+      ]
+     ],
+     "fields": [
+      [
+       "Zia Narrative",
+       "Revenue spiked due to enterprise contract renewals in North Region."
+      ]
+     ],
+     "toggles": [],
+     "messages": [],
+     "tool": null,
+     "method": null,
+     "url": null,
+     "headers": [],
+     "body": null,
+     "response": null,
+     "language": null,
+     "nodes": [],
+     "real": null,
+     "click": "Auto-Generate Insights",
+     "tip": "Zia writes plain-English trend explanations"
+    }
+   },
+   {
+    "beat": "RESULT",
+    "say": "This completely replaces manual SQL query writing with instant, natural-language executive intelligence.",
+    "tts": "This completely replaces manual SQL query writing with instant, natural-language executive intelligence.",
+    "card": "Instant Automated Insights",
+    "screen": null
+   }
+  ],
+  "api": {
+   "name": "Ask Zia Natural Language Query Engine",
+   "endpoint": "POST /restapi/v2/analytics/workspaces/YOUR_ORG_ID/askzia",
+   "scope": "ZohoAnalytics.fullaccess.all",
+   "docs": "Zoho Analytics API Documentation"
+  },
+  "code": null,
+  "test_before_recording": [
+   "Verify Zoho CRM and Zoho Books workspaces are successfully imported into Analytics",
+   "Check that Ask Zia query engine is enabled for your enterprise tier account"
+  ],
+  "description": "Learn how Zoho Analytics uses Zia Insights and natural language prompts to replace manual SQL report building with instant executive summaries.",
+  "tags": [
+   "ZohoAnalytics",
+   "ZiaAI",
+   "EnterpriseBI",
+   "DataAnalytics",
+   "ZohoCRM",
+   "ZohoBooks",
+   "AIChat",
+   "BusinessIntelligence",
+   "TechNews",
+   "Automation"
+  ]
+ },
+ "lines": [
+  {
+   "beat": "HOOK",
+   "say": "Zoho Analytics just launched new enterprise growth initiatives targeting nearly 20% annual expansion while stopping days of waiting for custom SQL reports.",
+   "tts": "Zoho Analytics just launched new enterprise growth initiatives targeting nearly 20% annual expansion while stopping days of waiting for custom SQL reports.",
+   "card": "Zoho Analytics Targets Enterprise Growth",
+   "screen": null,
+   "face": true
+  },
+  {
+   "beat": "PROBLEM",
+   "say": "When executive leaders need quick answers across sales and financial data, manual report creation causes serious operational bottlenecks for growing businesses.",
+   "tts": "When executive leaders need quick answers across sales and financial data, manual report creation causes serious operational bottlenecks for growing businesses.",
+   "card": "Manual Reporting Causes Bottlenecks",
+   "screen": null,
+   "face": true
+  },
+  {
+   "beat": "FIX",
+   "say": "You can solve this instantly by using Zia Insights inside Zoho Analytics to accelerate your workflow.",
+   "tts": "You can solve this instantly by using Zia Insights inside Zoho Analytics to accelerate your workflow.",
+   "card": "Use Zia AI In Zoho Analytics",
+   "screen": {
+    "app": "analytics",
+    "view": "settings",
+    "path": [
+     "Zoho Analytics",
+     "Workspaces"
+    ],
+    "heading": "Unified Data Model",
+    "columns": [
+     "Source",
+     "Status",
+     "Records"
+    ],
+    "rows": [
+     [
+      "Zoho CRM",
+      "Active",
+      "45,210"
+     ],
+     [
+      "Zoho Books",
+      "Synced",
+      "12,840"
+     ]
+    ],
+    "fields": [],
+    "toggles": [],
+    "messages": [],
+    "tool": null,
+    "method": null,
+    "url": null,
+    "headers": [],
+    "body": null,
+    "response": null,
+    "language": null,
+    "nodes": [],
+    "real": null,
+    "click": "Workspaces",
+    "tip": "Connect enterprise data sources"
+   },
+   "face": false
+  },
+  {
+   "beat": "STEP 1",
+   "say": "First, open your Zoho Analytics workspace, navigate to Data Sources, and import data from Zoho CRM and Zoho Books into one unified model.",
+   "tts": "First, open your Zoho Analytics workspace, navigate to Data Sources, and import data from Zoho CRM and Zoho Books into one unified model.",
+   "card": "Import CRM & Books Data",
+   "screen": {
+    "app": "analytics",
+    "view": "settings",
+    "path": [
+     "Data Sources",
+     "Import Data"
+    ],
+    "heading": "Data Sources",
+    "columns": [
+     "Module",
+     "Connected",
+     "Last Sync"
+    ],
+    "rows": [
+     [
+      "Deals & Accounts",
+      "Yes",
+      "Just now"
+     ],
+     [
+      "Invoices & Bills",
+      "Yes",
+      "2 mins ago"
+     ]
+    ],
+    "fields": [
+     [
+      "Workspace Name",
+      "Enterprise Data Model"
+     ]
+    ],
+    "toggles": [],
+    "messages": [],
+    "tool": null,
+    "method": null,
+    "url": null,
+    "headers": [],
+    "body": null,
+    "response": null,
+    "language": null,
+    "nodes": [],
+    "real": null,
+    "click": "Import Data",
+    "tip": "Merge sales and finance data"
+   },
+   "face": false
+  },
+  {
+   "beat": "STEP 2",
+   "say": "Next, click Ask Zia on the top navigation bar and ask your detailed revenue variance question in plain English.",
+   "tts": "Next, click Ask Zia on the top navigation bar and ask your detailed revenue variance question in plain English.",
+   "card": "Ask Zia Revenue Questions",
+   "screen": {
+    "app": "analytics",
+    "view": "chat",
+    "path": [
+     "Ask Zia"
+    ],
+    "heading": "Ask Zia Assistant",
+    "columns": [],
+    "rows": [],
+    "fields": [],
+    "toggles": [],
+    "messages": [
+     [
+      "user",
+      "Show monthly revenue variance between North Region and South Region"
+     ],
+     [
+      "assistant",
+      "Generated comparative trend chart for regional accounts."
+     ]
+    ],
+    "tool": "Ask Zia Natural Language Query Engine",
+    "method": null,
+    "url": null,
+    "headers": [],
+    "body": null,
+    "response": null,
+    "language": null,
+    "nodes": [],
+    "real": null,
+    "click": "Ask Zia",
+    "tip": "Query using plain English"
+   },
+   "face": false
+  },
+  {
+   "beat": "STEP 3",
+   "say": "Finally, click Auto-Generate Insights so Zia automatically generates visual trend charts paired with plain-English narrative diagnostic summaries.",
+   "tts": "Finally, click Auto-Generate Insights so Zia automatically generates visual trend charts paired with plain-English narrative diagnostic summaries.",
+   "card": "Auto-Generate Narrative Insights",
+   "screen": {
+    "app": "analytics",
+    "view": "form",
+    "path": [
+     "Dashboard",
+     "Auto-Generate Insights"
+    ],
+    "heading": "Executive Summary Report",
+    "columns": [
+     "Metric",
+     "Q3 Value",
+     "Status"
+    ],
+    "rows": [
+     [
+      "North Region",
+      "$142,500",
+      "Growing"
+     ],
+     [
+      "South Region",
+      "$98,200",
+      "Stable"
+     ]
+    ],
+    "fields": [
+     [
+      "Zia Narrative",
+      "Revenue spiked due to enterprise contract renewals in North Region."
+     ]
+    ],
+    "toggles": [],
+    "messages": [],
+    "tool": null,
+    "method": null,
+    "url": null,
+    "headers": [],
+    "body": null,
+    "response": null,
+    "language": null,
+    "nodes": [],
+    "real": null,
+    "click": "Auto-Generate Insights",
+    "tip": "Zia writes plain-English trend explanations"
+   },
+   "face": false
+  },
+  {
+   "beat": "RESULT",
+   "say": "This completely replaces manual SQL query writing with instant, natural-language executive intelligence.",
+   "tts": "This completely replaces manual SQL query writing with instant, natural-language executive intelligence.",
+   "card": "Instant Automated Insights",
+   "screen": null,
+   "face": true
+  }
+ ],
+ "clips": [
+  {
+   "text": "Zoho Analytics just launched new enterprise growth initiatives targeting nearly 20%",
+   "lines": [
+    0
+   ],
+   "beat": "HOOK",
+   "prompt": "The man (my avatar) looks into the camera and talks to the viewer like a confident, friendly business tech explainer, smart and natural, not stiff; he stands with relaxed shoulders, shakes his head once with a half smile and holds up one hand as if saying stop. Vertical 9:16 medium-wide shot from the knees up, camera about two metres away, his head in the upper third with space above it, both hands and all his gestures fully visible in the frame, static camera, sharp and well lit, wearing light blue linen shirt with the top button open, in a modern tech startup office with exposed brick, plants and warm lights; in this whole video he has a short neatly trimmed beard, short slicked-back hair, thin black rectangular glasses - exactly the same in every shot of this video. His face, skin tone, height and body build stay exactly as in my avatar's reference photos - the same natural average build, never slimmer and never heavier. Clean professional business look: no tilak or any mark on his forehead, no necklace, mala, beads, thread or religious accessory, no earrings, no bracelets. He says, in clear natural English with a clear, neutral international accent, at a brisk, lively pace: \"Zoho Analytics just launched new enterprise growth initiatives targeting nearly 20%\" His lips match every word. He starts speaking in the very first frame, with no pause before the first word, and stops right after the last word. Audio: only his voice - no music, no sound effects. No subtitles, no captions, no text on screen."
+  },
+  {
+   "text": "annual expansion while stopping days of waiting for custom SQL reports.",
+   "lines": [
+    0
+   ],
+   "beat": "HOOK",
+   "prompt": "The man (my avatar) looks into the camera and talks to the viewer like a confident, friendly business tech explainer, smart and natural, not stiff; he walks into the frame from the side, stops at the centre and points briefly at the camera with an easy smile. Vertical 9:16 medium-wide shot from the knees up, camera about two metres away, his head in the upper third with space above it, both hands and all his gestures fully visible in the frame, smooth gimbal camera gently moving back with him so the framing stays the same, sharp and well lit, wearing light blue linen shirt with the top button open, in a modern tech startup office with exposed brick, plants and warm lights; in this whole video he has a short neatly trimmed beard, short slicked-back hair, thin black rectangular glasses - exactly the same in every shot of this video. His face, skin tone, height and body build stay exactly as in my avatar's reference photos - the same natural average build, never slimmer and never heavier. Clean professional business look: no tilak or any mark on his forehead, no necklace, mala, beads, thread or religious accessory, no earrings, no bracelets. He says, in clear natural English with a clear, neutral international accent, at a brisk, lively pace: \"annual expansion while stopping days of waiting for custom SQL reports.\" His lips match every word. He starts speaking in the very first frame, with no pause before the first word, and stops right after the last word. Audio: only his voice - no music, no sound effects. No subtitles, no captions, no text on screen."
+  },
+  {
+   "text": "When executive leaders need quick answers across sales and financial data, manual report creation causes serious operational bottlenecks for growing businesses.",
+   "lines": [
+    1
+   ],
+   "beat": "PROBLEM",
+   "prompt": "The man (my avatar) looks into the camera and talks to the viewer like a confident, friendly business tech explainer, smart and natural, not stiff; he shrugs with both shoulders and tilts his head, as if he has seen this problem a hundred times. Vertical 9:16 medium-wide shot from the knees up, camera about two metres away, his head in the upper third with space above it, both hands and all his gestures fully visible in the frame, static camera, sharp and well lit, wearing light blue linen shirt with the top button open, in a modern tech startup office with exposed brick, plants and warm lights; in this whole video he has a short neatly trimmed beard, short slicked-back hair, thin black rectangular glasses - exactly the same in every shot of this video. His face, skin tone, height and body build stay exactly as in my avatar's reference photos - the same natural average build, never slimmer and never heavier. Clean professional business look: no tilak or any mark on his forehead, no necklace, mala, beads, thread or religious accessory, no earrings, no bracelets. He says, in clear natural English with a clear, neutral international accent, at a brisk, lively pace: \"When executive leaders need quick answers across sales and financial data, manual report creation causes serious operational bottlenecks for growing businesses.\" His lips match every word. He starts speaking in the very first frame, with no pause before the first word, and stops right after the last word. Audio: only his voice - no music, no sound effects. No subtitles, no captions, no text on screen."
+  },
+  {
+   "text": "This completely replaces manual SQL query writing with instant, natural-language executive intelligence.",
+   "lines": [
+    6
+   ],
+   "beat": "RESULT",
+   "prompt": "The man (my avatar) looks into the camera and talks to the viewer like a confident, friendly business tech explainer, smart and natural, not stiff; he smiles and opens both arms wide. Vertical 9:16 medium-wide shot from the knees up, camera about two metres away, his head in the upper third with space above it, both hands and all his gestures fully visible in the frame, static camera, sharp and well lit, wearing light blue linen shirt with the top button open, in a modern tech startup office with exposed brick, plants and warm lights; in this whole video he has a short neatly trimmed beard, short slicked-back hair, thin black rectangular glasses - exactly the same in every shot of this video. His face, skin tone, height and body build stay exactly as in my avatar's reference photos - the same natural average build, never slimmer and never heavier. Clean professional business look: no tilak or any mark on his forehead, no necklace, mala, beads, thread or religious accessory, no earrings, no bracelets. He says, in clear natural English with a clear, neutral international accent, at a brisk, lively pace: \"This completely replaces manual SQL query writing with instant, natural-language executive intelligence.\" His lips match every word. He starts speaking in the very first frame, with no pause before the first word, and stops right after the last word. Audio: only his voice - no music, no sound effects. No subtitles, no captions, no text on screen."
+  }
+ ],
+ "look": "wearing light blue linen shirt with the top button open, in a modern tech startup office with exposed brick, plants and warm lights; in this whole video he has a short neatly trimmed beard, short slicked-back hair, thin black rectangular glasses - exactly the same in every shot of this video",
+ "issue": 160
+}

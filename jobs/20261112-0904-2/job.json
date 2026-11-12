@@ -1,0 +1,319 @@
+{
+ "id": "20261112-0904-2",
+ "niche": "zoho",
+ "status": "waiting_for_clips",
+ "upload": true,
+ "created": "2026-11-12T09:08:17",
+ "title": "Cut Software Costs 40% with Zoho CRM & Books Sync #Shorts",
+ "description": "Consolidate your technology stack and eliminate duplicate subscriptions by linking Zoho CRM and Zoho Books natively. Automatically sync contact profiles, price books, and trigger draft invoices when deals close.\n\n1. In Zoho CRM Setup, navigate to Marketplace › Zoho and enable the Zoho Books integration module.\n2. Map custom account fields, deal stages, and price books directly to Zoho Books customer profiles.\n3. Configure automatic triggering of tax-compliant draft invoices in Zoho Books whenever a CRM deal reaches Closed Won.\n\nAI + Zoho automations every day - follow @GSXAutomation\n\nWhat inspired this: https://news.google.com/rss/articles/CBMixgFBVV95cUxNb0I2RWhHWWp6U1h5djFfRkFTMHZzZnZqOHJNUnh4NC11UlhRLVM4SUxpQ0NMS2gyMlVIa2xmZHN1U1hyLWFxMXBsWGZxbF81Z3cwREdlYXNtdXFyWUJCZlZEaDBBUW9VdmpQUElpMWhFYmVkbG9udGpCVHVURDFkd0pWc2pQVGN3bjN6bm9vbTNSeHBsMWtJTUJPYVdxY2c1bGJOZzdMTXN0Z0dTV01DenpXWHNGNDhBZ2NBTE85N1RyVk1NVHfSAcsBQVVfeXFMT0YyOWsybHMzaDJxRHZqSHVxaGxZVzZDS0h3WVluMHNCcGpQV05xblNFenNFTXJ4ckN6dk1wWDh4dDZVMmt0UFI4X3luYUhCM3o3ZVp3VXhXTW5YUFNndF80eGFKOGVEYVZKNkRGQlRlQjFZcDJfN3ZNM1pncmkweWpGZEpSS3k1SXZiUFZmZkZVdGllYWFnSE1BLUJmeVIyVU0ydmdWU3Fib3RTQU1yYlZhSy1jcWFUUjlObTFRd29BU3NEX1QzTmNiMUU?oc=5\n\nThis video uses an AI-generated presenter and voice.\nIndependent channel. Not affiliated with or endorsed by Zoho Corporation. Zoho is a trademark of Zoho Corporation.\n\n#Shorts #Zoho #AIAutomation #ZohoCRM #AIAgents",
+ "angle": {
+  "story_index": 3,
+  "pillar": "trending",
+  "region": "global",
+  "product": "Zoho One | Zoho Books | Zoho CRM",
+  "app": "books",
+  "problem": "Growing companies pay double subscriptions for separate CRM, accounting, and quoting tools instead of unifying their stack.",
+  "fix_type": "native",
+  "solution": "Enable native Zoho One synchronization between CRM and Books to automate contact sync, multi-currency invoicing, and payment status.",
+  "steps": [
+   "In Zoho CRM Setup, navigate to Marketplace > Zoho and enable the Zoho Books integration module.",
+   "Map custom account fields, deal stages, and price books directly to Zoho Books customer profiles.",
+   "Configure automatic triggering of tax-compliant draft invoices in Zoho Books whenever a CRM deal reaches Closed Won."
+  ],
+  "api": null,
+  "result": "Reduces tech stack expenditure by up to 40% while eliminating manual re-keying between sales and finance.",
+  "wow": "Enabling native CRM-to-Books synchronization takes under 3 minutes and replaces multiple third-party SaaS subscriptions.",
+  "hook": "Optiven cut software costs 40 percent with Zoho One—here is the blueprint."
+ },
+ "story": {
+  "title": "How Optiven consolidated its technology stack and reduced software costs by 40% with Zoho One",
+  "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxNb0I2RWhHWWp6U1h5djFfRkFTMHZzZnZqOHJNUnh4NC11UlhRLVM4SUxpQ0NMS2gyMlVIa2xmZHN1U1hyLWFxMXBsWGZxbF81Z3cwREdlYXNtdXFyWUJCZlZEaDBBUW9VdmpQUElpMWhFYmVkbG9udGpCVHVURDFkd0pWc2pQVGN3bjN6bm9vbTNSeHBsMWtJTUJPYVdxY2c1bGJOZzdMTXN0Z0dTV01DenpXWHNGNDhBZ2NBTE85N1RyVk1NVHfSAcsBQVVfeXFMT0YyOWsybHMzaDJxRHZqSHVxaGxZVzZDS0h3WVluMHNCcGpQV05xblNFenNFTXJ4ckN6dk1wWDh4dDZVMmt0UFI4X3luYUhCM3o3ZVp3VXhXTW5YUFNndF80eGFKOGVEYVZKNkRGQlRlQjFZcDJfN3ZNM1pncmkweWpGZEpSS3k1SXZiUFZmZkZVdGllYWFnSE1BLUJmeVIyVU0ydmdWU3Fib3RTQU1yYlZhSy1jcWFUUjlObTFRd29BU3NEX1QzTmNiMUU?oc=5",
+  "summary": "How Optiven consolidated its technology stack and reduced software costs by 40% with Zoho One Soko Directory",
+  "source": "Soko Directory",
+  "ts": 1794403247,
+  "type": "news",
+  "publishers": 1,
+  "trend": 15,
+  "age_hours": 19,
+  "score": 14,
+  "facts_checked": true
+ },
+ "script": {
+  "title": "Cut Software Costs 40% with Zoho CRM & Books Sync",
+  "hook_text": "Cut Software Costs 40 Percent",
+  "thumb_text": "Optiven *cut costs 40%* with Zoho",
+  "app_label": "Zoho Books + CRM",
+  "lines": [
+   {
+    "beat": "HOOK",
+    "say": "Optiven slashed software expenditure forty percent using Zoho One today.",
+    "tts": "Optiven slashed software expenditure forty percent using Zoho One today.",
+    "card": "Optiven Cut Costs 40%",
+    "screen": null
+   },
+   {
+    "beat": "PROBLEM",
+    "say": "Growing companies pay double subscriptions for redundant CRM and accounting tools every month.",
+    "tts": "Growing companies pay double subscriptions for redundant CRM and accounting tools every month.",
+    "card": "Paying Double for SaaS?",
+    "screen": null
+   },
+   {
+    "beat": "FIX",
+    "say": "Connect Zoho CRM natively with Zoho Books to unify your revenue stack.",
+    "tts": "Connect Zoho CRM natively with Zoho Books to unify your revenue stack.",
+    "card": "Books > Settings > Integrations",
+    "screen": {
+     "app": "books",
+     "view": "settings",
+     "path": [
+      "Settings",
+      "Integrations & Marketplace",
+      "Zoho Apps"
+     ],
+     "real": "books/integrations",
+     "click": "Connect",
+     "tip": "Enable native CRM integration"
+    }
+   },
+   {
+    "beat": "STEP 1",
+    "say": "In Zoho Books settings, navigate to Integrations and Marketplace, then click Connect under Zoho CRM.",
+    "tts": "In Zoho Books settings, navigate to Integrations and Marketplace, then click Connect under Zoho CRM.",
+    "card": "Integrations > Zoho Apps",
+    "screen": {
+     "app": "books",
+     "view": "settings",
+     "path": [
+      "Settings",
+      "Integrations & Marketplace",
+      "Zoho Apps"
+     ],
+     "real": "books/integrations",
+     "click": "Connect",
+     "tip": "Click Connect under Zoho CRM"
+    }
+   },
+   {
+    "beat": "STEP 2",
+    "say": "Next, configure field mapping between both apps to map contacts, deal stages, and price books to customer profiles.",
+    "tts": "Next, configure field mapping between both apps to map contacts, deal stages, and price books to customer profiles.",
+    "card": "Map Fields & Price Books",
+    "screen": {
+     "app": "books",
+     "view": "settings",
+     "path": [
+      "Settings",
+      "Integrations & Marketplace",
+      "Zoho CRM"
+     ],
+     "fields": [
+      [
+       "Account Field Mapping",
+       "CRM Account -> Customer Profile"
+      ],
+      [
+       "Price Books",
+       "Multi-Currency Enabled"
+      ],
+      [
+       "Deal Stage Trigger",
+       "Closed Won"
+      ]
+     ],
+     "real": "books/integrations/crm",
+     "click": "Configure",
+     "tip": "Map accounts to Books customer profiles"
+    }
+   },
+   {
+    "beat": "STEP 3",
+    "say": "Finally, enable automatic draft invoice creation when deals hit Closed Won, and check with your tax advisor for local tax compliance. Native sync takes under three minutes and eliminates manual re-keying.",
+    "tts": "Finally, enable automatic draft invoice creation when deals hit Closed Won, and check with your tax advisor for local tax compliance. Native sync takes under three minutes and eliminates manual re-keying.",
+    "card": "Automate Invoicing on Deal Won",
+    "screen": {
+     "app": "books",
+     "view": "settings",
+     "path": [
+      "Settings",
+      "Integrations & Marketplace",
+      "Zoho CRM"
+     ],
+     "real": "books/integrations/crm",
+     "click": "Save",
+     "tip": "Trigger draft invoices automatically"
+    }
+   },
+   {
+    "beat": "RESULT",
+    "say": "Reduce your tech stack expenditure by up to forty percent while keeping sales and finance fully synchronized.",
+    "tts": "Reduce your tech stack expenditure by up to forty percent while keeping sales and finance fully synchronized.",
+    "card": "Save 40% Tech Stack Costs",
+    "screen": null
+   }
+  ],
+  "api": null,
+  "code": null,
+  "test_before_recording": [
+   "Verify Zoho CRM and Zoho Books are in the same Zoho One organization",
+   "Ensure test CRM deal has an account and amount assigned before testing Closed Won trigger"
+  ],
+  "description": "Consolidate your technology stack and eliminate duplicate subscriptions by linking Zoho CRM and Zoho Books natively. Automatically sync contact profiles, price books, and trigger draft invoices when deals close.",
+  "tags": [
+   "ZohoOne",
+   "ZohoCRM",
+   "ZohoBooks",
+   "TechStack",
+   "Automation",
+   "Optiven",
+   "SaaS",
+   "Invoicing",
+   "CRMSync",
+   "BusinessAutomation"
+  ]
+ },
+ "lines": [
+  {
+   "beat": "HOOK",
+   "say": "Optiven slashed software expenditure forty percent using Zoho One today.",
+   "tts": "Optiven slashed software expenditure forty percent using Zoho One today.",
+   "card": "Optiven Cut Costs 40%",
+   "screen": null,
+   "face": true
+  },
+  {
+   "beat": "PROBLEM",
+   "say": "Growing companies pay double subscriptions for redundant CRM and accounting tools every month.",
+   "tts": "Growing companies pay double subscriptions for redundant CRM and accounting tools every month.",
+   "card": "Paying Double for SaaS?",
+   "screen": null,
+   "face": true
+  },
+  {
+   "beat": "FIX",
+   "say": "Connect Zoho CRM natively with Zoho Books to unify your revenue stack.",
+   "tts": "Connect Zoho CRM natively with Zoho Books to unify your revenue stack.",
+   "card": "Books > Settings > Integrations",
+   "screen": {
+    "app": "books",
+    "view": "settings",
+    "path": [
+     "Settings",
+     "Integrations & Marketplace",
+     "Zoho Apps"
+    ],
+    "real": "books/integrations",
+    "click": "Connect",
+    "tip": "Enable native CRM integration"
+   },
+   "face": false
+  },
+  {
+   "beat": "STEP 1",
+   "say": "In Zoho Books settings, navigate to Integrations and Marketplace, then click Connect under Zoho CRM.",
+   "tts": "In Zoho Books settings, navigate to Integrations and Marketplace, then click Connect under Zoho CRM.",
+   "card": "Integrations > Zoho Apps",
+   "screen": {
+    "app": "books",
+    "view": "settings",
+    "path": [
+     "Settings",
+     "Integrations & Marketplace",
+     "Zoho Apps"
+    ],
+    "real": "books/integrations",
+    "click": "Connect",
+    "tip": "Click Connect under Zoho CRM"
+   },
+   "face": false
+  },
+  {
+   "beat": "STEP 2",
+   "say": "Next, configure field mapping between both apps to map contacts, deal stages, and price books to customer profiles.",
+   "tts": "Next, configure field mapping between both apps to map contacts, deal stages, and price books to customer profiles.",
+   "card": "Map Fields & Price Books",
+   "screen": {
+    "app": "books",
+    "view": "settings",
+    "path": [
+     "Settings",
+     "Integrations & Marketplace",
+     "Zoho CRM"
+    ],
+    "fields": [
+     [
+      "Account Field Mapping",
+      "CRM Account -> Customer Profile"
+     ],
+     [
+      "Price Books",
+      "Multi-Currency Enabled"
+     ],
+     [
+      "Deal Stage Trigger",
+      "Closed Won"
+     ]
+    ],
+    "real": "books/integrations/crm",
+    "click": "Configure",
+    "tip": "Map accounts to Books customer profiles"
+   },
+   "face": false
+  },
+  {
+   "beat": "STEP 3",
+   "say": "Finally, enable automatic draft invoice creation when deals hit Closed Won, and check with your tax advisor for local tax compliance. Native sync takes under three minutes and eliminates manual re-keying.",
+   "tts": "Finally, enable automatic draft invoice creation when deals hit Closed Won, and check with your tax advisor for local tax compliance. Native sync takes under three minutes and eliminates manual re-keying.",
+   "card": "Automate Invoicing on Deal Won",
+   "screen": {
+    "app": "books",
+    "view": "settings",
+    "path": [
+     "Settings",
+     "Integrations & Marketplace",
+     "Zoho CRM"
+    ],
+    "real": "books/integrations/crm",
+    "click": "Save",
+    "tip": "Trigger draft invoices automatically"
+   },
+   "face": false
+  },
+  {
+   "beat": "RESULT",
+   "say": "Reduce your tech stack expenditure by up to forty percent while keeping sales and finance fully synchronized.",
+   "tts": "Reduce your tech stack expenditure by up to forty percent while keeping sales and finance fully synchronized.",
+   "card": "Save 40% Tech Stack Costs",
+   "screen": null,
+   "face": true
+  }
+ ],
+ "clips": [
+  {
+   "text": "Optiven slashed software expenditure forty percent using Zoho One today.",
+   "lines": [
+    0
+   ],
+   "beat": "HOOK",
+   "prompt": "The man (my avatar) looks into the camera and talks to the viewer like a confident, friendly business tech explainer, smart and natural, not stiff; he walks into the frame from the side, stops at the centre and points briefly at the camera with an easy smile. Vertical 9:16 medium-wide shot from the knees up, camera about two metres away, his head in the upper third with space above it, both hands and all his gestures fully visible in the frame, smooth gimbal camera gently moving back with him so the framing stays the same, sharp and well lit, wearing light blue oxford shirt with the sleeves neatly rolled up, in a premium business lounge with tall windows, leather chairs and a modern city view; in this whole video he has a sharp short boxed beard, short neat side-parted hair, no glasses - exactly the same in every shot of this video. His face, skin tone, height and body build stay exactly as in my avatar's reference photos - the same natural average build, never slimmer and never heavier. Clean professional business look: no tilak or any mark on his forehead, no necklace, mala, beads, thread or religious accessory, no earrings, no bracelets. He says, in clear natural English with a clear, neutral international accent, at a brisk, lively pace: \"Optiven slashed software expenditure forty percent using Zoho One today.\" His lips match every word. He starts speaking in the very first frame, with no pause before the first word, and stops right after the last word. Audio: only his voice - no music, no sound effects. No subtitles, no captions, no text on screen."
+  },
+  {
+   "text": "Growing companies pay double subscriptions for redundant CRM and accounting tools every month.",
+   "lines": [
+    1
+   ],
+   "beat": "PROBLEM",
+   "prompt": "The man (my avatar) looks into the camera and talks to the viewer like a confident, friendly business tech explainer, smart and natural, not stiff; he shrugs with both shoulders and tilts his head, as if he has seen this problem a hundred times. Vertical 9:16 medium-wide shot from the knees up, camera about two metres away, his head in the upper third with space above it, both hands and all his gestures fully visible in the frame, static camera, sharp and well lit, wearing light blue oxford shirt with the sleeves neatly rolled up, in a premium business lounge with tall windows, leather chairs and a modern city view; in this whole video he has a sharp short boxed beard, short neat side-parted hair, no glasses - exactly the same in every shot of this video. His face, skin tone, height and body build stay exactly as in my avatar's reference photos - the same natural average build, never slimmer and never heavier. Clean professional business look: no tilak or any mark on his forehead, no necklace, mala, beads, thread or religious accessory, no earrings, no bracelets. He says, in clear natural English with a clear, neutral international accent, at a brisk, lively pace: \"Growing companies pay double subscriptions for redundant CRM and accounting tools every month.\" His lips match every word. He starts speaking in the very first frame, with no pause before the first word, and stops right after the last word. Audio: only his voice - no music, no sound effects. No subtitles, no captions, no text on screen."
+  },
+  {
+   "text": "Reduce your tech stack expenditure by up to forty percent while keeping sales and finance fully synchronized.",
+   "lines": [
+    6
+   ],
+   "beat": "RESULT",
+   "prompt": "The man (my avatar) looks into the camera and talks to the viewer like a confident, friendly business tech explainer, smart and natural, not stiff; he smiles and opens both arms wide. Vertical 9:16 medium-wide shot from the knees up, camera about two metres away, his head in the upper third with space above it, both hands and all his gestures fully visible in the frame, static camera, sharp and well lit, wearing light blue oxford shirt with the sleeves neatly rolled up, in a premium business lounge with tall windows, leather chairs and a modern city view; in this whole video he has a sharp short boxed beard, short neat side-parted hair, no glasses - exactly the same in every shot of this video. His face, skin tone, height and body build stay exactly as in my avatar's reference photos - the same natural average build, never slimmer and never heavier. Clean professional business look: no tilak or any mark on his forehead, no necklace, mala, beads, thread or religious accessory, no earrings, no bracelets. He says, in clear natural English with a clear, neutral international accent, at a brisk, lively pace: \"Reduce your tech stack expenditure by up to forty percent while keeping sales and finance fully synchronized.\" His lips match every word. He starts speaking in the very first frame, with no pause before the first word, and stops right after the last word. Audio: only his voice - no music, no sound effects. No subtitles, no captions, no text on screen."
+  }
+ ],
+ "look": "wearing light blue oxford shirt with the sleeves neatly rolled up, in a premium business lounge with tall windows, leather chairs and a modern city view; in this whole video he has a sharp short boxed beard, short neat side-parted hair, no glasses - exactly the same in every shot of this video",
+ "issue": 159
+}
