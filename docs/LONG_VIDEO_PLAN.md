@@ -1,44 +1,56 @@
-# Long videos - plan + content calendar (draft, 13 Nov 2026)
+# Long videos - plan v2 (Gaurav ne 13 Nov raat approve kiya)
 
-Status: DRAFT. Gaurav ne format / frequency abhi confirm nahi kiya - neeche wale defaults Claude ne chune hain. Code abhi kuch nahi bana (sirf plan). 13 Nov ki pehli chat (jisme ye branch shuru hui thi) save nahi hui thi - ye plan us chat ke bina dobara likha gaya hai.
+Branch: `long-video-calendar` (Shorts pipeline `main` pe alag chalta rahega - is branch se Shorts ka ek bhi file nahi chhoona).
+Goal: channel MONETIZE - long videos se watch hours. Roz 1 long video (8-10 min, 16:9).
 
-## Kyun long videos
+## Gaurav ke faisle (13 Nov 21:15-21:30 IST)
 
-- Channel audit (28 din, 12 Nov): 74% views YouTube SEARCH se, sirf 17.6% Shorts feed se. Log "how to" dhoondh rahe hain - long tutorial wahi search pakadta hai.
-- Monetization: 1,000 subs + 4,000 watch hours (12 mahine) wala raasta sirf long videos se bharta hai (Shorts ke views watch hours mein nahi gine jaate). 1 Feb 2027 se naye applicants: 8,000 h ya 20M Shorts views / 90 din.
-- Top Shorts = Gulf compliance + Zoho Books how-to: UAE E-Invoicing setup (172 views), Payment Reminders (105), ZATCA Phase 2 (103).
+1. Har video = ek universal problem jo abhi news mein chal rahi hai (jaise UAE e-invoicing 1 Jan 2027). Facts sirf official / news source se, Shorts jaise strict rules (galat menu path = upload nahi).
+2. Look: PODCAST FRAME - badi screen pe Zoho ki screen (recording), ek kone mein Gaurav ka chhota chehra, mic laga hua, lip-sync. Har din kuch badle: kapde, frame, background, chair, mic, kabhi headphones.
+3. **Flow credits NAHI khaane** - roz max 1-2 Flow clips (base clip kone wale chehre ke liye / intro). Baaki sab free.
+4. Screen recording: Gaurav Zoho (naya demo account, sample data, Books / Creator / jo chahiye) Chrome mein khol ke dega; Claude steps karega + tab record karega (browser ek baar "Share this tab" maangta hai - wo click Gaurav ka). Claude kabhi password nahi daalta.
+5. Explainer scenes: GEOMETRIC CARTOON - gol sir, chaukor pet, danda tangein, bina aankh-munh (jaise "manual banda invoice le ke client ke paas jaata hai"). Plus whiteboard-style points. Background SIMPLE (grid hatao, saaf).
+6. Har 20-40 s scene badle - 8 min mein interest loose na ho. Realistic lagna chahiye, AI jaisa nahi.
+7. Voice: FREE voice cloning - Gaurav apni awaaz ka sample dega, poori video usi awaaz mein. Kaggle setup NAHI chahiye.
+8. Quality: ~4K export (cartoons asli 4K, screen / Flow upscale).
+9. Sab FREE. Claude / Gemini / open-source jo bhi kaam aaye.
+10. Pipeline: researcher -> script + scenes -> (Gaurav ka Zoho) screen recording -> voice -> lip-sync -> editor -> QA -> GitHub -> YouTube schedule. Pehle Gaurav sample review karega, tab tak YouTube pe UPLOAD NAHI.
 
-## Default format (assumption)
+## Free tools (scheduled run ko verify karna hai - commercial use allowed ho, channel monetized hoga)
 
-- Deep-dive tutorial, 8-12 min, 16:9, YouTube chapters.
-- Shuru mein 1-2 Flow avatar clips (16:9, Gaurav ka huliya), baaki asli Zoho screens (assets/screens, sample data only) + ek hi AI voice (avatar ki awaaz se match karti hui).
-- Har long video ke saath us topic ke 2-3 Shorts, Shorts ke "Related video" mein long video ka link.
-- Wahi rules jo Shorts pe: sirf asli facts (official Zoho docs / govt source), galat menu path = upload nahi, QA strict.
+- Cartoon / whiteboard / chapter cards: HTML+SVG `render(t)` -> Playwright frame screenshots -> ffmpeg (prototype: `longform/prototype/`). 4K = viewport 1920x1080, deviceScaleFactor 2. Manim bhi chalega (runner pe `apt install libpango1.0-dev`), par HTML wala repo ke `screens.py` jaisa hai.
+- Voice clone (Gaurav ki awaaz, uski marzi se): license dekh ke chuno. Commercial OK hone chahiye. Candidates: Chatterbox (Resemble AI, MIT - verify), OpenVoice V2 (MIT - verify). NAHI: XTTS-v2 (Coqui CPML = non-commercial), F5-TTS weights (CC-BY-NC). Jab tak sample nahi aata: Kokoro (Apache 2.0) ya Piper - ek hi awaaz poori video mein.
+- Lip-sync (kone ka chhota chehra, CPU pe GitHub runner, 6 h limit): license check zaroori - Wav2Lip = research/non-commercial (NAHI). MuseTalk / LatentSync ka license + CPU speed verify karo. Kone ka chehra chhota hai (~360 px) to low-res lip-sync bhi chalega. Agar koi free + commercial + CPU wala nahi mila: kone mein base clip loop + audio-reactive munh nahi; us case mein chehra sirf intro/outro (Flow) mein, baaki faceless.
+- Screen: asli recording (Gaurav ka Zoho) - jab tak nahi milti, `assets/screens/books/*.png` (asli screenshots) pe smooth zoom / pan / cursor / click animation (Ken Burns), "recording placeholder" ke taur pe.
+- Music: repo ka `autopilot/music.py` jaisa royalty-free.
 
-## Frequency (assumption)
+## Scene types
 
-- Hafte mein 1 long video, Shanivaar 21:30 IST (UAE 20:00 prime). Shorts roz waise hi.
+| Type | Kya dikhta hai | Kab |
+|---|---|---|
+| HOOK | Flow intro clip (Gaurav full face) ya cartoon | 0:00-0:20 |
+| PODCAST | badi Zoho screen + kone mein Gaurav (mic) + lower-third caption | demo steps |
+| CARTOON | geometric banda, problem ki kahani | problem / "why it matters" |
+| BOARD | whiteboard points / diagram draw-on | timeline, penalties, checklist |
+| CHAPTER | chhota title card | har chapter ke shuru mein |
+| OUTRO | Flow outro / subscribe | end |
 
-## Content calendar (pehle 4 hafte)
+## Pehli video (sample, Gaurav review karega)
 
-| Date | Topic | Kyun | Pehle check karna |
-|---|---|---|---|
-| Sat 21 Nov 2026 | UAE E-Invoicing in Zoho Books: poora setup 1 Jan 2027 se pehle (ASP, kaun kab, penalties) | #1 Short (172 views) + 3 e-invoicing Shorts 13-14 Nov | MoF timeline, Zoho = accredited ASP, Books UAE setup article |
-| Sat 28 Nov 2026 | ZATCA Phase 2 (Saudi) in Zoho Books: integration step by step | #3 Short (103 views) | Abhi ki wave / deadlines ZATCA site se |
-| Sat 5 Dec 2026 | Get paid on time: Zoho Books recurring invoices + automatic reminders + online payments | Payment Reminders Short (105) + #168 | Books help docs (Reminders, Online Payments) |
-| Sat 12 Dec 2026 | Website lead se deal tak: Zoho CRM webforms, assignment rules, workflow alerts, cadences | #167 + CRM Shorts | CRM help docs, Cadences WhatsApp post |
+"UAE E-Invoicing in Zoho Books: everything to do before 1 January 2027" - facts HISTORY 12 Nov (Zoho = MoF accredited ASP; AED 50M se kam: ASP 31 Mar 2027, live 1 Jul 2027; penalties AED 5,000/month, AED 100/invoice) - scheduled run ko DOBARA verify karna hai official source se.
 
-## Code jo banana padega (abhi NAHI bana)
+## Content calendar (aage)
 
-1. writer: long script (chapters, 1,200-1,800 words), facts sirf diye gaye sources se.
-2. composer: 16:9 render, chapter cards, lambi screen walkthroughs.
-3. flow: 16:9 avatar clips ke prompts (intro / outro).
-4. youtube: chapters description mein, Shorts -> related video link.
-5. workflow: task "long" (Run workflow), schedule Shanivaar.
-6. QA: long video ke liye apna checklist (black frames, voice, galat screen, chapters).
+- UAE e-invoicing (sample) -> ZATCA Phase 2 -> Zoho Books payments + reminders -> Zoho CRM web leads. Har ek ke Shorts pehle se channel pe hain (unhe long video se link karna).
 
-## Gaurav se confirm karna
+## Code (is branch mein, `longform/`)
 
-- Format theek hai? (deep-dive tutorial vs weekly news roundup vs Shorts jod ke)
-- Hafte mein 1, Shanivaar - theek?
-- Pehla topic UAE e-invoicing - theek?
+- `longform/research.py` (topic + facts), `longform/script.py` (scenes JSON), `longform/scenes/*.html` (cartoon / board / chapter templates), `longform/render.py` (Playwright frames -> ffmpeg), `longform/voice.py`, `longform/lipsync.py`, `longform/compose.py` (16:9, 4K), `longform/qa.py`.
+- Workflow: `.github/workflows/longform.yml` (sirf workflow_dispatch jab tak Gaurav approve na kare; koi upload nahi).
+
+## Gaurav se abhi chahiye
+
+- Apni awaaz ka sample (1-2 min, saaf, bina music) - voice clone ke liye.
+- Pichhli chat ka reference video link (wo chat save nahi hui).
+- Zoho demo account (Books pehle) Chrome mein khula.
+- 1-2 Flow clips: podcast setup (mic, kone wala frame) - Gaurav ke Flow mein.

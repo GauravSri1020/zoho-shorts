@@ -1,0 +1,99 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<style>
+  html,body{margin:0;padding:0;background:#f7f5f0;}
+  svg{display:block}
+  .hand{font-family:"Segoe Print","Comic Sans MS","Patrick Hand",cursive;}
+  .ui{font-family:"Inter","Segoe UI",Arial,sans-serif;}
+</style></head>
+<body>
+<svg id="s" width="1920" height="1080" viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg"></svg>
+<script>
+// Geometric explainer: circle head, square body, stick legs. Pure SVG, deterministic render(t).
+const S = document.getElementById('s');
+const ease = x => x<0?0:x>1?1:(1-Math.cos(Math.PI*x))/2;
+const clamp=(x,a,b)=>Math.max(a,Math.min(b,x));
+function person(x, y, t, color, carrying, walking, mood){
+  const sw = walking ? Math.sin(t*9)*22 : 0;           // leg swing
+  const bob = walking ? Math.abs(Math.sin(t*9))*-6 : 0; // body bob
+  const by = y + bob;
+  let g = `<g>`;
+  // legs
+  g += `<line x1="${x-14}" y1="${by+60}" x2="${x-14+sw}" y2="${y+150}" stroke="#2b2b2b" stroke-width="10" stroke-linecap="round"/>`;
+  g += `<line x1="${x+14}" y1="${by+60}" x2="${x+14-sw}" y2="${y+150}" stroke="#2b2b2b" stroke-width="10" stroke-linecap="round"/>`;
+  // body (square)
+  g += `<rect x="${x-45}" y="${by-35}" width="90" height="100" rx="14" fill="${color}" stroke="#2b2b2b" stroke-width="6"/>`;
+  // head (circle) - no face, just a tiny tilt via sweat drop when tired
+  g += `<circle cx="${x}" cy="${by-80}" r="40" fill="#fff" stroke="#2b2b2b" stroke-width="6"/>`;
+  if (mood==='tired'){ const d=(t*1.5)%1; g += `<path d="M ${x+44} ${by-100+d*30} q 8 14 0 20 q -8 -6 0 -20" fill="#5aa9e6" opacity="${1-d}"/>`; }
+  // arm + invoice
+  if (carrying){
+    g += `<line x1="${x+40}" y1="${by-5}" x2="${x+85}" y2="${by+15}" stroke="#2b2b2b" stroke-width="9" stroke-linecap="round"/>`;
+    g += `<g transform="translate(${x+70},${by-40}) rotate(${walking?Math.sin(t*9)*4:0})">
+      <rect width="80" height="100" rx="6" fill="#fff" stroke="#2b2b2b" stroke-width="5"/>
+      <line x1="14" y1="22" x2="66" y2="22" stroke="#2b2b2b" stroke-width="5"/>
+      <line x1="14" y1="42" x2="56" y2="42" stroke="#bbb" stroke-width="5"/>
+      <line x1="14" y1="58" x2="60" y2="58" stroke="#bbb" stroke-width="5"/>
+      <text x="40" y="88" text-anchor="middle" class="ui" font-size="18" font-weight="800" fill="#e5484d">DUE</text></g>`;
+  }
+  return g + `</g>`;
+}
+function building(x,y){
+  return `<g><rect x="${x}" y="${y}" width="230" height="300" rx="10" fill="#fff" stroke="#2b2b2b" stroke-width="6"/>
+  ${[0,1,2].map(r=>[0,1].map(c=>`<rect x="${x+35+c*95}" y="${y+35+r*70}" width="60" height="42" rx="4" fill="#dfe8f3" stroke="#2b2b2b" stroke-width="4"/>`).join('')).join('')}
+  <rect x="${x+85}" y="${y+220}" width="60" height="80" rx="4" fill="#c9a26b" stroke="#2b2b2b" stroke-width="5"/>
+  <text x="${x+115}" y="${y-18}" text-anchor="middle" class="hand" font-size="34" fill="#2b2b2b">Client</text></g>`;
+}
+function clock(x,y,t){
+  const a = t*240;
+  return `<g transform="translate(${x},${y})"><circle r="52" fill="#fff" stroke="#2b2b2b" stroke-width="6"/>
+  <line x1="0" y1="0" x2="0" y2="-36" stroke="#2b2b2b" stroke-width="6" stroke-linecap="round" transform="rotate(${a})"/>
+  <line x1="0" y1="0" x2="24" y2="0" stroke="#e5484d" stroke-width="6" stroke-linecap="round" transform="rotate(${a/12})"/></g>`;
+}
+function writeOn(text, x, y, size, p, color){ // whiteboard "marker writing" reveal
+  const n = Math.floor(text.length*clamp(p,0,1));
+  return `<text x="${x}" y="${y}" class="hand" font-size="${size}" fill="${color||'#2b2b2b'}">${text.slice(0,n)}</text>`;
+}
+window.render = function(t){
+  let o = `<rect width="1920" height="1080" fill="#f7f5f0"/>`;
+  // subtle whiteboard grid
+  for(let i=0;i<1920;i+=60) o += `<line x1="${i}" y1="0" x2="${i}" y2="1080" stroke="#ece8df" stroke-width="2"/>`;
+  for(let j=0;j<1080;j+=60) o += `<line x1="0" y1="${j}" x2="1920" y2="${j}" stroke="#ece8df" stroke-width="2"/>`;
+  o += `<line x1="0" y1="900" x2="1920" y2="900" stroke="#2b2b2b" stroke-width="6"/>`;
+  if (t < 4){
+    // Scene A: manual chasing - person walks invoice to client, clock spins, days counter
+    o += writeOn('The manual way: chasing every invoice', 120, 140, 64, t/1.6);
+    o += building(1480, 600);
+    const px = 260 + ease(t/3.6)*1060;
+    o += person(px, 750, t, '#f4b740', true, t<3.6, 'tired');
+    o += clock(1700, 260, t);
+    const days = Math.min(45, Math.floor(t*12));
+    o += `<text x="1580" y="400" class="hand" font-size="44" fill="#e5484d">${days} days late</text>`;
+  } else {
+    // Scene B: automated - reminder envelopes fly out on schedule, person relaxes
+    const u = t-4;
+    o += writeOn('The automated way: reminders go out by themselves', 120, 140, 60, u/1.4, '#1f7a4d');
+    o += person(330, 750, t, '#3fb27f', false, false, 'calm');
+    // laptop
+    o += `<g><rect x="460" y="700" width="260" height="160" rx="10" fill="#2b2b2b"/><rect x="474" y="714" width="232" height="132" rx="4" fill="#fff"/>
+      <text x="590" y="770" text-anchor="middle" class="ui" font-size="22" font-weight="700" fill="#2b2b2b">Payment reminders</text>
+      <rect x="520" y="792" width="56" height="28" rx="14" fill="#3fb27f"/><circle cx="562" cy="806" r="11" fill="#fff"/>
+      <text x="600" y="814" class="ui" font-size="20" fill="#2b2b2b">ON</text>
+      <rect x="440" y="860" width="300" height="16" rx="6" fill="#2b2b2b"/></g>`;
+    o += building(1480, 600);
+    for (let k=0;k<3;k++){
+      const p = clamp((u - 0.4 - k*0.5)/1.2, 0, 1);
+      if (p<=0) continue;
+      const ex = 720 + ease(p)*800, ey = 760 - Math.sin(p*Math.PI)*260;
+      o += `<g transform="translate(${ex},${ey})" opacity="${p<1?1:0.0}"><rect x="-40" y="-26" width="80" height="52" rx="6" fill="#fff" stroke="#2b2b2b" stroke-width="5"/>
+        <path d="M -40 -26 L 0 6 L 40 -26" fill="none" stroke="#2b2b2b" stroke-width="5"/></g>`;
+    }
+    const paid = clamp((u-2.2)/0.6,0,1);
+    if (paid>0) o += `<g transform="translate(1595,520) scale(${0.6+0.4*paid})" opacity="${paid}"><rect x="-90" y="-38" width="180" height="76" rx="38" fill="#3fb27f"/>
+      <text x="0" y="14" text-anchor="middle" class="ui" font-size="40" font-weight="800" fill="#fff">PAID ✓</text></g>`;
+  }
+  S.innerHTML = o;
+};
+render(0);
+</script>
+</body></html>
