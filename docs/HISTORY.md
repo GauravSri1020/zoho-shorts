@@ -6,6 +6,20 @@ Is file ko har session ke end pe update karo, taaki agla chat yahin se shuru kar
 
 Gaurav jab bhi kuch bhi change karne bole: SABSE PEHLE backup - `backup-YYYY-MM-DD-<kya-badal-rahe-ho>` branch main se banao (aur agar video ka kaam hai to latest Short ka artifact download karo). Tabhi code chhuo. Kuch bigde to us branch se purana code wapas lo.
 
+## 13 Nov 2026 shaam - aaj ki pehli chat delete (kuch save nahi hua), #167 #168 scripts fix, long-video plan branch
+
+Gaurav: "aaj ki deleted history check kar, kahin save hai to uske hisaab se kaam kar; videos dekh ke schedule kar; long video ke liye calendar branch bana rahe the". Backup: backup-2026-11-13-before-fix-167-168.
+
+- Aaj ki pehli chat ka KUCH bhi GitHub pe nahi tha: 13 Nov ke sirf shorts-bot state commits, koi docs/sessions file nahi, koi calendar / long-video branch nahi, Flow mein 13 Nov ka koi project nahi. SEEKH: CLAUDE.md ka END OF CHAT rule (backup + docs/sessions handoff) har lambi chat ke beech mein bhi chalao, sirf end pe nahi.
+- Morning run ne 2 jobs banaye (waiting_for_clips): 20261113-0850-1 (#167, Yettel Hungary x Zoho CRM) aur 20261113-0852-2 (#168, SMEDAN x Zoho Books).
+- #167 fix: news asli (TheFastMode 10 Nov: Yettel = Zoho ka Hungary partner, CRM / Zoho One, consultancy + Hungarian support) par script "free bundled Zoho access" bol rahi thi (galat) + "in 5 Minutes" + Webforms path "Developer Space" (asli: Setup > Channels > Webforms, button New Form - real screenshot crm/webforms). Naya title "Auto-Capture and Route Website Leads in Zoho CRM"; teeno clip lines + prompts naye.
+- #168 fix: SMEDAN x Zoho programme 28 Aug 2026 ka hai (legit.ng / Guardian NG), 9 Nov wala article sirf "call for applications" -> hook se "just launched" hataya: "SMEDAN is offering Zoho credits to 25,000 Nigerian MSMEs...". Screens: books/recurring_invoices real screenshot hai hi nahi -> books/invoices_list (New Recurring Invoice); Reminders -> books/payment_reminders (Reminder - 1 toggle); Online Payments step se "instant customer payouts" + "40%" hataya. Sirf HOOK clip ka text badla.
+- Flow (main account, project "Nov 13 - 19:52"): pehla clip FAILED - "We noticed some unusual activity. Note that browser extensions that modify the page may cause issues." = Google ka anti-automation check. Claude ne dobara / ruk-ruk ke try NAHI kiya (bot-detection se bachna mana hai). Clips Gaurav khud banaye (6 prompts chat mein diye) aur issue ke upload link se daale. Agar clips nahi aaye to kal subah ka run (20 h baad) fallback se FACELESS bana dega.
+- Long videos: branch long-video-calendar, docs/LONG_VIDEO_PLAN.md (DRAFT): weekly deep-dive tutorial 8-12 min 16:9, Shanivaar 21:30 IST, pehle 4 topics (UAE e-invoicing 21 Nov, ZATCA 28 Nov, Books payments 5 Dec, CRM leads 12 Dec). Format / frequency Gaurav ne abhi confirm NAHI kiya. Code kuch nahi bana.
+- GitHub ka kaam is chat mein browser se hua (session ko repo attach nahi ho paya).
+
+Open / agla: (1) Gaurav #167 + #168 ke clips Flow mein banaye -> upload -> robot 15 Nov 07:30 / 21:30 slots. (2) Long-video format + din confirm -> phir code (writer / composer 16:9 / workflow task long).
+
 ## 12 Nov 2026 raat - UAE e-invoicing series (3 Shorts, haath se jobs) + channel audit
 
 Gaurav: "kal ke liye news dhoondh (US / Middle East), jo keywords search hote hain wahi pakdo, monetize karna hai". Backup: backup-2026-11-12-before-manual-einvoicing-jobs.
