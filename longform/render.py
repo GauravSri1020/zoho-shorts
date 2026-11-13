@@ -208,8 +208,13 @@ def mix(scenes, voice_dir, total, work):
     write_wav(Path(work) / "voice.wav", v)
     write_wav(Path(work) / "mix_raw.wav", v + bed + fx)
     out = Path(work) / "mix.wav"
-    subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-i", str(Path(work) / "mix_raw.wav"), "-af",
-                    "loudnorm=I=-14:TP=-1.5:LRA=11", "-ar", str(SR), "-ac", "2", str(out)], check=True)
+    raw = str(Path(work) / "mix_raw.wav")
+    m1 = subprocess.run(["ffmpeg", "-hide_banner", "-i", raw, "-af", "loudnorm=I=-14:TP=-1.5:LRA=11:print_format=json", "-f", "null", "-"],
+                        capture_output=True, text=True).stderr
+    j = json.loads(m1[m1.rindex("{"):m1.rindex("}") + 1])
+    af = (f"loudnorm=I=-14:TP=-1.5:LRA=11:measured_I={j['input_i']}:measured_TP={j['input_tp']}:measured_LRA={j['input_lra']}"
+          f":measured_thresh={j['input_thresh']}:offset={j['target_offset']}:linear=true")
+    subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-i", raw, "-af", af, "-ar", str(SR), "-ac", "2", str(out)], check=True)
     return out
 
 
@@ -234,13 +239,14 @@ def render_scenes(scenes, work, scale, fps, only=None):
             data = {k: v for k, v in s.items()}
             data["root"] = ROOT.as_uri()
             page.evaluate("d => window.setup(d)", data)
-            page.wait_for_timeout(250)
-            page.evaluate("() => Promise.all([...document.images].map(i => i.complete ? 1 : new Promise(r => i.onload = i.onerror = r)))")
+            page.wait_for_timeout(300)
+            page.evaluate("t => window.render(t)", 0)
+            page.wait_for_timeout(200)
             ff = subprocess.Popen(["ffmpeg", "-y", "-loglevel", "error", "-f", "image2pipe", "-framerate", str(fps), "-c:v", "mjpeg", "-i", "-",
                                    "-vf", f"scale={W}:{H}:flags=lanczos,format=yuv420p", "-c:v", "libx264", "-preset", "veryfast", "-crf", "19",
                                    "-r", str(fps), "-g", str(fps * 2), str(out) + ".tmp.mp4"], stdin=subprocess.PIPE)
             for i in range(s["frames"]):
-                page.evaluate("t => window.render(t)", i / fps)
+                page.evaluate("t => window.render(t)", i / fps)  # returns after 2 rAF
                 ff.stdin.write(page.screenshot(type="jpeg", quality=93))
             ff.stdin.close()
             ff.wait()

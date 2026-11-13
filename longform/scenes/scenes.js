@@ -17,7 +17,7 @@ function sHook(t) {
   let o = '';
   const a1 = cs(1), a2 = cs(2), a3 = cs(3);
   // 1) date + PDF by email crossed out
-  o += G(t, .1, a1 - .15, (() => {
+  o += G(t, .1, a1 - .45, (() => {
     let s = `<g transform="translate(560,520) scale(${eBack(P(t, .15, .7)) * 1.25})">${calendarPage(0, 0, 'JANUARY', '1', '2027', 1)}</g>`;
     const k = P(t, 1.2, 1.2);
     s += guy({x: 1180, y: 860, s: 1.3, t, pose: k < 1 ? 'carry' : 'present', walk: k < 1, color: C.teal, tie: C.navy, hold: k < 1 ? `<g transform="scale(.7)">${doc('PDF')}</g>` : ''});
@@ -28,7 +28,7 @@ function sHook(t) {
     return s;
   })());
   // 2) structured e-invoice through an ASP to the FTA
-  o += G(t, a1, a2 - .15, (() => {
+  o += G(t, a1, a2 - .45, (() => {
     let s = guy({x: 300, y: 860, s: 1.25, t, pose: 'present', color: C.teal, tie: C.navy});
     s += `<g transform="translate(960,640) scale(${eBack(P(t, a1 + .4, .6))})">${server(0, 0, '', C.sky, 1, P(t, a1, 20))}</g>`;
     s += text(960, 830, 'Accredited provider (ASP)', 36, {anchor: 'middle', op: eOut(P(t, a1 + .6, .5))});
@@ -41,7 +41,7 @@ function sHook(t) {
     return s;
   })());
   // 3) smaller business - later date, clock ticking
-  o += G(t, a2, a3 - .15, (() => {
+  o += G(t, a2, a3 - .45, (() => {
     let s = clock(620, 520, t, 2.4, 3);
     s += G(t, a2 + .5, null, pill(1300, 430, 'AED 50M+  →  1 Jan 2027', {anchor: 'middle', fill: C.coral, size: 40}));
     s += G(t, at(2, .3), null, pill(1300, 560, 'Under AED 50M  →  1 Jul 2027', {anchor: 'middle', fill: C.teal, size: 40}));
@@ -406,8 +406,9 @@ function sChapter(t) {
   const n = String(v.num).padStart(2, '0');
   let s = text(250, 640, n, 380, {w: 900, fill: 'none'}).replace('fill="none"', `fill="none" stroke="${C.teal}" stroke-width="6"`);
   s += text(850, 450, 'CHAPTER ' + v.num, 36, {w: 800, fill: C.amber, ls: 6});
-  s += text(330 + 520, 560, v.title, 86, {w: 850, fill: '#fff'});
-  s += `<rect x="850" y="610" width="${eOut(P(t, .6, .7)) * Math.min(900, tw(v.title, 86, 'Inter', 850))}" height="10" rx="5" fill="${C.amber}"/>`;
+  const fs = Math.min(86, 86 * 960 / tw(v.title, 86, 'Inter', 850));
+  s += text(850, 560, v.title, fs, {w: 850, fill: '#fff'});
+  s += `<rect x="850" y="610" width="${eOut(P(t, .6, .7)) * Math.min(960, tw(v.title, fs, 'Inter', 850))}" height="10" rx="5" fill="${C.amber}"/>`;
   const N = (SC.chapters || []).length;
   for (let i = 0; i < N; i++) s += `<rect x="${850 + i * 70}" y="700" width="56" height="10" rx="5" fill="${i + 1 === v.num ? C.teal : 'rgba(255,255,255,.25)'}"/>`;
   o += `<g opacity="${op}" transform="translate(${(1 - eOut(P(t, .35, .6))) * 60},0)">${s}</g>`;
@@ -593,7 +594,7 @@ window.setup = function (data) {
   if (showChap) { $('chap').querySelector('b').textContent = String(SC.chapter).padStart(2, '0'); $('chap').querySelector('span').textContent = SC.chapters[SC.chapter - 1]; }
   const pr = $('prog'); pr.querySelectorAll('s').forEach(x => x.remove());
   (SC.chapterStarts || []).forEach(c => { const s = document.createElement('s'); s.style.left = (100 * c / SC.total) + '%'; pr.appendChild(s); });
-  return true;
+  return Promise.all([...document.images].map(i => i.decode().catch(() => 0))).then(() => true);
 };
 window.render = function (t) {
   _clipId = 0;
@@ -614,5 +615,6 @@ window.render = function (t) {
   for (const x of SC.captions) { if (t >= x.s - .05 && t < x.e + .25) c = x; }
   if (c) { if (cap.textContent !== c.text) cap.textContent = c.text; cap.style.opacity = 1; cap.className = SC.type === 'CHAPTER' ? 'dark' : ''; }
   else cap.style.opacity = 0;
-  return true;
+  // wait two animation frames so the compositor has fully painted before the screenshot (avoids half-painted frames)
+  return new Promise(r => requestAnimationFrame(() => requestAnimationFrame(() => r(true))));
 };
