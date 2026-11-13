@@ -1,0 +1,42 @@
+# Long-video sample render (branch long-videos). Manual only - no schedule, no YouTube upload (Gaurav reviews first).
+name: longform
+on:
+  workflow_dispatch:
+    inputs:
+      script:
+        description: "script JSON"
+        default: "docs/longform/scripts/uae-einvoicing.json"
+      scale:
+        description: "1 = 1080p, 1.3334 = 1440p, 2 = 4K"
+        default: "2"
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    timeout-minutes: 350
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.12"}
+      - name: Install
+        continue-on-error: true
+        run: |
+          sudo apt-get update || true
+          sudo apt-get install -y ffmpeg espeak-ng
+      - name: Python deps
+        run: |
+          pip install kokoro-onnx soundfile numpy pyyaml playwright
+          python -m playwright install --with-deps chromium
+      - name: Voice
+        run: python longform/voice.py "${{ inputs.script }}" out/voice
+      - name: Render
+        run: python -m longform.render "${{ inputs.script }}" --voice out/voice --out out/video --scale "${{ inputs.scale }}"
+      - name: QA
+        run: python -m longform.qa out/video/*.mp4 --voice out/video/voice.wav
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: longform-video
+          path: |
+            out/video/*.mp4
+            out/video/plan.json
+          retention-days: 14

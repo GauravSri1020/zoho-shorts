@@ -1,0 +1,584 @@
+{
+ "id": "uae-einvoicing",
+ "title": "UAE E-Invoicing in Zoho Books: Everything to Do Before 1 January 2027",
+ "voice": {
+  "engine": "kokoro",
+  "voice": "am_michael",
+  "speed": 1.0
+ },
+ "research": "docs/longform/research/uae-einvoicing.md",
+ "chapters": [
+  "What is changing",
+  "Who goes live when",
+  "What it costs if you miss it",
+  "Setting it up in Zoho Books",
+  "Your checklist"
+ ],
+ "description": "UAE e-invoicing starts on 1 January 2027 for businesses with revenue of AED 50 million or more, and on 1 July 2027 for smaller businesses. In this video: what changes (the 5-corner Peppol model), who goes live when, the penalties under Cabinet Decision 173 of 2026, and how to set up e-invoicing in Zoho Books step by step.\n\nChapters\n{chapters}\n\nSources (checked {date})\n- UAE Ministry of Finance, e-invoicing: https://mof.gov.ae/en/about-us/initiatives/einvoicing/\n- MoF list of accredited service providers: https://mof.gov.ae/en/about-us/initiatives/einvoicing/pre-approved-einvoicing-service-providers/\n- FTA notice on deadlines (25 Oct 2026): https://tax.gov.ae/en/media.centre/news/federal.tax.authority.calls.on.persons.subject.to.einvoicing.to.comply.wit.the.prescribed.legal.deadlines.and.avoid.administrative.penalties.aspx\n- Zoho Books UAE e-invoicing: https://www.zoho.com/ae/books/e-invoicing/\n\nThis is general information, not tax or legal advice. Rules can change - always check the latest MoF / FTA notices.\nVoice-over and animations were made with AI tools; facts were checked against the official sources above.\n\n#UAEeInvoicing #ZohoBooks #Peppol #UAEVAT #GSXAutomation",
+ "scenes": [
+  {
+   "id": "s01",
+   "type": "HOOK",
+   "chapter": 0,
+   "visual": {
+    "kind": "hook"
+   },
+   "lines": [
+    "On the first of January 2027, big businesses in the UAE can no longer just email a PDF invoice to their business customers.",
+    "From that day, every B to B invoice has to travel as a structured e-invoice, through an accredited provider, and the tax authority gets the data in near real time.",
+    "If your company is smaller, your date is later. But the clock has already started.",
+    "In the next few minutes, I'll show you what changes, who goes live when, what the fines are, and how to set it all up in Zoho Books."
+   ]
+  },
+  {
+   "id": "s02",
+   "type": "CHAPTER",
+   "chapter": 1,
+   "visual": {
+    "num": 1,
+    "title": "What is changing"
+   },
+   "lines": [
+    "Let's start with what is actually changing."
+   ]
+  },
+  {
+   "id": "s03",
+   "type": "CARTOON",
+   "chapter": 1,
+   "visual": {
+    "kind": "old_way"
+   },
+   "lines": [
+    "Today, most invoices work like this. Your accountant makes the invoice, saves it as a PDF, and emails it to the client.",
+    "The client types it into their own system. And the tax authority only sees the numbers much later, in your VAT return.",
+    "Under the new rules, a PDF, a Word file, a scan, or an email is not an e-invoice."
+   ]
+  },
+  {
+   "id": "s04",
+   "type": "CARTOON",
+   "chapter": 1,
+   "visual": {
+    "kind": "five_corner"
+   },
+   "lines": [
+    "Instead, the UAE uses what it calls a five corner model, built on the Peppol network.",
+    "Corner one is you, the supplier. Your invoice data goes to corner two, your accredited service provider, or A S P.",
+    "Your A S P checks the invoice and delivers it to corner three, your buyer's A S P, which passes it to corner four, the buyer.",
+    "At the same time, your A S P reports the tax data to corner five, the Federal Tax Authority.",
+    "So nobody retypes anything, and the F T A sees it in near real time."
+   ]
+  },
+  {
+   "id": "s05",
+   "type": "BOARD",
+   "chapter": 1,
+   "visual": {
+    "kind": "compare",
+    "title": "Which invoices are covered?",
+    "left": {
+     "title": "In scope",
+     "items": [
+      "B2B  business to business",
+      "B2G  business to government",
+      "G2B and G2G",
+      "e-credit notes"
+     ]
+    },
+    "right": {
+     "title": "Out of scope",
+     "items": [
+      "B2C  sales to consumers",
+      "Airline passenger tickets",
+      "A few other special cases"
+     ]
+    },
+    "cues": [
+     [
+      0,
+      "L0",
+      "L1"
+     ],
+     [
+      1,
+      "L2"
+     ],
+     [
+      2,
+      "R0",
+      "R1",
+      "R2"
+     ],
+     [
+      3,
+      "L3"
+     ]
+    ]
+   },
+   "lines": [
+    "So which invoices are covered? Business to business, and business to government.",
+    "Government to business, and government to government, are covered too.",
+    "Sales to ordinary consumers, B to C, are out of scope, along with a few special cases like airline passenger tickets.",
+    "And e-credit notes go through the same system as your invoices."
+   ]
+  },
+  {
+   "id": "s06",
+   "type": "CHAPTER",
+   "chapter": 2,
+   "visual": {
+    "num": 2,
+    "title": "Who goes live when"
+   },
+   "lines": [
+    "Now, the most important part. Who goes live when?"
+   ]
+  },
+  {
+   "id": "s07",
+   "type": "BOARD",
+   "chapter": 2,
+   "visual": {
+    "kind": "timeline",
+    "title": "UAE e-invoicing timeline",
+    "rows": [
+     {
+      "who": "Pilot + voluntary",
+      "steps": [
+       [
+        "1 Jul 2026",
+        "System opens"
+       ]
+      ],
+      "color": "sky"
+     },
+     {
+      "who": "Revenue AED 50M+",
+      "steps": [
+       [
+        "30 Oct 2026",
+        "Appoint ASP"
+       ],
+       [
+        "1 Jan 2027",
+        "GO LIVE"
+       ]
+      ],
+      "color": "coral"
+     },
+     {
+      "who": "Revenue under AED 50M",
+      "steps": [
+       [
+        "31 Mar 2027",
+        "Appoint ASP"
+       ],
+       [
+        "1 Jul 2027",
+        "GO LIVE"
+       ]
+      ],
+      "color": "teal"
+     },
+     {
+      "who": "Government entities",
+      "steps": [
+       [
+        "31 Mar 2027",
+        "Appoint ASP"
+       ],
+       [
+        "1 Oct 2027",
+        "GO LIVE"
+       ]
+      ],
+      "color": "amber"
+     }
+    ]
+   },
+   "lines": [
+    "The system opened for a pilot, and for voluntary use, on the first of July 2026.",
+    "If your annual revenue is fifty million dirhams or more, you had to appoint your A S P by the thirtieth of October 2026. And you go live on the first of January 2027.",
+    "If your revenue is under fifty million dirhams, appoint your A S P by the thirty first of March 2027, and go live on the first of July 2027.",
+    "Government entities also appoint by the thirty first of March 2027, and go live on the first of October 2027."
+   ]
+  },
+  {
+   "id": "s08",
+   "type": "CARTOON",
+   "chapter": 2,
+   "visual": {
+    "kind": "fourteen_days"
+   },
+   "lines": [
+    "One more date matters every single day after you go live.",
+    "Each e-invoice and e-credit note has to be issued and sent within fourteen business days of the transaction.",
+    "So a pile of invoices waiting for month end is no longer a safe habit."
+   ]
+  },
+  {
+   "id": "s09",
+   "type": "CHAPTER",
+   "chapter": 3,
+   "visual": {
+    "num": 3,
+    "title": "What it costs if you miss it"
+   },
+   "lines": [
+    "So what happens if you miss these dates?"
+   ]
+  },
+  {
+   "id": "s10",
+   "type": "CARTOON",
+   "chapter": 3,
+   "visual": {
+    "kind": "penalty"
+   },
+   "lines": [
+    "The fines are set by Cabinet Decision 173 of 2026.",
+    "If you have no e-invoicing system, or no A S P, when you should, the fine is five thousand dirhams for every month, capped at fifty thousand dirhams in twelve months.",
+    "Every e-invoice you fail to issue or send costs one hundred dirhams, up to five thousand dirhams a month. The same applies to e-credit notes.",
+    "Small amounts per invoice, but for a busy business they add up fast."
+   ]
+  },
+  {
+   "id": "s11",
+   "type": "CHAPTER",
+   "chapter": 4,
+   "visual": {
+    "num": 4,
+    "title": "Setting it up in Zoho Books"
+   },
+   "lines": [
+    "Now let's set it up in Zoho Books."
+   ]
+  },
+  {
+   "id": "s12",
+   "type": "BOARD",
+   "chapter": 4,
+   "visual": {
+    "kind": "badge",
+    "name": "Zoho Software Trading LLC",
+    "label": "UAE Ministry of Finance - list of accredited e-invoicing service providers"
+   },
+   "lines": [
+    "First, some good news if you already use Zoho Books.",
+    "Zoho is on the Ministry of Finance list of accredited e-invoicing service providers, as Zoho Software Trading L L C.",
+    "So Zoho can be your A S P, and the invoices you already make in Books can go out over Peppol."
+   ]
+  },
+  {
+   "id": "s13",
+   "type": "PODCAST",
+   "chapter": 4,
+   "visual": {
+    "pose": "point_up",
+    "path": [
+     "Settings",
+     "Taxes & Compliance",
+     "E-Invoicing"
+    ],
+    "actions": [
+     {
+      "cue": 0,
+      "screen": "books/invoices_list",
+      "target": "Settings gear",
+      "zoom": 1.9
+     },
+     {
+      "cue": 1,
+      "screen": "books/settings_home",
+      "box": [
+       371,
+       405,
+       232,
+       40
+      ],
+      "zoom": 1.7
+     },
+     {
+      "cue": 2,
+      "panel": {
+       "title": "E-Invoicing: check these match the FTA",
+       "items": [
+        "Business name",
+        "TRN and TIN",
+        "Address",
+        "FTA-registered email"
+       ]
+      }
+     }
+    ]
+   },
+   "lines": [
+    "In Zoho Books, click the gear icon to open Settings.",
+    "Under Taxes and Compliance, open E-Invoicing.",
+    "Check that your business name, your T R N and T I N, and your address match what the F T A has. And use the email that is registered with the F T A."
+   ]
+  },
+  {
+   "id": "s14",
+   "type": "BOARD",
+   "chapter": 4,
+   "visual": {
+    "kind": "flow",
+    "title": "Connect Zoho as your ASP",
+    "steps": [
+     [
+      "EmaraTax",
+      "Open the E-Invoicing service"
+     ],
+     [
+      "Choose ASP",
+      "Zoho Software Trading LLC"
+     ],
+     [
+      "Submit",
+      "the declaration"
+     ],
+     [
+      "Zoho Books",
+      "Verify & Complete Setup"
+     ]
+    ],
+    "cues": [
+     [
+      0,
+      0,
+      1
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      2,
+      3
+     ]
+    ]
+   },
+   "lines": [
+    "Next, sign in to Emara Tax, open the E-Invoicing service, and choose Zoho Software Trading L L C as your service provider.",
+    "Submit the declaration there.",
+    "Then come back to Zoho Books and click Verify and Complete Setup. When the connection shows as active, you're done with the setup."
+   ]
+  },
+  {
+   "id": "s15",
+   "type": "BOARD",
+   "chapter": 4,
+   "visual": {
+    "kind": "formula"
+   },
+   "lines": [
+    "A quick note on your Peppol I D, because it confuses a lot of people.",
+    "It is zero two three five, followed by your ten digit T I N. And your T I N is simply the first ten digits of your fifteen digit T R N.",
+    "Your A S P creates this I D for you. Your job is to keep your T R N correct everywhere."
+   ]
+  },
+  {
+   "id": "s16",
+   "type": "BOARD",
+   "chapter": 4,
+   "visual": {
+    "kind": "record",
+    "customer": {
+     "title": "Customer  ›  Other Details",
+     "fields": [
+      "TIN Number",
+      "Legal Name",
+      "Electronic Address",
+      "PEPPOL Status"
+     ]
+    },
+    "item": {
+     "title": "Item",
+     "fields": [
+      "Goods or Service",
+      "Unit"
+     ]
+    }
+   },
+   "lines": [
+    "Now clean up your customers. Open each business customer, and go to the Other Details tab.",
+    "Fill in the T I N, the legal name, and the electronic address, and check the Peppol status.",
+    "Then do the basics for your items too: mark each one as goods or service, and set the unit.",
+    "Clean data now means fewer failed e-invoices later."
+   ]
+  },
+  {
+   "id": "s17",
+   "type": "PODCAST",
+   "chapter": 4,
+   "visual": {
+    "pose": "open_hands",
+    "path": [
+     "Sales",
+     "Invoices",
+     "+ New"
+    ],
+    "actions": [
+     {
+      "cue": 0,
+      "screen": "books/invoices_list",
+      "target": "Invoices (sidebar)",
+      "zoom": 1.8
+     },
+     {
+      "cue": 0,
+      "at": 0.62,
+      "target": "New",
+      "zoom": 1.9
+     },
+     {
+      "cue": 1,
+      "panel": {
+       "title": "New Invoice",
+       "items": [
+        "Customer",
+        "Items",
+        "Tax treatment"
+       ]
+      }
+     },
+     {
+      "cue": 2,
+      "send": true
+     }
+    ]
+   },
+   "lines": [
+    "Creating an e-invoice feels just like before. Go to Sales, then Invoices, and click New.",
+    "Pick the customer, add your items, and check the tax treatment.",
+    "When you send it, Zoho Books pushes it over Peppol, with Zoho acting as your A S P."
+   ]
+  },
+  {
+   "id": "s18",
+   "type": "PODCAST",
+   "chapter": 4,
+   "visual": {
+    "pose": "point_you",
+    "path": [
+     "Invoice",
+     "E-Invoice status"
+    ],
+    "actions": [
+     {
+      "cue": 0,
+      "screen": "books/invoices_list",
+      "target": "All Invoices view",
+      "zoom": 1.4
+     },
+     {
+      "cue": 0,
+      "at": 0.4,
+      "status": [
+       "Yet To Be Pushed",
+       "Push Initiated",
+       "Pushed",
+       "Failed"
+      ]
+     }
+    ]
+   },
+   "lines": [
+    "Every invoice then shows an e-invoice status, separate from draft or sent.",
+    "Yet to be pushed. Push initiated. And then pushed, with a unique U U I D. If it says failed, open it, fix the error, and push it again.",
+    "Once it's pushed, the invoice is locked, so corrections go through a credit note."
+   ]
+  },
+  {
+   "id": "s19",
+   "type": "PODCAST",
+   "chapter": 4,
+   "visual": {
+    "pose": "wow",
+    "path": [
+     "Purchases",
+     "Bills"
+    ],
+    "actions": [
+     {
+      "cue": 0,
+      "screen": "books/bills_list",
+      "target": "Bills (sidebar)",
+      "zoom": 1.8
+     },
+     {
+      "cue": 1,
+      "inbox": true
+     }
+    ]
+   },
+   "lines": [
+    "It works the other way too. E-invoices your suppliers send you arrive in Purchases, under Bills, as drafts.",
+    "So you review them, instead of typing supplier invoices in by hand."
+   ]
+  },
+  {
+   "id": "s20",
+   "type": "CHAPTER",
+   "chapter": 5,
+   "visual": {
+    "num": 5,
+    "title": "Your checklist"
+   },
+   "lines": [
+    "Finally, here's your checklist for the next few weeks."
+   ]
+  },
+  {
+   "id": "s21",
+   "type": "BOARD",
+   "chapter": 5,
+   "visual": {
+    "kind": "checklist",
+    "title": "Before your go-live date",
+    "items": [
+     "Know your revenue band: Jan or Jul 2027",
+     "Appoint your ASP in EmaraTax",
+     "TIN ready, customer TRNs + legal names right",
+     "Items and units cleaned up",
+     "Test: sale, export, credit note, supplier bill",
+     "Keep your ASP updated when details change"
+    ]
+   },
+   "lines": [
+    "One. Know your revenue band, so you know whether your date is January or July 2027.",
+    "Two. Appoint your A S P in Emara Tax. With Zoho Books, that means choosing Zoho Software Trading L L C.",
+    "Three. Make sure you have a T I N, and that every business customer has the right T R N and legal name.",
+    "Four. Clean up your items and units.",
+    "Five. Test the whole flow before you go live: a normal sale, an export, a credit note, and receiving a supplier invoice.",
+    "Six. Keep your A S P updated whenever your registration details change, because late updates carry their own fine."
+   ]
+  },
+  {
+   "id": "s22",
+   "type": "CARTOON",
+   "chapter": 5,
+   "visual": {
+    "kind": "celebrate"
+   },
+   "lines": [
+    "Do these six things, and the deadline becomes just another date in your calendar."
+   ]
+  },
+  {
+   "id": "s23",
+   "type": "OUTRO",
+   "chapter": 5,
+   "visual": {
+    "kind": "outro",
+    "next": "ZATCA Phase 2 in Zoho Books"
+   },
+   "lines": [
+    "If this helped, subscribe to G S X Automation. Next up on the channel: Saudi Arabia's ZATCA Phase 2 in Zoho Books.",
+    "Rules can still change, so always check the latest notices from the Ministry of Finance and the F T A. See you in the next one."
+   ]
+  }
+ ]
+}
