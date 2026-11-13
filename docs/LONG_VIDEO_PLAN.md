@@ -1,6 +1,6 @@
 # Long videos - plan v2 (Gaurav ne 13 Nov raat approve kiya)
 
-Branch: `long-video-calendar` (Shorts pipeline `main` pe alag chalta rahega - is branch se Shorts ka ek bhi file nahi chhoona).
+Branch: `long-videos` (Shorts pipeline `main` pe alag chalta rahega - is branch se Shorts ka ek bhi file nahi chhoona).
 Goal: channel MONETIZE - long videos se watch hours. Roz 1 long video (8-10 min, 16:9).
 
 ## Gaurav ke faisle (13 Nov 21:15-21:30 IST)
