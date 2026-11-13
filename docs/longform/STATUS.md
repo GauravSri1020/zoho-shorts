@@ -3,7 +3,7 @@
 SAMPLE: DONE (13/14 Nov 2026 night run) - waiting for Gaurav's review. NOT uploaded to YouTube.
 
 ## Sample 1: "UAE E-Invoicing in Zoho Books: Everything to Do Before 1 January 2027"
-- 7 min 36 s, 16:9, **2560x1440 (1440p)** 30 fps, H.264 + AAC, loudness -14 LUFS. 4K was not rendered tonight: this 2-core box
+- 7 min 36 s, 16:9, **2560x1440 (1440p)** 30 fps, H.264 + AAC, loudness -15.1 LUFS (QA window -16.5..-12.5), 54.8 MB. 4K was not rendered tonight: this 2-core box
   renders ~10 s of video per minute at 1440p (4K would be ~2.5 h + encode). The workflow `longform.yml` (input scale = 2) can render 4K on GitHub.
 - Preview file: branch `longform-previews` -> `previews/uae-einvoicing-1440p.mp4` (+ contact sheet).
 - QA (longform/qa.py): no black frames, no dead air > 1.2 s, loudness OK; glitch check (longform/glitch.py) for half-painted frames.
