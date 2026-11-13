@@ -6,6 +6,16 @@ Is file ko har session ke end pe update karo, taaki agla chat yahin se shuru kar
 
 Gaurav jab bhi kuch bhi change karne bole: SABSE PEHLE backup - `backup-YYYY-MM-DD-<kya-badal-rahe-ho>` branch main se banao (aur agar video ka kaam hai to latest Short ka artifact download karo). Tabhi code chhuo. Kuch bigde to us branch se purana code wapas lo.
 
+## 13/14 Nov 2026 raat (scheduled run) - pehli LONG video ka sample (branch long-videos)
+
+Gaurav so rahe the; scheduled run ne bina browser ke kiya. Backup: `backup-2026-11-14-before-longform-build`. main / Shorts pipeline chhuye NAHI. (13 Nov shaam wala section main branch ki HISTORY mein hai.)
+- Research (docs/longform/research/uae-einvoicing.md, har number ka source): BADLAAV - AED 50M+ ka ASP deadline ab **30 Oct 2026** (MD 66/2026, pehle 31 Jul), go-live 1 Jan 2027; <50M: ASP 31 Mar 2027, live 1 Jul 2027; govt live 1 Oct 2027. Penalties ab **Cabinet Decision 173/2026** (106/2025 ki jagah): AED 5,000/maheena (cap AED 50,000 / 12 maheene), AED 100 / e-invoice (max 5,000/maheena). "System failure 2 din" rule hata. Zoho Software Trading LLC = MoF accredited ASP list pe. Har e-invoice 14 business days mein.
+- Tools licence (docs/longform/TOOLS.md): voice abhi Kokoro (Apache) am_michael; clone baad mein Chatterbox / OpenVoice V2 (MIT); XTTS-v2 / F5 nahi. Lip-sync: koi licence-OK CPU wala nahi (Wav2Lip / LatentSync / LivePortrait = InsightFace non-commercial) -> kone mein photo + mic + breathing, nakli honth NAHI.
+- Code longform/: voice.py, render.py (HTML/SVG scenes -> Playwright -> ffmpeg, captions, music + sfx, 2-pass loudnorm), scenes/ (HOOK, CHAPTER, CARTOON geometric banda, BOARD, PODCAST, OUTRO), qa.py, glitch.py, preview.py; fonts Inter / Kalam / Caveat (OFL); .github/workflows/longform.yml (sirf manual).
+- Sample: 7:36, 1440p (2-core box pe 4K ~3 h lagta), QA pass. Preview branch `longform-previews`. YouTube pe kuch NAHI gaya.
+- SEEKH: Chromium kabhi-kabhi aadha-paint frame deta hai -> render() 2 requestAnimationFrame ke baad screenshot + glitch.py check.
+- Open: docs/longform/STATUS.md (Gaurav se: review, awaaz ka sample, reference link, UAE demo org, Flow podcast clips).
+
 ## 12 Nov 2026 raat - UAE e-invoicing series (3 Shorts, haath se jobs) + channel audit
 
 Gaurav: "kal ke liye news dhoondh (US / Middle East), jo keywords search hote hain wahi pakdo, monetize karna hai". Backup: backup-2026-11-12-before-manual-einvoicing-jobs.
