@@ -149,4 +149,20 @@ Screen: books/bills_list | path: Purchases > Bills | corner: wow
 
 ## YouTube description (draft)
 
+```
+UAE e-invoicing starts on 1 January 2027 for businesses with revenue of AED 50 million or more, and on 1 July 2027 for smaller businesses. In this video: what changes (the 5-corner Peppol model), who goes live when, the penalties under Cabinet Decision 173 of 2026, and how to set up e-invoicing in Zoho Books step by step.
 
+Chapters
+{chapters}
+
+Sources (checked {date})
+- UAE Ministry of Finance, e-invoicing: https://mof.gov.ae/en/about-us/initiatives/einvoicing/
+- MoF list of accredited service providers: https://mof.gov.ae/en/about-us/initiatives/einvoicing/pre-approved-einvoicing-service-providers/
+- FTA notice on deadlines (25 Oct 2026): https://tax.gov.ae/en/media.centre/news/federal.tax.authority.calls.on.persons.subject.to.einvoicing.to.comply.wit.the.prescribed.legal.deadlines.and.avoid.administrative.penalties.aspx
+- Zoho Books UAE e-invoicing: https://www.zoho.com/ae/books/e-invoicing/
+
+This is general information, not tax or legal advice. Rules can change - always check the latest MoF / FTA notices.
+Voice-over and animations were made with AI tools; facts were checked against the official sources above.
+
+#UAEeInvoicing #ZohoBooks #Peppol #UAEVAT #GSXAutomation
+```
