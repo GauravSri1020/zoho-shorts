@@ -4,26 +4,26 @@
  "status": "waiting_for_clips",
  "upload": true,
  "created": "2026-11-13T08:52:20",
- "title": "Automate Bundled Zoho CRM Lead Intake in 5 Minutes #Shorts",
- "description": "Quickly turn telco-bundled Zoho CRM access into an automated lead generation engine using webforms and assignment rules.\n\n1. Navigate to Setup › Developer Space › Webforms in Zoho CRM to generate your lead intake form\n2. Go to Setup › Automation › Assignment Rules to automatically route leads based on sales territory\n3. Enable real-time email notifications for sales reps upon lead creation\n\nAI + Zoho automations every day - follow @GSXAutomation\n\nWhat inspired this: https://news.google.com/rss/articles/CBMilgFBVV95cUxQNWk5ekp4ODFHWHNGZ0d4Rzd1Nmx4NmxIMFZrZ2F3U0VDX1NYSkRXbzVoVnhHS080ZzItaHJUUEpEMW1NVWZZZmFfZFJocGtrTGsxdnhHZ0UxUmswRXlpMUhadjlab29wM05WZ0lQemh2N2V3Slc0VHpGalRYYUdKZGJ4ZjM2SGlkdWVjY28zUnk5dWhMOGc?oc=5\n\nThis video uses an AI-generated presenter and voice.\nIndependent channel. Not affiliated with or endorsed by Zoho Corporation. Zoho is a trademark of Zoho Corporation.\n\n#Shorts #Zoho #AIAutomation #ZohoCRM #AIAgents",
+ "title": "Auto-Capture and Route Website Leads in Zoho CRM #Shorts",
+ "description": "Yettel Hungary now offers Zoho CRM and Zoho One to businesses. Here is how to stop typing website leads in by hand: a native Zoho CRM webform plus assignment and workflow rules.\n\n1. Open Setup › Channels › Webforms in Zoho CRM and click New Form to build your lead form\n2. Go to Setup › Automation › Assignment Rules to route new leads to the right rep by territory\n3. Go to Setup › Automation › Workflow Rules to email the rep the moment a lead is created\n\nAI + Zoho automations every day - follow @GSXAutomation\n\nWhat inspired this: https://news.google.com/rss/articles/CBMilgFBVV95cUxQNWk5ekp4ODFHWHNGZ0d4Rzd1Nmx4NmxIMFZrZ2F3U0VDX1NYSkRXbzVoVnhHS080ZzItaHJUUEpEMW1NVWZZZmFfZFJocGtrTGsxdnhHZ0UxUmswRXlpMUhadjlab29wM05WZ0lQemh2N2V3Slc0VHpGalRYYUdKZGJ4ZjM2SGlkdWVjY28zUnk5dWhMOGc?oc=5\n\nThis video uses an AI-generated presenter and voice.\nIndependent channel. Not affiliated with or endorsed by Zoho Corporation. Zoho is a trademark of Zoho Corporation.\n\n#Shorts #Zoho #AIAutomation #ZohoCRM #AIAgents",
  "angle": {
   "story_index": 2,
   "pillar": "trending",
   "region": "europe",
   "product": "Zoho CRM",
   "app": "crm",
-  "problem": "Telecom business subscribers receiving bundled Zoho platform access don't know how to quickly automate their lead intake.",
+  "problem": "Businesses moving onto Zoho CRM (e.g. via Yettel Hungary, a new Zoho partner) still copy website inquiries in by hand.",
   "fix_type": "native",
   "solution": "Configure web-to-lead forms and automated assignment rules in Zoho CRM to convert inbound web traffic instantly.",
   "steps": [
-   "Navigate to Setup > Developer Space > Webforms in Zoho CRM to generate your lead intake form",
-   "Go to Setup > Automation > Assignment Rules to automatically route leads based on sales territory",
-   "Enable real-time email notifications for sales reps upon lead creation"
+   "Open Setup > Channels > Webforms in Zoho CRM and click New Form to build your lead form",
+   "Go to Setup > Automation > Assignment Rules to route new leads to the right rep by territory",
+   "Go to Setup > Automation > Workflow Rules to email the rep the moment a lead is created"
   ],
   "api": null,
-  "result": "Instant automated lead routing without manual data entry for new Zoho users",
-  "wow": "Turn telco-bundled Zoho access into an automated sales pipeline in under 5 minutes.",
-  "hook": "Yettel Hungary launched bundled Zoho platform access - here is how to set it up!"
+  "result": "Every website lead lands in Zoho CRM, reaches the right rep and triggers an alert, with no manual data entry",
+  "wow": "Website leads routed to the right rep automatically, with no code.",
+  "hook": "Yettel Hungary now sells Zoho CRM to businesses - here is the first automation to set up."
  },
  "story": {
   "title": "Yettel Hungary launches integrated Zoho platform",
@@ -39,55 +39,55 @@
   "facts_checked": true
  },
  "script": {
-  "title": "Automate Bundled Zoho CRM Lead Intake in 5 Minutes",
-  "hook_text": "Yettel Bundled Zoho Setup",
-  "thumb_text": "Bundled *Zoho CRM* Setup",
+  "title": "Auto-Capture and Route Website Leads in Zoho CRM",
+  "hook_text": "Yettel Now Sells Zoho CRM",
+  "thumb_text": "*Web Leads* on Autopilot",
   "app_label": "Zoho CRM Automation",
   "lines": [
    {
     "beat": "HOOK",
-    "say": "Yettel Hungary just launched bundled Zoho platform access, but are you still entering website leads manually?",
-    "tts": "Yettel Hungary just launched bundled Zoho platform access, but are you still entering website leads manually?",
-    "card": "Manual Lead Intake Wastes Time",
+    "say": "Yettel Hungary now sells Zoho CRM to businesses. But are you still typing website leads in by hand?",
+    "tts": "Yettel Hungary now sells Zoho CRM to businesses. But are you still typing website leads in by hand?",
+    "card": "Typing Leads In By Hand?",
     "screen": null
    },
    {
     "beat": "PROBLEM",
-    "say": "Many business subscribers get free bundled Zoho access, yet waste hours copying web inquiries into spreadsheets.",
-    "tts": "Many business subscribers get free bundled Zoho access, yet waste hours copying web inquiries into spreadsheets.",
-    "card": "Telco Bundles Unused",
+    "say": "Most teams still copy web inquiries into spreadsheets, and every slow reply loses a lead.",
+    "tts": "Most teams still copy web inquiries into spreadsheets, and every slow reply loses a lead.",
+    "card": "Slow Replies Lose Leads",
     "screen": null
    },
    {
     "beat": "FIX",
-    "say": "You can fix this inside Zoho CRM by setting up native webforms with automated assignment rules.",
-    "tts": "You can fix this inside Zoho CRM by setting up native webforms with automated assignment rules.",
-    "card": "Setup > Webforms & Rules",
+    "say": "Fix it inside Zoho CRM with a native webform plus assignment rules.",
+    "tts": "Fix it inside Zoho CRM with a native webform plus assignment rules.",
+    "card": "Webforms + Assignment Rules",
     "screen": {
      "app": "crm",
      "view": "settings",
      "real": "crm/webforms",
-     "click": "Create Webform",
-     "tip": "Setup native lead capture"
+     "click": "New Form",
+     "tip": "Native lead capture form"
     }
    },
    {
     "beat": "STEP 1",
-    "say": "First, open Setup in Zoho CRM, navigate to Developer Space, click Webforms, and hit Create Webform.",
-    "tts": "First, open Setup in Zoho CRM, navigate to Developer Space, click Webforms, and hit Create Webform.",
-    "card": "Setup > Developer Space > Webforms",
+    "say": "First, open Setup, go to Channels, click Webforms, and hit New Form to build your lead form.",
+    "tts": "First, open Setup, go to Channels, click Webforms, and hit New Form to build your lead form.",
+    "card": "Setup > Channels > Webforms",
     "screen": {
      "app": "crm",
      "view": "settings",
      "real": "crm/webforms",
-     "click": "Create Webform",
-     "tip": "Build web intake form"
+     "click": "New Form",
+     "tip": "Build your lead form"
     }
    },
    {
     "beat": "STEP 2",
-    "say": "Second, head to Setup, click Assignment Rules under Automation, and create rules to route incoming leads by territory.",
-    "tts": "Second, head to Setup, click Assignment Rules under Automation, and create rules to route incoming leads by territory.",
+    "say": "Second, in Setup under Automation, open Assignment Rules and route new leads to the right rep by territory.",
+    "tts": "Second, in Setup under Automation, open Assignment Rules and route new leads to the right rep by territory.",
     "card": "Setup > Automation > Assignment Rules",
     "screen": {
      "app": "crm",
@@ -122,8 +122,8 @@
    },
    {
     "beat": "STEP 3",
-    "say": "Third, go to Workflow Rules in Automation to trigger real-time email notifications for sales reps upon lead creation.",
-    "tts": "Third, go to Workflow Rules in Automation to trigger real-time email notifications for sales reps upon lead creation.",
+    "say": "Third, open Workflow Rules under Automation and email the rep the moment a new lead is created.",
+    "tts": "Third, open Workflow Rules under Automation and email the rep the moment a new lead is created.",
     "card": "Setup > Automation > Workflow Rules",
     "screen": {
      "app": "crm",
@@ -135,9 +135,9 @@
    },
    {
     "beat": "STEP 4",
-    "say": "Finally, embed the generated webform code into your site and test submitting a test lead directly.",
-    "tts": "Finally, embed the generated webform code into your site and test submitting a test lead directly.",
-    "card": "Test Inbound Submission",
+    "say": "Finally, paste the form's embed code on your website and submit one test lead.",
+    "tts": "Finally, paste the form's embed code on your website and submit one test lead.",
+    "card": "Embed Form + Test Lead",
     "screen": {
      "app": "crm",
      "view": "form",
@@ -167,20 +167,20 @@
    },
    {
     "beat": "RESULT",
-    "say": "Your bundled telco access is now a fully automated lead engine without writing complex custom code.",
-    "tts": "Your bundled telco access is now a fully automated lead engine without writing complex custom code.",
-    "card": "Automated Sales Pipeline Live",
+    "say": "Now every web lead lands in Zoho CRM and reaches the right rep instantly, with zero copy paste.",
+    "tts": "Now every web lead lands in Zoho CRM and reaches the right rep instantly, with zero copy paste.",
+    "card": "Every Lead Routed Automatically",
     "screen": null
    }
   ],
   "api": null,
   "code": null,
   "test_before_recording": [
-   "Verify your Zoho CRM setup has Webforms enabled under Developer Space",
-   "Ensure lead assignment rules match your active sales reps or territories",
-   "Test webform submission to verify real-time email alerts"
+   "Webforms are under Setup > Channels > Webforms (New Form)",
+   "Assignment rules match your active reps or territories",
+   "Submit a test lead and check the rep gets the email alert"
   ],
-  "description": "Quickly turn telco-bundled Zoho CRM access into an automated lead generation engine using webforms and assignment rules.",
+  "description": "Yettel Hungary now offers Zoho CRM and Zoho One to businesses. Here is how to stop typing website leads in by hand: a native Zoho CRM webform plus assignment and workflow rules.",
   "tags": [
    "Zoho CRM",
    "Yettel",
@@ -196,52 +196,52 @@
  "lines": [
   {
    "beat": "HOOK",
-   "say": "Yettel Hungary just launched bundled Zoho platform access, but are you still entering website leads manually?",
-   "tts": "Yettel Hungary just launched bundled Zoho platform access, but are you still entering website leads manually?",
-   "card": "Manual Lead Intake Wastes Time",
+   "say": "Yettel Hungary now sells Zoho CRM to businesses. But are you still typing website leads in by hand?",
+   "tts": "Yettel Hungary now sells Zoho CRM to businesses. But are you still typing website leads in by hand?",
+   "card": "Typing Leads In By Hand?",
    "screen": null,
    "face": true
   },
   {
    "beat": "PROBLEM",
-   "say": "Many business subscribers get free bundled Zoho access, yet waste hours copying web inquiries into spreadsheets.",
-   "tts": "Many business subscribers get free bundled Zoho access, yet waste hours copying web inquiries into spreadsheets.",
-   "card": "Telco Bundles Unused",
+   "say": "Most teams still copy web inquiries into spreadsheets, and every slow reply loses a lead.",
+   "tts": "Most teams still copy web inquiries into spreadsheets, and every slow reply loses a lead.",
+   "card": "Slow Replies Lose Leads",
    "screen": null,
    "face": true
   },
   {
    "beat": "FIX",
-   "say": "You can fix this inside Zoho CRM by setting up native webforms with automated assignment rules.",
-   "tts": "You can fix this inside Zoho CRM by setting up native webforms with automated assignment rules.",
-   "card": "Setup > Webforms & Rules",
+   "say": "Fix it inside Zoho CRM with a native webform plus assignment rules.",
+   "tts": "Fix it inside Zoho CRM with a native webform plus assignment rules.",
+   "card": "Webforms + Assignment Rules",
    "screen": {
     "app": "crm",
     "view": "settings",
     "real": "crm/webforms",
-    "click": "Create Webform",
-    "tip": "Setup native lead capture"
+    "click": "New Form",
+    "tip": "Native lead capture form"
    },
    "face": false
   },
   {
    "beat": "STEP 1",
-   "say": "First, open Setup in Zoho CRM, navigate to Developer Space, click Webforms, and hit Create Webform.",
-   "tts": "First, open Setup in Zoho CRM, navigate to Developer Space, click Webforms, and hit Create Webform.",
-   "card": "Setup > Developer Space > Webforms",
+   "say": "First, open Setup, go to Channels, click Webforms, and hit New Form to build your lead form.",
+   "tts": "First, open Setup, go to Channels, click Webforms, and hit New Form to build your lead form.",
+   "card": "Setup > Channels > Webforms",
    "screen": {
     "app": "crm",
     "view": "settings",
     "real": "crm/webforms",
-    "click": "Create Webform",
-    "tip": "Build web intake form"
+    "click": "New Form",
+    "tip": "Build your lead form"
    },
    "face": false
   },
   {
    "beat": "STEP 2",
-   "say": "Second, head to Setup, click Assignment Rules under Automation, and create rules to route incoming leads by territory.",
-   "tts": "Second, head to Setup, click Assignment Rules under Automation, and create rules to route incoming leads by territory.",
+   "say": "Second, in Setup under Automation, open Assignment Rules and route new leads to the right rep by territory.",
+   "tts": "Second, in Setup under Automation, open Assignment Rules and route new leads to the right rep by territory.",
    "card": "Setup > Automation > Assignment Rules",
    "screen": {
     "app": "crm",
@@ -277,8 +277,8 @@
   },
   {
    "beat": "STEP 3",
-   "say": "Third, go to Workflow Rules in Automation to trigger real-time email notifications for sales reps upon lead creation.",
-   "tts": "Third, go to Workflow Rules in Automation to trigger real-time email notifications for sales reps upon lead creation.",
+   "say": "Third, open Workflow Rules under Automation and email the rep the moment a new lead is created.",
+   "tts": "Third, open Workflow Rules under Automation and email the rep the moment a new lead is created.",
    "card": "Setup > Automation > Workflow Rules",
    "screen": {
     "app": "crm",
@@ -291,9 +291,9 @@
   },
   {
    "beat": "STEP 4",
-   "say": "Finally, embed the generated webform code into your site and test submitting a test lead directly.",
-   "tts": "Finally, embed the generated webform code into your site and test submitting a test lead directly.",
-   "card": "Test Inbound Submission",
+   "say": "Finally, paste the form's embed code on your website and submit one test lead.",
+   "tts": "Finally, paste the form's embed code on your website and submit one test lead.",
+   "card": "Embed Form + Test Lead",
    "screen": {
     "app": "crm",
     "view": "form",
@@ -324,37 +324,37 @@
   },
   {
    "beat": "RESULT",
-   "say": "Your bundled telco access is now a fully automated lead engine without writing complex custom code.",
-   "tts": "Your bundled telco access is now a fully automated lead engine without writing complex custom code.",
-   "card": "Automated Sales Pipeline Live",
+   "say": "Now every web lead lands in Zoho CRM and reaches the right rep instantly, with zero copy paste.",
+   "tts": "Now every web lead lands in Zoho CRM and reaches the right rep instantly, with zero copy paste.",
+   "card": "Every Lead Routed Automatically",
    "screen": null,
    "face": true
   }
  ],
  "clips": [
   {
-   "text": "Yettel Hungary just launched bundled Zoho platform access, but are you still entering website leads manually?",
+   "text": "Yettel Hungary now sells Zoho CRM to businesses. But are you still typing website leads in by hand?",
    "lines": [
     0
    ],
    "beat": "HOOK",
-   "prompt": "The man (my avatar) looks into the camera and talks to the viewer like a confident, friendly business tech explainer, smart and natural, not stiff; he leans one hand on a table or railing next to him, then straightens up and talks with a confident open gesture. Vertical 9:16 medium-wide shot from the knees up, camera about two metres away, his head in the upper third with space above it, both hands and all his gestures fully visible in the frame, static camera, sharp and well lit, wearing olive green henley t-shirt under an open dark blazer, on a modern glass footbridge between office buildings, city lights softly blurred behind him; in this whole video he has a sharp short boxed beard, a modern textured quiff, thin gold round-frame glasses - exactly the same in every shot of this video. His face, skin tone, height and body build stay exactly as in my avatar's reference photos - the same natural average build, never slimmer and never heavier. Clean professional business look: no tilak or any mark on his forehead, no necklace, mala, beads, thread or religious accessory, no earrings, no bracelets. He says, in clear natural English with a clear, neutral international accent, at a brisk, lively pace: \"Yettel Hungary just launched bundled Zoho platform access, but are you still entering website leads manually?\" His lips match every word. He starts speaking in the very first frame, with no pause before the first word, and stops right after the last word. Audio: only his voice - no music, no sound effects. No subtitles, no captions, no text on screen."
+   "prompt": "The man (my avatar) looks into the camera and talks to the viewer like a confident, friendly business tech explainer, smart and natural, not stiff; he leans one hand on a table or railing next to him, then straightens up and talks with a confident open gesture. Vertical 9:16 medium-wide shot from the knees up, camera about two metres away, his head in the upper third with space above it, both hands and all his gestures fully visible in the frame, static camera, sharp and well lit, wearing olive green henley t-shirt under an open dark blazer, on a modern glass footbridge between office buildings, city lights softly blurred behind him; in this whole video he has a sharp short boxed beard, a modern textured quiff, thin gold round-frame glasses - exactly the same in every shot of this video. His face, skin tone, height and body build stay exactly as in my avatar's reference photos - the same natural average build, never slimmer and never heavier. Clean professional business look: no tilak or any mark on his forehead, no necklace, mala, beads, thread or religious accessory, no earrings, no bracelets. He says, in clear natural English with a clear, neutral international accent, at a brisk, lively pace: \"Yettel Hungary now sells Zoho CRM to businesses. But are you still typing website leads in by hand?\" His lips match every word. He starts speaking in the very first frame, with no pause before the first word, and stops right after the last word. Audio: only his voice - no music, no sound effects. No subtitles, no captions, no text on screen."
   },
   {
-   "text": "Many business subscribers get free bundled Zoho access, yet waste hours copying web inquiries into spreadsheets.",
+   "text": "Most teams still copy web inquiries into spreadsheets, and every slow reply loses a lead.",
    "lines": [
     1
    ],
    "beat": "PROBLEM",
-   "prompt": "The man (my avatar) looks into the camera and talks to the viewer like a confident, friendly business tech explainer, smart and natural, not stiff; he rubs his forehead briefly, then drops his hand and talks with a tired, relatable expression. Vertical 9:16 medium-wide shot from the knees up, camera about two metres away, his head in the upper third with space above it, both hands and all his gestures fully visible in the frame, static camera, sharp and well lit, wearing olive green henley t-shirt under an open dark blazer, on a modern glass footbridge between office buildings, city lights softly blurred behind him; in this whole video he has a sharp short boxed beard, a modern textured quiff, thin gold round-frame glasses - exactly the same in every shot of this video. His face, skin tone, height and body build stay exactly as in my avatar's reference photos - the same natural average build, never slimmer and never heavier. Clean professional business look: no tilak or any mark on his forehead, no necklace, mala, beads, thread or religious accessory, no earrings, no bracelets. He says, in clear natural English with a clear, neutral international accent, at a brisk, lively pace: \"Many business subscribers get free bundled Zoho access, yet waste hours copying web inquiries into spreadsheets.\" His lips match every word. He starts speaking in the very first frame, with no pause before the first word, and stops right after the last word. Audio: only his voice - no music, no sound effects. No subtitles, no captions, no text on screen."
+   "prompt": "The man (my avatar) looks into the camera and talks to the viewer like a confident, friendly business tech explainer, smart and natural, not stiff; he rubs his forehead briefly, then drops his hand and talks with a tired, relatable expression. Vertical 9:16 medium-wide shot from the knees up, camera about two metres away, his head in the upper third with space above it, both hands and all his gestures fully visible in the frame, static camera, sharp and well lit, wearing olive green henley t-shirt under an open dark blazer, on a modern glass footbridge between office buildings, city lights softly blurred behind him; in this whole video he has a sharp short boxed beard, a modern textured quiff, thin gold round-frame glasses - exactly the same in every shot of this video. His face, skin tone, height and body build stay exactly as in my avatar's reference photos - the same natural average build, never slimmer and never heavier. Clean professional business look: no tilak or any mark on his forehead, no necklace, mala, beads, thread or religious accessory, no earrings, no bracelets. He says, in clear natural English with a clear, neutral international accent, at a brisk, lively pace: \"Most teams still copy web inquiries into spreadsheets, and every slow reply loses a lead.\" His lips match every word. He starts speaking in the very first frame, with no pause before the first word, and stops right after the last word. Audio: only his voice - no music, no sound effects. No subtitles, no captions, no text on screen."
   },
   {
-   "text": "Your bundled telco access is now a fully automated lead engine without writing complex custom code.",
+   "text": "Now every web lead lands in Zoho CRM and reaches the right rep instantly, with zero copy paste.",
    "lines": [
     7
    ],
    "beat": "RESULT",
-   "prompt": "The man (my avatar) looks into the camera and talks to the viewer like a confident, friendly business tech explainer, smart and natural, not stiff; he gives a short confident thumbs up near his chest and smiles. Vertical 9:16 medium-wide shot from the knees up, camera about two metres away, his head in the upper third with space above it, both hands and all his gestures fully visible in the frame, static camera, sharp and well lit, wearing olive green henley t-shirt under an open dark blazer, on a modern glass footbridge between office buildings, city lights softly blurred behind him; in this whole video he has a sharp short boxed beard, a modern textured quiff, thin gold round-frame glasses - exactly the same in every shot of this video. His face, skin tone, height and body build stay exactly as in my avatar's reference photos - the same natural average build, never slimmer and never heavier. Clean professional business look: no tilak or any mark on his forehead, no necklace, mala, beads, thread or religious accessory, no earrings, no bracelets. He says, in clear natural English with a clear, neutral international accent, at a brisk, lively pace: \"Your bundled telco access is now a fully automated lead engine without writing complex custom code.\" His lips match every word. He starts speaking in the very first frame, with no pause before the first word, and stops right after the last word. Audio: only his voice - no music, no sound effects. No subtitles, no captions, no text on screen."
+   "prompt": "The man (my avatar) looks into the camera and talks to the viewer like a confident, friendly business tech explainer, smart and natural, not stiff; he gives a short confident thumbs up near his chest and smiles. Vertical 9:16 medium-wide shot from the knees up, camera about two metres away, his head in the upper third with space above it, both hands and all his gestures fully visible in the frame, static camera, sharp and well lit, wearing olive green henley t-shirt under an open dark blazer, on a modern glass footbridge between office buildings, city lights softly blurred behind him; in this whole video he has a sharp short boxed beard, a modern textured quiff, thin gold round-frame glasses - exactly the same in every shot of this video. His face, skin tone, height and body build stay exactly as in my avatar's reference photos - the same natural average build, never slimmer and never heavier. Clean professional business look: no tilak or any mark on his forehead, no necklace, mala, beads, thread or religious accessory, no earrings, no bracelets. He says, in clear natural English with a clear, neutral international accent, at a brisk, lively pace: \"Now every web lead lands in Zoho CRM and reaches the right rep instantly, with zero copy paste.\" His lips match every word. He starts speaking in the very first frame, with no pause before the first word, and stops right after the last word. Audio: only his voice - no music, no sound effects. No subtitles, no captions, no text on screen."
   }
  ],
  "look": "wearing olive green henley t-shirt under an open dark blazer, on a modern glass footbridge between office buildings, city lights softly blurred behind him; in this whole video he has a sharp short boxed beard, a modern textured quiff, thin gold round-frame glasses - exactly the same in every shot of this video",
