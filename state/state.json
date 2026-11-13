@@ -1,5 +1,5 @@
 {
- "next_id": 64,
+ "next_id": 66,
  "covered_links": [
   "https://www.reddit.com/r/Zoho/comments/1wzd94y/sales_order_or_invoice/",
   "https://www.reddit.com/r/Zoho/comments/1wwjbbr/accounting_of_travel_agent/",
@@ -54,7 +54,9 @@
   "https://www.hotelogix.com/marketplace/product/zoho-books",
   "https://help.zoho.com/portal/en/community/topic/introducing-native-agents-configure-your-crm-with-natural-language",
   "https://news.google.com/rss/articles/CBMixgFBVV95cUxNb0I2RWhHWWp6U1h5djFfRkFTMHZzZnZqOHJNUnh4NC11UlhRLVM4SUxpQ0NMS2gyMlVIa2xmZHN1U1hyLWFxMXBsWGZxbF81Z3cwREdlYXNtdXFyWUJCZlZEaDBBUW9VdmpQUElpMWhFYmVkbG9udGpCVHVURDFkd0pWc2pQVGN3bjN6bm9vbTNSeHBsMWtJTUJPYVdxY2c1bGJOZzdMTXN0Z0dTV01DenpXWHNGNDhBZ2NBTE85N1RyVk1NVHfSAcsBQVVfeXFMT0YyOWsybHMzaDJxRHZqSHVxaGxZVzZDS0h3WVluMHNCcGpQV05xblNFenNFTXJ4ckN6dk1wWDh4dDZVMmt0UFI4X3luYUhCM3o3ZVp3VXhXTW5YUFNndF80eGFKOGVEYVZKNkRGQlRlQjFZcDJfN3ZNM1pncmkweWpGZEpSS3k1SXZiUFZmZkZVdGllYWFnSE1BLUJmeVIyVU0ydmdWU3Fib3RTQU1yYlZhSy1jcWFUUjlObTFRd29BU3NEX1QzTmNiMUU?oc=5",
-  "https://news.google.com/rss/articles/CBMivwFBVV95cUxPcGppX3hqR08xREJhbXNnQ09jcUZncUxzOEc2VERTZnRXOXRMUGE0akdmUlNMV1NGeTNBcFc3dlJUMmc1QjY5QTFlQ0lWRE5xcDJJZkNzNXRWOHIwenpBWVctM3VUT19iaUcyaEEyaU5TcW1lZi1GX3Q3NFJMc1lGbnpUZDk1VWUwR1RHSDliMUtOazVpcU5NTWE1UFVXdllYZE42V0ZSdkl3UFZzcElnUkd3NUhYN1NZM3BXb0N5VQ?oc=5"
+  "https://news.google.com/rss/articles/CBMivwFBVV95cUxPcGppX3hqR08xREJhbXNnQ09jcUZncUxzOEc2VERTZnRXOXRMUGE0akdmUlNMV1NGeTNBcFc3dlJUMmc1QjY5QTFlQ0lWRE5xcDJJZkNzNXRWOHIwenpBWVctM3VUT19iaUcyaEEyaU5TcW1lZi1GX3Q3NFJMc1lGbnpUZDk1VWUwR1RHSDliMUtOazVpcU5NTWE1UFVXdllYZE42V0ZSdkl3UFZzcElnUkd3NUhYN1NZM3BXb0N5VQ?oc=5",
+  "https://news.google.com/rss/articles/CBMilgFBVV95cUxQNWk5ekp4ODFHWHNGZ0d4Rzd1Nmx4NmxIMFZrZ2F3U0VDX1NYSkRXbzVoVnhHS080ZzItaHJUUEpEMW1NVWZZZmFfZFJocGtrTGsxdnhHZ0UxUmswRXlpMUhadjlab29wM05WZ0lQemh2N2V3Slc0VHpGalRYYUdKZGJ4ZjM2SGlkdWVjY28zUnk5dWhMOGc?oc=5",
+  "https://news.google.com/rss/articles/CBMiywFBVV95cUxNSjJic015bEplMWNiZ2g1MzlsLWl6UWxHQmN0aldlaVREaG1naXlkMElhREQzSWpRcHZFT19MU092MFBHeWNNRnlpZzd3bjY2ZW5oR0g1TEFySVNsdVh5TTdLMjVWbmE0VExNVGxNeVBZLWRPcXpMV2NMc2Vuc3VhN1RiUUlWM04zTkVfaWJOQnZHSUdpc2oxOHZzVjU4UnlaZEpkam5XMGo3b3pzSTJIMlBKd1didkR4QWxpUURDVWVhMjhadFBxQVlpRQ?oc=5"
  ],
  "problems": [
   "Zoho Books me online paid sales orders direct closed invoice me convert nahi hote.",
@@ -119,7 +121,9 @@
   "Most small hotels still retype every guest bill into accounting at night, and GST mistakes slip in.",
   "Setting up roles, permissions and sharing rules usually means clicking through dozens of settings screens.",
   "Growing companies pay double subscriptions for separate CRM, accounting, and quoting tools instead of unifying their stack.",
-  "Enterprise leadership teams wait days for BI analysts to build custom SQL reports across sales and financial data sources."
+  "Enterprise leadership teams wait days for BI analysts to build custom SQL reports across sales and financial data sources.",
+  "Telecom business subscribers receiving bundled Zoho platform access don't know how to quickly automate their lead intake.",
+  "MSMEs claiming digital software credits struggle to automate invoice creation and payment reminders."
  ],
  "scripts": {
   "S0001": {
@@ -681,6 +685,22 @@
    "engine": "flow",
    "job": "20261112-0917-4",
    "created": "2026-11-12T09:20:01"
+  },
+  "S0064": {
+   "problem": "Telecom business subscribers receiving bundled Zoho platform access don't know how to quickly automate their lead intake.",
+   "title": "Automate Bundled Zoho CRM Lead Intake in 5 Minutes #Shorts",
+   "pillar": "trending",
+   "engine": "flow",
+   "job": "20261113-0850-1",
+   "created": "2026-11-13T08:52:20"
+  },
+  "S0065": {
+   "problem": "MSMEs claiming digital software credits struggle to automate invoice creation and payment reminders.",
+   "title": "Automate Invoicing & Payment Reminders in Zoho Books #Shorts",
+   "pillar": "trending",
+   "engine": "flow",
+   "job": "20261113-0852-2",
+   "created": "2026-11-13T08:56:53"
   }
  },
  "slots": [
@@ -1040,9 +1060,9 @@
  "last_photo": "1_jacket.jpg",
  "photo_scenes": [],
  "photo_agent_error": "RuntimeError: image model unavailable: 404 NOT_FOUND. {'error': {'code': 404, 'm",
- "look_index": 56,
- "status_issue": 166,
- "status_line": "PIPELINE ideas=27 clips=0 editing=0 qa_failed=0 scheduled=3 published=47 total=50 today=2 next=2026-11-13T21:30",
+ "look_index": 58,
+ "status_issue": 169,
+ "status_line": "PIPELINE ideas=27 clips=2 editing=0 qa_failed=0 scheduled=3 published=47 total=50 today=2 next=2026-11-13T21:30",
  "rotation": {
   "claude_wealth": 21,
   "claude_wealth_industry": 16,
@@ -1067,23 +1087,29 @@
   "Hotelogix and Zoho Books Partner to Deliver a Connected Operations and Finance Platform for Hotels",
   "Introducing native agents: Configure your Zoho CRM with natural language",
   "How Optiven consolidated its technology stack and reduced software costs by 40% with Zoho One",
-  "Zoho Analytics targets nearly 20% annual growth courting enterprise clients"
+  "Zoho Analytics targets nearly 20% annual growth courting enterprise clients",
+  "Yettel Hungary launches integrated Zoho platform",
+  "Call for Applications: SMEDANx Zoho Digital Credits for 25,000 Nigerian MSMEs ( Up to ₦20 Billion )"
  ],
  "used_outfits": [
   "teal henley t-shirt under an open dark blazer",
   "light blue blazer over a crisp white shirt with no tie",
   "light blue oxford shirt with the sleeves neatly rolled up",
-  "light blue linen shirt with the top button open"
+  "light blue linen shirt with the top button open",
+  "olive green henley t-shirt under an open dark blazer",
+  "mustard blazer over a crisp white shirt with no tie"
  ],
  "used_places": [
   29,
   21,
   9,
-  2
+  2,
+  16,
+  31
  ],
  "last_grooming": [
   1,
-  2,
-  2
+  0,
+  1
  ]
 }

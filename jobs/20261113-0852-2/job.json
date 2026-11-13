@@ -1,0 +1,302 @@
+{
+ "id": "20261113-0852-2",
+ "niche": "zoho",
+ "status": "waiting_for_clips",
+ "upload": true,
+ "created": "2026-11-13T08:56:53",
+ "title": "Automate Invoicing & Payment Reminders in Zoho Books #Shorts",
+ "description": "Struggling with late client payments? Learn how MSMEs use Zoho Books to automate recurring invoices, turn on automated payment reminders, and connect payment gateways for faster cash flow.\n\n1. Go to Sales › Recurring Invoices and define standard service billing schedules\n2. Navigate to Settings › Reminders to enable automated payment reminders before due dates\n3. Integrate local payment gateways under Settings › Online Payments for instant customer payouts\n\nAI + Zoho automations every day - follow @GSXAutomation\n\nWhat inspired this: https://news.google.com/rss/articles/CBMiywFBVV95cUxNSjJic015bEplMWNiZ2g1MzlsLWl6UWxHQmN0aldlaVREaG1naXlkMElhREQzSWpRcHZFT19MU092MFBHeWNNRnlpZzd3bjY2ZW5oR0g1TEFySVNsdVh5TTdLMjVWbmE0VExNVGxNeVBZLWRPcXpMV2NMc2Vuc3VhN1RiUUlWM04zTkVfaWJOQnZHSUdpc2oxOHZzVjU4UnlaZEpkam5XMGo3b3pzSTJIMlBKd1didkR4QWxpUURDVWVhMjhadFBxQVlpRQ?oc=5\n\nThis video uses an AI-generated presenter and voice.\nIndependent channel. Not affiliated with or endorsed by Zoho Corporation. Zoho is a trademark of Zoho Corporation.\n\n#Shorts #Zoho #AIAutomation #ZohoCRM #AIAgents",
+ "angle": {
+  "story_index": 6,
+  "pillar": "trending",
+  "region": "global",
+  "product": "Zoho Books",
+  "app": "books",
+  "problem": "MSMEs claiming digital software credits struggle to automate invoice creation and payment reminders.",
+  "fix_type": "native",
+  "solution": "Set up automated recurring invoices and payment reminder workflows in Zoho Books.",
+  "steps": [
+   "Go to Sales > Recurring Invoices and define standard service billing schedules",
+   "Navigate to Settings > Reminders to enable automated payment reminders before due dates",
+   "Integrate local payment gateways under Settings > Online Payments for instant customer payouts"
+  ],
+  "api": null,
+  "result": "Accelerates cash flow and eliminates manual invoice chasing for growing MSMEs",
+  "wow": "Automated payment reminders increase on-time customer payments by up to 40% without extra labor.",
+  "hook": "SMEDAN teamed up with Zoho for MSME credits - automate your invoicing now!"
+ },
+ "story": {
+  "title": "Call for Applications: SMEDANx Zoho Digital Credits for 25,000 Nigerian MSMEs ( Up to ₦20 Billion )",
+  "link": "https://news.google.com/rss/articles/CBMiywFBVV95cUxNSjJic015bEplMWNiZ2g1MzlsLWl6UWxHQmN0aldlaVREaG1naXlkMElhREQzSWpRcHZFT19MU092MFBHeWNNRnlpZzd3bjY2ZW5oR0g1TEFySVNsdVh5TTdLMjVWbmE0VExNVGxNeVBZLWRPcXpMV2NMc2Vuc3VhN1RiUUlWM04zTkVfaWJOQnZHSUdpc2oxOHZzVjU4UnlaZEpkam5XMGo3b3pzSTJIMlBKd1didkR4QWxpUURDVWVhMjhadFBxQVlpRQ?oc=5",
+  "summary": "Call for Applications: SMEDANx Zoho Digital Credits for 25,000 Nigerian MSMEs ( Up to ₦20 Billion ) MSME Africa",
+  "source": "MSME Africa",
+  "ts": 1794209131,
+  "type": "news",
+  "publishers": 1,
+  "trend": 12,
+  "age_hours": 97,
+  "score": 11,
+  "facts_checked": true
+ },
+ "script": {
+  "title": "Automate Invoicing & Payment Reminders in Zoho Books",
+  "hook_text": "Automate Invoicing & Reminders",
+  "thumb_text": "Zoho *Invoicing* Automated",
+  "app_label": "Zoho Books Automation",
+  "lines": [
+   {
+    "beat": "HOOK",
+    "say": "Zoho and SMEDAN just launched a digital credits partnership for MSMEs, but are you still manually chasing unpaid invoices?",
+    "tts": "Zoho and SMEDAN just launched a digital credits partnership for MSMEs, but are you still manually chasing unpaid invoices?",
+    "card": "Manual Invoicing Drains Cash Flow",
+    "screen": null
+   },
+   {
+    "beat": "PROBLEM",
+    "say": "Many growing MSMEs struggle to automate invoice creation and late payment follow-ups.",
+    "tts": "Many growing MSMEs struggle to automate invoice creation and late payment follow-ups.",
+    "card": "Manual Invoicing & Late Payments",
+    "screen": null
+   },
+   {
+    "beat": "FIX",
+    "say": "You can automate recurring billing and payment reminders directly inside Zoho Books.",
+    "tts": "You can automate recurring billing and payment reminders directly inside Zoho Books.",
+    "card": "Zoho Books Automated Billing",
+    "screen": {
+     "app": "books",
+     "view": "list",
+     "path": [
+      "Sales",
+      "Recurring Invoices"
+     ],
+     "real": "books/recurring_invoices",
+     "click": "New",
+     "tip": "Start recurring billing setup"
+    }
+   },
+   {
+    "beat": "STEP 1",
+    "say": "First, open Sales, select Recurring Invoices, and click New to set up standard billing schedules for clients.",
+    "tts": "First, open Sales, select Recurring Invoices, and click New to set up standard billing schedules for clients.",
+    "card": "Sales > Recurring Invoices",
+    "screen": {
+     "app": "books",
+     "view": "list",
+     "path": [
+      "Sales",
+      "Recurring Invoices"
+     ],
+     "real": "books/recurring_invoices",
+     "click": "New",
+     "tip": "Define billing schedules"
+    }
+   },
+   {
+    "beat": "STEP 2",
+    "say": "Next, navigate to Settings and select Reminders to configure automated payment reminders before due dates to ensure timely client payments without manual effort.",
+    "tts": "Next, navigate to Settings and select Reminders to configure automated payment reminders before due dates to ensure timely client payments without manual effort.",
+    "card": "Settings > Reminders",
+    "screen": {
+     "app": "books",
+     "view": "settings",
+     "path": [
+      "Settings",
+      "Reminders"
+     ],
+     "real": "books/payment_reminders",
+     "click": "Turn On",
+     "tip": "Enable automated reminders"
+    }
+   },
+   {
+    "beat": "STEP 3",
+    "say": "Third, go to Settings and click Online Payments to integrate payment gateways for instant customer payouts.",
+    "tts": "Third, go to Settings and click Online Payments to integrate payment gateways for instant customer payouts.",
+    "card": "Settings > Online Payments",
+    "screen": {
+     "app": "books",
+     "view": "settings",
+     "path": [
+      "Settings",
+      "Online Payments"
+     ],
+     "fields": [
+      [
+       "Payment Gateway",
+       "Stripe / PayPal / Local Gateway"
+      ],
+      [
+       "Status",
+       "Active"
+      ]
+     ],
+     "click": "Set Up Now",
+     "tip": "Connect payment gateway"
+    }
+   },
+   {
+    "beat": "RESULT",
+    "say": "This eliminates manual invoice chasing and accelerates cash flow for your growing business.",
+    "tts": "This eliminates manual invoice chasing and accelerates cash flow for your growing business.",
+    "card": "Accelerate Cash Flow Automatically",
+    "screen": null
+   }
+  ],
+  "api": null,
+  "code": null,
+  "test_before_recording": [
+   "Ensure Zoho Books is logged in with an active organization.",
+   "Verify Recurring Invoices option is enabled under Sales.",
+   "Confirm automated reminder schedules are visible under Settings > Reminders."
+  ],
+  "description": "Struggling with late client payments? Learn how MSMEs use Zoho Books to automate recurring invoices, turn on automated payment reminders, and connect payment gateways for faster cash flow.",
+  "tags": [
+   "ZohoBooks",
+   "MSME",
+   "SMEDAN",
+   "InvoicingAutomation",
+   "PaymentReminders",
+   "CashFlow",
+   "BusinessAutomation",
+   "AccountingSoftware",
+   "Fintech",
+   "RecurringInvoices"
+  ]
+ },
+ "lines": [
+  {
+   "beat": "HOOK",
+   "say": "Zoho and SMEDAN just launched a digital credits partnership for MSMEs, but are you still manually chasing unpaid invoices?",
+   "tts": "Zoho and SMEDAN just launched a digital credits partnership for MSMEs, but are you still manually chasing unpaid invoices?",
+   "card": "Manual Invoicing Drains Cash Flow",
+   "screen": null,
+   "face": true
+  },
+  {
+   "beat": "PROBLEM",
+   "say": "Many growing MSMEs struggle to automate invoice creation and late payment follow-ups.",
+   "tts": "Many growing MSMEs struggle to automate invoice creation and late payment follow-ups.",
+   "card": "Manual Invoicing & Late Payments",
+   "screen": null,
+   "face": true
+  },
+  {
+   "beat": "FIX",
+   "say": "You can automate recurring billing and payment reminders directly inside Zoho Books.",
+   "tts": "You can automate recurring billing and payment reminders directly inside Zoho Books.",
+   "card": "Zoho Books Automated Billing",
+   "screen": {
+    "app": "books",
+    "view": "list",
+    "path": [
+     "Sales",
+     "Recurring Invoices"
+    ],
+    "real": "books/recurring_invoices",
+    "click": "New",
+    "tip": "Start recurring billing setup"
+   },
+   "face": false
+  },
+  {
+   "beat": "STEP 1",
+   "say": "First, open Sales, select Recurring Invoices, and click New to set up standard billing schedules for clients.",
+   "tts": "First, open Sales, select Recurring Invoices, and click New to set up standard billing schedules for clients.",
+   "card": "Sales > Recurring Invoices",
+   "screen": {
+    "app": "books",
+    "view": "list",
+    "path": [
+     "Sales",
+     "Recurring Invoices"
+    ],
+    "real": "books/recurring_invoices",
+    "click": "New",
+    "tip": "Define billing schedules"
+   },
+   "face": false
+  },
+  {
+   "beat": "STEP 2",
+   "say": "Next, navigate to Settings and select Reminders to configure automated payment reminders before due dates to ensure timely client payments without manual effort.",
+   "tts": "Next, navigate to Settings and select Reminders to configure automated payment reminders before due dates to ensure timely client payments without manual effort.",
+   "card": "Settings > Reminders",
+   "screen": {
+    "app": "books",
+    "view": "settings",
+    "path": [
+     "Settings",
+     "Reminders"
+    ],
+    "real": "books/payment_reminders",
+    "click": "Turn On",
+    "tip": "Enable automated reminders"
+   },
+   "face": false
+  },
+  {
+   "beat": "STEP 3",
+   "say": "Third, go to Settings and click Online Payments to integrate payment gateways for instant customer payouts.",
+   "tts": "Third, go to Settings and click Online Payments to integrate payment gateways for instant customer payouts.",
+   "card": "Settings > Online Payments",
+   "screen": {
+    "app": "books",
+    "view": "settings",
+    "path": [
+     "Settings",
+     "Online Payments"
+    ],
+    "fields": [
+     [
+      "Payment Gateway",
+      "Stripe / PayPal / Local Gateway"
+     ],
+     [
+      "Status",
+      "Active"
+     ]
+    ],
+    "click": "Set Up Now",
+    "tip": "Connect payment gateway"
+   },
+   "face": false
+  },
+  {
+   "beat": "RESULT",
+   "say": "This eliminates manual invoice chasing and accelerates cash flow for your growing business.",
+   "tts": "This eliminates manual invoice chasing and accelerates cash flow for your growing business.",
+   "card": "Accelerate Cash Flow Automatically",
+   "screen": null,
+   "face": true
+  }
+ ],
+ "clips": [
+  {
+   "text": "Zoho and SMEDAN just launched a digital credits partnership for MSMEs, but are you still manually chasing unpaid invoices?",
+   "lines": [
+    0
+   ],
+   "beat": "HOOK",
+   "prompt": "The man (my avatar) looks into the camera and talks to the viewer like a confident, friendly business tech explainer, smart and natural, not stiff; he walks a few relaxed steps toward the camera and stops, then raises one hand with an open palm on the first words. Vertical 9:16 medium-wide shot from the knees up, camera about two metres away, his head in the upper third with space above it, both hands and all his gestures fully visible in the frame, smooth gimbal camera gently moving back with him so the framing stays the same, sharp and well lit, wearing mustard blazer over a crisp white shirt with no tie, in a modern restaurant before opening, clean tables and warm pendant lights behind him; in this whole video he has a short neatly trimmed beard, short neat side-parted hair, no glasses - exactly the same in every shot of this video. His face, skin tone, height and body build stay exactly as in my avatar's reference photos - the same natural average build, never slimmer and never heavier. Clean professional business look: no tilak or any mark on his forehead, no necklace, mala, beads, thread or religious accessory, no earrings, no bracelets. He says, in clear natural English with a clear, neutral international accent, at a brisk, lively pace: \"Zoho and SMEDAN just launched a digital credits partnership for MSMEs, but are you still manually chasing unpaid invoices?\" His lips match every word. He starts speaking in the very first frame, with no pause before the first word, and stops right after the last word. Audio: only his voice - no music, no sound effects. No subtitles, no captions, no text on screen."
+  },
+  {
+   "text": "Many growing MSMEs struggle to automate invoice creation and late payment follow-ups.",
+   "lines": [
+    1
+   ],
+   "beat": "PROBLEM",
+   "prompt": "The man (my avatar) looks into the camera and talks to the viewer like a confident, friendly business tech explainer, smart and natural, not stiff; he shrugs with both shoulders and tilts his head, as if he has seen this problem a hundred times. Vertical 9:16 medium-wide shot from the knees up, camera about two metres away, his head in the upper third with space above it, both hands and all his gestures fully visible in the frame, static camera, sharp and well lit, wearing mustard blazer over a crisp white shirt with no tie, in a modern restaurant before opening, clean tables and warm pendant lights behind him; in this whole video he has a short neatly trimmed beard, short neat side-parted hair, no glasses - exactly the same in every shot of this video. His face, skin tone, height and body build stay exactly as in my avatar's reference photos - the same natural average build, never slimmer and never heavier. Clean professional business look: no tilak or any mark on his forehead, no necklace, mala, beads, thread or religious accessory, no earrings, no bracelets. He says, in clear natural English with a clear, neutral international accent, at a brisk, lively pace: \"Many growing MSMEs struggle to automate invoice creation and late payment follow-ups.\" His lips match every word. He starts speaking in the very first frame, with no pause before the first word, and stops right after the last word. Audio: only his voice - no music, no sound effects. No subtitles, no captions, no text on screen."
+  },
+  {
+   "text": "This eliminates manual invoice chasing and accelerates cash flow for your growing business.",
+   "lines": [
+    6
+   ],
+   "beat": "RESULT",
+   "prompt": "The man (my avatar) looks into the camera and talks to the viewer like a confident, friendly business tech explainer, smart and natural, not stiff; he puts one hand in his pocket, smiles and gestures toward the camera with the other hand. Vertical 9:16 medium-wide shot from the knees up, camera about two metres away, his head in the upper third with space above it, both hands and all his gestures fully visible in the frame, static camera, sharp and well lit, wearing mustard blazer over a crisp white shirt with no tie, in a modern restaurant before opening, clean tables and warm pendant lights behind him; in this whole video he has a short neatly trimmed beard, short neat side-parted hair, no glasses - exactly the same in every shot of this video. His face, skin tone, height and body build stay exactly as in my avatar's reference photos - the same natural average build, never slimmer and never heavier. Clean professional business look: no tilak or any mark on his forehead, no necklace, mala, beads, thread or religious accessory, no earrings, no bracelets. He says, in clear natural English with a clear, neutral international accent, at a brisk, lively pace: \"This eliminates manual invoice chasing and accelerates cash flow for your growing business.\" His lips match every word. He starts speaking in the very first frame, with no pause before the first word, and stops right after the last word. Audio: only his voice - no music, no sound effects. No subtitles, no captions, no text on screen."
+  }
+ ],
+ "look": "wearing mustard blazer over a crisp white shirt with no tie, in a modern restaurant before opening, clean tables and warm pendant lights behind him; in this whole video he has a short neatly trimmed beard, short neat side-parted hair, no glasses - exactly the same in every shot of this video",
+ "issue": 168
+}
