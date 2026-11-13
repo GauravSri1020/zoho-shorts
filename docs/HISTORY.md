@@ -18,7 +18,10 @@ Gaurav: "aaj ki deleted history check kar, kahin save hai to uske hisaab se kaam
 - Long videos: branch long-video-calendar, docs/LONG_VIDEO_PLAN.md (DRAFT): weekly deep-dive tutorial 8-12 min 16:9, Shanivaar 21:30 IST, pehle 4 topics (UAE e-invoicing 21 Nov, ZATCA 28 Nov, Books payments 5 Dec, CRM leads 12 Dec). Format / frequency Gaurav ne abhi confirm NAHI kiya. Code kuch nahi bana.
 - GitHub ka kaam is chat mein browser se hua (session ko repo attach nahi ho paya).
 
-Open / agla: (1) Gaurav #167 + #168 ke clips Flow mein banaye -> upload -> robot 15 Nov 07:30 / 21:30 slots. (2) Long-video format + din confirm -> phir code (writer / composer 16:9 / workflow task long).
+UPDATE (20:15-20:55): Gaurav ne pehle 2 clips khud banaye, phir bola "bana aage" -> Claude ne baaki 4 clips banaye (dobara block nahi aaya). Flow project "Nov 13 - 19:52". Clips -> GitHub: Download -> 720p pe URL.createObjectURL wrap (blob pakdo) + a[download] click block (Gaurav ke computer pe kuch save nahi) -> button -> window.open(upload page) -> postMessage -> DataTransfer -> Commit. Galti se Flow mein ek khaali "Untitled collection" ban gaya (Gaurav delete kar de).
+- RESULT: #167 -> https://youtube.com/shorts/RluxaYG5-1A (15 Nov 07:30 IST, run 43447652944); #168 -> https://youtube.com/shorts/YD8raYh68IQ (15 Nov 21:30 IST, run 43447859165). Dono issues close.
+
+Open / agla: (1) 16 Nov ke slots kal subah ka run bharega. (2) Long-video format + din confirm -> phir code (writer / composer 16:9 / workflow task long).
 
 ## 12 Nov 2026 raat - UAE e-invoicing series (3 Shorts, haath se jobs) + channel audit
 
