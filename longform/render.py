@@ -19,7 +19,7 @@ import yaml
 
 ROOT = Path(__file__).resolve().parent.parent
 SR = 48000
-LEAD, GAP, TAIL = 0.35, 0.30, 0.45
+LEAD, GAP, TAIL = 0.22, 0.16, 0.28   # 14 Nov: tighter (Gaurav: video felt slow)
 
 # ---------- captions: readable form of what the voice says ----------
 CAP = [
@@ -256,12 +256,24 @@ def render_scenes(scenes, work, scale, fps, only=None):
     return seg
 
 
-def concat(scenes, seg, audio, out):
+def concat(scenes, seg, audio, out, scale=1.3334, corner=True):
     lst = Path(seg) / "list.txt"
     lst.write_text("".join(f"file '{s['id']}.mp4'\n" for s in scenes))
-    subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-f", "concat", "-safe", "0", "-i", str(lst), "-i", str(audio),
-                    "-map", "0:v", "-map", "1:a", "-c:v", "copy", "-c:a", "aac", "-b:a", "192k", "-shortest",
-                    "-movflags", "+faststart", str(out)], check=True)
+    if not corner:
+        subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-f", "concat", "-safe", "0", "-i", str(lst), "-i", str(audio),
+                        "-map", "0:v", "-map", "1:a", "-c:v", "copy", "-c:a", "aac", "-b:a", "192k", "-shortest",
+                        "-movflags", "+faststart", str(out)], check=True)
+        return
+    from longform import corner as cn
+    W, H = int(round(1920 * scale / 2) * 2), int(round(1080 * scale / 2) * 2)
+    size, x, y = cn.geometry(W, H, scale)
+    cmov = cn.build(Path(seg) / f"corner_{size}.mov", size)
+    en = "+".join(f"between(t,{a + .15:.2f},{b - .15:.2f})" for a, b in cn.ranges(scenes))
+    fc = f"[0:v][1:v]overlay={x}:{y}:enable='{en}':shortest=1,format=yuv420p[v]"
+    subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-f", "concat", "-safe", "0", "-i", str(lst),
+                    "-stream_loop", "-1", "-i", str(cmov), "-i", str(audio), "-filter_complex", fc,
+                    "-map", "[v]", "-map", "2:a", "-c:v", "libx264", "-preset", "veryfast", "-crf", "17", "-g", "60",
+                    "-c:a", "aac", "-b:a", "192k", "-shortest", "-movflags", "+faststart", str(out)], check=True)
 
 
 def main():
@@ -285,7 +297,7 @@ def main():
     only = set(x for x in a.only.split(",") if x)
     seg = render_scenes(scenes, work, a.scale, a.fps, only)
     final = work / f"{sc['id']}.mp4"
-    concat(scenes, seg, audio, final)
+    concat(scenes, seg, audio, final, a.scale)
     print("[done]", final)
 
 

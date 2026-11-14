@@ -1,0 +1,58 @@
+# Long videos (branch long-videos) -> 4K -> YouTube (scheduled). Manual only. Does NOT touch the Shorts pipeline.
+# Run it with "Use workflow from: long-videos". It takes the 1440p master that Claude rendered + checked
+# (branch longform-previews), upscales it to 3840x2160 (YouTube then uses its high-bitrate 4K encode, so nothing
+# looks blocky), uploads it as private with a publish time, and sets the thumbnail.
+name: longform-upload
+on:
+  workflow_dispatch:
+    inputs:
+      id:
+        description: "video id (files previews/<id>-1440p.mp4, <id>.meta.json, <id>-thumb.jpg on branch longform-previews)"
+        default: "uae-einvoicing"
+      publish_at:
+        description: "publish time, UTC ISO (e.g. 2026-11-14T16:30:00Z = 22:00 IST); empty = in 45 min"
+        default: ""
+concurrency:
+  group: longform-upload
+  cancel-in-progress: false
+jobs:
+  upload:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    env:
+      YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
+      YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
+      YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Get the master from longform-previews
+        run: |
+          git fetch --depth=1 origin longform-previews
+          mkdir -p in
+          for f in "${{ inputs.id }}-1440p.mp4" "${{ inputs.id }}.meta.json" "${{ inputs.id }}-thumb.jpg"; do
+            git show "FETCH_HEAD:previews/$f" > "in/$f" || echo "missing $f"
+          done
+          ls -la in
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.12"}
+      - name: Install
+        run: |
+          sudo apt-get update || true
+          sudo apt-get install -y ffmpeg || true
+          pip install google-api-python-client google-auth pyyaml
+      - name: Upscale to 4K
+        run: |
+          ffmpeg -hide_banner -loglevel error -y -i "in/${{ inputs.id }}-1440p.mp4" \
+            -vf "scale=3840:2160:flags=lanczos,format=yuv420p" -c:v libx264 -preset veryfast -crf 18 -g 60 \
+            -c:a copy -movflags +faststart out4k.mp4
+          ffprobe -v error -show_entries stream=width,height:format=duration,size -of compact out4k.mp4
+      - name: Upload to YouTube (scheduled)
+        run: |
+          python -m longform.upload --video out4k.mp4 --meta "in/${{ inputs.id }}.meta.json" \
+            --thumb "in/${{ inputs.id }}-thumb.jpg" --publish "${{ inputs.publish_at }}"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: longform-upload-${{ inputs.id }}
+          path: out/uploaded.json
+          retention-days: 30

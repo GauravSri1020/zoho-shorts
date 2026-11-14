@@ -3,8 +3,8 @@
  "title": "UAE E-Invoicing in Zoho Books: Everything to Do Before 1 January 2027",
  "voice": {
   "engine": "kokoro",
-  "voice": "am_michael",
-  "speed": 1.0
+  "voice": "am_onyx",
+  "speed": 1.25
  },
  "research": "docs/longform/research/uae-einvoicing.md",
  "chapters": [
@@ -238,7 +238,7 @@
    },
    "lines": [
     "The fines are set by Cabinet Decision 173 of 2026.",
-    "If you have no e-invoicing system, or no A S P, when you should, the fine is five thousand dirhams for every month, capped at fifty thousand dirhams in twelve months.",
+    "If you have no e-invoicing system, or no A S P, when you should, the fine is five thousand dirhams for every month.",
     "Every e-invoice you fail to issue or send costs one hundred dirhams, up to five thousand dirhams a month. The same applies to e-credit notes.",
     "Small amounts per invoice, but for a busy business they add up fast."
    ]

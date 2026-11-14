@@ -180,18 +180,15 @@ function sPenalty(t) {
     s += text(180, 250, 'No system / no ASP', 40, {w: 800});
     s += text(180, 345, 'AED 5,000', 84, {w: 900, fill: C.coral});
     s += text(180, 395, 'for every month', 32, {w: 600, fill: C.mute});
-    const months = 'JFMAMJJASOND'.split('');
-    const k = clamp(P(t, at(1, .35), cd(1) * .6)) * 12;
+    const months = 'JFMAMJ'.split('');
+    const k = clamp(P(t, at(1, .35), cd(1) * .6)) * 6;
     let sum = 0;
-    months.forEach((m, i) => { const on = k > i; if (on) sum = Math.min(50000, sum + 5000);
-      const capped = on && i >= 10;
-      s += `<rect x="${180 + i * 60}" y="440" width="50" height="50" rx="10" fill="${on ? (capped ? '#d6d9df' : C.coral) : '#f2f0ec'}"/>` + text(205 + i * 60, 474, m, 24, {anchor: 'middle', w: 800, fill: on ? '#fff' : C.mute}); });
-    const bw = 700 * sum / 60000;
+    months.forEach((m, i) => { const on = k > i; if (on) sum += 5000;
+      s += `<rect x="${180 + i * 112}" y="440" width="96" height="60" rx="12" fill="${on ? C.coral : '#f2f0ec'}"/>` + text(228 + i * 112, 480, m, 28, {anchor: 'middle', w: 800, fill: on ? '#fff' : C.mute}); });
+    const bw = 700 * sum / 30000;
     s += `<rect x="180" y="560" width="700" height="56" rx="14" fill="#f2f0ec"/><rect x="180" y="560" width="${bw}" height="56" rx="14" fill="${C.coral}"/>`;
-    s += `<line x1="${180 + 700 * 50000 / 60000}" y1="540" x2="${180 + 700 * 50000 / 60000}" y2="640" stroke="${C.ink}" stroke-width="5" stroke-dasharray="8 8"/>`;
-    s += text(180 + 700 * 50000 / 60000, 680, 'cap', 30, {anchor: 'middle', hand: true});
-    s += text(180, 760, 'AED ' + sum.toLocaleString('en-US'), 52, {w: 900});
-    s += text(180, 805, 'max AED 50,000 in 12 months', 30, {w: 600, fill: C.mute});
+    s += text(180, 720, 'AED ' + sum.toLocaleString('en-US'), 64, {w: 900});
+    s += text(180, 775, sum >= 30000 ? '6 months late = AED 30,000' : 'and it keeps adding up', 32, {w: 600, fill: C.mute});
     return s;
   })());
   o += L;
@@ -442,7 +439,7 @@ function sOutro(t) {
 
 // ============ PODCAST (HTML layer) ============
 let PD = null;
-const VP = {x: 60, y: 130, w: 1380, h: 600};
+const VP = {x: 60, y: 112, w: 1800, h: 700};
 function setupPodcast() {
   const v = SC.visual, H = $('html');
   const screens = [...new Set(v.actions.filter(a => a.screen).map(a => a.screen))];
@@ -452,14 +449,9 @@ function setupPodcast() {
    <div id="rip" style="position:absolute;border-radius:50%;border:4px solid ${C.sky};opacity:0"></div>
    <div id="dim" style="position:absolute;inset:0;background:rgba(246,242,235,.62);opacity:0"></div>
    <svg id="cur" width="44" height="60" style="position:absolute;left:0;top:0"><path d="M 4 4 L 4 46 L 15 36 L 23 55 L 31 51 L 23 32 L 38 32 Z" fill="#fff" stroke="#1d2433" stroke-width="3.5" stroke-linejoin="round"/></svg></div></div>`;
-  html += `<div class="pres" style="left:1468px;top:${VP.y}px;width:392px;height:${VP.h + 46}px"><img id="who" src="${SC.root}/assets/presenter/${v.pose || 'point_up'}.png">
-     <div class="live">● LIVE</div><svg id="mic" width="392" height="646" style="position:absolute;left:0;top:0"></svg>
-     <div class="tag"><div><div class="nm">Gaurav</div><div class="sub">GSX Automation</div></div><div class="eq">${'<u></u>'.repeat(5)}</div></div></div>`;
-  html += `<div class="crumbs" id="crumbs" style="left:${VP.x}px;top:806px">${v.path.map((p, i) => (i ? '<em>›</em>' : '') + `<span>${esc(p)}</span>`).join('')}</div>`;
+  html += `<div class="crumbs" id="crumbs" style="left:${VP.x}px;top:${VP.y + VP.h + 64}px">${v.path.map((p, i) => (i ? '<em>›</em>' : '') + `<span>${esc(p)}</span>`).join('')}</div>`;
   html += `<svg id="ov" width="1920" height="1080" style="position:absolute;left:0;top:0"></svg>`;
   H.innerHTML = html;
-  // presenter image size
-  const who = $('who'); who.style.height = ({open_hands: '760px', wow: '640px'}[v.pose] || '600px'); who.style.left = '50%'; who.style.bottom = '-40px';
   // keyframes
   const ks = []; let lastScreen = null;
   v.actions.forEach(a => {
@@ -471,11 +463,6 @@ function setupPodcast() {
     }
   });
   PD = {screens, ks, overlays: v.actions.filter(a => a.panel || a.status || a.send || a.inbox).map(a => ({...a, t: cs(a.cue) + (a.at || 0) * cd(a.cue)}))};
-  // mic svg (broadcast mic on a boom arm)
-  $('mic').innerHTML = `<path d="M 392 600 L 300 520 L 262 452" fill="none" stroke="#2b2f38" stroke-width="12" stroke-linecap="round"/>
-    <g transform="translate(246,420) rotate(-28)"><rect x="-34" y="-82" width="68" height="150" rx="34" fill="#30343d"/><rect x="-34" y="-82" width="68" height="84" rx="34" fill="#4a505c"/>
-    ${[0, 1, 2, 3, 4].map(i => `<line x1="-26" y1="${-62 + i * 14}" x2="26" y2="${-62 + i * 14}" stroke="#2a2d33" stroke-width="4"/>`).join('')}
-    <rect x="-40" y="2" width="80" height="14" rx="7" fill="#1f2228"/></g>`;
 }
 function camAt(t) {
   const {ks} = PD; const sc0 = SC.screens[PD.screens[0]];
@@ -532,10 +519,6 @@ function renderPodcast(t) {
   if (hb) { hl.style.left = hb[0] + 'px'; hl.style.top = hb[1] + 'px'; hl.style.width = hb[2] + 'px'; hl.style.height = hb[3] + 'px'; hl.style.opacity = hlop * (.85 + .15 * Math.sin(t * 5)); } else hl.style.opacity = 0;
   const r = $('rip');
   if (rip >= 0 && rip < 1) { const R = 14 + rip * 46; r.style.left = (ripPos[0] - R) + 'px'; r.style.top = (ripPos[1] - R) + 'px'; r.style.width = r.style.height = 2 * R + 'px'; r.style.opacity = 1 - rip; } else r.style.opacity = 0;
-  // presenter: breathing, sway, voice-reactive lean - no fake lip movement
-  const L = lvl(t), who = $('who');
-  who.style.transform = `translateX(-50%) translateY(${Math.sin(t * 1.1) * 3}px) rotate(${Math.sin(t * .7) * .6}deg) scale(${1 + Math.sin(t * .9) * .005 + L * .008})`;
-  document.querySelectorAll('.eq u').forEach((u, i) => u.style.height = (5 + clamp(L * (0.6 + .5 * Math.abs(Math.sin(t * 9 + i * 1.7)))) * 22) + 'px');
   // breadcrumbs
   const n = SC.visual.path.length;
   document.querySelectorAll('#crumbs span').forEach((sp, i) => { const tt = .3 + i * Math.min(2.2, (SC.dur * .55) / n); sp.className = t > tt ? 'on' : ''; sp.style.opacity = .35 + .65 * eOut(P(t, tt - .3, .4)); });
