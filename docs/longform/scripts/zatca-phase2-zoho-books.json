@@ -1,0 +1,951 @@
+{
+ "id": "zatca-phase2-zoho-books",
+ "title": "ZATCA Phase 2 Wave 25 in Zoho Books: Connect Fatoora Before 1 Feb 2027",
+ "voice": {
+  "engine": "kokoro",
+  "voice": "am_onyx",
+  "speed": 1.1
+ },
+ "research": "docs/longform/research/zatca-phase2-zoho-books.md",
+ "intro_chapter": "ZATCA wave 25 in 30 seconds",
+ "chapters": [
+  "What Phase 2 means",
+  "Wave 25: are you in?",
+  "Connect Zoho Books to Fatoora",
+  "Your data and your invoices",
+  "Your checklist"
+ ],
+ "caption_fix": [
+  [
+   "one hundred eighty seven thousand five hundred riyals",
+   "SAR 187,500"
+  ],
+  [
+   "three hundred seventy five thousand riyals",
+   "SAR 375,000"
+  ],
+  [
+   "twenty fourth of July 2026",
+   "24 July 2026"
+  ],
+  [
+   "first of February 2027",
+   "1 February 2027"
+  ],
+  [
+   "thirtieth of June 2026",
+   "30 June 2026"
+  ],
+  [
+   "fourth of December 2021",
+   "4 December 2021"
+  ],
+  [
+   "first of January 2023",
+   "1 January 2023"
+  ],
+  [
+   "wave twenty five",
+   "wave 25"
+  ],
+  [
+   "Wave twenty five",
+   "Wave 25"
+  ],
+  [
+   "wave twenty four",
+   "wave 24"
+  ],
+  [
+   "Wave twenty four",
+   "Wave 24"
+  ],
+  [
+   "twenty four hours",
+   "24 hours"
+  ],
+  [
+   "C S I D",
+   "CSID"
+  ],
+  [
+   "national I D",
+   "national ID"
+  ],
+  [
+   "first of February",
+   "1 February"
+  ],
+  [
+   "P D F",
+   "PDF"
+  ],
+  [
+   "X M L",
+   "XML"
+  ],
+  [
+   "three billion riyals",
+   "SAR 3 billion"
+  ],
+  [
+   "seven million riyals",
+   "SAR 7 million"
+  ]
+ ],
+ "thumb": {
+  "chip": "SAUDI · WAVE 25",
+  "l1": "ZATCA",
+  "l2": "PHASE 2",
+  "l3": "ZOHO BOOKS",
+  "pill": "BEFORE 1 FEB 2027",
+  "pose": "point_up",
+  "accent": "#3ddc84"
+ },
+ "tags": [
+  "ZATCA Phase 2",
+  "ZATCA wave 25",
+  "ZATCA e-invoicing",
+  "Fatoora",
+  "Fatoora portal integration",
+  "Saudi e-invoicing",
+  "e-invoicing Saudi Arabia 2027",
+  "Zoho Books Saudi Arabia",
+  "Zoho Books ZATCA",
+  "CSID ZATCA",
+  "ZATCA integration phase",
+  "KSA VAT",
+  "Zoho Books tutorial",
+  "GSX Automation"
+ ],
+ "sources": [
+  {
+   "name": "ZATCA - Wave 25 criteria (24 Jul 2026)",
+   "url": "https://zatca.gov.sa/en/MediaCenter/News/Pages/Wave25-E-invoicing.aspx"
+  },
+  {
+   "name": "ZATCA Detailed Guidelines for E-Invoicing v2",
+   "url": "https://zatca.gov.sa/en/e-invoicing/introduction/guidelines/documents/e-invoicing_detailed__guideline.pdf"
+  },
+  {
+   "name": "EY Tax News - Wave 24",
+   "url": "https://taxnews.ey.com/news/2025-2023-saudi-arabia-announces-24th-wave-of-phase-2-e-invoicing-integration"
+  },
+  {
+   "name": "Zoho Books help - ZATCA Phase 2",
+   "url": "https://www.zoho.com/sa/books/help/e-invoicing/phase-2.html"
+  }
+ ],
+ "description": "ZATCA wave 25: businesses in Saudi Arabia whose revenue subject to VAT went above SAR 187,500 in any year from 2022 to 2025 must integrate their e-invoicing with the Fatoora portal by 1 February 2027. In this video: what Phase 2 (the integration phase) means - clearance for standard B2B invoices, reporting within 24 hours for simplified invoices, the cryptographic stamp - who is in wave 25, and how to connect Zoho Books to Fatoora (OTP, CSID, Arabic fields, Push to Fatoora, statuses) step by step.\n\nChapters\n{chapters}\n\nSources (checked 15 Nov 2026)\n- ZATCA, wave 25 criteria (24 Jul 2026): https://zatca.gov.sa/en/MediaCenter/News/Pages/Wave25-E-invoicing.aspx\n- ZATCA Detailed Guidelines for E-Invoicing: https://zatca.gov.sa/en/e-invoicing/introduction/guidelines/documents/e-invoicing_detailed__guideline.pdf\n- EY Tax News, wave 24: https://taxnews.ey.com/news/2025-2023-saudi-arabia-announces-24th-wave-of-phase-2-e-invoicing-integration\n- Zoho Books help, ZATCA Phase 2: https://www.zoho.com/sa/books/help/e-invoicing/phase-2.html\n\nThis is general information, not tax or legal advice. Rules can change - always check the latest ZATCA notices.\nThis video uses an AI-generated presenter, voice and animations; facts were checked against the sources above.\nIndependent channel. Not affiliated with or endorsed by Zoho Corporation. Zoho is a trademark of Zoho Corporation.\n\n#ZATCA #Fatoora #SaudiEinvoicing #ZohoBooks #GSXAutomation",
+ "scenes": [
+  {
+   "id": "s01",
+   "type": "HOOK",
+   "chapter": 0,
+   "visual": {
+    "kind": "hook2",
+    "beats": [
+     {
+      "t": "headline",
+      "tag": "ZATCA",
+      "source": "ZATCA",
+      "date": "24 Jul 2026",
+      "text": "Wave 25: integrate your e-invoicing with Fatoora by 1 February 2027",
+      "color": "green"
+     },
+     {
+      "t": "stat",
+      "value": "SAR 187,500",
+      "label": "VAT revenue in any year, 2022 to 2025",
+      "color": "coral"
+     },
+     {
+      "t": "stat",
+      "value": "1 Feb 2027",
+      "label": "wave 25 deadline",
+      "color": "teal",
+      "count": false
+     },
+     {
+      "t": "title",
+      "title": "ZATCA Phase 2",
+      "sub": "in Zoho Books",
+      "chips": [
+       "What changes",
+       "Wave 25",
+       "Connect Fatoora",
+       "Push invoices"
+      ]
+     }
+    ]
+   },
+   "lines": [
+    "On the twenty fourth of July 2026, Saudi Arabia's tax authority, ZATCA, announced wave twenty five of e-invoicing Phase 2.",
+    "It covers businesses whose revenue subject to VAT went above one hundred eighty seven thousand five hundred riyals, in any year from 2022 to 2025.",
+    "And their deadline to integrate is the first of February 2027.",
+    "In the next few minutes: what Phase 2 means, who is in, and how to connect Zoho Books to ZATCA's Fatoora portal, step by step, with the exact menu names."
+   ]
+  },
+  {
+   "id": "s02",
+   "type": "CHAPTER",
+   "chapter": 1,
+   "visual": {
+    "num": 1,
+    "title": "What Phase 2 means"
+   },
+   "lines": [
+    "Chapter one. What Phase 2 means."
+   ]
+  },
+  {
+   "id": "s03",
+   "type": "CARTOON",
+   "chapter": 1,
+   "visual": {
+    "kind": "story",
+    "beats": [
+     {
+      "pose": "present",
+      "prop": {
+       "name": "doc",
+       "label": "QR",
+       "color": "green"
+      },
+      "text": "Phase 1: invoices made electronically"
+     },
+     {
+      "pose": "shrug",
+      "prop": "stack",
+      "text": "A scanned paper invoice does not count",
+      "stamp": "NOT VALID"
+     },
+     {
+      "pose": "point",
+      "prop": {
+       "name": "gov",
+       "label": "ZATCA"
+      },
+      "text": "Phase 2: your system talks to ZATCA"
+     },
+     {
+      "pose": "present",
+      "prop": {
+       "name": "calendar",
+       "top": "PHASE 2",
+       "big": "1",
+       "sub": "Jan 2023"
+      },
+      "text": "Rolled out in waves since 2023"
+     }
+    ]
+   },
+   "lines": [
+    "Phase 1 started on the fourth of December 2021. From then on, invoices had to be created electronically.",
+    "And a paper invoice that you simply scan or copy into a file is not an electronic invoice.",
+    "Phase 2, the integration phase, goes one step further. It connects your invoicing system directly to ZATCA, so your invoices reach the authority electronically, through Fatoora.",
+    "It started on the first of January 2023, and ZATCA brings businesses in group by group, in waves."
+   ]
+  },
+  {
+   "id": "s04",
+   "type": "CARTOON",
+   "chapter": 1,
+   "visual": {
+    "kind": "story",
+    "beats": [
+     {
+      "pose": "carry",
+      "prop": "einvoice",
+      "text": "B2B: ZATCA clears it first",
+      "stamp": "CLEARED",
+      "stamp_color": "green"
+     },
+     {
+      "pose": "point",
+      "prop": "clock",
+      "text": "B2C: report it within 24 hours"
+     },
+     {
+      "pose": "present",
+      "prop": "lock",
+      "text": "A cryptographic stamp on every invoice"
+     },
+     {
+      "pose": "cheer",
+      "prop": {
+       "name": "phone",
+       "label": "QR"
+      },
+      "text": "A Phase 2 QR code on simplified invoices"
+     }
+    ]
+   },
+   "lines": [
+    "Here is the big change. A standard tax invoice, the business to business kind, must be cleared by ZATCA before you share it with your buyer.",
+    "A simplified invoice, the kind you give to consumers, must be reported to Fatoora within twenty four hours of issuing it.",
+    "Your software also adds a cryptographic stamp, so ZATCA can check where each invoice came from, and that nobody changed it.",
+    "And simplified invoices carry a new Phase 2 QR code, with nine pieces of data inside. The good news: your invoicing software does all of this for you."
+   ]
+  },
+  {
+   "id": "s04b",
+   "type": "BOARD",
+   "chapter": 1,
+   "visual": {
+    "kind": "flow2",
+    "title": "A B2B invoice in Phase 2",
+    "steps": [
+     [
+      "Create",
+      "the invoice in Zoho Books"
+     ],
+     [
+      "Stamp",
+      "cryptographic stamp + XML"
+     ],
+     [
+      "Clear",
+      "ZATCA checks it via Fatoora"
+     ],
+     [
+      "Share",
+      "send it to your buyer"
+     ]
+    ]
+   },
+   "lines": [
+    "So in practice, a business invoice now travels like this. You create it in your software, as usual.",
+    "The software stamps it and builds the electronic file, then sends it to ZATCA through Fatoora.",
+    "Only after ZATCA clears it, do you share it with your customer."
+   ]
+  },
+  {
+   "id": "s05",
+   "type": "CHAPTER",
+   "chapter": 2,
+   "visual": {
+    "num": 2,
+    "title": "Wave 25: are you in?"
+   },
+   "lines": [
+    "Chapter two. Wave twenty five. Are you in?"
+   ]
+  },
+  {
+   "id": "s06",
+   "type": "BOARD",
+   "chapter": 2,
+   "visual": {
+    "kind": "dates",
+    "title": "How the line came down",
+    "items": [
+     {
+      "date": "1 Jan 2023",
+      "label": "Wave 1: above SAR 3 billion"
+     },
+     {
+      "date": "1 Feb 2025",
+      "label": "above SAR 7 million"
+     },
+     {
+      "date": "30 Jun 2026",
+      "label": "Wave 24: above SAR 375,000"
+     },
+     {
+      "date": "1 Feb 2027",
+      "label": "Wave 25: above SAR 187,500",
+      "big": true
+     }
+    ]
+   },
+   "lines": [
+    "The first wave, in January 2023, was only for giants, with revenue above three billion riyals.",
+    "By February 2025, the line was down to seven million riyals.",
+    "Wave twenty four was for businesses above three hundred seventy five thousand riyals, with a deadline of the thirtieth of June 2026.",
+    "And wave twenty five halves that again, to one hundred eighty seven thousand five hundred riyals, with a deadline of the first of February 2027."
+   ]
+  },
+  {
+   "id": "s06b",
+   "type": "BOARD",
+   "chapter": 2,
+   "visual": {
+    "kind": "headline",
+    "title": "What ZATCA says",
+    "items": [
+     {
+      "source": "ZATCA",
+      "date": "24 Jul 2026",
+      "text": "Wave 25: revenue subject to VAT above SAR 187,500 in 2022, 2023, 2024 or 2025",
+      "color": "green"
+     },
+     {
+      "source": "ZATCA",
+      "date": "24 Jul 2026",
+      "text": "Integrate with Fatoora by no later than 1 February 2027",
+      "color": "teal"
+     }
+    ]
+   },
+   "lines": [
+    "These are ZATCA's own words from the announcement: revenue subject to VAT above one hundred eighty seven thousand five hundred riyals, during 2022, 2023, 2024 or 2025.",
+    "And integration with Fatoora by no later than the first of February 2027."
+   ]
+  },
+  {
+   "id": "s07",
+   "type": "BOARD",
+   "chapter": 2,
+   "visual": {
+    "kind": "stat",
+    "title": "Wave 25 in three numbers",
+    "stats": [
+     {
+      "value": "SAR 187,500",
+      "label": "revenue subject to VAT"
+     },
+     {
+      "value": "2022-2025",
+      "label": "one year over the line is enough",
+      "count": false
+     },
+     {
+      "value": "6 months",
+      "label": "notice from ZATCA, at least",
+      "count": false
+     }
+    ]
+   },
+   "lines": [
+    "The test is your revenue subject to VAT, above one hundred eighty seven thousand five hundred riyals.",
+    "If you crossed that line in just one of the years 2022, 2023, 2024 or 2025, you are in.",
+    "ZATCA says it tells each wave directly, at least six months before its integration date."
+   ]
+  },
+  {
+   "id": "s07b",
+   "type": "CARTOON",
+   "chapter": 2,
+   "visual": {
+    "kind": "story",
+    "beats": [
+     {
+      "pose": "present",
+      "prop": "chart_up",
+      "text": "2024: above the line"
+     },
+     {
+      "pose": "shrug",
+      "prop": "chart_down",
+      "text": "2025: below the line"
+     },
+     {
+      "pose": "point",
+      "prop": {
+       "name": "calendar",
+       "top": "WAVE 25",
+       "big": "✓",
+       "sub": "still in"
+      },
+      "text": "Still in wave 25",
+      "stamp": "IN",
+      "stamp_color": "coral"
+     }
+    ]
+   },
+   "lines": [
+    "Here is a simple example. Say your shop sold more than the line in 2024.",
+    "But business was slower in 2025, and you stayed below it.",
+    "You are still in wave twenty five, because one year over the line is enough."
+   ]
+  },
+  {
+   "id": "s08",
+   "type": "CARTOON",
+   "chapter": 2,
+   "visual": {
+    "kind": "story",
+    "beats": [
+     {
+      "pose": "worried",
+      "prop": {
+       "name": "calendar",
+       "top": "CHECK",
+       "big": "4",
+       "sub": "years"
+      },
+      "text": "Check 2022 to 2025 now"
+     },
+     {
+      "pose": "point",
+      "prop": {
+       "name": "envelope"
+      },
+      "text": "ZATCA's notice: 6 months before"
+     },
+     {
+      "pose": "present",
+      "prop": {
+       "name": "server",
+       "label": "Zoho Books"
+      },
+      "text": "Then connect your software early"
+     }
+    ]
+   },
+   "lines": [
+    "So look at your figures for those four years now, not in late January.",
+    "Not sure whether you are in? Talk to your tax adviser, and watch for ZATCA's notice, which comes at least six months before your date.",
+    "And if you use Zoho Books, the connection to Fatoora takes only a few steps. Let me show you."
+   ]
+  },
+  {
+   "id": "s09",
+   "type": "CHAPTER",
+   "chapter": 3,
+   "visual": {
+    "num": 3,
+    "title": "Connect Zoho Books to Fatoora"
+   },
+   "lines": [
+    "Chapter three. Connect Zoho Books to Fatoora."
+   ]
+  },
+  {
+   "id": "s09b",
+   "type": "CARTOON",
+   "chapter": 3,
+   "visual": {
+    "kind": "story",
+    "title": "Before you start",
+    "beats": [
+     {
+      "pose": "present",
+      "prop": {
+       "name": "server",
+       "label": "Fatoora"
+      },
+      "text": "1. Access to the Fatoora portal"
+     },
+     {
+      "pose": "type",
+      "prop": "laptop",
+      "text": "2. Your Saudi address complete in Zoho Books"
+     },
+     {
+      "pose": "point",
+      "prop": "lock",
+      "text": "3. Ten quiet minutes"
+     }
+    ]
+   },
+   "lines": [
+    "Before you start, have three things ready. First, access to your business account on ZATCA's Fatoora portal.",
+    "Second, your organisation's full Saudi address filled in, in Zoho Books. I'll show you exactly which fields in chapter four.",
+    "And third, ten quiet minutes, because the password you are about to create works for just one hour."
+   ]
+  },
+  {
+   "id": "s10",
+   "type": "BOARD",
+   "chapter": 3,
+   "visual": {
+    "kind": "flow2",
+    "title": "Step 1: get a one-time password",
+    "steps": [
+     [
+      "Fatoora portal",
+      "Log in with your ZATCA account"
+     ],
+     [
+      "Onboard",
+      "New Solution Unit / Device"
+     ],
+     [
+      "Devices",
+      "Enter 1 if Zoho Books is your only system"
+     ],
+     [
+      "OTP",
+      "Copy it. Valid for 1 hour"
+     ]
+    ],
+    "footer": "use it within one hour"
+   },
+   "lines": [
+    "First, log in to ZATCA's Fatoora portal, and choose Onboard New Solution Unit or Device.",
+    "Zoho says to enter one as the number of devices, if Zoho Books is your only invoicing system.",
+    "Then copy the one time password. It is valid for only one hour, so keep Zoho Books open. If the hour runs out, simply generate a new one."
+   ]
+  },
+  {
+   "id": "s11",
+   "type": "PODCAST",
+   "chapter": 3,
+   "visual": {
+    "path": [
+     "Settings",
+     "Taxes & Compliance",
+     "e-Invoicing"
+    ],
+    "actions": [
+     {
+      "cue": 0,
+      "screen": "books/invoices_list",
+      "target": "Settings gear",
+      "zoom": 1.9
+     },
+     {
+      "cue": 1,
+      "screen": "books/settings_home",
+      "target": "Taxes",
+      "zoom": 1.7
+     },
+     {
+      "cue": 2,
+      "panel": {
+       "title": "e-Invoicing (Saudi Arabia)",
+       "items": [
+        "OTP from Fatoora",
+        "CSID generated",
+        "Renew CSID when it expires"
+       ]
+      }
+     }
+    ]
+   },
+   "lines": [
+    "Now open Zoho Books, and click the gear icon to open Settings.",
+    "The e-invoicing settings live under Taxes and Compliance.",
+    "Enter the one time password in Zoho Books within that hour, and it generates your C S I D, the cryptographic stamp identifier that links your system to ZATCA."
+   ]
+  },
+  {
+   "id": "s12",
+   "type": "CARTOON",
+   "chapter": 3,
+   "visual": {
+    "kind": "story",
+    "beats": [
+     {
+      "pose": "point",
+      "prop": {
+       "name": "server",
+       "label": "Fatoora"
+      },
+      "text": "Check: View List Of Solutions and Devices"
+     },
+     {
+      "pose": "present",
+      "prop": "lock",
+      "text": "Expired? Renew CSID",
+      "stamp": "RENEW",
+      "stamp_color": "amber"
+     },
+     {
+      "pose": "cheer",
+      "prop": {
+       "name": "server",
+       "label": "Connected"
+      },
+      "text": "Set up once"
+     }
+    ]
+   },
+   "lines": [
+    "To check that it worked, go back to Fatoora, and open View List Of Solutions and Devices.",
+    "When the C S I D expires, renew it in Fatoora first, then click Renew C S I D on the same e-invoicing settings page in Zoho Books.",
+    "You set this up once, and you only come back here when the C S I D needs renewing."
+   ]
+  },
+  {
+   "id": "s13",
+   "type": "CHAPTER",
+   "chapter": 4,
+   "visual": {
+    "num": 4,
+    "title": "Your data and your invoices"
+   },
+   "lines": [
+    "Chapter four. Your data and your invoices."
+   ]
+  },
+  {
+   "id": "s14",
+   "type": "BOARD",
+   "chapter": 4,
+   "visual": {
+    "kind": "checklist",
+    "title": "Fields Zoho Books asks for",
+    "items": [
+     "Building number + additional number",
+     "Street, district, city, postal code",
+     "Customer name + address in Arabic",
+     "Item names in Arabic",
+     "B2B: customer's national ID"
+    ]
+   },
+   "lines": [
+    "Phase 2 invoices need a full Saudi address. In your organisation profile, fill in the building number and the additional number.",
+    "Plus the street, the district, the city and the postal code.",
+    "For customers, Zoho asks for the customer name and the billing address in Arabic.",
+    "Item names on the invoice must be in Arabic too.",
+    "And for standard business invoices, add the customer's national I D and full address. Zoho marks all of these as mandatory for e-invoicing."
+   ]
+  },
+  {
+   "id": "s15",
+   "type": "PODCAST",
+   "chapter": 4,
+   "visual": {
+    "path": [
+     "Sales",
+     "Invoices",
+     "Push to Fatoora"
+    ],
+    "actions": [
+     {
+      "cue": 0,
+      "screen": "books/invoices_list",
+      "target": "Invoices (sidebar)",
+      "zoom": 1.8
+     },
+     {
+      "cue": 0,
+      "at": 0.6,
+      "target": "All Invoices view",
+      "zoom": 1.5
+     },
+     {
+      "cue": 2,
+      "status": [
+       "Yet to be Pushed",
+       "Push Initiated",
+       "Pushed"
+      ],
+      "title": "Invoice status",
+      "notes": {
+       "failed": "fix the error → push again"
+      }
+     }
+    ]
+   },
+   "lines": [
+    "To send an invoice to ZATCA, go to Sales, then Invoices, open the invoice, and click Push to Fatoora.",
+    "Push a standard invoice before you send it to the customer. Push a simplified invoice within twenty four hours of sending it.",
+    "The status moves from Yet to be Pushed, to Push Initiated, to Pushed. If it says Failed, fix the error and push again."
+   ]
+  },
+  {
+   "id": "s15b",
+   "type": "CARTOON",
+   "chapter": 4,
+   "visual": {
+    "kind": "story",
+    "beats": [
+     {
+      "pose": "present",
+      "prop": {
+       "name": "doc",
+       "label": "XML",
+       "color": "sky"
+      },
+      "text": "Pushed invoice: PDF + XML attached"
+     },
+     {
+      "pose": "worried",
+      "prop": "clock",
+      "text": "Approvals on? Push waits for the last approver"
+     },
+     {
+      "pose": "cheer",
+      "prop": "robot",
+      "text": "Quotes: Create, Push and Send"
+     }
+    ]
+   },
+   "lines": [
+    "Once an invoice is pushed, Zoho Books keeps a P D F of it, with the X M L file attached.",
+    "If you use transaction approvals, the invoice is pushed only after the final approver approves it. So approve on time.",
+    "And when a customer approves a quote that turns into an invoice, the preference Create, Push and Send does the push for you."
+   ]
+  },
+  {
+   "id": "s16",
+   "type": "CARTOON",
+   "chapter": 4,
+   "visual": {
+    "kind": "story",
+    "beats": [
+     {
+      "pose": "shrug",
+      "prop": {
+       "name": "doc",
+       "label": "DRAFT",
+       "color": "amber"
+      },
+      "text": "Drafts: you push each one yourself"
+     },
+     {
+      "pose": "cheer",
+      "prop": "robot",
+      "text": "Recurring: Create, Push, and Send",
+      "stamp": "AUTO",
+      "stamp_color": "green"
+     },
+     {
+      "pose": "present",
+      "prop": "coins",
+      "text": "Or: Create, Charge, Push and Send"
+     },
+     {
+      "pose": "present",
+      "prop": "lock",
+      "text": "Roles: Push Transactions"
+     }
+    ]
+   },
+   "lines": [
+    "Recurring invoices have three choices. Create Invoices as Drafts means you push each one yourself.",
+    "Create, Push, and Send Invoices means Zoho pushes and sends them for you.",
+    "And Create, Charge, Push and Send also charges the customer first, then pushes and sends.",
+    "Finally, give the right people the Push Transactions permission, under Settings, then Roles."
+   ]
+  },
+  {
+   "id": "s16b",
+   "type": "BOARD",
+   "chapter": 4,
+   "visual": {
+    "kind": "stat",
+    "title": "Phase 2 in one picture",
+    "stats": [
+     {
+      "value": "B2B",
+      "label": "cleared before you send",
+      "count": false,
+      "color": "teal"
+     },
+     {
+      "value": "B2C",
+      "label": "reported within 24 hours",
+      "count": false,
+      "color": "amber"
+     },
+     {
+      "value": "Every",
+      "label": "invoice stamped + QR",
+      "count": false,
+      "color": "sky"
+     }
+    ]
+   },
+   "lines": [
+    "So, a quick recap. Business invoices are cleared by ZATCA before you send them.",
+    "Consumer invoices are reported within twenty four hours.",
+    "And every invoice carries the cryptographic stamp, and simplified ones the Phase 2 QR code."
+   ]
+  },
+  {
+   "id": "s17",
+   "type": "CHAPTER",
+   "chapter": 5,
+   "visual": {
+    "num": 5,
+    "title": "Your checklist"
+   },
+   "lines": [
+    "Chapter five. Your checklist."
+   ]
+  },
+  {
+   "id": "s18",
+   "type": "BOARD",
+   "chapter": 5,
+   "visual": {
+    "kind": "checklist",
+    "title": "Before 1 February 2027",
+    "items": [
+     "Check VAT revenue for 2022-2025",
+     "Get the OTP from Fatoora",
+     "Generate the CSID in Zoho Books",
+     "Arabic names + full addresses",
+     "Push one invoice, check Pushed"
+    ]
+   },
+   "lines": [
+    "One. Check your revenue subject to VAT for 2022 to 2025.",
+    "Two. Get the one time password from Fatoora.",
+    "Three. Enter it in Zoho Books within the hour, to generate the C S I D.",
+    "Four. Fill in the Arabic names and the full address fields.",
+    "Five. Push your first invoice, and check that it says Pushed."
+   ]
+  },
+  {
+   "id": "s18b",
+   "type": "BOARD",
+   "chapter": 5,
+   "visual": {
+    "kind": "stat",
+    "title": "Three easy mistakes",
+    "stats": [
+     {
+      "value": "1 hour",
+      "label": "OTP expires, get a new one",
+      "count": false,
+      "color": "coral"
+     },
+     {
+      "value": "24 hours",
+      "label": "to report simplified invoices",
+      "count": false,
+      "color": "amber"
+     },
+     {
+      "value": "Failed",
+      "label": "fix it and push again",
+      "count": false,
+      "color": "red"
+     }
+    ]
+   },
+   "lines": [
+    "Three easy mistakes to avoid. Waiting too long with the one time password. It expires after an hour, and then you need a new one.",
+    "Reporting simplified invoices late. You have twenty four hours.",
+    "And leaving failed invoices. Open them, fix the error, and push again the same day."
+   ]
+  },
+  {
+   "id": "s19",
+   "type": "CARTOON",
+   "chapter": 5,
+   "visual": {
+    "kind": "celebrate2",
+    "top": "READY",
+    "big": "✓",
+    "sub": "on time"
+   },
+   "lines": [
+    "Do this early, and the first of February is just another working day.",
+    "Every invoice then goes to Fatoora straight from Zoho Books, with no extra work at month end."
+   ]
+  },
+  {
+   "id": "s20",
+   "type": "OUTRO",
+   "chapter": 5,
+   "visual": {
+    "kind": "outro",
+    "next": "UAE e-invoicing in Zoho Books",
+    "badge": "UAE",
+    "badge_sub": "e-invoicing",
+    "note": "Rules can change: check the latest ZATCA notices"
+   },
+   "lines": [
+    "If this helped, subscribe. Our UAE e-invoicing video is next.",
+    "And rules can change, so always check the latest notices from ZATCA."
+   ]
+  }
+ ]
+}

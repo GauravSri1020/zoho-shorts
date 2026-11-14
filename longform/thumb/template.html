@@ -38,5 +38,5 @@ if (D.accent) { document.querySelector('.sun').style.background = D.accent; docu
 if (D.bg) document.body.style.background = D.bg;
 // shrink every title line until it fits left of the presenter (max 700 px)
 document.fonts.ready.then(() => { for (const k of ['l1', 'l2', 'l3']) { const e = document.getElementById(k); let f = 104;
-  while (e.scrollWidth > 700 && f > 50) { f -= 2; e.style.fontSize = f + 'px'; } } document.body.dataset.ready = 1; });
+  while (e.scrollWidth > (k === 'l3' ? 560 : 700) && f > 50) { f -= 2; e.style.fontSize = f + 'px'; } } document.body.dataset.ready = 1; });
 </script></body></html>

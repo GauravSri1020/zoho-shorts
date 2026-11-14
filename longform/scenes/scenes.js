@@ -544,15 +544,15 @@ function renderPodcast(t) {
     }
     if (a.status) { dim = Math.max(dim, eOut(P(t, a.t, .4)));
       const cols = ['#8a8f9c', C.amber, C.green, C.red], y = 400; const xs = [250, 640, 1010];
-      const tms = [cs(1) + .1, at(1, .18), at(1, .32), at(1, .55)];
-      ov += G(t, a.t, null, card(130, 250, 1240, 420, {r: 24}) + text(170, 315, 'E-invoice status', 34, {w: 800}));
+      const gen = a.notes !== undefined;   // generic (any topic): timed on its own line, no UAE extras
+      const tms = gen ? [a.t + .3, at(a.cue, .3), at(a.cue, .5), at(a.cue, .72)] : [cs(1) + .1, at(1, .18), at(1, .32), at(1, .55)];
+      ov += G(t, a.t, null, card(130, 250, 1240, 420, {r: 24}) + text(170, 315, a.title || 'E-invoice status', 34, {w: 800}));
       a.status.slice(0, 3).forEach((s, i) => { const p = eBack(P(t, tms[i], .45)); if (p > 0) ov += `<g transform="translate(${xs[i]},${y}) scale(${p})">${pill(0, 0, s, {anchor: 'middle', fill: cols[i], size: 28})}</g>`;
         if (i) ov += arrow(xs[i - 1] + 130, y, xs[i] - 140, y, P(t, tms[i] - .1, .35), C.mute, 5); });
-      ov += G(t, at(1, .4), null, text(1010, 465, 'UUID  3f9a…c21e', 24, {anchor: 'middle', w: 600, fill: C.mute}));
+      if (!gen) ov += G(t, at(1, .4), null, text(1010, 465, 'UUID  3f9a…c21e', 24, {anchor: 'middle', w: 600, fill: C.mute}));
       const pf = eBack(P(t, tms[3], .45)); if (pf > 0) ov += `<g transform="translate(640,560) scale(${pf})">${pill(0, 0, 'Failed', {anchor: 'middle', fill: cols[3], size: 28})}</g>`;
-      ov += writeOn(740, 570, 'fix the error → push again', 32, P(t, tms[3] + .4, 1), {fill: C.red});
-      
-      ov += G(t, cs(2), null, pill(1050, 630, 'Pushed = locked → use a credit note', {anchor: 'middle', fill: C.navy, size: 26}));
+      ov += writeOn(740, 570, gen ? (a.notes.failed || 'fix the error → push again') : 'fix the error → push again', 32, P(t, tms[3] + .4, 1), {fill: C.red});
+      if (!gen) ov += G(t, cs(2), null, pill(1050, 630, 'Pushed = locked → use a credit note', {anchor: 'middle', fill: C.navy, size: 26}));
     }
     if (a.inbox) {
       const p0 = a.t; const vx = VP.x, vy = VP.y + 46;

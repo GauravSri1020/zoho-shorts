@@ -53,7 +53,7 @@ body{{background:radial-gradient(900px 1100px at 50% 40%,#173a86 0%,#0f2a66 45%,
     with sync_playwright() as p:
         b = p.chromium.launch()
         pg = b.new_page(viewport={"width": W, "height": H})
-        pg.goto(tmp.as_uri())
+        pg.goto(tmp.resolve().as_uri())
         pg.wait_for_selector("body[data-ready]", timeout=15000)
         pg.screenshot(path=str(out))
         b.close()

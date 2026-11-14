@@ -52,7 +52,7 @@ function beatView(b, t, t0, i) {
   }
   if (b.t === 'stat') {
     let s = text(960, 560, b.value, fitSize(b.value, 230, 1500, 'Inter', 900), {anchor: 'middle', w: 900, fill: COL(b.color || 'coral')});
-    s += writeOn(960, 690, b.label || '', 64, P(t, t0 + .25, .8), {anchor: 'middle', fill: C.ink});
+    s += writeOn(960, 690, b.label || '', Math.min(64, fitSize(b.label || '', 64, 1400, 'Kalam', 700)), P(t, t0 + .25, .8), {anchor: 'middle', fill: C.ink});
     return `<g transform="translate(960,520) scale(${eBack(k)}) translate(-960,-520)">${s}</g>`;
   }
   if (b.t === 'title') {
@@ -101,7 +101,7 @@ function sStat(t) {
   S.forEach((s, i) => { const s0 = i < SC.cues.length ? (i ? cs(i) : .3) : cs(SC.cues.length - 1) + i * .4;
     const p = eBack(P(t, s0, .55)); if (p <= 0) return; const x = x0 + i * (w + gap), col = COL(s.color || ['coral', 'teal', 'sky'][i]);
     let c = card(x, 300, w, 470, {r: 30}) + `<rect x="${x}" y="300" width="${w}" height="14" rx="7" fill="${col}"/>`;
-    const val = countUp(s.value, P(t, s0 + .1, 1.1));
+    const val = s.count === false ? s.value : countUp(s.value, P(t, s0 + .1, 1.1));
     c += text(x + w / 2, 520, val, fitSize(s.value, n === 1 ? 170 : 120, w - 80, 'Inter', 900), {anchor: 'middle', w: 900, fill: col});
     lines(s.label, 40, w - 80, 'Inter', 2).forEach((l, j) => c += text(x + w / 2, 620 + j * 52, l, 40, {anchor: 'middle', w: 650, fill: '#4a5163'}));
     if (s.note) c += text(x + w / 2, 735, s.note, 26, {anchor: 'middle', w: 600, fill: C.mute});

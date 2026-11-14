@@ -127,8 +127,8 @@ def check(path):
     if short:
         if not 25 <= mins * 60 <= 52:
             bad.append(f"spoken length ~{mins * 60:.0f} s (a Short wants 25-52 s)")
-    elif not 5.6 <= mins <= 10.0:
-        bad.append(f"spoken length ~{mins:.1f} min (want 5.6-10 so the video is 7-12 min, QA rule)")
+    elif not 6.6 <= mins <= 11.0:
+        bad.append(f"spoken length ~{mins:.1f} min (want 6.6-11 so the video is 7-12 min, QA rule)")
     return bad, mins
 
 
