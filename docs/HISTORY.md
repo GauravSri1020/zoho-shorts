@@ -6,6 +6,18 @@ Is file ko har session ke end pe update karo, taaki agla chat yahin se shuru kar
 
 Gaurav jab bhi kuch bhi change karne bole: SABSE PEHLE backup - `backup-YYYY-MM-DD-<kya-badal-rahe-ho>` branch main se banao (aur agar video ka kaam hai to latest Short ka artifact download karo). Tabhi code chhuo. Kuch bigde to us branch se purana code wapas lo.
 
+## 14 Nov 2026 raat - long video LIVE, 2 Nvidia news Shorts scheduled
+
+- Long video uae-einvoicing v2 YouTube pe: https://youtube.com/watch?v=-JyVV7LA4pA (4K, public 14 Nov 22:00 IST). Thumbnail API 403 = channel phone-verified nahi (youtube.com/verify - Gaurav).
+- Gaurav: "Nvidia wale kaand pe 2 videos with my Flow" (channel ka niche Zoho hai, Gaurav ka faisla reach ke liye). Flow main account project "Nov 14 - 19:37" (shaam ko Claude ne banaya; us chat ka context compaction mein gaya, files scratchpad mein mile).
+  Facts: Nvidia 8-K 12 Nov 2026 (Huang resigned as President, CEO and board member, effective immediately; Colette Kress interim CEO; internal + external candidates), CNBC 12/13 Nov (affair note to staff, $4T se neeche, -12.75% week), Beinsure (board probe: reports he was targeted by a foreign intelligence operation), FY2026 revenue ~$216B.
+  Galtiyan pakdi: "shares fell over 14% at one point" kisi source mein confirm nahi -> wo clip HATAYA; 2 clips mein Veo ne maathe pe lal tilak bana diya (rule ke khilaaf) + ek clip ka huliya alag -> Flow retakes (2113778, 2220291) se Kress video dobara banaya.
+  Final (all-face, captions + lower thirds + header + sources line, quiet music): vMv3A-V--Zg "Jensen Huang Resigns: What Is Actually Confirmed" public 15 Nov 12:30 IST; YshGq1w0Ee4 "Who Is Colette Kress? Nvidia's New Interim CEO" public 15 Nov 17:30 IST.
+  Upload: branch long-videos workflow longform-upload (push trigger docs/longform/upload-requests/<id>.json, naya "upscale": false = vertical Shorts as-is); videos branch longform-previews/previews/. Result files docs/longform/uploaded/<id>.json.
+- Flow project mein galti se 3 khaali "Untitled collection" ban gaye (download menu ke clicks) - Gaurav delete kar de.
+- Main pe 2 manual Nvidia jobs bane the, phir hata diye (warna daily run unhe waiting jobs gin ke ruk jaata).
+- SEEKH: clips ke prompt mein "no tilak" ke bawajood Veo kabhi tilak bana deta hai -> har clip ka frame dekhna zaroori; aur jo line source mein na mile, wo clip use nahi.
+
 ## 14 Nov 2026 shaam - long video v2 + upload, Shorts 3x fail (no usable news)
 
 Gaurav ka review (sample "bahut achha"): thoda slow -> ~1.25-1.35x; Zoho Books screens zyada; kone ka chehra bahut chhota (profile icon jaisa), mic wali photo nahi, 1-2 s bolta hua clip loop; voice yahi free wali par thodi bhaari (apni awaaz NAHI dega); podcast setup clip NAHI; interest loose na ho; research tight; 4K taaki YouTube pe pixel na fate; thumbnail references jaisa (CA Kunal Kumar / Business Solution style). Doosre channels ke tutorials se screen record karke crop karne ko kaha - Claude ne MANA kiya (copyright + reused-content = monetization band).
