@@ -566,3 +566,9 @@ Shuru mein: SadTalker / photo motion avatar, Gemini TTS, research/script/QA agen
 ## Kaam ki files
 
 channel.yaml - NICHE SWITCH (active_niche). niches/<niche>.yaml - us niche ki saari settings. research/problem_bank.yaml - real problems (yahan apni add karo). autopilot/flow.py - prompts, clip matching, face/TTS timeline. autopilot/composer.py - final layout. autopilot/tts.py - screen-part voice. autopilot/screens.py - Zoho / AI chat / API / code screens. assets/screens/index.yaml - asli Zoho screenshots. autopilot/writer.py - script agents + translations. autopilot/research.py - feeds + trend score + problem bank. state/state.json - robot ka state. .github/workflows/autopilot.yml - daily 10 AM IST + assemble on clip upload.
+
+## 15 Nov 2026 (raat 00:10) – long video thumbnail + keywords
+- Phone verify ho gaya, to long video -JyVV7LA4pA par custom thumbnail laga diya aur title / tags / description ke keywords update kar diye (workflow `longform-fix` on long-videos, run 43627830263 success).
+- Naya title: "UAE E-Invoicing 2027 in Zoho Books: Step-by-Step Setup Guide"; 19 search tags (UAE e-invoicing, Zoho Books UAE, Peppol UAE, PINT AE, FTA e-invoicing, EmaraTax ...).
+- Aage kisi bhi uploaded video ko edit karna ho: long-videos par docs/longform/fix-requests/<name>.json push karo (video_id, title, description_prepend, tags, thumb).
+- Backup: backup-2026-11-15-before-video-fix-thumb.
