@@ -15,6 +15,8 @@ on:
       publish_at:
         description: "publish time, UTC ISO (e.g. 2026-11-14T16:30:00Z = 22:00 IST); empty = in 45 min"
         default: ""
+permissions:
+  contents: write
 concurrency:
   group: longform-upload
   cancel-in-progress: false
@@ -65,6 +67,13 @@ jobs:
         run: |
           python -m longform.upload --video out4k.mp4 --meta "in/${{ steps.in.outputs.id }}.meta.json" \
             --thumb "in/${{ steps.in.outputs.id }}-thumb.jpg" --publish "${{ steps.in.outputs.pub }}"
+      - name: Record the result on long-videos (so Claude can check it without a browser)
+        if: success() && github.ref == 'refs/heads/long-videos'
+        run: |
+          mkdir -p docs/longform/uploaded
+          cp out/uploaded.json "docs/longform/uploaded/${{ steps.in.outputs.id }}.json"
+          git config user.name longform-bot; git config user.email longform-bot@users.noreply.github.com
+          git add docs/longform/uploaded && git commit -m "uploaded: ${{ steps.in.outputs.id }}" && git pull --rebase origin long-videos && git push origin HEAD:long-videos
       - uses: actions/upload-artifact@v4
         if: always()
         with:
