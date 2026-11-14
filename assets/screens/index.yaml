@@ -1144,3 +1144,53 @@ screens:
       - 612
       - 207
       - 31
+  books/customers_list:
+    file: books/customers_list.png
+    size: [1568, 653]
+    about: 'Zoho Books > Sales > Customers list (All Customers, empty state "Every sale starts with a customer") with + New, Create New Customer and Import File buttons; sidebar Sales expanded. Used to add or import customers.'
+    targets:
+      New: [1397, 66, 69, 33]
+      Create New Customer: [719, 437, 178, 33]
+      Import File: [906, 437, 108, 33]
+      'Customers (sidebar)': [11, 174, 202, 31]
+  books/item_new:
+    file: books/item_new.png
+    size: [1568, 653]
+    about: 'Zoho Books > Items > + New: New Item form - Name, Type (Goods / Service radio), Unit, Sales Information (Selling Price, Account, Description), Save / Cancel. Used to create a product or service item.'
+    targets:
+      Name: [404, 224, 448, 34]
+      Goods: [404, 272, 66, 22]
+      Service: [482, 272, 70, 22]
+      Unit: [404, 310, 342, 34]
+      Selling Price: [429, 441, 326, 35]
+      Save: [240, 605, 53, 33]
+  books/invoice_new:
+    file: books/invoice_new.png
+    size: [1568, 653]
+    about: 'Zoho Books > Sales > Invoices > + New: New Invoice form - Customer Name, Invoice#, Order Number, Invoice Date, Terms, Due Date, Accounts Receivable, Salesperson, Subject; footer Save as Draft, Save and Send, Cancel, Make Recurring.'
+    targets:
+      Customer Name: [429, 145, 554, 35]
+      'Invoice#': [429, 229, 335, 35]
+      Invoice Date: [429, 325, 335, 34]
+      Terms: [887, 325, 153, 34]
+      Due Date: [1162, 325, 153, 34]
+      Save as Draft: [240, 600, 105, 33]
+      Save and Send: [355, 600, 137, 33]
+      Make Recurring: [1212, 603, 124, 30]
+  books/recurring_invoices:
+    file: books/recurring_invoices.png
+    size: [1568, 653]
+    about: 'Zoho Books > Sales > Recurring Invoices list (empty state "Create. Set. Repeat.") with + New and CREATE NEW RECURRING INVOICE. Used to set up invoices that are created and sent automatically on a schedule.'
+    targets:
+      New: [1397, 66, 69, 33]
+      Create New Recurring Invoice: [729, 540, 275, 44]
+      'Recurring Invoices (sidebar)': [11, 313, 202, 31]
+  books/creditnote_new:
+    file: books/creditnote_new.png
+    size: [1568, 653]
+    about: 'Zoho Books > Sales > Credit Notes > + New: New Credit Note form - Customer Name, Credit Note#, Reference#, Credit Note Date, Accounts Receivable, Salesperson; footer Save as Draft, Save as Open.'
+    targets:
+      Customer Name: [429, 145, 554, 35]
+      'Credit Note#': [429, 229, 335, 35]
+      Save as Draft: [240, 605, 105, 33]
+      Save as Open: [355, 605, 109, 33]
