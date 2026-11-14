@@ -572,3 +572,10 @@ channel.yaml - NICHE SWITCH (active_niche). niches/<niche>.yaml - us niche ki sa
 - Naya title: "UAE E-Invoicing 2027 in Zoho Books: Step-by-Step Setup Guide"; 19 search tags (UAE e-invoicing, Zoho Books UAE, Peppol UAE, PINT AE, FTA e-invoicing, EmaraTax ...).
 - Aage kisi bhi uploaded video ko edit karna ho: long-videos par docs/longform/fix-requests/<name>.json push karo (video_id, title, description_prepend, tags, thumb).
 - Backup: backup-2026-11-15-before-video-fix-thumb.
+
+## 15 Nov 2026 (raat 01-04) – daily robot (bina Flow / laptop / Claude chat)
+- Long video -JyVV7LA4pA: thumbnail + keywords set. Naya robot: long-videos branch par shorts-daily + longform-daily
+  (generic scenes, validator, 9:16 Shorts, thumbnail, 4K, upload), main par naya daily-robot.yml (brain 05:17 IST via
+  Claude Code action + keeper 05:53/15:07 IST). Details + next step: docs/sessions/2026-11-15-daily-robot.md.
+- Scheduled: Short ac2VsB7cqqU (15 Nov 07:30). Rendering: ZATCA Phase 2 long (15 Nov 18:30), 3 more Shorts.
+- Gaurav ko karna hai: secret CLAUDE_CODE_OAUTH_TOKEN add karna (brain ke liye).
