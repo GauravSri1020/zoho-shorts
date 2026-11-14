@@ -1,93 +1,107 @@
-# DAILY ROBOT - what the scheduled Claude run does every morning (Gaurav's order, 15 Nov 2026)
+# DAILY ROBOT - what the daily Claude "brain" does (Gaurav's order, 15 Nov 2026)
 
-Gaurav: "2 Shorts + 1 long video EVERY day, automatically - research, make, upload, schedule. If the news is wrong or
-missing, take other trending news; if there is none, make a tutorial. If something fails, at least tell me the next topics."
+Gaurav: "2 Shorts + 1 long video EVERY day, automatically - research, make, upload, schedule. Always keep at least
+2 days (better a week) ready. Fresh news goes out first; evergreen videos fill the days after. Research must be tight:
+no mistake in facts, script or frames. If something fails, at least tell me the next topics."
 
-Everything runs WITHOUT Gaurav's browser: no Google Flow, no logins, no passwords. Shorts + long videos are rendered by
-GitHub Actions on branch `long-videos` (Kokoro voice, geometric cartoons, whiteboards, real Zoho screens, the round
-presenter loop). The old Gemini Shorts robot on `main` keeps running as it is - never change `autopilot/` or `main`'s
-workflows from the daily run.
+HOW IT RUNS (no Claude chat, no scheduler in the Claude app, no laptop):
+- `main/.github/workflows/daily-robot.yml` (GitHub cron) runs this file every morning with Claude Code
+  (anthropics/claude-code-action, secret CLAUDE_CODE_OAUTH_TOKEN = Gaurav's subscription) on a GitHub runner.
+- The same workflow runs the KEEPER twice a day (no AI): when less than 3 days are scheduled it moves ready scripts
+  from `docs/longform/queue/` into production. So the queue is the safety buffer - keep it full.
+- Makers (branch long-videos): `shorts-daily` (9:16 Shorts) and `longform-daily` (16:9 long videos): validate ->
+  Kokoro voice -> render -> strict QA -> YouTube (scheduled). A push made with the runner token does NOT start
+  workflows, so after pushing always start them yourself:
+  `gh workflow run shorts-daily.yml --ref long-videos -f files="docs/longform/shorts/a.json docs/longform/shorts/b.json"`
+  `gh workflow run longform-daily.yml --ref long-videos -f request="docs/longform/daily/<id>.json"`
+- No Google Flow, no logins, no passwords, nothing in Claude chats or artifacts. The old Gemini Shorts robot on
+  `main` keeps running as it is - never change `autopilot/` or other files on `main` from the daily run.
 
-## 0. Start (5 min)
-1. `add_repo` GauravSri1020/zoho-shorts (access push). Clone, `git fetch origin main long-videos longform-previews`,
-   work on `long-videos`. Push with `git -c push.negotiate=true push`.
-2. Read: `CLAUDE.md` (main), the last 60 lines of `docs/HISTORY.md` (main), this file, `docs/longform/topics-used.md`
-   (never repeat a topic from the last 30 days), the newest files in `docs/longform/shorts-failed/` + `docs/longform/failed/`.
-3. CLAUDE.md rule 1: push a backup branch `backup-YYYY-MM-DD-daily` from `origin/long-videos` before changing anything.
+## 0. Start
+1. You are in a checkout of branch `long-videos` (git user already set). `git pull`. Read: `CLAUDE.md`, this file,
+   `docs/longform/topics-used.md` (never repeat a topic of the last 30 days), the newest files in
+   `docs/longform/shorts-failed/`, `docs/longform/failed/`, and count `docs/longform/queue/shorts|long/`.
+2. Results so far: `docs/longform/shorts-uploaded/`, `docs/longform/uploaded/` (publish_at = when it goes public).
 
-## 1. Research (WebSearch, ~20 min) - accuracy beats speed
-Find today's candidates in this order and keep a ranked list of at least 8:
-1. Zoho news (zoho.com/blog, Zoho press releases, product updates) from the last 7 days.
-2. Tax / compliance changes that hit small businesses using accounting software: UAE (MoF, FTA), Saudi (ZATCA),
-   India (GST council / CBIC / GSTN), EU (ViDA, national e-invoicing), plus any country with a new e-invoicing date.
-3. Big "jhatka" business-tech news (AI, big tech, layoffs, outages, price changes, CEO changes) trending in the last
-   48 h that small-business owners care about.
-4. Evergreen Zoho Books / CRM how-to problems (late payments, reminders, recurring invoices, approvals, workflows,
-   bank feeds, custom fields...) - always available, use when 1-3 give nothing solid.
+## 1. Research (WebSearch + WebFetch) - accuracy beats speed
+Rank today's candidates (at least 10) in THIS priority order (Gaurav, 15 Nov):
+1. ZOHO ECOSYSTEM NEWS, joined to what is trending: Zoho has ~55+ apps (Books, Invoice, Billing, Inventory, Expense,
+   Payroll, CRM, Bigin, Desk, Projects, Sign, Social, Campaigns, Marketing Automation, Forms, Analytics, Creator,
+   Flow, Cliq, Mail, Workplace, Zoho One, Zia AI ...). Look for: new features / releases (zoho.com/blog, product
+   "what's new" pages, help-doc release notes), Zia + AI agents, Zoho + Claude / ChatGPT / MCP servers, pricing and
+   licensing changes (what changed, how to buy / upgrade), Zoho partner news (partner programme, audits,
+   certifications - e.g. the December partner audit), Zoho events, Zoho in the Middle East / India / Europe.
+   Audience = Zoho customers, Zoho partners and people choosing software -> say why it matters to THEM.
+2. Tax / compliance updates that hit Zoho users: UAE (MoF, FTA e-invoicing), Saudi (ZATCA waves), India (GST, e-invoice,
+   e-way bill), Oman / Bahrain / Qatar, EU (ViDA, Peppol, national e-invoicing), plus follow-ups on topics we already
+   covered (new decision, new date, new list) - an update video is good content.
+3. Zoho how-to tutorials (evergreen) - one real problem, fixed step by step in a Zoho app.
+4. LAST: general trending business news (big tech, AI companies, markets, crypto moves) - only when 1-3 give nothing.
+Freshness: news from today / yesterday goes out in the next free slot ("priority": "news"); a week-old item is fine
+when it is still relevant (deadline still ahead); evergreen goes to the queue.
 
 Fact rules (CLAUDE.md rule 3 - wrong facts are never uploaded):
-- Every number, date, name and claim must come from an official primary source (government, the company itself) OR
-  two independent reputable outlets. Open the pages (WebFetch) - never write from a search snippet alone.
-- News must be from the last 72 h (Shorts) / still current (long video). Say the date on screen.
+- Every number, date, name, price and claim: from an official primary source (government, Zoho's own pages) OR two
+  independent reputable outlets. Open the pages (WebFetch) - never write from a search snippet alone.
+- Prices / plans: only from Zoho's own pricing page for the region you name, with the date checked.
 - Real people: only what the sources say, no opinions, no invented quotes, no photos of real people.
-- Zoho steps (menu paths, button names) only from Zoho's own help pages AND only screens that exist in
-  `assets/screens/index.yaml` (with those exact click targets). If a step cannot be shown on a real screen, show it as a
-  board (flow2 / checklist) instead - never invent a Zoho screen.
-- If a fact can't be verified, drop it. If the topic falls apart, take the next candidate.
+- Zoho steps (menu paths, button names) only from Zoho's own help pages, and only screens that exist in
+  `assets/screens/index.yaml` with those exact click targets. If a step cannot be shown on a real screen, show it
+  as a board (flow2 / checklist) - never invent a Zoho screen. Screens are from a sample India org: do not show
+  India-only settings (GST) for another country.
+- Unverifiable -> drop it. Topic falls apart -> next candidate. Write the fact table first (research file).
 
-## 2. Two Shorts (~25 min)
-- One file per Short: `docs/longform/shorts/sYYYYMMDD-<slug>.json`, `"format": "short"`. Copy the structure of
-  `docs/longform/shorts/s20261115-uae-pdf.json` (the first one, approved quality).
-- Mix: if there is solid news -> one news "jhatka" Short + one useful how-to; no news -> two how-tos.
-- 30-48 s spoken (about 95-150 words), 3-4 scenes, first line = the hook (the surprising fact, no "hi guys"),
-  last line = the takeaway / where to learn more. Natural English, short sentences, no hype words ("insane", "shocking").
-- `headline`: max ~8 words, one *highlighted* phrase. `kicker`: 2-4 words + date. `source_line`: real sources.
-- `title`: <= 90 chars, keyword first (people search it), no clickbait the video doesn't deliver.
-- `description`: summary, sources with URLs + "checked <date>", "General information..." line for tax/legal topics,
-  the AI-disclosure line ("This video uses an AI-generated presenter, voice and animations..."), and the
-  "Independent channel. Not affiliated with or endorsed by Zoho Corporation." line when Zoho is mentioned. Hashtags.
-- `tags`: 8-15 real search phrases.
-- `caption_fix`: spoken -> written forms for captions (["fifty million dirhams", "AED 50 million"], ["B to B", "B2B"]).
-  Write letters to spell out with spaces in the line ("T R N") and map them back in caption_fix.
-- Check: `python -m longform.validate <file>`, then render it locally and LOOK at it before pushing:
+## 2. Shorts - target: 2 per day scheduled + 6 ready in the queue
+- File: `sYYYYMMDD-<slug>.json`, `"format": "short"`. Copy `docs/longform/shorts/s20261115-uae-pdf.json`.
+  News Short -> `docs/longform/shorts/` with `"priority": "news"` (earliest free slot incl. 13:30 IST) + dispatch.
+  Evergreen Short -> `docs/longform/queue/shorts/` (the keeper schedules it at 07:30 / 21:30 IST when needed).
+- 30-48 s spoken (95-150 words), 3-4 scenes, line 1 = the hook (the surprising fact, no "hi guys"), last line = the
+  takeaway / where to learn more. Natural English, short sentences, no hype words.
+- `headline` max ~8 words with one *highlighted* phrase; `kicker` 2-4 words + date; `source_line` real sources.
+- `title` <= 90 chars, search keyword first, no clickbait. `tags` 8-15 real search phrases.
+- `description`: summary, sources with URLs + "checked <date>", "General information..." line for tax/legal, the
+  AI-disclosure line ("This video uses an AI-generated presenter, voice and animations..."), "Independent channel.
+  Not affiliated with or endorsed by Zoho Corporation." when Zoho is named, hashtags.
+- `caption_fix`: spoken -> written ("fifty million dirhams" -> "AED 50 million", "B to B" -> "B2B", "C S I D" -> "CSID").
+- Check before pushing: `python -m longform.validate F`, then render it and LOOK:
   `python longform/voice.py F /tmp/v && python -m longform.render F --voice /tmp/v --out /tmp/r --scale 1 &&
    python -m longform.vshort build F /tmp/r /tmp/s.mp4 && python -m longform.qa /tmp/s.mp4 --voice /tmp/r/voice.wav --short`
-  then a contact sheet (`ffmpeg -i /tmp/s.mp4 -vf "fps=1/3,scale=270:480,tile=6x2" -frames:v 1 /tmp/c.jpg`) and Read it:
-  text cut off, empty frames, overlaps, wrong facts on screen = fix first.
-- Push both Shorts in ONE commit -> workflow `shorts-daily` makes, QA-checks and schedules them (next free slot of
-  07:30 / 13:30 / 21:30 IST). Result: `docs/longform/shorts-uploaded/<id>.json` or `docs/longform/shorts-failed/<id>.json`.
+  + contact sheet `ffmpeg -i /tmp/s.mp4 -vf "fps=1/3,scale=270:480,tile=6x2" -frames:v 1 /tmp/c.jpg` -> Read it.
+  Text cut off, empty frames, overlaps, wrong facts on screen = fix first.
 
-## 3. One long video (~60 min)
-- Topic: the strongest *universal* problem from the research (trending + useful to many small businesses), with real
-  Zoho Books screens where possible. id: `<slug>` (lowercase, dashes), different from earlier ids.
-- `docs/longform/research/<id>.md`: fact table (fact | value | source URL | official/secondary) + "not verified -> not used".
-- `docs/longform/scripts/<id>.json`: same top-level fields as `uae-einvoicing.json` plus `intro_chapter`, `thumb`, `tags`,
-  `sources`, `caption_fix`. 7-10 min video = 5.6-10 min spoken (validator), 4-5 chapters, a new scene every 15-40 s,
-  at least 3 PODCAST (real screen) scenes when the topic is a Zoho how-to. HOOK first (hook2, 3-5 beats), OUTRO last.
-- `thumb`: chip (2-3 words), l1/l2/l3 (1-2 words each, l2 = the yellow keyword), pill (deadline / number / promise),
-  pose = one of arms_crossed, open_hands, point_up, point_you, wow.
-- Title <= 100 chars, keyword first. Description: summary, `{chapters}` placeholder, sources, disclaimers (as above).
-- `python -m longform.validate`, then a quick visual check: voice + `python -m longform.render F --voice V --out R
-  --scale 0.5 --plan-only` + `python -m longform.preview R/plan.json R/stills "" 0`, look at a contact sheet of the stills.
-- Push the script, the research file and `docs/longform/daily/<id>.json` =
-  `{"id": "<id>", "script": "docs/longform/scripts/<id>.json", "publish_at": "<UTC ISO>"}` (default: today 18:30 IST =
-  13:00Z if it is before 10:00 IST, else tomorrow 13:00Z). Workflow `longform-daily` (1-2 h): validate -> voice ->
-  render 1440p -> QA -> chapters -> thumbnail -> 4K -> upload (scheduled) -> `docs/longform/uploaded/<id>.json` or
-  `docs/longform/failed/<id>.json`.
+## 3. Long videos - target: 1 per day scheduled + 3 ready in the queue
+- Topic: the strongest universal problem / update from the research, with real Zoho screens where possible.
+  id `<slug>`, new. Files: `docs/longform/research/<id>.md` (fact table: fact | value | source URL | official/secondary,
+  + "not verified -> not used"), `docs/longform/scripts/<id>.json` (copy `zatca-phase2-zoho-books.json`).
+- 7-10 min video = 6.6-11 min spoken (validator), 4-5 chapters, a new scene every 15-40 s, HOOK first (hook2),
+  OUTRO last, >= 3 PODCAST scenes for Zoho how-tos. `thumb` (chip, l1/l2/l3 1-2 words each, l2 = keyword in the
+  accent colour, pill, pose arms_crossed|open_hands|point_up|point_you|wow, accent colour). Title <= 100 chars,
+  keyword first. Description with `{chapters}`, sources, disclaimers.
+- Check: validate, voice, `python -m longform.render F --voice V --out R --scale 0.5 --plan-only` (total must be
+  7-12 min) + `python -m longform.preview R/plan.json R/stills "" 0` + contact sheet -> Read it. Thumbnail:
+  `python -m longform.thumb F /tmp/t.jpg` -> Read it.
+- Evergreen -> `docs/longform/queue/long/<id>.json` = `{"id": "<id>", "script": "docs/longform/scripts/<id>.json"}`
+  (keeper sets publish_at). Fresh news -> `docs/longform/daily/<id>.json` with `"publish_at"` = next 13:00Z that is
+  >= 3 h away and not already taken by another long video, then dispatch longform-daily (one at a time: if a
+  longform-daily run is in progress, put it in the queue instead).
 
-## 4. Watch the runs, retry, never weaken QA
-- Poll `gh run list -R GauravSri1020/zoho-shorts` and the result folders every few minutes (Shorts ~15 min, long video
-  up to 2 h). On a failure read the log (`gh run view <id> --log-failed`).
-- Script problem (validator / QA / text cut off) -> fix the script and push again (same id), or take the next topic
-  (new id). At most 2 retries per item.
-- Bug in the code -> smallest possible fix on `long-videos`, never relax a QA check, note it in HISTORY.
-- A video that is wrong after upload: set it private via a fix request is NOT possible - tell Gaurav at once.
+## 4. Watch, retry, never weaken QA
+- `gh run list --workflow shorts-daily.yml` / `longform-daily.yml`, result folders. On failure:
+  `gh run view <id> --log-failed`. Script problem -> fix + dispatch again (max 2 retries) or next topic.
+  Code bug -> smallest fix on `long-videos`, never relax a QA check, note it in the report.
+- Do not wait for long renders to finish (they take 1-2 h); the next run / the keeper checks them.
 
-## 5. Report + log (always, also when things failed)
-- `docs/longform/topics-used.md`: one line per topic made today (date | type | id | title | video id).
-- `docs/HISTORY.md` on `main`: short entry (what was scheduled, failures, fixes).
-- SendUserMessage to Gaurav in short Hinglish: the 2 Shorts + the long video (title, YouTube link, publish time IST),
-  what failed and why, and the next 5 topic ideas from today's research (so he always has the next searches).
+## 5. Flow scripts for Gaurav (he opens Flow about once a day)
+- Write `docs/longform/flow-queue/YYYY-MM-DD.md`: 2 avatar Short scripts on today's best topics, split into clips of
+  <= 8 s (one sentence each) with the Flow prompt per clip (same look as main's Flow prompts: office blazer, medium
+  shot, no tilak, natural gestures), plus title/description. A live Claude chat makes them when he opens Flow.
+
+## 6. Report + log (always, also when things failed)
+- Append `docs/longform/topics-used.md` (date | type | id | title | status).
+- Commit + push everything to `long-videos`.
+- GitHub issue titled `Daily report YYYY-MM-DD` (assign the repo owner, short Hinglish): what got scheduled
+  (title, link, publish time IST), queue size, failures + why, and the next 5 topic ideas.
+  `gh issue create --title ... --assignee GauravSri1020 --body ...`
 
 ## Scene kinds (generic - work for any topic). One beat / item per voice line unless noted.
 - HOOK `hook2`: `beats` (= number of lines): `{"t":"headline","source","date","text","tag","color"}`,

@@ -23,7 +23,8 @@ sys.path.insert(0, str(ROOT))
 W, H = 1080, 1920
 VY, VH = 610, 748          # where the animation sits (centre 1560x1080 of the 16:9 frame, scaled to 1080 wide)
 CROP_W = 1560
-SLOTS_IST = ["07:30", "13:30", "21:30"]   # Short publish times (IST); a slot is free if nothing else is within 40 min
+SLOTS_IST = ["07:30", "21:30"]            # evergreen / queued Shorts (2 a day)
+NEWS_SLOTS_IST = ["07:30", "13:30", "21:30"]  # "priority": "news" -> the earliest free slot (13:30 is kept for news)
 
 
 def frame_png(sc, out):
@@ -123,7 +124,7 @@ def build(script, video_dir, out):
     print(f"[vshort] {out}")
 
 
-def pick_slot(yt, g):
+def pick_slot(yt, g, news=False):
     try:
         taken = [w for _, w in g.scheduled_times(yt, days_back=1)]
     except Exception as e:
@@ -131,9 +132,9 @@ def pick_slot(yt, g):
         taken = []
     ist = dt.timezone(dt.timedelta(hours=5, minutes=30))
     now = dt.datetime.now(dt.timezone.utc)
-    for day in range(0, 6):
+    for day in range(0, 21):
         d = (now.astimezone(ist) + dt.timedelta(days=day)).date()
-        for hm in SLOTS_IST:
+        for hm in (NEWS_SLOTS_IST if news else SLOTS_IST):
             h, m = map(int, hm.split(":"))
             when = dt.datetime(d.year, d.month, d.day, h, m, tzinfo=ist).astimezone(dt.timezone.utc)
             if when < now + dt.timedelta(minutes=40):
@@ -147,7 +148,7 @@ def upload(script, video):
     from autopilot import google_apis as g
     sc = json.loads(Path(script).read_text())
     yt = g.youtube()
-    when = pick_slot(yt, g)
+    when = pick_slot(yt, g, news=sc.get("priority") == "news")
     pub = when.strftime("%Y-%m-%dT%H:%M:%SZ")
     title = sc["title"].replace("<", "‹").replace(">", "›")
     if "#shorts" not in title.lower():
