@@ -1,0 +1,107 @@
+# DAILY ROBOT (15 Nov 2026, Gaurav: "everything automatic, without my laptop / Claude chat"). New file - it does not
+# change the Shorts autopilot on this branch. All video work happens on branch long-videos (docs/longform/DAILY.md).
+#  - brain  (05:17 IST): Claude Code on this runner (Gaurav's subscription token, secret CLAUDE_CODE_OAUTH_TOKEN)
+#            researches, writes + checks the day's Shorts / long video scripts, fills the queue, writes a report issue.
+#  - keeper (05:53 + 15:07 IST, no AI): keeps >= 3 days scheduled by moving ready scripts out of the queue.
+# Scheduled workflows only run from the default branch, so this file lives on main.
+name: daily-robot
+on:
+  schedule:
+    - cron: "47 23 * * *"   # 05:17 IST  brain
+    - cron: "23 0 * * *"    # 05:53 IST  keeper
+    - cron: "37 9 * * *"    # 15:07 IST  keeper
+  workflow_dispatch:
+    inputs:
+      job:
+        description: "brain or keeper"
+        default: "keeper"
+permissions:
+  contents: write
+  actions: write
+  issues: write
+  id-token: write
+jobs:
+  keeper:
+    if: (github.event_name == 'schedule' && github.event.schedule != '47 23 * * *') || (github.event_name == 'workflow_dispatch' && inputs.job == 'keeper')
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    concurrency: {group: keeper, cancel-in-progress: false}
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+        with: {ref: long-videos}
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.12"}
+      - name: Decide + move queued scripts
+        run: |
+          git config user.name keeper-bot; git config user.email keeper-bot@users.noreply.github.com
+          python -m longform.keeper
+          git diff --cached --quiet || (git commit -qm "keeper: next videos from the queue" && git push -q origin HEAD:long-videos)
+      - name: Start the makers
+        run: |
+          S=$(python3 -c "import json;print(' '.join(json.load(open('out/keeper.json'))['shorts']))")
+          L=$(python3 -c "import json;print(' '.join(json.load(open('out/keeper.json'))['long']))")
+          [ -n "$S" ] && gh workflow run shorts-daily.yml --ref long-videos -f files="$S"
+          for F in $L; do gh workflow run longform-daily.yml --ref long-videos -f request="$F"; done
+          true
+      - name: Queue running low -> GitHub issue
+        run: |
+          W=$(python3 -c "import json;print('; '.join(json.load(open('out/keeper.json'))['warn']))")
+          [ -z "$W" ] && exit 0
+          N=$(gh issue list --state open --search "Video queue running low in:title" --json number -q '.[0].number')
+          if [ -z "$N" ]; then gh issue create --title "Video queue running low" --assignee "${GITHUB_REPOSITORY_OWNER}" --body "$W (keeper $(date -u +%F)). The daily brain refills it."
+          else gh issue comment "$N" --body "$W ($(date -u +%F))"; fi
+
+  brain:
+    if: (github.event_name == 'schedule' && github.event.schedule == '47 23 * * *') || (github.event_name == 'workflow_dispatch' && inputs.job == 'brain')
+    runs-on: ubuntu-latest
+    timeout-minutes: 330
+    concurrency: {group: brain, cancel-in-progress: false}
+    env:
+      GH_TOKEN: ${{ github.token }}
+      HAS_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN != '' }}
+    steps:
+      - name: Token check
+        id: tok
+        run: |
+          echo "ok=$HAS_TOKEN" >> $GITHUB_OUTPUT
+          if [ "$HAS_TOKEN" != "true" ]; then
+            N=$(gh issue list -R "$GITHUB_REPOSITORY" --state open --search "Daily brain needs the Claude token in:title" --json number -q '.[0].number')
+            [ -z "$N" ] && gh issue create -R "$GITHUB_REPOSITORY" --assignee "${GITHUB_REPOSITORY_OWNER}" --title "Daily brain needs the Claude token" \
+              --body "Add the repository secret CLAUDE_CODE_OAUTH_TOKEN (run 'claude setup-token' once on your laptop, paste the token in GitHub > Settings > Secrets and variables > Actions). Until then the keeper keeps publishing from the queue."
+            echo "::warning::CLAUDE_CODE_OAUTH_TOKEN missing - brain skipped (keeper still publishes from the queue)"
+          fi
+      - uses: actions/checkout@v4
+        if: steps.tok.outputs.ok == 'true'
+        with: {ref: long-videos, fetch-depth: 30}
+      - uses: actions/setup-python@v5
+        if: steps.tok.outputs.ok == 'true'
+        with: {python-version: "3.12"}
+      - name: Tools for test renders
+        if: steps.tok.outputs.ok == 'true'
+        run: |
+          sudo apt-get update || true
+          sudo apt-get install -y ffmpeg espeak-ng || sudo apt-get install -y ffmpeg
+          pip install kokoro-onnx soundfile numpy pyyaml playwright pillow
+          python -m playwright install --with-deps chromium
+          git config --global user.name "daily-brain"; git config --global user.email "daily-brain@users.noreply.github.com"
+      - uses: anthropics/claude-code-action@v1
+        if: steps.tok.outputs.ok == 'true'
+        with:
+          claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          github_token: ${{ github.token }}
+          prompt: |
+            You are the daily content robot of the YouTube channel "GSX Automation" (Zoho how-tos and Zoho / tax news for
+            businesses in the Gulf, India and worldwide; goal: views, subscribers, monetization, later leads).
+            The repository is checked out on branch long-videos. Read CLAUDE.md and docs/longform/DAILY.md and do
+            today's run exactly as DAILY.md says: research (tight, verified), the Shorts + long video scripts,
+            local checks (validate, test render, look at the frames), push to long-videos, start the maker
+            workflows with gh, keep the queue full, write the Flow scripts, and finish with the "Daily report" issue.
+            Today is the date the shell prints with `date -u`. Work autonomously; nobody will answer questions.
+          claude_args: |
+            --max-turns 400
+            --allowedTools "Bash,Read,Write,Edit,Glob,Grep,WebSearch,WebFetch,TodoWrite"
+      - name: Keeper right after the brain
+        if: always() && steps.tok.outputs.ok == 'true'
+        run: gh workflow run daily-robot.yml -R "$GITHUB_REPOSITORY" --ref main -f job=keeper || true
