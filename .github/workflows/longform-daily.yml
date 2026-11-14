@@ -1,0 +1,111 @@
+# DAILY LONG VIDEO (branch long-videos). The daily Claude run researches + writes the script, then pushes
+# docs/longform/daily/<id>.json = {"id", "script": "docs/longform/scripts/<id>.json", "publish_at": "UTC ISO"}.
+# This job: validate -> voice -> render 1440p -> strict QA -> chapters/meta -> thumbnail -> 4K -> YouTube (scheduled)
+# -> result file docs/longform/uploaded/<id>.json (or docs/longform/failed/<id>.json). Never touches the Shorts pipeline.
+name: longform-daily
+on:
+  push:
+    branches: [long-videos]
+    paths: ["docs/longform/daily/*.json"]
+  workflow_dispatch:
+    inputs:
+      request:
+        description: "request file, e.g. docs/longform/daily/<id>.json"
+        required: true
+permissions:
+  contents: write
+concurrency:
+  group: longform-daily
+  cancel-in-progress: false
+jobs:
+  make:
+    runs-on: ubuntu-latest
+    timeout-minutes: 340
+    env:
+      YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
+      YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
+      YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
+      PYTHONUNBUFFERED: "1"
+    steps:
+      - uses: actions/checkout@v4
+        with: {fetch-depth: 2}
+      - name: Request
+        id: in
+        run: |
+          F="${{ inputs.request }}"
+          [ -z "$F" ] && F=$(git diff --name-only --diff-filter=AM HEAD~1 HEAD -- docs/longform/daily/ | head -1)
+          [ -z "$F" ] && { echo "no request file in this push"; exit 1; }
+          python3 - "$F" >> $GITHUB_OUTPUT <<'PY'
+          import json, sys
+          r = json.load(open(sys.argv[1]))
+          print(f"id={r['id']}"); print(f"script={r['script']}"); print(f"pub={r.get('publish_at', '')}")
+          print("upload=" + ("no" if r.get("upload") is False else "yes"))
+          PY
+          cat $GITHUB_OUTPUT
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.12"}
+      - name: Install
+        run: |
+          sudo apt-get update || true
+          sudo apt-get install -y ffmpeg espeak-ng || sudo apt-get install -y ffmpeg
+          pip install kokoro-onnx soundfile numpy pyyaml playwright pillow google-api-python-client google-auth
+          python -m playwright install --with-deps chromium
+      - name: 1 validate script
+        run: python -m longform.validate "${{ steps.in.outputs.script }}"
+      - name: 2 voice
+        run: python longform/voice.py "${{ steps.in.outputs.script }}" out/voice
+      - name: 3 render 1440p
+        run: python -m longform.render "${{ steps.in.outputs.script }}" --voice out/voice --out out/video --scale 1.3334
+      - name: 4 strict QA
+        run: |
+          cp "out/video/${{ steps.in.outputs.id }}.mp4" out/master.mp4
+          python -m longform.qa out/master.mp4 --voice out/video/voice.wav
+      - name: 5 meta + thumbnail + 4K
+        run: |
+          ID="${{ steps.in.outputs.id }}"
+          python -m longform.meta "${{ steps.in.outputs.script }}" out/video/plan.json "out/$ID.meta.json"
+          python -m longform.thumb "${{ steps.in.outputs.script }}" "out/$ID-thumb.jpg"
+          ffmpeg -hide_banner -loglevel error -y -i out/master.mp4 -vf "scale=3840:2160:flags=lanczos,format=yuv420p" \
+            -c:v libx264 -preset veryfast -crf 18 -g 60 -c:a copy -movflags +faststart out/final4k.mp4
+          ffprobe -v error -show_entries stream=width,height:format=duration,size -of compact out/final4k.mp4
+          # contact sheet (one frame every ~30 s) so Claude / Gaurav can check the video without downloading it
+          ffmpeg -hide_banner -loglevel error -y -i out/master.mp4 -vf "fps=1/30,scale=480:-1,tile=4x4" -frames:v 1 "out/$ID-contact.jpg" || true
+      - name: 6 upload (scheduled, private until publish time)
+        if: steps.in.outputs.upload == 'yes'
+        run: |
+          ID="${{ steps.in.outputs.id }}"
+          python -m longform.upload --video out/final4k.mp4 --meta "out/$ID.meta.json" --thumb "out/$ID-thumb.jpg" \
+            --publish "${{ steps.in.outputs.pub }}"
+      - name: Keep master + thumb + meta on longform-previews (for fixes / re-uploads)
+        if: always()
+        run: |
+          ID="${{ steps.in.outputs.id }}"; [ -f out/master.mp4 ] || exit 0
+          tmp=$(mktemp -d); git fetch -q --depth=1 origin longform-previews && git worktree add -q "$tmp" FETCH_HEAD
+          cd "$tmp" && mkdir -p previews
+          cp "$GITHUB_WORKSPACE/out/master.mp4" "previews/$ID-1440p.mp4"
+          for f in "$ID.meta.json" "$ID-thumb.jpg" "$ID-contact.jpg"; do cp "$GITHUB_WORKSPACE/out/$f" previews/ 2>/dev/null || true; done
+          # keep the repo small: only the newest 6 masters
+          ls -t previews/*-1440p.mp4 | tail -n +7 | xargs -r git rm -q
+          git config user.name longform-bot; git config user.email longform-bot@users.noreply.github.com
+          git add previews && git commit -qm "daily long video: $ID" && git push -q origin HEAD:longform-previews || echo "preview push failed"
+      - name: Record the result on long-videos
+        if: always()
+        run: |
+          ID="${{ steps.in.outputs.id }}"; cd "$GITHUB_WORKSPACE"
+          git config user.name longform-bot; git config user.email longform-bot@users.noreply.github.com
+          if [ "${{ steps.in.outputs.upload }}" = "no" ] && [ -f "out/$ID-thumb.jpg" ] && [ -f out/final4k.mp4 ]; then mkdir -p docs/longform/tested
+            echo "{\"id\": \"$ID\", \"test\": \"passed (no upload)\", \"run\": \"https://github.com/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}\"}" > "docs/longform/tested/$ID.json"
+          elif [ -f out/uploaded.json ]; then mkdir -p docs/longform/uploaded; cp out/uploaded.json "docs/longform/uploaded/$ID.json"
+          else mkdir -p docs/longform/failed
+            echo "{\"id\": \"$ID\", \"run\": \"https://github.com/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}\", \"when\": \"$(date -u +%FT%TZ)\"}" > "docs/longform/failed/$ID.json"; fi
+          git add docs/longform/uploaded docs/longform/failed docs/longform/tested 2>/dev/null || true
+          git commit -qm "longform-daily result: $ID" && (git pull -q --rebase origin long-videos; git push -q origin HEAD:long-videos) || true
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: longform-daily-${{ steps.in.outputs.id }}
+          path: |
+            out/*.json
+            out/*.jpg
+            out/video/plan.json
+          retention-days: 14

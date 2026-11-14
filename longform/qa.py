@@ -21,6 +21,7 @@ def main():
     ap.add_argument("video")
     ap.add_argument("--voice", required=True)
     ap.add_argument("--max-gap", type=float, default=1.2)
+    ap.add_argument("--short", action="store_true", help="vertical Short: 15-62 s, 9:16")
     a = ap.parse_args()
     probs = []
     pr = json.loads(run(["ffprobe", "-v", "error", "-show_streams", "-show_format", "-of", "json", a.video]).stdout)
@@ -28,10 +29,16 @@ def main():
     au = [s for s in pr["streams"] if s["codec_type"] == "audio"]
     dur = float(pr["format"]["duration"])
     info = {"duration_s": round(dur, 2), "size": f"{v['width']}x{v['height']}", "fps": v["r_frame_rate"]}
-    if not 420 <= dur <= 720:
-        probs.append(f"duration {dur:.0f}s not 7-12 min")
-    if abs(v["width"] / v["height"] - 16 / 9) > 0.01:
-        probs.append("not 16:9")
+    if a.short:
+        if not 15 <= dur <= 62:
+            probs.append(f"duration {dur:.0f}s not 15-62 s")
+        if abs(v["width"] / v["height"] - 9 / 16) > 0.01:
+            probs.append("not 9:16")
+    else:
+        if not 420 <= dur <= 720:
+            probs.append(f"duration {dur:.0f}s not 7-12 min")
+        if abs(v["width"] / v["height"] - 16 / 9) > 0.01:
+            probs.append("not 16:9")
     if not au:
         probs.append("no audio")
     else:
@@ -46,7 +53,7 @@ def main():
     sd = run(["ffmpeg", "-hide_banner", "-i", a.voice, "-af", f"silencedetect=n=-45dB:d={a.max_gap}", "-f", "null", "-"]).stderr
     starts = [float(x) for x in re.findall(r"silence_start: ([\d.]+)", sd)]
     ends = [float(x) for x in re.findall(r"silence_end: ([\d.]+)", sd)]
-    gaps = [(s, e) for s, e in zip(starts, ends + [dur]) if s > 0.5 and e < dur - 3.0]
+    gaps = [(s, e) for s, e in zip(starts, ends + [dur]) if s > 0.5 and e < dur - (1.0 if a.short else 3.0)]
     info["dead_air"] = gaps
     if gaps:
         probs.append(f"dead air > {a.max_gap}s at {[(round(s, 1), round(e, 1)) for s, e in gaps[:5]]}")

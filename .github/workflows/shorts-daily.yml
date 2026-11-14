@@ -1,0 +1,80 @@
+# DAILY SHORTS without Flow / Gemini (branch long-videos). The daily Claude run writes each Short script to
+# docs/longform/shorts/<id>.json ("format": "short") and pushes. This job, for every new/changed file:
+# validate -> Kokoro voice -> render -> 9:16 compose -> strict QA (--short) -> YouTube (next free slot 07:30/13:30/21:30 IST)
+# -> docs/longform/shorts-uploaded/<id>.json or docs/longform/shorts-failed/<id>.json. Never touches main.
+name: shorts-daily
+on:
+  push:
+    branches: [long-videos]
+    paths: ["docs/longform/shorts/*.json"]
+  workflow_dispatch:
+    inputs:
+      files:
+        description: "space-separated script files (docs/longform/shorts/<id>.json)"
+        required: true
+permissions:
+  contents: write
+concurrency:
+  group: shorts-daily
+  cancel-in-progress: false
+jobs:
+  make:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    env:
+      YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
+      YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
+      YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
+      PYTHONUNBUFFERED: "1"
+    steps:
+      - uses: actions/checkout@v4
+        with: {fetch-depth: 2}
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.12"}
+      - name: Install
+        run: |
+          sudo apt-get update || true
+          sudo apt-get install -y ffmpeg espeak-ng || sudo apt-get install -y ffmpeg
+          pip install kokoro-onnx soundfile numpy pyyaml playwright pillow google-api-python-client google-auth
+          python -m playwright install --with-deps chromium
+      - name: Make + upload every new Short (one failing Short does not stop the others)
+        run: |
+          FILES="${{ inputs.files }}"
+          [ -z "$FILES" ] && FILES=$(git diff --name-only --diff-filter=AM HEAD~1 HEAD -- docs/longform/shorts/ | tr '\n' ' ')
+          echo "Shorts: $FILES"; mkdir -p out docs/longform/shorts-uploaded docs/longform/shorts-failed
+          for F in $FILES; do
+            ID=$(python3 -c "import json;print(json.load(open('$F'))['id'])"); echo "=============== $ID"
+            rm -f out/uploaded.json
+            if python -m longform.validate "$F" \
+               && python longform/voice.py "$F" "out/$ID/voice" \
+               && python -m longform.render "$F" --voice "out/$ID/voice" --out "out/$ID/video" --scale 1 \
+               && python -m longform.vshort build "$F" "out/$ID/video" "out/$ID-short.mp4" \
+               && python -m longform.qa "out/$ID-short.mp4" --voice "out/$ID/video/voice.wav" --short \
+               && python -m longform.vshort upload "$F" "out/$ID-short.mp4"; then
+              cp out/uploaded.json "docs/longform/shorts-uploaded/$ID.json"
+            else
+              echo "{\"id\": \"$ID\", \"run\": \"https://github.com/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}\", \"when\": \"$(date -u +%FT%TZ)\"}" > "docs/longform/shorts-failed/$ID.json"
+              echo "::warning::Short $ID failed"
+            fi
+            ffmpeg -loglevel error -y -i "out/$ID-short.mp4" -vf "fps=1/4,scale=270:-1,tile=6x2" -frames:v 1 "out/$ID-contact.jpg" 2>/dev/null || true
+          done
+      - name: Record results on long-videos + previews on longform-previews
+        if: always()
+        run: |
+          git config user.name shorts-bot; git config user.email shorts-bot@users.noreply.github.com
+          git add docs/longform/shorts-uploaded docs/longform/shorts-failed 2>/dev/null || true
+          git commit -qm "shorts-daily results" && (git pull -q --rebase origin long-videos; git push -q origin HEAD:long-videos) || true
+          ls out/*-short.mp4 >/dev/null 2>&1 || exit 0
+          tmp=$(mktemp -d); git fetch -q --depth=1 origin longform-previews && git worktree add -q "$tmp" FETCH_HEAD
+          mkdir -p "$tmp/shorts"; cp out/*-short.mp4 out/*-contact.jpg "$tmp/shorts/" 2>/dev/null || true
+          cd "$tmp" && (ls -t shorts/*-short.mp4 | tail -n +9 | xargs -r git rm -q -f) ; git add shorts
+          git commit -qm "daily shorts previews" && git push -q origin HEAD:longform-previews || echo "preview push failed"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: shorts-daily-${{ github.run_id }}
+          path: |
+            out/*-short.mp4
+            out/*-contact.jpg
+          retention-days: 7
+          if-no-files-found: ignore

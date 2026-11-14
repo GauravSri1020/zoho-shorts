@@ -418,7 +418,8 @@ function sOutro(t) {
   o += G(t, .2, null, (() => {
     let s = card(820, 200, 940, 300, {r: 30});
     s += text(880, 290, 'GSX Automation', 52, {w: 900});
-    s += t < cs(1) ? text(880, 340, 'Zoho how-tos for Gulf + Indian businesses', 30, {w: 500, fill: C.mute}) : writeOn(880, 342, 'Rules can change: check the latest MoF / FTA notices', 32, P(t, cs(1) + .2, 1.6), {fill: C.coral});
+    const note = SC.visual.note || 'Rules can change: check the latest MoF / FTA notices';
+    s += t < cs(1) ? text(880, 340, 'Zoho how-tos for Gulf + Indian businesses', 30, {w: 500, fill: C.mute}) : writeOn(880, 342, note, Math.min(32, fitSize(note, 32, 840, 'Kalam', 700)), P(t, cs(1) + .2, 1.6), {fill: C.coral});
     const clicked = t > at(0, .35);
     const p = eBack(P(t, at(0, .35), .4));
     s += `<g transform="translate(1300,425) scale(${clicked ? .94 + .06 * p : 1})"><rect x="-200" y="-42" width="400" height="84" rx="42" fill="${clicked ? '#e6e8ec' : C.coral}"/>${text(0, 13, clicked ? 'Subscribed ✓' : 'Subscribe', 36, {anchor: 'middle', fill: clicked ? C.ink : '#fff', w: 800})}</g>`;
@@ -429,7 +430,7 @@ function sOutro(t) {
   })());
   o += G(t, at(0, .5), null, (() => {
     let s = card(820, 560, 940, 300, {r: 30});
-    s += `<rect x="860" y="600" width="380" height="220" rx="18" fill="${C.green}"/>` + text(1050, 700, 'ZATCA', 64, {anchor: 'middle', fill: '#fff', w: 900}) + text(1050, 760, 'Phase 2', 40, {anchor: 'middle', fill: '#fff', w: 700});
+    s += `<rect x="860" y="600" width="380" height="220" rx="18" fill="${C.green}"/>` + text(1050, 700, SC.visual.badge || 'ZATCA', fitSize(SC.visual.badge || 'ZATCA', 64, 340, 'Inter', 900), {anchor: 'middle', fill: '#fff', w: 900}) + text(1050, 760, SC.visual.badge_sub == null ? 'Phase 2' : SC.visual.badge_sub, 40, {anchor: 'middle', fill: '#fff', w: 700});
     s += text(1280, 640, 'NEXT VIDEO', 26, {w: 800, fill: C.coral, ls: 3});
     wrap(SC.visual.next, 40, 440, 'Inter').forEach((l, i) => s += text(1280, 700 + i * 52, l, 40, {w: 800}));
     return s;
@@ -443,7 +444,7 @@ const VP = {x: 60, y: 112, w: 1800, h: 700};
 function setupPodcast() {
   const v = SC.visual, H = $('html');
   const screens = [...new Set(v.actions.filter(a => a.screen).map(a => a.screen))];
-  let html = `<div class="win" style="left:${VP.x}px;top:${VP.y}px;width:${VP.w}px;height:${VP.h + 46}px"><div class="bar"><i style="background:#ff5f57"></i><i style="background:#febc2e"></i><i style="background:#28c840"></i><div class="url">🔒 books.zoho.com</div></div>
+  let html = `<div class="win" style="left:${VP.x}px;top:${VP.y}px;width:${VP.w}px;height:${VP.h + 46}px"><div class="bar"><i style="background:#ff5f57"></i><i style="background:#febc2e"></i><i style="background:#28c840"></i><div class="url">🔒 ${screens[0].split('/')[0]}.zoho.com</div></div>
    <div class="vp" id="vp" style="width:${VP.w}px;height:${VP.h}px">${screens.map((s, i) => `<img id="scr${i}" src="${SC.root}/assets/screens/${SC.screens[s].file}">`).join('')}
    <div id="hl" style="position:absolute;border:4px solid ${C.teal};border-radius:12px;box-shadow:0 0 0 6px rgba(15,157,138,.18);opacity:0"></div>
    <div id="rip" style="position:absolute;border-radius:50%;border:4px solid ${C.sky};opacity:0"></div>
@@ -572,6 +573,7 @@ window.setup = function (data) {
   SC = data; $('html').innerHTML = ''; $('svg').innerHTML = '';
   if (SC.type === 'PODCAST') setupPodcast();
   if (SC.type === 'OUTRO') { $('html').innerHTML = `<img id="who" src="${SC.root}/assets/presenter/point_you.png" style="position:absolute;left:120px;bottom:0;height:900px;transform-origin:50% 100%">`; }
+  $('chrome').style.display = SC.short ? 'none' : ''; $('cap').style.display = SC.short ? 'none' : '';
   const showChap = SC.type !== 'CHAPTER' && SC.type !== 'HOOK' && SC.chapter > 0;
   $('chap').style.display = showChap ? 'flex' : 'none';
   if (showChap) { $('chap').querySelector('b').textContent = String(SC.chapter).padStart(2, '0'); $('chap').querySelector('span').textContent = SC.chapters[SC.chapter - 1]; }

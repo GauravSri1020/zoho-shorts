@@ -34,8 +34,11 @@ CAP = [
 DAYS = {"first": 1, "thirtieth": 30, "thirty first": 31}
 
 
+EXTRA_CAP = []   # per-script caption fixes: script JSON "caption_fix": [["spoken form", "written form"], ...]
+
+
 def cap_text(s):
-    for a, b in CAP:
+    for a, b in CAP + EXTRA_CAP:
         s = re.sub(a, b, s)
     s = re.sub(r"the (first|thirtieth|thirty first) of (\w+) (\d{4})", lambda m: f"{DAYS[m.group(1)]} {m.group(2)} {m.group(3)}", s)
     return s
@@ -84,6 +87,7 @@ def write_wav(p, x, ch=1):
 # ---------- plan ----------
 def plan(script, voice_dir, fps):
     sc = json.loads(Path(script).read_text())
+    EXTRA_CAP[:] = [(re.escape(a), b) for a, b in sc.get("caption_fix", [])]
     vmeta = json.loads((Path(voice_dir) / "voice.json").read_text())
     idx = yaml.safe_load((ROOT / "assets/screens/index.yaml").read_text())["screens"]
     scenes, t = [], 0.0
@@ -118,7 +122,7 @@ def plan(script, voice_dir, fps):
     total = t
     chap_starts = [x["start"] for x in scenes if x["type"] == "CHAPTER"]
     for x in scenes:
-        x.update(total=total, chapters=sc["chapters"], chapterStarts=chap_starts)
+        x.update(total=total, chapters=sc.get("chapters", []), chapterStarts=chap_starts, short=sc.get("format") == "short")
     return sc, scenes, total
 
 
@@ -297,7 +301,7 @@ def main():
     only = set(x for x in a.only.split(",") if x)
     seg = render_scenes(scenes, work, a.scale, a.fps, only)
     final = work / f"{sc['id']}.mp4"
-    concat(scenes, seg, audio, final, a.scale)
+    concat(scenes, seg, audio, final, a.scale, corner=sc.get("format") != "short")
     print("[done]", final)
 
 

@@ -16,9 +16,8 @@ def ts(sec):
 def build(script, plan, out):
     sc = json.loads(Path(script).read_text())
     scenes = json.loads(Path(plan).read_text())
-    chap = [(0.0, sc["chapters"][0] if False else "Intro")]
     starts = [s["start"] for s in scenes if s["type"] == "CHAPTER"]
-    chap = [(0.0, "UAE e-invoicing in 30 seconds")] + [(t, n) for t, n in zip(starts, sc["chapters"])]
+    chap = [(0.0, sc.get("intro_chapter") or "UAE e-invoicing in 30 seconds")] + [(t, n) for t, n in zip(starts, sc["chapters"])]
     lines = "\n".join(f"{ts(t)} {n}" for t, n in chap)
     desc = sc["description"].replace("{chapters}", lines).replace("{date}", dt.date.today().strftime("%d %b %Y"))
     tags = sc.get("tags") or ["UAE e-invoicing", "Zoho Books", "Zoho Books UAE", "e-invoicing UAE 2027", "Peppol UAE",

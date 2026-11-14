@@ -580,5 +580,39 @@
     "Rules can still change, so always check the latest notices from the Ministry of Finance and the F T A. See you in the next one."
    ]
   }
+ ],
+ "intro_chapter": "UAE e-invoicing in 30 seconds",
+ "thumb": {
+  "chip": "UAE · 2027",
+  "l1": "E-INVOICING",
+  "l2": "ZOHO BOOKS",
+  "l3": "SETUP",
+  "pill": "BEFORE 1 JAN 2027",
+  "pose": "point_up"
+ },
+ "tags": [
+  "UAE e-invoicing",
+  "UAE e-invoicing 2027",
+  "Zoho Books UAE",
+  "Zoho Books e-invoicing",
+  "Peppol UAE",
+  "PINT AE",
+  "FTA e-invoicing",
+  "EmaraTax",
+  "GSX Automation"
+ ],
+ "sources": [
+  {
+   "name": "UAE Ministry of Finance - e-invoicing",
+   "url": "https://mof.gov.ae/en/about-us/initiatives/einvoicing/"
+  },
+  {
+   "name": "FTA notice on deadlines (25 Oct 2026)",
+   "url": "https://tax.gov.ae/en/media.centre/news/federal.tax.authority.calls.on.persons.subject.to.einvoicing.to.comply.wit.the.prescribed.legal.deadlines.and.avoid.administrative.penalties.aspx"
+  },
+  {
+   "name": "Zoho Books UAE e-invoicing",
+   "url": "https://www.zoho.com/ae/books/e-invoicing/"
+  }
  ]
 }
