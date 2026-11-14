@@ -1,0 +1,37 @@
+{
+ "banner": "NVIDIA · CEO RESIGNS",
+ "source": "Sources: Nvidia statement (12 Nov 2026), Al Jazeera, Forbes",
+ "clips": [
+  {
+   "file": "A1.mp4",
+   "text": "Nvidia's CEO has resigned, after thirty-three years in charge. Here's what is actually confirmed.",
+   "lower": [
+    "JENSEN HUANG",
+    "Nvidia co-founder, CEO since 1993"
+   ]
+  },
+  {
+   "file": "A2.mp4",
+   "text": "On November twelfth, Nvidia said he stepped down as CEO and left the board, effective immediately.",
+   "lower": null
+  },
+  {
+   "file": "A3.mp4",
+   "text": "Days earlier, he admitted to his staff that he had been unfaithful to his wife.",
+   "lower": null
+  },
+  {
+   "file": "A4.mp4",
+   "text": "The board is also investigating reports that he was targeted by a foreign intelligence effort. Nothing is proven.",
+   "lower": null
+  },
+  {
+   "file": "A5.mp4",
+   "text": "Nvidia's finance chief is now interim CEO, and the shares fell over fourteen percent at one point.",
+   "lower": [
+    "COLETTE KRESS",
+    "Interim CEO, Nvidia"
+   ]
+  }
+ ]
+}

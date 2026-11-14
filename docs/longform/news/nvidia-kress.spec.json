@@ -1,0 +1,40 @@
+{
+ "banner": "WHO RUNS NVIDIA NOW?",
+ "source": "Sources: Nvidia (12 Nov 2026), Al Jazeera, Nvidia FY2026 results",
+ "clips": [
+  {
+   "file": "B1.mp4",
+   "text": "Nvidia's new interim CEO isn't a famous founder. She's the person who has run its money since 2013.",
+   "lower": [
+    "COLETTE KRESS",
+    "Interim CEO, Nvidia"
+   ]
+  },
+  {
+   "file": "B2.mp4",
+   "text": "She became Nvidia's chief financial officer back in September 2013.",
+   "lower": [
+    "COLETTE KRESS",
+    "CFO since Sep 2013"
+   ]
+  },
+  {
+   "file": "B3.mp4",
+   "text": "Since then, yearly revenue grew from about four billion dollars to nearly two hundred sixteen billion.",
+   "lower": [
+    "$4.1B → $215.9B",
+    "Revenue, FY2014 → FY2026"
+   ]
+  },
+  {
+   "file": "B4.mp4",
+   "text": "Now the board is searching for a permanent CEO, and says it will consider insiders and outsiders.",
+   "lower": null
+  },
+  {
+   "file": "B5.mp4",
+   "text": "Follow, and I'll tell you the moment Nvidia names its next permanent boss.",
+   "lower": null
+  }
+ ]
+}
