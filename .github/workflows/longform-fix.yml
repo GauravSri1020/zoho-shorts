@@ -1,0 +1,29 @@
+# Edit an uploaded video (title / description / tags / thumbnail). Trigger: add or change
+# docs/longform/fix-requests/<name>.json on branch long-videos. Does not touch the Shorts pipeline.
+name: longform-fix
+on:
+  push:
+    branches: [long-videos]
+    paths: ["docs/longform/fix-requests/*.json"]
+concurrency:
+  group: longform-upload
+  cancel-in-progress: false
+jobs:
+  fix:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
+      YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
+      YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
+    steps:
+      - uses: actions/checkout@v4
+        with: {fetch-depth: 2}
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.12"}
+      - run: pip install google-api-python-client google-auth pyyaml
+      - name: Apply the changed fix request(s)
+        run: |
+          for F in $(git diff --name-only HEAD~1 HEAD -- docs/longform/fix-requests/); do
+            echo "== $F"; python -m longform.fix_video "$F"
+          done
