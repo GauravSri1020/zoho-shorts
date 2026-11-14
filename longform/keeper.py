@@ -25,9 +25,12 @@ def future(folder):
     out = []
     for f in sorted((D / folder).glob("*.json")) if (D / folder).exists() else []:
         try:
-            t = dt.datetime.fromisoformat(json.loads(f.read_text())["publish_at"].replace("Z", "+00:00"))
+            j = json.loads(f.read_text())
+            t = dt.datetime.fromisoformat(j["publish_at"].replace("Z", "+00:00"))
         except Exception:
             continue
+        if folder == "uploaded" and "#shorts" in str(j.get("title", "")).lower():
+            continue                          # old Flow news Shorts were recorded here too
         if t > now:
             out.append(t)
     return sorted(out)
