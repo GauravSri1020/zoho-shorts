@@ -4,7 +4,7 @@
  "voice": {
   "engine": "kokoro",
   "voice": "am_onyx",
-  "speed": 1.25
+  "speed": 1.1
  },
  "research": "docs/longform/research/uae-einvoicing.md",
  "chapters": [
@@ -14,7 +14,7 @@
   "Setting it up in Zoho Books",
   "Your checklist"
  ],
- "description": "UAE e-invoicing starts on 1 January 2027 for businesses with revenue of AED 50 million or more, and on 1 July 2027 for smaller businesses. In this video: what changes (the 5-corner Peppol model), who goes live when, the penalties under Cabinet Decision 173 of 2026, and how to set up e-invoicing in Zoho Books step by step.\n\nChapters\n{chapters}\n\nSources (checked {date})\n- UAE Ministry of Finance, e-invoicing: https://mof.gov.ae/en/about-us/initiatives/einvoicing/\n- MoF list of accredited service providers: https://mof.gov.ae/en/about-us/initiatives/einvoicing/pre-approved-einvoicing-service-providers/\n- FTA notice on deadlines (25 Oct 2026): https://tax.gov.ae/en/media.centre/news/federal.tax.authority.calls.on.persons.subject.to.einvoicing.to.comply.wit.the.prescribed.legal.deadlines.and.avoid.administrative.penalties.aspx\n- Zoho Books UAE e-invoicing: https://www.zoho.com/ae/books/e-invoicing/\n\nThis is general information, not tax or legal advice. Rules can change - always check the latest MoF / FTA notices.\nVoice-over and animations were made with AI tools; facts were checked against the official sources above.\n\n#UAEeInvoicing #ZohoBooks #Peppol #UAEVAT #GSXAutomation",
+ "description": "UAE e-invoicing starts on 1 January 2027 for businesses with revenue of AED 50 million or more, and on 1 July 2027 for smaller businesses. In this video: what changes (the 5-corner Peppol model), who goes live when, the penalties under Cabinet Decision 173 of 2026, and how to set up e-invoicing in Zoho Books step by step.\n\nChapters\n{chapters}\n\nSources (checked {date})\n- UAE Ministry of Finance, e-invoicing: https://mof.gov.ae/en/about-us/initiatives/einvoicing/\n- MoF list of accredited service providers: https://mof.gov.ae/en/about-us/initiatives/einvoicing/pre-approved-einvoicing-service-providers/\n- FTA notice on deadlines (25 Oct 2026): https://tax.gov.ae/en/media.centre/news/federal.tax.authority.calls.on.persons.subject.to.einvoicing.to.comply.wit.the.prescribed.legal.deadlines.and.avoid.administrative.penalties.aspx\n- Zoho Books UAE e-invoicing: https://www.zoho.com/ae/books/e-invoicing/\n\nThis is general information, not tax or legal advice. Rules can change - always check the latest MoF / FTA notices.\nThis video uses an AI-generated presenter, voice and animations; facts were checked against the official sources above.\nIndependent channel. Not affiliated with or endorsed by Zoho Corporation. Zoho is a trademark of Zoho Corporation.\n\n#UAEeInvoicing #ZohoBooks #Peppol #UAEVAT #GSXAutomation",
  "scenes": [
   {
    "id": "s01",
