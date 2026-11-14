@@ -1,0 +1,6 @@
+{
+ "id": "uae-einvoicing",
+ "script": "docs/longform/scripts/uae-einvoicing.json",
+ "upload": false,
+ "note": "pipeline test 15 Nov - no upload"
+}
