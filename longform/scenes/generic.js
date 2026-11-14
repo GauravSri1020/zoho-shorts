@@ -48,11 +48,11 @@ function beatView(b, t, t0, i) {
     s += text(1530, 320, [b.source, b.date].filter(Boolean).join('  ·  '), 28, {anchor: 'end', w: 700, fill: C.mute});
     const L = lines(b.text, 62, 1120, 'Inter', 3);
     L.forEach((l, j) => s += text(390, 430 + j * 82, l, 62, {w: 850}));
-    return `<g transform="translate(0,${(1 - eOut(k)) * 60})" opacity="${eOut(k)}">${s}</g>` + guy({x: 1700, y: 900, s: 1.1, t, pose: 'worried', color: C.amber, face: -1, op: eOut(P(t, t0 + .4, .5))});
+    return `<g transform="translate(0,${(1 - eOut(k)) * 60})" opacity="${eOut(k)}">${s}</g>` + guy({x: 1650, y: 900, s: 1.0, t, pose: 'worried', color: C.amber, face: -1, op: eOut(P(t, t0 + .4, .5))});
   }
   if (b.t === 'stat') {
     let s = text(960, 560, b.value, fitSize(b.value, 230, 1500, 'Inter', 900), {anchor: 'middle', w: 900, fill: COL(b.color || 'coral')});
-    s += writeOn(960, 690, b.label || '', 64, P(t, t0 + .5, 1.2), {anchor: 'middle', fill: C.ink});
+    s += writeOn(960, 690, b.label || '', 64, P(t, t0 + .25, .8), {anchor: 'middle', fill: C.ink});
     return `<g transform="translate(960,520) scale(${eBack(k)}) translate(-960,-520)">${s}</g>`;
   }
   if (b.t === 'title') {
@@ -67,9 +67,9 @@ function beatView(b, t, t0, i) {
   }
   // default "guy" beat: character + prop + hand-written line
   let s = guy({x: 560, y: 880, s: 1.35, t, pose: b.pose || 'present', color: COL(b.color || 'teal'), tie: C.navy});
-  s += `<g opacity="${eOut(P(t, t0 + .2, .5))}">${prop(b.prop, 1240, 560, t - t0, 1.3)}</g>`;
+  s += `<g opacity="${eOut(P(t, t0 + .05, .4))}">${prop(b.prop, 1240, 560, t - t0, 1.6)}</g>`;
   if (b.stamp) s += stamp(1560, 330, b.stamp, P(t, t0 + .9, .35), COL(b.stamp_color || 'red'), -10, 54);
-  lines(b.text, 66, 1500, 'Kalam', 2).forEach((l, j) => s += writeOn(960, 200 + j * 86, l, 66, P(t, t0 + .3 + j * .5, 1.2), {anchor: 'middle', fill: j ? C.coral : C.ink}));
+  lines(b.text, 66, 1300, 'Kalam', 2).forEach((l, j) => s += writeOn(960, 200 + j * 86, l, 66, P(t, t0 + .05 + j * .35, .8), {anchor: 'middle', fill: j ? C.coral : C.ink}));
   return s;
 }
 function sHook2(t) {

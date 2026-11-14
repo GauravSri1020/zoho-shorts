@@ -21,7 +21,8 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT))
 W, H = 1080, 1920
-VY, VH = 640, 608          # where the 16:9 animation sits
+VY, VH = 610, 748          # where the animation sits (centre 1560x1080 of the 16:9 frame, scaled to 1080 wide)
+CROP_W = 1560
 SLOTS_IST = ["07:30", "13:30", "21:30"]   # Short publish times (IST); a slot is free if nothing else is within 40 min
 
 
@@ -37,7 +38,7 @@ body{{background:radial-gradient(900px 1100px at 50% 40%,#173a86 0%,#0f2a66 45%,
 .brand{{position:absolute;left:60px;top:70px;display:flex;gap:14px;align-items:center;color:#fff;font-weight:800;font-size:34px}}
 .brand i{{width:22px;height:22px;border-radius:6px;background:#0f9d8a;transform:rotate(45deg);display:inline-block}}
 .kick{{position:absolute;left:60px;top:150px;background:#e4573d;color:#fff;font-weight:900;font-size:34px;padding:10px 22px;border-radius:12px;letter-spacing:1px}}
-.head{{position:absolute;left:60px;right:60px;top:240px;height:360px;display:flex;align-items:center;color:#fff;font-weight:900;line-height:1.08;letter-spacing:-1px;font-size:84px}}
+.head{{position:absolute;left:60px;right:60px;top:225px;height:350px;display:flex;align-items:center;color:#fff;font-weight:900;line-height:1.08;letter-spacing:-1px;font-size:84px}}
 .head em{{font-style:normal;color:#ffd23f}}
 .box{{position:absolute;left:0;top:{VY - 10}px;width:{W}px;height:{VH + 20}px;background:#f6f2eb}}
 .src{{position:absolute;left:60px;right:60px;bottom:120px;color:#c9d4ee;font-weight:600;font-size:28px;line-height:1.3}}
@@ -45,7 +46,7 @@ body{{background:radial-gradient(900px 1100px at 50% 40%,#173a86 0%,#0f2a66 45%,
 {f'<div class="kick">{html.escape(sc["kicker"])}</div>' if sc.get("kicker") else ''}
 <div class="head" id="h"><span>{head}</span></div><div class="box"></div>
 <div class="src">{html.escape(sc.get("source_line", ""))}</div>
-<script>document.fonts.ready.then(()=>{{const h=document.getElementById('h');let f=84;while(h.firstChild.offsetHeight>350&&f>48){{f-=2;h.style.fontSize=f+'px';}}document.body.dataset.ready=1;}});</script>
+<script>document.fonts.ready.then(()=>{{const h=document.getElementById('h');let f=84;while(h.firstChild.offsetHeight>340&&f>48){{f-=2;h.style.fontSize=f+'px';}}document.body.dataset.ready=1;}});</script>
 </body></html>"""
     tmp = Path(out).with_suffix(".html")
     tmp.write_text(page)
@@ -112,7 +113,7 @@ def build(script, video_dir, out):
     size = 210
     cmov = cn.build(work / f"corner_{size}.mov", size)
     fonts = ROOT / "longform/fonts"
-    fc = (f"[1:v]scale={W}:{VH}:flags=lanczos,setsar=1[a];[0:v][a]overlay=0:{VY}:shortest=1[b];"
+    fc = (f"[1:v]crop={CROP_W}:1080:{(1920 - CROP_W) // 2}:0,scale={W}:{VH}:flags=lanczos,setsar=1[a];[0:v][a]overlay=0:{VY}:shortest=1[b];"
           f"[b][2:v]overlay={W - size - 40}:{VY - size // 2 - 20}:shortest=1[c];"
           f"[c]subtitles={work / 'caps.ass'}:fontsdir={fonts},format=yuv420p[v]")
     subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-loop", "1", "-framerate", "30", "-i", str(work / "frame.png"),

@@ -1,0 +1,38 @@
+{
+ "id": "s20261115-uae-pdf",
+ "format": "short",
+ "title": "UAE E-Invoicing 2027: A PDF Is Not an E-Invoice",
+ "kicker": "UAE · FROM 1 JAN 2027",
+ "headline": "UAE: your PDF invoice is *not an e-invoice*",
+ "source_line": "Sources: UAE Ministry of Finance e-invoicing page (updated 12 Nov 2026), FTA notice 25 Oct 2026, MoF list of accredited providers",
+ "voice": {"engine": "kokoro", "voice": "am_onyx", "speed": 1.1},
+ "caption_fix": [["B to B", "B2B"], ["first of January 2027", "1 January 2027"], ["first of July 2027", "1 July 2027"], ["first of January", "1 January"]],
+ "sources": [
+  {"name": "UAE Ministry of Finance - e-invoicing", "url": "https://mof.gov.ae/en/about-us/initiatives/einvoicing/"},
+  {"name": "FTA notice on deadlines (25 Oct 2026)", "url": "https://tax.gov.ae/en/media.centre/news/federal.tax.authority.calls.on.persons.subject.to.einvoicing.to.comply.wit.the.prescribed.legal.deadlines.and.avoid.administrative.penalties.aspx"},
+  {"name": "MoF list of accredited e-invoicing service providers", "url": "https://mof.gov.ae/en/about-us/initiatives/einvoicing/pre-approved-einvoicing-service-providers/"}
+ ],
+ "tags": ["UAE e-invoicing", "UAE e-invoicing 2027", "e-invoice UAE", "Zoho Books UAE", "Peppol UAE", "FTA", "UAE VAT", "GSX Automation"],
+ "description": "From 1 January 2027, UAE businesses with revenue of AED 50 million or more must send B2B invoices as structured e-invoices through an accredited service provider. Smaller businesses follow on 1 July 2027. The Ministry of Finance says PDFs, Word files, scans and emails are not e-invoices.\n\nFull Zoho Books setup video on the channel.\n\nSources (checked 15 Nov 2026):\n- UAE Ministry of Finance, e-invoicing: https://mof.gov.ae/en/about-us/initiatives/einvoicing/\n- FTA notice on deadlines (25 Oct 2026): https://tax.gov.ae/en/media.centre/news/federal.tax.authority.calls.on.persons.subject.to.einvoicing.to.comply.wit.the.prescribed.legal.deadlines.and.avoid.administrative.penalties.aspx\n- MoF accredited providers: https://mof.gov.ae/en/about-us/initiatives/einvoicing/pre-approved-einvoicing-service-providers/\n\nGeneral information, not tax advice. Always check the latest MoF / FTA notices.\nThis video uses an AI-generated presenter, voice and animations; facts were checked against the official sources above.\nIndependent channel. Not affiliated with or endorsed by Zoho Corporation.\n\n#UAEeInvoicing #ZohoBooks #UAEVAT #Shorts",
+ "scenes": [
+  {"id": "s01", "type": "HOOK", "chapter": 0, "visual": {"kind": "hook2", "beats": [
+    {"t": "headline", "tag": "OFFICIAL", "source": "UAE Ministry of Finance", "date": "updated 12 Nov 2026", "text": "PDFs, Word files, scans and emails are not e-invoices", "color": "coral"},
+    {"t": "stat", "value": "1 Jan 2027", "label": "revenue AED 50 million or more", "color": "coral"},
+    {"t": "stat", "value": "1 Jul 2027", "label": "smaller businesses", "color": "teal"}]},
+   "lines": [
+    "From the first of January 2027, big businesses in the UAE can no longer send a PDF as the invoice to their business customers.",
+    "If your revenue is fifty million dirhams or more, you go live on the first of January.",
+    "Smaller businesses follow on the first of July 2027."]},
+  {"id": "s02", "type": "CARTOON", "chapter": 0, "visual": {"kind": "story", "beats": [
+    {"pose": "carry", "prop": "einvoice", "text": "Structured e-invoice, not a PDF"},
+    {"pose": "present", "prop": {"name": "server", "label": "Accredited provider"}, "text": "It travels through an accredited provider"},
+    {"pose": "cheer", "prop": {"name": "server", "label": "Zoho"}, "text": "Zoho is on the official list", "stamp": "ACCREDITED", "stamp_color": "green"}]},
+   "lines": [
+    "Every B to B invoice has to be a structured e-invoice.",
+    "And it must travel through an accredited service provider.",
+    "Good news: Zoho is on the Ministry's list of accredited providers, so Zoho Books can send them for you."]},
+  {"id": "s03", "type": "CARTOON", "chapter": 0, "visual": {"kind": "story", "beats": [
+    {"pose": "point", "prop": {"name": "calendar", "top": "CHECK", "big": "?", "sub": "your date"}, "text": "Know your go-live date"}]},
+   "lines": ["The full Zoho Books setup is on our channel. Check your own date in the latest Ministry notices."]}
+ ]
+}
