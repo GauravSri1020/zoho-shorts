@@ -40,13 +40,14 @@ jobs:
             [ -z "$F" ] && F=$(ls -t docs/longform/upload-requests/*.json | head -1)
             ID=$(python3 -c "import json,sys;print(json.load(open('$F'))['id'])")
             PUB=$(python3 -c "import json,sys;print(json.load(open('$F')).get('publish_at',''))")
+            UPS=$(python3 -c "import json,sys;print('no' if json.load(open('$F')).get('upscale') is False else 'yes')")
           fi
-          echo "id=$ID" >> $GITHUB_OUTPUT; echo "pub=$PUB" >> $GITHUB_OUTPUT; echo "video $ID publish $PUB"
+          echo "ups=${UPS:-yes}" >> $GITHUB_OUTPUT; echo "id=$ID" >> $GITHUB_OUTPUT; echo "pub=$PUB" >> $GITHUB_OUTPUT; echo "video $ID publish $PUB"
       - name: Get the master from longform-previews
         run: |
           git fetch --depth=1 origin longform-previews
           mkdir -p in
-          for f in "${{ steps.in.outputs.id }}-1440p.mp4" "${{ steps.in.outputs.id }}.meta.json" "${{ steps.in.outputs.id }}-thumb.jpg"; do
+          for f in "${{ steps.in.outputs.id }}.mp4" "${{ steps.in.outputs.id }}-1440p.mp4" "${{ steps.in.outputs.id }}.meta.json" "${{ steps.in.outputs.id }}-thumb.jpg"; do
             git show "FETCH_HEAD:previews/$f" > "in/$f" || echo "missing $f"
           done
           ls -la in
@@ -57,8 +58,9 @@ jobs:
           sudo apt-get update || true
           sudo apt-get install -y ffmpeg || true
           pip install google-api-python-client google-auth pyyaml
-      - name: Upscale to 4K
+      - name: Upscale to 4K (long videos) / keep as is (vertical Shorts, upscale false)
         run: |
+          if [ "${{ steps.in.outputs.ups }}" = "no" ]; then cp "in/${{ steps.in.outputs.id }}.mp4" out4k.mp4; ls -la out4k.mp4; exit 0; fi
           ffmpeg -hide_banner -loglevel error -y -i "in/${{ steps.in.outputs.id }}-1440p.mp4" \
             -vf "scale=3840:2160:flags=lanczos,format=yuv420p" -c:v libx264 -preset veryfast -crf 18 -g 60 \
             -c:a copy -movflags +faststart out4k.mp4
