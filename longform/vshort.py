@@ -21,8 +21,8 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT))
 W, H = 1080, 1920
-VY, VH = 610, 748          # where the animation sits (centre 1560x1080 of the 16:9 frame, scaled to 1080 wide)
-CROP_W = 1560
+VY, VH = 620, 686          # where the animation sits (centre 1700x1080 of the 16:9 frame, scaled to 1080 wide)
+CROP_W = 1700
 SLOTS_IST = ["07:30", "21:30"]            # evergreen / queued Shorts (2 a day)
 NEWS_SLOTS_IST = ["07:30", "13:30", "21:30"]  # "priority": "news" -> the earliest free slot (13:30 is kept for news)
 

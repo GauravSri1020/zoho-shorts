@@ -1,0 +1,154 @@
+{
+ "id": "s20261115-zoho-campaigns-mcp",
+ "format": "short",
+ "priority": "news",
+ "title": "Zoho Campaigns Update: MCP AI Agents + WhatsApp Marketing (Nov 2026)",
+ "kicker": "ZOHO NEWS · 13 NOV 2026",
+ "headline": "Zoho Campaigns now works with *AI agents*",
+ "source_line": "Source: Zoho press release, 13 Nov 2026 (via Media OutReach / Malay Mail, allAfrica)",
+ "voice": {
+  "engine": "kokoro",
+  "voice": "am_onyx",
+  "speed": 1.1
+ },
+ "caption_fix": [
+  [
+   "M C P",
+   "MCP"
+  ],
+  [
+   "a hundred thousand",
+   "100,000"
+  ],
+  [
+   "four dollars",
+   "$4"
+  ],
+  [
+   "five hundred contacts",
+   "500 contacts"
+  ]
+ ],
+ "sources": [
+  {
+   "name": "Zoho press release (Malay Mail / Media OutReach, 13 Nov 2026)",
+   "url": "https://malaymail.com/amp/news/money/mediaoutreach/2026/11/13/zoho-rebuilds-campaigns-platform-with-simpler-email-and-sms-native-whatsapp-and-ai-agent-workflows/500803"
+  },
+  {
+   "name": "allAfrica - Zoho simplifies multichannel marketing with AI agent capabilities",
+   "url": "https://allafrica.com/stories/202611120216.html"
+  },
+  {
+   "name": "Zoho Campaigns",
+   "url": "https://www.zoho.com/campaigns"
+  }
+ ],
+ "tags": [
+  "Zoho Campaigns",
+  "Zoho Campaigns update",
+  "Zoho Campaigns WhatsApp",
+  "Zoho MCP",
+  "MCP AI agents",
+  "AI email marketing",
+  "WhatsApp marketing",
+  "Zoho CRM",
+  "Zoho news",
+  "GSX Automation"
+ ],
+ "description": "Zoho has rebuilt Zoho Campaigns (announced 13 Nov 2026): native WhatsApp marketing, support for the Model Context Protocol (MCP) so compatible AI agents can run multi-step campaign tasks from plain-language instructions (you still review and approve), live Zoho CRM sync, and faster sending (up to 4x faster for 100,000 emails in Zoho's own tests). Paid plans still start at $4 a month; free plan up to 500 contacts and 2,000 emails a month. Available now in all regions.\n\nSources (checked 15 Nov 2026):\n- Zoho press release via Malay Mail: https://malaymail.com/amp/news/money/mediaoutreach/2026/11/13/zoho-rebuilds-campaigns-platform-with-simpler-email-and-sms-native-whatsapp-and-ai-agent-workflows/500803\n- allAfrica: https://allafrica.com/stories/202611120216.html\n- https://www.zoho.com/campaigns\n\nThis video uses an AI-generated presenter, voice and animations; facts were checked against the sources above.\nIndependent channel. Not affiliated with or endorsed by Zoho Corporation.\n\n#ZohoCampaigns #MCP #AIAgents #WhatsAppMarketing #Shorts",
+ "scenes": [
+  {
+   "id": "s01",
+   "type": "HOOK",
+   "chapter": 0,
+   "visual": {
+    "kind": "hook2",
+    "beats": [
+     {
+      "t": "headline",
+      "tag": "ZOHO NEWS",
+      "source": "Zoho press release",
+      "date": "13 Nov 2026",
+      "text": "Zoho rebuilds Campaigns: native WhatsApp and AI agent workflows",
+      "color": "sky"
+     },
+     {
+      "t": "guy",
+      "pose": "present",
+      "prop": "robot",
+      "text": "MCP: AI agents connect to Campaigns"
+     },
+     {
+      "t": "guy",
+      "pose": "point",
+      "prop": {
+       "name": "phone",
+       "label": "Approve"
+      },
+      "text": "The agent does the steps, you approve",
+      "stamp": "REVIEW",
+      "stamp_color": "amber"
+     }
+    ]
+   },
+   "lines": [
+    "Zoho just rebuilt Zoho Campaigns, and AI agents can now do parts of your marketing work.",
+    "It now supports M C P, the open standard that lets compatible AI agents connect to the app.",
+    "Ask for a seasonal campaign or a re-engagement segment in plain language, and the agent does the steps. You still review and approve."
+   ]
+  },
+  {
+   "id": "s02",
+   "type": "BOARD",
+   "chapter": 0,
+   "visual": {
+    "kind": "stat",
+    "title": "What else is new",
+    "stats": [
+     {
+      "value": "WhatsApp",
+      "label": "built in: bulk + triggered messages",
+      "count": false,
+      "color": "green"
+     },
+     {
+      "value": "4x",
+      "label": "faster to send 100,000 emails (Zoho's test)",
+      "color": "sky"
+     },
+     {
+      "value": "$4",
+      "label": "paid plans from, per month - unchanged",
+      "color": "coral"
+     }
+    ]
+   },
+   "lines": [
+    "WhatsApp marketing is now built in, with bulk campaigns from approved templates, and triggered messages.",
+    "Zoho says sending a hundred thousand emails is now up to four times faster, in its own tests.",
+    "And pricing stays the same. Paid plans still start at four dollars a month, and the free plan covers up to five hundred contacts."
+   ]
+  },
+  {
+   "id": "s03",
+   "type": "CARTOON",
+   "chapter": 0,
+   "visual": {
+    "kind": "story",
+    "beats": [
+     {
+      "pose": "cheer",
+      "prop": {
+       "name": "server",
+       "label": "Zoho CRM"
+      },
+      "text": "Live CRM sync · all regions"
+     }
+    ]
+   },
+   "lines": [
+    "If you use Zoho CRM, contacts and segments now sync live into Campaigns. It's available now, in all regions."
+   ]
+  }
+ ]
+}

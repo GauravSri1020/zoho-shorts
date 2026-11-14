@@ -1,0 +1,164 @@
+{
+ "id": "s20261115-books-payment-reminders",
+ "format": "short",
+ "title": "Zoho Books: Automatic Payment Reminders for Overdue Invoices",
+ "kicker": "ZOHO BOOKS TIP",
+ "headline": "Get paid on time: *automatic reminders*",
+ "source_line": "Source: Zoho Books help - Reminders (checked 15 Nov 2026)",
+ "voice": {
+  "engine": "kokoro",
+  "voice": "am_onyx",
+  "speed": 1.1
+ },
+ "caption_fix": [],
+ "sources": [
+  {
+   "name": "Zoho Books help - Reminders",
+   "url": "https://www.zoho.com/us/books/help/settings/reminders.html"
+  },
+  {
+   "name": "Zoho Books - Payment reminders video",
+   "url": "https://www.zoho.com/us/books/videos/sales/payment-reminder.html"
+  }
+ ],
+ "tags": [
+  "Zoho Books payment reminders",
+  "Zoho Books reminders",
+  "overdue invoice reminder",
+  "automatic payment reminder",
+  "Zoho Books tutorial",
+  "get paid faster",
+  "invoice reminder email",
+  "Zoho Books tips",
+  "GSX Automation"
+ ],
+ "description": "Stop chasing late invoices by hand: in Zoho Books go to Settings > Reminders > Invoices tab, and under Automated Reminders (based on the invoice due date) turn on a reminder, choose the recipients (you, the customer or both), when it goes out (before or after the due date), edit the message with placeholders, tick Enable this reminder and save. Zoho Books gives you three invoice reminders by default; when a customer pays, open the invoice > Reminders > Stop Reminders.\n\nSource (checked 15 Nov 2026): https://www.zoho.com/us/books/help/settings/reminders.html\n\nThis video uses an AI-generated presenter, voice and animations; facts were checked against the sources above.\nIndependent channel. Not affiliated with or endorsed by Zoho Corporation.\n\n#ZohoBooks #Invoicing #SmallBusiness #Shorts",
+ "scenes": [
+  {
+   "id": "s01",
+   "type": "HOOK",
+   "chapter": 0,
+   "visual": {
+    "kind": "hook2",
+    "beats": [
+     {
+      "t": "guy",
+      "pose": "worried",
+      "prop": "stack",
+      "text": "Chasing invoices by hand?"
+     },
+     {
+      "t": "title",
+      "title": "Automatic reminders",
+      "sub": "in Zoho Books",
+      "chips": [
+       "Before due date",
+       "On the due date",
+       "After it"
+      ]
+     }
+    ]
+   },
+   "lines": [
+    "Still chasing late invoices by email, one by one? Zoho Books can do it for you.",
+    "Here is how to switch on automatic payment reminders, in under a minute."
+   ]
+  },
+  {
+   "id": "s02",
+   "type": "PODCAST",
+   "chapter": 0,
+   "visual": {
+    "path": [
+     "Settings",
+     "Reminders",
+     "Invoices"
+    ],
+    "actions": [
+     {
+      "cue": 0,
+      "screen": "books/payment_reminders",
+      "target": "Reminders (sidebar)",
+      "zoom": 2.4
+     },
+     {
+      "cue": 1,
+      "target": "Invoices tab",
+      "zoom": 2.4
+     },
+     {
+      "cue": 2,
+      "target": "Reminder - 1 toggle",
+      "zoom": 2.4
+     }
+    ]
+   },
+   "lines": [
+    "Click Settings, and under Reminder and Notifications, open Reminders.",
+    "Stay on the Invoices tab. Under Automated Reminders, you'll see the reminders based on the invoice due date.",
+    "Turn on the toggle next to a reminder to set it up."
+   ]
+  },
+  {
+   "id": "s03",
+   "type": "BOARD",
+   "chapter": 0,
+   "visual": {
+    "kind": "flow2",
+    "title": "Set the reminder",
+    "steps": [
+     [
+      "Recipients",
+      "You, the customer, or both"
+     ],
+     [
+      "Timing",
+      "Before or after the due date"
+     ],
+     [
+      "Message",
+      "Insert placeholders"
+     ],
+     [
+      "Save",
+      "Enable this reminder"
+     ]
+    ]
+   },
+   "lines": [
+    "Choose who gets it, you, the customer or both, and when it goes out, before or after the due date.",
+    "Edit the message, add placeholders from the list, tick Enable this reminder, and save."
+   ]
+  },
+  {
+   "id": "s04",
+   "type": "CARTOON",
+   "chapter": 0,
+   "visual": {
+    "kind": "story",
+    "beats": [
+     {
+      "pose": "present",
+      "prop": "clock",
+      "text": "3 invoice reminders by default"
+     },
+     {
+      "pose": "cheer",
+      "prop": {
+       "name": "doc",
+       "label": "PAID",
+       "color": "green"
+      },
+      "text": "Paid? Stop Reminders",
+      "stamp": "PAID",
+      "stamp_color": "green"
+     }
+    ]
+   },
+   "lines": [
+    "You get three invoice reminders by default. For example, one before the due date, one on it, and one after.",
+    "And when a customer pays, open the invoice, click Reminders, and choose Stop Reminders."
+   ]
+  }
+ ]
+}

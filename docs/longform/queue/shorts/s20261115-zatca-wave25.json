@@ -1,0 +1,145 @@
+{
+ "id": "s20261115-zatca-wave25",
+ "format": "short",
+ "title": "ZATCA Wave 25: Saudi E-Invoicing Phase 2 Deadline 1 Feb 2027",
+ "kicker": "SAUDI · ZATCA WAVE 25",
+ "headline": "ZATCA wave 25: *deadline 1 Feb 2027*",
+ "source_line": "Sources: ZATCA news 24 Jul 2026, ZATCA e-invoicing guidelines, Zoho Books help",
+ "voice": {
+  "engine": "kokoro",
+  "voice": "am_onyx",
+  "speed": 1.1
+ },
+ "caption_fix": [
+  [
+   "wave twenty five",
+   "wave 25"
+  ],
+  [
+   "one hundred eighty seven thousand five hundred riyals",
+   "SAR 187,500"
+  ],
+  [
+   "first of February 2027",
+   "1 February 2027"
+  ],
+  [
+   "twenty four hours",
+   "24 hours"
+  ]
+ ],
+ "sources": [
+  {
+   "name": "ZATCA - Wave 25 criteria (24 Jul 2026)",
+   "url": "https://zatca.gov.sa/en/MediaCenter/News/Pages/Wave25-E-invoicing.aspx"
+  },
+  {
+   "name": "ZATCA Detailed Guidelines for E-Invoicing",
+   "url": "https://zatca.gov.sa/en/e-invoicing/introduction/guidelines/documents/e-invoicing_detailed__guideline.pdf"
+  },
+  {
+   "name": "Zoho Books help - ZATCA Phase 2",
+   "url": "https://www.zoho.com/sa/books/help/e-invoicing/phase-2.html"
+  }
+ ],
+ "tags": [
+  "ZATCA wave 25",
+  "ZATCA Phase 2",
+  "Fatoora",
+  "Saudi e-invoicing",
+  "ZATCA integration",
+  "e-invoicing Saudi Arabia 2027",
+  "Zoho Books Saudi",
+  "KSA VAT",
+  "GSX Automation"
+ ],
+ "description": "ZATCA wave 25: taxpayers whose revenue subject to VAT exceeded SAR 187,500 in 2022, 2023, 2024 or 2025 must integrate their e-invoicing solution with the Fatoora portal by 1 February 2027. Phase 2: standard (B2B) tax invoices are cleared by ZATCA before they are shared with the buyer; simplified invoices are reported within 24 hours. Full Zoho Books setup video on the channel.\n\nSources (checked 15 Nov 2026):\n- ZATCA: https://zatca.gov.sa/en/MediaCenter/News/Pages/Wave25-E-invoicing.aspx\n- ZATCA guidelines: https://zatca.gov.sa/en/e-invoicing/introduction/guidelines/documents/e-invoicing_detailed__guideline.pdf\n- Zoho Books help: https://www.zoho.com/sa/books/help/e-invoicing/phase-2.html\n\nGeneral information, not tax advice. Always check the latest ZATCA notices.\nThis video uses an AI-generated presenter, voice and animations; facts were checked against the sources above.\nIndependent channel. Not affiliated with or endorsed by Zoho Corporation.\n\n#ZATCA #Fatoora #SaudiEinvoicing #Shorts",
+ "scenes": [
+  {
+   "id": "s01",
+   "type": "HOOK",
+   "chapter": 0,
+   "visual": {
+    "kind": "hook2",
+    "beats": [
+     {
+      "t": "headline",
+      "tag": "ZATCA",
+      "source": "ZATCA",
+      "date": "24 Jul 2026",
+      "text": "Wave 25: revenue subject to VAT above SAR 187,500 in 2022-2025",
+      "color": "green"
+     },
+     {
+      "t": "stat",
+      "value": "SAR 187,500",
+      "label": "in any one year, 2022 to 2025",
+      "color": "coral"
+     },
+     {
+      "t": "stat",
+      "value": "1 Feb 2027",
+      "label": "integrate with Fatoora by",
+      "color": "teal",
+      "count": false
+     }
+    ]
+   },
+   "lines": [
+    "Saudi Arabia's tax authority, ZATCA, has named wave twenty five of e-invoicing Phase 2.",
+    "If your revenue subject to VAT went above one hundred eighty seven thousand five hundred riyals in any year from 2022 to 2025, you are in.",
+    "Your deadline to integrate with Fatoora is the first of February 2027."
+   ]
+  },
+  {
+   "id": "s02",
+   "type": "CARTOON",
+   "chapter": 0,
+   "visual": {
+    "kind": "story",
+    "beats": [
+     {
+      "pose": "carry",
+      "prop": "einvoice",
+      "text": "B2B cleared first · B2C reported in 24 h"
+     },
+     {
+      "pose": "point",
+      "prop": {
+       "name": "server",
+       "label": "Zoho Books"
+      },
+      "text": "OTP, CSID, then Push to Fatoora"
+     }
+    ]
+   },
+   "lines": [
+    "Phase 2 means business invoices are cleared by ZATCA before you send them, and consumer invoices are reported within twenty four hours.",
+    "In Zoho Books, you connect with a one time password from Fatoora, then push each invoice to Fatoora."
+   ]
+  },
+  {
+   "id": "s03",
+   "type": "CARTOON",
+   "chapter": 0,
+   "visual": {
+    "kind": "story",
+    "beats": [
+     {
+      "pose": "cheer",
+      "prop": {
+       "name": "calendar",
+       "top": "GUIDE",
+       "big": "▶",
+       "sub": "on the channel"
+      },
+      "text": "Full step-by-step guide on the channel"
+     }
+    ]
+   },
+   "lines": [
+    "Our full step by step Zoho Books video is on the channel."
+   ]
+  }
+ ]
+}
