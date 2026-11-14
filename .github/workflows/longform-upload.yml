@@ -4,6 +4,9 @@
 # looks blocky), uploads it as private with a publish time, and sets the thumbnail.
 name: longform-upload
 on:
+  push:                      # Claude / Gaurav adds docs/longform/upload-requests/<id>.json on branch long-videos -> upload
+    branches: [long-videos]
+    paths: ["docs/longform/upload-requests/*.json"]
   workflow_dispatch:
     inputs:
       id:
@@ -25,11 +28,23 @@ jobs:
       YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
     steps:
       - uses: actions/checkout@v4
+        with: {fetch-depth: 2}
+      - name: Inputs (button or upload-request file)
+        id: in
+        run: |
+          ID="${{ inputs.id }}"; PUB="${{ inputs.publish_at }}"
+          if [ -z "$ID" ]; then
+            F=$(git diff --name-only HEAD~1 HEAD -- docs/longform/upload-requests/ 2>/dev/null | head -1)
+            [ -z "$F" ] && F=$(ls -t docs/longform/upload-requests/*.json | head -1)
+            ID=$(python3 -c "import json,sys;print(json.load(open('$F'))['id'])")
+            PUB=$(python3 -c "import json,sys;print(json.load(open('$F')).get('publish_at',''))")
+          fi
+          echo "id=$ID" >> $GITHUB_OUTPUT; echo "pub=$PUB" >> $GITHUB_OUTPUT; echo "video $ID publish $PUB"
       - name: Get the master from longform-previews
         run: |
           git fetch --depth=1 origin longform-previews
           mkdir -p in
-          for f in "${{ inputs.id }}-1440p.mp4" "${{ inputs.id }}.meta.json" "${{ inputs.id }}-thumb.jpg"; do
+          for f in "${{ steps.in.outputs.id }}-1440p.mp4" "${{ steps.in.outputs.id }}.meta.json" "${{ steps.in.outputs.id }}-thumb.jpg"; do
             git show "FETCH_HEAD:previews/$f" > "in/$f" || echo "missing $f"
           done
           ls -la in
@@ -42,17 +57,17 @@ jobs:
           pip install google-api-python-client google-auth pyyaml
       - name: Upscale to 4K
         run: |
-          ffmpeg -hide_banner -loglevel error -y -i "in/${{ inputs.id }}-1440p.mp4" \
+          ffmpeg -hide_banner -loglevel error -y -i "in/${{ steps.in.outputs.id }}-1440p.mp4" \
             -vf "scale=3840:2160:flags=lanczos,format=yuv420p" -c:v libx264 -preset veryfast -crf 18 -g 60 \
             -c:a copy -movflags +faststart out4k.mp4
           ffprobe -v error -show_entries stream=width,height:format=duration,size -of compact out4k.mp4
       - name: Upload to YouTube (scheduled)
         run: |
-          python -m longform.upload --video out4k.mp4 --meta "in/${{ inputs.id }}.meta.json" \
-            --thumb "in/${{ inputs.id }}-thumb.jpg" --publish "${{ inputs.publish_at }}"
+          python -m longform.upload --video out4k.mp4 --meta "in/${{ steps.in.outputs.id }}.meta.json" \
+            --thumb "in/${{ steps.in.outputs.id }}-thumb.jpg" --publish "${{ steps.in.outputs.pub }}"
       - uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: longform-upload-${{ inputs.id }}
+          name: longform-upload-${{ steps.in.outputs.id }}
           path: out/uploaded.json
           retention-days: 30
