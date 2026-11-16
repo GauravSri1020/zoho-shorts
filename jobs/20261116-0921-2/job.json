@@ -1,0 +1,278 @@
+{
+ "id": "20261116-0921-2",
+ "niche": "zoho",
+ "status": "waiting_for_clips",
+ "upload": true,
+ "created": "2026-11-16T09:24:15",
+ "title": "Hotelogix Integrates Zoho Books: Automate Hotel Accounting #Shorts",
+ "description": "Automate hotel accounting by syncing Hotelogix with Zoho Books.\n\n1. In Hotelogix settings, select Integrations and connect your Zoho Books account.\n2. Map room revenue categories and local tax rates to corresponding Zoho Books ledger accounts.\n3. Turn on automatic sync to push daily checkout folios and guest payments in real time.\n\nAI + Zoho automations every day - follow @GSXAutomation\n\nWhat inspired this: https://news.google.com/rss/articles/CBMi6gFBVV95cUxONGFBMjVhVjlKLWxaZUJFN3BGSFNxMnRWWXFIRnd2Y0ZCMEZjOGtZNTZyRFJNY21Bd0tmaDhUZnVVT2V1MGdKOVFGRHNHNzVSelFXcEpjSnp6aWszcVBRamtDcV8yajJGbWRmMEdOTEZlbVllWXJUTkZSNkoxREZmaTY0Y3Z5TGtwczlFUzFsRUdJZnhkSzJJMjZDdDFTUjVEMVRDc0F4ZGZEYUZwNnNuRy1UTTJoVjZJYTdqN3IyX0UtQ0laZ2lfNUZUdDNjMGtjQlRtaXVtS2w5UnVEdFh0WkZFUVgzQzczdWfSAe4BQVVfeXFMTVV0UGREaDRNQkVGRnQ1eEdnRm1VRmxudTJKN1hGb3RJR0ZnWkRLLU51dTJsYnNXVFhrVXpOVGdnVVBkYWNoeHlYWFM5MEx4MXJob0NWMW4zcEVMVXkzc2NZekhBUS1WR0dmbVRnTV9WNWYzMmxvN2V4MWw3MEJuMWEwdE5DVUZLclNiVDFxeUNySXRkVktCUzMzOWs1U0FZTXZkTlpvUWFMRHlFdFBLdG5wT1o5eEZfM3pWc3A0cUVkOXVMbWh1anZLRFpTU2t4dU11TjNoMTBtZlZKRVozbkFhVnh6ZnF3eWI1V2drUQ?oc=5\n\nThis video uses an AI-generated presenter and voice.\nIndependent channel. Not affiliated with or endorsed by Zoho Corporation. Zoho is a trademark of Zoho Corporation.\n\n#Shorts #Zoho #AIAutomation #ZohoCRM #AIAgents",
+ "angle": {
+  "story_index": 1,
+  "pillar": "trending",
+  "region": "global",
+  "product": "Zoho Books",
+  "app": "books",
+  "problem": "Hotels waste hours manually retyping daily guest charges and room folios into accounting software.",
+  "fix_type": "native",
+  "solution": "Enable the new Hotelogix to Zoho Books integration to automatically sync room revenue and guest invoices.",
+  "steps": [
+   "In Hotelogix settings, select Integrations and connect your Zoho Books account.",
+   "Map room revenue categories and local tax rates to corresponding Zoho Books ledger accounts.",
+   "Turn on automatic sync to push daily checkout folios and guest payments in real time."
+  ],
+  "api": null,
+  "result": "Eliminates manual bookkeeping errors and saves hotel staff hours every night audit.",
+  "wow": "Nightly room revenue and tax ledgers sync into Zoho Books completely hands-free.",
+  "hook": "Hotelogix just integrated with Zoho Books - here is how to automate hotel accounting!"
+ },
+ "story": {
+  "title": "Hotelogix integrates Zoho Books to automate hotel accounting and financial workflows",
+  "link": "https://news.google.com/rss/articles/CBMi6gFBVV95cUxONGFBMjVhVjlKLWxaZUJFN3BGSFNxMnRWWXFIRnd2Y0ZCMEZjOGtZNTZyRFJNY21Bd0tmaDhUZnVVT2V1MGdKOVFGRHNHNzVSelFXcEpjSnp6aWszcVBRamtDcV8yajJGbWRmMEdOTEZlbVllWXJUTkZSNkoxREZmaTY0Y3Z5TGtwczlFUzFsRUdJZnhkSzJJMjZDdDFTUjVEMVRDc0F4ZGZEYUZwNnNuRy1UTTJoVjZJYTdqN3IyX0UtQ0laZ2lfNUZUdDNjMGtjQlRtaXVtS2w5UnVEdFh0WkZFUVgzQzczdWfSAe4BQVVfeXFMTVV0UGREaDRNQkVGRnQ1eEdnRm1VRmxudTJKN1hGb3RJR0ZnWkRLLU51dTJsYnNXVFhrVXpOVGdnVVBkYWNoeHlYWFM5MEx4MXJob0NWMW4zcEVMVXkzc2NZekhBUS1WR0dmbVRnTV9WNWYzMmxvN2V4MWw3MEJuMWEwdE5DVUZLclNiVDFxeUNySXRkVktCUzMzOWs1U0FZTXZkTlpvUWFMRHlFdFBLdG5wT1o5eEZfM3pWc3A0cUVkOXVMbWh1anZLRFpTU2t4dU11TjNoMTBtZlZKRVozbkFhVnh6ZnF3eWI1V2drUQ?oc=5",
+  "summary": "Hotelogix integrates Zoho Books to automate hotel accounting and financial workflows ET TravelWorld",
+  "source": "ET TravelWorld",
+  "ts": 1794745350,
+  "type": "news",
+  "publishers": 5,
+  "trend": 15,
+  "age_hours": 20,
+  "score": 26,
+  "facts_checked": true
+ },
+ "script": {
+  "title": "Hotelogix Integrates Zoho Books: Automate Hotel Accounting",
+  "hook_text": "Hotelogix + Zoho Books Integration",
+  "thumb_text": "Zoho Books *Hotelogix Sync*",
+  "app_label": "Zoho Books + Hotelogix",
+  "lines": [
+   {
+    "beat": "HOOK",
+    "say": "Hotelogix now integrates with Zoho Books, so you can stop manually retyping hotel folios every night.",
+    "tts": "Hotelogix now integrates with Zoho Books, so you can stop manually retyping hotel folios every night.",
+    "card": "Hotelogix Integration Launched",
+    "screen": null
+   },
+   {
+    "beat": "PROBLEM",
+    "say": "Hotels waste hours during the night audit manually syncing room revenue and guest charges.",
+    "tts": "Hotels waste hours during the night audit manually syncing room revenue and guest charges.",
+    "card": "Manual Folio Data Entry",
+    "screen": null
+   },
+   {
+    "beat": "FIX",
+    "say": "Use the new Hotelogix integration to automatically sync your guest invoices and revenue data.",
+    "tts": "Use the new Hotelogix integration to automatically sync your guest invoices and revenue data.",
+    "card": "Books > Integrations",
+    "screen": {
+     "app": "books",
+     "view": "settings",
+     "path": [
+      "Settings",
+      "Integrations"
+     ],
+     "heading": "Integrations",
+     "real": "books/integrations",
+     "click": "Integrations",
+     "tip": "View marketplace integrations"
+    }
+   },
+   {
+    "beat": "STEP 1",
+    "say": "In your Hotelogix dashboard, navigate to Integrations and authorize your Zoho Books organization account.",
+    "tts": "In your Hotelogix dashboard, navigate to Integrations and authorize your Zoho Books organization account.",
+    "card": "Hotelogix > Connect Books",
+    "screen": null
+   },
+   {
+    "beat": "STEP 2",
+    "say": "Map your room revenue categories and tax rates to the correct Zoho Books ledger accounts.",
+    "tts": "Map your room revenue categories and tax rates to the correct Zoho Books ledger accounts.",
+    "card": "Map Ledger Accounts",
+    "screen": {
+     "app": "books",
+     "view": "settings",
+     "path": [
+      "Settings",
+      "Chart of Accounts"
+     ],
+     "heading": "Chart of Accounts",
+     "real": "books/chartofaccounts",
+     "click": "Chart of Accounts",
+     "tip": "Verify revenue and tax accounts"
+    }
+   },
+   {
+    "beat": "STEP 3",
+    "say": "Enable automatic sync to push daily checkout folios and payments into Zoho Books in real time.",
+    "tts": "Enable automatic sync to push daily checkout folios and payments into Zoho Books in real time.",
+    "card": "Enable Real-Time Sync",
+    "screen": null
+   },
+   {
+    "beat": "STEP 4",
+    "say": "Check with your tax advisor to ensure your ledger mapping complies with local reporting requirements.",
+    "tts": "Check with your tax advisor to ensure your ledger mapping complies with local reporting requirements.",
+    "card": "Compliance Check",
+    "screen": null
+   },
+   {
+    "beat": "RESULT",
+    "say": "Now, nightly revenue and tax ledgers sync hands-free, eliminating errors and saving your staff hours.",
+    "tts": "Now, nightly revenue and tax ledgers sync hands-free, eliminating errors and saving your staff hours.",
+    "card": "Zero Manual Entry",
+    "screen": {
+     "app": "books",
+     "view": "list",
+     "path": [
+      "Sales",
+      "Invoices"
+     ],
+     "heading": "All Invoices",
+     "real": "books/invoices_list",
+     "click": "All Invoices",
+     "tip": "View synced invoices"
+    }
+   }
+  ],
+  "api": null,
+  "code": null,
+  "test_before_recording": [
+   "Verify Hotelogix admin access.",
+   "Confirm Zoho Books chart of accounts setup."
+  ],
+  "description": "Automate hotel accounting by syncing Hotelogix with Zoho Books.",
+  "tags": [
+   "Zoho Books",
+   "Hotelogix",
+   "Automation",
+   "Accounting"
+  ]
+ },
+ "lines": [
+  {
+   "beat": "HOOK",
+   "say": "Hotelogix now integrates with Zoho Books, so you can stop manually retyping hotel folios every night.",
+   "tts": "Hotelogix now integrates with Zoho Books, so you can stop manually retyping hotel folios every night.",
+   "card": "Hotelogix Integration Launched",
+   "screen": null,
+   "face": true
+  },
+  {
+   "beat": "PROBLEM",
+   "say": "Hotels waste hours during the night audit manually syncing room revenue and guest charges.",
+   "tts": "Hotels waste hours during the night audit manually syncing room revenue and guest charges.",
+   "card": "Manual Folio Data Entry",
+   "screen": null,
+   "face": true
+  },
+  {
+   "beat": "FIX",
+   "say": "Use the new Hotelogix integration to automatically sync your guest invoices and revenue data.",
+   "tts": "Use the new Hotelogix integration to automatically sync your guest invoices and revenue data.",
+   "card": "Books > Integrations",
+   "screen": {
+    "app": "books",
+    "view": "settings",
+    "path": [
+     "Settings",
+     "Integrations"
+    ],
+    "heading": "Integrations",
+    "real": "books/integrations",
+    "click": "Integrations",
+    "tip": "View marketplace integrations"
+   },
+   "face": false
+  },
+  {
+   "beat": "STEP 1",
+   "say": "In your Hotelogix dashboard, navigate to Integrations and authorize your Zoho Books organization account.",
+   "tts": "In your Hotelogix dashboard, navigate to Integrations and authorize your Zoho Books organization account.",
+   "card": "Hotelogix > Connect Books",
+   "screen": null,
+   "face": false
+  },
+  {
+   "beat": "STEP 2",
+   "say": "Map your room revenue categories and tax rates to the correct Zoho Books ledger accounts.",
+   "tts": "Map your room revenue categories and tax rates to the correct Zoho Books ledger accounts.",
+   "card": "Map Ledger Accounts",
+   "screen": {
+    "app": "books",
+    "view": "settings",
+    "path": [
+     "Settings",
+     "Chart of Accounts"
+    ],
+    "heading": "Chart of Accounts",
+    "real": "books/chartofaccounts",
+    "click": "Chart of Accounts",
+    "tip": "Verify revenue and tax accounts"
+   },
+   "face": false
+  },
+  {
+   "beat": "STEP 3",
+   "say": "Enable automatic sync to push daily checkout folios and payments into Zoho Books in real time.",
+   "tts": "Enable automatic sync to push daily checkout folios and payments into Zoho Books in real time.",
+   "card": "Enable Real-Time Sync",
+   "screen": null,
+   "face": false
+  },
+  {
+   "beat": "STEP 4",
+   "say": "Check with your tax advisor to ensure your ledger mapping complies with local reporting requirements.",
+   "tts": "Check with your tax advisor to ensure your ledger mapping complies with local reporting requirements.",
+   "card": "Compliance Check",
+   "screen": null,
+   "face": false
+  },
+  {
+   "beat": "RESULT",
+   "say": "Now, nightly revenue and tax ledgers sync hands-free, eliminating errors and saving your staff hours.",
+   "tts": "Now, nightly revenue and tax ledgers sync hands-free, eliminating errors and saving your staff hours.",
+   "card": "Zero Manual Entry",
+   "screen": {
+    "app": "books",
+    "view": "list",
+    "path": [
+     "Sales",
+     "Invoices"
+    ],
+    "heading": "All Invoices",
+    "real": "books/invoices_list",
+    "click": "All Invoices",
+    "tip": "View synced invoices"
+   },
+   "face": true
+  }
+ ],
+ "clips": [
+  {
+   "text": "Hotelogix now integrates with Zoho Books, so you can stop manually retyping hotel folios every night.",
+   "lines": [
+    0
+   ],
+   "beat": "HOOK",
+   "prompt": "The man (my avatar) looks into the camera and talks to the viewer like a confident, friendly business tech explainer, smart and natural, not stiff; he walks a few relaxed steps toward the camera and stops, then raises one hand with an open palm on the first words. Vertical 9:16 medium-wide shot from the knees up, camera about two metres away, his head in the upper third with space above it, both hands and all his gestures fully visible in the frame, smooth gimbal camera gently moving back with him so the framing stays the same, sharp and well lit, wearing burgundy overshirt over a black crew-neck t-shirt, in a glass meeting room with a whiteboard full of flow diagrams; in this whole video he has a sharp short boxed beard, neatly combed-back medium-length hair, thin gold round-frame glasses - exactly the same in every shot of this video. His face, skin tone, height and body build stay exactly as in my avatar's reference photos - the same natural average build, never slimmer and never heavier. Clean professional business look: no tilak or any mark on his forehead, no necklace, mala, beads, thread or religious accessory, no earrings, no bracelets. He says, in clear natural English with a clear, neutral international accent, at a brisk, lively pace: \"Hotelogix now integrates with Zoho Books, so you can stop manually retyping hotel folios every night.\" His lips match every word. He starts speaking in the very first frame, with no pause before the first word, and stops right after the last word. Audio: only his voice - no music, no sound effects. No subtitles, no captions, no text on screen."
+  },
+  {
+   "text": "Hotels waste hours during the night audit manually syncing room revenue and guest charges.",
+   "lines": [
+    1
+   ],
+   "beat": "PROBLEM",
+   "prompt": "The man (my avatar) looks into the camera and talks to the viewer like a confident, friendly business tech explainer, smart and natural, not stiff; he frowns slightly, sighs and spreads both hands palms up as if asking why this is still so hard. Vertical 9:16 medium-wide shot from the knees up, camera about two metres away, his head in the upper third with space above it, both hands and all his gestures fully visible in the frame, static camera, sharp and well lit, wearing burgundy overshirt over a black crew-neck t-shirt, in a glass meeting room with a whiteboard full of flow diagrams; in this whole video he has a sharp short boxed beard, neatly combed-back medium-length hair, thin gold round-frame glasses - exactly the same in every shot of this video. His face, skin tone, height and body build stay exactly as in my avatar's reference photos - the same natural average build, never slimmer and never heavier. Clean professional business look: no tilak or any mark on his forehead, no necklace, mala, beads, thread or religious accessory, no earrings, no bracelets. He says, in clear natural English with a clear, neutral international accent, at a brisk, lively pace: \"Hotels waste hours during the night audit manually syncing room revenue and guest charges.\" His lips match every word. He starts speaking in the very first frame, with no pause before the first word, and stops right after the last word. Audio: only his voice - no music, no sound effects. No subtitles, no captions, no text on screen."
+  },
+  {
+   "text": "Now, nightly revenue and tax ledgers sync hands-free, eliminating errors and saving your staff hours.",
+   "lines": [
+    7
+   ],
+   "beat": "RESULT",
+   "prompt": "The man (my avatar) looks into the camera and talks to the viewer like a confident, friendly business tech explainer, smart and natural, not stiff; he gives a short confident thumbs up near his chest and smiles. Vertical 9:16 medium-wide shot from the knees up, camera about two metres away, his head in the upper third with space above it, both hands and all his gestures fully visible in the frame, static camera, sharp and well lit, wearing burgundy overshirt over a black crew-neck t-shirt, in a glass meeting room with a whiteboard full of flow diagrams; in this whole video he has a sharp short boxed beard, neatly combed-back medium-length hair, thin gold round-frame glasses - exactly the same in every shot of this video. His face, skin tone, height and body build stay exactly as in my avatar's reference photos - the same natural average build, never slimmer and never heavier. Clean professional business look: no tilak or any mark on his forehead, no necklace, mala, beads, thread or religious accessory, no earrings, no bracelets. He says, in clear natural English with a clear, neutral international accent, at a brisk, lively pace: \"Now, nightly revenue and tax ledgers sync hands-free, eliminating errors and saving your staff hours.\" His lips match every word. He starts speaking in the very first frame, with no pause before the first word, and stops right after the last word. Audio: only his voice - no music, no sound effects. No subtitles, no captions, no text on screen."
+  }
+ ],
+ "look": "wearing burgundy overshirt over a black crew-neck t-shirt, in a glass meeting room with a whiteboard full of flow diagrams; in this whole video he has a sharp short boxed beard, neatly combed-back medium-length hair, thin gold round-frame glasses - exactly the same in every shot of this video",
+ "issue": 184
+}

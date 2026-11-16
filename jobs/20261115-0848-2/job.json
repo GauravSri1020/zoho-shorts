@@ -1,7 +1,7 @@
 {
  "id": "20261115-0848-2",
  "niche": "zoho",
- "status": "waiting_for_clips",
+ "status": "qa_failed",
  "upload": true,
  "created": "2026-11-15T08:59:00",
  "title": "Automate Yettel Zoho Platform: Connect CRM, Sales & HR #Shorts",
@@ -196,7 +196,7 @@
    "tts": "Yettel just launched the Zoho platform for business subscribers, but unintegrated apps can leave your sales and HR isolated.",
    "card": "Isolated Business Apps",
    "screen": null,
-   "face": true
+   "face": false
   },
   {
    "beat": "PROBLEM",
@@ -204,7 +204,7 @@
    "tts": "When Yettel subscribers activate bundled Zoho access, marketing intake, sales leads, and HR onboarding remain stuck in manual silos.",
    "card": "Isolated Data Silos",
    "screen": null,
-   "face": true
+   "face": false
   },
   {
    "beat": "FIX",
@@ -314,35 +314,11 @@
    "tts": "This unifies your telecom intake, sales pipeline, and HR operations into one automated workflow.",
    "card": "Unified Operations Running",
    "screen": null,
-   "face": true
+   "face": false
   }
  ],
- "clips": [
-  {
-   "text": "Yettel just launched the Zoho platform for business subscribers, but unintegrated apps can leave your sales and HR isolated.",
-   "lines": [
-    0
-   ],
-   "beat": "HOOK",
-   "prompt": "The man (my avatar) looks into the camera and talks to the viewer like a confident, friendly business tech explainer, smart and natural, not stiff; he walks a few relaxed steps toward the camera and stops, then raises one hand with an open palm on the first words. Vertical 9:16 medium-wide shot from the knees up, camera about two metres away, his head in the upper third with space above it, both hands and all his gestures fully visible in the frame, smooth gimbal camera gently moving back with him so the framing stays the same, sharp and well lit, wearing beige linen shirt with the top button open, in a bright product design studio with sketches and laptops on a long table; in this whole video he has a neat light stubble, neatly combed-back medium-length hair, no glasses - exactly the same in every shot of this video. His face, skin tone, height and body build stay exactly as in my avatar's reference photos - the same natural average build, never slimmer and never heavier. Clean professional business look: no tilak or any mark on his forehead, no necklace, mala, beads, thread or religious accessory, no earrings, no bracelets. He says, in clear natural English with a clear, neutral international accent, at a brisk, lively pace: \"Yettel just launched the Zoho platform for business subscribers, but unintegrated apps can leave your sales and HR isolated.\" His lips match every word. He starts speaking in the very first frame, with no pause before the first word, and stops right after the last word. Audio: only his voice - no music, no sound effects. No subtitles, no captions, no text on screen."
-  },
-  {
-   "text": "When Yettel subscribers activate bundled Zoho access, marketing intake, sales leads, and HR onboarding remain stuck in manual silos.",
-   "lines": [
-    1
-   ],
-   "beat": "PROBLEM",
-   "prompt": "The man (my avatar) looks into the camera and talks to the viewer like a confident, friendly business tech explainer, smart and natural, not stiff; he frowns slightly, sighs and spreads both hands palms up as if asking why this is still so hard. Vertical 9:16 medium-wide shot from the knees up, camera about two metres away, his head in the upper third with space above it, both hands and all his gestures fully visible in the frame, static camera, sharp and well lit, wearing beige linen shirt with the top button open, in a bright product design studio with sketches and laptops on a long table; in this whole video he has a neat light stubble, neatly combed-back medium-length hair, no glasses - exactly the same in every shot of this video. His face, skin tone, height and body build stay exactly as in my avatar's reference photos - the same natural average build, never slimmer and never heavier. Clean professional business look: no tilak or any mark on his forehead, no necklace, mala, beads, thread or religious accessory, no earrings, no bracelets. He says, in clear natural English with a clear, neutral international accent, at a brisk, lively pace: \"When Yettel subscribers activate bundled Zoho access, marketing intake, sales leads, and HR onboarding remain stuck in manual silos.\" His lips match every word. He starts speaking in the very first frame, with no pause before the first word, and stops right after the last word. Audio: only his voice - no music, no sound effects. No subtitles, no captions, no text on screen."
-  },
-  {
-   "text": "This unifies your telecom intake, sales pipeline, and HR operations into one automated workflow.",
-   "lines": [
-    7
-   ],
-   "beat": "RESULT",
-   "prompt": "The man (my avatar) looks into the camera and talks to the viewer like a confident, friendly business tech explainer, smart and natural, not stiff; he relaxes his shoulders, smiles and gives a small satisfied nod with an open-hand gesture. Vertical 9:16 medium-wide shot from the knees up, camera about two metres away, his head in the upper third with space above it, both hands and all his gestures fully visible in the frame, static camera, sharp and well lit, wearing beige linen shirt with the top button open, in a bright product design studio with sketches and laptops on a long table; in this whole video he has a neat light stubble, neatly combed-back medium-length hair, no glasses - exactly the same in every shot of this video. His face, skin tone, height and body build stay exactly as in my avatar's reference photos - the same natural average build, never slimmer and never heavier. Clean professional business look: no tilak or any mark on his forehead, no necklace, mala, beads, thread or religious accessory, no earrings, no bracelets. He says, in clear natural English with a clear, neutral international accent, at a brisk, lively pace: \"This unifies your telecom intake, sales pipeline, and HR operations into one automated workflow.\" His lips match every word. He starts speaking in the very first frame, with no pause before the first word, and stops right after the last word. Audio: only his voice - no music, no sound effects. No subtitles, no captions, no text on screen."
-  }
- ],
+ "clips": [],
  "look": "wearing beige linen shirt with the top button open, in a bright product design studio with sketches and laptops on a long table; in this whole video he has a neat light stubble, neatly combed-back medium-length hair, no glasses - exactly the same in every shot of this video",
- "issue": 179
+ "issue": 179,
+ "faceless_fallback": true
 }

@@ -1,7 +1,7 @@
 {
  "id": "20261115-0859-3",
  "niche": "zoho",
- "status": "waiting_for_clips",
+ "status": "qa_failed",
  "upload": true,
  "created": "2026-11-15T09:06:13",
  "title": "Zoho Analytics Announces a Major Evolution #Shorts",
@@ -231,7 +231,7 @@
    "tts": "Zoho Analytics just announced a major evolution, bringing powerful new upgrades to modern business intelligence and enterprise reporting.",
    "card": "Zoho Analytics Evolution",
    "screen": null,
-   "face": true
+   "face": false
   },
   {
    "beat": "PROBLEM",
@@ -239,7 +239,7 @@
    "tts": "Growing organizations frequently struggle with fragmented data scattered across multiple departments, making it difficult to monitor overall business performance effectively.",
    "card": "Fragmented Business Data",
    "screen": null,
-   "face": true
+   "face": false
   },
   {
    "beat": "FIX",
@@ -393,35 +393,11 @@
    "tts": "Your organization now enjoys a modern analytics workflow that delivers clearer visibility and accelerates strategic decision-making across departments.",
    "card": "Clearer Business Visibility",
    "screen": null,
-   "face": true
+   "face": false
   }
  ],
- "clips": [
-  {
-   "text": "Zoho Analytics just announced a major evolution, bringing powerful new upgrades to modern business intelligence and enterprise reporting.",
-   "lines": [
-    0
-   ],
-   "beat": "HOOK",
-   "prompt": "The man (my avatar) looks into the camera and talks to the viewer like a confident, friendly business tech explainer, smart and natural, not stiff; he walks a few relaxed steps toward the camera and stops, then raises one hand with an open palm on the first words. Vertical 9:16 medium-wide shot from the knees up, camera about two metres away, his head in the upper third with space above it, both hands and all his gestures fully visible in the frame, smooth gimbal camera gently moving back with him so the framing stays the same, sharp and well lit, wearing burgundy blazer over a crisp white shirt with no tie, in a glass-walled high-rise office with a city skyline behind him; in this whole video he has a short neatly trimmed beard, a short fade with a little volume on top, thin black rectangular glasses - exactly the same in every shot of this video. His face, skin tone, height and body build stay exactly as in my avatar's reference photos - the same natural average build, never slimmer and never heavier. Clean professional business look: no tilak or any mark on his forehead, no necklace, mala, beads, thread or religious accessory, no earrings, no bracelets. He says, in clear natural English with a clear, neutral international accent, at a brisk, lively pace: \"Zoho Analytics just announced a major evolution, bringing powerful new upgrades to modern business intelligence and enterprise reporting.\" His lips match every word. He starts speaking in the very first frame, with no pause before the first word, and stops right after the last word. Audio: only his voice - no music, no sound effects. No subtitles, no captions, no text on screen."
-  },
-  {
-   "text": "Growing organizations frequently struggle with fragmented data scattered across multiple departments, making it difficult to monitor overall business performance effectively.",
-   "lines": [
-    1
-   ],
-   "beat": "PROBLEM",
-   "prompt": "The man (my avatar) looks into the camera and talks to the viewer like a confident, friendly business tech explainer, smart and natural, not stiff; he counts the wasted hours on his fingers with a slightly annoyed face. Vertical 9:16 medium-wide shot from the knees up, camera about two metres away, his head in the upper third with space above it, both hands and all his gestures fully visible in the frame, static camera, sharp and well lit, wearing burgundy blazer over a crisp white shirt with no tie, in a glass-walled high-rise office with a city skyline behind him; in this whole video he has a short neatly trimmed beard, a short fade with a little volume on top, thin black rectangular glasses - exactly the same in every shot of this video. His face, skin tone, height and body build stay exactly as in my avatar's reference photos - the same natural average build, never slimmer and never heavier. Clean professional business look: no tilak or any mark on his forehead, no necklace, mala, beads, thread or religious accessory, no earrings, no bracelets. He says, in clear natural English with a clear, neutral international accent, at a brisk, lively pace: \"Growing organizations frequently struggle with fragmented data scattered across multiple departments, making it difficult to monitor overall business performance effectively.\" His lips match every word. He starts speaking in the very first frame, with no pause before the first word, and stops right after the last word. Audio: only his voice - no music, no sound effects. No subtitles, no captions, no text on screen."
-  },
-  {
-   "text": "Your organization now enjoys a modern analytics workflow that delivers clearer visibility and accelerates strategic decision-making across departments.",
-   "lines": [
-    6
-   ],
-   "beat": "RESULT",
-   "prompt": "The man (my avatar) looks into the camera and talks to the viewer like a confident, friendly business tech explainer, smart and natural, not stiff; he smiles and opens both arms wide. Vertical 9:16 medium-wide shot from the knees up, camera about two metres away, his head in the upper third with space above it, both hands and all his gestures fully visible in the frame, static camera, sharp and well lit, wearing burgundy blazer over a crisp white shirt with no tie, in a glass-walled high-rise office with a city skyline behind him; in this whole video he has a short neatly trimmed beard, a short fade with a little volume on top, thin black rectangular glasses - exactly the same in every shot of this video. His face, skin tone, height and body build stay exactly as in my avatar's reference photos - the same natural average build, never slimmer and never heavier. Clean professional business look: no tilak or any mark on his forehead, no necklace, mala, beads, thread or religious accessory, no earrings, no bracelets. He says, in clear natural English with a clear, neutral international accent, at a brisk, lively pace: \"Your organization now enjoys a modern analytics workflow that delivers clearer visibility and accelerates strategic decision-making across departments.\" His lips match every word. He starts speaking in the very first frame, with no pause before the first word, and stops right after the last word. Audio: only his voice - no music, no sound effects. No subtitles, no captions, no text on screen."
-  }
- ],
+ "clips": [],
  "look": "wearing burgundy blazer over a crisp white shirt with no tie, in a glass-walled high-rise office with a city skyline behind him; in this whole video he has a short neatly trimmed beard, a short fade with a little volume on top, thin black rectangular glasses - exactly the same in every shot of this video",
- "issue": 180
+ "issue": 180,
+ "faceless_fallback": true
 }
