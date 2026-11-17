@@ -720,7 +720,9 @@
    "pillar": "trending",
    "engine": "flow",
    "job": "20261115-0848-2",
-   "created": "2026-11-15T08:59:00"
+   "created": "2026-11-15T08:59:00",
+   "video_id": "N3-okqeqVjw",
+   "publish_at": "2026-11-17T21:30:00+05:30"
   },
   "S0067": {
    "problem": "Executives wait days for BI teams to write custom SQL reports across sales and financial data.",
@@ -1111,6 +1113,13 @@
    "minute": 1290,
    "video_id": "YD8raYh68IQ",
    "title": "Automate Invoicing & Payment Reminders in Zoho Books #Shorts"
+  },
+  {
+   "date": "2026-11-17",
+   "window": "21:30",
+   "minute": 1290,
+   "video_id": "N3-okqeqVjw",
+   "title": "Automate Yettel Zoho Platform: Connect CRM, Sales & HR #Shorts"
   }
  ],
  "failures": {},
