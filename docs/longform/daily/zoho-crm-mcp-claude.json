@@ -1,0 +1,5 @@
+{
+ "id": "zoho-crm-mcp-claude",
+ "script": "docs/longform/scripts/zoho-crm-mcp-claude.json",
+ "publish_at": "2026-11-18T13:00:00Z"
+}

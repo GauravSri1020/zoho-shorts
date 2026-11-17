@@ -268,6 +268,33 @@
    ]
   },
   {
+   "id": "s04a",
+   "type": "BOARD",
+   "chapter": 1,
+   "visual": {
+    "kind": "headline",
+    "title": "What Zoho says",
+    "items": [
+     {
+      "source": "Zoho Community",
+      "date": "2026",
+      "text": "MCP servers: a bridge between AI agents and Zoho CRM",
+      "color": "sky"
+     },
+     {
+      "source": "Zoho CRM docs",
+      "date": "2026",
+      "text": "Manage your CRM setup and data with simple prompts",
+      "color": "teal"
+     }
+    ]
+   },
+   "lines": [
+    "In Zoho's own words, its M C P servers act as a bridge between A I agents and Zoho CRM, exposing CRM capabilities as tools that an agent can call.",
+    "And Zoho says you can manage your CRM setup and data with simple prompts, without clicking through the interface or using A P I terms."
+   ]
+  },
+  {
    "id": "s04b",
    "type": "CARTOON",
    "chapter": 1,
