@@ -6,6 +6,34 @@ Is file ko har session ke end pe update karo, taaki agla chat yahin se shuru kar
 
 Gaurav jab bhi kuch bhi change karne bole: SABSE PEHLE backup - `backup-YYYY-MM-DD-<kya-badal-rahe-ho>` branch main se banao (aur agar video ka kaam hai to latest Short ka artifact download karo). Tabhi code chhuo. Kuch bigde to us branch se purana code wapas lo.
 
+## 17 Nov 2026 raat - brain kabhi chala hi nahi (token missing) -> Claude ne haath se queue bhari
+
+Gaurav: "summary do", phir "aage ki videos bana ke aage karo", "ye khaali kyun hai, brain agent chala ki nahi check karo".
+Backup: `backup-2026-11-17-before-queue-refill` (main) + `backup-2026-11-17-long-videos-before-queue-refill` (long-videos).
+
+- WAJAH: daily-robot ke saare runs green, lekin brain job 5 s mein skip: secret `CLAUDE_CODE_OAUTH_TOKEN` repo mein hai hi nahi
+  (issue #177). Keeper ke paas queue 0 -> 16 Nov 21:30 ke baad YouTube pe kuch scheduled nahi tha. Gemini robot (main)
+  ke Shorts: #184 #185 Flow clips ka wait, #180 do baar QA fail (voice change).
+- FIX (sirf Gaurav): laptop pe `claude setup-token` -> GitHub Settings > Secrets and variables > Actions >
+  `CLAUDE_CODE_OAUTH_TOKEN`. Tab se roz 05:17 IST brain chalega.
+- Is chat mein repo session se attach ho gaya (add_repo, git push kaam karta hai; `gh` CLI ka token invalid - Actions
+  status browser se dekha).
+- 6 Shorts (long-videos, docs/longform/shorts/s20261117-*.json), sab local render + QA pass + contact sheet dekha:
+  news Zoho Desk Blended Agents (16 Nov), UAE MD 197/2026 tax-group 24 months; how-to Books Recurring Invoices,
+  Purchase Approval, Autoscan, Zoho CRM MCP servers (real screens). shorts-daily #5 -> sab 6 SCHEDULED (IST):
+  18 Nov 07:30 Autoscan Ga4U_UkddJ8 · 13:30 UAE tax group 29xVMeskuog · 21:30 Purchase Approval UJ4w_U0ZFDE ·
+  19 Nov 07:30 Recurring OR2dny795eU · 13:30 Zoho Desk Blended Agents n0N5Z1lMJxc · 21:30 CRM MCP 8ZF5N60ChjI.
+  (Slots file order se mile - alphabetical; news Short ko pehle chahiye to use alag push karo.)
+- Long video `zoho-crm-mcp-claude` (7.3 min plan, 5 chapters, 3 PODCAST real CRM screens, thumbnail OK) ->
+  docs/longform/daily, publish 18 Nov 13:00Z = 18:30 IST, longform-daily #3.
+- BUG FIX longform/vshort.py: Shorts ke captions mein `caption_fix` lagta hi nahi tha (alag process) -> ab build
+  mein lagta hai ("FIFTEEN LANGUAGES" -> "15 LANGUAGES"). Purane Shorts ke captions mein spoken form reh gaya hoga.
+- Headline rule (Shorts): ~23 characters tak ek line; zyada hua to aakhri shabd akela neeche gir jaata hai.
+- DUPLICATE KHATRA: Gemini robot issue #185 (Zoho Desk Blended Agents) = aaj wala news Short; #184 Hotelogix = 12 Nov
+  wala Short (4JwXRwzbq28). Clips na aaye to robot faceless bana ke upload try karega - Gaurav decide kare (skip?).
+- Research: docs/longform/research/shorts-2026-11-17.md + zoho-crm-mcp-claude.md. Queue (docs/longform/queue) ab bhi
+  khaali - agla brain run / agli chat bhare.
+
 ## 14 Nov 2026 raat - long video LIVE, 2 Nvidia news Shorts scheduled
 
 - Long video uae-einvoicing v2 YouTube pe: https://youtube.com/watch?v=-JyVV7LA4pA (4K, public 14 Nov 22:00 IST). Thumbnail API 403 = channel phone-verified nahi (youtube.com/verify - Gaurav).
