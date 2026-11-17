@@ -1,0 +1,145 @@
+{
+ "id": "s20261117-uae-tax-group-exclusion",
+ "format": "short",
+ "priority": "news",
+ "title": "UAE E-Invoicing: Tax Group Invoices Excluded for 24 Months From 1 Jan 2027",
+ "kicker": "UAE E-INVOICING · MD 197/2026",
+ "headline": "VAT groups: *24 months*",
+ "source_line": "Source: UAE Ministry of Finance, Ministerial Decision No. 197 of 2026 (19 Oct 2026)",
+ "voice": {
+  "engine": "kokoro",
+  "voice": "am_onyx",
+  "speed": 1.1
+ },
+ "caption_fix": [
+  [
+   "U A E",
+   "UAE"
+  ],
+  [
+   "V A T",
+   "VAT"
+  ],
+  [
+   "F T A",
+   "FTA"
+  ],
+  [
+   "one ninety seven of twenty twenty six",
+   "197 of 2026"
+  ],
+  [
+   "twenty four months",
+   "24 months"
+  ],
+  [
+   "the first of January twenty twenty seven",
+   "1 January 2027"
+  ],
+  [
+   "fifty million dirhams",
+   "AED 50 million"
+  ]
+ ],
+ "sources": [
+  {
+   "name": "UAE Ministry of Finance - amends e-invoicing regulations (19 Oct 2026)",
+   "url": "https://mof.gov.ae/en/news/ministry-of-finance-amends-electronic-invoicing-regulations-to-ease-the-burden-on-businesses/"
+  },
+  {
+   "name": "WAM - Ministry of Finance amends electronic invoicing regulations",
+   "url": "https://www.wam.ae/en/article/c2tl9em-ministry-finance-amends-electronic-invoicing"
+  },
+  {
+   "name": "The National (19 Oct 2026)",
+   "url": "https://thenationalnews.com/business/2026/10/19/uae-amends-e-invoicing-regulations-as-implementation-deadline-draws-closer"
+  },
+  {
+   "name": "UAE Ministry of Finance - 1 Jan 2027 start for revenue above AED 50 million",
+   "url": "https://mof.gov.ae/en/news/ministry-of-finance-announces-targeted-amendments-to-einvoicing-system-decisions/"
+  }
+ ],
+ "tags": [
+  "UAE e-invoicing",
+  "UAE e-invoicing tax group",
+  "VAT group UAE",
+  "Ministerial Decision 197 of 2026",
+  "UAE e-invoicing 2027",
+  "FTA e-invoicing",
+  "UAE VAT",
+  "e-invoicing amendments UAE",
+  "Zoho Books UAE",
+  "GSX Automation"
+ ],
+ "description": "The UAE Ministry of Finance issued Ministerial Decision No. 197 of 2026 (announced 19 Oct 2026, effective 1 Oct 2026), amending Ministerial Decision No. 243 of 2025 on the Electronic Invoicing System. Business transactions between members of the same Tax Group are treated as excluded transactions for 24 months starting 1 January 2027. E-invoices and e-credit notes no longer have to be stored inside the UAE - they must be kept for the period in the Tax Procedures Law and given to the FTA on request. The System Failure notice (within two business days) has been removed. Transactions outside the tax group are not covered by this exclusion; the 1 January 2027 start for businesses with revenue above AED 50 million is unchanged.\n\nSources (checked 17 Nov 2026):\n- UAE Ministry of Finance - amends e-invoicing regulations (19 Oct 2026): https://mof.gov.ae/en/news/ministry-of-finance-amends-electronic-invoicing-regulations-to-ease-the-burden-on-businesses/\n- WAM - Ministry of Finance amends electronic invoicing regulations: https://www.wam.ae/en/article/c2tl9em-ministry-finance-amends-electronic-invoicing\n- The National (19 Oct 2026): https://thenationalnews.com/business/2026/10/19/uae-amends-e-invoicing-regulations-as-implementation-deadline-draws-closer\n- UAE Ministry of Finance - 1 Jan 2027 start for revenue above AED 50 million: https://mof.gov.ae/en/news/ministry-of-finance-announces-targeted-amendments-to-einvoicing-system-decisions/\n\nGeneral information only, not tax or legal advice. Check your own case with the FTA or a tax adviser.\n\nThis video uses an AI-generated presenter, voice and animations; facts were checked against the sources above.\nIndependent channel. Not affiliated with or endorsed by Zoho Corporation.\n\n#UAEeInvoicing #UAEVAT #FTA #eInvoicing #Shorts",
+ "scenes": [
+  {
+   "id": "s01",
+   "chapter": 0,
+   "type": "HOOK",
+   "visual": {
+    "kind": "hook2",
+    "beats": [
+     {
+      "t": "headline",
+      "tag": "UAE UPDATE",
+      "source": "UAE Ministry of Finance",
+      "date": "19 Oct 2026",
+      "text": "Ministerial Decision No. 197 of 2026 amends the e-invoicing rules",
+      "color": "amber"
+     },
+     {
+      "t": "stat",
+      "value": "24",
+      "label": "months: same-group deals excluded from 1 Jan 2027",
+      "color": "teal"
+     }
+    ]
+   },
+   "lines": [
+    "If your U A E company is part of a V A T tax group, this e-invoicing change is for you.",
+    "Under Ministerial Decision one ninety seven of twenty twenty six, deals between members of the same tax group are excluded for twenty four months, from the first of January twenty twenty seven."
+   ]
+  },
+  {
+   "id": "s02",
+   "chapter": 0,
+   "type": "BOARD",
+   "visual": {
+    "kind": "checklist",
+    "title": "Two more changes",
+    "items": [
+     "Records can be stored outside the UAE",
+     "No more System Failure notice to the FTA"
+    ]
+   },
+   "lines": [
+    "Two more changes. E-invoices no longer have to be stored inside the U A E. Keep them for the period in the Tax Procedures Law, and share them with the F T A when asked.",
+    "And the rule to report a system failure to the F T A within two business days is gone."
+   ]
+  },
+  {
+   "id": "s03",
+   "chapter": 0,
+   "type": "CARTOON",
+   "visual": {
+    "kind": "story",
+    "beats": [
+     {
+      "pose": "point",
+      "prop": {
+       "name": "calendar",
+       "top": "Go-live",
+       "big": "1 Jan 2027",
+       "sub": "revenue above AED 50M"
+      },
+      "text": "Only deals inside the group"
+     }
+    ]
+   },
+   "lines": [
+    "But this covers only deals inside the group. The first of January start for businesses above fifty million dirhams has not changed, so map your intra-group invoices now."
+   ]
+  }
+ ]
+}

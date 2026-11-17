@@ -1,0 +1,839 @@
+{
+ "id": "zoho-crm-mcp-claude",
+ "title": "Zoho CRM MCP Servers: Connect Claude to Zoho CRM Step by Step (2026)",
+ "voice": {
+  "engine": "kokoro",
+  "voice": "am_onyx",
+  "speed": 1.1
+ },
+ "research": "docs/longform/research/zoho-crm-mcp-claude.md",
+ "intro_chapter": "Zoho CRM + AI in 30 seconds",
+ "chapters": [
+  "What MCP actually is",
+  "The four Zoho CRM servers",
+  "Connect Claude Desktop",
+  "Prompts that save time",
+  "Stay safe: permissions and limits"
+ ],
+ "caption_fix": [
+  [
+   "M C P",
+   "MCP"
+  ],
+  [
+   "A I",
+   "AI"
+  ],
+  [
+   "A P Is",
+   "APIs"
+  ],
+  [
+   "A P I",
+   "API"
+  ],
+  [
+   "S D Ks",
+   "SDKs"
+  ],
+  [
+   "V S Code",
+   "VS Code"
+  ],
+  [
+   "I D E",
+   "IDE"
+  ],
+  [
+   "U R L",
+   "URL"
+  ],
+  [
+   "H T T P S",
+   "HTTPS"
+  ],
+  [
+   "Chapter one",
+   "Chapter 1"
+  ],
+  [
+   "Chapter two",
+   "Chapter 2"
+  ],
+  [
+   "Chapter three",
+   "Chapter 3"
+  ],
+  [
+   "Chapter four",
+   "Chapter 4"
+  ],
+  [
+   "Chapter five",
+   "Chapter 5"
+  ],
+  [
+   "ten thousand",
+   "10,000"
+  ],
+  [
+   "thirteenth of November",
+   "13 November"
+  ],
+  [
+   "on the sixteenth",
+   "on 16 November"
+  ]
+ ],
+ "thumb": {
+  "chip": "ZOHO CRM + AI",
+  "l1": "ZOHO CRM",
+  "l2": "MCP",
+  "l3": "+ CLAUDE",
+  "pill": "STEP BY STEP",
+  "pose": "point_you",
+  "accent": "#7c8cff"
+ },
+ "tags": [
+  "Zoho CRM MCP",
+  "Zoho CRM MCP server",
+  "Claude Zoho CRM",
+  "Claude Desktop MCP",
+  "MCP server tutorial",
+  "Model Context Protocol",
+  "Zoho CRM AI",
+  "AI agents CRM",
+  "Zoho CRM tutorial",
+  "Cursor MCP",
+  "Zoho CRM automation",
+  "Claude connectors",
+  "GSX Automation"
+ ],
+ "sources": [
+  {
+   "name": "Zoho CRM developer docs - MCP Servers",
+   "url": "https://www.zoho.com/crm/developer/docs/mcp/overview.html"
+  },
+  {
+   "name": "Zoho CRM developer docs - Claude Desktop setup",
+   "url": "https://www.zoho.com/crm/developer/docs/mcp/setup/claude.html"
+  },
+  {
+   "name": "Zoho CRM developer docs - MCP FAQs",
+   "url": "https://www.zoho.com/crm/developer/docs/mcp/faqs.html"
+  },
+  {
+   "name": "Zoho Community - Zoho CRM with Built-In MCP Support",
+   "url": "https://help.zoho.com/portal/en/community/topic/zoho-crm-with-built-in-mcp-support"
+  },
+  {
+   "name": "Zoho press release - Zoho Campaigns rebuilt with MCP AI agents (13 Nov 2026, via Malay Mail)",
+   "url": "https://malaymail.com/amp/news/money/mediaoutreach/2026/11/13/zoho-rebuilds-campaigns-platform-with-simpler-email-and-sms-native-whatsapp-and-ai-agent-workflows/500803"
+  },
+  {
+   "name": "Zoho press release - Blended Agents in Zoho Desk (16 Nov 2026, Business Wire via Yahoo Finance)",
+   "url": "https://finance.yahoo.com/technology/ai/articles/zoho-introduces-blended-agents-zoho-110000606.html"
+  },
+  {
+   "name": "Anthropic - Introducing the Model Context Protocol (25 Nov 2024)",
+   "url": "https://www.anthropic.com/news/model-context-protocol"
+  }
+ ],
+ "description": "Zoho CRM now has built-in MCP (Model Context Protocol) support: four pre-built MCP servers let AI tools like Claude Desktop, Cursor, VS Code and Windsurf work with your CRM in plain language - no code and no server to host. In this video: what MCP is, what each server does (Data Insights - read-only; Data Operations; Module Customization; Workflow & Process Automation), how to connect Claude Desktop step by step (Zoho CRM > Setup > Developer Hub > MCP for AI Agents > copy the server link; Claude Desktop > Customize > Connectors > Add Custom Connector > Remote MCP Server URL > Add > Connect), example prompts, and the guardrails: your CRM role limits what the AI can do, OAuth sign-in, recycle bin for deleted records, and API credits for every MCP call.\n\nChapters\n{chapters}\n\nSources (checked 17 Nov 2026)\n- Zoho CRM developer docs - MCP Servers: https://www.zoho.com/crm/developer/docs/mcp/overview.html\n- Zoho CRM developer docs - Claude Desktop setup: https://www.zoho.com/crm/developer/docs/mcp/setup/claude.html\n- Zoho CRM developer docs - MCP FAQs: https://www.zoho.com/crm/developer/docs/mcp/faqs.html\n- Zoho Community - Zoho CRM with Built-In MCP Support: https://help.zoho.com/portal/en/community/topic/zoho-crm-with-built-in-mcp-support\n- Zoho press release - Zoho Campaigns rebuilt with MCP AI agents (13 Nov 2026, via Malay Mail): https://malaymail.com/amp/news/money/mediaoutreach/2026/11/13/zoho-rebuilds-campaigns-platform-with-simpler-email-and-sms-native-whatsapp-and-ai-agent-workflows/500803\n- Zoho press release - Blended Agents in Zoho Desk (16 Nov 2026, Business Wire via Yahoo Finance): https://finance.yahoo.com/technology/ai/articles/zoho-introduces-blended-agents-zoho-110000606.html\n- Anthropic - Introducing the Model Context Protocol (25 Nov 2024): https://www.anthropic.com/news/model-context-protocol\n\nExample prompts are illustrations; what works depends on your CRM data, permissions and which servers are live in your data center (Zoho is rolling MCP out in phases).\nThis video uses an AI-generated presenter, voice and animations; facts were checked against the sources above.\nIndependent channel. Not affiliated with or endorsed by Zoho Corporation or Anthropic. Zoho is a trademark of Zoho Corporation.\n\n#ZohoCRM #MCP #Claude #AIAgents #GSXAutomation",
+ "scenes": [
+  {
+   "id": "s01",
+   "type": "HOOK",
+   "chapter": 0,
+   "visual": {
+    "kind": "hook2",
+    "beats": [
+     {
+      "t": "headline",
+      "tag": "ZOHO CRM",
+      "source": "Zoho CRM developer docs",
+      "date": "2026",
+      "text": "Zoho CRM now has built-in MCP support for AI agents",
+      "color": "sky"
+     },
+     {
+      "t": "stat",
+      "value": "4",
+      "label": "ready-made MCP servers for Zoho CRM",
+      "color": "teal"
+     },
+     {
+      "t": "guy",
+      "pose": "present",
+      "prop": "robot",
+      "text": "Ask in plain English"
+     },
+     {
+      "t": "title",
+      "title": "Zoho CRM + Claude",
+      "sub": "step by step",
+      "chips": [
+       "What MCP is",
+       "4 servers",
+       "Connect Claude",
+       "Stay safe"
+      ]
+     }
+    ]
+   },
+   "lines": [
+    "You can now ask an A I assistant like Claude to search your Zoho CRM, update records, or even build a workflow rule, just by typing what you want.",
+    "That's because Zoho CRM now has four ready-made M C P servers. No code, and no server for you to host.",
+    "You type a request in plain English, and the A I picks the right CRM action for you.",
+    "In the next few minutes: what M C P is, what each of the four servers can do, how to connect Claude Desktop step by step, and how to keep your CRM data safe."
+   ]
+  },
+  {
+   "id": "s02",
+   "type": "CHAPTER",
+   "chapter": 1,
+   "visual": {
+    "num": 1,
+    "title": "What MCP actually is"
+   },
+   "lines": [
+    "Chapter one. What M C P actually is."
+   ]
+  },
+  {
+   "id": "s03",
+   "type": "CARTOON",
+   "chapter": 1,
+   "visual": {
+    "kind": "story",
+    "beats": [
+     {
+      "pose": "shrug",
+      "prop": "stack",
+      "text": "One custom integration per tool"
+     },
+     {
+      "pose": "present",
+      "prop": {
+       "name": "server",
+       "label": "MCP"
+      },
+      "text": "One open standard"
+     },
+     {
+      "pose": "point",
+      "prop": "robot",
+      "text": "Many AI tools, one way in"
+     }
+    ]
+   },
+   "lines": [
+    "Before M C P, every A I tool needed its own custom integration for every app. That's a lot of code, and a lot of things that can break.",
+    "In November 2024, Anthropic, the company behind Claude, released the Model Context Protocol, an open standard for connecting A I assistants to the systems where your data lives.",
+    "Now one protocol works across tools. Zoho CRM's servers work with Claude Desktop, Cursor, V S Code, Windsurf, and any other A I tool that supports M C P."
+   ]
+  },
+  {
+   "id": "s04",
+   "type": "BOARD",
+   "chapter": 1,
+   "visual": {
+    "kind": "flow2",
+    "title": "How a request flows",
+    "steps": [
+     [
+      "You ask",
+      "in plain English"
+     ],
+     [
+      "AI picks a tool",
+      "from the MCP server"
+     ],
+     [
+      "Zoho CRM acts",
+      "with your permissions"
+     ],
+     [
+      "You see the result",
+      "and check it"
+     ]
+    ],
+    "footer": "No API endpoints to learn"
+   },
+   "lines": [
+    "Here's what happens when you ask something. The M C P server tells the A I which CRM actions it can use, as tools.",
+    "The A I matches your request to the right tool. Zoho CRM runs it with your own permissions, and you see the result in the chat.",
+    "You don't need to learn any A P I endpoints, or write code. The server turns your prompt into CRM operations.",
+    "Think of it like a single plug shape for A I. Once an app offers an M C P server, any tool that speaks M C P can plug into it."
+   ]
+  },
+  {
+   "id": "s04b",
+   "type": "CARTOON",
+   "chapter": 1,
+   "visual": {
+    "kind": "story",
+    "beats": [
+     {
+      "pose": "present",
+      "prop": {
+       "name": "server",
+       "label": "Campaigns"
+      },
+      "text": "Zoho Campaigns: MCP too"
+     },
+     {
+      "pose": "point",
+      "prop": "robot",
+      "text": "Zoho Desk: Blended Agents"
+     }
+    ]
+   },
+   "lines": [
+    "And it isn't only CRM. On the thirteenth of November, Zoho said its rebuilt Zoho Campaigns also supports M C P, so compatible A I agents can run campaign tasks while you review and approve.",
+    "And on the sixteenth, Zoho Desk got Blended Agents, A I agents that hand the hard cases to people. Zoho is building for A I agents across its apps."
+   ]
+  },
+  {
+   "id": "s05",
+   "type": "CHAPTER",
+   "chapter": 2,
+   "visual": {
+    "num": 2,
+    "title": "The four Zoho CRM servers"
+   },
+   "lines": [
+    "Chapter two. The four Zoho CRM servers."
+   ]
+  },
+  {
+   "id": "s06",
+   "type": "BOARD",
+   "chapter": 2,
+   "visual": {
+    "kind": "checklist",
+    "title": "Four servers",
+    "items": [
+     "Data Insights: read-only",
+     "Data Operations: records",
+     "Module Customization: structure",
+     "Workflow & Process Automation"
+    ]
+   },
+   "lines": [
+    "Server one, Data Insights. It's read only. It can query records, list your modules and read field details, but it never changes anything.",
+    "Server two, Data Operations. It creates, updates and deletes records, including bulk operations, lead conversion and duplicate detection.",
+    "Server three, Module Customization. It works on the structure of your CRM: custom modules, fields, page layouts and global picklists.",
+    "And server four, Workflow and Process Automation. It can create, update and list workflow rules and task actions, and change their order."
+   ]
+  },
+  {
+   "id": "s06b",
+   "type": "BOARD",
+   "chapter": 2,
+   "visual": {
+    "kind": "stat",
+    "title": "Read or write?",
+    "stats": [
+     {
+      "value": "1",
+      "label": "server only reads: Data Insights",
+      "color": "green"
+     },
+     {
+      "value": "3",
+      "label": "servers can change your CRM",
+      "color": "coral"
+     }
+    ]
+   },
+   "lines": [
+    "So, in short: one server only reads, and three can change your CRM.",
+    "That difference matters, because it decides how careful you need to be with every prompt."
+   ]
+  },
+  {
+   "id": "s07",
+   "type": "PODCAST",
+   "chapter": 2,
+   "visual": {
+    "path": [
+     "Zoho CRM",
+     "MCP Server"
+    ],
+    "actions": [
+     {
+      "cue": 0,
+      "screen": "crm/leads_list",
+      "target": "MCP Server",
+      "zoom": 1.8
+     },
+     {
+      "cue": 1,
+      "screen": "crm/mcp_server",
+      "target": "Data Insights",
+      "zoom": 1.6
+     },
+     {
+      "cue": 2,
+      "target": "Data Operations",
+      "zoom": 1.6
+     },
+     {
+      "cue": 2,
+      "at": 0.6,
+      "target": "View Detail",
+      "zoom": 1.8
+     }
+    ]
+   },
+   "lines": [
+    "In Zoho CRM, you'll find them under M C P Server, right in the left menu.",
+    "Each server has its own card. Here's Data Insights, for searching records and analysing your pipeline.",
+    "And here's Data Operations, for creating and updating records. Click View Detail on a card to see every tool it offers."
+   ]
+  },
+  {
+   "id": "s08",
+   "type": "CARTOON",
+   "chapter": 2,
+   "visual": {
+    "kind": "story",
+    "beats": [
+     {
+      "pose": "point",
+      "prop": "magnifier",
+      "text": "Install only what you need"
+     },
+     {
+      "pose": "present",
+      "prop": "lock",
+      "text": "Tip: start read-only",
+      "stamp": "SAFE",
+      "stamp_color": "green"
+     }
+    ]
+   },
+   "lines": [
+    "You can install as many servers as you need, and the A I picks the right one based on what you ask.",
+    "Our tip: start with Data Insights only. It's read only, so you can test your prompts without changing a single record."
+   ]
+  },
+  {
+   "id": "s08b",
+   "type": "CARTOON",
+   "chapter": 2,
+   "visual": {
+    "kind": "story",
+    "beats": [
+     {
+      "pose": "shrug",
+      "prop": "clock",
+      "text": "Rolling out in phases"
+     }
+    ]
+   },
+   "lines": [
+    "One note. Zoho says it is rolling M C P out in phases, across all its data centers. So if your account shows only two cards, like ours, the others are on the way."
+   ]
+  },
+  {
+   "id": "s09",
+   "type": "CHAPTER",
+   "chapter": 3,
+   "visual": {
+    "num": 3,
+    "title": "Connect Claude Desktop"
+   },
+   "lines": [
+    "Chapter three. Connect Claude Desktop, step by step."
+   ]
+  },
+  {
+   "id": "s10",
+   "type": "PODCAST",
+   "chapter": 3,
+   "visual": {
+    "path": [
+     "Setup",
+     "Developer Hub",
+     "MCP for AI Agents"
+    ],
+    "actions": [
+     {
+      "cue": 0,
+      "screen": "crm/mcp_for_ai_agents",
+      "target": "MCP for AI Agents",
+      "zoom": 1.8
+     },
+     {
+      "cue": 1,
+      "target": "Install",
+      "zoom": 1.8
+     },
+     {
+      "cue": 1,
+      "at": 0.6,
+      "target": "VS Code",
+      "zoom": 1.9
+     },
+     {
+      "cue": 2,
+      "target": "Copy server link",
+      "zoom": 2.0
+     }
+    ]
+   },
+   "lines": [
+    "Step one happens in Zoho CRM. Go to Setup, then Developer Hub, then M C P for A I Agents.",
+    "For coding tools, click Install, and pick V S Code, Cursor, or another I D E.",
+    "For Claude, click the link icon on the server card, to copy the server link."
+   ]
+  },
+  {
+   "id": "s11",
+   "type": "BOARD",
+   "chapter": 3,
+   "visual": {
+    "kind": "flow2",
+    "title": "Then in Claude Desktop",
+    "steps": [
+     [
+      "Customize",
+      "then Connectors"
+     ],
+     [
+      "Add",
+      "Add Custom Connector"
+     ],
+     [
+      "Paste",
+      "Remote MCP Server URL"
+     ],
+     [
+      "Connect",
+      "sign in to Zoho"
+     ]
+    ]
+   },
+   "lines": [
+    "Step two, in Claude Desktop. Go to Customize, then Connectors.",
+    "Click the add icon, and choose Add Custom Connector.",
+    "Give it a name, like Zoho CRM Data Insights, and paste the link into the Remote M C P Server U R L field. Then click Add.",
+    "Finally, select the new connector and click Connect. A browser window opens, you sign in to Zoho, and allow access to your CRM organization."
+   ]
+  },
+  {
+   "id": "s12",
+   "type": "CARTOON",
+   "chapter": 3,
+   "visual": {
+    "kind": "story",
+    "beats": [
+     {
+      "pose": "type",
+      "prop": "laptop",
+      "text": "One connector per server"
+     },
+     {
+      "pose": "cheer",
+      "prop": "robot",
+      "text": "Ready: ask away"
+     },
+     {
+      "pose": "point",
+      "prop": "magnifier",
+      "text": "Test with a simple question"
+     }
+    ]
+   },
+   "lines": [
+    "Each server is its own connector. So if you want Data Operations too, repeat the same steps with its link.",
+    "That's it. Open a new chat, and Claude can now use your Zoho CRM tools.",
+    "To check it works, start with a simple question, like: how many leads did we add this week? If the answer matches what you see in your CRM, you're connected."
+   ]
+  },
+  {
+   "id": "s12b",
+   "type": "CARTOON",
+   "chapter": 3,
+   "visual": {
+    "kind": "story",
+    "beats": [
+     {
+      "pose": "type",
+      "prop": "laptop",
+      "text": "Cursor, VS Code, Windsurf: own guides"
+     }
+    ]
+   },
+   "lines": [
+    "Using Cursor, V S Code or Windsurf instead? Zoho publishes a setup guide for each of them in its developer docs. The idea is the same: add the server, and sign in to Zoho the first time a tool runs."
+   ]
+  },
+  {
+   "id": "s13",
+   "type": "CHAPTER",
+   "chapter": 4,
+   "visual": {
+    "num": 4,
+    "title": "Prompts that save time"
+   },
+   "lines": [
+    "Chapter four. Prompts that save time."
+   ]
+  },
+  {
+   "id": "s14",
+   "type": "BOARD",
+   "chapter": 4,
+   "visual": {
+    "kind": "checklist",
+    "title": "Things you can ask",
+    "items": [
+     "Match the prompt to the server",
+     "Insights: deals closing this month",
+     "Operations: convert leads, find duplicates",
+     "Customization: add a picklist field",
+     "Automation: a rule for new deals"
+    ]
+   },
+   "lines": [
+    "Here are a few things you could ask, matched to the right server.",
+    "With Data Insights: show me the open deals closing this month, sorted by amount. Or, which leads came from our website?",
+    "With Data Operations: convert these three leads into contacts. Or, find duplicate contacts with the same email address.",
+    "With Module Customization: add a picklist field called Industry Segment to the Leads module.",
+    "And with Workflow and Process Automation: create a workflow rule that runs when a new deal is created."
+   ]
+  },
+  {
+   "id": "s14b",
+   "type": "CARTOON",
+   "chapter": 4,
+   "visual": {
+    "kind": "story",
+    "beats": [
+     {
+      "pose": "type",
+      "prop": "laptop",
+      "text": "Which deals close this month?"
+     },
+     {
+      "pose": "present",
+      "prop": "chart_up",
+      "text": "Data Insights: reads only"
+     },
+     {
+      "pose": "point",
+      "prop": {
+       "name": "doc",
+       "label": "Task"
+      },
+      "text": "Create follow-up tasks"
+     },
+     {
+      "pose": "cheer",
+      "prop": "clock",
+      "text": "Data Operations: after you confirm"
+     }
+    ]
+   },
+   "lines": [
+    "Here's how that can look on a Monday morning. You ask Claude: which deals over ten thousand are closing this month, and when was each one last touched?",
+    "Data Insights reads your deals and gives you the list, without changing anything.",
+    "Then you say: create a follow-up task for each of these deals, for the deal owner, due tomorrow.",
+    "Now Data Operations does the writing. You read what it plans to do, confirm, and the tasks show up in your CRM."
+   ]
+  },
+  {
+   "id": "s15",
+   "type": "CARTOON",
+   "chapter": 4,
+   "visual": {
+    "kind": "story",
+    "beats": [
+     {
+      "pose": "present",
+      "prop": "chart_up",
+      "text": "Set up by describing it"
+     },
+     {
+      "pose": "point",
+      "prop": {
+       "name": "office",
+       "label": "Partners"
+      },
+      "text": "Then check the result"
+     }
+    ]
+   },
+   "lines": [
+    "Zoho's own pitch for this is faster setup through conversation, and a smaller learning curve, because you don't need to know the menus or the A P I.",
+    "For admins and Zoho partners, that means configuring a CRM by describing what you want, and then checking the result."
+   ]
+  },
+  {
+   "id": "s16",
+   "type": "CHAPTER",
+   "chapter": 5,
+   "visual": {
+    "num": 5,
+    "title": "Stay safe: permissions and limits"
+   },
+   "lines": [
+    "Chapter five. Stay safe. Permissions and limits."
+   ]
+  },
+  {
+   "id": "s17",
+   "type": "BOARD",
+   "chapter": 5,
+   "visual": {
+    "kind": "checklist",
+    "title": "Built-in guardrails",
+    "items": [
+     "Your CRM role = the AI's limit",
+     "OAuth sign-in, HTTPS only",
+     "Deleted records: recycle bin first",
+     "Every call uses API credits"
+    ]
+   },
+   "lines": [
+    "First, the A I can only do what your own CRM role allows. It can never go beyond your permissions.",
+    "Sign-in uses OAuth, and the servers talk to Zoho CRM over H T T P S.",
+    "If a record gets deleted, it goes to the recycle bin, and you can restore it before it's removed for good.",
+    "And every M C P call uses A P I credits, just like a normal A P I call, with the same limits."
+   ]
+  },
+  {
+   "id": "s18",
+   "type": "PODCAST",
+   "chapter": 5,
+   "visual": {
+    "path": [
+     "Setup",
+     "Developer Hub",
+     "APIs and SDKs"
+    ],
+    "actions": [
+     {
+      "cue": 0,
+      "screen": "crm/api_names",
+      "target": "APIs and SDKs",
+      "zoom": 1.8
+     },
+     {
+      "cue": 1,
+      "target": "Dashboard",
+      "zoom": 2.0
+     }
+    ]
+   },
+   "lines": [
+    "To keep an eye on those credits, go to Setup, Developer Hub, then A P Is and S D Ks.",
+    "The Dashboard tab shows your A P I credit usage."
+   ]
+  },
+  {
+   "id": "s19",
+   "type": "CARTOON",
+   "chapter": 5,
+   "visual": {
+    "kind": "story",
+    "beats": [
+     {
+      "pose": "worried",
+      "prop": "warning",
+      "text": "Review before you confirm"
+     },
+     {
+      "pose": "point",
+      "prop": "lock",
+      "text": "Other org? Disconnect, sign in again"
+     }
+    ]
+   },
+   "lines": [
+    "Zoho's own advice: always review your prompts carefully, before you confirm a change that modifies data.",
+    "And to switch to another CRM organization, disconnect the server in your A I tool, then sign in again with the other one."
+   ]
+  },
+  {
+   "id": "s19b",
+   "type": "CARTOON",
+   "chapter": 5,
+   "visual": {
+    "kind": "story",
+    "beats": [
+     {
+      "pose": "worried",
+      "prop": "stack",
+      "text": "Bulk change? Test small first"
+     },
+     {
+      "pose": "present",
+      "prop": "lock",
+      "text": "Roles = first line of defence"
+     }
+    ]
+   },
+   "lines": [
+    "One more good habit: test a new prompt on a few records first, before you ask for a bulk change across thousands.",
+    "And keep the write servers for the people who actually need them. Because the A I acts with each user's own permissions, a good role setup in your CRM is the first line of defence."
+   ]
+  },
+  {
+   "id": "s20",
+   "type": "BOARD",
+   "chapter": 5,
+   "visual": {
+    "kind": "checklist",
+    "title": "Your checklist",
+    "items": [
+     "Setup > Developer Hub > MCP for AI Agents",
+     "Start with Data Insights",
+     "Claude: Add Custom Connector",
+     "Connect + sign in to Zoho",
+     "Test a read-only prompt"
+    ]
+   },
+   "lines": [
+    "One. In Zoho CRM, open M C P for A I Agents under Developer Hub.",
+    "Two. Start with the Data Insights server.",
+    "Three. In Claude Desktop, add it as a custom connector.",
+    "Four. Click Connect and sign in to Zoho.",
+    "Five. Test a read only prompt, and check the answer against your CRM."
+   ]
+  },
+  {
+   "id": "s21",
+   "type": "CARTOON",
+   "chapter": 5,
+   "visual": {
+    "kind": "celebrate2",
+    "top": "READY",
+    "big": "✓",
+    "sub": "CRM + AI"
+   },
+   "lines": [
+    "Do this once, and your CRM is just a question away."
+   ]
+  },
+  {
+   "id": "s22",
+   "type": "OUTRO",
+   "chapter": 5,
+   "visual": {
+    "kind": "outro",
+    "next": "Zoho Desk Blended Agents",
+    "badge": "AI",
+    "badge_sub": "agents",
+    "note": "Features roll out in phases: check Zoho's docs"
+   },
+   "lines": [
+    "If this helped, subscribe for more Zoho and A I tutorials.",
+    "And features roll out in phases, so always check Zoho's latest docs for your account."
+   ]
+  }
+ ]
+}

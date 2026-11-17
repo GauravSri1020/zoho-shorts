@@ -1,0 +1,153 @@
+{
+ "id": "s20261117-zoho-desk-blended-agents",
+ "format": "short",
+ "priority": "news",
+ "title": "Zoho Desk Blended Agents: Free AI Agents With Human Handover (Nov 2026)",
+ "kicker": "ZOHO NEWS · 16 NOV 2026",
+ "headline": "Zoho Desk *AI agents*",
+ "source_line": "Source: Zoho press release via Business Wire, 16 Nov 2026; ANI / The Tribune",
+ "voice": {
+  "engine": "kokoro",
+  "voice": "am_onyx",
+  "speed": 1.1
+ },
+ "caption_fix": [
+  [
+   "A I",
+   "AI"
+  ],
+  [
+   "A P I",
+   "API"
+  ],
+  [
+   "thirty million",
+   "30 million"
+  ],
+  [
+   "the E U",
+   "the EU"
+  ]
+ ],
+ "sources": [
+  {
+   "name": "Zoho press release (Business Wire via Yahoo Finance, 16 Nov 2026)",
+   "url": "https://finance.yahoo.com/technology/ai/articles/zoho-introduces-blended-agents-zoho-110000606.html"
+  },
+  {
+   "name": "The Tribune (ANI, 16 Nov 2026)",
+   "url": "https://tribuneindia.com/news/business/zoho-launches-blended-ai-agents-to-automate-customer-service-with-human-oversight"
+  },
+  {
+   "name": "Zoho press releases",
+   "url": "https://www.zoho.com/press.html"
+  }
+ ],
+ "tags": [
+  "Zoho Desk",
+  "Zoho Desk Blended Agents",
+  "Zoho Desk AI agents",
+  "Zia Agents",
+  "AI customer service",
+  "AI help desk",
+  "Zoho news",
+  "Zoho Desk update",
+  "customer support automation",
+  "GSX Automation"
+ ],
+ "description": "Zoho announced Blended Agents for Zoho Desk on 16 Nov 2026. Built on Zia Agents, they retrieve order details, check stock and update customer accounts in connected apps, then hand a case to a human with the full history when it needs judgment; agents can be paused so a person reviews or approves an action. Building and deploying agents costs nothing extra on all paid Zoho Desk plans - you pay only for LLM usage. Zoho-hosted models come with a monthly allowance of up to 30 million free tokens depending on the plan, or you can bring your own API key. Available in India, the US, the EU, Japan, China and Australia (Canada coming soon).\n\nSources (checked 17 Nov 2026):\n- Zoho press release (Business Wire via Yahoo Finance, 16 Nov 2026): https://finance.yahoo.com/technology/ai/articles/zoho-introduces-blended-agents-zoho-110000606.html\n- The Tribune (ANI, 16 Nov 2026): https://tribuneindia.com/news/business/zoho-launches-blended-ai-agents-to-automate-customer-service-with-human-oversight\n- Zoho press releases: https://www.zoho.com/press.html\n\nThis video uses an AI-generated presenter, voice and animations; facts were checked against the sources above.\nIndependent channel. Not affiliated with or endorsed by Zoho Corporation.\n\n#ZohoDesk #AIAgents #CustomerService #Zoho #Shorts",
+ "scenes": [
+  {
+   "id": "s01",
+   "chapter": 0,
+   "type": "HOOK",
+   "visual": {
+    "kind": "hook2",
+    "beats": [
+     {
+      "t": "headline",
+      "tag": "ZOHO NEWS",
+      "source": "Zoho press release",
+      "date": "16 Nov 2026",
+      "text": "Zoho introduces Blended Agents in Zoho Desk",
+      "color": "sky"
+     },
+     {
+      "t": "guy",
+      "pose": "present",
+      "prop": "robot",
+      "text": "AI does the routine work"
+     },
+     {
+      "t": "guy",
+      "pose": "point",
+      "prop": {
+       "name": "phone",
+       "label": "Approve"
+      },
+      "text": "A human takes the hard cases",
+      "stamp": "HANDOVER",
+      "stamp_color": "amber"
+     }
+    ]
+   },
+   "lines": [
+    "Zoho Desk now has Blended Agents: A I agents that do the routine support work, and hand the hard cases to a person.",
+    "They run on Zia Agents, and can look up order details, check stock and update customer accounts.",
+    "When a case needs judgment, the agent passes the chat to your team with the full history. You can also pause it and approve an action first."
+   ]
+  },
+  {
+   "id": "s02",
+   "chapter": 0,
+   "type": "BOARD",
+   "visual": {
+    "kind": "stat",
+    "title": "What it costs",
+    "stats": [
+     {
+      "value": "$0",
+      "label": "extra to build agents, on all paid Desk plans",
+      "count": false,
+      "color": "green"
+     },
+     {
+      "value": "30M",
+      "label": "free tokens a month with Zoho's models (up to, by plan)",
+      "count": false,
+      "color": "sky"
+     },
+     {
+      "value": "BYOK",
+      "label": "or bring your own model's API key",
+      "count": false,
+      "color": "coral"
+     }
+    ]
+   },
+   "lines": [
+    "Building the agents costs nothing extra on all paid Zoho Desk plans. You only pay for the A I model usage.",
+    "With Zoho's own hosted models, you get up to thirty million free tokens a month, depending on your plan.",
+    "Or bring your own A P I key, and pay the model provider directly."
+   ]
+  },
+  {
+   "id": "s03",
+   "chapter": 0,
+   "type": "CARTOON",
+   "visual": {
+    "kind": "story",
+    "beats": [
+     {
+      "pose": "cheer",
+      "prop": "magnifier",
+      "text": "Live now: India, US, EU and more"
+     }
+    ]
+   },
+   "lines": [
+    "It's live now in India, the US, the E U, Japan, China and Australia, with Canada coming soon."
+   ]
+  }
+ ]
+}

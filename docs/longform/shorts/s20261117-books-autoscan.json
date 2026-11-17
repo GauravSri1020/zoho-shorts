@@ -1,0 +1,151 @@
+{
+ "id": "s20261117-books-autoscan",
+ "format": "short",
+ "title": "Zoho Books Autoscan: Turn Receipts Into Bills and Expenses Automatically",
+ "kicker": "ZOHO BOOKS TIP",
+ "headline": "Receipts in, *no typing*",
+ "source_line": "Source: Zoho Books help - Documents and Autoscan (checked 17 Nov 2026)",
+ "voice": {
+  "engine": "kokoro",
+  "voice": "am_onyx",
+  "speed": 1.1
+ },
+ "caption_fix": [
+  [
+   "fifteen languages",
+   "15 languages"
+  ]
+ ],
+ "sources": [
+  {
+   "name": "Zoho Books help - Documents (Autoscan)",
+   "url": "https://www.zoho.com/books/help/documents/documents.html"
+  },
+  {
+   "name": "Zoho Books FAQ - Enable Autoscan",
+   "url": "https://www.zoho.com/uk/books/kb/bills/upload-bill-button-not-present.html"
+  }
+ ],
+ "tags": [
+  "Zoho Books autoscan",
+  "Zoho Books documents",
+  "receipt scanning",
+  "scan receipts to expenses",
+  "bill scanning",
+  "Zoho Books tutorial",
+  "bookkeeping automation",
+  "Zoho Books tips",
+  "GSX Automation"
+ ],
+ "description": "Stop typing receipts by hand: in Zoho Books open Documents > Files, agree to the terms and click Enable Autoscan. Upload files, snap receipts with the Zoho Books mobile app, or email them to your organization's unique Documents inbox address. Select a scanned file, click Add to, and choose a bill or an expense - details like the date, amount and merchant are pre-filled. Autoscan works in 15 languages and is available on all plans; after the free scans are used up, a paid add-on (50 autoscans a month) is needed.\n\nSources (checked 17 Nov 2026):\n- Zoho Books help - Documents (Autoscan): https://www.zoho.com/books/help/documents/documents.html\n- Zoho Books FAQ - Enable Autoscan: https://www.zoho.com/uk/books/kb/bills/upload-bill-button-not-present.html\n\nThis video uses an AI-generated presenter, voice and animations; facts were checked against the sources above.\nIndependent channel. Not affiliated with or endorsed by Zoho Corporation.\n\n#ZohoBooks #Bookkeeping #Receipts #Shorts",
+ "scenes": [
+  {
+   "id": "s01",
+   "chapter": 0,
+   "type": "HOOK",
+   "visual": {
+    "kind": "hook2",
+    "beats": [
+     {
+      "t": "guy",
+      "pose": "worried",
+      "prop": "stack",
+      "text": "Typing receipts by hand?"
+     },
+     {
+      "t": "title",
+      "title": "Autoscan",
+      "sub": "Zoho Books Documents",
+      "chips": [
+       "Receipts",
+       "Bills",
+       "Expenses"
+      ]
+     }
+    ]
+   },
+   "lines": [
+    "Still typing receipts into your books by hand? Zoho Books can read them for you.",
+    "It's called Autoscan, and it captures the details from the documents you upload or email in."
+   ]
+  },
+  {
+   "id": "s02",
+   "chapter": 0,
+   "type": "PODCAST",
+   "visual": {
+    "path": [
+     "Documents",
+     "Files"
+    ],
+    "actions": [
+     {
+      "cue": 0,
+      "screen": "books/documents_inbox",
+      "target": "Files inbox",
+      "zoom": 2.2
+     },
+     {
+      "cue": 1,
+      "target": "Enable Autoscan",
+      "zoom": 2.4
+     }
+    ]
+   },
+   "lines": [
+    "Open Documents in the left sidebar, then Files.",
+    "Agree to the terms, and click Enable Autoscan."
+   ]
+  },
+  {
+   "id": "s03",
+   "chapter": 0,
+   "type": "BOARD",
+   "visual": {
+    "kind": "flow2",
+    "title": "Get documents in",
+    "steps": [
+     [
+      "Upload",
+      "files from your computer"
+     ],
+     [
+      "Phone app",
+      "snap the receipt"
+     ],
+     [
+      "Email",
+      "your Documents inbox address"
+     ]
+    ]
+   },
+   "lines": [
+    "Upload files, snap receipts with the Zoho Books mobile app, or email them to your organization's own Documents inbox address."
+   ]
+  },
+  {
+   "id": "s04",
+   "chapter": 0,
+   "type": "CARTOON",
+   "visual": {
+    "kind": "story",
+    "beats": [
+     {
+      "pose": "present",
+      "prop": "doc",
+      "text": "Add to: bill or expense"
+     },
+     {
+      "pose": "cheer",
+      "prop": "coins",
+      "text": "Date, amount, merchant: filled in"
+     }
+    ]
+   },
+   "lines": [
+    "Then select a scanned file, click Add to, and choose a bill or an expense.",
+    "The date, amount and merchant are already filled in. It works in fifteen languages, and after the free scans, there's a paid add-on."
+   ]
+  }
+ ]
+}

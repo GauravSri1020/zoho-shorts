@@ -1,0 +1,158 @@
+{
+ "id": "s20261117-books-recurring-invoices",
+ "format": "short",
+ "title": "Zoho Books Recurring Invoices: Bill Monthly Clients Automatically",
+ "kicker": "ZOHO BOOKS TIP",
+ "headline": "Invoices *on autopilot*",
+ "source_line": "Source: Zoho Books help - Create & Send Recurring Invoices (checked 17 Nov 2026)",
+ "voice": {
+  "engine": "kokoro",
+  "voice": "am_onyx",
+  "speed": 1.1
+ },
+ "caption_fix": [],
+ "sources": [
+  {
+   "name": "Zoho Books help - Create & Send Recurring Invoices",
+   "url": "https://www.zoho.com/books/help/recurring-invoice/ri-createsend.html"
+  },
+  {
+   "name": "Zoho Books help - Recurring Invoices",
+   "url": "https://www.zoho.com/books/help/recurring-invoice/"
+  },
+  {
+   "name": "Zoho Books FAQ - recurring invoice from an existing invoice",
+   "url": "https://www.zoho.com/books/kb/invoices/new-recurring-existing.html"
+  }
+ ],
+ "tags": [
+  "Zoho Books recurring invoices",
+  "recurring invoice",
+  "Zoho Books tutorial",
+  "automatic invoicing",
+  "monthly invoice",
+  "retainer invoice",
+  "Zoho Books tips",
+  "subscription billing small business",
+  "GSX Automation"
+ ],
+ "description": "Bill the same client every month without lifting a finger: in Zoho Books go to Sales > Recurring Invoices > + New (if the module is hidden, enable Recurring Invoice in Settings > General). Pick the customer, give the profile a name, choose Repeat Every (week, month, year or Custom), add items, notes and terms, and Save. Each new invoice is saved as a draft or sent to the customer depending on your Recurring Invoice Preferences. To convert an existing invoice, open it, click the More icon and choose Make Recurring.\n\nSources (checked 17 Nov 2026):\n- Zoho Books help - Create & Send Recurring Invoices: https://www.zoho.com/books/help/recurring-invoice/ri-createsend.html\n- Zoho Books help - Recurring Invoices: https://www.zoho.com/books/help/recurring-invoice/\n- Zoho Books FAQ - recurring invoice from an existing invoice: https://www.zoho.com/books/kb/invoices/new-recurring-existing.html\n\nThis video uses an AI-generated presenter, voice and animations; facts were checked against the sources above.\nIndependent channel. Not affiliated with or endorsed by Zoho Corporation.\n\n#ZohoBooks #Invoicing #SmallBusiness #Shorts",
+ "scenes": [
+  {
+   "id": "s01",
+   "chapter": 0,
+   "type": "HOOK",
+   "visual": {
+    "kind": "hook2",
+    "beats": [
+     {
+      "t": "guy",
+      "pose": "worried",
+      "prop": "stack",
+      "text": "Same invoice, every month?"
+     },
+     {
+      "t": "title",
+      "title": "Recurring invoices",
+      "sub": "in Zoho Books",
+      "chips": [
+       "Weekly",
+       "Monthly",
+       "Yearly",
+       "Custom"
+      ]
+     }
+    ]
+   },
+   "lines": [
+    "Sending the same invoice to the same client every month? Let Zoho Books do it for you.",
+    "Set it up once as a recurring invoice, and the next ones are created on schedule."
+   ]
+  },
+  {
+   "id": "s02",
+   "chapter": 0,
+   "type": "PODCAST",
+   "visual": {
+    "path": [
+     "Sales",
+     "Recurring Invoices"
+    ],
+    "actions": [
+     {
+      "cue": 0,
+      "screen": "books/recurring_invoices",
+      "target": "Recurring Invoices (sidebar)",
+      "zoom": 2.2
+     },
+     {
+      "cue": 1,
+      "target": "New",
+      "zoom": 2.4
+     }
+    ]
+   },
+   "lines": [
+    "In Zoho Books, go to Sales, then Recurring Invoices.",
+    "Click New. Don't see the module? Turn on Recurring Invoice under Settings, General."
+   ]
+  },
+  {
+   "id": "s03",
+   "chapter": 0,
+   "type": "BOARD",
+   "visual": {
+    "kind": "flow2",
+    "title": "Fill in the profile",
+    "steps": [
+     [
+      "Customer",
+      "who you bill"
+     ],
+     [
+      "Profile Name",
+      "e.g. Monthly retainer"
+     ],
+     [
+      "Repeat Every",
+      "week, month, year or custom"
+     ],
+     [
+      "Items",
+      "then Save"
+     ]
+    ]
+   },
+   "lines": [
+    "Pick the customer, name the profile, and choose Repeat Every: a week, a month, a year, or a custom interval.",
+    "Add your items, notes and terms, and click Save."
+   ]
+  },
+  {
+   "id": "s04",
+   "chapter": 0,
+   "type": "CARTOON",
+   "visual": {
+    "kind": "story",
+    "beats": [
+     {
+      "pose": "present",
+      "prop": "envelope",
+      "text": "Saved as draft or sent"
+     },
+     {
+      "pose": "cheer",
+      "prop": "doc",
+      "text": "Old invoice? Make Recurring",
+      "stamp": "REPEAT",
+      "stamp_color": "green"
+     }
+    ]
+   },
+   "lines": [
+    "Each new invoice is saved as a draft or sent to the customer, based on your recurring invoice preferences.",
+    "Already have the invoice? Open it, click the More icon, and choose Make Recurring."
+   ]
+  }
+ ]
+}

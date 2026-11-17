@@ -110,6 +110,9 @@ def build(script, video_dir, out):
     work = vd / "short"
     work.mkdir(exist_ok=True)
     frame_png(sc, work / "frame.png")
+    import re
+    from longform import render as rd          # caption_fix lives in the script; this is a separate process
+    rd.EXTRA_CAP[:] = [(re.escape(a), b) for a, b in sc.get("caption_fix", [])]
     ass(plan, work / "caps.ass")
     size = 210
     cmov = cn.build(work / f"corner_{size}.mov", size)

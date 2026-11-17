@@ -1,0 +1,169 @@
+{
+ "id": "s20261117-crm-mcp-servers",
+ "format": "short",
+ "title": "Zoho CRM MCP Servers: Connect Claude, Cursor or VS Code to Your CRM",
+ "kicker": "ZOHO CRM + AI",
+ "headline": "Your CRM, *inside Claude*",
+ "source_line": "Source: Zoho CRM developer docs - MCP Servers; Zoho CRM community (checked 17 Nov 2026)",
+ "voice": {
+  "engine": "kokoro",
+  "voice": "am_onyx",
+  "speed": 1.1
+ },
+ "caption_fix": [
+  [
+   "M C P",
+   "MCP"
+  ],
+  [
+   "A I",
+   "AI"
+  ],
+  [
+   "V S Code",
+   "VS Code"
+  ],
+  [
+   "A P I",
+   "API"
+  ]
+ ],
+ "sources": [
+  {
+   "name": "Zoho CRM developer docs - MCP Servers",
+   "url": "https://www.zoho.com/crm/developer/docs/mcp/overview.html"
+  },
+  {
+   "name": "Zoho Community - Zoho CRM with Built-In MCP Support",
+   "url": "https://help.zoho.com/portal/en/community/topic/zoho-crm-with-built-in-mcp-support"
+  }
+ ],
+ "tags": [
+  "Zoho CRM MCP",
+  "Zoho CRM MCP server",
+  "Claude Zoho CRM",
+  "MCP server",
+  "AI agents CRM",
+  "Zoho CRM AI",
+  "Cursor MCP",
+  "Claude Desktop MCP",
+  "Zoho CRM tutorial",
+  "GSX Automation"
+ ],
+ "description": "Zoho CRM has pre-built MCP servers that let AI tools work with your CRM in plain language - no code and no server to host. Four servers: Data Insights (read-only: query records, module lists, field schemas), Data Operations (create, update, delete, bulk), Module Customization (modules, fields, layouts) and Workflow & Process Automation (workflow rules and tasks). In Zoho CRM go to Setup > Developer Hub > MCP for AI Agents, pick a server, click Install and choose your tool (e.g. VS Code, Cursor) or copy the server link. On first use you sign in to Zoho to authorize; actions are limited to your CRM role permissions, and MCP calls use API credits like normal API calls. Works with MCP tools such as Claude Desktop, Cursor, VS Code and Windsurf.\n\nSources (checked 17 Nov 2026):\n- Zoho CRM developer docs - MCP Servers: https://www.zoho.com/crm/developer/docs/mcp/overview.html\n- Zoho Community - Zoho CRM with Built-In MCP Support: https://help.zoho.com/portal/en/community/topic/zoho-crm-with-built-in-mcp-support\n\nThis video uses an AI-generated presenter, voice and animations; facts were checked against the sources above.\nIndependent channel. Not affiliated with or endorsed by Zoho Corporation.\n\n#ZohoCRM #MCP #AIAgents #Claude #Shorts",
+ "scenes": [
+  {
+   "id": "s01",
+   "chapter": 0,
+   "type": "HOOK",
+   "visual": {
+    "kind": "hook2",
+    "beats": [
+     {
+      "t": "guy",
+      "pose": "present",
+      "prop": "robot",
+      "text": "Ask your AI to work in CRM"
+     },
+     {
+      "t": "title",
+      "title": "Zoho CRM MCP",
+      "sub": "4 ready-made servers",
+      "chips": [
+       "Claude Desktop",
+       "Cursor",
+       "VS Code"
+      ]
+     }
+    ]
+   },
+   "lines": [
+    "What if you could ask Claude to check your Zoho CRM pipeline, and it just did?",
+    "Zoho CRM has ready-made M C P servers, so A I tools can work with your CRM in plain language. No code, nothing to host."
+   ]
+  },
+  {
+   "id": "s02",
+   "chapter": 0,
+   "type": "PODCAST",
+   "visual": {
+    "path": [
+     "Setup",
+     "Developer Hub",
+     "MCP for AI Agents"
+    ],
+    "actions": [
+     {
+      "cue": 0,
+      "screen": "crm/mcp_for_ai_agents",
+      "target": "MCP for AI Agents",
+      "zoom": 2.0
+     },
+     {
+      "cue": 1,
+      "target": "Data Insights",
+      "zoom": 2.0
+     },
+     {
+      "cue": 2,
+      "target": "Install",
+      "zoom": 2.2
+     }
+    ]
+   },
+   "lines": [
+    "In Zoho CRM, go to Setup, Developer Hub, then M C P for A I Agents.",
+    "Pick a server. Data Insights is read only: it searches records and reads your data, but never changes it.",
+    "Click Install, and choose your tool, like V S Code or Cursor, or copy the server link."
+   ]
+  },
+  {
+   "id": "s03",
+   "chapter": 0,
+   "type": "BOARD",
+   "visual": {
+    "kind": "flow2",
+    "title": "Four servers",
+    "steps": [
+     [
+      "Data Insights",
+      "read-only"
+     ],
+     [
+      "Data Operations",
+      "create, update, bulk"
+     ],
+     [
+      "Module Customization",
+      "modules, fields, layouts"
+     ],
+     [
+      "Workflow Automation",
+      "rules and tasks"
+     ]
+    ]
+   },
+   "lines": [
+    "There are four servers: Data Insights, Data Operations for records, Module Customization, and Workflow and Process Automation."
+   ]
+  },
+  {
+   "id": "s04",
+   "chapter": 0,
+   "type": "CARTOON",
+   "visual": {
+    "kind": "story",
+    "beats": [
+     {
+      "pose": "point",
+      "prop": "lock",
+      "text": "Your CRM permissions still apply"
+     }
+    ]
+   },
+   "lines": [
+    "The first time, you sign in to Zoho to allow it. The A I can only do what your CRM role allows, and each call uses your normal A P I credits."
+   ]
+  }
+ ]
+}

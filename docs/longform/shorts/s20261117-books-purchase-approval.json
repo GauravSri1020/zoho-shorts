@@ -1,0 +1,160 @@
+{
+ "id": "s20261117-books-purchase-approval",
+ "format": "short",
+ "title": "Zoho Books Purchase Approval: No Bill or Purchase Order Without a Yes",
+ "kicker": "ZOHO BOOKS TIP",
+ "headline": "No bill without *approval*",
+ "source_line": "Source: Zoho Books help - Purchase approval + Transaction Approval Workflow (checked 17 Nov 2026)",
+ "voice": {
+  "engine": "kokoro",
+  "voice": "am_onyx",
+  "speed": 1.1
+ },
+ "caption_fix": [
+  [
+   "ten levels",
+   "10 levels"
+  ]
+ ],
+ "sources": [
+  {
+   "name": "Zoho Books FAQ - enable approvals for purchase transactions",
+   "url": "https://www.zoho.com/books/kb/transaction-approval/enable-purchase-transaction-approval.html"
+  },
+  {
+   "name": "Zoho Books help - Transaction Approval Workflow",
+   "url": "https://www.zoho.com/ae/books/help/transaction-approval/transaction-approval-workflow.html"
+  }
+ ],
+ "tags": [
+  "Zoho Books purchase approval",
+  "Zoho Books approvals",
+  "bill approval",
+  "purchase order approval",
+  "multi-level approval",
+  "Zoho Books tutorial",
+  "accounts payable control",
+  "Zoho Books tips",
+  "GSX Automation"
+ ],
+ "description": "Make sure every bill, purchase order and vendor credit is approved before it moves on: in Zoho Books go to Settings > Approvals (under Organization) > Purchase Approval tab > Enable Purchase Approval. The default is 'All the approvers can approve'; you can instead configure multi-level approval with up to 10 levels and a specific approver for each level. Submitted transactions show as Pending Approval; approvers open them and click Approve, or Reject with a reason.\n\nSources (checked 17 Nov 2026):\n- Zoho Books FAQ - enable approvals for purchase transactions: https://www.zoho.com/books/kb/transaction-approval/enable-purchase-transaction-approval.html\n- Zoho Books help - Transaction Approval Workflow: https://www.zoho.com/ae/books/help/transaction-approval/transaction-approval-workflow.html\n\nThis video uses an AI-generated presenter, voice and animations; facts were checked against the sources above.\nIndependent channel. Not affiliated with or endorsed by Zoho Corporation.\n\n#ZohoBooks #Accounting #Approvals #Shorts",
+ "scenes": [
+  {
+   "id": "s01",
+   "chapter": 0,
+   "type": "HOOK",
+   "visual": {
+    "kind": "hook2",
+    "beats": [
+     {
+      "t": "guy",
+      "pose": "worried",
+      "prop": "warning",
+      "text": "Who approved this bill?"
+     },
+     {
+      "t": "title",
+      "title": "Purchase approval",
+      "sub": "in Zoho Books",
+      "chips": [
+       "Bills",
+       "Purchase orders",
+       "Vendor credits"
+      ]
+     }
+    ]
+   },
+   "lines": [
+    "Who approved that bill? In Zoho Books, you can make sure someone always does.",
+    "Turn on purchase approval, and bills, purchase orders and vendor credits wait for a yes."
+   ]
+  },
+  {
+   "id": "s02",
+   "chapter": 0,
+   "type": "PODCAST",
+   "visual": {
+    "path": [
+     "Settings",
+     "Approvals",
+     "Purchase Approval"
+    ],
+    "actions": [
+     {
+      "cue": 0,
+      "screen": "books/bill_approval_settings",
+      "target": "Approvals (sidebar)",
+      "zoom": 2.2
+     },
+     {
+      "cue": 1,
+      "target": "Purchase Approval tab",
+      "zoom": 2.4
+     },
+     {
+      "cue": 2,
+      "target": "Enable Purchase Approval",
+      "zoom": 2.4
+     }
+    ]
+   },
+   "lines": [
+    "Open Settings, and under Organization, click Approvals.",
+    "Switch to the Purchase Approval tab.",
+    "And click Enable Purchase Approval."
+   ]
+  },
+  {
+   "id": "s03",
+   "chapter": 0,
+   "type": "BOARD",
+   "visual": {
+    "kind": "flow2",
+    "title": "Choose who approves",
+    "steps": [
+     [
+      "All approvers",
+      "default: any approver can say yes"
+     ],
+     [
+      "Multi-level",
+      "up to 10 levels, one approver each"
+     ]
+    ]
+   },
+   "lines": [
+    "By default, all the approvers can approve. Or set up multi-level approval, with up to ten levels and an approver for each."
+   ]
+  },
+  {
+   "id": "s04",
+   "chapter": 0,
+   "type": "CARTOON",
+   "visual": {
+    "kind": "story",
+    "beats": [
+     {
+      "pose": "type",
+      "prop": "doc",
+      "text": "Submitted: Pending Approval"
+     },
+     {
+      "pose": "cheer",
+      "prop": {
+       "name": "doc",
+       "label": "APPROVED",
+       "color": "green"
+      },
+      "text": "Approve or Reject",
+      "stamp": "APPROVED",
+      "stamp_color": "green"
+     }
+    ]
+   },
+   "lines": [
+    "Now when your team submits a bill, it shows as Pending Approval.",
+    "The approver opens it and clicks Approve, or Reject with a reason."
+   ]
+  }
+ ]
+}
