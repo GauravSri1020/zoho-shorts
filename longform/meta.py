@@ -20,10 +20,11 @@ def build(script, plan, out):
     chap = [(0.0, sc.get("intro_chapter") or "UAE e-invoicing in 30 seconds")] + [(t, n) for t, n in zip(starts, sc["chapters"])]
     lines = "\n".join(f"{ts(t)} {n}" for t, n in chap)
     desc = sc["description"].replace("{chapters}", lines).replace("{date}", dt.date.today().strftime("%d %b %Y"))
+    desc = desc.replace("<", "‹").replace(">", "›")  # YouTube rejects < > in descriptions (run 44134933775)
     tags = sc.get("tags") or ["UAE e-invoicing", "Zoho Books", "Zoho Books UAE", "e-invoicing UAE 2027", "Peppol UAE",
                               "UAE VAT", "EmaraTax", "FTA UAE", "accredited service provider", "PINT AE",
                               "Zoho Books tutorial", "GSX Automation"]
-    meta = {"title": sc["title"][:100], "description": desc, "tags": tags}
+    meta = {"title": sc["title"][:100].replace("<", "‹").replace(">", "›"), "description": desc, "tags": tags}
     Path(out).parent.mkdir(parents=True, exist_ok=True)
     Path(out).write_text(json.dumps(meta, indent=1, ensure_ascii=False))
     return meta

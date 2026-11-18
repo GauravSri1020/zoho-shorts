@@ -1,0 +1,148 @@
+{
+ "id": "s20261118-books-credit-notes",
+ "format": "short",
+ "title": "Zoho Books Credit Notes: Refund or Apply to an Invoice in 3 Steps",
+ "kicker": "ZOHO BOOKS TIP",
+ "headline": "Credit notes: *refund or apply*",
+ "source_line": "Source: Zoho Books help - Apply Credits, Refund Credits (checked 18 Nov 2026)",
+ "voice": {
+  "engine": "kokoro",
+  "voice": "am_onyx",
+  "speed": 1.1
+ },
+ "caption_fix": [],
+ "sources": [
+  {
+   "name": "Zoho Books help - Apply Credits to Invoices",
+   "url": "https://www.zoho.com/us/books/help/credit-note/apply-credits.html"
+  },
+  {
+   "name": "Zoho Books help - Refund Credits",
+   "url": "https://www.zoho.com/us/books/help/credit-note/refund-credits.html"
+  },
+  {
+   "name": "Zoho Books FAQ - refund for returned goods",
+   "url": "https://www.zoho.com/us/books/kb/credits/issue-refund.html"
+  }
+ ],
+ "tags": [
+  "Zoho Books credit note",
+  "credit note refund",
+  "apply credit to invoice",
+  "Zoho Books tutorial",
+  "Zoho Books tips",
+  "customer refund Zoho Books",
+  "sales return",
+  "GSX Automation"
+ ],
+ "description": "A customer returned goods or you overbilled? In Zoho Books create a credit note under Sales > Credit Notes. Then either apply it to an open invoice (open the credit note, click Apply to Invoice, enter the amount under Credits to Apply, Save) or refund it (select the credit note, More > Refund, enter the amount, Save). A partly used credit note stays Open; once fully used it becomes Closed.\n\nSources (checked 18 Nov 2026):\n- Zoho Books help - Apply Credits to Invoices: https://www.zoho.com/us/books/help/credit-note/apply-credits.html\n- Zoho Books help - Refund Credits: https://www.zoho.com/us/books/help/credit-note/refund-credits.html\n- Zoho Books FAQ - refund for returned goods: https://www.zoho.com/us/books/kb/credits/issue-refund.html\n\nThis video uses an AI-generated presenter, voice and animations; facts were checked against the sources above.\nIndependent channel. Not affiliated with or endorsed by Zoho Corporation.\n\n#ZohoBooks #CreditNote #Accounting #Shorts",
+ "scenes": [
+  {
+   "id": "s01",
+   "chapter": 0,
+   "type": "HOOK",
+   "visual": {
+    "kind": "hook2",
+    "beats": [
+     {
+      "t": "guy",
+      "pose": "shrug",
+      "prop": "doc",
+      "text": "Customer returned goods?"
+     },
+     {
+      "t": "title",
+      "title": "Credit notes",
+      "sub": "in Zoho Books",
+      "chips": [
+       "Apply",
+       "Refund"
+      ]
+     }
+    ]
+   },
+   "lines": [
+    "A customer returned goods, or you billed too much?",
+    "Issue a credit note in Zoho Books, then apply it or refund it."
+   ]
+  },
+  {
+   "id": "s02",
+   "chapter": 0,
+   "type": "PODCAST",
+   "visual": {
+    "path": [
+     "Sales",
+     "Credit Notes"
+    ],
+    "actions": [
+     {
+      "cue": 0,
+      "screen": "books/creditnote_new",
+      "target": "Customer Name",
+      "zoom": 2.0
+     },
+     {
+      "cue": 1,
+      "target": "Save as Open",
+      "zoom": 2.2
+     }
+    ]
+   },
+   "lines": [
+    "Go to Sales, then Credit Notes, click New, and pick the customer.",
+    "Add the items and save it as open."
+   ]
+  },
+  {
+   "id": "s03",
+   "chapter": 0,
+   "type": "BOARD",
+   "visual": {
+    "kind": "flow2",
+    "title": "Then choose one",
+    "steps": [
+     [
+      "Apply to Invoice",
+      "open the credit note, enter Credits to Apply, Save"
+     ],
+     [
+      "Refund",
+      "More, Refund, enter the amount, Save"
+     ]
+    ],
+    "footer": "Whole or partial amount"
+   },
+   "lines": [
+    "To use it against an invoice, open the credit note, click Apply to Invoice, enter the amount, and save.",
+    "To pay the customer back, click More, then Refund, enter the amount and save."
+   ]
+  },
+  {
+   "id": "s04",
+   "chapter": 0,
+   "type": "CARTOON",
+   "visual": {
+    "kind": "story",
+    "beats": [
+     {
+      "pose": "present",
+      "prop": "doc",
+      "text": "Partly used = Open"
+     },
+     {
+      "pose": "cheer",
+      "prop": "coins",
+      "text": "Fully used = Closed",
+      "stamp": "CLOSED",
+      "stamp_color": "green"
+     }
+    ]
+   },
+   "lines": [
+    "A partly used credit note stays Open.",
+    "Once it is fully used, the status changes to Closed. Do one or the other for the same money, not both."
+   ]
+  }
+ ]
+}

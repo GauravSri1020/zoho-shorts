@@ -1,0 +1,157 @@
+{
+ "id": "s20261118-analytics-ask-zia",
+ "format": "short",
+ "title": "Zoho Analytics 7.0: Ask Zia Gets 6 AI Agents and a Claude Connector",
+ "kicker": "ZOHO NEWS · 18 NOV",
+ "headline": "Analytics gets *six AI agents*",
+ "source_line": "Sources: Zoho Analytics What's New; Zoho press release 10 Nov 2026 (checked 18 Nov 2026)",
+ "voice": {
+  "engine": "kokoro",
+  "voice": "am_onyx",
+  "speed": 1.1
+ },
+ "caption_fix": [
+  [
+   "Ask Zia",
+   "Ask Zia"
+  ],
+  [
+   "M C P",
+   "MCP"
+  ],
+  [
+   "C L I",
+   "CLI"
+  ]
+ ],
+ "sources": [
+  {
+   "name": "Zoho Analytics - What's new (7.0)",
+   "url": "https://www.zoho.com/analytics/whats-new.html"
+  },
+  {
+   "name": "Zoho press release 10 Nov 2026 via Vietnam Investment Review",
+   "url": "https://vir.com.vn/zoho-upgrades-analytics-platform-with-agentic-artificial-intelligence-capabilities-164929.html"
+  },
+  {
+   "name": "Zoho Analytics MCP Server docs",
+   "url": "https://www.zoho.com/analytics/api/v2/zoho-analytics-mcp-server.html"
+  }
+ ],
+ "tags": [
+  "Zoho Analytics",
+  "Ask Zia",
+  "Zoho Analytics 7.0",
+  "Zoho Analytics MCP",
+  "Claude Zoho Analytics",
+  "Zoho AI agents",
+  "agentic analytics",
+  "Zoho news",
+  "Zoho Zia",
+  "GSX Automation"
+ ],
+ "description": "Zoho Analytics 7.0 adds Ask Zia, a super agent that routes your question to six specialist agents (data analysis, visualization, data prep, formula, SQL and coding). Zoho also released an Analytics MCP server, a command line interface, and a connector for Claude Desktop (macOS and Windows). Pricing is unchanged and Zoho LLM credits are now included in each plan; cloud updates are available now, on-premise follows in Q1 2027.\n\nSources (checked 18 Nov 2026):\n- Zoho Analytics - What's new: https://www.zoho.com/analytics/whats-new.html\n- Zoho press release (10 Nov 2026) via Vietnam Investment Review: https://vir.com.vn/zoho-upgrades-analytics-platform-with-agentic-artificial-intelligence-capabilities-164929.html\n- Zoho Analytics MCP Server: https://www.zoho.com/analytics/api/v2/zoho-analytics-mcp-server.html\n\nThis video uses an AI-generated presenter, voice and animations; facts were checked against the sources above.\nIndependent channel. Not affiliated with or endorsed by Zoho Corporation.\n\n#ZohoAnalytics #ZohoZia #AIAgents #Shorts",
+ "scenes": [
+  {
+   "id": "s01",
+   "chapter": 0,
+   "type": "HOOK",
+   "visual": {
+    "kind": "hook2",
+    "beats": [
+     {
+      "t": "headline",
+      "source": "ZOHO",
+      "date": "10 Nov 2026",
+      "text": "Zoho Analytics 7.0: Ask Zia is now a team of AI agents",
+      "tag": "NEWS",
+      "color": "teal"
+     },
+     {
+      "t": "stat",
+      "value": "6",
+      "label": "specialist AI agents behind one chat box",
+      "color": "amber"
+     }
+    ]
+   },
+   "lines": [
+    "Zoho Analytics just turned its chat box into a team of six AI agents.",
+    "It is called Ask Zia, and it is part of Analytics seven point zero."
+   ]
+  },
+  {
+   "id": "s02",
+   "chapter": 0,
+   "type": "BOARD",
+   "visual": {
+    "kind": "flow2",
+    "title": "How Ask Zia works",
+    "steps": [
+     [
+      "Your question",
+      "plain English"
+     ],
+     [
+      "Ask Zia",
+      "super agent routes it"
+     ],
+     [
+      "Specialists",
+      "analysis, charts, data prep, SQL, code"
+     ]
+    ],
+    "footer": "Six agents in total"
+   },
+   "lines": [
+    "Ask Zia is the super agent. It takes your question and routes it to the right specialist.",
+    "Those specialists cover data analysis, visualization, data prep, formulas, SQL and coding."
+   ]
+  },
+  {
+   "id": "s03",
+   "chapter": 0,
+   "type": "CARTOON",
+   "visual": {
+    "kind": "story",
+    "beats": [
+     {
+      "pose": "present",
+      "prop": "robot",
+      "text": "MCP server + CLI"
+     },
+     {
+      "pose": "cheer",
+      "prop": "laptop",
+      "text": "Claude Desktop connector",
+      "stamp": "NEW",
+      "stamp_color": "green"
+     }
+    ]
+   },
+   "lines": [
+    "Zoho also released an Analytics MCP server and a command line tool.",
+    "And there is a connector for Claude Desktop on Mac and Windows."
+   ]
+  },
+  {
+   "id": "s04",
+   "chapter": 0,
+   "type": "BOARD",
+   "visual": {
+    "kind": "checklist",
+    "title": "Good to know",
+    "items": [
+     "Pricing unchanged",
+     "Zoho LLM credits now in each plan",
+     "Cloud: available now. On-premise: Q1 2027"
+    ]
+   },
+   "lines": [
+    "Pricing is unchanged, and Zoho LLM credits are now included in each plan.",
+    "The cloud version has the update now. On-premise follows in the first quarter of twenty twenty-seven.",
+    "Check Zoho's what's new page for what has reached your account."
+   ]
+  }
+ ]
+}

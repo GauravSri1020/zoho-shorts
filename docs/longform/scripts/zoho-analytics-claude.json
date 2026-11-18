@@ -1,0 +1,914 @@
+{
+ "id": "zoho-analytics-claude",
+ "title": "Zoho Analytics 7.0: Ask Zia AI Agents + Connect Claude Desktop (2026)",
+ "voice": {
+  "engine": "kokoro",
+  "voice": "am_onyx",
+  "speed": 1.1
+ },
+ "research": "docs/longform/research/zoho-analytics-claude.md",
+ "intro_chapter": "Zoho Analytics + AI in 30 seconds",
+ "chapters": [
+  "What Zoho announced",
+  "Meet the Ask Zia agents",
+  "Giving the AI business context",
+  "Connect Claude Desktop",
+  "Cost, timing and what to do next"
+ ],
+ "caption_fix": [
+  [
+   "A I",
+   "AI"
+  ],
+  [
+   "M C P",
+   "MCP"
+  ],
+  [
+   "S Q L",
+   "SQL"
+  ],
+  [
+   "A P Is",
+   "APIs"
+  ],
+  [
+   "A P I",
+   "API"
+  ],
+  [
+   "E R P",
+   "ERP"
+  ],
+  [
+   "F S M",
+   "FSM"
+  ],
+  [
+   "L L M",
+   "LLM"
+  ],
+  [
+   "O Auth",
+   "OAuth"
+  ],
+  [
+   "I D",
+   "ID"
+  ],
+  [
+   "U S,",
+   "US,"
+  ],
+  [
+   "E U,",
+   "EU,"
+  ],
+  [
+   "I N,",
+   "IN,"
+  ],
+  [
+   "A U,",
+   "AU,"
+  ],
+  [
+   "J P",
+   "JP"
+  ],
+  [
+   "C A.",
+   "CA."
+  ],
+  [
+   "S A P",
+   "SAP"
+  ],
+  [
+   "Chapter one",
+   "Chapter 1"
+  ],
+  [
+   "Chapter two",
+   "Chapter 2"
+  ],
+  [
+   "Chapter three",
+   "Chapter 3"
+  ],
+  [
+   "Chapter four",
+   "Chapter 4"
+  ],
+  [
+   "Chapter five",
+   "Chapter 5"
+  ],
+  [
+   "tenth of November twenty twenty-six",
+   "10 November 2026"
+  ],
+  [
+   "seven point zero",
+   "7.0"
+  ],
+  [
+   "twenty twenty-seven",
+   "2027"
+  ]
+ ],
+ "thumb": {
+  "chip": "ZOHO ANALYTICS",
+  "l1": "ASK ZIA",
+  "l2": "AI AGENTS",
+  "l3": "+ CLAUDE",
+  "pill": "7.0 EXPLAINED",
+  "pose": "open_hands",
+  "accent": "#ffb347"
+ },
+ "tags": [
+  "Zoho Analytics",
+  "Zoho Analytics 7.0",
+  "Ask Zia",
+  "Zoho Zia agents",
+  "Zoho Analytics MCP",
+  "Claude Desktop connector",
+  "Claude Zoho Analytics",
+  "agentic analytics",
+  "Zoho AI agents",
+  "Zoho Analytics tutorial",
+  "Zoho news",
+  "semantic layer",
+  "GSX Automation"
+ ],
+ "sources": [
+  {
+   "name": "Zoho Analytics - What's new (7.0)",
+   "url": "https://www.zoho.com/analytics/whats-new.html"
+  },
+  {
+   "name": "Zoho press release 10 Nov 2026 via Vietnam Investment Review",
+   "url": "https://vir.com.vn/zoho-upgrades-analytics-platform-with-agentic-artificial-intelligence-capabilities-164929.html"
+  },
+  {
+   "name": "Zoho Analytics MCP Server",
+   "url": "https://www.zoho.com/analytics/api/v2/zoho-analytics-mcp-server.html"
+  },
+  {
+   "name": "Zoho Analytics - Claude Connector (local setup)",
+   "url": "https://www.zoho.com/analytics/api/v2/zoho-analytics-mcp-server/local-mcp/claude-connector.html"
+  }
+ ],
+ "description": "Zoho Analytics 7.0 turns Analytics into an agentic platform: Ask Zia, a super agent that routes your question to six specialist agents, a built-in semantic layer and ontology for business context, 30+ new connectors, an MCP server, a CLI and a connector for Claude Desktop. In this video: what Zoho announced on 10 Nov 2026, what each agent does, how context and governance work, how to connect Claude Desktop step by step (Settings > Integrations > Zoho Analytics MCP Server > Add to Claude > credentials > Install), and what it costs and when it arrives.\n\nChapters\n{chapters}\n\nSources (checked 18 Nov 2026)\n- Zoho Analytics - What's new (7.0): https://www.zoho.com/analytics/whats-new.html\n- Zoho press release 10 Nov 2026 via Vietnam Investment Review: https://vir.com.vn/zoho-upgrades-analytics-platform-with-agentic-artificial-intelligence-capabilities-164929.html\n- Zoho Analytics MCP Server: https://www.zoho.com/analytics/api/v2/zoho-analytics-mcp-server.html\n- Zoho Analytics - Claude Connector (local setup): https://www.zoho.com/analytics/api/v2/zoho-analytics-mcp-server/local-mcp/claude-connector.html\n\nFeature availability differs by plan, region and data center, and Zoho is rolling features out in phases. Check Zoho's pages for your account. The Claude Desktop connector supports macOS and Windows only; API units are consumed by MCP requests.\nThis video uses an AI-generated presenter, voice and animations; facts were checked against the sources above.\nIndependent channel. Not affiliated with or endorsed by Zoho Corporation or Anthropic. Zoho is a trademark of Zoho Corporation.\n\n#ZohoAnalytics #ZohoZia #Claude #AIAgents #GSXAutomation",
+ "scenes": [
+  {
+   "id": "s01",
+   "type": "HOOK",
+   "chapter": 0,
+   "visual": {
+    "kind": "hook2",
+    "beats": [
+     {
+      "t": "headline",
+      "tag": "ZOHO ANALYTICS",
+      "source": "Zoho press release",
+      "date": "10 Nov 2026",
+      "text": "Zoho Analytics becomes an agentic analytics platform",
+      "color": "sky"
+     },
+     {
+      "t": "stat",
+      "value": "6",
+      "label": "specialist AI agents inside Ask Zia",
+      "color": "teal"
+     },
+     {
+      "t": "guy",
+      "pose": "present",
+      "prop": "chart_up",
+      "text": "Ask your data, in plain English"
+     },
+     {
+      "t": "title",
+      "title": "Zoho Analytics 7.0",
+      "sub": "Ask Zia + Claude",
+      "chips": [
+       "Agents",
+       "Context",
+       "Claude",
+       "Pricing"
+      ]
+     }
+    ]
+   },
+   "lines": [
+    "Zoho Analytics can now answer business questions with a team of six A I agents, and you can even plug it into Claude.",
+    "On the tenth of November twenty twenty-six, Zoho announced Analytics seven point zero, which it calls an agentic analytics platform.",
+    "You ask in plain English. A super agent called Ask Zia picks the right specialist to answer.",
+    "In this video: what is new, what each agent does, how Zoho gives the A I your business meaning, how to connect Claude Desktop step by step, and what it costs."
+   ]
+  },
+  {
+   "id": "c1",
+   "type": "CHAPTER",
+   "chapter": 1,
+   "visual": {
+    "num": 1,
+    "title": "What Zoho announced"
+   },
+   "lines": [
+    "Chapter one. What Zoho announced."
+   ]
+  },
+  {
+   "id": "s03",
+   "type": "CARTOON",
+   "chapter": 1,
+   "visual": {
+    "kind": "story",
+    "beats": [
+     {
+      "pose": "present",
+      "prop": "chart_up",
+      "text": "Ask a question"
+     },
+     {
+      "pose": "point",
+      "prop": "robot",
+      "text": "Ask Zia answers"
+     },
+     {
+      "pose": "cheer",
+      "prop": "doc",
+      "text": "Charts, SQL, data prep"
+     }
+    ]
+   },
+   "lines": [
+    "Until now, you built reports and dashboards yourself, or asked an analyst.",
+    "Now Ask Zia is a conversational layer on top of your data. You ask a question, and the agents do the work.",
+    "That can mean analysis, charts, data preparation, even S Q L and code, all from the chat."
+   ]
+  },
+  {
+   "id": "s04",
+   "type": "BOARD",
+   "chapter": 1,
+   "visual": {
+    "kind": "stat",
+    "title": "The release in numbers",
+    "stats": [
+     {
+      "value": "30+",
+      "label": "new data connectors",
+      "note": "on top of 500+",
+      "color": "teal"
+     },
+     {
+      "value": "6",
+      "label": "specialist agents",
+      "note": "behind Ask Zia",
+      "color": "amber"
+     },
+     {
+      "value": "50+",
+      "label": "new capabilities",
+      "note": "per Zoho",
+      "color": "sky"
+     }
+    ],
+    "footer": "Source: Zoho, 10 Nov 2026"
+   },
+   "lines": [
+    "Zoho says the release brings more than fifty new capabilities.",
+    "That includes more than thirty new data connectors, added to over five hundred that already existed, and six specialist agents behind Ask Zia."
+   ]
+  },
+  {
+   "id": "s05",
+   "type": "BOARD",
+   "chapter": 1,
+   "visual": {
+    "kind": "checklist",
+    "title": "New connectors include",
+    "items": [
+     "Zoho ERP, Spend, FSM",
+     "Zoho Shifts and Zoho Voice",
+     "SAP, PayPal, Twilio",
+     "Notion, Intercom, Supabase"
+    ]
+   },
+   "lines": [
+    "On the Zoho side, there are new connectors for Zoho E R P, Zoho Spend, and Zoho F S M.",
+    "Also Zoho Shifts and Zoho Voice.",
+    "Outside Zoho, you get S A P, PayPal, and Twilio.",
+    "And Notion, Intercom, and Supabase, among others."
+   ]
+  },
+  {
+   "id": "s05b",
+   "type": "CARTOON",
+   "chapter": 1,
+   "visual": {
+    "kind": "story",
+    "beats": [
+     {
+      "pose": "present",
+      "prop": "robot",
+      "text": "Agents can act, too"
+     },
+     {
+      "pose": "cheer",
+      "prop": "clock",
+      "text": "Trigger workflows",
+      "stamp": "ACTION",
+      "stamp_color": "amber"
+     },
+     {
+      "pose": "stand",
+      "prop": "doc",
+      "text": "With a record of it"
+     }
+    ]
+   },
+   "lines": [
+    "Agentic means more than answering questions. Zoho says agents can trigger actions and workflows directly.",
+    "Those workflows can be designed in a workflow builder, and agents can be shared across teams with governance and observability controls.",
+    "So an answer can turn into an action, with a record of what the agent did."
+   ]
+  },
+  {
+   "id": "s06",
+   "type": "BOARD",
+   "chapter": 1,
+   "visual": {
+    "kind": "checklist",
+    "title": "Also in the 7.0 release",
+    "items": [
+     "10+ new visualizations",
+     "Pixel-perfect reports",
+     "Scenario, correlation, VARX",
+     "Data science studio, Jupyter",
+     "Ask Zia on mobile"
+    ]
+   },
+   "lines": [
+    "The release is not only about agents. Zoho lists more than ten new visualizations, plus custom visuals.",
+    "Pixel-perfect reports, for layouts that must look exactly right.",
+    "New predictive tools: scenario analysis, a correlation matrix, and a forecasting model called V A R X.",
+    "A data science studio with Jupyter notebooks.",
+    "And Ask Zia now works on mobile, with an upgraded interface."
+   ]
+  },
+  {
+   "id": "c2",
+   "type": "CHAPTER",
+   "chapter": 2,
+   "visual": {
+    "num": 2,
+    "title": "Meet the Ask Zia agents"
+   },
+   "lines": [
+    "Chapter two. Meet the Ask Zia agents."
+   ]
+  },
+  {
+   "id": "s07",
+   "type": "BOARD",
+   "chapter": 2,
+   "visual": {
+    "kind": "flow2",
+    "title": "How Ask Zia works",
+    "steps": [
+     [
+      "You ask",
+      "plain English"
+     ],
+     [
+      "Ask Zia",
+      "the super agent"
+     ],
+     [
+      "Specialists",
+      "six sub-agents"
+     ],
+     [
+      "Answer",
+      "with context"
+     ]
+    ],
+    "footer": "A central agent plans and coordinates"
+   },
+   "lines": [
+    "Here is the flow. You ask a question. Ask Zia, the super agent, plans how to answer it.",
+    "It hands the work to specialist agents, which share the same business context and the same conversation.",
+    "Then you get the answer in the chat."
+   ]
+  },
+  {
+   "id": "s08",
+   "type": "BOARD",
+   "chapter": 2,
+   "visual": {
+    "kind": "checklist",
+    "title": "The specialist agents",
+    "items": [
+     "Data analysis",
+     "Visualization",
+     "Data preparation",
+     "Formulas",
+     "SQL",
+     "Coding"
+    ]
+   },
+   "lines": [
+    "Zoho's what's new page lists six specialists.",
+    "A data analysis agent, for questions about your numbers.",
+    "A visualization agent, for charts.",
+    "A data prep agent, for cleaning and shaping data.",
+    "A formula agent, for calculations.",
+    "And an S Q L agent and a coding agent, for the technical work."
+   ]
+  },
+  {
+   "id": "s09",
+   "type": "CARTOON",
+   "chapter": 2,
+   "visual": {
+    "kind": "story",
+    "beats": [
+     {
+      "pose": "worried",
+      "prop": "magnifier",
+      "text": "Which model?"
+     },
+     {
+      "pose": "present",
+      "prop": "robot",
+      "text": "Zia's LLM or your own"
+     }
+    ]
+   },
+   "lines": [
+    "Ask Zia remembers your conversation history, so follow-up questions work.",
+    "And you can use Zia's own language model, or bring your own frontier model."
+   ]
+  },
+  {
+   "id": "s10",
+   "type": "CARTOON",
+   "chapter": 2,
+   "visual": {
+    "kind": "story",
+    "beats": [
+     {
+      "pose": "present",
+      "prop": "stack",
+      "text": "Build your own agent"
+     },
+     {
+      "pose": "cheer",
+      "prop": "robot",
+      "text": "Tools: MCP, web search",
+      "stamp": "CUSTOM",
+      "stamp_color": "teal"
+     }
+    ]
+   },
+   "lines": [
+    "You are not limited to the built-in agents. Teams can build custom agents around their own data and workflows.",
+    "Custom agents can use M C P servers and web search, and there is a gallery of pre-built agents to start from."
+   ]
+  },
+  {
+   "id": "s11",
+   "type": "CARTOON",
+   "chapter": 2,
+   "visual": {
+    "kind": "story",
+    "beats": [
+     {
+      "pose": "present",
+      "prop": "office",
+      "text": "Your app, your portal"
+     },
+     {
+      "pose": "cheer",
+      "prop": "robot",
+      "text": "Embed agents, white label",
+      "stamp": "EMBED",
+      "stamp_color": "sky"
+     }
+    ]
+   },
+   "lines": [
+    "Zoho also lets organizations embed these agents in their own apps, portals and products, with white labeling.",
+    "Permissions and governance rules still apply wherever the agent runs, which matters if clients will see it."
+   ]
+  },
+  {
+   "id": "c3",
+   "type": "CHAPTER",
+   "chapter": 3,
+   "visual": {
+    "num": 3,
+    "title": "Giving the AI business context"
+   },
+   "lines": [
+    "Chapter three. Giving the AI business context."
+   ]
+  },
+  {
+   "id": "s12",
+   "type": "BOARD",
+   "chapter": 3,
+   "visual": {
+    "kind": "flow2",
+    "title": "Two layers of context",
+    "steps": [
+     [
+      "Semantic layer",
+      "business glossary for AI"
+     ],
+     [
+      "Ontology",
+      "entities and how they relate"
+     ],
+     [
+      "Governance",
+      "access, cost, errors"
+     ]
+    ],
+    "footer": "Built in, no separate data warehouse needed"
+   },
+   "lines": [
+    "The hard part of A I analytics is meaning. What does revenue mean in your company?",
+    "Zoho built a semantic layer into Analytics. It is a business glossary for the A I, with descriptions, synonyms, instructions and metrics.",
+    "On top sits an ontology, which models your business entities and how they relate to each other.",
+    "Zoho says both are built in, and you can edit them without code."
+   ]
+  },
+  {
+   "id": "s13",
+   "type": "CARTOON",
+   "chapter": 3,
+   "visual": {
+    "kind": "story",
+    "beats": [
+     {
+      "pose": "shrug",
+      "prop": "doc",
+      "text": "Revenue? Net or gross?"
+     },
+     {
+      "pose": "cheer",
+      "prop": "chart_up",
+      "text": "Define it once"
+     }
+    ]
+   },
+   "lines": [
+    "For example, if people say revenue, sales and turnover, you can tell the A I they mean the same metric.",
+    "Define it once, and every agent uses the same definition."
+   ]
+  },
+  {
+   "id": "s14",
+   "type": "BOARD",
+   "chapter": 3,
+   "visual": {
+    "kind": "checklist",
+    "title": "Governance and oversight",
+    "items": [
+     "Data Catalog",
+     "AI Observability",
+     "Cost by team",
+     "Sandbox and rollback"
+    ]
+   },
+   "lines": [
+    "Zoho also added oversight tools. A data catalog covers your data, metrics and models, with lineage.",
+    "A I observability shows which agents ran, who used them, what they accessed, and how they answered.",
+    "It also tracks A I usage and cost by team.",
+    "And a sandbox lets you test first, publish to production, and roll back if needed."
+   ]
+  },
+  {
+   "id": "s15",
+   "type": "BOARD",
+   "chapter": 3,
+   "visual": {
+    "kind": "checklist",
+    "title": "On Zoho's roadmap (no dates given)",
+    "items": [
+     "Dynamic business context",
+     "Decision intelligence",
+     "More open (Apache Ossie)",
+     "Unified data platform"
+    ]
+   },
+   "lines": [
+    "Zoho also shared a roadmap, with no dates. First, dynamic business context, which tracks how your data changes over time.",
+    "Decision intelligence, which learns from the outcomes of actions that agents trigger.",
+    "More openness. The semantic models are already compatible with the Apache Ossie specification, so definitions stay portable.",
+    "And a full unified data platform, with a data lakehouse and agent building in one place."
+   ]
+  },
+  {
+   "id": "c4",
+   "type": "CHAPTER",
+   "chapter": 4,
+   "visual": {
+    "num": 4,
+    "title": "Connect Claude Desktop"
+   },
+   "lines": [
+    "Chapter four. Connect Claude Desktop."
+   ]
+  },
+  {
+   "id": "s16",
+   "type": "BOARD",
+   "chapter": 4,
+   "visual": {
+    "kind": "stat",
+    "title": "Three ways to reach Analytics from Claude",
+    "stats": [
+     {
+      "value": "1",
+      "label": "Claude Desktop connector",
+      "note": "Mac and Windows",
+      "color": "teal"
+     },
+     {
+      "value": "2",
+      "label": "Claude plug-in",
+      "note": "for the Claude CLI",
+      "color": "sky"
+     },
+     {
+      "value": "3",
+      "label": "MCP server",
+      "note": "remote or local",
+      "color": "amber"
+     }
+    ],
+    "footer": "Source: Zoho Analytics docs"
+   },
+   "lines": [
+    "Zoho gives you three ways to reach Analytics from Claude.",
+    "The easiest is the Claude Desktop connector, installed from the Claude marketplace.",
+    "There is also a plug-in for the Claude command line, and the M C P server itself, as a remote or local setup."
+   ]
+  },
+  {
+   "id": "s17",
+   "type": "BOARD",
+   "chapter": 4,
+   "visual": {
+    "kind": "flow2",
+    "title": "Before you start",
+    "steps": [
+     [
+      "Claude Desktop",
+      "the app, not the web"
+     ],
+     [
+      "Mac or Windows",
+      "only these two"
+     ],
+     [
+      "Self Client",
+      "in Zoho Developer Console"
+     ],
+     [
+      "Analytics scope",
+      "then a refresh token"
+     ]
+    ],
+    "footer": "Sign in to Claude Desktop first"
+   },
+   "lines": [
+    "First, the requirements. You need the Claude Desktop app, not the web version, on Mac or Windows.",
+    "Sign in to Claude Desktop with your Anthropic account.",
+    "Then, in the Zoho Developer Console, create a Self Client application and enable the Zoho Analytics scope.",
+    "Generate a refresh token. You will paste it into the connector."
+   ]
+  },
+  {
+   "id": "s18",
+   "type": "BOARD",
+   "chapter": 4,
+   "visual": {
+    "kind": "checklist",
+    "title": "Credentials you will enter",
+    "items": [
+     "Client ID and client secret",
+     "Refresh token",
+     "Analytics organization ID",
+     "Accounts server URL",
+     "Analytics server URL"
+    ]
+   },
+   "lines": [
+    "The connector asks for your O Auth client I D and client secret.",
+    "Your refresh token.",
+    "Your Zoho Analytics organization I D.",
+    "And the two server addresses, for the data center where your Zoho account was created.",
+    "Zoho lists U S, E U, I N, A U, J P and C A, so pick the one that matches your account."
+   ]
+  },
+  {
+   "id": "s19",
+   "type": "BOARD",
+   "chapter": 4,
+   "visual": {
+    "kind": "flow2",
+    "title": "Install the connector",
+    "steps": [
+     [
+      "Settings",
+      "then Integrations"
+     ],
+     [
+      "Zoho Analytics MCP Server",
+      "find it in the marketplace"
+     ],
+     [
+      "Add to Claude",
+      "enter your credentials"
+     ],
+     [
+      "Install",
+      "Claude checks them"
+     ]
+    ],
+    "footer": "Then check it shows as active"
+   },
+   "lines": [
+    "Now install it. In Claude Desktop, open Settings, then the Integrations tab.",
+    "Click Add Integration, or browse the Claude marketplace, and find the Zoho Analytics M C P Server.",
+    "Click Add to Claude, enter your credential values in the dialog, and click Install.",
+    "Claude Desktop validates the credentials and registers the server. It should now show as active under Settings, Integrations."
+   ]
+  },
+  {
+   "id": "s20",
+   "type": "CARTOON",
+   "chapter": 4,
+   "visual": {
+    "kind": "story",
+    "beats": [
+     {
+      "pose": "present",
+      "prop": "laptop",
+      "text": "Ask Claude about your data"
+     },
+     {
+      "pose": "worried",
+      "prop": "lock",
+      "text": "Data goes to the LLM"
+     }
+    ]
+   },
+   "lines": [
+    "Now you can ask Claude questions about your Analytics workspaces.",
+    "One thing to know: Zoho's documentation says the data gathered for a request is shared with the language model to produce the answer."
+   ]
+  },
+  {
+   "id": "s21",
+   "type": "CARTOON",
+   "chapter": 4,
+   "visual": {
+    "kind": "story",
+    "beats": [
+     {
+      "pose": "shrug",
+      "prop": "coins",
+      "text": "API units"
+     },
+     {
+      "pose": "present",
+      "prop": "warning",
+      "text": "Still in development"
+     }
+    ]
+   },
+   "lines": [
+    "Every request uses A P I units, depending on which A P Is are called to build the answer.",
+    "And Zoho notes the M C P server is still in development, so its tools may change. Try it on non-sensitive data first."
+   ]
+  },
+  {
+   "id": "s22b",
+   "type": "CARTOON",
+   "chapter": 4,
+   "visual": {
+    "kind": "story",
+    "beats": [
+     {
+      "pose": "present",
+      "prop": "laptop",
+      "text": "Example: top 5 customers by revenue"
+     },
+     {
+      "pose": "point",
+      "prop": "chart_up",
+      "text": "Example: chart sales by month"
+     }
+    ]
+   },
+   "lines": [
+    "Once connected, you might ask Claude things like: which five customers brought the most revenue this year?",
+    "Or: show me monthly sales as a chart. These are only illustrations. What works depends on your data, your permissions and the tools available in your account."
+   ]
+  },
+  {
+   "id": "c5",
+   "type": "CHAPTER",
+   "chapter": 5,
+   "visual": {
+    "num": 5,
+    "title": "Cost, timing and what to do next"
+   },
+   "lines": [
+    "Chapter five. Cost, timing and what to do next."
+   ]
+  },
+  {
+   "id": "s23",
+   "type": "BOARD",
+   "chapter": 5,
+   "visual": {
+    "kind": "checklist",
+    "title": "Pricing and availability",
+    "items": [
+     "Pricing unchanged",
+     "LLM credits in each plan",
+     "Cloud: available now",
+     "Previews in 4 to 8 weeks",
+     "On-premise: Q1 2027"
+    ]
+   },
+   "lines": [
+    "Now the money. Zoho says pricing is unchanged, and Zoho L L M credits are now included in each plan.",
+    "The cloud updates are available now.",
+    "Previews of pixel-perfect reporting, the ontology and the semantic model roll out globally over the next four to eight weeks.",
+    "On-premise customers get the update in the first quarter of twenty twenty-seven.",
+    "Check Zoho's pricing page for the plan and region you use."
+   ]
+  },
+  {
+   "id": "s24",
+   "type": "BOARD",
+   "chapter": 5,
+   "visual": {
+    "kind": "checklist",
+    "title": "Your next steps",
+    "items": [
+     "Open What's New",
+     "Define your key metrics once",
+     "Try Ask Zia on test data",
+     "Add Claude if needed"
+    ]
+   },
+   "lines": [
+    "So what should you do? Open the what's new page and see which features reached your account.",
+    "List your five key metrics, and define them clearly, because context is what makes A I answers trustworthy.",
+    "Try Ask Zia on a test workspace first, and add the Claude connector only if you need it.",
+    "Then decide who on your team may use the agents, because the new oversight tools only help if someone looks at them."
+   ]
+  },
+  {
+   "id": "s25",
+   "type": "CARTOON",
+   "chapter": 5,
+   "visual": {
+    "kind": "celebrate2",
+    "top": "READY",
+    "big": "✓",
+    "sub": "Ask your data"
+   },
+   "lines": [
+    "Your data is now one question away."
+   ]
+  },
+  {
+   "id": "s26",
+   "type": "OUTRO",
+   "chapter": 5,
+   "visual": {
+    "kind": "outro",
+    "next": "Zoho CRM MCP and Claude",
+    "badge": "AI",
+    "badge_sub": "news",
+    "note": "Features roll out in phases: check Zoho's docs"
+   },
+   "lines": [
+    "If this helped, subscribe for more Zoho and A I news and tutorials.",
+    "And features roll out in phases, so always check Zoho's latest documentation for your account."
+   ]
+  }
+ ]
+}
