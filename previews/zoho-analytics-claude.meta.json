@@ -1,0 +1,19 @@
+{
+ "title": "Zoho Analytics 7.0: Ask Zia AI Agents + Connect Claude Desktop (2026)",
+ "description": "Zoho Analytics 7.0 turns Analytics into an agentic platform: Ask Zia, a super agent that routes your question to six specialist agents, a built-in semantic layer and ontology for business context, 30+ new connectors, an MCP server, a CLI and a connector for Claude Desktop. In this video: what Zoho announced on 10 Nov 2026, what each agent does, how context and governance work, how to connect Claude Desktop step by step (Settings › Integrations › Zoho Analytics MCP Server › Add to Claude › credentials › Install), and what it costs and when it arrives.\n\nChapters\n0:00 Zoho Analytics + AI in 30 seconds\n0:27 What Zoho announced\n1:51 Meet the Ask Zia agents\n2:57 Giving the AI business context\n4:14 Connect Claude Desktop\n6:06 Cost, timing and what to do next\n\nSources (checked 18 Nov 2026)\n- Zoho Analytics - What's new (7.0): https://www.zoho.com/analytics/whats-new.html\n- Zoho press release 10 Nov 2026 via Vietnam Investment Review: https://vir.com.vn/zoho-upgrades-analytics-platform-with-agentic-artificial-intelligence-capabilities-164929.html\n- Zoho Analytics MCP Server: https://www.zoho.com/analytics/api/v2/zoho-analytics-mcp-server.html\n- Zoho Analytics - Claude Connector (local setup): https://www.zoho.com/analytics/api/v2/zoho-analytics-mcp-server/local-mcp/claude-connector.html\n\nFeature availability differs by plan, region and data center, and Zoho is rolling features out in phases. Check Zoho's pages for your account. The Claude Desktop connector supports macOS and Windows only; API units are consumed by MCP requests.\nThis video uses an AI-generated presenter, voice and animations; facts were checked against the sources above.\nIndependent channel. Not affiliated with or endorsed by Zoho Corporation or Anthropic. Zoho is a trademark of Zoho Corporation.\n\n#ZohoAnalytics #ZohoZia #Claude #AIAgents #GSXAutomation",
+ "tags": [
+  "Zoho Analytics",
+  "Zoho Analytics 7.0",
+  "Ask Zia",
+  "Zoho Zia agents",
+  "Zoho Analytics MCP",
+  "Claude Desktop connector",
+  "Claude Zoho Analytics",
+  "agentic analytics",
+  "Zoho AI agents",
+  "Zoho Analytics tutorial",
+  "Zoho news",
+  "semantic layer",
+  "GSX Automation"
+ ]
+}
