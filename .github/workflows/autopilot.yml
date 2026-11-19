@@ -5,9 +5,9 @@ on:
     # 11 Nov 2026: research + scripts in the MORNING (Gaurav makes / Claude makes the Flow clips later that day).
     # Off the full hour on purpose: GitHub dropped the "0 9" run on 11 Nov. The 2nd one is a backup - it does
     # nothing when the first one already prepared the Shorts (max_waiting).
-    - cron: "47 1 * * *"     # 07:17 IST -> yesterday's Shorts without clips go faceless + 2 new scripts / Flow prompts
-    - cron: "13 3 * * *"     # 08:43 IST -> backup of the run above
-    - cron: "40 */3 * * *"   # every 3 hours -> reply to new comments
+    # 20 Nov 2026: daily Gemini scripts OFF (Shorts now = Flow avatar specs from the brain on long-videos;
+    # Actions minutes ran out on 18 Nov). Run workflow by hand still works. Comments: twice a day instead of every 3 h.
+    - cron: "40 4,16 * * *"  # 10:10 + 22:10 IST -> reply to new comments
   push:                      # you uploaded the Flow clips -> assemble the Short
     branches: [main]
     paths: ["jobs/*/clips/**"]

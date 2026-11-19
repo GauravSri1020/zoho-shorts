@@ -98,10 +98,13 @@ jobs:
             today's run exactly as DAILY.md says: research (tight, verified), the Shorts + long video scripts,
             local checks (validate, test render, look at the frames), push to long-videos, start the maker
             workflows with gh, keep the queue full, write the Flow scripts, and finish with the "Daily report" issue.
+            Follow the "20 Nov 2026 changes" at the top of DAILY.md first: Shorts only as Flow avatar specs
+            (1 trending news Short every day), and every script is written by the script-writer subagent
+            (Task tool, .claude/agents/script-writer.md) with a different structure each time.
             Today is the date the shell prints with `date -u`. Work autonomously; nobody will answer questions.
           claude_args: |
             --max-turns 400
-            --allowedTools "Bash,Read,Write,Edit,Glob,Grep,WebSearch,WebFetch,TodoWrite"
+            --allowedTools "Bash,Read,Write,Edit,Glob,Grep,WebSearch,WebFetch,TodoWrite,Task"
       - name: Keeper right after the brain
         if: always() && steps.tok.outputs.ok == 'true'
         run: gh workflow run daily-robot.yml -R "$GITHUB_REPOSITORY" --ref main -f job=keeper || true
