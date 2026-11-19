@@ -1,4 +1,26 @@
-# DAILY ROBOT - what the daily Claude "brain" does (Gaurav's order, 15 Nov 2026)
+# DAILY ROBOT - what the daily Claude "brain" does (Gaurav's order, 15 Nov 2026; UPDATED 20 Nov 2026)
+
+## 20 Nov 2026 changes (Gaurav: "next level", monetization fast) - these override older lines below
+1. SHORTS = FLOW AVATAR ONLY. No cartoon / Kokoro Shorts any more (he deleted the 6 of 18-19 Nov). Do NOT write
+   `docs/longform/shorts/*.json` or `queue/shorts/*.json`. Instead write 2-3 Flow Short specs per day
+   (`docs/longform/flow-specs/<id>.json`, format in flow-specs/README.md) + `docs/longform/flow-queue/<date>.md`.
+   A Claude session with Gaurav's Chrome makes the clips in Flow and schedules them.
+2. ONE TRENDING NEWS SHORT EVERY DAY: the biggest business / tech / AI story people are searching TODAY (Nvidia
+   style - our 2 best videos ever), even when it is not Zoho. Facts: official filing / press release + 2 outlets.
+   Plus 1 Zoho / Gulf-compliance avatar Short.
+3. SCRIPT-WRITER AGENT: every long video script and every Flow spec is written by the subagent
+   `script-writer` (.claude/agents/script-writer.md, Task tool). You (brain) do research + fact table, then hand
+   the topic + research file to it. It picks a DIFFERENT structure each time (docs/longform/STRUCTURES.md,
+   rotation checked by the validator via `docs/longform/structures-used.md`).
+4. Read `docs/longform/CHANNEL_INSIGHTS.md` before choosing topics (what works on this channel).
+5. Research sources (wider): Google News, Techmeme, Hacker News front page, Reddit (r/technology, r/business,
+   r/stocks, r/Zoho, r/smallbusiness, r/UAE, r/saudiarabia), LinkedIn News "Top stories" / trending posts and
+   Zoho's LinkedIn page (public pages via WebFetch; never log in), X/Twitter trending via news coverage,
+   Google Trends (IN / AE / SA / US), YouTube search suggestions (what people type), Zoho Community + zoho.com/blog,
+   Product Hunt, official regulators (MoF UAE, FTA, ZATCA, GSTN). A trend counts when >= 3 outlets carry it today.
+6. GitHub Actions minutes are limited (Free plan 2,000 min / month - ran out on 18 Nov 2026). Keep the brain run
+   short: at most ONE test render per day, no 4K test renders, stop after the report.
+
 
 Gaurav: "2 Shorts + 1 long video EVERY day, automatically - research, make, upload, schedule. Always keep at least
 2 days (better a week) ready. Fresh news goes out first; evergreen videos fill the days after. Research must be tight:

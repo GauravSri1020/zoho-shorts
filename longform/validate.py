@@ -44,6 +44,17 @@ def check(path):
             bad.append(f"description must contain '{need}'")
     if "zoho" in (sc.get("title", "") + d).lower() and "Not affiliated" not in d:
         bad.append("mentions Zoho -> description must contain 'Not affiliated ...' line")
+    if not short:
+        allowed = set(re.findall(r"^\| `([a-z-]+)` \|", (ROOT / "docs/longform/STRUCTURES.md").read_text(), re.M))
+        st = sc.get("structure")
+        if st not in allowed:
+            bad.append(f"'structure' must be one of {sorted(allowed)} (script-writer agent, docs/longform/STRUCTURES.md)")
+        else:
+            used = ROOT / "docs/longform/structures-used.md"
+            rows = [r.split("|") for r in used.read_text().splitlines() if r.count("|") >= 4] if used.exists() else []
+            last = [r[3].strip() for r in rows if r[1].strip() == "long" and r[2].strip() != sc.get("id")][-4:]
+            if st in last:
+                bad.append(f"structure '{st}' was used in the last 4 long videos ({last}) - pick another one")
     th = sc.get("thumb") or {}
     if not short and (not th.get("l1") or not th.get("l2")):
         bad.append("thumb needs l1 + l2")
