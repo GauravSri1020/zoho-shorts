@@ -6,6 +6,35 @@ Is file ko har session ke end pe update karo, taaki agla chat yahin se shuru kar
 
 Gaurav jab bhi kuch bhi change karne bole: SABSE PEHLE backup - `backup-YYYY-MM-DD-<kya-badal-rahe-ho>` branch main se banao (aur agar video ka kaam hai to latest Short ka artifact download karo). Tabhi code chhuo. Kuch bigde to us branch se purana code wapas lo.
 
+## 20 Nov 2026 raat (00:00-01:00 IST) - Actions minutes khatam, Flow Shorts haath se, script-writer agent
+
+Gaurav: "Flow se videos schedule nahi ho rahe; daily check karo; long video ke liye script-writer agent (har baar
+alag structure); Shorts sirf Flow se; roz ek trending news Short; channel analysis; monetization kab; bina approval".
+Backup: `backup-2026-11-20-main-before-flow-scriptwriter`, `backup-2026-11-20-long-videos-before-flow-scriptwriter`.
+
+- ASLI WAJAH sab band: 18 Nov ~13:00 IST se HAR GitHub Actions run "The job was not started because recent account
+  payments have failed or your spending limit needs to be increased" (GitHub Free = 2,000 min/month, Nov ka ~$14
+  khatam; reset "in 12 days" = ~1 Dec). Brain, keeper, shorts-daily, longform-daily, Gemini robot - kuch nahi chala.
+  Fix (sirf Gaurav): github.com/settings/billing -> payment method + Actions budget (~$10-20/month) YA 1 Dec tak wait.
+- 18-19 Nov ke 6 cartoon Shorts YouTube pe "removed by the uploader" (Gaurav ne delete kiye) -> Shorts ab sirf Flow avatar.
+- Flow (main account, project "Nov 20 - 00:08"): 12 clips (240 credits). nv2 (tilak + bead bracelet) aur uae5 (bindi)
+  reject; uae5 retake OK; nv2 retake pe Google ka "We noticed some unusual activity" -> dobara try NAHI kiya.
+  Clips -> branch flow-clips (flow/2026-11-20/), build `longform.news_short`, upload YouTube Studio browser se
+  (Studio COOP: Studio se GitHub popup kholo, popup -> window.opener.postMessage).
+  SCHEDULED: fjOlng6WKXY "Nvidia's First Quarter Without Its Founder: $115.8B Revenue" 20 Nov 07:30 IST;
+  00hrSpDNju0 "UAE E-Invoicing Starts 1 January 2027: 42 Days Left" 20 Nov 13:30 IST.
+- Code (long-videos): `.claude/agents/script-writer.md` (subagent), `docs/longform/STRUCTURES.md` (12 structures),
+  `structures-used.md` + validator: long script needs "structure", last 4 se alag. `CHANNEL_INSIGHTS.md` (analysis),
+  `flow-specs/` (Flow Short format), DAILY.md "20 Nov changes" (Flow-only Shorts, 1 trending news Short/day,
+  sources: LinkedIn News, Reddit, HN, Techmeme, Google Trends...). Cartoon queue item -> queue/shorts-parked.
+  main: daily-robot brain allowedTools + Task; autopilot.yml Gemini daily scripts OFF, comments 2x/day (minutes bachao).
+- Scheduled task "Flow Shorts daily (GSX Automation)" 10:47 IST roz (2 Flow Shorts + Studio schedule). DHYAN: abhi
+  cloud-only bana hai - Chrome ke liye Gaurav Claude desktop app mein task kholke "Require this computer" on kare.
+- Channel (lifetime): 3,048 views, 7.2 h, 13 subs; search 60 %, Shorts feed 29.5 %; best = Nvidia news avatar Shorts.
+
+Open: (1) Gaurav: billing / budget. (2) "Require this computer" on the scheduled task. (3) Long video: brain chalega
+jab minutes wapas - pehla script-writer wala video. (4) Purane Gemini issues #180 #184 #185 stale (close kar sakte).
+
 ## 17 Nov 2026 raat - brain kabhi chala hi nahi (token missing) -> Claude ne haath se queue bhari
 
 Gaurav: "summary do", phir "aage ki videos bana ke aage karo", "ye khaali kyun hai, brain agent chala ki nahi check karo".
