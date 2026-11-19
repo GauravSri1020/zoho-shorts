@@ -1,0 +1,59 @@
+{
+ "id": "flow-20261120-nvidia-q3",
+ "priority": "news",
+ "structure": "teardown-explained",
+ "hook_type": "number",
+ "title": "Nvidia's First Quarter Without Its Founder: $115.8B Revenue #Shorts",
+ "description": "Nvidia reported $115.8 billion revenue for Q3 fiscal 2027 (quarter ended 25 Oct 2026), up 103% from a year ago - its first report since the founder resigned as CEO on 12 Nov 2026. Data Center revenue was $107.6 billion; Nvidia guides $130 billion (plus or minus 3%) for Q4. Interim CEO: CFO Colette Kress.\n\nSources (checked 20 Nov 2026):\n- NVIDIA Q3 FY2027 results (8-K / press release, 17 Nov 2026): https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Announces-Financial-Results-for-Third-Quarter-Fiscal-2027/default.aspx\n- NVIDIA CEO transition (8-K, 12 Nov 2026): https://www.sec.gov/Archives/edgar/data/0001045810/000104581026000082/nvidiaannouncesceotransiti.htm\n- CBS News: https://www.cbsnews.com/news/nvidia-earnings-jensen-huang-colette-kress/\n- Yahoo Finance live coverage (FT report on a comeback; CNBC: board not in talks, per a person familiar): https://finance.yahoo.com/technology/live/nvidia-live-updates-interim-ceo-kress-prepares-for-q3-earnings-with-huang-reportedly-planning-comeback-153114076.html\n\nNot investment advice.\nThis video uses an AI-generated presenter (based on the creator), voice and animations. Facts are from the sources above.\n\n#Nvidia #NvidiaEarnings #JensenHuang #ColetteKress #AI #Stocks #Shorts",
+ "tags": [
+  "nvidia earnings",
+  "nvidia q3 2027",
+  "nvidia revenue",
+  "jensen huang",
+  "colette kress",
+  "nvidia interim ceo",
+  "nvidia stock",
+  "nvidia news",
+  "ai chips",
+  "data center revenue"
+ ],
+ "banner": "NVIDIA Q3: $115.8B REVENUE · +103%",
+ "source": "Sources: Nvidia Q3 FY27 results (17 Nov 2026), CBS News, CNBC via Yahoo Finance",
+ "clips": [
+  {
+   "file": "nv1.mp4",
+   "say": "Nvidia just reported its first quarter without its founder as CEO, and the numbers are huge.",
+   "text": "Nvidia just reported its first quarter without its founder as CEO, and the numbers are huge.",
+   "lower": [
+    "JENSEN HUANG",
+    "Resigned as CEO, 12 Nov 2026"
+   ]
+  },
+  {
+   "file": "nv3.mp4",
+   "say": "Data centers alone made one hundred seven point six billion. Next quarter's forecast: one hundred thirty billion.",
+   "text": "Data centers alone made $107.6 billion. Next quarter's forecast: $130 billion.",
+   "lower": [
+    "COLETTE KRESS",
+    "Interim CEO + CFO, Nvidia"
+   ]
+  },
+  {
+   "file": "nv4.mp4",
+   "say": "Reports say the founder wants back in. The board, per CNBC's sources, is not discussing it.",
+   "text": "Reports say the founder wants back in. The board, per CNBC's sources, is not discussing it.",
+   "lower": null
+  },
+  {
+   "file": "nv5.mp4",
+   "say": "So, would you bet on Nvidia without him? Tell me in the comments.",
+   "text": "So, would you bet on Nvidia without him? Tell me in the comments.",
+   "lower": null
+  }
+ ],
+ "video_id": "fjOlng6WKXY",
+ "publish_at": "2026-11-20T02:00:00Z",
+ "uploaded_via": "YouTube Studio (browser) - Actions minutes exhausted",
+ "clips_branch": "flow-clips:flow/2026-11-20/",
+ "flow_project": "main account, project 'Nov 20 - 00:08'"
+}

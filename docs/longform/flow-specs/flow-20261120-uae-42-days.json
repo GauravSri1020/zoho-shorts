@@ -1,0 +1,59 @@
+{
+ "id": "flow-20261120-uae-42-days",
+ "priority": "evergreen",
+ "structure": "deadline-countdown",
+ "hook_type": "number",
+ "title": "UAE E-Invoicing Starts 1 January 2027: 42 Days Left #Shorts",
+ "description": "UAE e-invoicing: businesses with revenue of AED 50 million or more go live on 1 January 2027. Under AED 50 million: appoint an accredited service provider by 31 March 2027 and go live on 1 July 2027. A PDF is not an e-invoice. Not having an accredited provider / system: AED 5,000 per month (FTA). Zoho (Zoho Software Trading LLC) is on the MoF list of accredited providers; Zoho Books sends e-invoices over Peppol.\n\nSources (checked 20 Nov 2026):\n- UAE Ministry of Finance, e-invoicing: https://mof.gov.ae/en/about-us/initiatives/einvoicing/\n- MoF accredited providers list: https://mof.gov.ae/en/about-us/initiatives/einvoicing/pre-approved-einvoicing-service-providers/\n- UAE Electronic Invoicing Guidelines v2.0: https://mof.gov.ae/wp-content/uploads/2026/10/UAE-Electronic-Invoicing-Guidelines_En.pdf\n- Zoho Books UAE e-invoicing: https://www.zoho.com/ae/books/e-invoicing/\n\nGeneral information, not tax or legal advice - check your own dates with the FTA or your adviser.\nThis video uses an AI-generated presenter (based on the creator), voice and animations. Facts are from the sources above.\nIndependent channel. Not affiliated with or endorsed by Zoho Corporation.\n\n#UAEeInvoicing #EInvoicing #ZohoBooks #UAE #FTA #Peppol #VAT #Shorts",
+ "tags": [
+  "uae e-invoicing",
+  "uae e invoicing 2027",
+  "e-invoicing uae deadline",
+  "uae einvoicing zoho books",
+  "zoho books uae",
+  "peppol uae",
+  "fta e-invoicing",
+  "accredited service provider uae",
+  "uae vat e-invoice",
+  "e-invoice penalty uae"
+ ],
+ "banner": "UAE E-INVOICING · 42 DAYS LEFT",
+ "source": "Sources: UAE MoF e-invoicing page + Guidelines v2.0, FTA, Zoho (checked 20 Nov 2026)",
+ "clips": [
+  {
+   "file": "uae1.mp4",
+   "say": "In forty-two days, big UAE businesses must send real e-invoices, and a PDF will not count.",
+   "text": "In 42 days, big UAE businesses must send real e-invoices, and a PDF will not count.",
+   "lower": null
+  },
+  {
+   "file": "uae2.mp4",
+   "say": "If your revenue is fifty million dirhams or more, you go live on the first of January.",
+   "text": "If your revenue is AED 50 million or more, you go live on 1 January.",
+   "lower": null
+  },
+  {
+   "file": "uae3.mp4",
+   "say": "Under fifty million? Appoint your provider by March thirty-first, and go live on July first.",
+   "text": "Under AED 50 million? Appoint your provider by 31 March, and go live on 1 July.",
+   "lower": null
+  },
+  {
+   "file": "uae4.mp4",
+   "say": "Having no approved provider can cost five thousand dirhams a month, so check your setup this week.",
+   "text": "Having no approved provider can cost AED 5,000 a month, so check your setup this week.",
+   "lower": null
+  },
+  {
+   "file": "uae5.mp4",
+   "say": "Zoho is on the official provider list, and Zoho Books sends e-invoices over Peppol. Follow for the setup steps.",
+   "text": "Zoho is on the official provider list, and Zoho Books sends e-invoices over Peppol. Follow for the setup steps.",
+   "lower": null
+  }
+ ],
+ "video_id": "00hrSpDNju0",
+ "publish_at": "2026-11-20T08:00:00Z",
+ "uploaded_via": "YouTube Studio (browser) - Actions minutes exhausted",
+ "clips_branch": "flow-clips:flow/2026-11-20/",
+ "flow_project": "main account, project 'Nov 20 - 00:08'"
+}
