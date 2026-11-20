@@ -34,8 +34,15 @@ schedule se pehle dikhana". Backup: `backup-2026-11-20-main-before-engine-restor
 - Long video zoho-books-automation (before-after-demo, 7:00, recurring invoices + reminders + workflow rules, real books
   screens), local render 1080p -> longform-previews -> longform-upload (4K) -> SCHEDULED https://youtube.com/watch?v=EhSLe1zlEzI
   public 21 Nov 18:30 IST, thumbnail set (channel ab verified).
-- Shorts: Run workflow task assemble (run 44797509836) dono jobs bana raha tha (40+ min, Gemini) - result agle chat mein
-  check karo: Studio / jobs/*/job.json status / branch previews.
+- Shorts: run 44797509836 ne pehle 3 PURANE waiting jobs faceless bana ke schedule kar diye (0859-3 Analytics,
+  0921-2 Hotelogix, 0940-4 Zoho Desk = duplicate topics, unverified steps) -> YhuHrqtXsZU, XLhGo9WLVTk, 2KmrL9GwJ2E
+  Gaurav ke OK se PRIVATE (delete nahi), slots state se free. Phir credit notes pe Gemini TTS 429 + edge fail mein
+  70 min atka -> 90 min timeout cancel. SEEKH: assemble chalane se pehle purane waiting jobs check / skip karo; TTS
+  ka per-minute wait loop timeout tak atak sakta hai.
+- Run 44811824894: Campaigns Short mein engine ne nakli "Zoho Books" list screen bana di (zoho_screens 35, QA ne
+  pakda). Fix: jis step ki asli screen nahi, uska screen = presenter card. Run 44813147677: Campaigns QA 90 ->
+  SCHEDULED https://youtube.com/shorts/_PWbItoyYAA 21 Nov 07:30 IST. Credit notes QA 66 (card photo ke kapde +
+  edge voice) -> Gaurav: SKIP.
 - Open: (1) brain ke liye secret CLAUDE_CODE_OAUTH_TOKEN abhi bhi nahi (issue #177) -> roz ka long video tabhi
   automatic; Gaurav: laptop pe `claude setup-token` -> Settings > Secrets > Actions. (2) cn2 kada / zc1 baal - Shorts dekh
   ke Gaurav decide kare (retake = 20 credits each). (3) leadengine-v4 private hai, wo apne minutes khata hai.

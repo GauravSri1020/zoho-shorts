@@ -1,7 +1,7 @@
 {
  "id": "20261121-0100-1",
  "niche": "zoho",
- "status": "qa_failed",
+ "status": "skip",
  "upload": true,
  "created": "2026-11-20T19:30:00",
  "title": "Zoho Books Credit Notes: Refund or Apply to an Invoice #Shorts",
@@ -206,5 +206,6 @@
  ],
  "look": "wearing a light blue oxford shirt with the sleeves rolled up, in a bright co-working space with large windows, wooden tables and plants",
  "issue": null,
- "note": "Made by hand in the Claude chat of 20 Nov 2026 night (Actions blocked); Flow clips = HOOK + RESULT only (Gaurav: Flow kam)."
+ "note": "Made by hand in the Claude chat of 20 Nov 2026 night (Actions blocked); Flow clips = HOOK + RESULT only (Gaurav: Flow kam).",
+ "skip_reason": "21 Nov: QA 66 (presenter outfit + voice change); Gaurav: skip."
 }
