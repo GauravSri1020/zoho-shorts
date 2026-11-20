@@ -1,0 +1,39 @@
+{
+ "engine": "flow",
+ "min_score": 70,
+ "min_criterion": 55,
+ "voice": "edge",
+ "tech_problems": [],
+ "scores": {
+  "hook": 68,
+  "avatar": 65,
+  "continuity": 55,
+  "voice": 62,
+  "zoho_screens": 72,
+  "pacing": 70,
+  "captions": 72,
+  "audio": 68,
+  "value": 70,
+  "polish": 62
+ },
+ "overall": 66.0,
+ "issues": [
+  "0:13 Presenter outfit changes abruptly from blue shirt to dark suit jacket",
+  "0:19 Presenter outfit changes again to a white linen shirt",
+  "0:05 Voice timbre shifts noticeably between host audio and AI voiceover"
+ ],
+ "approved": false,
+ "fatal": false,
+ "black_frames": [],
+ "voice_changes": [
+  "0:05-0:24 AI narrator voice used for steps, host voice used at intro (0:00) and conclusion (0:25)"
+ ],
+ "blockers": [
+  "continuity"
+ ],
+ "fixes": [
+  "Keep presenter attire consistent across all beats",
+  "Standardize audio track with a uniform voice profile throughout"
+ ],
+ "vs_references": "Follows standard Zoho short tutorial structures well, though mid-video outfit shifts lower overall visual polish compared to top-ranked reference Shorts."
+}

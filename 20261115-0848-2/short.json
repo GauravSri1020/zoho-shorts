@@ -1,0 +1,155 @@
+{
+ "title": "Automate Yettel Zoho Platform: Connect CRM, Sales & HR #Shorts",
+ "description": "Learn how to automate sales and HR data intake in Zoho CRM for telecom subscribers. Build webforms and workflow rules with exact triggers and Zoho People integration.\n\n1. Create a new Zoho Flow workflow triggered by inbound webhooks or ad platforms.\n2. Add an AI step to parse incoming contact details and classify them as leads or HR candidates.\n3. Direct qualified sales leads into Zoho CRM and HR candidate profiles into Zoho People automatically.\n\nAPI / tool used:\n- name: Zoho CRM Upsert Leads API\n- endpoint: POST https://www.zohoapis.com/crm/v6/Leads/upsert\n- scope: ZohoCRM.modules.leads.CREATE\n- docs: https://www.zoho.com/crm/developer/docs/api/v6/upsert-records.html\n\nAI + Zoho automations every day - follow @GSXAutomation\n\nWhat inspired this: https://news.google.com/rss/articles/CBMi2AFBVV95cUxNN1VVSzluSUJJcmJWV2NOb1A3RlhzNnFlV1pGNU9ldC1GdXBpVWxKSDd0LXM1ampuUExtX1RmaTQyMkMxUmlHbEgtMmdzeF81RVVtYWpaLUtvcEViTS1NWXlOWlU0TU1MWXNKNXJFcVZBZnh6WDcwOUwzem1JZzBsdDl4UEVlai13Y3Itb2h6cnZmbGlrcTdLN1BMNFAtdGtQMnYwTUcyNjk4bjh6Ny1iSzVWNTd3QUdCbVpCUnF6bkJiTlVlbkN6X3EzVmRraVZrUVJ3Y2xsdVQ?oc=5\n\nThis video uses an AI-generated presenter and voice.\nIndependent channel. Not affiliated with or endorsed by Zoho Corporation. Zoho is a trademark of Zoho Corporation.\n\n#Shorts #Zoho #AIAutomation #ZohoCRM #AIAgents",
+ "script": {
+  "title": "Automate Yettel Zoho Platform: Connect CRM, Sales & HR",
+  "hook_text": "Yettel Launches Zoho Platform for Business",
+  "thumb_text": "Automate *Zoho CRM* Operations Fast",
+  "app_label": "Zoho CRM Automation",
+  "lines": [
+   {
+    "beat": "HOOK",
+    "say": "Yettel just launched the Zoho platform for business subscribers, but unintegrated apps can leave your sales and HR isolated.",
+    "tts": "Yettel just launched the Zoho platform for business subscribers, but unintegrated apps can leave your sales and HR isolated.",
+    "card": "Isolated Business Apps",
+    "screen": null
+   },
+   {
+    "beat": "PROBLEM",
+    "say": "When Yettel subscribers activate bundled Zoho access, marketing intake, sales leads, and HR onboarding remain stuck in manual silos.",
+    "tts": "When Yettel subscribers activate bundled Zoho access, marketing intake, sales leads, and HR onboarding remain stuck in manual silos.",
+    "card": "Isolated Data Silos",
+    "screen": null
+   },
+   {
+    "beat": "FIX",
+    "say": "You can connect sales routing and onboarding directly inside Zoho CRM using native webforms and automated workflows.",
+    "tts": "You can connect sales routing and onboarding directly inside Zoho CRM using native webforms and automated workflows.",
+    "card": "Zoho CRM Automation Setup",
+    "screen": {
+     "app": "crm",
+     "view": "settings",
+     "path": [
+      "Setup",
+      "Channels",
+      "Webforms"
+     ],
+     "heading": "Webforms",
+     "real": "crm/webforms",
+     "click": "Create Webform",
+     "tip": "Create webforms for inbound data intake"
+    }
+   },
+   {
+    "beat": "STEP 1",
+    "say": "First, open Setup, navigate to Channels, and click Webforms to build your automated inbound subscriber lead capture form.",
+    "tts": "First, open Setup, navigate to Channels, and click Webforms to build your automated inbound subscriber lead capture form.",
+    "card": "Setup > Channels > Webforms",
+    "screen": {
+     "app": "crm",
+     "view": "settings",
+     "path": [
+      "Setup",
+      "Channels",
+      "Webforms"
+     ],
+     "heading": "Webforms",
+     "real": "crm/webforms",
+     "click": "Create Webform",
+     "tip": "Capture leads directly into CRM"
+    }
+   },
+   {
+    "beat": "STEP 2",
+    "say": "Next, navigate to Automation, click Workflow Rules, and click Create Rule to trigger actions on new inbound record entries.",
+    "tts": "Next, navigate to Automation, click Workflow Rules, and click Create Rule to trigger actions on new inbound record entries.",
+    "card": "Setup > Automation > Workflow Rules",
+    "screen": {
+     "app": "crm",
+     "view": "settings",
+     "path": [
+      "Setup",
+      "Automation",
+      "Workflow Rules"
+     ],
+     "heading": "Workflow Rules",
+     "real": "crm/workflow_rules",
+     "click": "Create Rule",
+     "tip": "Trigger rules on new records"
+    }
+   },
+   {
+    "beat": "STEP 3",
+    "say": "Then, set the trigger to On Record Action > Create, set condition to Department equals Sales, and select Assign Owner to route leads.",
+    "tts": "Then, set the trigger to On Record Action, Create, set condition to Department equals Sales, and select Assign Owner to route leads.",
+    "card": "Trigger: On Create > Assign Owner",
+    "screen": {
+     "app": "crm",
+     "view": "settings",
+     "path": [
+      "Setup",
+      "Automation",
+      "Workflow Rules",
+      "Rule Details"
+     ],
+     "heading": "Rule Details",
+     "real": "crm/workflow_rule_details",
+     "click": "Assign Owner",
+     "tip": "Trigger On Create and assign owner for Sales"
+    }
+   },
+   {
+    "beat": "STEP 4",
+    "say": "Finally, for HR candidates, add an Instant Action using a Custom Function or Zoho Flow webhook to push data directly to Zoho People.",
+    "tts": "Finally, for HR candidates, add an Instant Action using a Custom Function or Zoho Flow webhook to push data directly to Zoho People.",
+    "card": "Action: Webhook / Function to Zoho People",
+    "screen": {
+     "app": "crm",
+     "view": "settings",
+     "path": [
+      "Setup",
+      "Automation",
+      "Workflow Rules",
+      "Rule Details"
+     ],
+     "heading": "Rule Details",
+     "real": "crm/workflow_rule_details",
+     "click": "Call Webhook",
+     "tip": "Route HR candidates to Zoho People via Webhook or Zoho Flow"
+    }
+   },
+   {
+    "beat": "RESULT",
+    "say": "This unifies your telecom intake, sales pipeline, and HR operations into one automated workflow.",
+    "tts": "This unifies your telecom intake, sales pipeline, and HR operations into one automated workflow.",
+    "card": "Unified Operations Running",
+    "screen": null
+   }
+  ],
+  "api": {
+   "name": "Zoho CRM Upsert Leads API",
+   "endpoint": "POST https://www.zohoapis.com/crm/v6/Leads/upsert",
+   "scope": "ZohoCRM.modules.leads.CREATE",
+   "docs": "https://www.zoho.com/crm/developer/docs/api/v6/upsert-records.html"
+  },
+  "code": null,
+  "test_before_recording": [
+   "Verify Webforms page loads under CRM Setup > Channels > Webforms.",
+   "Ensure Create Rule dialog opens properly under CRM Setup > Automation > Workflow Rules.",
+   "Confirm Assign Owner action and Webhook/Zoho Flow action trigger correctly on record creation."
+  ],
+  "description": "Learn how to automate sales and HR data intake in Zoho CRM for telecom subscribers. Build webforms and workflow rules with exact triggers and Zoho People integration.",
+  "tags": [
+   "ZohoCRM",
+   "ZohoAutomation",
+   "Yettel",
+   "WorkflowRules",
+   "SalesAutomation",
+   "HRTech",
+   "BusinessTools",
+   "CRMSetup",
+   "ZohoPeople",
+   "ZohoFlow"
+  ]
+ }
+}

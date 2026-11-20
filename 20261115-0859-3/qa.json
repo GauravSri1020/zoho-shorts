@@ -1,0 +1,30 @@
+{
+ "engine": "flow",
+ "min_score": 70,
+ "min_criterion": 55,
+ "voice": "gemini",
+ "tech_problems": [],
+ "scores": {
+  "hook": 95,
+  "avatar": 95,
+  "continuity": 98,
+  "voice": 95,
+  "zoho_screens": 95,
+  "pacing": 92,
+  "captions": 95,
+  "audio": 95,
+  "value": 95,
+  "polish": 95
+ },
+ "overall": 95.0,
+ "issues": [],
+ "approved": true,
+ "fatal": false,
+ "black_frames": [],
+ "voice_changes": [],
+ "blockers": [],
+ "fixes": [
+  "Maintain the current high production standard with consistent lighting and clear UI steps."
+ ],
+ "vs_references": "This Short matches the clean layout, professional pacing, and crisp UI demonstrations of the best Zoho tutorial shorts in the GSX Automation channel."
+}

@@ -1,0 +1,28 @@
+{
+ "engine": "flow",
+ "min_score": 70,
+ "min_criterion": 55,
+ "voice": "gemini",
+ "tech_problems": [],
+ "scores": {
+  "hook": 95,
+  "avatar": 95,
+  "continuity": 95,
+  "voice": 95,
+  "zoho_screens": 95,
+  "pacing": 95,
+  "captions": 95,
+  "audio": 95,
+  "value": 95,
+  "polish": 95
+ },
+ "overall": 95.0,
+ "issues": [],
+ "approved": true,
+ "fatal": false,
+ "black_frames": [],
+ "voice_changes": [],
+ "blockers": [],
+ "fixes": [],
+ "vs_references": "This Short matches the clean structured layout, high-contrast captions, and step-by-step UI clarity found in the best reference shorts."
+}

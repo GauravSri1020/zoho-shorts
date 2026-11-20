@@ -1,0 +1,114 @@
+{
+ "title": "Hotelogix Integrates Zoho Books: Automate Hotel Accounting #Shorts",
+ "description": "Automate hotel accounting by syncing Hotelogix with Zoho Books.\n\n1. In Hotelogix settings, select Integrations and connect your Zoho Books account.\n2. Map room revenue categories and local tax rates to corresponding Zoho Books ledger accounts.\n3. Turn on automatic sync to push daily checkout folios and guest payments in real time.\n\nAI + Zoho automations every day - follow @GSXAutomation\n\nWhat inspired this: https://news.google.com/rss/articles/CBMi6gFBVV95cUxONGFBMjVhVjlKLWxaZUJFN3BGSFNxMnRWWXFIRnd2Y0ZCMEZjOGtZNTZyRFJNY21Bd0tmaDhUZnVVT2V1MGdKOVFGRHNHNzVSelFXcEpjSnp6aWszcVBRamtDcV8yajJGbWRmMEdOTEZlbVllWXJUTkZSNkoxREZmaTY0Y3Z5TGtwczlFUzFsRUdJZnhkSzJJMjZDdDFTUjVEMVRDc0F4ZGZEYUZwNnNuRy1UTTJoVjZJYTdqN3IyX0UtQ0laZ2lfNUZUdDNjMGtjQlRtaXVtS2w5UnVEdFh0WkZFUVgzQzczdWfSAe4BQVVfeXFMTVV0UGREaDRNQkVGRnQ1eEdnRm1VRmxudTJKN1hGb3RJR0ZnWkRLLU51dTJsYnNXVFhrVXpOVGdnVVBkYWNoeHlYWFM5MEx4MXJob0NWMW4zcEVMVXkzc2NZekhBUS1WR0dmbVRnTV9WNWYzMmxvN2V4MWw3MEJuMWEwdE5DVUZLclNiVDFxeUNySXRkVktCUzMzOWs1U0FZTXZkTlpvUWFMRHlFdFBLdG5wT1o5eEZfM3pWc3A0cUVkOXVMbWh1anZLRFpTU2t4dU11TjNoMTBtZlZKRVozbkFhVnh6ZnF3eWI1V2drUQ?oc=5\n\nThis video uses an AI-generated presenter and voice.\nIndependent channel. Not affiliated with or endorsed by Zoho Corporation. Zoho is a trademark of Zoho Corporation.\n\n#Shorts #Zoho #AIAutomation #ZohoCRM #AIAgents",
+ "script": {
+  "title": "Hotelogix Integrates Zoho Books: Automate Hotel Accounting",
+  "hook_text": "Hotelogix + Zoho Books Integration",
+  "thumb_text": "Zoho Books *Hotelogix Sync*",
+  "app_label": "Zoho Books + Hotelogix",
+  "lines": [
+   {
+    "beat": "HOOK",
+    "say": "Hotelogix now integrates with Zoho Books, so you can stop manually retyping hotel folios every night.",
+    "tts": "Hotelogix now integrates with Zoho Books, so you can stop manually retyping hotel folios every night.",
+    "card": "Hotelogix Integration Launched",
+    "screen": null
+   },
+   {
+    "beat": "PROBLEM",
+    "say": "Hotels waste hours during the night audit manually syncing room revenue and guest charges.",
+    "tts": "Hotels waste hours during the night audit manually syncing room revenue and guest charges.",
+    "card": "Manual Folio Data Entry",
+    "screen": null
+   },
+   {
+    "beat": "FIX",
+    "say": "Use the new Hotelogix integration to automatically sync your guest invoices and revenue data.",
+    "tts": "Use the new Hotelogix integration to automatically sync your guest invoices and revenue data.",
+    "card": "Books > Integrations",
+    "screen": {
+     "app": "books",
+     "view": "settings",
+     "path": [
+      "Settings",
+      "Integrations"
+     ],
+     "heading": "Integrations",
+     "real": "books/integrations",
+     "click": "Integrations",
+     "tip": "View marketplace integrations"
+    }
+   },
+   {
+    "beat": "STEP 1",
+    "say": "In your Hotelogix dashboard, navigate to Integrations and authorize your Zoho Books organization account.",
+    "tts": "In your Hotelogix dashboard, navigate to Integrations and authorize your Zoho Books organization account.",
+    "card": "Hotelogix > Connect Books",
+    "screen": null
+   },
+   {
+    "beat": "STEP 2",
+    "say": "Map your room revenue categories and tax rates to the correct Zoho Books ledger accounts.",
+    "tts": "Map your room revenue categories and tax rates to the correct Zoho Books ledger accounts.",
+    "card": "Map Ledger Accounts",
+    "screen": {
+     "app": "books",
+     "view": "settings",
+     "path": [
+      "Settings",
+      "Chart of Accounts"
+     ],
+     "heading": "Chart of Accounts",
+     "real": "books/chartofaccounts",
+     "click": "Chart of Accounts",
+     "tip": "Verify revenue and tax accounts"
+    }
+   },
+   {
+    "beat": "STEP 3",
+    "say": "Enable automatic sync to push daily checkout folios and payments into Zoho Books in real time.",
+    "tts": "Enable automatic sync to push daily checkout folios and payments into Zoho Books in real time.",
+    "card": "Enable Real-Time Sync",
+    "screen": null
+   },
+   {
+    "beat": "STEP 4",
+    "say": "Check with your tax advisor to ensure your ledger mapping complies with local reporting requirements.",
+    "tts": "Check with your tax advisor to ensure your ledger mapping complies with local reporting requirements.",
+    "card": "Compliance Check",
+    "screen": null
+   },
+   {
+    "beat": "RESULT",
+    "say": "Now, nightly revenue and tax ledgers sync hands-free, eliminating errors and saving your staff hours.",
+    "tts": "Now, nightly revenue and tax ledgers sync hands-free, eliminating errors and saving your staff hours.",
+    "card": "Zero Manual Entry",
+    "screen": {
+     "app": "books",
+     "view": "list",
+     "path": [
+      "Sales",
+      "Invoices"
+     ],
+     "heading": "All Invoices",
+     "real": "books/invoices_list",
+     "click": "All Invoices",
+     "tip": "View synced invoices"
+    }
+   }
+  ],
+  "api": null,
+  "code": null,
+  "test_before_recording": [
+   "Verify Hotelogix admin access.",
+   "Confirm Zoho Books chart of accounts setup."
+  ],
+  "description": "Automate hotel accounting by syncing Hotelogix with Zoho Books.",
+  "tags": [
+   "Zoho Books",
+   "Hotelogix",
+   "Automation",
+   "Accounting"
+  ]
+ }
+}

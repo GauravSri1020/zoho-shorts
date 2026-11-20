@@ -1,0 +1,182 @@
+{
+ "title": "Zoho Desk Launched Blended AI Agents with Human Oversight #Shorts",
+ "description": "Learn how to use Zoho Desk's new Blended AI Agents with human oversight. Protect customer trust by requiring rep approval for AI-generated responses.\n\n1. Go to Zoho Desk Setup, select Zia AI, and open Blended AI Agent Rules.\n2. Set a confidence threshold limit requiring manual agent approval for refunds or contract queries.\n3. Test the AI response draft workflow in the agent workstation before publishing live.\n\nAI + Zoho automations every day - follow @GSXAutomation\n\nWhat inspired this: https://news.google.com/rss/articles/CBMi9wFBVV95cUxOOGp5RG9MVGNQVGl0WktDeWhUTnJiRzl4Qk10TmpsS2dubGtIOFlUc3pNMHJucXp6Y0lTZnhCV2FuUjhHVS1NQkNYSlJ3Z1V1ZzQ3THB4a2JEaVo2MkZKQmNyS0g4dWhwNFFPV0J0SnBGRkpmTWtIRThlTGhxODFJSTJoY1J6T2VmYUsySF9WTmVmYWZwU2M5d1h1S3d2RF8yX3ItVkN0a3VzLURmZEdGYmtHcnJodEtiYlhLUTRWQnlUU2E1QWhZY3ljdjVZWmRqQjRZZllpZFRNNlR3X2d4dnBzdGJrYm9jS09fQkUyTkduQTF3UTFV0gH8AUFVX3lxTE5vdWc3SkdkeFp3NUtvTGw2bW01Y29CekxGNEhHM1JveHZJVXJZRjlUQ3ZyNjc0QXR1TXBRb2Y1ajctR1UzcXQ4M3BtdXBWU250YmZud08xbWNZYm5rbW5Udy1zTWxPaVVqb0tzcTYxWjVPaTM1TGR4RXIzTGFaVjVGR25rbmhHSHR5Q21BN1FsTVhIWF9xM1EzOVFscmpXRl95WElva1gwTzU0dzJ2Vmc5Y0VSbWZaVmZ0RHZVVkxrOE1SS3VQRGtmNjUxNmxMc0FrQW1vMkg2QlJrbDJsTk9PSGZ0RW05aExlRl94S1laOUg0QTllLVg1WTdyRA?oc=5\n\nThis video uses an AI-generated presenter and voice.\nIndependent channel. Not affiliated with or endorsed by Zoho Corporation. Zoho is a trademark of Zoho Corporation.\n\n#Shorts #Zoho #AIAutomation #ZohoCRM #AIAgents",
+ "script": {
+  "title": "Zoho Desk Launched Blended AI Agents with Human Oversight",
+  "hook_text": "Zoho Launches Blended AI Agents",
+  "thumb_text": "Zoho Blended AI: Human Oversight",
+  "app_label": "Zoho Desk + Zia AI",
+  "lines": [
+   {
+    "beat": "HOOK",
+    "say": "Zoho just launched Blended AI Agents to automate customer service while keeping your human team in control.",
+    "tts": "Zoho just launched Blended AI Agents to automate customer service while keeping your human team in control.",
+    "card": "Zoho Blended AI Launch",
+    "screen": null
+   },
+   {
+    "beat": "PROBLEM",
+    "say": "Unsupervised AI agents risk giving incorrect policy information or damaging customer trust on sensitive support tickets.",
+    "tts": "Unsupervised AI agents risk giving incorrect policy information or damaging customer trust on sensitive support tickets.",
+    "card": "Unsupervised AI Risks",
+    "screen": null
+   },
+   {
+    "beat": "FIX",
+    "say": "You can now configure human oversight settings within Zoho Desk to ensure Zia AI agents work alongside your team.",
+    "tts": "You can now configure human oversight settings within Zoho Desk to ensure Zia AI agents work alongside your team.",
+    "card": "Zoho Desk > Zia AI",
+    "screen": {
+     "app": "desk",
+     "view": "settings",
+     "path": [
+      "Setup",
+      "Zia AI"
+     ],
+     "heading": "Zia AI Settings",
+     "fields": [
+      [
+       "Agent Mode",
+       "Blended (Hybrid)"
+      ]
+     ],
+     "toggles": [
+      [
+       "Enable Human Oversight",
+       true
+      ]
+     ],
+     "real": null,
+     "click": "Enable Human Oversight",
+     "tip": "Turn on hybrid AI supervision"
+    }
+   },
+   {
+    "beat": "STEP 1",
+    "say": "First, navigate to your Zoho Desk Setup and open the Zia AI configuration panel to access your agent settings.",
+    "tts": "First, navigate to your Zoho Desk Setup and open the Zia AI configuration panel to access your agent settings.",
+    "card": "Setup > Zia AI",
+    "screen": {
+     "app": "desk",
+     "view": "settings",
+     "path": [
+      "Setup",
+      "Zia AI"
+     ],
+     "heading": "Zia AI Configuration",
+     "columns": [
+      "Feature",
+      "Status"
+     ],
+     "rows": [
+      [
+       "Blended AI Agents",
+       "Enabled"
+      ],
+      [
+       "Human Oversight",
+       "Active"
+      ]
+     ],
+     "real": null,
+     "click": "Zia AI",
+     "tip": "Access AI configuration"
+    }
+   },
+   {
+    "beat": "STEP 2",
+    "say": "Next, define your oversight preferences so the AI drafts responses for review instead of sending them automatically.",
+    "tts": "Next, define your oversight preferences so the AI drafts responses for review instead of sending them automatically.",
+    "card": "Set Oversight Preferences",
+    "screen": {
+     "app": "desk",
+     "view": "form",
+     "path": [
+      "Zia AI",
+      "Oversight Settings"
+     ],
+     "heading": "Oversight Configuration",
+     "fields": [
+      [
+       "Default Action",
+       "Draft for Review"
+      ],
+      [
+       "Review Required",
+       "All High-Priority Tickets"
+      ]
+     ],
+     "toggles": [
+      [
+       "Auto-send low-risk replies",
+       true
+      ]
+     ],
+     "real": null,
+     "click": "Draft for Review",
+     "tip": "Enforce human review for AI drafts"
+    }
+   },
+   {
+    "beat": "STEP 3",
+    "say": "Finally, monitor your agent workstation where Zia AI drafts appear, allowing your team to approve or edit before sending.",
+    "tts": "Finally, monitor your agent workstation where Zia AI drafts appear, allowing your team to approve or edit before sending.",
+    "card": "Agent Workstation Review",
+    "screen": {
+     "app": "desk",
+     "view": "form",
+     "path": [
+      "Tickets",
+      "Active Ticket",
+      "Zia AI Assistant"
+     ],
+     "heading": "Ticket Response Draft",
+     "fields": [
+      [
+       "Status",
+       "Pending Review"
+      ],
+      [
+       "Zia AI Draft",
+       "Suggested reply based on knowledge base"
+      ]
+     ],
+     "toggles": [
+      [
+       "Approve and Send",
+       false
+      ]
+     ],
+     "real": null,
+     "click": "Approve and Send",
+     "tip": "One-click approval in rep queue"
+    }
+   },
+   {
+    "beat": "RESULT",
+    "say": "This safely automates routine support tasks while ensuring your human team retains complete control over critical customer responses.",
+    "tts": "This safely automates routine support tasks while ensuring your human team retains complete control over critical customer responses.",
+    "card": "Safe Support Automation",
+    "screen": null
+   }
+  ],
+  "api": null,
+  "code": null,
+  "test_before_recording": [
+   "Verify Zia AI features are active in your Zoho Desk edition",
+   "Create a test ticket to confirm draft routing to the agent workstation"
+  ],
+  "description": "Learn how to use Zoho Desk's new Blended AI Agents with human oversight. Protect customer trust by requiring rep approval for AI-generated responses.",
+  "tags": [
+   "Zoho Desk",
+   "Zia AI",
+   "Blended AI Agents",
+   "Customer Support",
+   "AI Automation",
+   "Zoho Setup",
+   "Helpdesk AI",
+   "AI Supervision",
+   "Customer Service"
+  ]
+ }
+}

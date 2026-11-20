@@ -1,0 +1,34 @@
+{
+ "engine": "flow",
+ "min_score": 70,
+ "min_criterion": 55,
+ "voice": "gemini",
+ "tech_problems": [],
+ "scores": {
+  "hook": 72,
+  "avatar": 70,
+  "continuity": 74,
+  "voice": 75,
+  "zoho_screens": 68,
+  "pacing": 71,
+  "captions": 73,
+  "audio": 74,
+  "value": 70,
+  "polish": 72
+ },
+ "overall": 71.9,
+ "issues": [
+  "0:18 - Step 1 mentions Hotelogix dashboard navigation, but visual displays Zoho Books Settings screen.",
+  "0:34 - Steps 3 and 4 re-use identical visual assets for different instructional beats."
+ ],
+ "approved": true,
+ "fatal": false,
+ "black_frames": [],
+ "voice_changes": [],
+ "blockers": [],
+ "fixes": [
+  "Align Step 1 visual UI directly with the mentioned Hotelogix dashboard interface.",
+  "Use distinct UI screenshots for Step 4 to avoid repeating Step 3 visuals."
+ ],
+ "vs_references": "Compares well in layout structure and voice consistency, though visual screen alignment slightly lags behind top reference shorts."
+}

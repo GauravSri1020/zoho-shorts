@@ -1,0 +1,33 @@
+{
+ "engine": "flow",
+ "min_score": 70,
+ "min_criterion": 55,
+ "voice": "edge",
+ "tech_problems": [],
+ "scores": {
+  "hook": 90,
+  "avatar": 92,
+  "continuity": 92,
+  "voice": 88,
+  "zoho_screens": 88,
+  "pacing": 90,
+  "captions": 92,
+  "audio": 90,
+  "value": 90,
+  "polish": 90
+ },
+ "overall": 90.0,
+ "issues": [],
+ "approved": true,
+ "fatal": false,
+ "black_frames": [],
+ "voice_changes": [
+  "00:06 Edge voice narration starts for Step 1-4 graphics breakdown",
+  "00:34 Creator live voice returns for the final CTA talking head segment"
+ ],
+ "blockers": [],
+ "fixes": [
+  "Include actual live screen recordings of the Zoho Campaigns dashboard UI alongside the graphic cards to demonstrate real-time workflow setup."
+ ],
+ "vs_references": "Matches the high production quality, structured 3-part layout, and crisp visual pacing of top-performing Zoho tech Shorts."
+}
