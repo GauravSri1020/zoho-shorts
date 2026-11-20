@@ -1,0 +1,68 @@
+{
+ "id": "flow-20261120-zoho-campaigns-whatsapp",
+ "priority": "evergreen",
+ "structure": "before-after-demo",
+ "hook_type": "result-first",
+ "title": "WhatsApp Marketing in Zoho Campaigns: What Changed in the Rebuild #Shorts",
+ "description": "Zoho rebuilt Zoho Campaigns (announced 29 Oct 2026): a new editor and workspace, native WhatsApp (bulk campaigns with Meta-approved templates, trigger-based messages, WhatsApp steps in workflows), MCP support so AI agents can build, schedule and analyse campaigns, and - in Zoho's internal testing - 100,000 emails sent up to 4x faster. Per zoho.com the new version is currently for new users; existing accounts stay unchanged for now. WhatsApp sending is in paid plans.\n\nSources (checked 20 Nov 2026):\n- Zoho press release (29 Oct 2026): https://www.marketingdive.com/press-release/20261028-zoho-rebuilds-campaigns-platform-with-faster-simpler-campaign-creation-and-1/\n- Zoho Campaigns WhatsApp marketing (official): https://www.zoho.com/campaigns/whatsapp-marketing.html\n- Zoho Campaigns (official, availability FAQ): https://www.zoho.com/campaigns/\n- Small Business Trends: https://smallbiztrends.com/zoho-rebuilds-campaigns-with-whatsapp-sms-and-ai-agents/\n- Malay Mail / Media OutReach: https://www.malaymail.com/news/money/mediaoutreach/2026/11/13/zoho-rebuilds-campaigns-platform-with-simpler-email-and-sms-native-whatsapp-and-ai-agent-workflows/500803\n\nThis video uses an AI-generated presenter (based on the creator), voice and animations. Facts are from the sources above.\nNot affiliated with Zoho.\n\n#ZohoCampaigns #WhatsAppMarketing #Zoho #EmailMarketing #MCP #UAE #Shorts",
+ "tags": [
+  "zoho campaigns",
+  "whatsapp marketing",
+  "zoho campaigns whatsapp",
+  "whatsapp marketing zoho",
+  "zoho campaigns 2026",
+  "zoho mcp",
+  "email marketing zoho",
+  "whatsapp business marketing",
+  "zoho new features",
+  "whatsapp bulk message"
+ ],
+ "banner": "ZOHO CAMPAIGNS · NOW WITH WHATSAPP",
+ "source": "Sources: Zoho press release (29 Oct 2026), zoho.com/campaigns (checked 20 Nov 2026)",
+ "look": "He wears a plain olive-green polo shirt, short neat hair, trimmed light stubble, sitting at a light wooden desk in a bright home office with a green plant and a white wall behind him",
+ "clips": [
+  {
+   "file": "zc1.mp4",
+   "say": "Zoho Campaigns was rebuilt from scratch, and WhatsApp marketing is now built right in.",
+   "text": "Zoho Campaigns was rebuilt from scratch, and WhatsApp marketing is now built right in.",
+   "lower": null,
+   "gesture": "He holds up his phone briefly, then lowers it and smiles",
+   "prompt": "Vertical 9:16 medium shot of the presenter talking straight to camera. He wears a plain olive-green polo shirt, short neat hair, trimmed light stubble, sitting at a light wooden desk in a bright home office with a green plant and a white wall behind him; his forehead is completely plain and clean skin - no tilak, no bindi, no dot; wrists bare - no bracelet, beads, thread. He holds up his phone briefly, then lowers it and smiles. He says: \"Zoho Campaigns was rebuilt from scratch, and WhatsApp marketing is now built right in.\" His lips match every word. Calm, confident news-presenter tone, natural light, no text on screen."
+  },
+  {
+   "file": "zc2.mp4",
+   "say": "Before, it was email and SMS. Now you send bulk WhatsApp campaigns with Meta-approved templates.",
+   "text": "Before, it was email and SMS. Now you send bulk WhatsApp campaigns with Meta-approved templates.",
+   "lower": [
+    "ZOHO CAMPAIGNS",
+    "WhatsApp sending: paid plans"
+   ],
+   "gesture": "He gestures to his left for 'before', then to his right for 'now'",
+   "prompt": "Vertical 9:16 medium shot of the presenter talking straight to camera. He wears a plain olive-green polo shirt, short neat hair, trimmed light stubble, sitting at a light wooden desk in a bright home office with a green plant and a white wall behind him; his forehead is completely plain and clean skin - no tilak, no bindi, no dot; wrists bare - no bracelet, beads, thread. He gestures to his left for 'before', then to his right for 'now'. He says: \"Before, it was email and SMS. Now you send bulk WhatsApp campaigns with Meta-approved templates.\" His lips match every word. Calm, confident news-presenter tone, natural light, no text on screen."
+  },
+  {
+   "file": "zc3.mp4",
+   "say": "AI agents can now build, schedule and analyze your campaigns through MCP, the Model Context Protocol.",
+   "text": "AI agents can now build, schedule and analyze your campaigns through MCP, the Model Context Protocol.",
+   "lower": null,
+   "gesture": "He counts three actions on his fingers",
+   "prompt": "Vertical 9:16 medium shot of the presenter talking straight to camera. He wears a plain olive-green polo shirt, short neat hair, trimmed light stubble, sitting at a light wooden desk in a bright home office with a green plant and a white wall behind him; his forehead is completely plain and clean skin - no tilak, no bindi, no dot; wrists bare - no bracelet, beads, thread. He counts three actions on his fingers. He says: \"AI agents can now build, schedule and analyze your campaigns through MCP, the Model Context Protocol.\" His lips match every word. Calm, confident news-presenter tone, natural light, no text on screen."
+  },
+  {
+   "file": "zc4.mp4",
+   "say": "In Zoho's own tests, sending one hundred thousand emails is now up to four times faster.",
+   "text": "In Zoho's own tests, sending 100,000 emails is now up to 4x faster.",
+   "lower": null,
+   "gesture": "He nods and spreads his hands wide",
+   "prompt": "Vertical 9:16 medium shot of the presenter talking straight to camera. He wears a plain olive-green polo shirt, short neat hair, trimmed light stubble, sitting at a light wooden desk in a bright home office with a green plant and a white wall behind him; his forehead is completely plain and clean skin - no tilak, no bindi, no dot; wrists bare - no bracelet, beads, thread. He nods and spreads his hands wide. He says: \"In Zoho's own tests, sending one hundred thousand emails is now up to four times faster.\" His lips match every word. Calm, confident news-presenter tone, natural light, no text on screen."
+  },
+  {
+   "file": "zc5.mp4",
+   "say": "For now the new version is for new users. Would you switch your WhatsApp marketing? Comment below.",
+   "text": "For now the new version is for new users. Would you switch your WhatsApp marketing? Comment below.",
+   "lower": null,
+   "gesture": "He shrugs lightly, then points at the viewer",
+   "prompt": "Vertical 9:16 medium shot of the presenter talking straight to camera. He wears a plain olive-green polo shirt, short neat hair, trimmed light stubble, sitting at a light wooden desk in a bright home office with a green plant and a white wall behind him; his forehead is completely plain and clean skin - no tilak, no bindi, no dot; wrists bare - no bracelet, beads, thread. He shrugs lightly, then points at the viewer. He says: \"For now the new version is for new users. Would you switch your WhatsApp marketing? Comment below.\" His lips match every word. Calm, confident news-presenter tone, natural light, no text on screen."
+  }
+ ]
+}

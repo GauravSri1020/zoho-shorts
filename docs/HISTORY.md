@@ -6,6 +6,18 @@ Is file ko har session ke end pe update karo, taaki agla chat yahin se shuru kar
 
 Gaurav jab bhi kuch bhi change karne bole: SABSE PEHLE backup - `backup-YYYY-MM-DD-<kya-badal-rahe-ho>` branch main se banao (aur agar video ka kaam hai to latest Short ka artifact download karo). Tabhi code chhuo. Kuch bigde to us branch se purana code wapas lo.
 
+## 20 Nov 2026 subah (10:47 IST scheduled "Flow Shorts daily") - research + 2 specs, Flow/YouTube NAHI hua
+
+Backup: `backup-2026-11-20-flow-daily` (long-videos se). Run cloud-only tha: Claude-in-Chrome / desktop tools the hi nahi
+-> Flow clips, YouTube Studio upload aur schedule NAHI hue. Fix (sirf Gaurav): Claude desktop app mein task
+"Flow Shorts daily" kholke "Require this computer" on karo (Chrome khula rahe).
+- Actions: daily-robot brain 20 Nov 04:22Z phir 3 s mein fail (billing / spending limit, reset ~1 Dec). Gemini robot bhi fail.
+- Specs ready (prompts andar, har clip mein no-tilak/no-bracelet line): flow-specs/flow-20261120-anthropic-ipo.json
+  (news: IPO $83, ~$81B, SpaceX $75B se aage, ~$1.5T, open ~+34%; closing number unverified -> nahi bola) +
+  flow-20261120-zoho-campaigns-whatsapp.json (Zoho Campaigns rebuild 29 Oct: native WhatsApp, MCP, 4x faster emails;
+  zoho.com: naya version abhi sirf new users). Research files docs/longform/research/flow-20261120-*.md, queue flow-queue/2026-11-20.md.
+- Flow credits: 0 use hue.
+
 ## 13/14 Nov 2026 raat (scheduled run) - pehli LONG video ka sample (branch long-videos)
 
 Gaurav so rahe the; scheduled run ne bina browser ke kiya. Backup: `backup-2026-11-14-before-longform-build`. main / Shorts pipeline chhuye NAHI. (13 Nov shaam wala section main branch ki HISTORY mein hai.)

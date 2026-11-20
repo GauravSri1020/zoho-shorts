@@ -7,3 +7,5 @@ date | type | id | structure | hook_type | title
 2026-11-19 | long | zoho-analytics-claude | news-impact-action | news | Zoho Analytics 7.0: Ask Zia AI Agents + Connect Claude Desktop
 2026-11-20 | short | flow-nvidia-q3 | teardown-explained | number | Nvidia's First Quarter Without Its Founder
 2026-11-20 | short | flow-uae-42-days | deadline-countdown | number | UAE E-Invoicing: 42 Days Left
+2026-11-20 | short | flow-anthropic-ipo | news-impact-action | news | Anthropic IPO: $81 Billion Raised, Biggest Listing Ever
+2026-11-20 | short | flow-zoho-campaigns-whatsapp | before-after-demo | result-first | WhatsApp Marketing in Zoho Campaigns: What Changed
