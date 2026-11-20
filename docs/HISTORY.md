@@ -6,6 +6,40 @@ Is file ko har session ke end pe update karo, taaki agla chat yahin se shuru kar
 
 Gaurav jab bhi kuch bhi change karne bole: SABSE PEHLE backup - `backup-YYYY-MM-DD-<kya-badal-rahe-ho>` branch main se banao (aur agar video ka kaam hai to latest Short ka artifact download karo). Tabhi code chhuo. Kuch bigde to us branch se purana code wapas lo.
 
+## 20/21 Nov 2026 raat (23:00-01:30 IST) - Shorts wapas PURANE engine pe, long video haath se
+
+Gaurav: "pehle wala kaam hi karna hai - Shorts jaise pehle bante the (engine, Flow ki 1-3 clips, daily schedule),
+Flow kam; long video daily; niche pehla wala (Zoho); billing nahi chahiye, free hona chahiye; Flow wali video
+schedule se pehle dikhana". Backup: `backup-2026-11-20-main-before-engine-restore`,
+`backup-2026-11-20-long-videos-before-engine-restore`.
+
+- Wajah ab bhi wahi: 18 Nov se har Actions run "not started ... spending limit" (20 Nov 13:36 UTC tak check kiya).
+  Billing page: GitHub Free, $0 bill, KOI card / payment method nahi - cancel karne ko kuch nahi. $12 included
+  compute (2,000 min) khatam, reset ~1 Dec ("11 days"). zoho-shorts $9.68, leadengine-v4 $4.09 (wo bhi minutes khata hai).
+  Nov mein: Shorts engine ~1,280 min, longform-daily ~60 min/video. Free 2,000 min mein Shorts engine + roz long video
+  NAHI samate. Free raasta: repo PUBLIC (Actions unlimited free) - Gaurav ka faisla baaki.
+- Claude ne pehle long-video style ka "hybrid" Short banaya (Flow start + end, beech mein vshort frame) - Gaurav ne
+  REJECT kiya: "Shorts bilkul pehle jaise chahiye (channel pe dekho), banner / long-video frame nahi; wo style sirf
+  long videos ke liye". Code hata diya (commit nahi hua).
+- RESTORE: autopilot.yml cron wapas (07:17 + 08:43 IST daily, comments har 3 h) = fd82ead ka revert. Engine code same.
+- 2 Shorts main engine ke jobs mein (haath se, issue null): 20261121-0100-1 Zoho Books credit notes (books/creditnote_new
+  real screen), 20261121-0100-2 Zoho Campaigns WhatsApp (screens nahi -> cards). Flow clips sirf HOOK + RESULT (2 each,
+  main account project "Nov 20 - 23:14", 80 credits; copy branch flow-clips flow/2026-11-21/). Assemble tab hoga jab
+  Actions chalega. DHYAN: cn2 clip mein kalai pe steel kada (rule ke khilaaf), zc1 mein baal bahut chhote (look match
+  nahi) - Gaurav ne dekh ke abhi kuch nahi bola.
+- Flow galti: menu ke coordinate click se ek clip "Move to trash" ho gaya -> turant Undo (sab 4 clips safe). Aage se
+  Flow menu sirf find/ref se click karo, coordinate se nahi.
+- long-videos DAILY.md: "Shorts = main engine only, brain = long videos only" (20 Nov wale Flow-spec Shorts rule ke upar).
+- Gaurav ne repo PUBLIC kiya (00:40 IST, password khud daala) -> Actions ab free + unlimited, sab workflows chal rahe.
+- Long video zoho-books-automation (before-after-demo, 7:00, recurring invoices + reminders + workflow rules, real books
+  screens), local render 1080p -> longform-previews -> longform-upload (4K) -> SCHEDULED https://youtube.com/watch?v=EhSLe1zlEzI
+  public 21 Nov 18:30 IST, thumbnail set (channel ab verified).
+- Shorts: Run workflow task assemble (run 44797509836) dono jobs bana raha tha (40+ min, Gemini) - result agle chat mein
+  check karo: Studio / jobs/*/job.json status / branch previews.
+- Open: (1) brain ke liye secret CLAUDE_CODE_OAUTH_TOKEN abhi bhi nahi (issue #177) -> roz ka long video tabhi
+  automatic; Gaurav: laptop pe `claude setup-token` -> Settings > Secrets > Actions. (2) cn2 kada / zc1 baal - Shorts dekh
+  ke Gaurav decide kare (retake = 20 credits each). (3) leadengine-v4 private hai, wo apne minutes khata hai.
+
 ## 20 Nov 2026 raat (00:00-01:00 IST) - Actions minutes khatam, Flow Shorts haath se, script-writer agent
 
 Gaurav: "Flow se videos schedule nahi ho rahe; daily check karo; long video ke liye script-writer agent (har baar
