@@ -1,0 +1,198 @@
+{
+ "id": "20261121-0100-1",
+ "niche": "zoho",
+ "status": "waiting_for_clips",
+ "upload": true,
+ "created": "2026-11-20T19:30:00",
+ "title": "Zoho Books Credit Notes: Refund or Apply to an Invoice #Shorts",
+ "description": "A customer returned goods or you overbilled? In Zoho Books create a credit note under Sales > Credit Notes. Then either apply it to an open invoice (open the credit note, click Apply to Invoice, enter the amount under Credits to Apply, Save) or refund it (select the credit note, More > Refund, enter the amount, Save). A partly used credit note stays Open; once fully used it becomes Closed.\n\nSources (checked 18 Nov 2026):\n- Zoho Books help - Apply Credits to Invoices: https://www.zoho.com/us/books/help/credit-note/apply-credits.html\n- Zoho Books help - Refund Credits: https://www.zoho.com/us/books/help/credit-note/refund-credits.html\n- Zoho Books FAQ - refund for returned goods: https://www.zoho.com/us/books/kb/credits/issue-refund.html\n\nThis video uses an AI-generated presenter (based on the creator), voice and animations; facts were checked against the sources above.\nIndependent channel. Not affiliated with or endorsed by Zoho Corporation.\n\n#Shorts #ZohoBooks #CreditNote #Accounting #Shorts",
+ "angle": {
+  "pillar": "manual",
+  "product": "Zoho Books",
+  "app": "books"
+ },
+ "story": null,
+ "script": {
+  "title": "Zoho Books Credit Notes: Refund or Apply to an Invoice",
+  "hook_text": "Credit Notes in Zoho Books",
+  "thumb_text": "Credit Notes: *Refund or Apply*",
+  "app_label": "Zoho Books",
+  "api": null,
+  "code": null,
+  "_app": "books",
+  "lines": [
+   {
+    "beat": "HOOK",
+    "say": "Customer returned goods, or you billed too much? Here is the clean fix in Zoho Books.",
+    "tts": "Customer returned goods, or you billed too much? Here is the clean fix in Zoho Books.",
+    "card": "Customer returned goods?",
+    "screen": null
+   },
+   {
+    "beat": "STEP 1",
+    "say": "Go to Sales, then Credit Notes, click New, and pick the customer.",
+    "tts": "Go to Sales, then Credit Notes, click New, and pick the customer.",
+    "card": "Sales > Credit Notes > New",
+    "screen": {
+     "app": "books",
+     "view": "form",
+     "path": [
+      "Sales",
+      "Credit Notes",
+      "New"
+     ],
+     "heading": "New Credit Note",
+     "real": "books/creditnote_new",
+     "click": "Customer Name",
+     "tip": "Pick the customer"
+    }
+   },
+   {
+    "beat": "STEP 2",
+    "say": "Add the items and save it as open.",
+    "tts": "Add the items and save it as open.",
+    "card": "Save as Open",
+    "screen": {
+     "app": "books",
+     "view": "form",
+     "path": [
+      "Sales",
+      "Credit Notes",
+      "New"
+     ],
+     "heading": "New Credit Note",
+     "real": "books/creditnote_new",
+     "click": "Save as Open",
+     "tip": "Save it as open"
+    }
+   },
+   {
+    "beat": "STEP 3",
+    "say": "To use it against an invoice, open the credit note, click Apply to Invoice, enter the amount, and save.",
+    "tts": "To use it against an invoice, open the credit note, click Apply to Invoice, enter the amount, and save.",
+    "card": "Apply to Invoice",
+    "screen": null
+   },
+   {
+    "beat": "STEP 4",
+    "say": "To pay the customer back, click More, then Refund, enter the amount and save.",
+    "tts": "To pay the customer back, click More, then Refund, enter the amount and save.",
+    "card": "More > Refund",
+    "screen": null
+   },
+   {
+    "beat": "RESULT",
+    "say": "Partly used, it stays Open. Fully used, it shows Closed. Apply or refund - which do you use more?",
+    "tts": "Partly used, it stays Open. Fully used, it shows Closed. Apply or refund - which do you use more?",
+    "card": "Open vs Closed",
+    "screen": null
+   }
+  ],
+  "tags": [
+   "Zoho Books credit note",
+   "credit note refund",
+   "apply credit to invoice",
+   "Zoho Books tutorial",
+   "Zoho Books tips",
+   "customer refund Zoho Books",
+   "sales return",
+   "GSX Automation"
+  ],
+  "description": "A customer returned goods or you overbilled? In Zoho Books create a credit note under Sales > Credit Notes. Then either apply it to an open invoice (open the credit note, click Apply to Invoice, enter the amount under Credits to Apply, Save) or refund it (select the credit note, More > Refund, enter the amount, Save). A partly used credit note stays Open; once fully used it becomes Closed."
+ },
+ "lines": [
+  {
+   "beat": "HOOK",
+   "say": "Customer returned goods, or you billed too much? Here is the clean fix in Zoho Books.",
+   "tts": "Customer returned goods, or you billed too much? Here is the clean fix in Zoho Books.",
+   "card": "Customer returned goods?",
+   "screen": null,
+   "face": true
+  },
+  {
+   "beat": "STEP 1",
+   "say": "Go to Sales, then Credit Notes, click New, and pick the customer.",
+   "tts": "Go to Sales, then Credit Notes, click New, and pick the customer.",
+   "card": "Sales > Credit Notes > New",
+   "screen": {
+    "app": "books",
+    "view": "form",
+    "path": [
+     "Sales",
+     "Credit Notes",
+     "New"
+    ],
+    "heading": "New Credit Note",
+    "real": "books/creditnote_new",
+    "click": "Customer Name",
+    "tip": "Pick the customer"
+   },
+   "face": false
+  },
+  {
+   "beat": "STEP 2",
+   "say": "Add the items and save it as open.",
+   "tts": "Add the items and save it as open.",
+   "card": "Save as Open",
+   "screen": {
+    "app": "books",
+    "view": "form",
+    "path": [
+     "Sales",
+     "Credit Notes",
+     "New"
+    ],
+    "heading": "New Credit Note",
+    "real": "books/creditnote_new",
+    "click": "Save as Open",
+    "tip": "Save it as open"
+   },
+   "face": false
+  },
+  {
+   "beat": "STEP 3",
+   "say": "To use it against an invoice, open the credit note, click Apply to Invoice, enter the amount, and save.",
+   "tts": "To use it against an invoice, open the credit note, click Apply to Invoice, enter the amount, and save.",
+   "card": "Apply to Invoice",
+   "screen": null,
+   "face": false
+  },
+  {
+   "beat": "STEP 4",
+   "say": "To pay the customer back, click More, then Refund, enter the amount and save.",
+   "tts": "To pay the customer back, click More, then Refund, enter the amount and save.",
+   "card": "More > Refund",
+   "screen": null,
+   "face": false
+  },
+  {
+   "beat": "RESULT",
+   "say": "Partly used, it stays Open. Fully used, it shows Closed. Apply or refund - which do you use more?",
+   "tts": "Partly used, it stays Open. Fully used, it shows Closed. Apply or refund - which do you use more?",
+   "card": "Open vs Closed",
+   "screen": null,
+   "face": true
+  }
+ ],
+ "clips": [
+  {
+   "text": "Customer returned goods, or you billed too much? Here is the clean fix in Zoho Books.",
+   "lines": [
+    0
+   ],
+   "beat": "HOOK",
+   "prompt": "Vertical 9:16 medium shot of the presenter talking straight to camera. He wears a light blue oxford shirt with the sleeves rolled up, short neat hair, trimmed light stubble, standing in a bright co-working space with large windows, wooden tables and plants behind him; his forehead is completely plain clean skin - no tilak, no bindi, no dot; wrists bare - no bracelet, beads or thread; no earrings. He raises both palms with a puzzled look, then smiles and points down. He says: \"Customer returned goods, or you billed too much? Here is the clean fix in Zoho Books.\" His lips match every word. Friendly, confident tech-explainer tone, natural light, no text on screen."
+  },
+  {
+   "text": "Partly used, it stays Open. Fully used, it shows Closed. Apply or refund - which do you use more?",
+   "lines": [
+    5
+   ],
+   "beat": "RESULT",
+   "prompt": "Vertical 9:16 medium shot of the presenter talking straight to camera. He wears a light blue oxford shirt with the sleeves rolled up, short neat hair, trimmed light stubble, standing in a bright co-working space with large windows, wooden tables and plants behind him; his forehead is completely plain clean skin - no tilak, no bindi, no dot; wrists bare - no bracelet, beads or thread; no earrings. He counts two on his fingers, then points at the viewer. He says: \"Partly used, it stays Open. Fully used, it shows Closed. Apply or refund - which do you use more?\" His lips match every word. Friendly, confident tech-explainer tone, natural light, no text on screen."
+  }
+ ],
+ "look": "wearing a light blue oxford shirt with the sleeves rolled up, in a bright co-working space with large windows, wooden tables and plants",
+ "issue": null,
+ "note": "Made by hand in the Claude chat of 20 Nov 2026 night (Actions blocked); Flow clips = HOOK + RESULT only (Gaurav: Flow kam)."
+}

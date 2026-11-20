@@ -1,0 +1,152 @@
+{
+ "id": "20261121-0100-2",
+ "niche": "zoho",
+ "status": "waiting_for_clips",
+ "upload": true,
+ "created": "2026-11-20T19:30:00",
+ "title": "WhatsApp Marketing in Zoho Campaigns: What Changed in the Rebuild #Shorts",
+ "description": "Zoho rebuilt Zoho Campaigns (announced 29 Oct 2026): a new editor and workspace, native WhatsApp (bulk campaigns with Meta-approved templates, trigger-based messages, WhatsApp steps in workflows), MCP support so AI agents can build, schedule and analyse campaigns, and - in Zoho's internal testing - 100,000 emails sent up to 4x faster. Per zoho.com the new version is currently for new users; existing accounts stay unchanged for now. WhatsApp sending is in paid plans.\n\nSources (checked 20 Nov 2026):\n- Zoho press release (29 Oct 2026): https://www.marketingdive.com/press-release/20261028-zoho-rebuilds-campaigns-platform-with-faster-simpler-campaign-creation-and-1/\n- Zoho Campaigns WhatsApp marketing (official): https://www.zoho.com/campaigns/whatsapp-marketing.html\n- Zoho Campaigns (official, availability FAQ): https://www.zoho.com/campaigns/\n- Small Business Trends: https://smallbiztrends.com/zoho-rebuilds-campaigns-with-whatsapp-sms-and-ai-agents/\n- Malay Mail / Media OutReach: https://www.malaymail.com/news/money/mediaoutreach/2026/11/13/zoho-rebuilds-campaigns-platform-with-simpler-email-and-sms-native-whatsapp-and-ai-agent-workflows/500803\n\nThis video uses an AI-generated presenter (based on the creator), voice and animations. Facts are from the sources above.\nNot affiliated with Zoho.\n\n#ZohoCampaigns #WhatsAppMarketing #Zoho #EmailMarketing #MCP #UAE #Shorts",
+ "angle": {
+  "pillar": "manual",
+  "product": "Zoho Campaigns",
+  "app": "campaigns"
+ },
+ "story": null,
+ "script": {
+  "title": "WhatsApp Marketing in Zoho Campaigns: What Changed in the Rebuild",
+  "hook_text": "Zoho Campaigns + WhatsApp",
+  "thumb_text": "Zoho Campaigns *WhatsApp Built In*",
+  "app_label": "Zoho Campaigns",
+  "api": null,
+  "code": null,
+  "_app": "campaigns",
+  "lines": [
+   {
+    "beat": "HOOK",
+    "say": "Zoho Campaigns was rebuilt from scratch, and WhatsApp marketing is now built right in.",
+    "tts": "Zoho Campaigns was rebuilt from scratch, and WhatsApp marketing is now built right in.",
+    "card": "Zoho Campaigns rebuilt",
+    "screen": null
+   },
+   {
+    "beat": "STEP 1",
+    "say": "Before, Zoho Campaigns meant email and SMS. Now you can send bulk WhatsApp campaigns with message templates approved by Meta.",
+    "tts": "Before, Zoho Campaigns meant email and SMS. Now you can send bulk WhatsApp campaigns with message templates approved by Meta.",
+    "card": "Bulk WhatsApp campaigns",
+    "screen": null
+   },
+   {
+    "beat": "STEP 2",
+    "say": "And you can add WhatsApp steps inside your automated workflows.",
+    "tts": "And you can add WhatsApp steps inside your automated workflows.",
+    "card": "WhatsApp in workflows",
+    "screen": null
+   },
+   {
+    "beat": "STEP 3",
+    "say": "It also supports MCP, so AI agents can build, schedule and analyse your campaigns, while you approve what goes out.",
+    "tts": "It also supports M C P, so A I agents can build, schedule and analyse your campaigns, while you approve what goes out.",
+    "card": "AI agents via MCP",
+    "screen": null
+   },
+   {
+    "beat": "STEP 4",
+    "say": "In Zoho's own tests, sending one hundred thousand emails is up to four times faster.",
+    "tts": "In Zoho's own tests, sending one hundred thousand emails is up to four times faster.",
+    "card": "100,000 emails: up to 4x faster",
+    "screen": null
+   },
+   {
+    "beat": "RESULT",
+    "say": "For now the new version is for new users, and WhatsApp sending needs a paid plan. Would you switch? Comment below.",
+    "tts": "For now the new version is for new users, and WhatsApp sending needs a paid plan. Would you switch? Comment below.",
+    "card": "Would you switch?",
+    "screen": null
+   }
+  ],
+  "tags": [
+   "zoho campaigns",
+   "whatsapp marketing",
+   "zoho campaigns whatsapp",
+   "whatsapp marketing zoho",
+   "zoho campaigns 2026",
+   "zoho mcp",
+   "email marketing zoho",
+   "whatsapp business marketing",
+   "zoho new features",
+   "whatsapp bulk message"
+  ],
+  "description": "Zoho rebuilt Zoho Campaigns (announced 29 Oct 2026): a new editor and workspace, native WhatsApp (bulk campaigns with Meta-approved templates, trigger-based messages, WhatsApp steps in workflows), MCP support so AI agents can build, schedule and analyse campaigns, and - in Zoho's internal testing - 100,000 emails sent up to 4x faster. Per zoho.com the new version is currently for new users; existing accounts stay unchanged for now. WhatsApp sending is in paid plans."
+ },
+ "lines": [
+  {
+   "beat": "HOOK",
+   "say": "Zoho Campaigns was rebuilt from scratch, and WhatsApp marketing is now built right in.",
+   "tts": "Zoho Campaigns was rebuilt from scratch, and WhatsApp marketing is now built right in.",
+   "card": "Zoho Campaigns rebuilt",
+   "screen": null,
+   "face": true
+  },
+  {
+   "beat": "STEP 1",
+   "say": "Before, Zoho Campaigns meant email and SMS. Now you can send bulk WhatsApp campaigns with message templates approved by Meta.",
+   "tts": "Before, Zoho Campaigns meant email and SMS. Now you can send bulk WhatsApp campaigns with message templates approved by Meta.",
+   "card": "Bulk WhatsApp campaigns",
+   "screen": null,
+   "face": false
+  },
+  {
+   "beat": "STEP 2",
+   "say": "And you can add WhatsApp steps inside your automated workflows.",
+   "tts": "And you can add WhatsApp steps inside your automated workflows.",
+   "card": "WhatsApp in workflows",
+   "screen": null,
+   "face": false
+  },
+  {
+   "beat": "STEP 3",
+   "say": "It also supports MCP, so AI agents can build, schedule and analyse your campaigns, while you approve what goes out.",
+   "tts": "It also supports M C P, so A I agents can build, schedule and analyse your campaigns, while you approve what goes out.",
+   "card": "AI agents via MCP",
+   "screen": null,
+   "face": false
+  },
+  {
+   "beat": "STEP 4",
+   "say": "In Zoho's own tests, sending one hundred thousand emails is up to four times faster.",
+   "tts": "In Zoho's own tests, sending one hundred thousand emails is up to four times faster.",
+   "card": "100,000 emails: up to 4x faster",
+   "screen": null,
+   "face": false
+  },
+  {
+   "beat": "RESULT",
+   "say": "For now the new version is for new users, and WhatsApp sending needs a paid plan. Would you switch? Comment below.",
+   "tts": "For now the new version is for new users, and WhatsApp sending needs a paid plan. Would you switch? Comment below.",
+   "card": "Would you switch?",
+   "screen": null,
+   "face": true
+  }
+ ],
+ "clips": [
+  {
+   "text": "Zoho Campaigns was rebuilt from scratch, and WhatsApp marketing is now built right in.",
+   "lines": [
+    0
+   ],
+   "beat": "HOOK",
+   "prompt": "Vertical 9:16 medium shot of the presenter talking straight to camera. He wears a charcoal overshirt over a black crew-neck t-shirt, short neat hair, clean-shaven, standing in a modern startup office with exposed brick walls, plants and warm lights behind him; his forehead is completely plain clean skin - no tilak, no bindi, no dot; wrists bare - no bracelet, beads or thread; no earrings. He holds up his phone briefly, then lowers it and smiles. He says: \"Zoho Campaigns was rebuilt from scratch, and WhatsApp marketing is now built right in.\" His lips match every word. Friendly, confident tech-explainer tone, natural light, no text on screen."
+  },
+  {
+   "text": "For now the new version is for new users, and WhatsApp sending needs a paid plan. Would you switch? Comment below.",
+   "lines": [
+    5
+   ],
+   "beat": "RESULT",
+   "prompt": "Vertical 9:16 medium shot of the presenter talking straight to camera. He wears a charcoal overshirt over a black crew-neck t-shirt, short neat hair, clean-shaven, standing in a modern startup office with exposed brick walls, plants and warm lights behind him; his forehead is completely plain clean skin - no tilak, no bindi, no dot; wrists bare - no bracelet, beads or thread; no earrings. He shrugs lightly, then points at the viewer. He says: \"For now the new version is for new users, and WhatsApp sending needs a paid plan. Would you switch? Comment below.\" His lips match every word. Friendly, confident tech-explainer tone, natural light, no text on screen."
+  }
+ ],
+ "look": "wearing a charcoal overshirt over a black crew-neck t-shirt, in a modern startup office with exposed brick walls, plants and warm lights",
+ "issue": null,
+ "note": "Made by hand in the Claude chat of 20 Nov 2026 night (Actions blocked); Flow clips = HOOK + RESULT only (Gaurav: Flow kam)."
+}
