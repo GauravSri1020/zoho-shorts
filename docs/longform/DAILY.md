@@ -1,5 +1,13 @@
 # DAILY ROBOT - what the daily Claude "brain" does (Gaurav's order, 15 Nov 2026; UPDATED 20 Nov 2026)
 
+## 20 Nov 2026 NIGHT - Gaurav (overrides points 1 + 2 below): SHORTS = the OLD main engine, exactly as before
+- Shorts come ONLY from the "GSX Automation Shorts" engine on `main` (autopilot/, daily 07:17 + 08:43 IST: research ->
+  Gemini script -> Flow prompts -> Flow clips (HOOK / PROBLEM / RESULT, fewer when Gaurav says) -> composer -> QA ->
+  YouTube). Same frames, same look as his channel's Shorts. NO Flow-spec Shorts, no cartoon Shorts, no long-video
+  style (vshort / headline frame) for Shorts. The brain does NOT write Shorts any more.
+- The brain + keeper here = LONG VIDEOS ONLY (1 per day, 18:30 IST). The long-video style is only for long videos.
+- Niche = the first one: Zoho (+ Gulf / India compliance that hits Zoho users).
+
 ## 20 Nov 2026 changes (Gaurav: "next level", monetization fast) - these override older lines below
 1. SHORTS = FLOW AVATAR ONLY. No cartoon / Kokoro Shorts any more (he deleted the 6 of 18-19 Nov). Do NOT write
    `docs/longform/shorts/*.json` or `queue/shorts/*.json`. Instead write 2-3 Flow Short specs per day

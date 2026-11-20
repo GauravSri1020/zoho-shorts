@@ -1,0 +1,902 @@
+{
+ "id": "zoho-books-automation",
+ "title": "Zoho Books Automation: Recurring Invoices, Payment Reminders & Workflow Rules (2026)",
+ "structure": "before-after-demo",
+ "hook_type": "result-first",
+ "voice": {
+  "engine": "kokoro",
+  "voice": "am_onyx",
+  "speed": 1.1
+ },
+ "research": "docs/longform/research/zoho-books-automation.md",
+ "intro_chapter": "Zoho Books on autopilot in 30 seconds",
+ "chapters": [
+  "Recurring invoices: bill on autopilot",
+  "Payment reminders: stop chasing",
+  "Workflow rules: follow-ups without you",
+  "Mistakes to avoid + your checklist"
+ ],
+ "caption_fix": [
+  [
+   "Chapter one",
+   "Chapter 1"
+  ],
+  [
+   "Chapter two",
+   "Chapter 2"
+  ],
+  [
+   "Chapter three",
+   "Chapter 3"
+  ],
+  [
+   "Chapter four",
+   "Chapter 4"
+  ],
+  [
+   "follow ups",
+   "follow-ups"
+  ],
+  [
+   "follow up",
+   "follow-up"
+  ],
+  [
+   "thank you email",
+   "thank-you email"
+  ],
+  [
+   "one time invoice",
+   "one-time invoice"
+  ],
+  [
+   "up to ten",
+   "up to 10"
+  ]
+ ],
+ "thumb": {
+  "chip": "ZOHO BOOKS",
+  "l1": "ZOHO BOOKS",
+  "l2": "AUTOPILOT",
+  "l3": "BILLING",
+  "pill": "STEP BY STEP",
+  "pose": "point_up",
+  "accent": "#2fbf71"
+ },
+ "tags": [
+  "Zoho Books automation",
+  "Zoho Books recurring invoices",
+  "Zoho Books payment reminders",
+  "Zoho Books workflow rules",
+  "Zoho Books tutorial",
+  "automate invoices",
+  "recurring invoice",
+  "payment reminder email",
+  "Zoho Books 2026",
+  "accounting automation",
+  "small business invoicing",
+  "GSX Automation"
+ ],
+ "sources": [
+  {
+   "name": "Zoho Books help - Create & Send Recurring Invoices",
+   "url": "https://www.zoho.com/books/help/recurring-invoice/ri-createsend.html"
+  },
+  {
+   "name": "Zoho Books FAQ - How do I create a recurring invoice?",
+   "url": "https://www.zoho.com/books/kb/invoices/new-rec-inv.html"
+  },
+  {
+   "name": "Zoho Books help - Reminders",
+   "url": "https://www.zoho.com/books/help/settings/reminders.html"
+  },
+  {
+   "name": "Zoho Books FAQ - How do I add a new reminder?",
+   "url": "https://www.zoho.com/en-fr/books/kb/reminders/rem-addnew.html"
+  },
+  {
+   "name": "Zoho Books help - Workflow Rules",
+   "url": "https://www.zoho.com/en-ng/books/help/settings/automation/workflow-rules.html"
+  }
+ ],
+ "description": "Automate billing in Zoho Books with three settings: recurring invoices (Sales › Recurring Invoices › New: Customer Name, Profile Name, Repeat Every; child invoices saved as draft or sent right away), automatic payment reminders (Settings › Reminders › Invoices: three automated reminders before or after the due date, expected payment date reminders, Stop Reminders), and workflow rules (Settings › Workflow Rules › New Workflow Rule: module, event-based or date-based trigger, criteria, immediate or time-based actions like email alerts, field updates, webhooks and functions). Plus three mistakes to avoid and a checklist.\n\nChapters\n{chapters}\n\nSources (checked 20 Nov 2026)\n- Zoho Books help - Create & Send Recurring Invoices: https://www.zoho.com/books/help/recurring-invoice/ri-createsend.html\n- Zoho Books FAQ - How do I create a recurring invoice?: https://www.zoho.com/books/kb/invoices/new-rec-inv.html\n- Zoho Books help - Reminders: https://www.zoho.com/books/help/settings/reminders.html\n- Zoho Books FAQ - How do I add a new reminder?: https://www.zoho.com/en-fr/books/kb/reminders/rem-addnew.html\n- Zoho Books help - Workflow Rules: https://www.zoho.com/en-ng/books/help/settings/automation/workflow-rules.html\n\nScreens are from a Zoho Books sample organisation; menus can differ by region and plan.\nThis video uses an AI-generated presenter (based on the creator), voice and animations; facts were checked against the sources above.\nIndependent channel. Not affiliated with or endorsed by Zoho Corporation.\n\n#ZohoBooks #RecurringInvoices #PaymentReminders #Automation #Accounting #SmallBusiness",
+ "scenes": [
+  {
+   "id": "s01",
+   "type": "HOOK",
+   "chapter": 0,
+   "visual": {
+    "kind": "hook2",
+    "beats": [
+     {
+      "t": "guy",
+      "pose": "worried",
+      "prop": "stack",
+      "text": "Same invoice. Every month. By hand."
+     },
+     {
+      "t": "stat",
+      "value": "3",
+      "label": "settings that run billing for you",
+      "color": "teal"
+     },
+     {
+      "t": "guy",
+      "pose": "cheer",
+      "prop": "coins",
+      "text": "Invoices, reminders, follow-ups: automatic"
+     },
+     {
+      "t": "title",
+      "title": "Zoho Books on autopilot",
+      "sub": "step by step",
+      "chips": [
+       "Recurring invoices",
+       "Reminders",
+       "Workflow rules",
+       "Mistakes"
+      ]
+     }
+    ]
+   },
+   "lines": [
+    "Every month you create the same invoices, then you chase the same late payers, then you forget a follow up.",
+    "Zoho Books can do all three for you, with three settings most small businesses never touch.",
+    "By the end of this video, your invoices go out on their own, reminders chase late payments, and follow ups happen without you.",
+    "Here's the plan. Recurring invoices, payment reminders, workflow rules, and the mistakes to avoid."
+   ]
+  },
+  {
+   "id": "s02",
+   "type": "CHAPTER",
+   "chapter": 1,
+   "visual": {
+    "num": 1,
+    "title": "Recurring invoices: bill on autopilot"
+   },
+   "lines": [
+    "Chapter one. Recurring invoices. Bill on autopilot."
+   ]
+  },
+  {
+   "id": "s03",
+   "type": "CARTOON",
+   "chapter": 1,
+   "visual": {
+    "kind": "story",
+    "beats": [
+     {
+      "pose": "type",
+      "prop": "laptop",
+      "text": "Before: copy last month's invoice"
+     },
+     {
+      "pose": "present",
+      "prop": {
+       "name": "doc",
+       "label": "Profile"
+      },
+      "text": "After: one profile, many invoices"
+     },
+     {
+      "pose": "cheer",
+      "prop": "calendar",
+      "text": "Retainers, subscriptions, rent"
+     }
+    ]
+   },
+   "lines": [
+    "Before, billing a monthly client meant opening last month's invoice, copying it, changing the date, and sending it again. Every single month.",
+    "A recurring invoice changes that. You set up one recurring profile for the customer, and that profile creates every invoice for you, on the schedule you choose.",
+    "It works for anything you bill on a fixed schedule: a monthly retainer, a software subscription, rent, a maintenance contract, or a weekly cleaning service."
+   ]
+  },
+  {
+   "id": "s04",
+   "type": "PODCAST",
+   "chapter": 1,
+   "visual": {
+    "path": [
+     "Sales",
+     "Recurring Invoices"
+    ],
+    "actions": [
+     {
+      "cue": 0,
+      "screen": "books/recurring_invoices",
+      "target": "Recurring Invoices (sidebar)",
+      "zoom": 1.8
+     },
+     {
+      "cue": 1,
+      "target": "New",
+      "zoom": 2.0
+     },
+     {
+      "cue": 2,
+      "target": "Create New Recurring Invoice",
+      "zoom": 1.8
+     }
+    ]
+   },
+   "lines": [
+    "In Zoho Books, go to Sales, then Recurring Invoices.",
+    "Click New in the top right corner.",
+    "If you have none yet, you can also click Create New Recurring Invoice in the middle of the page."
+   ]
+  },
+  {
+   "id": "s05",
+   "type": "BOARD",
+   "chapter": 1,
+   "visual": {
+    "kind": "flow2",
+    "title": "Fill in the profile",
+    "steps": [
+     [
+      "Customer Name",
+      "who you bill"
+     ],
+     [
+      "Profile Name",
+      "e.g. Monthly retainer"
+     ],
+     [
+      "Repeat Every",
+      "week, month, year"
+     ],
+     [
+      "Items + notes",
+      "then Save"
+     ]
+    ],
+    "footer": "One profile creates every invoice"
+   },
+   "lines": [
+    "First, the Customer Name. Pick the customer you want to bill.",
+    "Then the Profile Name. Use something clear, like monthly retainer, because every invoice this profile creates belongs to it.",
+    "Then Repeat Every. This is the schedule: every week, every month, every year, or whatever fits the contract.",
+    "Add the items, your customer notes and terms, just like a normal invoice, and click Save."
+   ]
+  },
+  {
+   "id": "s06",
+   "type": "PODCAST",
+   "chapter": 1,
+   "visual": {
+    "path": [
+     "Sales",
+     "Invoices",
+     "New"
+    ],
+    "actions": [
+     {
+      "cue": 0,
+      "screen": "books/invoices_list",
+      "target": "New dropdown",
+      "zoom": 1.9
+     },
+     {
+      "cue": 0,
+      "at": 0.6,
+      "target": "New Recurring Invoice",
+      "zoom": 1.9
+     },
+     {
+      "cue": 1,
+      "screen": "books/invoice_new",
+      "target": "Make Recurring",
+      "zoom": 1.9
+     }
+    ]
+   },
+   "lines": [
+    "There are two shortcuts too. From the Invoices list, the arrow next to New gives you New Recurring Invoice.",
+    "And on a normal invoice, the Make Recurring option turns a one time invoice into a schedule."
+   ]
+  },
+  {
+   "id": "s07",
+   "type": "CARTOON",
+   "chapter": 1,
+   "visual": {
+    "kind": "story",
+    "beats": [
+     {
+      "pose": "present",
+      "prop": {
+       "name": "doc",
+       "label": "Draft"
+      },
+      "text": "Save as draft: you check first"
+     },
+     {
+      "pose": "point",
+      "prop": "envelope",
+      "text": "Or send right away"
+     }
+    ]
+   },
+   "lines": [
+    "Now the important choice. The invoices a profile creates can be saved as drafts, so you check them before they go out, or sent to the customer right away.",
+    "Our tip: start with drafts for the first month. Once you trust the amounts, switch to sending them automatically."
+   ]
+  },
+  {
+   "id": "s08",
+   "type": "CARTOON",
+   "chapter": 1,
+   "visual": {
+    "kind": "story",
+    "beats": [
+     {
+      "pose": "shrug",
+      "prop": "calendar",
+      "text": "Back-dated profile? No catch-up invoices"
+     }
+    ]
+   },
+   "lines": [
+    "One thing that surprises people. If you create a profile with a start date in the past, Zoho Books does not create all the missed invoices. New invoices are only generated from today onwards."
+   ]
+  },
+  {
+   "id": "s09",
+   "type": "CHAPTER",
+   "chapter": 2,
+   "visual": {
+    "num": 2,
+    "title": "Payment reminders: stop chasing"
+   },
+   "lines": [
+    "Chapter two. Payment reminders. Stop chasing."
+   ]
+  },
+  {
+   "id": "s10",
+   "type": "CARTOON",
+   "chapter": 2,
+   "visual": {
+    "kind": "story",
+    "beats": [
+     {
+      "pose": "worried",
+      "prop": "phone",
+      "text": "Before: awkward calls and emails"
+     },
+     {
+      "pose": "cheer",
+      "prop": "envelope",
+      "text": "After: polite reminders, on time"
+     }
+    ]
+   },
+   "lines": [
+    "Sending the invoice is half the job. The other half is getting paid, and nobody enjoys writing, hi, just checking on that invoice.",
+    "Zoho Books has two kinds of reminders. Manual ones, which you send with a click, and automated ones, which go out on their own."
+   ]
+  },
+  {
+   "id": "s11",
+   "type": "PODCAST",
+   "chapter": 2,
+   "visual": {
+    "path": [
+     "Settings",
+     "Reminders",
+     "Invoices"
+    ],
+    "actions": [
+     {
+      "cue": 0,
+      "screen": "books/settings_home",
+      "target": "Reminders",
+      "zoom": 1.9
+     },
+     {
+      "cue": 1,
+      "screen": "books/payment_reminders",
+      "target": "Invoices tab",
+      "zoom": 1.9
+     },
+     {
+      "cue": 2,
+      "target": "Reminder For Overdue Invoices",
+      "zoom": 1.8
+     },
+     {
+      "cue": 3,
+      "target": "Reminder - 1",
+      "zoom": 1.8
+     },
+     {
+      "cue": 4,
+      "target": "Reminder - 1 toggle",
+      "zoom": 2.1
+     }
+    ]
+   },
+   "lines": [
+    "Go to Settings, and under Reminders and Notifications, open Reminders.",
+    "Stay on the Invoices tab.",
+    "At the top are the manual reminders, like the one for overdue invoices. You can edit the text, and insert placeholders, so each email fills in the right customer details by itself.",
+    "Below that are the automated reminders. By default there are three of them.",
+    "Slide the toggle to switch a reminder on, and then set when it goes out."
+   ]
+  },
+  {
+   "id": "s11b",
+   "type": "CARTOON",
+   "chapter": 2,
+   "visual": {
+    "kind": "story",
+    "beats": [
+     {
+      "pose": "type",
+      "prop": "laptop",
+      "text": "Sales › Invoices › overdue invoice"
+     },
+     {
+      "pose": "point",
+      "prop": "envelope",
+      "text": "Reminders › Send Now"
+     }
+    ]
+   },
+   "lines": [
+    "To send a manual reminder, go to Sales, then Invoices, and open the overdue invoice.",
+    "Click Reminders, then Send Now. Zoho Books fills in your reminder template, you check it, and send. That's useful for the one customer who needs a personal nudge today."
+   ]
+  },
+  {
+   "id": "s12",
+   "type": "BOARD",
+   "chapter": 2,
+   "visual": {
+    "kind": "dates",
+    "title": "A simple reminder plan",
+    "items": [
+     {
+      "date": "3 days before",
+      "label": "Reminder 1: friendly heads-up"
+     },
+     {
+      "date": "Due date",
+      "label": "Reminder 2: payment due today"
+     },
+     {
+      "date": "7 days after",
+      "label": "Reminder 3: final reminder",
+      "big": true
+     }
+    ]
+   },
+   "lines": [
+    "Each reminder can go out a number of days before or after the due date. Here's a simple plan you can copy.",
+    "Reminder one, a few days before the due date. Just a friendly heads up.",
+    "Reminder two, on the due date itself.",
+    "And reminder three, a week after the due date, as the final reminder. The exact days are your choice."
+   ]
+  },
+  {
+   "id": "s13",
+   "type": "CARTOON",
+   "chapter": 2,
+   "visual": {
+    "kind": "story",
+    "beats": [
+     {
+      "pose": "type",
+      "prop": "envelope",
+      "text": "Choose From address, edit text"
+     },
+     {
+      "pose": "point",
+      "prop": "lock",
+      "text": "Tick: Enable this reminder"
+     }
+    ]
+   },
+   "lines": [
+    "Inside each reminder, choose the from address, adjust the message if you want, and tick Enable this reminder. Then click Save.",
+    "Need more than three? Zoho Books lets you add more reminders, and you can remind your own team too, not only the customer."
+   ]
+  },
+  {
+   "id": "s14",
+   "type": "PODCAST",
+   "chapter": 2,
+   "visual": {
+    "path": [
+     "Settings",
+     "Reminders"
+    ],
+    "actions": [
+     {
+      "cue": 0,
+      "screen": "books/payment_reminders",
+      "target": "Payment Expected",
+      "zoom": 1.8
+     },
+     {
+      "cue": 1,
+      "target": "Payment Expected toggle",
+      "zoom": 2.1
+     }
+    ]
+   },
+   "lines": [
+    "There's also a reminder based on the expected payment date. That's the date a customer promised to pay, which you can record on the invoice.",
+    "Turn it on here, and Zoho Books reminds them around that promised date, instead of the original due date.",
+    "That keeps the tone fair. You're not chasing a customer who already told you when they'll pay. You're holding them to their own date."
+   ]
+  },
+  {
+   "id": "s15",
+   "type": "CARTOON",
+   "chapter": 2,
+   "visual": {
+    "kind": "story",
+    "beats": [
+     {
+      "pose": "present",
+      "prop": {
+       "name": "doc",
+       "label": "Paid"
+      },
+      "text": "Paid? Stop reminders for that invoice"
+     }
+    ]
+   },
+   "lines": [
+    "And if a customer tells you they've paid, but the money hasn't landed yet, open that invoice, click Reminders, and choose Stop Reminders. That way nobody gets nagged by mistake."
+   ]
+  },
+  {
+   "id": "s16",
+   "type": "CHAPTER",
+   "chapter": 3,
+   "visual": {
+    "num": 3,
+    "title": "Workflow rules: follow-ups without you"
+   },
+   "lines": [
+    "Chapter three. Workflow rules. Follow ups without you."
+   ]
+  },
+  {
+   "id": "s17",
+   "type": "CARTOON",
+   "chapter": 3,
+   "visual": {
+    "kind": "story",
+    "beats": [
+     {
+      "pose": "cheer",
+      "prop": "coins",
+      "text": "Customer pays"
+     },
+     {
+      "pose": "point",
+      "prop": "envelope",
+      "text": "Thank-you email goes out by itself"
+     }
+    ]
+   },
+   "lines": [
+    "Workflow rules are the next level. You tell Zoho Books: when this happens, do that.",
+    "Zoho's own example: when a customer completes a payment, send them a thank you email automatically. You set it up once, and it runs every time."
+   ]
+  },
+  {
+   "id": "s18",
+   "type": "PODCAST",
+   "chapter": 3,
+   "visual": {
+    "path": [
+     "Settings",
+     "Automation",
+     "Workflow Rules"
+    ],
+    "actions": [
+     {
+      "cue": 0,
+      "screen": "books/settings_home",
+      "target": "Workflow Rules",
+      "zoom": 1.9
+     },
+     {
+      "cue": 1,
+      "screen": "books/workflow_rules",
+      "target": "New Workflow Rule",
+      "zoom": 2.0
+     },
+     {
+      "cue": 2,
+      "screen": "books/workflow_rule_new",
+      "target": "Workflow Rule Name",
+      "zoom": 1.9
+     },
+     {
+      "cue": 3,
+      "target": "Module",
+      "zoom": 2.0
+     },
+     {
+      "cue": 4,
+      "target": "Next",
+      "zoom": 2.1
+     }
+    ]
+   },
+   "lines": [
+    "Go to Settings, and under Automation, choose Workflow Rules.",
+    "Click New Workflow Rule.",
+    "Give it a name, like thank you after payment, and add a short description if you want.",
+    "Then pick the module. For this example, it's the payments your customers make.",
+    "Click Next."
+   ]
+  },
+  {
+   "id": "s19",
+   "type": "BOARD",
+   "chapter": 3,
+   "visual": {
+    "kind": "checklist",
+    "title": "When should it run?",
+    "items": [
+     "Event based: created or edited",
+     "Also: deleted, submitted, approved, rejected",
+     "Date based: days before or after a date",
+     "Repeat: once, daily, weekly, monthly, yearly"
+    ]
+   },
+   "lines": [
+    "Now choose when the rule runs. Event based rules fire when something happens to a record, for example when it's created, or edited.",
+    "There are also triggers for deleted, submitted, approved and rejected records.",
+    "Date based rules run relative to a date on the record. For example, a number of days before or after the due date, at a time you choose.",
+    "And they can repeat: once, daily, weekly, monthly or yearly."
+   ]
+  },
+  {
+   "id": "s20",
+   "type": "BOARD",
+   "chapter": 3,
+   "visual": {
+    "kind": "flow2",
+    "title": "Criteria, then actions",
+    "steps": [
+     [
+      "Criteria",
+      "only when conditions match"
+     ],
+     [
+      "Immediate actions",
+      "right away"
+     ],
+     [
+      "Time based actions",
+      "at a scheduled time"
+     ],
+     [
+      "Email, field update, webhook",
+      "or a custom function"
+     ]
+    ],
+    "footer": "Up to 10 criteria per workflow"
+   },
+   "lines": [
+    "Next, add criteria, so the rule only runs when it should. For example, only when the amount is above a certain value. You can add up to ten criteria.",
+    "Then the actions. Immediate actions run right away when the criteria match.",
+    "Time based actions run later, at a time you set.",
+    "An action can be an email alert, a field update, a webhook to another app, or a custom function. Click Save, and the rule is live."
+   ]
+  },
+  {
+   "id": "s20b",
+   "type": "CARTOON",
+   "chapter": 3,
+   "visual": {
+    "kind": "story",
+    "beats": [
+     {
+      "pose": "present",
+      "prop": "calendar",
+      "text": "Idea: date based, after the due date"
+     },
+     {
+      "pose": "point",
+      "prop": {
+       "name": "office",
+       "label": "Team"
+      },
+      "text": "Criteria: still unpaid"
+     },
+     {
+      "pose": "cheer",
+      "prop": "envelope",
+      "text": "Action: alert your own team"
+     }
+    ]
+   },
+   "lines": [
+    "Here's one more idea you can build with the same pieces. A date based rule on invoices, a few days after the due date.",
+    "Add a criterion, so it only runs when the invoice is still unpaid.",
+    "And as the action, an email alert to your own team, so someone picks up the phone. Reminders handle the customer, and the rule makes sure a person follows up on the big ones."
+   ]
+  },
+  {
+   "id": "s21",
+   "type": "PODCAST",
+   "chapter": 3,
+   "visual": {
+    "path": [
+     "Settings",
+     "Workflow Rules"
+    ],
+    "actions": [
+     {
+      "cue": 0,
+      "screen": "books/workflow_rules",
+      "target": "View Logs",
+      "zoom": 2.0
+     },
+     {
+      "cue": 1,
+      "target": "Workflow Logs (sidebar)",
+      "zoom": 1.9
+     }
+    ]
+   },
+   "lines": [
+    "Once it's running, check that it actually fires. The workflow rules page shows how many email alerts, webhooks and functions ran today, and View Logs shows every run.",
+    "If an action fails, the workflow logs are where you'll see it."
+   ]
+  },
+  {
+   "id": "s22",
+   "type": "CHAPTER",
+   "chapter": 4,
+   "visual": {
+    "num": 4,
+    "title": "Mistakes to avoid + your checklist"
+   },
+   "lines": [
+    "Chapter four. Mistakes to avoid, and your checklist."
+   ]
+  },
+  {
+   "id": "s23",
+   "type": "CARTOON",
+   "chapter": 4,
+   "visual": {
+    "kind": "story",
+    "beats": [
+     {
+      "pose": "worried",
+      "prop": "envelope",
+      "text": "Mistake 1: auto-send from day one"
+     },
+     {
+      "pose": "worried",
+      "prop": "warning",
+      "text": "Mistake 2: reminders to people who paid"
+     },
+     {
+      "pose": "worried",
+      "prop": "stack",
+      "text": "Mistake 3: rules that fire on every edit"
+     }
+    ]
+   },
+   "lines": [
+    "Mistake one. Switching on automatic sending before you've checked a single draft. One wrong price, and it repeats every month.",
+    "Mistake two. Forgetting to stop reminders when a customer has already paid outside Zoho Books. Record the payment, or stop the reminders.",
+    "Mistake three. A workflow rule set to run on every edit, with no criteria. It fires far more often than you think. Add criteria, and watch the logs for the first week."
+   ]
+  },
+  {
+   "id": "s23b",
+   "type": "BOARD",
+   "chapter": 4,
+   "visual": {
+    "kind": "compare",
+    "title": "Before vs after",
+    "left": {
+     "title": "After",
+     "items": [
+      "Recurring profile creates it",
+      "Reminders go out on schedule",
+      "Workflow rules do the follow-up"
+     ]
+    },
+    "right": {
+     "title": "Before",
+     "items": [
+      "Copy last month's invoice",
+      "Write every reminder",
+      "Remember every follow-up"
+     ]
+    },
+    "cues": [
+     [
+      0,
+      "L0",
+      "R0"
+     ],
+     [
+      1,
+      "L1",
+      "R1"
+     ],
+     [
+      2,
+      "L2",
+      "R2"
+     ]
+    ]
+   },
+   "lines": [
+    "So, before and after. Before, you copied last month's invoice. After, a recurring profile creates it on schedule.",
+    "Before, you wrote every reminder yourself. After, three reminders go out before, on, and after the due date.",
+    "Before, follow ups lived in your head. After, a workflow rule does them, and the logs show you that it happened."
+   ]
+  },
+  {
+   "id": "s24",
+   "type": "BOARD",
+   "chapter": 4,
+   "visual": {
+    "kind": "checklist",
+    "title": "Your checklist",
+    "items": [
+     "Recurring profile per monthly client",
+     "First month: save as draft",
+     "3 reminders: before, on, after due date",
+     "Stop reminders when paid",
+     "One workflow rule: thank-you after payment",
+     "Check the logs in week one"
+    ]
+   },
+   "lines": [
+    "One. Create a recurring profile for every client you bill on a schedule.",
+    "Two. Keep the first month as drafts, and check them.",
+    "Three. Turn on three reminders: before, on, and after the due date.",
+    "Four. Stop reminders as soon as a customer has paid.",
+    "Five. Add one workflow rule, like the thank you email after a payment.",
+    "Six. Check the workflow logs in the first week."
+   ]
+  },
+  {
+   "id": "s25",
+   "type": "CARTOON",
+   "chapter": 4,
+   "visual": {
+    "kind": "celebrate2",
+    "top": "BILLING",
+    "big": "ON AUTOPILOT",
+    "sub": "Zoho Books"
+   },
+   "lines": [
+    "Pause the video, and do these six things this week.",
+    "Set this up once, and your billing keeps running even on the days you don't."
+   ]
+  },
+  {
+   "id": "s26",
+   "type": "OUTRO",
+   "chapter": 4,
+   "visual": {
+    "kind": "outro",
+    "next": "Zoho Books credit notes",
+    "badge": "BOOKS",
+    "badge_sub": "tips",
+    "note": "Menus can differ by region and plan"
+   },
+   "lines": [
+    "If this saved you time, subscribe for more Zoho Books tutorials, and tell me in the comments which automation you want next.",
+    "And menus can differ a little by region and plan, so check Zoho's help pages for your edition."
+   ]
+  }
+ ]
+}
