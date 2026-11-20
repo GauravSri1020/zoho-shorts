@@ -180,7 +180,12 @@
      },
      {
       "pose": "cheer",
-      "prop": "calendar",
+      "prop": {
+       "name": "calendar",
+       "top": "EVERY",
+       "big": "1st",
+       "sub": "of the month"
+      },
       "text": "Retainers, subscriptions, rent"
      }
     ]
@@ -331,7 +336,12 @@
     "beats": [
      {
       "pose": "shrug",
-      "prop": "calendar",
+      "prop": {
+       "name": "calendar",
+       "top": "STARTS",
+       "big": "TODAY",
+       "sub": "no catch-up"
+      },
       "text": "Back-dated profile? No catch-up invoices"
      }
     ]
@@ -701,7 +711,12 @@
     "beats": [
      {
       "pose": "present",
-      "prop": "calendar",
+      "prop": {
+       "name": "calendar",
+       "top": "DUE DATE",
+       "big": "+3",
+       "sub": "days"
+      },
       "text": "Idea: date based, after the due date"
      },
      {
