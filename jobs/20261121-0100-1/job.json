@@ -1,7 +1,7 @@
 {
  "id": "20261121-0100-1",
  "niche": "zoho",
- "status": "qa_failed",
+ "status": "waiting_for_clips",
  "upload": true,
  "created": "2026-11-20T19:30:00",
  "title": "Zoho Books Credit Notes: Refund or Apply to an Invoice #Shorts",
@@ -71,14 +71,20 @@
     "say": "To use it against an invoice, open the credit note, click Apply to Invoice, enter the amount, and save.",
     "tts": "To use it against an invoice, open the credit note, click Apply to Invoice, enter the amount, and save.",
     "card": "Apply to Invoice",
-    "screen": null
+    "screen": {
+     "app": "presenter",
+     "view": "presenter"
+    }
    },
    {
     "beat": "STEP 4",
     "say": "To pay the customer back, click More, then Refund, enter the amount and save.",
     "tts": "To pay the customer back, click More, then Refund, enter the amount and save.",
     "card": "More > Refund",
-    "screen": null
+    "screen": {
+     "app": "presenter",
+     "view": "presenter"
+    }
    },
    {
     "beat": "RESULT",
@@ -154,7 +160,10 @@
    "say": "To use it against an invoice, open the credit note, click Apply to Invoice, enter the amount, and save.",
    "tts": "To use it against an invoice, open the credit note, click Apply to Invoice, enter the amount, and save.",
    "card": "Apply to Invoice",
-   "screen": null,
+   "screen": {
+    "app": "presenter",
+    "view": "presenter"
+   },
    "face": false
   },
   {
@@ -162,7 +171,10 @@
    "say": "To pay the customer back, click More, then Refund, enter the amount and save.",
    "tts": "To pay the customer back, click More, then Refund, enter the amount and save.",
    "card": "More > Refund",
-   "screen": null,
+   "screen": {
+    "app": "presenter",
+    "view": "presenter"
+   },
    "face": false
   },
   {

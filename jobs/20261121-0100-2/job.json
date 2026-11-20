@@ -1,7 +1,7 @@
 {
  "id": "20261121-0100-2",
  "niche": "zoho",
- "status": "qa_failed",
+ "status": "waiting_for_clips",
  "upload": true,
  "created": "2026-11-20T19:30:00",
  "title": "WhatsApp Marketing in Zoho Campaigns: What Changed in the Rebuild #Shorts",
@@ -33,28 +33,40 @@
     "say": "Before, Zoho Campaigns meant email and SMS. Now you can send bulk WhatsApp campaigns with message templates approved by Meta.",
     "tts": "Before, Zoho Campaigns meant email and SMS. Now you can send bulk WhatsApp campaigns with message templates approved by Meta.",
     "card": "Bulk WhatsApp campaigns",
-    "screen": null
+    "screen": {
+     "app": "presenter",
+     "view": "presenter"
+    }
    },
    {
     "beat": "STEP 2",
     "say": "And you can add WhatsApp steps inside your automated workflows.",
     "tts": "And you can add WhatsApp steps inside your automated workflows.",
     "card": "WhatsApp in workflows",
-    "screen": null
+    "screen": {
+     "app": "presenter",
+     "view": "presenter"
+    }
    },
    {
     "beat": "STEP 3",
     "say": "It also supports MCP, so AI agents can build, schedule and analyse your campaigns, while you approve what goes out.",
     "tts": "It also supports M C P, so A I agents can build, schedule and analyse your campaigns, while you approve what goes out.",
     "card": "AI agents via MCP",
-    "screen": null
+    "screen": {
+     "app": "presenter",
+     "view": "presenter"
+    }
    },
    {
     "beat": "STEP 4",
     "say": "In Zoho's own tests, sending one hundred thousand emails is up to four times faster.",
     "tts": "In Zoho's own tests, sending one hundred thousand emails is up to four times faster.",
     "card": "100,000 emails: up to 4x faster",
-    "screen": null
+    "screen": {
+     "app": "presenter",
+     "view": "presenter"
+    }
    },
    {
     "beat": "RESULT",
@@ -92,7 +104,10 @@
    "say": "Before, Zoho Campaigns meant email and SMS. Now you can send bulk WhatsApp campaigns with message templates approved by Meta.",
    "tts": "Before, Zoho Campaigns meant email and SMS. Now you can send bulk WhatsApp campaigns with message templates approved by Meta.",
    "card": "Bulk WhatsApp campaigns",
-   "screen": null,
+   "screen": {
+    "app": "presenter",
+    "view": "presenter"
+   },
    "face": false
   },
   {
@@ -100,7 +115,10 @@
    "say": "And you can add WhatsApp steps inside your automated workflows.",
    "tts": "And you can add WhatsApp steps inside your automated workflows.",
    "card": "WhatsApp in workflows",
-   "screen": null,
+   "screen": {
+    "app": "presenter",
+    "view": "presenter"
+   },
    "face": false
   },
   {
@@ -108,7 +126,10 @@
    "say": "It also supports MCP, so AI agents can build, schedule and analyse your campaigns, while you approve what goes out.",
    "tts": "It also supports M C P, so A I agents can build, schedule and analyse your campaigns, while you approve what goes out.",
    "card": "AI agents via MCP",
-   "screen": null,
+   "screen": {
+    "app": "presenter",
+    "view": "presenter"
+   },
    "face": false
   },
   {
@@ -116,7 +137,10 @@
    "say": "In Zoho's own tests, sending one hundred thousand emails is up to four times faster.",
    "tts": "In Zoho's own tests, sending one hundred thousand emails is up to four times faster.",
    "card": "100,000 emails: up to 4x faster",
-   "screen": null,
+   "screen": {
+    "app": "presenter",
+    "view": "presenter"
+   },
    "face": false
   },
   {
