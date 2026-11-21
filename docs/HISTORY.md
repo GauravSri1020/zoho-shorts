@@ -6,6 +6,18 @@ Is file ko har session ke end pe update karo, taaki agla chat yahin se shuru kar
 
 Gaurav jab bhi kuch bhi change karne bole: SABSE PEHLE backup - `backup-YYYY-MM-DD-<kya-badal-rahe-ho>` branch main se banao (aur agar video ka kaam hai to latest Short ka artifact download karo). Tabhi code chhuo. Kuch bigde to us branch se purana code wapas lo.
 
+## 21 Nov 2026 subah (10:48 IST scheduled "Flow Shorts daily") - KUCH NAHI BANA, sirf check
+
+Backup: `backup-2026-11-21-flow-daily` (long-videos se). Run phir cloud-only tha (Claude-in-Chrome nahi) -> Flow clips /
+Studio upload / schedule NAHI hue, 0 Flow credits. Aur ye task ab Gaurav ke 20/21 Nov raat ke order se TAKRATA hai
+("Shorts = main engine only, Flow wali video schedule se pehle dikhana") -> isliye naye Flow specs bhi NAHI likhe.
+Gaurav decide kare: task band karo / naye order ke hisaab se badlo.
+- Actions ab chal rahe (repo public). daily-robot brain 21 Nov 04:19Z: token ab hai (HAS_TOKEN true) par Claude step
+  2 s / 1 turn / $0 mein is_error:true -> token galat / expire / usage limit lagta hai (output hidden). Keeper OK.
+- GSX Automation Shorts ke 07:17 + 08:43 IST cron runs AAJ CHALE HI NAHI (GitHub ne drop kiye; sirf 00:09Z comments run).
+  state: scheduled=1, next=21 Nov 07:30 (Campaigns) -> aaj ke baad koi Short scheduled nahi. Long video EhSLe1zlEzI aaj 18:30.
+  Claude ne engine khud dispatch NAHI kiya (kal purane waiting jobs ke duplicate bane the) - Gaurav ka faisla.
+
 ## 20 Nov 2026 subah (10:47 IST scheduled "Flow Shorts daily") - research + 2 specs, Flow/YouTube NAHI hua
 
 Backup: `backup-2026-11-20-flow-daily` (long-videos se). Run cloud-only tha: Claude-in-Chrome / desktop tools the hi nahi
