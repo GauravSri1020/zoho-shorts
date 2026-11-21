@@ -1,0 +1,573 @@
+{
+ "id": "20261121-0908-3",
+ "niche": "zoho",
+ "status": "waiting_for_clips",
+ "upload": true,
+ "created": "2026-11-21T09:17:23",
+ "title": "Mappls Integrated With Zoho Arattai #Shorts",
+ "description": "Learn how Mappls integrates directly with Zoho Arattai for native team navigation.\n\n1. Open Zoho Arattai on your mobile device or desktop app.\n2. Check chat settings to confirm the Mappls navigation integration is active.\n3. Tap on shared location pins in chats to launch turn-by-turn Mappls directions instantly.\n\nAI + Zoho automations every day - follow @GSXAutomation\n\nWhat inspired this: https://news.google.com/rss/articles/CBMigAFBVV95cUxNUTlFNmdfTWpGSjQ1U091VGRqMmlqdlFMcDV4Z2V5anhrR3BTOTdBMkZsUDhQdjZreURGTDNVZ3VoTGYtUzFyRUhwalhZUkh5dm1ac3hrOXZubldCRDBpSXNNZHRJOE8td0VreTJUd2wySzlWWmxkd1FHakdkOXRBRQ?oc=5\n\nThis video uses an AI-generated presenter and voice.\nIndependent channel. Not affiliated with or endorsed by Zoho Corporation. Zoho is a trademark of Zoho Corporation.\n\n#Shorts #Zoho #AIAutomation #ZohoCRM #AIAgents",
+ "angle": {
+  "story_index": 3,
+  "pillar": "trending",
+  "region": "india",
+  "product": "Zoho Arattai",
+  "app": "salesiq",
+  "problem": "Field teams and delivery drivers struggle with fragmented navigation tools while communicating on team chat apps.",
+  "fix_type": "native",
+  "solution": "Mappls has integrated directly with Zoho's Arattai to bring seamless native navigation straight into messaging.",
+  "steps": [
+   "Open Zoho Arattai on your mobile device or desktop app.",
+   "Check chat settings to confirm the Mappls navigation integration is active.",
+   "Tap on shared location pins in chats to launch turn-by-turn Mappls directions instantly."
+  ],
+  "api": null,
+  "result": "Never switch between third-party maps and messaging apps when coordinating field visits or deliveries.",
+  "wow": "Mappls navigation is now natively embedded inside Zoho's secure messaging app, Arattai.",
+  "hook": "Mappls just integrated with Zoho Arattai - here's how to use it!"
+ },
+ "story": {
+  "title": "Mappls integrates with Zoho's Arattai for navigation",
+  "link": "https://news.google.com/rss/articles/CBMigAFBVV95cUxNUTlFNmdfTWpGSjQ1U091VGRqMmlqdlFMcDV4Z2V5anhrR3BTOTdBMkZsUDhQdjZreURGTDNVZ3VoTGYtUzFyRUhwalhZUkh5dm1ac3hrOXZubldCRDBpSXNNZHRJOE8td0VreTJUd2wySzlWWmxkd1FHakdkOXRBRQ?oc=5",
+  "summary": "Mappls integrates with Zoho's Arattai for navigation MediaBrief",
+  "source": "MediaBrief",
+  "ts": 1794983483,
+  "type": "news",
+  "publishers": 5,
+  "trend": 12,
+  "age_hours": 74,
+  "score": 23,
+  "facts_checked": true
+ },
+ "script": {
+  "title": "Mappls Integrated With Zoho Arattai",
+  "hook_text": "Mappls meets Zoho Arattai!",
+  "thumb_text": "Mappls in *Zoho Arattai*",
+  "app_label": "Zoho Arattai + Mappls",
+  "lines": [
+   {
+    "beat": "HOOK",
+    "say": "Big news for field operations and logistics teams! Mappls has just been officially integrated with Zoho Arattai, bringing powerful mapping and location services directly into your everyday team messaging platform. If you manage remote workers, delivery fleets, or on-site technicians, this update completely changes how your team collaborates, shares locations, and navigates daily field visits without ever needing to jump between multiple separate applications.",
+    "tts": "Big news for field operations and logistics teams! Mappls has just been officially integrated with Zoho Arattai, bringing powerful mapping and location services directly into your everyday team messaging platform. If you manage remote workers, delivery fleets, or on-site technicians, this update completely changes how your team collaborates, shares locations, and navigates daily field visits without ever needing to jump between multiple separate applications.",
+    "card": "Mappls + Arattai",
+    "screen": null
+   },
+   {
+    "beat": "PROBLEM",
+    "say": "For the longest time, field teams have struggled with a very frustrating workflow bottleneck. Employees constantly waste precious minutes switching back and forth between separate mapping applications and team chat threads just to figure out where they need to go. Copying and pasting coordinates, manually typing long addresses into third-party navigation tools, and losing track of shared client locations leads to wasted time, communication errors, and inefficient daily travel routes across the entire workforce.",
+    "tts": "For the longest time, field teams have struggled with a very frustrating workflow bottleneck. Employees constantly waste precious minutes switching back and forth between separate mapping applications and team chat threads just to figure out where they need to go. Copying and pasting coordinates, manually typing long addresses into third-party navigation tools, and losing track of shared client locations leads to wasted time, communication errors, and inefficient daily travel routes across the entire workforce.",
+    "card": "Fragmented navigation",
+    "screen": null
+   },
+   {
+    "beat": "FIX",
+    "say": "To solve this problem, the new integration between Mappls and Zoho Arattai bridges the gap by bringing native location intelligence directly into your conversations. Instead of juggling multiple windows, your team can now interact with location data right inside the chat interface. This seamless combination streamlines your entire communication pipeline, ensuring that every field agent, dispatcher, and team manager stays perfectly synchronized with precise mapping data, live updates, and accurate route details all in one centralized workspace.",
+    "tts": "To solve this problem, the new integration between Mappls and Zoho Arattai bridges the gap by bringing native location intelligence directly into your conversations. Instead of juggling multiple windows, your team can now interact with location data right inside the chat interface. This seamless combination streamlines your entire communication pipeline, ensuring that every field agent, dispatcher, and team manager stays perfectly synchronized with precise mapping data, live updates, and accurate route details all in one centralized workspace.",
+    "card": "Native Mappls navigation",
+    "screen": {
+     "app": "arattai",
+     "view": "settings",
+     "path": [
+      "Chats",
+      "Location Sharing"
+     ],
+     "heading": "Zoho Arattai Location Settings",
+     "columns": [
+      "Feature",
+      "Status"
+     ],
+     "rows": [
+      [
+       "Mappls Maps",
+       "Enabled"
+      ]
+     ],
+     "fields": [
+      [
+       "Service",
+       "Mappls"
+      ]
+     ],
+     "toggles": [
+      [
+       "Mappls Integration",
+       true
+      ]
+     ],
+     "messages": null,
+     "tool": null,
+     "method": null,
+     "url": null,
+     "headers": null,
+     "body": null,
+     "response": null,
+     "language": null,
+     "nodes": null,
+     "real": null,
+     "click": "Mappls Integration",
+     "tip": "Verify map provider settings."
+    }
+   },
+   {
+    "beat": "STEP 1",
+    "say": "To get started, simply open up Zoho Arattai on your mobile device or your desktop application. Navigate to your active team conversations or direct messages where your field operations take place. Once you are inside your preferred chat thread, you will immediately notice how smoothly location sharing and team updates are organized, preparing you to utilize the new Mappls mapping capabilities without needing any complicated third-party software installation or external configuration steps.",
+    "tts": "To get started, simply open up Zoho Arattai on your mobile device or your desktop application. Navigate to your active team conversations or direct messages where your field operations take place. Once you are inside your preferred chat thread, you will immediately notice how smoothly location sharing and team updates are organized, preparing you to utilize the new Mappls mapping capabilities without needing any complicated third-party software installation or external configuration steps.",
+    "card": "Open Zoho Arattai",
+    "screen": {
+     "app": "arattai",
+     "view": "list",
+     "path": [
+      "Arattai",
+      "Conversations"
+     ],
+     "heading": "Zoho Arattai",
+     "columns": [
+      "Chat Name",
+      "Activity"
+     ],
+     "rows": [
+      [
+       "Field Operations",
+       "Active location share"
+      ]
+     ],
+     "fields": [],
+     "toggles": [],
+     "messages": null,
+     "tool": null,
+     "method": null,
+     "url": null,
+     "headers": null,
+     "body": null,
+     "response": null,
+     "language": null,
+     "nodes": null,
+     "real": null,
+     "click": "Field Operations",
+     "tip": "Open your active chat."
+    }
+   },
+   {
+    "beat": "STEP 2",
+    "say": "Next, open your chat info or shared media details to confirm that your location services are properly linked. The Mappls integration works quietly in the background to ensure that any dropped pins, geographic coordinates, or client site addresses shared by your colleagues are automatically recognized and formatted for instant map viewing. Taking a quick second to verify this setup guarantees that your entire team can effortlessly access accurate location details the moment they are dropped into the conversation.",
+    "tts": "Next, open your chat info or shared media details to confirm that your location services are properly linked. The Mappls integration works quietly in the background to ensure that any dropped pins, geographic coordinates, or client site addresses shared by your colleagues are automatically recognized and formatted for instant map viewing. Taking a quick second to verify this setup guarantees that your entire team can effortlessly access accurate location details the moment they are dropped into the conversation.",
+    "card": "Confirm Mappls active",
+    "screen": {
+     "app": "arattai",
+     "view": "settings",
+     "path": [
+      "Chat Info",
+      "Shared Media"
+     ],
+     "heading": "Chat Details",
+     "columns": [
+      "Detail",
+      "Status"
+     ],
+     "rows": [
+      [
+       "Map Provider",
+       "Mappls"
+      ]
+     ],
+     "fields": [
+      [
+       "Provider",
+       "Mappls"
+      ]
+     ],
+     "toggles": [
+      [
+       "Auto-Open Mappls",
+       true
+      ]
+     ],
+     "messages": null,
+     "tool": null,
+     "method": null,
+     "url": null,
+     "headers": null,
+     "body": null,
+     "response": null,
+     "language": null,
+     "nodes": null,
+     "real": null,
+     "click": "Auto-Open Mappls",
+     "tip": "Check default map settings."
+    }
+   },
+   {
+    "beat": "STEP 3",
+    "say": "Now comes the best part of the entire update. Whenever a teammate shares a location pin inside your Zoho Arattai chat, just tap directly on that shared pin. It will instantly launch turn by turn Mappls directions right on your screen, guiding you seamlessly to your destination without missing a beat. There is zero friction, zero manual address entry, and maximum efficiency for every single journey your field personnel take throughout the busy workday.",
+    "tts": "Now comes the best part of the entire update. Whenever a teammate shares a location pin inside your Zoho Arattai chat, just tap directly on that shared pin. It will instantly launch turn by turn Mappls directions right on your screen, guiding you seamlessly to your destination without missing a beat. There is zero friction, zero manual address entry, and maximum efficiency for every single journey your field personnel take throughout the busy workday.",
+    "card": "Launch Mappls directions",
+    "screen": {
+     "app": "arattai",
+     "view": "form",
+     "path": [
+      "Chats",
+      "Shared Pin"
+     ],
+     "heading": "Location Pin",
+     "columns": [],
+     "rows": [],
+     "fields": [
+      [
+       "Destination",
+       "Al Noor Trading"
+      ]
+     ],
+     "toggles": [],
+     "messages": null,
+     "tool": null,
+     "method": null,
+     "url": null,
+     "headers": null,
+     "body": null,
+     "response": null,
+     "language": null,
+     "nodes": null,
+     "real": null,
+     "click": "Destination",
+     "tip": "Tap pin to launch Mappls."
+    }
+   },
+   {
+    "beat": "RESULT",
+    "say": "By combining the power of Mappls navigation with Zoho Arattai team messaging, your business can finally say goodbye to messy workflows and disconnected apps. Empower your field agents, improve response times, and keep everyone completely aligned on every single visit. Try out this integration today, experience the future of streamlined field coordination, and don't forget to subscribe for more productivity tips!",
+    "tts": "By combining the power of Mappls navigation with Zoho Arattai team messaging, your business can finally say goodbye to messy workflows and disconnected apps. Empower your field agents, improve response times, and keep everyone completely aligned on every single visit. Try out this integration today, experience the future of streamlined field coordination, and don't forget to subscribe for more productivity tips!",
+    "card": "Seamless field navigation",
+    "screen": null
+   }
+  ],
+  "api": null,
+  "code": null,
+  "test_before_recording": [
+   "Confirm Zoho Arattai app is up to date",
+   "Check Mappls integration in settings"
+  ],
+  "description": "Learn how Mappls integrates directly with Zoho Arattai for native team navigation.",
+  "tags": [
+   "Zoho",
+   "Arattai",
+   "Mappls",
+   "Navigation",
+   "FieldService",
+   "Messaging",
+   "Integration",
+   "Productivity",
+   "Business",
+   "Updates"
+  ]
+ },
+ "lines": [
+  {
+   "beat": "HOOK",
+   "say": "Big news for field operations and logistics teams! Mappls has just been officially integrated with Zoho Arattai, bringing powerful mapping and location services directly into your everyday team messaging platform. If you manage remote workers, delivery fleets, or on-site technicians, this update completely changes how your team collaborates, shares locations, and navigates daily field visits without ever needing to jump between multiple separate applications.",
+   "tts": "Big news for field operations and logistics teams! Mappls has just been officially integrated with Zoho Arattai, bringing powerful mapping and location services directly into your everyday team messaging platform. If you manage remote workers, delivery fleets, or on-site technicians, this update completely changes how your team collaborates, shares locations, and navigates daily field visits without ever needing to jump between multiple separate applications.",
+   "card": "Mappls + Arattai",
+   "screen": null,
+   "face": true
+  },
+  {
+   "beat": "PROBLEM",
+   "say": "For the longest time, field teams have struggled with a very frustrating workflow bottleneck. Employees constantly waste precious minutes switching back and forth between separate mapping applications and team chat threads just to figure out where they need to go. Copying and pasting coordinates, manually typing long addresses into third-party navigation tools, and losing track of shared client locations leads to wasted time, communication errors, and inefficient daily travel routes across the entire workforce.",
+   "tts": "For the longest time, field teams have struggled with a very frustrating workflow bottleneck. Employees constantly waste precious minutes switching back and forth between separate mapping applications and team chat threads just to figure out where they need to go. Copying and pasting coordinates, manually typing long addresses into third-party navigation tools, and losing track of shared client locations leads to wasted time, communication errors, and inefficient daily travel routes across the entire workforce.",
+   "card": "Fragmented navigation",
+   "screen": null,
+   "face": true
+  },
+  {
+   "beat": "FIX",
+   "say": "To solve this problem, the new integration between Mappls and Zoho Arattai bridges the gap by bringing native location intelligence directly into your conversations. Instead of juggling multiple windows, your team can now interact with location data right inside the chat interface. This seamless combination streamlines your entire communication pipeline, ensuring that every field agent, dispatcher, and team manager stays perfectly synchronized with precise mapping data, live updates, and accurate route details all in one centralized workspace.",
+   "tts": "To solve this problem, the new integration between Mappls and Zoho Arattai bridges the gap by bringing native location intelligence directly into your conversations. Instead of juggling multiple windows, your team can now interact with location data right inside the chat interface. This seamless combination streamlines your entire communication pipeline, ensuring that every field agent, dispatcher, and team manager stays perfectly synchronized with precise mapping data, live updates, and accurate route details all in one centralized workspace.",
+   "card": "Native Mappls navigation",
+   "screen": {
+    "app": "arattai",
+    "view": "settings",
+    "path": [
+     "Chats",
+     "Location Sharing"
+    ],
+    "heading": "Zoho Arattai Location Settings",
+    "columns": [
+     "Feature",
+     "Status"
+    ],
+    "rows": [
+     [
+      "Mappls Maps",
+      "Enabled"
+     ]
+    ],
+    "fields": [
+     [
+      "Service",
+      "Mappls"
+     ]
+    ],
+    "toggles": [
+     [
+      "Mappls Integration",
+      true
+     ]
+    ],
+    "messages": null,
+    "tool": null,
+    "method": null,
+    "url": null,
+    "headers": null,
+    "body": null,
+    "response": null,
+    "language": null,
+    "nodes": null,
+    "real": null,
+    "click": "Mappls Integration",
+    "tip": "Verify map provider settings."
+   },
+   "face": false
+  },
+  {
+   "beat": "STEP 1",
+   "say": "To get started, simply open up Zoho Arattai on your mobile device or your desktop application. Navigate to your active team conversations or direct messages where your field operations take place. Once you are inside your preferred chat thread, you will immediately notice how smoothly location sharing and team updates are organized, preparing you to utilize the new Mappls mapping capabilities without needing any complicated third-party software installation or external configuration steps.",
+   "tts": "To get started, simply open up Zoho Arattai on your mobile device or your desktop application. Navigate to your active team conversations or direct messages where your field operations take place. Once you are inside your preferred chat thread, you will immediately notice how smoothly location sharing and team updates are organized, preparing you to utilize the new Mappls mapping capabilities without needing any complicated third-party software installation or external configuration steps.",
+   "card": "Open Zoho Arattai",
+   "screen": {
+    "app": "arattai",
+    "view": "list",
+    "path": [
+     "Arattai",
+     "Conversations"
+    ],
+    "heading": "Zoho Arattai",
+    "columns": [
+     "Chat Name",
+     "Activity"
+    ],
+    "rows": [
+     [
+      "Field Operations",
+      "Active location share"
+     ]
+    ],
+    "fields": [],
+    "toggles": [],
+    "messages": null,
+    "tool": null,
+    "method": null,
+    "url": null,
+    "headers": null,
+    "body": null,
+    "response": null,
+    "language": null,
+    "nodes": null,
+    "real": null,
+    "click": "Field Operations",
+    "tip": "Open your active chat."
+   },
+   "face": false
+  },
+  {
+   "beat": "STEP 2",
+   "say": "Next, open your chat info or shared media details to confirm that your location services are properly linked. The Mappls integration works quietly in the background to ensure that any dropped pins, geographic coordinates, or client site addresses shared by your colleagues are automatically recognized and formatted for instant map viewing. Taking a quick second to verify this setup guarantees that your entire team can effortlessly access accurate location details the moment they are dropped into the conversation.",
+   "tts": "Next, open your chat info or shared media details to confirm that your location services are properly linked. The Mappls integration works quietly in the background to ensure that any dropped pins, geographic coordinates, or client site addresses shared by your colleagues are automatically recognized and formatted for instant map viewing. Taking a quick second to verify this setup guarantees that your entire team can effortlessly access accurate location details the moment they are dropped into the conversation.",
+   "card": "Confirm Mappls active",
+   "screen": {
+    "app": "arattai",
+    "view": "settings",
+    "path": [
+     "Chat Info",
+     "Shared Media"
+    ],
+    "heading": "Chat Details",
+    "columns": [
+     "Detail",
+     "Status"
+    ],
+    "rows": [
+     [
+      "Map Provider",
+      "Mappls"
+     ]
+    ],
+    "fields": [
+     [
+      "Provider",
+      "Mappls"
+     ]
+    ],
+    "toggles": [
+     [
+      "Auto-Open Mappls",
+      true
+     ]
+    ],
+    "messages": null,
+    "tool": null,
+    "method": null,
+    "url": null,
+    "headers": null,
+    "body": null,
+    "response": null,
+    "language": null,
+    "nodes": null,
+    "real": null,
+    "click": "Auto-Open Mappls",
+    "tip": "Check default map settings."
+   },
+   "face": false
+  },
+  {
+   "beat": "STEP 3",
+   "say": "Now comes the best part of the entire update. Whenever a teammate shares a location pin inside your Zoho Arattai chat, just tap directly on that shared pin. It will instantly launch turn by turn Mappls directions right on your screen, guiding you seamlessly to your destination without missing a beat. There is zero friction, zero manual address entry, and maximum efficiency for every single journey your field personnel take throughout the busy workday.",
+   "tts": "Now comes the best part of the entire update. Whenever a teammate shares a location pin inside your Zoho Arattai chat, just tap directly on that shared pin. It will instantly launch turn by turn Mappls directions right on your screen, guiding you seamlessly to your destination without missing a beat. There is zero friction, zero manual address entry, and maximum efficiency for every single journey your field personnel take throughout the busy workday.",
+   "card": "Launch Mappls directions",
+   "screen": {
+    "app": "arattai",
+    "view": "form",
+    "path": [
+     "Chats",
+     "Shared Pin"
+    ],
+    "heading": "Location Pin",
+    "columns": [],
+    "rows": [],
+    "fields": [
+     [
+      "Destination",
+      "Al Noor Trading"
+     ]
+    ],
+    "toggles": [],
+    "messages": null,
+    "tool": null,
+    "method": null,
+    "url": null,
+    "headers": null,
+    "body": null,
+    "response": null,
+    "language": null,
+    "nodes": null,
+    "real": null,
+    "click": "Destination",
+    "tip": "Tap pin to launch Mappls."
+   },
+   "face": false
+  },
+  {
+   "beat": "RESULT",
+   "say": "By combining the power of Mappls navigation with Zoho Arattai team messaging, your business can finally say goodbye to messy workflows and disconnected apps. Empower your field agents, improve response times, and keep everyone completely aligned on every single visit. Try out this integration today, experience the future of streamlined field coordination, and don't forget to subscribe for more productivity tips!",
+   "tts": "By combining the power of Mappls navigation with Zoho Arattai team messaging, your business can finally say goodbye to messy workflows and disconnected apps. Empower your field agents, improve response times, and keep everyone completely aligned on every single visit. Try out this integration today, experience the future of streamlined field coordination, and don't forget to subscribe for more productivity tips!",
+   "card": "Seamless field navigation",
+   "screen": null,
+   "face": true
+  }
+ ],
+ "clips": [
+  {
+   "text": "Big news for field operations and logistics teams! Mappls has just been officially integrated with Zoho Arattai,",
+   "lines": [
+    0
+   ],
+   "beat": "HOOK",
+   "prompt": "The man (my avatar) looks into the camera and talks to the viewer like a confident, friendly business tech explainer, smart and natural, not stiff; he stands with relaxed shoulders, shakes his head once with a half smile and holds up one hand as if saying stop. Vertical 9:16 medium-wide shot from the knees up, camera about two metres away, his head in the upper third with space above it, both hands and all his gestures fully visible in the frame, static camera, sharp and well lit, wearing light blue suit with a white shirt and no tie, in a busy open-plan office with people working softly blurred in the background; in this whole video he has a full well-groomed beard, short slicked-back hair, no glasses - exactly the same in every shot of this video. His face, skin tone, height and body build stay exactly as in my avatar's reference photos - the same natural average build, never slimmer and never heavier. Clean professional business look: no tilak or any mark on his forehead, no necklace, mala, beads, thread or religious accessory, no earrings, no bracelets. He says, in clear natural English with a clear, neutral international accent, at a brisk, lively pace: \"Big news for field operations and logistics teams! Mappls has just been officially integrated with Zoho Arattai,\" His lips match every word. He starts speaking in the very first frame, with no pause before the first word, and stops right after the last word. Audio: only his voice - no music, no sound effects. No subtitles, no captions, no text on screen."
+  },
+  {
+   "text": "bringing powerful mapping and location services directly into your everyday team messaging platform.",
+   "lines": [
+    0
+   ],
+   "beat": "HOOK",
+   "prompt": "The man (my avatar) looks into the camera and talks to the viewer like a confident, friendly business tech explainer, smart and natural, not stiff; he leans one hand on a table or railing next to him, then straightens up and talks with a confident open gesture. Vertical 9:16 medium-wide shot from the knees up, camera about two metres away, his head in the upper third with space above it, both hands and all his gestures fully visible in the frame, static camera, sharp and well lit, wearing light blue suit with a white shirt and no tie, in a busy open-plan office with people working softly blurred in the background; in this whole video he has a full well-groomed beard, short slicked-back hair, no glasses - exactly the same in every shot of this video. His face, skin tone, height and body build stay exactly as in my avatar's reference photos - the same natural average build, never slimmer and never heavier. Clean professional business look: no tilak or any mark on his forehead, no necklace, mala, beads, thread or religious accessory, no earrings, no bracelets. He says, in clear natural English with a clear, neutral international accent, at a brisk, lively pace: \"bringing powerful mapping and location services directly into your everyday team messaging platform.\" His lips match every word. He starts speaking in the very first frame, with no pause before the first word, and stops right after the last word. Audio: only his voice - no music, no sound effects. No subtitles, no captions, no text on screen."
+  },
+  {
+   "text": "If you manage remote workers, delivery fleets, or on-site technicians, this update completely changes how your team collaborates,",
+   "lines": [
+    0
+   ],
+   "beat": "HOOK",
+   "prompt": "The man (my avatar) looks into the camera and talks to the viewer like a confident, friendly business tech explainer, smart and natural, not stiff; he stands with relaxed shoulders, shakes his head once with a half smile and holds up one hand as if saying stop. Vertical 9:16 medium-wide shot from the knees up, camera about two metres away, his head in the upper third with space above it, both hands and all his gestures fully visible in the frame, static camera, sharp and well lit, wearing light blue suit with a white shirt and no tie, in a busy open-plan office with people working softly blurred in the background; in this whole video he has a full well-groomed beard, short slicked-back hair, no glasses - exactly the same in every shot of this video. His face, skin tone, height and body build stay exactly as in my avatar's reference photos - the same natural average build, never slimmer and never heavier. Clean professional business look: no tilak or any mark on his forehead, no necklace, mala, beads, thread or religious accessory, no earrings, no bracelets. He says, in clear natural English with a clear, neutral international accent, at a brisk, lively pace: \"If you manage remote workers, delivery fleets, or on-site technicians, this update completely changes how your team collaborates,\" His lips match every word. He starts speaking in the very first frame, with no pause before the first word, and stops right after the last word. Audio: only his voice - no music, no sound effects. No subtitles, no captions, no text on screen."
+  },
+  {
+   "text": "shares locations, and navigates daily field visits without ever needing to jump between multiple separate applications.",
+   "lines": [
+    0
+   ],
+   "beat": "HOOK",
+   "prompt": "The man (my avatar) looks into the camera and talks to the viewer like a confident, friendly business tech explainer, smart and natural, not stiff; he walks into the frame from the side, stops at the centre and points briefly at the camera with an easy smile. Vertical 9:16 medium-wide shot from the knees up, camera about two metres away, his head in the upper third with space above it, both hands and all his gestures fully visible in the frame, smooth gimbal camera gently moving back with him so the framing stays the same, sharp and well lit, wearing light blue suit with a white shirt and no tie, in a busy open-plan office with people working softly blurred in the background; in this whole video he has a full well-groomed beard, short slicked-back hair, no glasses - exactly the same in every shot of this video. His face, skin tone, height and body build stay exactly as in my avatar's reference photos - the same natural average build, never slimmer and never heavier. Clean professional business look: no tilak or any mark on his forehead, no necklace, mala, beads, thread or religious accessory, no earrings, no bracelets. He says, in clear natural English with a clear, neutral international accent, at a brisk, lively pace: \"shares locations, and navigates daily field visits without ever needing to jump between multiple separate applications.\" His lips match every word. He starts speaking in the very first frame, with no pause before the first word, and stops right after the last word. Audio: only his voice - no music, no sound effects. No subtitles, no captions, no text on screen."
+  },
+  {
+   "text": "For the longest time, field teams have struggled with a very frustrating workflow bottleneck.",
+   "lines": [
+    1
+   ],
+   "beat": "PROBLEM",
+   "prompt": "The man (my avatar) looks into the camera and talks to the viewer like a confident, friendly business tech explainer, smart and natural, not stiff; he frowns slightly, sighs and spreads both hands palms up as if asking why this is still so hard. Vertical 9:16 medium-wide shot from the knees up, camera about two metres away, his head in the upper third with space above it, both hands and all his gestures fully visible in the frame, static camera, sharp and well lit, wearing light blue suit with a white shirt and no tie, in a busy open-plan office with people working softly blurred in the background; in this whole video he has a full well-groomed beard, short slicked-back hair, no glasses - exactly the same in every shot of this video. His face, skin tone, height and body build stay exactly as in my avatar's reference photos - the same natural average build, never slimmer and never heavier. Clean professional business look: no tilak or any mark on his forehead, no necklace, mala, beads, thread or religious accessory, no earrings, no bracelets. He says, in clear natural English with a clear, neutral international accent, at a brisk, lively pace: \"For the longest time, field teams have struggled with a very frustrating workflow bottleneck.\" His lips match every word. He starts speaking in the very first frame, with no pause before the first word, and stops right after the last word. Audio: only his voice - no music, no sound effects. No subtitles, no captions, no text on screen."
+  },
+  {
+   "text": "Employees constantly waste precious minutes switching back and forth between separate mapping applications and team chat threads just to figure",
+   "lines": [
+    1
+   ],
+   "beat": "PROBLEM",
+   "prompt": "The man (my avatar) looks into the camera and talks to the viewer like a confident, friendly business tech explainer, smart and natural, not stiff; he frowns slightly, sighs and spreads both hands palms up as if asking why this is still so hard. Vertical 9:16 medium-wide shot from the knees up, camera about two metres away, his head in the upper third with space above it, both hands and all his gestures fully visible in the frame, static camera, sharp and well lit, wearing light blue suit with a white shirt and no tie, in a busy open-plan office with people working softly blurred in the background; in this whole video he has a full well-groomed beard, short slicked-back hair, no glasses - exactly the same in every shot of this video. His face, skin tone, height and body build stay exactly as in my avatar's reference photos - the same natural average build, never slimmer and never heavier. Clean professional business look: no tilak or any mark on his forehead, no necklace, mala, beads, thread or religious accessory, no earrings, no bracelets. He says, in clear natural English with a clear, neutral international accent, at a brisk, lively pace: \"Employees constantly waste precious minutes switching back and forth between separate mapping applications and team chat threads just to figure\" His lips match every word. He starts speaking in the very first frame, with no pause before the first word, and stops right after the last word. Audio: only his voice - no music, no sound effects. No subtitles, no captions, no text on screen."
+  },
+  {
+   "text": "out where they need to go. Copying and pasting coordinates, manually typing long addresses into third-party navigation tools,",
+   "lines": [
+    1
+   ],
+   "beat": "PROBLEM",
+   "prompt": "The man (my avatar) looks into the camera and talks to the viewer like a confident, friendly business tech explainer, smart and natural, not stiff; he shrugs with both shoulders and tilts his head, as if he has seen this problem a hundred times. Vertical 9:16 medium-wide shot from the knees up, camera about two metres away, his head in the upper third with space above it, both hands and all his gestures fully visible in the frame, static camera, sharp and well lit, wearing light blue suit with a white shirt and no tie, in a busy open-plan office with people working softly blurred in the background; in this whole video he has a full well-groomed beard, short slicked-back hair, no glasses - exactly the same in every shot of this video. His face, skin tone, height and body build stay exactly as in my avatar's reference photos - the same natural average build, never slimmer and never heavier. Clean professional business look: no tilak or any mark on his forehead, no necklace, mala, beads, thread or religious accessory, no earrings, no bracelets. He says, in clear natural English with a clear, neutral international accent, at a brisk, lively pace: \"out where they need to go. Copying and pasting coordinates, manually typing long addresses into third-party navigation tools,\" His lips match every word. He starts speaking in the very first frame, with no pause before the first word, and stops right after the last word. Audio: only his voice - no music, no sound effects. No subtitles, no captions, no text on screen."
+  },
+  {
+   "text": "and losing track of shared client locations leads to wasted time,",
+   "lines": [
+    1
+   ],
+   "beat": "PROBLEM",
+   "prompt": "The man (my avatar) looks into the camera and talks to the viewer like a confident, friendly business tech explainer, smart and natural, not stiff; he crosses his arms for a moment, then uncrosses them and gestures to the side in mild frustration. Vertical 9:16 medium-wide shot from the knees up, camera about two metres away, his head in the upper third with space above it, both hands and all his gestures fully visible in the frame, static camera, sharp and well lit, wearing light blue suit with a white shirt and no tie, in a busy open-plan office with people working softly blurred in the background; in this whole video he has a full well-groomed beard, short slicked-back hair, no glasses - exactly the same in every shot of this video. His face, skin tone, height and body build stay exactly as in my avatar's reference photos - the same natural average build, never slimmer and never heavier. Clean professional business look: no tilak or any mark on his forehead, no necklace, mala, beads, thread or religious accessory, no earrings, no bracelets. He says, in clear natural English with a clear, neutral international accent, at a brisk, lively pace: \"and losing track of shared client locations leads to wasted time,\" His lips match every word. He starts speaking in the very first frame, with no pause before the first word, and stops right after the last word. Audio: only his voice - no music, no sound effects. No subtitles, no captions, no text on screen."
+  },
+  {
+   "text": "communication errors, and inefficient daily travel routes across the entire workforce.",
+   "lines": [
+    1
+   ],
+   "beat": "PROBLEM",
+   "prompt": "The man (my avatar) looks into the camera and talks to the viewer like a confident, friendly business tech explainer, smart and natural, not stiff; he crosses his arms for a moment, then uncrosses them and gestures to the side in mild frustration. Vertical 9:16 medium-wide shot from the knees up, camera about two metres away, his head in the upper third with space above it, both hands and all his gestures fully visible in the frame, static camera, sharp and well lit, wearing light blue suit with a white shirt and no tie, in a busy open-plan office with people working softly blurred in the background; in this whole video he has a full well-groomed beard, short slicked-back hair, no glasses - exactly the same in every shot of this video. His face, skin tone, height and body build stay exactly as in my avatar's reference photos - the same natural average build, never slimmer and never heavier. Clean professional business look: no tilak or any mark on his forehead, no necklace, mala, beads, thread or religious accessory, no earrings, no bracelets. He says, in clear natural English with a clear, neutral international accent, at a brisk, lively pace: \"communication errors, and inefficient daily travel routes across the entire workforce.\" His lips match every word. He starts speaking in the very first frame, with no pause before the first word, and stops right after the last word. Audio: only his voice - no music, no sound effects. No subtitles, no captions, no text on screen."
+  },
+  {
+   "text": "By combining the power of Mappls navigation with Zoho Arattai team messaging,",
+   "lines": [
+    6
+   ],
+   "beat": "RESULT",
+   "prompt": "The man (my avatar) looks into the camera and talks to the viewer like a confident, friendly business tech explainer, smart and natural, not stiff; he gives a short confident thumbs up near his chest and smiles. Vertical 9:16 medium-wide shot from the knees up, camera about two metres away, his head in the upper third with space above it, both hands and all his gestures fully visible in the frame, static camera, sharp and well lit, wearing light blue suit with a white shirt and no tie, in a busy open-plan office with people working softly blurred in the background; in this whole video he has a full well-groomed beard, short slicked-back hair, no glasses - exactly the same in every shot of this video. His face, skin tone, height and body build stay exactly as in my avatar's reference photos - the same natural average build, never slimmer and never heavier. Clean professional business look: no tilak or any mark on his forehead, no necklace, mala, beads, thread or religious accessory, no earrings, no bracelets. He says, in clear natural English with a clear, neutral international accent, at a brisk, lively pace: \"By combining the power of Mappls navigation with Zoho Arattai team messaging,\" His lips match every word. He starts speaking in the very first frame, with no pause before the first word, and stops right after the last word. Audio: only his voice - no music, no sound effects. No subtitles, no captions, no text on screen."
+  },
+  {
+   "text": "your business can finally say goodbye to messy workflows and disconnected apps.",
+   "lines": [
+    6
+   ],
+   "beat": "RESULT",
+   "prompt": "The man (my avatar) looks into the camera and talks to the viewer like a confident, friendly business tech explainer, smart and natural, not stiff; he snaps his fingers once and smiles as if the problem just disappeared. Vertical 9:16 medium-wide shot from the knees up, camera about two metres away, his head in the upper third with space above it, both hands and all his gestures fully visible in the frame, static camera, sharp and well lit, wearing light blue suit with a white shirt and no tie, in a busy open-plan office with people working softly blurred in the background; in this whole video he has a full well-groomed beard, short slicked-back hair, no glasses - exactly the same in every shot of this video. His face, skin tone, height and body build stay exactly as in my avatar's reference photos - the same natural average build, never slimmer and never heavier. Clean professional business look: no tilak or any mark on his forehead, no necklace, mala, beads, thread or religious accessory, no earrings, no bracelets. He says, in clear natural English with a clear, neutral international accent, at a brisk, lively pace: \"your business can finally say goodbye to messy workflows and disconnected apps.\" His lips match every word. He starts speaking in the very first frame, with no pause before the first word, and stops right after the last word. Audio: only his voice - no music, no sound effects. No subtitles, no captions, no text on screen."
+  },
+  {
+   "text": "Empower your field agents, improve response times, and keep everyone completely aligned on every single visit.",
+   "lines": [
+    6
+   ],
+   "beat": "RESULT",
+   "prompt": "The man (my avatar) looks into the camera and talks to the viewer like a confident, friendly business tech explainer, smart and natural, not stiff; he smiles and opens both arms wide. Vertical 9:16 medium-wide shot from the knees up, camera about two metres away, his head in the upper third with space above it, both hands and all his gestures fully visible in the frame, static camera, sharp and well lit, wearing light blue suit with a white shirt and no tie, in a busy open-plan office with people working softly blurred in the background; in this whole video he has a full well-groomed beard, short slicked-back hair, no glasses - exactly the same in every shot of this video. His face, skin tone, height and body build stay exactly as in my avatar's reference photos - the same natural average build, never slimmer and never heavier. Clean professional business look: no tilak or any mark on his forehead, no necklace, mala, beads, thread or religious accessory, no earrings, no bracelets. He says, in clear natural English with a clear, neutral international accent, at a brisk, lively pace: \"Empower your field agents, improve response times, and keep everyone completely aligned on every single visit.\" His lips match every word. He starts speaking in the very first frame, with no pause before the first word, and stops right after the last word. Audio: only his voice - no music, no sound effects. No subtitles, no captions, no text on screen."
+  },
+  {
+   "text": "Try out this integration today, experience the future of streamlined field coordination, and don't forget to subscribe for more productivity tips!",
+   "lines": [
+    6
+   ],
+   "beat": "RESULT",
+   "prompt": "The man (my avatar) looks into the camera and talks to the viewer like a confident, friendly business tech explainer, smart and natural, not stiff; he relaxes his shoulders, smiles and gives a small satisfied nod with an open-hand gesture. Vertical 9:16 medium-wide shot from the knees up, camera about two metres away, his head in the upper third with space above it, both hands and all his gestures fully visible in the frame, static camera, sharp and well lit, wearing light blue suit with a white shirt and no tie, in a busy open-plan office with people working softly blurred in the background; in this whole video he has a full well-groomed beard, short slicked-back hair, no glasses - exactly the same in every shot of this video. His face, skin tone, height and body build stay exactly as in my avatar's reference photos - the same natural average build, never slimmer and never heavier. Clean professional business look: no tilak or any mark on his forehead, no necklace, mala, beads, thread or religious accessory, no earrings, no bracelets. He says, in clear natural English with a clear, neutral international accent, at a brisk, lively pace: \"Try out this integration today, experience the future of streamlined field coordination, and don't forget to subscribe for more productivity tips!\" His lips match every word. He starts speaking in the very first frame, with no pause before the first word, and stops right after the last word. Audio: only his voice - no music, no sound effects. No subtitles, no captions, no text on screen."
+  }
+ ],
+ "look": "wearing light blue suit with a white shirt and no tie, in a busy open-plan office with people working softly blurred in the background; in this whole video he has a full well-groomed beard, short slicked-back hair, no glasses - exactly the same in every shot of this video",
+ "issue": 196
+}
