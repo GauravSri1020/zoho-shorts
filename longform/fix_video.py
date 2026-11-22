@@ -2,7 +2,8 @@
 
   python -m longform.fix_video <request.json>
 
-request: {"video_id": "...", "title": "...", "description_prepend": "...", "tags": [...], "thumb": "previews/<id>-thumb.jpg"}
+request: {"video_id": "...", "title": "...", "description_prepend": "...", "tags": [...], "thumb": "previews/<id>-thumb.jpg",
+          "publish_at": "2026-11-23T08:00:00Z"}   (publish_at only: move a still-private scheduled video to a new time)
 Keeps everything else (category, language, publish status). Needs youtube.force-ssl (already in the token).
 """
 import json
@@ -27,6 +28,18 @@ def main(req_path):
             sn[k] = cur[k]
     if r.get("description_prepend") and not sn["description"].startswith(r["description_prepend"][:40]):
         sn["description"] = r["description_prepend"].rstrip() + "\n\n" + sn["description"]
+    if r.get("publish_at"):
+        st = yt.videos().list(part="status", id=vid).execute()["items"][0]["status"]
+        if st.get("privacyStatus") != "private":
+            print(f"[fix] {vid}: already {st.get('privacyStatus')} - publish time not changed")
+        else:
+            st = {k: st[k] for k in ("privacyStatus", "selfDeclaredMadeForKids", "embeddable", "license",
+                                     "publicStatsViewable", "containsSyntheticMedia") if k in st}
+            st["publishAt"] = r["publish_at"]
+            yt.videos().update(part="status", body={"id": vid, "status": st}).execute()
+            print(f"[fix] {vid}: now public at {r['publish_at']}")
+        if not (r.get("title") or r.get("tags") or r.get("description_prepend") or r.get("thumb")):
+            return
     yt.videos().update(part="snippet", body={"id": vid, "snippet": sn}).execute()
     print(f"[fix] {vid}: title / description / {len(sn['tags'])} tags updated")
     if r.get("thumb"):

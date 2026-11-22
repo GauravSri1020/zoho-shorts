@@ -134,6 +134,16 @@ def pick_slot(yt, g, news=False):
         print(f"[vshort] could not read scheduled videos: {str(e)[:150]}")
         taken = []
     ist = dt.timezone(dt.timedelta(hours=5, minutes=30))
+    # 22 Nov 2026: a Short the main engine uploaded minutes ago is not in the uploads playlist yet -> two Shorts landed
+    # on the same 07:30 slot. Also count the engine's own slot list (main: state/state.json "slots", IST minutes).
+    try:
+        subprocess.run(["git", "fetch", "-q", "--depth=1", "origin", "main"], check=True, cwd=ROOT, timeout=120)
+        st = json.loads(subprocess.check_output(["git", "show", "FETCH_HEAD:state/state.json"], cwd=ROOT))
+        for sl in st.get("slots", [])[-40:]:
+            y, mo, d = map(int, sl["date"].split("-"))
+            taken.append(dt.datetime(y, mo, d, tzinfo=ist) + dt.timedelta(minutes=int(sl["minute"])))
+    except Exception as e:
+        print(f"[vshort] could not read the engine's slots on main: {str(e)[:150]}")
     now = dt.datetime.now(dt.timezone.utc)
     for day in range(0, 21):
         d = (now.astimezone(ist) + dt.timedelta(days=day)).date()
