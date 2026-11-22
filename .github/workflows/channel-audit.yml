@@ -1,0 +1,18 @@
+# Read-only: lists every upload (privacy, publish time, length, views) in the run log. Changes nothing.
+name: channel-audit
+on: {workflow_dispatch: {}}
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
+      YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
+      YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
+    steps:
+      - uses: actions/checkout@v4
+        with: {fetch-depth: 1}
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.12"}
+      - run: pip install -q google-api-python-client google-auth pyyaml requests
+      - run: python -m autopilot.audit
