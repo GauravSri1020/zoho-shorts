@@ -101,7 +101,7 @@ WM_BOX = [float(v) for v in (_WM.get("box") or [0.74, 0.88, 0.24, 0.10])]  # x, 
 VIDEO_EXT = (".mp4", ".mov", ".webm", ".m4v")
 REPO = os.getenv("GITHUB_REPOSITORY", "GauravSri1020/zoho-shorts")
 W, H, FPS, RATE = 720, 1280, 30, 44100
-SKIP_STATUS = ("done", "uploaded", "uploaded_manually", "skip")
+SKIP_STATUS = ("done", "uploaded", "uploaded_manually", "skip", "skip_no_clips")
 # Your face (Flow clips) only where it matters; everything else is the Zoho screen with the same voice (tts.py).
 FACE_BEATS = tuple(str(b).upper() for b in (_F.get("face_beats") or ["HOOK", "PROBLEM", "RESULT"]))
 # v4 (1 Nov 2026): faceless Shorts - no Flow clip at all (every line = screen + one TTS voice), so the robot can publish
@@ -111,6 +111,13 @@ FACE_BEATS = tuple(str(b).upper() for b in (_F.get("face_beats") or ["HOOK", "PR
 _FACE = os.getenv("FACE", "").strip().lower()
 FACELESS = (_FACE in ("no", "0", "false", "n", "faceless")
             or (bool(_F.get("faceless")) and _FACE not in ("1", "yes", "true", "y")))
+# 22 Nov 2026 (Gaurav): Zoho Shorts are NEVER faceless - Flow (HOOK + PROBLEM) -> real Zoho screens -> Flow (RESULT).
+NEVER_FACELESS = bool(_F.get("never_faceless")) and IS_ZOHO
+if NEVER_FACELESS and FACELESS:
+    print("[flow] never_faceless: FACE=no / faceless ignored - Zoho Shorts always get the Flow clips")
+    FACELESS = False
+EXPIRE_HOURS = float(_F.get("expire_hours", 30))
+EXTRA_ANGLES = int(_F.get("extra_angles", 2))
 if FACELESS:
     FACE_BEATS = ()
 DROP_BEATS = tuple(str(b).upper() for b in (_F.get("drop_beats") or ["CTA"]))
@@ -342,7 +349,7 @@ def prepare(count, do_upload):
     st = state.load()
     if IS_ZOHO:  # the Zoho niche, unchanged
         angles = writer.scout(research.fetch(st["covered_links"], covered_titles=st.get("covered_titles")),
-                              count + 2, st["problems"])
+                              count + EXTRA_ANGLES, st["problems"])
     else:  # niche switch: the rotation (4 wealth -> 1 problems) decides what kind of Short comes next
         from . import niche_claude_wealth as nw
         rot = st.setdefault("rotation", {}).get(NICHE_ID, 0)
@@ -443,6 +450,15 @@ def fallback(min_age_h=20.0):
         if age > 96:
             job["status"] = "skip"
             print(f"[flow] {job['id']}: {age:.0f} h old, news is stale - skipped")
+        elif NEVER_FACELESS:
+            # 22 Nov 2026 (Gaurav): never faceless. No clips after EXPIRE_HOURS -> skip (not built), so the daily run
+            # can write 2 fresh Shorts again (max_waiting would block it otherwise).
+            if age < max(min_age_h, EXPIRE_HOURS):
+                continue
+            job["status"] = "skip_no_clips"
+            print(f"[flow] {job['id']}: no Flow clips after {age:.0f} h -> skipped (Zoho Shorts are never faceless)")
+            _comment(job, "⏭️ No Flow clips came for this Short in time, so it is skipped (Zoho Shorts are never "
+                          "built faceless). Today's run writes fresh Shorts.")
         elif age >= min_age_h:
             for ln in job.get("lines", []):
                 ln["face"] = False

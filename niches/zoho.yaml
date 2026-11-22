@@ -122,6 +122,12 @@ flow:
   # credit nahi / clips nahi aaye -> fallback(): 20 h baad (agle subah ka run) ya Run workflow task "fallback"
   # (hours 0) -> wahi script FACELESS (photo cards + screens + Gemini voice). Run workflow face = no -> seedha faceless.
   faceless: false
+  # 22 Nov 2026 (Gaurav): "Zoho Shorts faceless KABHI nahi". Har Short = Flow clip (HOOK + PROBLEM) -> asli Zoho
+  # screens / screenshots (STEP lines) -> Flow clip (RESULT). Clips nahi aaye to Short faceless NAHI banta: job
+  # `expire_hours` ke baad "skip" (status skip_no_clips) ho jaata hai taaki agle din ke 2 naye Shorts ban sakein.
+  never_faceless: true
+  expire_hours: 30
+  extra_angles: 4           # script QA mein fail ho to aur angles try karo (2 Shorts roz pakke)
   per_day: 2                # Shorts per daily run (2 schedule slots a day)
   max_words_per_clip: 21    # ~7.8 s of brisk speech -> still fits one 8 s Flow clip (was 19)
   speed: 1.15               # lifts the pace of every clip a little (voice + lips together), 1.0 = off (was 1.1)

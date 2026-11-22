@@ -53,7 +53,7 @@ def counts(now=None):
         except Exception:
             continue
         s = str(job.get("status", "")).lower()
-        if s in ("done", "uploaded", "uploaded_manually", "skip"):
+        if s in ("done", "uploaded", "uploaded_manually", "skip", "skip_no_clips"):
             continue
         if s == "qa_failed":
             c["qa_failed"] += 1
