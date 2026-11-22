@@ -1,7 +1,7 @@
 {
  "id": "20261121-0100-1",
  "niche": "zoho",
- "status": "skip",
+ "status": "waiting_for_clips",
  "upload": true,
  "created": "2026-11-20T19:30:00",
  "title": "Zoho Books Credit Notes: Refund or Apply to an Invoice #Shorts",
@@ -162,7 +162,8 @@
    "card": "Apply to Invoice",
    "screen": {
     "app": "presenter",
-    "view": "presenter"
+    "view": "presenter",
+    "tip": "Apply to Invoice"
    },
    "face": false
   },
@@ -173,7 +174,8 @@
    "card": "More > Refund",
    "screen": {
     "app": "presenter",
-    "view": "presenter"
+    "view": "presenter",
+    "tip": "More > Refund"
    },
    "face": false
   },
