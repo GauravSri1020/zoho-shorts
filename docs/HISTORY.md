@@ -6,6 +6,25 @@ Is file ko har session ke end pe update karo, taaki agla chat yahin se shuru kar
 
 Gaurav jab bhi kuch bhi change karne bole: SABSE PEHLE backup - `backup-YYYY-MM-DD-<kya-badal-rahe-ho>` branch main se banao (aur agar video ka kaam hai to latest Short ka artifact download karo). Tabhi code chhuo. Kuch bigde to us branch se purana code wapas lo.
 
+## 23 Nov 2026 (01:00-02:40 IST) - Desk screenshots, premium v2, Nvidia trending Short scheduled (bina Flow)
+
+- 12 asli Zoho Desk screenshots (Gaurav ka Desk portal, Zoho ka sample ticket): tickets list / detail / new ticket,
+  setup home / channels / automation, Automation Studio (+ new rule), workflow rule, round robin, SLAs, Zia Agents ->
+  assets/screens/desk + index.yaml targets. Kuch bhi save / create nahi kiya (har form Cancel).
+- Premium v2: real screen pe spotlight (baaki screen dim), glowing ring + "Click: <button>" label, cursor jaldi pahunchta
+  hai; bada hook (Anton 118, laal box, number / key word peela, pop); har cut pe whoosh + click sound.
+- Desk Short real Desk screens ke saath dobara bana: QA 69.8 (70 chahiye) -> upload nahi; purana ef5oAOBpoxk (QA 71)
+  23 Nov 07:30 pe hi. Credit notes QA 67 -> nahi. Dono mein ek hi kami: Flow voice -> narrator voice switch.
+- Nvidia: Gaurav ko trending sample pasand. Whiteboard qZqLdG7DKM8 PRIVATE (fix_video "privacy"); sample + purana
+  profile-icon corner (longform/corner.py, base clip loop, koi Flow credit nahi) -> IprP0PpvvK0, 23 Nov 13:30 IST
+  (longform-upload, upscale false). GALTI: maine Flow pe Nvidia lip-sync clip bana diya (20 credits) - Gaurav ne mana
+  kiya tha "Nvidia pe Flow credit mat lagao". Clip flow-clips/flow/2026-11-23 mein save. RULE: Nvidia / news = 0 Flow
+  credits; jo Gaurav kahe bas wahi.
+- Anthropic IPO spec delete (stale). Flow credits: 80 (reset 2 Dec).
+- Open: (1) voice switch ka ilaaj (narrator ko Flow voice ke kareeb laana) - QA isi pe 70 se neeche; (2) research +
+  agents tight karna (CRM, Bigin, Sign, WorkDrive, Cliq, Arattai, Creator, Catalyst, Desk; Middle East + baaki desh;
+  Zoho / Sridhar Vembu stories) + top Shorts channels ki style study -> writer / editor / QA ke liye guide.
+
 ## 23 Nov 2026 raat (00:10-02:30 IST) - PREMIUM Shorts: stuck screen khatam, QA freeze check, 3 Shorts dobara
 
 - Gaurav: "beech mein gandi stuck screen; QA tight kar; face hate to cartoon / whiteboard ya screenshots pe screen-share;
