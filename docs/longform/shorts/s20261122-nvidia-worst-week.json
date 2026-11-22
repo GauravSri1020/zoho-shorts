@@ -1,0 +1,169 @@
+{
+ "id": "s20261122-nvidia-worst-week",
+ "format": "short",
+ "priority": "news",
+ "title": "Nvidia's Worst Week Since 2008: The Reported SEC Accounting Probe, Explained",
+ "kicker": "NVIDIA NEWS · 20 NOV 2026",
+ "headline": "Record revenue, then the *worst week since 2008*",
+ "source_line": "Sources: Reuters via Investing.com, Yahoo Finance (20 Nov 2026); NVIDIA Q3 FY2027 results",
+ "voice": {
+  "engine": "kokoro",
+  "voice": "am_onyx",
+  "speed": 1.1
+ },
+ "caption_fix": [
+  [
+   "S E C",
+   "SEC"
+  ],
+  [
+   "two thousand eight",
+   "2008"
+  ],
+  [
+   "twelve percent",
+   "12%"
+  ],
+  [
+   "one hundred fifteen point eight billion dollars",
+   "$115.8 billion"
+  ],
+  [
+   "one hundred three percent",
+   "103%"
+  ],
+  [
+   "twenty three percent",
+   "23%"
+  ],
+  [
+   "forty six percent",
+   "46%"
+  ]
+ ],
+ "sources": [
+  {
+   "name": "Yahoo Finance - Nvidia stock plunges 12% after Reuters reports an SEC probe (20 Nov 2026)",
+   "url": "https://finance.yahoo.com/markets/stocks/articles/nvidia-stock-plunges-12-reuters-201702082.html"
+  },
+  {
+   "name": "Investing.com - Nvidia shares fall as report of SEC accounting probe adds to pressure",
+   "url": "https://ca.investing.com/news/stock-market-news/nvidia-shares-fall-115-as-report-of-sec-accounting-probe-adds-to-pressure-4973044"
+  },
+  {
+   "name": "Yahoo Finance - NVDA worst week in 18 years",
+   "url": "https://finance.yahoo.com/markets/stocks/articles/nvda-stock-clocks-worst-week-233812270.html"
+  },
+  {
+   "name": "NVIDIA Announces Financial Results for Third Quarter Fiscal 2027",
+   "url": "https://www.streetinsider.com/dr/news.php?gfv=1&id=27363954"
+  }
+ ],
+ "tags": [
+  "Nvidia",
+  "NVDA",
+  "Nvidia stock",
+  "Nvidia SEC",
+  "Nvidia news",
+  "Nvidia earnings",
+  "AI stocks",
+  "stock market news",
+  "tech news",
+  "GSX Automation"
+ ],
+ "description": "Nvidia (NVDA) fell about 12-14% on Friday, 20 Nov 2026, after Reuters reported - citing two people briefed on the matter - that SEC enforcement staff are examining potential accounting issues at the company. Reuters said it could not establish which accounting practices are under review or when the inquiry began. A media report is not a charge, and no wrongdoing has been established.\n\nThe same week Nvidia reported Q3 fiscal 2027 revenue of $115.8 billion, up 103% year over year (17 Nov 2026). The stock lost about 23% in the week, its worst week since October 2008, and trades about 46% below its October record close.\n\nSources (checked 22 Nov 2026):\n- Yahoo Finance: https://finance.yahoo.com/markets/stocks/articles/nvidia-stock-plunges-12-reuters-201702082.html\n- Investing.com (Reuters report): https://ca.investing.com/news/stock-market-news/nvidia-shares-fall-115-as-report-of-sec-accounting-probe-adds-to-pressure-4973044\n- Yahoo Finance (worst week since 2008): https://finance.yahoo.com/markets/stocks/articles/nvda-stock-clocks-worst-week-233812270.html\n- NVIDIA Q3 FY2027 results: https://www.streetinsider.com/dr/news.php?gfv=1&id=27363954\n\nThis is news, not financial advice. This video uses an AI-generated presenter, voice and animations; facts were checked against the sources above.\nIndependent channel. Not affiliated with or endorsed by NVIDIA Corporation.\n\n#Nvidia #NVDA #StockMarket #AI #Shorts",
+ "scenes": [
+  {
+   "id": "s01",
+   "type": "HOOK",
+   "chapter": 0,
+   "visual": {
+    "kind": "hook2",
+    "beats": [
+     {
+      "t": "headline",
+      "tag": "NVIDIA NEWS",
+      "source": "Reuters / Yahoo Finance",
+      "date": "20 Nov 2026",
+      "text": "Nvidia's worst week since 2008, after a report of an SEC accounting probe",
+      "color": "coral"
+     },
+     {
+      "t": "guy",
+      "pose": "worried",
+      "prop": "chart_down",
+      "text": "About -12% on Friday"
+     },
+     {
+      "t": "guy",
+      "pose": "shrug",
+      "prop": "magnifier",
+      "text": "Which practices? Not known yet",
+      "stamp": "REPORT",
+      "stamp_color": "amber"
+     }
+    ]
+   },
+   "lines": [
+    "Nvidia just had its worst week since two thousand eight, only days after reporting record revenue.",
+    "On Friday the stock fell about twelve percent, after Reuters reported that S E C enforcement staff are examining potential accounting issues.",
+    "Reuters cited two people briefed on the matter, and said it could not establish which practices are under review, or when it began."
+   ]
+  },
+  {
+   "id": "s02",
+   "type": "BOARD",
+   "chapter": 0,
+   "visual": {
+    "kind": "stat",
+    "title": "Same week, two stories",
+    "stats": [
+     {
+      "value": "$115.8B",
+      "label": "Q3 revenue, up 103% (reported 17 Nov)",
+      "count": false,
+      "color": "green"
+     },
+     {
+      "value": "-23%",
+      "label": "stock this week - worst since Oct 2008",
+      "count": false,
+      "color": "red"
+     },
+     {
+      "value": "-46%",
+      "label": "below the October record close",
+      "count": false,
+      "color": "coral"
+     }
+    ]
+   },
+   "lines": [
+    "Here is the strange part. Three days earlier, Nvidia reported quarterly revenue of one hundred fifteen point eight billion dollars, up one hundred three percent.",
+    "But the stock lost twenty three percent this week, its worst week since October two thousand eight.",
+    "It now trades about forty six percent below its October record close."
+   ]
+  },
+  {
+   "id": "s03",
+   "type": "CARTOON",
+   "chapter": 0,
+   "visual": {
+    "kind": "story",
+    "beats": [
+     {
+      "pose": "point",
+      "prop": {
+       "name": "phone",
+       "label": "Follow"
+      },
+      "text": "A report is not a charge · not financial advice"
+     }
+    ]
+   },
+   "lines": [
+    "A media report is not a charge. We will follow what the S E C and Nvidia say next. This is news, not financial advice."
+   ]
+  }
+ ]
+}
