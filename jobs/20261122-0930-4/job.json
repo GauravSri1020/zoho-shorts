@@ -1,7 +1,7 @@
 {
  "id": "20261122-0930-4",
  "niche": "zoho",
- "status": "waiting_for_clips",
+ "status": "skip",
  "upload": true,
  "created": "2026-11-22T09:34:16",
  "title": "Zoho Desk AI Automation: Summarize Tickets Instantly with Claude #Shorts",
@@ -341,5 +341,5 @@
   }
  ],
  "look": "wearing light blue overshirt over a black crew-neck t-shirt, in a modern warehouse office with neat shelves and boxes softly blurred behind him; in this whole video he has a short neatly trimmed beard, a short fade with a little volume on top, thin black rectangular glasses - exactly the same in every shot of this video",
- "issue": 199
+ "issue": null
 }

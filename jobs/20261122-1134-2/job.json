@@ -1,7 +1,7 @@
 {
  "id": "20261122-1134-2",
  "niche": "zoho",
- "status": "done",
+ "status": "waiting_for_clips",
  "upload": true,
  "created": "2026-11-22T11:37:53",
  "title": "Zoho Desk Turns 10: New Automation Studio #Shorts",
@@ -316,5 +316,5 @@
   }
  ],
  "look": "wearing maroon henley t-shirt under an open dark blazer, on a balcony of a modern office building with a busy city street far below; in this whole video he has a neat light stubble, thick short slicked-back dark hair, clear-frame modern glasses - exactly the same in every shot of this video",
- "issue": 202
+ "issue": null
 }
