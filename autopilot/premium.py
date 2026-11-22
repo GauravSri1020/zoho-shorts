@@ -125,10 +125,10 @@ window.render=function(t){const T=D.dur;
  if(D.mode==='real'){const dev=$('dev'),img=$('img');
   if(!iw){iw=img.naturalWidth||1;ih=img.naturalHeight||1;}
   const devH=760,camH=devH-46;dev.style.height=devH+'px';dev.style.top='560px';
-  const p=ease((t-0.1)/0.5);dev.style.transform=`translateY(${(1-p)*500}px) scale(${0.9+0.1*p})`;dev.style.opacity=p;
+  const p=ease((t-0.1)/0.5);dev.style.transform=`translateY(${(1-p)*500+Math.sin(t*1.8)*10}px) rotate(${Math.sin(t*1.1)*0.6}deg) scale(${0.9+0.1*p})`;dev.style.opacity=p;
   const [bx,by,bw,bh]=D.box;const sFit=Math.min(960/iw,camH/ih),sFill=Math.max(960/iw,camH/ih);
   // first the whole screen (where are we?), then the camera pushes in to the click target - like a screen share
-  const k=ease((t-0.9)/(T*0.5));const S=sFit+(sFill*D.zoom-sFit)*k;
+  const k=ease((t-0.9)/(T*0.5));const drift=1+0.06*cl((t-0.9-T*0.5)/(T*0.5));const S=(sFit+(sFill*D.zoom-sFit)*k)*drift;
   const cx=(bx+bw/2),cy=(by+bh/2);
   let ox=480-cx*S, oy=camH/2-cy*S; ox=Math.min(0,Math.max(960-iw*S,ox));
   oy = ih*S<=camH ? (camH-ih*S)/2 : Math.min(0,Math.max(camH-ih*S,oy));
