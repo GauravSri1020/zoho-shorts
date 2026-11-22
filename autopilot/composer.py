@@ -423,7 +423,7 @@ Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
     if hook and segs and segs[0]["kind"] == "avatar":
         ev.append(f"Dialogue: 2,{_ts(0)},{_ts(min(segs[0]['t1'], 3.2))},Hook,,0,0,0,,"
                   f"{{\\fad(120,200)}}{_e(hook.upper())}")
-    for s in segs:  # "STEP 2" chip on screen shots
+    for s in ([] if (IS_ZOHO and PREMIUM) else segs):  # "STEP 2" chip on screen shots (premium draws its own badge)
         if s["kind"] == "screen":
             beat = str(lines[s["line"]].get("beat", "")).upper()
             label = beat if beat.startswith("STEP") else "HOW TO FIX" if beat.startswith("FIX") else beat
