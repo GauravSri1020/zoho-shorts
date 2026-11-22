@@ -6,6 +6,25 @@ Is file ko har session ke end pe update karo, taaki agla chat yahin se shuru kar
 
 Gaurav jab bhi kuch bhi change karne bole: SABSE PEHLE backup - `backup-YYYY-MM-DD-<kya-badal-rahe-ho>` branch main se banao (aur agar video ka kaam hai to latest Short ka artifact download karo). Tabhi code chhuo. Kuch bigde to us branch se purana code wapas lo.
 
+## 22 Nov 2026 shaam (17:45 IST) - Zoho Shorts KABHI faceless nahi, long-video brain 20 Nov subah pe wapas
+
+Gaurav: "Zoho Shorts faceless kabhi nahi the: Flow clip -> recorded screens / screenshots -> Flow clip (3 Flow clips),
+research agent (Middle East trending Zoho), roz 2 Shorts (fail ho to aur banao); long videos ka code parson se pehle
+wala; Nvidia jaisi trending news pe Shorts + long videos bhi". Backup: `backup-2026-11-22-main-before-no-faceless-revert`,
+`backup-2026-11-22-long-videos-before-revert`.
+- Check: 20-22 Nov mein code sirf 2 jagah badla tha: main autopilot.yml (cron wapas) + long-videos DAILY.md (8 lines).
+  longform/ ka code (render, upload, news_short, script-writer) poora hai - wo branch long-videos pe hai, main pe nahi.
+- main: `flow.never_faceless: true` -> fallback ab faceless NAHI banata; 30 h tak clips na aaye to job `skip_no_clips`
+  (agle din 2 naye Shorts ban sakein). FACE=no Zoho pe ignore. Scout +4 extra angles (QA fail ho to aur try).
+  Format wahi: HOOK + PROBLEM Flow clips -> STEP lines asli screens -> RESULT Flow clip.
+- long-videos: DAILY.md = dbb41fe (20 Nov subah) + 22 Nov block (Zoho Shorts = main engine, 1 Nvidia-style news Short/day,
+  long videos = Zoho + bade trending news jaise Nvidia).
+- Waiting abhi: 20261122-0930-4 (Zoho Desk + Claude summary, steps Flow/Claude wale - facts check karne baaki),
+  20261122-1134-2 (Zoho Desk turns 10, Automation Studio). Dono ko Flow clips chahiye (Gaurav ka Chrome + Claude).
+- ASLI rukawat (code nahi): (1) Flow clips sirf Gaurav ke Chrome mein ban sakte hain - scheduled task cloud-only chalta
+  hai -> desktop app mein "Require this computer" on karo. (2) brain ka CLAUDE_CODE_OAUTH_TOKEN fail (is_error) ->
+  `claude setup-token` dobara + secret update, tab roz long video khud.
+
 ## 20/21 Nov 2026 raat (23:00-01:30 IST) - Shorts wapas PURANE engine pe, long video haath se
 
 Gaurav: "pehle wala kaam hi karna hai - Shorts jaise pehle bante the (engine, Flow ki 1-3 clips, daily schedule),
