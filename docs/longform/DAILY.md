@@ -4,8 +4,14 @@
 - ZOHO SHORTS (2 per day) come from the engine on `main` (autopilot/): research (trending Zoho news, Middle East
   first: UAE / Saudi / Gulf) -> script -> Flow clip HOOK + PROBLEM -> real recorded Zoho screens / screenshots that
   walk through the steps -> Flow clip RESULT (3 Flow clips per Short). NEVER faceless. The brain does NOT write Zoho Shorts.
-- TRENDING NEWS SHORT (Nvidia style, our best performer): point 2 below stays - 1 per day, Flow spec, any big tech /
-  AI / business story that is trending TODAY (Nvidia, AI companies, big launches) when it can grow the channel.
+- TRENDING NEWS SHORT (Nvidia style, our best performer) - 22 Nov night, Gaurav: "Nvidia wale whiteboard pe cartoon
+  wali cheezein laga ke, bina Flow ke, free mein". So 1-2 per day as a WHITEBOARD / CARTOON Short: write
+  `docs/longform/shorts/<id>.json` ("format": "short", "priority": "news") -> shorts-daily renders (Kokoro voice,
+  cartoon guy, stat boards), QA, uploads to the free news slot (13:30 IST first). This LIFTS the 20 Nov ban in point 1
+  for trending-news Shorts only (Zoho how-to Shorts stay on the main engine with Flow). Topic = the biggest business /
+  tech / AI story people search TODAY (Nvidia, AI companies, big launches, Gulf business news), never a repeat of
+  topics-used.md. Example: docs/longform/shorts/s20261122-nvidia-worst-week.json. Legal care: "X reported, citing ...",
+  never state an accusation as fact, "not financial advice" for stock stories, 2+ sources (filing / press release first).
 - LONG VIDEOS (1 per day, 18:30 IST, uploaded straight to YouTube by longform-daily): Zoho topics AND big trending
   news like Nvidia (latest results, leadership, chips) - pick whichever is trending most that day. Same fact rules.
 
