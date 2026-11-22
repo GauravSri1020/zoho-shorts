@@ -239,29 +239,8 @@
    "tts": "Zoho Desk just turned ten and launched Automation Studio, a no-code visual builder for connected service workflows.",
    "card": "Zoho Desk Automation Studio",
    "screen": {
-    "app": "desk",
-    "view": "settings",
-    "path": [
-     "Zoho Desk",
-     "Setup",
-     "Automation Studio"
-    ],
-    "heading": "Automation Studio",
-    "columns": [],
-    "rows": [],
-    "fields": [],
-    "toggles": [],
-    "messages": [],
-    "tool": null,
-    "method": null,
-    "url": null,
-    "headers": [],
-    "body": null,
-    "response": null,
-    "language": null,
-    "nodes": [],
-    "real": null,
-    "click": "Automation Studio",
+    "app": "presenter",
+    "view": "presenter",
     "tip": "Open Automation Studio from Setup"
    },
    "face": false
@@ -272,29 +251,8 @@
    "tts": "First, request early access, then open Automation Studio in your Zoho Desk setup. It is for Professional and Enterprise plans.",
    "card": "Request early access",
    "screen": {
-    "app": "desk",
-    "view": "settings",
-    "path": [
-     "Zoho Desk",
-     "Setup",
-     "Automation Studio"
-    ],
-    "heading": "Automation Studio",
-    "columns": [],
-    "rows": [],
-    "fields": [],
-    "toggles": [],
-    "messages": [],
-    "tool": null,
-    "method": null,
-    "url": null,
-    "headers": [],
-    "body": null,
-    "response": null,
-    "language": null,
-    "nodes": [],
-    "real": null,
-    "click": null,
+    "app": "presenter",
+    "view": "presenter",
     "tip": "Access the automation dashboard"
    },
    "face": false
@@ -305,33 +263,8 @@
    "tts": "Next, add an event like a new ticket, then drop in If blocks to check priority or customer type.",
    "card": "Event + If blocks",
    "screen": {
-    "app": "desk",
-    "view": "flow",
-    "path": [
-     "Zoho Desk",
-     "Setup",
-     "Automation Studio"
-    ],
-    "heading": "Workflow Canvas",
-    "columns": [],
-    "rows": [],
-    "fields": [],
-    "toggles": [],
-    "messages": [],
-    "tool": null,
-    "method": null,
-    "url": null,
-    "headers": [],
-    "body": null,
-    "response": null,
-    "language": null,
-    "nodes": [
-     "Trigger: Ticket Created",
-     "Condition: Priority High",
-     "Action: Assign to Tier 2"
-    ],
-    "real": null,
-    "click": null,
+    "app": "presenter",
+    "view": "presenter",
     "tip": "Visualize your entire service flow without code"
    },
    "face": false
@@ -342,34 +275,8 @@
    "tts": "Then use Fork blocks for parallel actions and Delay blocks for follow-ups, all inside one single rule.",
    "card": "Fork + Delay blocks",
    "screen": {
-    "app": "desk",
-    "view": "settings",
-    "path": [
-     "Zoho Desk",
-     "Setup",
-     "Automation Studio"
-    ],
-    "heading": "Deploy Workflow",
-    "columns": [],
-    "rows": [],
-    "fields": [],
-    "toggles": [
-     [
-      "Active Channels",
-      true
-     ]
-    ],
-    "messages": [],
-    "tool": null,
-    "method": null,
-    "url": null,
-    "headers": [],
-    "body": null,
-    "response": null,
-    "language": null,
-    "nodes": [],
-    "real": null,
-    "click": null,
+    "app": "presenter",
+    "view": "presenter",
     "tip": "Publish to live support channels"
    },
    "face": false
