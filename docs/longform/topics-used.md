@@ -15,7 +15,7 @@
 2026-11-18 | long | zoho-analytics-claude | Zoho Analytics 7.0: Ask Zia AI Agents + Connect Claude Desktop | pushed, publish 19 Nov 18:30 IST
 2026-11-20 | flow-short (news) | flow-20261120-nvidia-q3 | Nvidia's First Quarter Without Its Founder: $115.8B Revenue | scheduled 20 Nov 07:30 IST fjOlng6WKXY
 2026-11-20 | flow-short | flow-20261120-uae-42-days | UAE E-Invoicing Starts 1 January 2027: 42 Days Left | scheduled 20 Nov 13:30 IST 00hrSpDNju0
-2026-11-20 | flow-short (news) | flow-20261120-anthropic-ipo | Anthropic IPO: $81 Billion Raised, Biggest Listing Ever | spec ready, NOT made (scheduled run had no Chrome)
+2026-11-20 | flow-short (news) | flow-20261120-anthropic-ipo | Anthropic IPO: $81 Billion Raised, Biggest Listing Ever | spec ready, NOT made (scheduled run had no Chrome) | DELETED 23 Nov (Gaurav: stale)
 2026-11-20 | flow-short | flow-20261120-zoho-campaigns-whatsapp | WhatsApp Marketing in Zoho Campaigns: What Changed | spec ready, NOT made (scheduled run had no Chrome)
 2026-11-21 | long | zoho-books-automation | Zoho Books Automation: Recurring Invoices, Payment Reminders & Workflow Rules | upload request, publish 21 Nov 18:30 IST
 2026-11-22 | whiteboard-short (news) | s20261122-nvidia-worst-week | Nvidia's Worst Week Since 2008: The Reported SEC Accounting Probe, Explained | shorts-daily (news slot)

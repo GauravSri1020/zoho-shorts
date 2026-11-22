@@ -28,6 +28,14 @@ def main(req_path):
             sn[k] = cur[k]
     if r.get("description_prepend") and not sn["description"].startswith(r["description_prepend"][:40]):
         sn["description"] = r["description_prepend"].rstrip() + "\n\n" + sn["description"]
+    if r.get("privacy") in ("private", "unlisted"):  # 23 Nov 2026: take a scheduled / public video off (reversible)
+        st = yt.videos().list(part="status", id=vid).execute()["items"][0]["status"]
+        st = {k: st[k] for k in ("selfDeclaredMadeForKids", "embeddable", "license", "publicStatsViewable",
+                                 "containsSyntheticMedia") if k in st}
+        st["privacyStatus"] = r["privacy"]
+        yt.videos().update(part="status", body={"id": vid, "status": st}).execute()
+        print(f"[fix] {vid}: now {r['privacy']} (publish time removed)")
+        return
     if r.get("publish_at"):
         st = yt.videos().list(part="status", id=vid).execute()["items"][0]["status"]
         if st.get("privacyStatus") != "private":
