@@ -6,6 +6,25 @@ Is file ko har session ke end pe update karo, taaki agla chat yahin se shuru kar
 
 Gaurav jab bhi kuch bhi change karne bole: SABSE PEHLE backup - `backup-YYYY-MM-DD-<kya-badal-rahe-ho>` branch main se banao (aur agar video ka kaam hai to latest Short ka artifact download karo). Tabhi code chhuo. Kuch bigde to us branch se purana code wapas lo.
 
+## 22 Nov 2026 raat (19:20-20:30 IST) - 2 Flow Shorts bane + scheduled, look lock, issues band
+
+- Gaurav: "Flow kholke clips bana, trending news pe 2 Shorts, schedule; teeno clips mein same baal/daadhi/chashma/kapde
+  (sirf camera angle alag), agle Short mein naya look, bald kabhi nahi; saare issues close".
+- Look lock: hair list se crew cut / fade hataye (Veo ganja bana deta tha), BODY = "full thick hair, never bald, identical
+  in every clip, several cameras"; har clip ka apna camera angle (front / left 3/4 / right 3/4). Walk-in-from-side gesture
+  hataya (UAE HOOK mein wo frame se bahar reh gaya -> dobara banaya).
+- Saare 13 open issues close kiye. DHYAN: issue band = engine job ko "done" maan leta hai -> 1134-2 dobara khola (issue None).
+- Gemini quota khatam (429) -> engine ka 2nd script fail. 0930-4 skip (Flow+Claude steps verify nahi). UAE e-invoicing Short
+  haath se likha Zoho ke apne ASP guide se (Settings > Taxes & Compliance > E-Invoicing > Setup Now; EmaraTax pe
+  "Zoho Software Trading LLC"; Verify & Complete Setup -> ACTIVE; 1 Jan 2027 mandatory AED 50M+).
+- Bugs fixed: benchmark ko Gemini list mein JSON de to crash (QA 0) -> list ka pehla object; YouTube "invalid description"
+  ('>' in description) -> google_apis.upload har title/description se < > hatata hai.
+- Flow project "Nov 22 - 19:27" (main account), 7 clips, 90 -> ~50 credits bache (reset 2 Dec).
+- SCHEDULED: Na0tD4VPzjc Zoho Desk Automation Studio (QA 95) 23 Nov 07:30 IST; ck97mHXJSfc UAE e-invoicing Zoho Books
+  (QA 93) 23 Nov 21:30 IST. (22 Nov 21:30 wala pehle se scheduled tha.)
+- Open: Desk ke steps presenter card pe hain (Desk ke asli screenshots nahi) - Gaurav Desk khole to screenshots le sakte hain.
+  Nvidia-style whiteboard/cartoon Shorts (bina Flow) - plan baaki. Brain token (claude setup-token) Gaurav ko karna hai.
+
 ## 22 Nov 2026 shaam (17:45 IST) - Zoho Shorts KABHI faceless nahi, long-video brain 20 Nov subah pe wapas
 
 Gaurav: "Zoho Shorts faceless kabhi nahi the: Flow clip -> recorded screens / screenshots -> Flow clip (3 Flow clips),
