@@ -6,6 +6,19 @@ Is file ko har session ke end pe update karo, taaki agla chat yahin se shuru kar
 
 Gaurav jab bhi kuch bhi change karne bole: SABSE PEHLE backup - `backup-YYYY-MM-DD-<kya-badal-rahe-ho>` branch main se banao (aur agar video ka kaam hai to latest Short ka artifact download karo). Tabhi code chhuo. Kuch bigde to us branch se purana code wapas lo.
 
+## 22 Nov 2026 subah (10:47 IST scheduled "Flow Shorts daily") - KUCH NAHI BANA, sirf check (2nd din)
+
+Backup: `backup-2026-11-22-flow-daily` (long-videos se). Phir cloud-only run (Claude-in-Chrome nahi) -> Flow / Studio /
+schedule NAHI, 0 Flow credits. Task abhi bhi 20 Nov raat ke order ("Shorts = main engine only") se takrata hai
+(task 19 Nov ke baad update nahi hua) -> naye Flow specs NAHI likhe. Gaurav: task band karo ya naye order ke hisaab se badlo.
+- CHANNEL KHAALI: last Short 21 Nov 07:30 (_PWbItoyYAA), last long video 21 Nov 18:30 (EhSLe1zlEzI). main state:
+  scheduled=0, 2 jobs waiting_for_clips (Flow clips = Gaurav ka Chrome chahiye). queue/long = 0.
+- DHYAN, dono waiting jobs REPEAT topics hain: 20261121-0854-1 Zoho Desk Blended AI Agents (n0N5Z1lMJxc 19 Nov ko ja chuka)
+  aur 20261121-0908-3 Mappls + Arattai (10 Nov ko skip hua tha) -> inke clips banane se pehle check karo / skip.
+- Actions chal rahe. daily-robot brain 22 Nov 03:30Z phir fail: HAS_TOKEN true par "Claude execution failed: result
+  is_error:true" (~1 min) -> CLAUDE_CODE_OAUTH_TOKEN galat/expire lagta hai: `claude setup-token` dobara + secret update.
+  Keeper (dispatch 03:31Z) OK par queue khaali. GSX Automation Shorts runs 21 Nov 07:38/08:51/10:59/16:55/23:33Z success.
+
 ## 21 Nov 2026 subah (10:48 IST scheduled "Flow Shorts daily") - KUCH NAHI BANA, sirf check
 
 Backup: `backup-2026-11-21-flow-daily` (long-videos se). Run phir cloud-only tha (Claude-in-Chrome nahi) -> Flow clips /
