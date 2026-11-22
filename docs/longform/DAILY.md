@@ -1,12 +1,13 @@
 # DAILY ROBOT - what the daily Claude "brain" does (Gaurav's order, 15 Nov 2026; UPDATED 20 Nov 2026)
 
-## 20 Nov 2026 NIGHT - Gaurav (overrides points 1 + 2 below): SHORTS = the OLD main engine, exactly as before
-- Shorts come ONLY from the "GSX Automation Shorts" engine on `main` (autopilot/, daily 07:17 + 08:43 IST: research ->
-  Gemini script -> Flow prompts -> Flow clips (HOOK / PROBLEM / RESULT, fewer when Gaurav says) -> composer -> QA ->
-  YouTube). Same frames, same look as his channel's Shorts. NO Flow-spec Shorts, no cartoon Shorts, no long-video
-  style (vshort / headline frame) for Shorts. The brain does NOT write Shorts any more.
-- The brain + keeper here = LONG VIDEOS ONLY (1 per day, 18:30 IST). The long-video style is only for long videos.
-- Niche = the first one: Zoho (+ Gulf / India compliance that hits Zoho users).
+## 22 Nov 2026 - Gaurav (this file is back to the 20 Nov MORNING version; the 20 Nov night "engine only" lines are gone)
+- ZOHO SHORTS (2 per day) come from the engine on `main` (autopilot/): research (trending Zoho news, Middle East
+  first: UAE / Saudi / Gulf) -> script -> Flow clip HOOK + PROBLEM -> real recorded Zoho screens / screenshots that
+  walk through the steps -> Flow clip RESULT (3 Flow clips per Short). NEVER faceless. The brain does NOT write Zoho Shorts.
+- TRENDING NEWS SHORT (Nvidia style, our best performer): point 2 below stays - 1 per day, Flow spec, any big tech /
+  AI / business story that is trending TODAY (Nvidia, AI companies, big launches) when it can grow the channel.
+- LONG VIDEOS (1 per day, 18:30 IST, uploaded straight to YouTube by longform-daily): Zoho topics AND big trending
+  news like Nvidia (latest results, leadership, chips) - pick whichever is trending most that day. Same fact rules.
 
 ## 20 Nov 2026 changes (Gaurav: "next level", monetization fast) - these override older lines below
 1. SHORTS = FLOW AVATAR ONLY. No cartoon / Kokoro Shorts any more (he deleted the 6 of 18-19 Nov). Do NOT write
