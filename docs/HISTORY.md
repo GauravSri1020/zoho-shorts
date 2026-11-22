@@ -6,6 +6,24 @@ Is file ko har session ke end pe update karo, taaki agla chat yahin se shuru kar
 
 Gaurav jab bhi kuch bhi change karne bole: SABSE PEHLE backup - `backup-YYYY-MM-DD-<kya-badal-rahe-ho>` branch main se banao (aur agar video ka kaam hai to latest Short ka artifact download karo). Tabhi code chhuo. Kuch bigde to us branch se purana code wapas lo.
 
+## 23 Nov 2026 raat (00:10-02:30 IST) - PREMIUM Shorts: stuck screen khatam, QA freeze check, 3 Shorts dobara
+
+- Gaurav: "beech mein gandi stuck screen; QA tight kar; face hate to cartoon / whiteboard ya screenshots pe screen-share;
+  premium; jo Shorts maine hataye (Desk, UAE) sahi kar; Flow ke unused clips / scripts use kar; Desk ke screenshots".
+- Channel audit (naya read-only workflow channel-audit.yml): best = Nvidia all-face Flow news (917 / 300 / 234 views);
+  Gaurav ne Na0tD4VPzjc, ck97mHXJSfc, _PWbItoyYAA (+ purane faceless) delete kiye.
+- autopilot/premium.py (niches/zoho.yaml flow.premium_middle: true): face ke beech wale shots frame-by-frame, hamesha
+  move: REAL = asli screenshot device frame mein, poori screen -> camera click target pe push-in, cursor, ripple, ring,
+  menu chips; BOARD = whiteboard: title, menu chips + arrows, icon stroke-by-stroke, tick. Presenter photo card, nakli
+  app pages aur cover intro premium mein nahi. editor.frozen_spans: captions ke upar 1.6 s tak picture na hile = FAIL
+  (purane Desk / UAE builds 4-4 baar fail, premium pass). composer self-check bhi.
+- Results: Desk ef5oAOBpoxk QA 71 (23 Nov 07:30), UAE G_7wRHk9WJo QA 91 (24 Nov 07:30), Campaigns WhatsApp
+  r2Y9_r_-Cic QA 93 (24 Nov 21:30). Credit notes QA 64 -> nahi gaya (narrator voice switch + steps 3-4 bina screen).
+- Nvidia whiteboard qZqLdG7DKM8 23 Nov 13:30 (wahi). Trending sample (longform/trend) sirf Gaurav ke liye.
+- SEEKH: QA ka sabse bada minus = Flow voice -> narrator voice switch. Ilaaj: STEP lines ke liye bhi Flow clips (sirf
+  unki AUDIO premium picture ke neeche) - zyada credits (abhi ~50, reset 2 Dec).
+- Open: Chrome side panel chahiye: Zoho Desk screenshots, Flow projects ke purane unused clips. docs/UNUSED_FLOW.md.
+
 ## 22 Nov 2026 raat (19:20-20:30 IST) - 2 Flow Shorts bane + scheduled, look lock, issues band
 
 - Gaurav: "Flow kholke clips bana, trending news pe 2 Shorts, schedule; teeno clips mein same baal/daadhi/chashma/kapde
