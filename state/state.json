@@ -1,5 +1,5 @@
 {
- "next_id": 73,
+ "next_id": 74,
  "covered_links": [
   "https://www.reddit.com/r/Zoho/comments/1wzd94y/sales_order_or_invoice/",
   "https://www.reddit.com/r/Zoho/comments/1wwjbbr/accounting_of_travel_agent/",
@@ -63,7 +63,8 @@
   "https://news.google.com/rss/articles/CBMi9wFBVV95cUxOOGp5RG9MVGNQVGl0WktDeWhUTnJiRzl4Qk10TmpsS2dubGtIOFlUc3pNMHJucXp6Y0lTZnhCV2FuUjhHVS1NQkNYSlJ3Z1V1ZzQ3THB4a2JEaVo2MkZKQmNyS0g4dWhwNFFPV0J0SnBGRkpmTWtIRThlTGhxODFJSTJoY1J6T2VmYUsySF9WTmVmYWZwU2M5d1h1S3d2RF8yX3ItVkN0a3VzLURmZEdGYmtHcnJodEtiYlhLUTRWQnlUU2E1QWhZY3ljdjVZWmRqQjRZZllpZFRNNlR3X2d4dnBzdGJrYm9jS09fQkUyTkduQTF3UTFV0gH8AUFVX3lxTE5vdWc3SkdkeFp3NUtvTGw2bW01Y29CekxGNEhHM1JveHZJVXJZRjlUQ3ZyNjc0QXR1TXBRb2Y1ajctR1UzcXQ4M3BtdXBWU250YmZud08xbWNZYm5rbW5Udy1zTWxPaVVqb0tzcTYxWjVPaTM1TGR4RXIzTGFaVjVGR25rbmhHSHR5Q21BN1FsTVhIWF9xM1EzOVFscmpXRl95WElva1gwTzU0dzJ2Vmc5Y0VSbWZaVmZ0RHZVVkxrOE1SS3VQRGtmNjUxNmxMc0FrQW1vMkg2QlJrbDJsTk9PSGZ0RW05aExlRl94S1laOUg0QTllLVg1WTdyRA?oc=5",
   "https://news.google.com/rss/articles/CBMiwAFBVV95cUxQRmotbDFhTmdxUnlZRWdCcjZvMzVvSjMtR19mdklNek90WVhFSHV0QTN6aHFzNmJ2OTYxMzhmUUY2QkdqMXBRRF83cGY2blJZRzJIbjhGaHBSclFEZmcyc2Zaa3VRbVFfRkotbm1hNllsYzk1RTFSWGtWdXJPVmhpcDVFalF1V1l5U0lOeEZSQ3lLX0wxdVF2blFQbTN6QTlCTnhqQ291UFNFZ2lLZ1daQUVfaGlPQTBOY1gtYktjME0?oc=5",
   "https://news.google.com/rss/articles/CBMigAFBVV95cUxNUTlFNmdfTWpGSjQ1U091VGRqMmlqdlFMcDV4Z2V5anhrR3BTOTdBMkZsUDhQdjZreURGTDNVZ3VoTGYtUzFyRUhwalhZUkh5dm1ac3hrOXZubldCRDBpSXNNZHRJOE8td0VreTJUd2wySzlWWmxkd1FHakdkOXRBRQ?oc=5",
-  "https://news.google.com/rss/articles/CBMiiwFBVV95cUxQejNncTVNQklWQkxUelh6TDFidWd4QkJWVVdscnZ4Y2ljNklaaFdOOVV0ODE0Mll6OVFUMEcwV0JzNmd1akswdW9rcFFOVHMyTmh5QTVTdWtMbEJ2Y2o0SzRLVTEtak1TYy1rNmVHLV9XdDFMUElTYUoweWM0ZFc1V3RKb1VreTM5TWZv?oc=5"
+  "https://news.google.com/rss/articles/CBMiiwFBVV95cUxQejNncTVNQklWQkxUelh6TDFidWd4QkJWVVdscnZ4Y2ljNklaaFdOOVV0ODE0Mll6OVFUMEcwV0JzNmd1akswdW9rcFFOVHMyTmh5QTVTdWtMbEJ2Y2o0SzRLVTEtak1TYy1rNmVHLV9XdDFMUElTYUoweWM0ZFc1V3RKb1VreTM5TWZv?oc=5",
+  "https://news.google.com/rss/articles/CBMiRkFVX3lxTE5zNDZvaVlCR2h0Ry1tVU9YRUxVWHlWeHBpTGZhbmU5emJEUXdUM0J6emtuWTFvS1pIdTdxc0l3RWQ4bVlvOXc?oc=5"
  ],
  "problems": [
   "Zoho Books me online paid sales orders direct closed invoice me convert nahi hote.",
@@ -137,7 +138,8 @@
   "Support managers fear AI agents will give incorrect information to customers without supervision.",
   "Support managers fear AI agents will give incorrect information to customers without supervision.",
   "Field teams and delivery drivers struggle with fragmented navigation tools while communicating on team chat apps.",
-  "Tier-2 support engineers spend 15 minutes reading 50-comment ticket histories before resolving escalated issues."
+  "Tier-2 support engineers spend 15 minutes reading 50-comment ticket histories before resolving escalated issues.",
+  "Support agents spend too much time manually configuring complex ticket routing and repetitive tasks."
  ],
  "scripts": {
   "S0001": {
@@ -785,6 +787,14 @@
    "engine": "flow",
    "job": "20261122-0930-4",
    "created": "2026-11-22T09:34:16"
+  },
+  "S0073": {
+   "problem": "Support agents spend too much time manually configuring complex ticket routing and repetitive tasks.",
+   "title": "Zoho Desk Turns 10: New Automation Studio #Shorts",
+   "pillar": "trending",
+   "engine": "flow",
+   "job": "20261122-1134-2",
+   "created": "2026-11-22T11:37:53"
   }
  },
  "slots": [
@@ -1179,9 +1189,9 @@
  "last_photo": "1_jacket.jpg",
  "photo_scenes": [],
  "photo_agent_error": "RuntimeError: image model unavailable: 404 NOT_FOUND. {'error': {'code': 404, 'm",
- "look_index": 65,
- "status_issue": 201,
- "status_line": "PIPELINE ideas=27 clips=1 editing=0 qa_failed=0 scheduled=1 published=54 total=55 today=1 next=2026-11-22T21:30",
+ "look_index": 66,
+ "status_issue": 203,
+ "status_line": "PIPELINE ideas=27 clips=2 editing=0 qa_failed=0 scheduled=1 published=54 total=55 today=1 next=2026-11-22T21:30",
  "rotation": {
   "claude_wealth": 21,
   "claude_wealth_industry": 16,
@@ -1215,7 +1225,8 @@
   "Zoho launches Blended AI Agents to automate customer service with human oversight",
   "Zoho Adds Blended Agents to Desk, Pairing AI Task Execution with Human Support -",
   "Mappls integrates with Zoho's Arattai for navigation",
-  "Zoho Desk Unveils New Product Enhancements"
+  "Zoho Desk Unveils New Product Enhancements",
+  "Zoho launches Automation Studio & Workstation to mark 10 years of Zoho Desk - HapaKenya -"
  ],
  "used_outfits": [
   "teal henley t-shirt under an open dark blazer",
@@ -1230,7 +1241,8 @@
   "black blazer over a crisp white shirt with no tie",
   "beige overshirt over a black crew-neck t-shirt",
   "light blue suit with a white shirt and no tie",
-  "light blue overshirt over a black crew-neck t-shirt"
+  "light blue overshirt over a black crew-neck t-shirt",
+  "maroon henley t-shirt under an open dark blazer"
  ],
  "used_places": [
   29,
@@ -1245,11 +1257,12 @@
   20,
   23,
   18,
-  13
+  13,
+  30
  ],
  "last_grooming": [
-  1,
-  5,
-  2
+  0,
+  2,
+  3
  ]
 }
