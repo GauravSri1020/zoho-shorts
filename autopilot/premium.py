@@ -79,7 +79,8 @@ PAGE = r"""<!DOCTYPE html><html><head><meta charset="utf-8"><style>
 #bar i{position:absolute;top:15px;width:16px;height:16px;border-radius:8px}
 #cam{position:absolute;left:0;top:46px;right:0;bottom:0;overflow:hidden}
 #img{position:absolute;left:0;top:0;transform-origin:0 0}
-#ring{position:absolute;border:7px solid;border-radius:16px}
+#ring{position:absolute;border:7px solid;border-radius:16px;box-shadow:0 0 0 3000px rgba(5,8,14,.55)}
+#tipb{position:absolute;padding:12px 22px;border-radius:14px;font:700 30px Pop;color:#07090c;white-space:nowrap}
 #cur{position:absolute;width:56px;height:56px}
 #rip{position:absolute;border-radius:50%;border:6px solid}
 #board{position:absolute;left:60px;width:960px;top:560px;height:780px;border-radius:30px;background:#fbfaf6;
@@ -133,15 +134,18 @@ window.render=function(t){const T=D.dur;
   let ox=480-cx*S, oy=camH/2-cy*S; ox=Math.min(0,Math.max(960-iw*S,ox));
   oy = ih*S<=camH ? (camH-ih*S)/2 : Math.min(0,Math.max(camH-ih*S,oy));
   img.style.width=iw+'px';img.style.transform=`translate(${ox}px,${oy}px) scale(${S})`;
-  const tx=ox+cx*S,ty=oy+cy*S;const arrive=Math.min(T*0.6,2.2);const q=ease((t-0.6)/arrive);
+  const tx=ox+cx*S,ty=oy+cy*S;const arrive=Math.min(T*0.4,1.6);const q=ease((t-0.4)/arrive);
   const sx=900,sy=camH-60;const cxp=sx+(tx-sx)*q,cyp=sy+(ty-sy)*q+Math.sin(q*Math.PI)*-60;
-  const cur=$('cur');cur.style.left=cxp+'px';cur.style.top=cyp+'px';const tc=0.6+arrive;
+  const cur=$('cur');cur.style.left=cxp+'px';cur.style.top=cyp+'px';const tc=0.4+arrive;
   cur.style.transform=`scale(${t>tc&&t<tc+.18?0.85:1})`;
   const r=$('rip');const rp=(t-tc)/0.6;r.style.display=rp>0&&rp<1?'block':'none';const rr=20+rp*90;
   r.style.left=(tx-rr)+'px';r.style.top=(ty-rr)+'px';r.style.width=r.style.height=(2*rr)+'px';r.style.opacity=1-rp;r.style.borderColor=D.accent;
   const g=$('ring');const gp=cl((t-tc)/0.3);g.style.display=gp>0?'block':'none';const pad=10+4*Math.sin(t*6);
   g.style.left=(ox+bx*S-pad)+'px';g.style.top=(oy+by*S-pad)+'px';g.style.width=(bw*S+2*pad)+'px';g.style.height=(bh*S+2*pad)+'px';
-  g.style.borderColor=D.accent;g.style.boxShadow=`0 0 ${20+10*Math.sin(t*6)}px ${D.accent}`;g.style.opacity=gp;
+  g.style.borderColor=D.accent;g.style.boxShadow=`0 0 ${22+12*Math.sin(t*6)}px ${D.accent}, 0 0 0 3000px rgba(5,8,14,${0.55*gp})`;g.style.opacity=gp;
+  const tb=$('tipb');tb.textContent=D.click?('Click: '+D.click):'';tb.style.display=gp>0&&D.click?'block':'none';tb.style.background=D.accent;tb.style.color='#fff';
+  const tw=tb.offsetWidth||200;let tlx=Math.max(10,Math.min(950-tw,ox+(bx+bw/2)*S-tw/2));let tly=oy+by*S-pad-64;if(tly<10)tly=oy+(by+bh)*S+pad+14;
+  tb.style.left=tlx+'px';tb.style.top=tly+'px';tb.style.transform=`scale(${back((t-tc-0.1)/0.3)})`;
   $('chipsR').innerHTML=chipsHTML(D.chips,t,0.9);
  } else {const b=$('board');const p=ease((t-0.1)/0.45);b.style.transform=`translateY(${(1-p)*600}px) rotate(${(1-p)*4}deg)`;
   const pth=document.querySelectorAll('#ico path');pth.forEach(e=>{const L=e.getTotalLength();e.style.strokeDasharray=L;e.style.strokeDashoffset=L*(1-ease((t-0.5)/1.4));});
@@ -155,7 +159,7 @@ window.render(0);
 </script></body></html>"""
 
 BODY_REAL = """<div id="dev"><div id="bar"><i style="left:22px;background:#ff5f57"></i><i style="left:48px;background:#febc2e"></i>
-<i style="left:74px;background:#28c840"></i></div><div id="cam"><img id="img" src="__IMG__"><div id="ring"></div><div id="rip"></div>
+<i style="left:74px;background:#28c840"></i></div><div id="cam"><img id="img" src="__IMG__"><div id="ring"></div><div id="rip"></div><div id="tipb"></div>
 <svg id="cur" viewBox="0 0 24 24"><path d="M3 2l7 19 2.6-7.4L20 11z" fill="#111" stroke="#fff" stroke-width="1.6" stroke-linejoin="round"/></svg>
 </div></div><div id="chipsR"></div>"""
 
@@ -177,7 +181,8 @@ def _page(item):
     data = {"mode": mode, "title": html.escape(item.get("title", ""))[:60], "header": html.escape(item.get("header", ""))[:40],
             "step": item.get("step"), "steps": item.get("steps", 0), "accent": item.get("accent", "#E42527"),
             "chips": [html.escape(c) for c in item.get("chips", [])], "box": item.get("box") or [0, 0, 10, 10],
-            "zoom": item.get("zoom", 1.3), "dur": item["frames"] / FPS}
+            "zoom": item.get("zoom", 1.3), "dur": item["frames"] / FPS,
+            "click": html.escape(item.get("click", ""))[:32]}
     return PAGE.replace("__FONTS__", FONTS.resolve().as_uri()).replace("__BODY__", body).replace("__DATA__", json.dumps(data))
 
 

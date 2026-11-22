@@ -1194,3 +1194,926 @@ screens:
       'Credit Note#': [429, 229, 335, 35]
       Save as Draft: [240, 605, 105, 33]
       Save as Open: [355, 605, 109, 33]
+
+  # ---- Zoho Desk (23 Nov 2026, Gaurav's own Desk portal 'GSX Automation', Zoho sample ticket only) ----
+  desk/tickets_list:
+    file: desk/tickets_list.png
+    size:
+    - 1381
+    - 750
+    about: 'Zoho Desk > Tickets > All Tickets list (sample ticket #100), top bar: Tickets, Knowledge Base, Customers, + New (create ticket), Search, Setup gear; left bar: Views, Agent Queue, Team Queue,
+      Tags'
+    targets:
+      Tickets:
+      - 85
+      - 11
+      - 79
+      - 36
+      Knowledge Base:
+      - 181
+      - 11
+      - 162
+      - 36
+      Customers:
+      - 499
+      - 11
+      - 112
+      - 36
+      Classic View:
+      - 1184
+      - 75
+      - 101
+      - 32
+      Status:
+      - 1125
+      - 147
+      - 54
+      - 37
+      Open:
+      - 1125
+      - 147
+      - 54
+      - 37
+      First ticket:
+      - 201
+      - 135
+      - 230
+      - 37
+      Ticket:
+      - 201
+      - 135
+      - 230
+      - 37
+      Views:
+      - 1
+      - 289
+      - 65
+      - 31
+      Tags:
+      - 1
+      - 562
+      - 65
+      - 31
+      Agent Queue:
+      - 1
+      - 371
+      - 65
+      - 47
+      New:
+      - 954
+      - 5
+      - 55
+      - 52
+      New Ticket:
+      - 954
+      - 5
+      - 55
+      - 52
+      +:
+      - 954
+      - 5
+      - 55
+      - 52
+      Search:
+      - 1042
+      - 5
+      - 55
+      - 52
+      Setup:
+      - 1237
+      - 5
+      - 55
+      - 52
+      Settings:
+      - 1237
+      - 5
+      - 55
+      - 52
+      Filter:
+      - 350
+      - 65
+      - 50
+      - 50
+  desk/ticket_detail:
+    file: desk/ticket_detail.png
+    size:
+    - 1381
+    - 750
+    about: 'Zoho Desk unified ticket screen: ticket list on the left, Ticket Properties (Contact Info, Key Information: Ticket Owner, Status, Due Date, Tags), conversation on the right with Reply All, Resolution,
+      Time Entry, Apply Macro, Close Ticket'
+    targets:
+      Reply All:
+      - 1144
+      - 82
+      - 80
+      - 34
+      Reply:
+      - 1144
+      - 82
+      - 80
+      - 34
+      Ticket Properties:
+      - 432
+      - 70
+      - 190
+      - 42
+      Contact Info:
+      - 440
+      - 149
+      - 301
+      - 37
+      Key Information:
+      - 440
+      - 375
+      - 301
+      - 37
+      Ticket Owner:
+      - 441
+      - 427
+      - 115
+      - 34
+      Assign:
+      - 441
+      - 427
+      - 240
+      - 65
+      Status:
+      - 440
+      - 517
+      - 102
+      - 65
+      Due Date:
+      - 441
+      - 600
+      - 84
+      - 34
+      Tags:
+      - 440
+      - 676
+      - 50
+      - 34
+      Apply Macro:
+      - 875
+      - 706
+      - 110
+      - 34
+      Macro:
+      - 875
+      - 706
+      - 110
+      - 34
+      Remote Assist:
+      - 1029
+      - 706
+      - 121
+      - 34
+      Close Ticket:
+      - 1257
+      - 697
+      - 150
+      - 51
+      Resolution:
+      - 1081
+      - 209
+      - 109
+      - 56
+      Time Entry:
+      - 1217
+      - 209
+      - 100
+      - 56
+      Conversation:
+      - 889
+      - 209
+      - 140
+      - 56
+  desk/new_ticket:
+    file: desk/new_ticket.png
+    size:
+    - 1381
+    - 750
+    about: 'Zoho Desk > Tickets > Add Ticket form: Contact Name, Account Name, Email, Phone, Subject, Description, Status, Ticket Owner, Choose Ticket Template, Submit'
+    targets:
+      Add Ticket:
+      - 119
+      - 72
+      - 115
+      - 37
+      Choose Ticket Template:
+      - 261
+      - 74
+      - 210
+      - 35
+      Template:
+      - 261
+      - 74
+      - 210
+      - 35
+      Contact Name:
+      - 80
+      - 220
+      - 340
+      - 65
+      Account Name:
+      - 467
+      - 220
+      - 340
+      - 65
+      Email:
+      - 80
+      - 326
+      - 340
+      - 65
+      Phone:
+      - 467
+      - 326
+      - 340
+      - 65
+      Subject:
+      - 80
+      - 430
+      - 727
+      - 77
+      Description:
+      - 80
+      - 537
+      - 727
+      - 77
+      Status:
+      - 80
+      - 642
+      - 340
+      - 65
+      Ticket Owner:
+      - 467
+      - 645
+      - 122
+      - 35
+      Submit:
+      - 30
+      - 697
+      - 127
+      - 51
+      Cancel:
+      - 157
+      - 697
+      - 127
+      - 51
+      Choose Contact:
+      - 1114
+      - 532
+      - 149
+      - 35
+  desk/setup_home:
+    file: desk/setup_home.png
+    size:
+    - 1381
+    - 750
+    about: 'Zoho Desk > Setup (gear icon): Organization (Company, Business Hours, Departments, Customer Happiness, Products), User Management (Agents, Zia Agents, Teams, Roles, Profiles), Search in Setup,
+      Feature Home'
+    targets:
+      Setup:
+      - 30
+      - 74
+      - 101
+      - 37
+      Search in Setup:
+      - 436
+      - 64
+      - 540
+      - 60
+      Organization:
+      - 22
+      - 146
+      - 424
+      - 79
+      User Management:
+      - 461
+      - 146
+      - 424
+      - 79
+      Company:
+      - 60
+      - 225
+      - 95
+      - 35
+      Business Hours:
+      - 60
+      - 325
+      - 139
+      - 35
+      Departments:
+      - 60
+      - 425
+      - 121
+      - 35
+      Customer Happiness:
+      - 60
+      - 475
+      - 185
+      - 35
+      Agents:
+      - 499
+      - 225
+      - 72
+      - 35
+      Zia Agents:
+      - 499
+      - 275
+      - 101
+      - 35
+      Teams:
+      - 499
+      - 325
+      - 67
+      - 35
+      Roles:
+      - 499
+      - 375
+      - 60
+      - 35
+      Profiles:
+      - 499
+      - 425
+      - 75
+      - 35
+      Products:
+      - 60
+      - 575
+      - 87
+      - 35
+      Feature Home:
+      - 994
+      - 135
+      - 146
+      - 37
+      Channels:
+      - 22
+      - 690
+      - 424
+      - 65
+      Self Service:
+      - 461
+      - 690
+      - 424
+      - 65
+  desk/setup_automation:
+    file: desk/setup_automation.png
+    size:
+    - 1381
+    - 750
+    about: 'Zoho Desk > Setup, Customization + Automation sections: Assignment Rules, Workflows, Blueprint, Macros, Service Level Agreements (SLA), Supervisor Rules, Support Plans, Schedules, Automation
+      Studio; Buttons, Layouts and Fields, Email Templates, Ticket Templates, Time Tracking'
+    targets:
+      Automation:
+      - 461
+      - 184
+      - 424
+      - 79
+      Customization:
+      - 22
+      - 184
+      - 424
+      - 79
+      Assignment Rules:
+      - 499
+      - 262
+      - 160
+      - 35
+      Workflows:
+      - 499
+      - 312
+      - 101
+      - 35
+      Blueprint:
+      - 499
+      - 362
+      - 90
+      - 35
+      Macros:
+      - 499
+      - 412
+      - 75
+      - 35
+      Service Level Agreements:
+      - 499
+      - 462
+      - 190
+      - 35
+      SLA:
+      - 499
+      - 462
+      - 190
+      - 35
+      SLAs:
+      - 499
+      - 462
+      - 190
+      - 35
+      Supervisor Rules:
+      - 499
+      - 512
+      - 152
+      - 35
+      Support Plans:
+      - 499
+      - 562
+      - 130
+      - 35
+      Schedules:
+      - 499
+      - 612
+      - 100
+      - 35
+      Automation Studio:
+      - 499
+      - 662
+      - 169
+      - 35
+      Buttons:
+      - 60
+      - 262
+      - 79
+      - 35
+      Modules and Tabs:
+      - 60
+      - 312
+      - 161
+      - 35
+      Layouts and Fields:
+      - 60
+      - 362
+      - 164
+      - 35
+      General Settings:
+      - 60
+      - 412
+      - 152
+      - 35
+      Notifications:
+      - 60
+      - 462
+      - 119
+      - 35
+      Skills:
+      - 60
+      - 562
+      - 65
+      - 35
+      Email Templates:
+      - 60
+      - 612
+      - 149
+      - 35
+      Ticket Templates:
+      - 60
+      - 662
+      - 152
+      - 35
+      Time Tracking:
+      - 60
+      - 712
+      - 129
+      - 35
+  desk/setup_channels:
+    file: desk/setup_channels.png
+    size:
+    - 1381
+    - 750
+    about: 'Zoho Desk > Setup > Channels: Email, Phone, Chat, Help Center, Instant Messaging (WhatsApp, Telegram...), Social, Web Forms, Community; Self Service: Guided Conversations, ASAP'
+    targets:
+      Channels:
+      - 22
+      - 65
+      - 424
+      - 65
+      Email:
+      - 60
+      - 144
+      - 65
+      - 35
+      Phone:
+      - 60
+      - 194
+      - 72
+      - 35
+      Chat:
+      - 60
+      - 244
+      - 54
+      - 35
+      Help Center:
+      - 60
+      - 294
+      - 112
+      - 35
+      Instant Messaging:
+      - 60
+      - 344
+      - 162
+      - 35
+      WhatsApp:
+      - 60
+      - 344
+      - 162
+      - 35
+      Social:
+      - 60
+      - 394
+      - 65
+      - 35
+      Web Forms:
+      - 60
+      - 444
+      - 107
+      - 35
+      Community:
+      - 60
+      - 494
+      - 111
+      - 35
+      Guided Conversations:
+      - 499
+      - 144
+      - 196
+      - 35
+      ASAP:
+      - 499
+      - 194
+      - 59
+      - 35
+      Self Service:
+      - 461
+      - 65
+      - 424
+      - 65
+  desk/automation_studio:
+    file: desk/automation_studio.png
+    size:
+    - 1381
+    - 750
+    about: 'Zoho Desk > Setup > Automation > Automation Studio (BETA): visual builder combining Action, If, Fork and Delay blocks; Create Rule button, Execution Logs tab, rule list (Rule Name, Events, State)'
+    targets:
+      Create Rule:
+      - 1212
+      - 64
+      - 145
+      - 51
+      Automation Studio:
+      - 437
+      - 70
+      - 191
+      - 37
+      Execution Logs:
+      - 506
+      - 311
+      - 142
+      - 56
+      Rule Name:
+      - 309
+      - 371
+      - 105
+      - 34
+      Events:
+      - 491
+      - 371
+      - 75
+      - 34
+      State:
+      - 725
+      - 371
+      - 61
+      - 34
+      Take a tour:
+      - 330
+      - 259
+      - 96
+      - 34
+      Watch Tutorial:
+      - 455
+      - 259
+      - 121
+      - 34
+      Workflows:
+      - 17
+      - 161
+      - 195
+      - 41
+      Blueprint:
+      - 17
+      - 201
+      - 194
+      - 41
+      Macros:
+      - 17
+      - 241
+      - 195
+      - 41
+      Supervisor Rules:
+      - 17
+      - 321
+      - 195
+      - 41
+      Schedules:
+      - 17
+      - 401
+      - 194
+      - 41
+      BETA:
+      - 632
+      - 74
+      - 51
+      - 31
+  desk/automation_studio_new_rule:
+    file: desk/automation_studio_new_rule.png
+    size:
+    - 1381
+    - 750
+    about: Zoho Desk > Automation Studio > Create Rule, step 1 Rule Information (Rule name, Description, Module = Tickets), step 2 Rule Configuration (the block canvas), Next
+    targets:
+      Rule Information:
+      - 537
+      - 137
+      - 150
+      - 35
+      Rule Configuration:
+      - 757
+      - 137
+      - 167
+      - 35
+      Rule name:
+      - 87
+      - 305
+      - 440
+      - 71
+      Description:
+      - 662
+      - 301
+      - 440
+      - 75
+      Module:
+      - 87
+      - 417
+      - 440
+      - 75
+      Next:
+      - 30
+      - 697
+      - 127
+      - 51
+      Cancel:
+      - 157
+      - 697
+      - 127
+      - 51
+      New Rule:
+      - 544
+      - 70
+      - 102
+      - 37
+  desk/workflow_rule_new:
+    file: desk/workflow_rule_new.png
+    size:
+    - 1381
+    - 750
+    about: 'Zoho Desk > Setup > Automation > Workflows > Rules > Create Rule: New Workflow step 1 Basic Information (Module = Tickets, Rule Name, Active, Description), then Next for execute-on, criteria
+      and actions; left menu Workflows: Rules, Alerts, Tasks, Field Updates, Custom Functions'
+    targets:
+      New Workflow:
+      - 344
+      - 70
+      - 152
+      - 40
+      Module:
+      - 394
+      - 230
+      - 455
+      - 84
+      Rule Name:
+      - 394
+      - 345
+      - 455
+      - 90
+      Active:
+      - 394
+      - 467
+      - 65
+      - 77
+      Description:
+      - 394
+      - 592
+      - 455
+      - 90
+      Next:
+      - 342
+      - 694
+      - 127
+      - 51
+      Cancel:
+      - 479
+      - 694
+      - 127
+      - 51
+      Rules:
+      - 30
+      - 481
+      - 181
+      - 41
+      Alerts:
+      - 30
+      - 521
+      - 181
+      - 41
+      Tasks:
+      - 30
+      - 561
+      - 181
+      - 41
+      Field Updates:
+      - 30
+      - 601
+      - 181
+      - 41
+      Custom Functions:
+      - 30
+      - 641
+      - 181
+      - 41
+      Assignment Rules:
+      - 17
+      - 401
+      - 195
+      - 41
+      Workflows:
+      - 17
+      - 441
+      - 195
+      - 41
+      Blueprint:
+      - 17
+      - 681
+      - 194
+      - 41
+  desk/round_robin:
+    file: desk/round_robin.png
+    size:
+    - 1381
+    - 750
+    about: 'Zoho Desk > Setup > Automation > Assignment Rules > Round Robin: Round Robin Rules toggle, New Round Robin Assignment button, Round Robin Sequential Assignment (tickets distributed equally among
+      agents in sequence); Direct Assignment'
+    targets:
+      Round Robin Rules:
+      - 344
+      - 70
+      - 184
+      - 42
+      New Round Robin Assignment:
+      - 1065
+      - 69
+      - 226
+      - 50
+      New Round Robin:
+      - 1065
+      - 69
+      - 226
+      - 50
+      Sequential Assignment:
+      - 982
+      - 275
+      - 286
+      - 65
+      Direct Assignment:
+      - 30
+      - 481
+      - 181
+      - 41
+      Round Robin:
+      - 30
+      - 521
+      - 181
+      - 41
+      Assignment Rules:
+      - 17
+      - 441
+      - 195
+      - 41
+  desk/sla_list:
+    file: desk/sla_list.png
+    size:
+    - 1381
+    - 750
+    about: 'Zoho Desk > Setup > Automation > Service Level Agreements: default Priority based, Gold, Silver, Bronze SLAs (Resolution Time High 6 hrs ...), New SLA button, Active / Inactive tabs'
+    targets:
+      Service Level Agreements:
+      - 344
+      - 70
+      - 246
+      - 42
+      New SLA:
+      - 1256
+      - 67
+      - 116
+      - 50
+      Active:
+      - 337
+      - 124
+      - 77
+      - 52
+      Inactive:
+      - 439
+      - 124
+      - 90
+      - 52
+      Priority based SLAs:
+      - 344
+      - 217
+      - 184
+      - 40
+      Gold SLAs:
+      - 344
+      - 367
+      - 102
+      - 40
+      Silver SLAs:
+      - 344
+      - 517
+      - 109
+      - 40
+      Bronze SLAs:
+      - 344
+      - 666
+      - 121
+      - 40
+      SLA:
+      - 344
+      - 217
+      - 184
+      - 40
+      Supervisor Rules:
+      - 17
+      - 401
+      - 195
+      - 41
+      Automation Studio:
+      - 17
+      - 521
+      - 194
+      - 41
+  desk/zia_agents:
+    file: desk/zia_agents.png
+    size:
+    - 1381
+    - 750
+    about: 'Zoho Desk > Setup > User Management > Zia Agents: GenAI agents that handle tickets from instructions and actions; tabs Active AI Agents, Prebuilt Agents, Agent Store (BETA); Create Your Own
+      Agent with Agent Studio (New Agent), Hire from the Agent Store, Activate Prebuilt Agents'
+    targets:
+      Zia Agents:
+      - 491
+      - 70
+      - 114
+      - 37
+      Active AI Agents:
+      - 309
+      - 311
+      - 146
+      - 56
+      Prebuilt Agents:
+      - 506
+      - 311
+      - 144
+      - 56
+      Agent Store:
+      - 677
+      - 311
+      - 115
+      - 56
+      Create Your Own Agent:
+      - 691
+      - 487
+      - 265
+      - 37
+      New Agent:
+      - 691
+      - 585
+      - 155
+      - 50
+      Agent Studio:
+      - 691
+      - 585
+      - 155
+      - 50
+      Hire from the Agent Store:
+      - 326
+      - 687
+      - 259
+      - 37
+      Activate Prebuilt Agents:
+      - 966
+      - 687
+      - 265
+      - 37
+      Learn More:
+      - 330
+      - 259
+      - 100
+      - 34

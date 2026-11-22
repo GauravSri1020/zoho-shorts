@@ -464,7 +464,7 @@ def _premium_items(sc, lines, segs, frames_of):
         if real and real in lib:
             item = lib[real]
             box = (item.get("targets") or {}).get(spec.get("click") or "")
-            it.update(mode="real", img=str(screens.REAL_DIR / item["file"]),
+            it.update(mode="real", img=str(screens.REAL_DIR / item["file"]), click=spec.get("click") or "",
                       box=box or [0, 0, 1, 1], zoom=1.3 if box else 1.0)
         items.append((k, it))
     return items
@@ -497,15 +497,19 @@ def _render_premium(sc, lines, words, avatar_mp4, voice_wav, workdir, out_path, 
     if frozen:
         raise RuntimeError("stuck picture in the edit at " + ", ".join(f"{a:.1f}-{b:.1f}s" for a, b in frozen[:5]))
     ass = workdir / "captions.ass"
-    build_ass(words, lines, times, segs, ass, sc.get("hook_text") or sc.get("title", ""))
+    build_ass(words, lines, times, segs, ass, "")  # premium hook is drawn below, bigger
+    _premium_hook(ass, sc, segs)
     mus = music.pick(dur + 1, workdir, seed)
+    sfx = _premium_sfx(segs, items, dur, workdir / "sfx.wav")
     ass_arg = str(ass.resolve()).replace(":", r"\:").replace("'", r"\'")
-    fc = (f"[0:v]ass='{ass_arg}'[v];"
+    fdir = str((Path(__file__).resolve().parent.parent / "assets" / "fonts").resolve()).replace(":", r"\:")
+    fc = (f"[0:v]ass='{ass_arg}':fontsdir='{fdir}'[v];"
           f"[2:a]aformat=sample_rates=44100:channel_layouts=stereo,volume={MUSIC_VOL:.2f}[m];"
           f"[1:a]aformat=sample_rates=44100:channel_layouts=stereo,asplit=2[vo][sc];"
           f"[m][sc]sidechaincompress=threshold=0.03:ratio=8:attack=20:release=400[md];"
-          f"[vo][md]amix=inputs=2:duration=first:normalize=0,alimiter=limit=0.95[aout]")
-    _run(_ff("-i", str(video), "-i", str(voice_wav), "-stream_loop", "-1", "-i", str(mus),
+          f"[3:a]aformat=sample_rates=44100:channel_layouts=stereo,volume=0.55[fx];"
+          f"[vo][md][fx]amix=inputs=3:duration=first:normalize=0,alimiter=limit=0.95[aout]")
+    _run(_ff("-i", str(video), "-i", str(voice_wav), "-stream_loop", "-1", "-i", str(mus), "-i", str(sfx),
              "-filter_complex", fc, "-map", "[v]", "-map", "[aout]",
              "-t", f"{dur:.3f}", "-c:v", "libx264", "-preset", "medium", "-crf", "19", "-pix_fmt", "yuv420p",
              "-r", str(FPS), "-c:a", "aac", "-b:a", "192k", "-movflags", "+faststart", str(out_path)))
@@ -513,6 +517,66 @@ def _render_premium(sc, lines, words, avatar_mp4, voice_wav, workdir, out_path, 
         [{k: v for k, v in s.items()} | {"beat": lines[s["line"]].get("beat")} for s in segs], indent=1))
     print(f"[composer] PREMIUM {len(segs)} shots ({len(items)} moving screens), {dur:.1f}s -> {out_path}")
     return out_path
+
+
+def _premium_hook(ass_path, sc, segs):
+    """23 Nov 2026 (Gaurav: 'hook proper nahi lag raha'): a BIG two-line hook over the first Flow shot - pops in,
+    key word (a number / the strongest word) in yellow on a red box, stays the whole first shot (max 4 s)."""
+    hook = (sc.get("hook_text") or sc.get("title", "")).replace("#Shorts", "").strip().upper()
+    if not hook or not segs or segs[0]["kind"] != "avatar":
+        return
+    ws = hook.split()
+    key = next((i for i, w in enumerate(ws) if re.search(r"\d", w)), max(range(len(ws)), key=lambda i: len(ws[i])))
+    half = (len(ws) + 1) // 2
+    def word(i, w):
+        if i == key:
+            return r"{\c&H0000E6FF&}" + _e(w) + r"{\c&H00FFFFFF&}"
+        return _e(w)
+    l1 = " ".join(word(i, w) for i, w in enumerate(ws[:half]))
+    l2 = " ".join(word(i + half, w) for i, w in enumerate(ws[half:]))
+    end = min(segs[0]["t1"], 4.0)
+    style = "Style: HookP,Anton,118,&H00FFFFFF,&H00FFFFFF,&H00222BE4,&H80000000,0,0,0,0,100,100,1,0,3,24,6,8,50,50,230,1"
+    txt = ass_path.read_text(encoding="utf-8").replace("\n[Events]", "\n" + style + "\n\n[Events]", 1)
+    ev = (f"Dialogue: 3,{_ts(0)},{_ts(end)},HookP,,0,0,0,,{{\\fad(60,180)\\fscx135\\fscy135\\t(0,220,\\fscx100\\fscy100)}}"
+          f"{l1}\\N{l2}")
+    ass_path.write_text(txt + ev + "\n", encoding="utf-8")
+
+
+def _premium_sfx(segs, items, dur, out):
+    """Whoosh on every cut, soft click when the cursor clicks on a real screen - premium edits are never silent
+    between the words. Synthesised (no licence issue)."""
+    import numpy as np
+    import wave
+    sr = 44100
+    n = int((dur + 0.5) * sr)
+    y = np.zeros(n)
+    rng = np.random.default_rng(3)
+
+    def add(sig, t, g):
+        a = int(max(t, 0) * sr)
+        b = min(n, a + len(sig))
+        if a < n:
+            y[a:b] += sig[: b - a] * g
+
+    m = int(0.42 * sr)
+    x = rng.standard_normal(m)
+    whoosh = (np.convolve(x, np.ones(5) / 5, "same") - np.convolve(x, np.ones(48) / 48, "same")) * np.sin(np.linspace(0, np.pi, m)) ** 2
+    tt = np.arange(int(0.08 * sr)) / sr
+    click = np.sin(2 * np.pi * 1800 * tt) * np.exp(-tt * 70)
+    for s in segs[1:]:
+        add(whoosh, s["t0"] - 0.22, 0.5)
+    for k, it in items:
+        if it.get("mode") == "real":
+            t0 = segs[k]["t0"] + 0.4 + min(it["frames"] / FPS * 0.4, 1.6)
+            add(click, t0, 0.6)
+    y = np.clip(y, -1, 1)
+    pcm = (np.repeat(y[:, None], 2, axis=1) * 32000).astype("<i2")
+    with wave.open(str(out), "wb") as w:
+        w.setnchannels(2)
+        w.setsampwidth(2)
+        w.setframerate(sr)
+        w.writeframes(pcm.tobytes())
+    return out
 
 
 def render(sc, lines, words, avatar_mp4, voice_wav, workdir: Path, out_path: Path, seed=None, timeline=None):
