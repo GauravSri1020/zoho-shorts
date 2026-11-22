@@ -219,6 +219,10 @@ Return JSON: {{"scores": {{"hook": 0, ...}}, "blockers": ["criterion names"], "o
         d = _ask([types.Content(role="user", parts=[types.Part(file_data=types.FileData(file_uri=f.uri,
                                                                                         mime_type="video/mp4")),
                                                       types.Part(text=prompt)])])
+        if isinstance(d, list):  # 22 Nov 2026: the model sometimes wraps the JSON object in a list
+            d = next((x for x in d if isinstance(x, dict)), None)
+        if not isinstance(d, dict):
+            raise ValueError("QA answer is not a JSON object")
         report["scores"] = d.get("scores", {})
         vals = [float(v) for v in report["scores"].values() if isinstance(v, (int, float))]
         report["overall"] = round(min(float(d.get("overall", 0) or 0), sum(vals) / len(vals) if vals else 0), 1)
