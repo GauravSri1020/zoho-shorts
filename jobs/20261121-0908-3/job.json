@@ -1,7 +1,7 @@
 {
  "id": "20261121-0908-3",
  "niche": "zoho",
- "status": "qa_failed",
+ "status": "skip",
  "upload": true,
  "created": "2026-11-21T09:17:23",
  "title": "Mappls Integrated With Zoho Arattai #Shorts",
@@ -465,5 +465,6 @@
  "clips": [],
  "look": "wearing light blue suit with a white shirt and no tie, in a busy open-plan office with people working softly blurred in the background; in this whole video he has a full well-groomed beard, short slicked-back hair, no glasses - exactly the same in every shot of this video",
  "issue": 196,
- "faceless_fallback": true
+ "faceless_fallback": true,
+ "skip_reason": "22 Nov: repeated Arattai/Mappls topic (also 10 Nov), QA failed - Gaurav asked for a brand-new Short instead"
 }
