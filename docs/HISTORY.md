@@ -2,6 +2,18 @@
 
 Is file ko har session ke end pe update karo, taaki agla chat yahin se shuru kare.
 
+## 22 Nov 2026 raat (22:00-23:00 IST) - whiteboard / cartoon news Shorts wapas (bina Flow), Nvidia pehla
+
+- Gaurav: "Nvidia wale videos whiteboard pe cartoon wali cheezein laga ke, bina Flow, free mein; trending news" -> yes.
+  (20 Nov ko unhone cartoon Shorts band karwaye the - ab trending-NEWS Shorts ke liye wapas, Zoho how-to Flow engine pe.)
+- Pipeline pehle se thi: docs/longform/shorts/<id>.json -> shorts-daily (Kokoro, render, vshort 9:16, QA --short, upload).
+- s20261122-nvidia-worst-week: Reuters ki SEC accounting probe report (2 sources se), -12% Friday, -23% week (2008 ke baad
+  sabse kharab), $115.8B Q3. Local render + QA pehle (45.5 s, no black / dead air, -14.9 LUFS), phir push.
+  YouTube qZqLdG7DKM8, 23 Nov 13:30 IST (pehle 07:30 laga tha = Desk Short se clash -> fix request se shift).
+- Fixes: vshort.pick_slot main ke state.json slots bhi ginta hai (naya upload playlist mein der se aata hai);
+  fix_video.py "publish_at" se scheduled video ka time badal sakta hai (fix-requests/*.json push = longform-fix).
+- DAILY.md: roz 1-2 trending news whiteboard Shorts (brain likhega - token chahiye).
+
 ## RULE: pehle backup, phir kaam (Gaurav ka standing order)
 
 Gaurav jab bhi kuch bhi change karne bole: SABSE PEHLE backup - `backup-YYYY-MM-DD-<kya-badal-rahe-ho>` branch main se banao (aur agar video ka kaam hai to latest Short ka artifact download karo). Tabhi code chhuo. Kuch bigde to us branch se purana code wapas lo.
