@@ -31,6 +31,9 @@ def youtube():
 def upload(yt, video_path, title, description, tags, publish_at, localizations=None):
     """Uploads as private with publishAt -> YouTube makes it public at that exact time.
     localizations: {"ar": {"title", "description"}, ...} -> viewers see the title in their own language."""
+    # 22 Nov 2026: YouTube rejects < and > anywhere in title / description ("invalid video description") -
+    # a hand-written job had "Settings > Taxes". Make every upload safe here, not only build_description().
+    title, description = (str(x).replace("<", "‹").replace(">", "›") for x in (title, description))
     body = {
         "snippet": {"title": title[:100], "description": description[:4900],
                     "tags": [t for t in tags if t][:15], "categoryId": YT_CATEGORY_ID,
