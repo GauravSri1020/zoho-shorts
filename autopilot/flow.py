@@ -258,11 +258,19 @@ def _act(beat, text):
     return next((v for k, v in _ACT.items() if b.startswith(k)), "explains with natural, lively hand gestures")
 
 
-def prompt(text, beat="", look=None):
+# 22 Nov 2026 (Gaurav): the clips of one Short look like ONE take filmed by several cameras - same man, same hair,
+# beard, glasses and clothes, only the camera position changes from clip to clip.
+ANGLES = ("camera straight in front of him at eye level",
+          "camera slightly to his left at a gentle three-quarter angle",
+          "camera slightly to his right at a gentle three-quarter angle, a little closer")
+
+
+def prompt(text, beat="", look=None, angle=0):
     look = SCENE if look is None else look
     act = _act(beat, text)
     cam = ("smooth gimbal camera gently moving back with him so the framing stays the same"
            if re.search(r"\bwalk", act) else "static camera")
+    cam = f"{ANGLES[angle % len(ANGLES)]}, {cam}"
     return (f"{PRESENTER} looks into the camera and talks to the viewer like a confident, friendly business tech "
             f"explainer, smart and natural, not stiff; he {act}. {SHOT}, {cam}, sharp and well lit"
             + (f", {look}" if look else "") + ". "
@@ -384,8 +392,8 @@ def prepare(count, do_upload):
             else:  # niche v2: the place comes from the Short's industry, the outfit rotates
                 look = nw.look_for(angle, st.get("look_index", 0)) or LOOKS[st.get("look_index", 0) % len(LOOKS)]
             st["look_index"] = st.get("look_index", 0) + 1
-            for c in clips:
-                c["prompt"] = prompt(c["text"], c["beat"], look)
+            for ci, c in enumerate(clips):
+                c["prompt"] = prompt(c["text"], c["beat"], look, ci)
             d = JOBS / job_id
             (d / "clips").mkdir(parents=True, exist_ok=True)
             (d / "clips" / ".keep").write_text("drop the Flow clips here\n")

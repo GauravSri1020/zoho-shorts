@@ -217,15 +217,17 @@ flow:
       - {text: "under a modern glass atrium full of daylight and tall indoor plants"}
     beards: ["a neat light stubble", "a short neatly trimmed beard", "a full well-groomed beard",
              "a sharp short boxed beard", "a clean-shaven face with no beard"]
-    hair: ["short neat side-parted hair", "a modern textured quiff", "short slicked-back hair",
-           "a clean short crew cut", "neatly combed-back medium-length hair", "a short fade with a little volume on top"]
+    # 22 Nov 2026 (Gaurav): ek clip mein baal, doosre mein bald -> NAHI. Crew cut / fade hata diye (Veo unhe ganja bana
+    # deta tha). Sirf ghane baal wale styles; "never bald" BODY mein bhi.
+    hair: ["thick short neat side-parted dark hair", "a thick modern textured quiff", "thick short slicked-back dark hair",
+           "thick neatly combed-back medium-length dark hair", "thick short textured dark hair brushed slightly forward"]
     eyewear: ["no glasses", "no glasses", "thin black rectangular glasses", "clear-frame modern glasses",
               "thin gold round-frame glasses"]
     sunglasses: ["classic dark aviator sunglasses", "black wayfarer sunglasses"]   # only for outdoor places
   # Shakal + body hamesha avatar ki reference photos jaisi - kabhi patla / mota nahi.
   # 11 Nov 2026: beard / hair / glasses ab har Short ka look decide karta hai (ek video mein sab shots same).
   # Professional: koi tilak, mala, dhaaga, religious cheez nahi (QA ne aise clips pass kiye the).
-  body: "His face, skin tone, height and body build stay exactly as in my avatar's reference photos - the same natural average build, never slimmer and never heavier. Clean professional business look: no tilak or any mark on his forehead, no necklace, mala, beads, thread or religious accessory, no earrings, no bracelets"
+  body: "He always has a full head of thick dark hair, never bald, never shaved, never thinning or receding. His face, hair, beard, glasses, clothes, skin tone, height and body build are IDENTICAL in every clip of this video, as if the same moment were filmed by several cameras - only the camera angle changes. His face, skin tone, height and body build stay exactly as in my avatar's reference photos - the same natural average build, never slimmer and never heavier. Clean professional business look: no tilak or any mark on his forehead, no necklace, mala, beads, thread or religious accessory, no earrings, no bracelets"
   # Gesture / body language har clip mein alag (har line ke liye pool se ek chuna jaata hai, script ke text se).
   # Research (14 Oct): talking-head Shorts mein presenter kabhi poora still nahi - halka walk-in, weight shift,
   # haath ki movement, important baat se pehle chhota pause, ek dost se baat karne jaisa tone, ~15% zyada energy.
