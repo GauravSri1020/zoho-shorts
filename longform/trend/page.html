@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8">
+<style>
+@font-face{font-family:Anton;src:url(file:///usr/share/fonts/truetype/google-fonts/ofl/anton/Anton-Regular.ttf)}
+@font-face{font-family:Mont;src:url("file:///usr/share/fonts/truetype/google-fonts/ofl/montserrat/Montserrat[wght].ttf");font-weight:100 900}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1080px;height:1920px;overflow:hidden;background:#05070a}
+#stage{position:absolute;inset:0;overflow:hidden;font-family:Mont,sans-serif;color:#fff}
+#bg{position:absolute;inset:-200px;background:
+  linear-gradient(rgba(255,255,255,.045) 2px,transparent 2px) 0 0/90px 90px,
+  linear-gradient(90deg,rgba(255,255,255,.045) 2px,transparent 2px) 0 0/90px 90px}
+#glow{position:absolute;left:-300px;top:200px;width:1680px;height:1300px;border-radius:50%;filter:blur(140px);opacity:.55}
+#vign{position:absolute;inset:0;background:radial-gradient(ellipse at 50% 45%,transparent 45%,rgba(0,0,0,.85) 100%)}
+#cam{position:absolute;inset:0}
+.layer{position:absolute;inset:0;display:none}
+#top{position:absolute;left:0;right:0;top:0;height:200px}
+#prog{position:absolute;left:0;top:0;height:10px;background:linear-gradient(90deg,#76b900,#d4ff3a)}
+#pill{position:absolute;left:54px;top:70px;padding:14px 26px 14px 58px;border-radius:40px;background:#e11d2e;font:800 34px Mont;letter-spacing:2px}
+#dot{position:absolute;left:24px;top:22px;width:20px;height:20px;border-radius:50%;background:#fff}
+#tick{position:absolute;right:54px;top:66px;padding:12px 24px;border-radius:18px;background:rgba(255,255,255,.08);border:2px solid rgba(255,255,255,.18);font:700 36px "DejaVu Sans Mono",monospace}
+#tick b{color:#ff3b4e}
+.big{position:absolute;left:0;right:0;text-align:center;font-family:Anton;line-height:.95}
+.lab{position:absolute;left:0;right:0;text-align:center;font:800 46px Mont;letter-spacing:6px;color:rgba(255,255,255,.7)}
+#caps{position:absolute;left:60px;right:60px;top:1330px;height:330px;text-align:center;font:900 82px/1.12 Mont;text-transform:uppercase;
+  -webkit-text-stroke:3px #000;paint-order:stroke fill;text-shadow:0 8px 0 rgba(0,0,0,.6)}
+#caps span{display:inline-block;margin:0 20px}
+#src{position:absolute;left:0;right:0;bottom:120px;text-align:center;font:600 30px Mont;color:rgba(255,255,255,.5)}
+#flash{position:absolute;inset:0;background:#fff;opacity:0}
+.stamp{position:absolute;font-family:Anton;color:#ff2d42;border:12px solid #ff2d42;padding:4px 40px;border-radius:18px}
+.bar{position:absolute;bottom:0;border-radius:14px 14px 0 0}
+.card{position:absolute;left:70px;right:70px;background:#f4f1ea;color:#111;border-radius:26px;padding:44px 50px;box-shadow:0 30px 80px rgba(0,0,0,.6)}
+.chip{position:absolute;font:900 64px Mont;padding:10px 34px;border-radius:60px}
+</style></head><body>
+<div id="stage">
+ <div id="cam">
+  <div id="bg"></div><div id="glow"></div>
+  <!-- S0 -->
+  <div class="layer" id="L0">
+    <div class="lab" style="top:420px">MARKET VALUE LOST</div>
+    <div class="big" id="s0num" style="top:520px;font-size:330px">$0.0T</div>
+    <div class="lab" style="top:900px;font-size:40px;letter-spacing:3px">SINCE ITS OCTOBER RECORD</div>
+    <div class="stamp" id="s0gone" style="left:300px;top:1010px;font-size:150px">GONE</div>
+  </div>
+  <!-- S1 -->
+  <div class="layer" id="L1">
+    <div id="s1rib" style="position:absolute;left:-40px;right:-40px;top:330px;height:120px;background:#ff2d42;transform:rotate(-3deg);font:900 62px/120px Mont;text-align:center;letter-spacing:3px">WORST WEEK SINCE 2008</div>
+    <div id="s1chart" style="position:absolute;left:120px;right:120px;top:540px;height:400px;border-bottom:4px solid rgba(255,255,255,.35)"></div>
+    <div class="big" id="s1num" style="top:1035px;font-size:220px;color:#ff2d42">-0%</div>
+  </div>
+  <!-- S2 -->
+  <div class="layer" id="L2">
+    <div class="card" id="s2card" style="top:330px">
+      <div style="font:900 40px Mont;color:#e11d2e;letter-spacing:4px">REUTERS REPORT · FRIDAY</div>
+      <div id="s2head" style="font:800 64px/1.15 Mont;margin-top:22px;min-height:225px"></div>
+      <div style="font:600 32px Mont;color:#555;margin-top:18px">citing two people briefed on the matter</div>
+    </div>
+    <svg id="s2svg" width="1080" height="700" style="position:absolute;left:0;top:300px;display:none">
+      <defs><filter id="rg"><feGaussianBlur stdDeviation="9"/></filter></defs>
+      <path id="s2glow" fill="none" stroke="#ff2d42" stroke-width="22" filter="url(#rg)" opacity=".7"/>
+      <path id="s2line" fill="none" stroke="#ff4d5e" stroke-width="12" stroke-linejoin="round" stroke-linecap="round"/>
+      <circle id="s2dot" r="18" fill="#fff"/>
+    </svg>
+    <div class="big" id="s2num" style="top:880px;font-size:230px;color:#ff2d42;display:none">-12%</div>
+    <div class="lab" id="s2sub" style="top:1130px;display:none;color:#fff">IN ONE DAY</div>
+  </div>
+  <!-- S3 -->
+  <div class="layer" id="L3">
+    <div class="lab" style="top:400px;color:#9be22d">RECORD QUARTERLY REVENUE</div>
+    <div class="big" id="s3num" style="top:500px;font-size:250px;color:#9be22d">$0.0B</div>
+    <svg id="s3arrow" width="300" height="300" style="position:absolute;left:390px;top:790px"><path d="M150 20 L270 160 L195 160 L195 290 L105 290 L105 160 L30 160 Z" fill="#9be22d"/></svg>
+    <div class="chip" id="s3chip" style="left:340px;top:1120px;background:#9be22d;color:#05070a">+103%</div>
+    <div id="s3parts"></div>
+  </div>
+  <!-- S4 -->
+  <div class="layer" id="L4">
+    <div id="s4a" style="position:absolute;left:0;right:0;top:250px;height:520px;background:linear-gradient(#0f2a07,#1b4a0b);text-align:center">
+      <div style="font:900 60px Mont;letter-spacing:8px;margin-top:90px;color:#c8ff5a">RECORD</div>
+      <div style="font-family:Anton;font-size:210px;line-height:1;color:#9be22d">SALES ▲</div></div>
+    <div id="s4b" style="position:absolute;left:0;right:0;top:770px;height:520px;background:linear-gradient(#4a0b12,#2a0509);text-align:center">
+      <div style="font:900 60px Mont;letter-spacing:8px;margin-top:90px;color:#ff8a95">RECORD</div>
+      <div style="font-family:Anton;font-size:210px;line-height:1;color:#ff2d42">CRASH ▼</div></div>
+  </div>
+  <!-- S5 -->
+  <div class="layer" id="L5">
+    <div class="big" id="s5a" style="top:400px;font-size:190px">REPORT <span style="color:#ffb020;font-family:'DejaVu Sans';font-weight:700">≠</span> CHARGE</div>
+    <div id="s5mag" style="position:absolute;left:400px;top:800px;width:280px;height:280px">
+      <div style="position:absolute;left:0;top:0;width:200px;height:200px;border:26px solid #fff;border-radius:50%"></div>
+      <div style="position:absolute;left:170px;top:175px;width:110px;height:34px;background:#fff;border-radius:17px;transform:rotate(45deg);transform-origin:0 50%"></div>
+      <div style="position:absolute;left:58px;top:20px;font-family:Anton;font-size:130px;color:#ffb020">?</div>
+    </div>
+    <div class="lab" id="s5b" style="top:1135px;color:#fff;font-size:50px;letter-spacing:2px">WHAT IS THE SEC CHECKING?</div>
+  </div>
+  <!-- S6 -->
+  <div class="layer" id="L6">
+    <div class="big" style="top:430px;font-size:150px">WHAT HAPPENS<br>NEXT?</div>
+    <div id="s6btn" style="position:absolute;left:190px;top:820px;width:700px;height:170px;border-radius:90px;background:#e11d2e;font:900 74px/170px Mont;text-align:center;letter-spacing:2px">+ FOLLOW</div>
+    <div class="lab" style="top:1050px;font-size:40px">FOR PART 2</div>
+  </div>
+  <div id="vign"></div>
+ </div>
+ <div id="top"><div id="prog"></div><div id="pill"><div id="dot"></div>BREAKING · 22 NOV</div><div id="tick">NVDA <b>▼ 12%</b></div></div>
+ <div id="caps"></div>
+ <div id="src">Sources: Reuters via Yahoo Finance · NVIDIA Q3 FY27 results · not financial advice</div>
+ <div id="flash"></div>
+</div>
+<script>
+const D = window.DATA;
+const H = D.hits, LN = D.lines;
+const $ = id => document.getElementById(id);
+const cl = (x,a=0,b=1)=>Math.max(a,Math.min(b,x));
+const ease = x=>1-Math.pow(1-cl(x),3);
+const back = x=>{x=cl(x);const c=1.9;return 1+(c+1)*Math.pow(x-1,3)+c*Math.pow(x-1,2)};
+const pop = (t,t0,d=.25)=>back((t-t0)/d);
+// scene index by time (scene k runs from line k start-0.12 to next line start-0.12)
+function sceneAt(t){let k=0;for(let i=0;i<LN.length;i++){if(t>=LN[i].s-0.12)k=i;}return k;}
+const glowCol=['#ff2d42','#ff2d42','#ff2d42','#76b900','#ffb020','#ffb020','#e11d2e'];
+// bars for S1
+const bars=[];(function(){const c=$('s1chart');const days=['MON','TUE','WED','THU','FRI'];const h=[370,320,265,225,130];
+ days.forEach((d,i)=>{const b=document.createElement('div');b.className='bar';b.style.left=(i*168+20)+'px';b.style.width='120px';
+  b.style.background=i==4?'#ff2d42':'#b8222f';c.appendChild(b);
+  const l=document.createElement('div');l.textContent=d;l.style.cssText='position:absolute;bottom:-62px;width:120px;text-align:center;font:800 34px Mont;color:rgba(255,255,255,.6);left:'+(i*168+20)+'px';c.appendChild(l);
+  bars.push([b,h[i]]);});})();
+// particles for S3
+const parts=[];(function(){const c=$('s3parts');for(let i=0;i<26;i++){const p=document.createElement('div');
+ p.style.cssText='position:absolute;width:14px;height:14px;border-radius:50%;background:#c8ff5a';c.appendChild(p);
+ parts.push([p,(i*137)%1000+40,(i*53)%7/7]);}})();
+// stock path for S2
+const pts=[];for(let i=0;i<=60;i++){const x=80+i*15.3;let y=180+Math.sin(i*.7)*22+i*1.2;if(i>38)y+= (i-38)*(i-38)*0.95;pts.push([x,Math.min(y,640)]);}
+function path(n){let s='';for(let i=0;i<=n;i++)s+=(i?'L':'M')+pts[i][0].toFixed(1)+' '+pts[i][1].toFixed(1);return s;}
+const HEAD='SEC examining possible accounting issues at Nvidia';
+function capWords(t){ // groups of up to 3 words of the current line around the spoken word
+  const ws=D.words; let cur=-1; for(let i=0;i<ws.length;i++){ if(t>=ws[i].t0-0.02) cur=i; }
+  if(cur<0||t>ws[cur].t1+0.6) return '';
+  const line=ws[cur].line; const idx=ws.filter(w=>w.line==line); const k=idx.indexOf(ws[cur]); const g=Math.floor(k/3)*3;
+  return idx.slice(g,g+3).map((w,j)=>{const on=(g+j)==k; const raw=w.w;
+    let col='#fff'; if(/\d|TRILLION|BILLION/.test(raw) && !/2008/.test(raw)) col=w.line==3?'#9be22d':'#ff4d5e';
+    if(/crash|worst|fell|SEC/i.test(raw)) col='#ff4d5e'; if(/record|sales/i.test(raw)) col='#9be22d';
+    const s=on?pop(t,w.t0,.18):1; const c=on?'#ffe600':col;
+    return `<span style="color:${c};transform:scale(${(on?1.12:1)*Math.min(s,1.15)})">${raw.replace(/[,.]$/,'')}</span>`}).join(' ');
+}
+function shake(t){let a=0;for(const k of ['gone','w23','d12','rev','crash']){const d=t-H[k];if(d>=0&&d<.35)a=Math.max(a,(1-d/.35)*18);}return a;}
+window.render = function(t){
+  const k=sceneAt(t);
+  for(let i=0;i<7;i++) $('L'+i).style.display = i==k?'block':'none';
+  $('prog').style.width=(t/D.dur*100)+'%';
+  $('dot').style.opacity = (Math.floor(t*2.5)%2)?.25:1;
+  $('glow').style.background=glowCol[k];
+  $('bg').style.transform=`translate(${(t*22)%90}px,${(t*35)%90}px)`;
+  const st=LN[k].s-0.12, lt=t-st;
+  // punch zoom at scene start + shake
+  const z=1+0.06*Math.max(0,1-lt/0.35); const a=shake(t);
+  $('cam').style.transform=`scale(${z}) translate(${Math.sin(t*90)*a}px,${Math.cos(t*77)*a}px)`;
+  $('flash').style.opacity = k>0 ? Math.max(0,0.55-lt*4) : 0;
+  if(k==0){ const v=2.7*ease((t+0.45)/2.4); const n=$('s0num'); n.textContent='$'+v.toFixed(1)+'T';
+    const red=t>H.gone-0.3; n.style.color=red?'#ff2d42':'#fff'; n.style.transform=`scale(${0.7+0.3*ease(t/0.5)})`;
+    const g=$('s0gone'); g.style.display=t>=H.gone-0.25?'block':'none'; const s=pop(t,H.gone-0.25,.22);
+    g.style.transform=`rotate(-12deg) scale(${2.2-1.2*cl(s)})`; g.style.opacity=cl((t-H.gone+0.25)/.1); }
+  if(k==1){ $('s1rib').style.transform=`rotate(-3deg) translateX(${(1-ease(lt/.4))*-1200}px)`;
+    bars.forEach(([b,h],i)=>{const p=ease((lt-0.5-i*0.35)/0.45); b.style.height=(h*p)+'px';});
+    const p=ease((t-(H.w23-0.9))/0.9); $('s1num').textContent='-'+Math.round(23*p)+'%'; $('s1num').style.transform=`scale(${t>H.w23?pop(t,H.w23,.2)*1:0.85})`; }
+  if(k==2){ const chartOn=t>=H.fell-0.4; $('s2card').style.display=chartOn?'none':'block';
+    $('s2card').style.transform=`translateY(${(1-ease(lt/.4))*900}px) rotate(${(1-ease(lt/.4))*-6}deg)`;
+    const n=Math.floor(cl((t-H.trigger)/2.6)*HEAD.length); $('s2head').textContent=HEAD.slice(0,n)+((Math.floor(t*3)%2&&n<HEAD.length)?'|':'');
+    $('s2svg').style.display=chartOn?'block':'none'; const m=Math.round(cl((t-H.fell+0.4)/1.3)*60);
+    const d=path(m); $('s2line').setAttribute('d',d); $('s2glow').setAttribute('d',d); $('s2dot').setAttribute('cx',pts[m][0]); $('s2dot').setAttribute('cy',pts[m][1]);
+    const on=t>=H.d12-0.05; $('s2num').style.display=on?'block':'none'; $('s2sub').style.display=on?'block':'none';
+    $('s2num').style.transform=`scale(${pop(t,H.d12-0.05,.22)})`; }
+  if(k==3){ const p=ease((t-(H.rev-1.2))/1.4); $('s3num').textContent='$'+(115.8*p).toFixed(1)+'B';
+    $('s3num').style.transform=`scale(${t>H.rev?Math.min(pop(t,H.rev,.25),1.12):0.9})`;
+    $('s3arrow').style.transform=`translateY(${(1-ease(lt/.5))*400 + Math.sin(t*4)*10}px)`;
+    const c=$('s3chip'); c.style.display=t>=H.p103-0.1?'block':'none'; c.style.transform=`scale(${pop(t,H.p103-0.1,.25)})`;
+    parts.forEach(([p,x,o],i)=>{const y=1500-((t*160+o*1400)%1400); p.style.left=x+'px'; p.style.top=y+'px'; p.style.opacity=.15+.5*((i%3)/3);}); }
+  if(k==4){ $('s4a').style.transform=`translateX(${(1-ease((t-(H.sales-0.5))/.3))*-1100}px)`;
+    $('s4b').style.transform=`translateX(${(1-ease((t-(H.crash-0.35))/.3))*1100}px)`; }
+  if(k==5){ $('s5a').style.transform=`scale(${pop(t,st+0.05,.3)})`; const m=$('s5mag');
+    m.style.transform=`translate(${Math.sin(t*2.2)*60}px,${Math.cos(t*1.7)*30}px) scale(${cl((t-H.nobody+0.3)/.3)})`;
+    $('s5b').style.opacity=cl((t-H.nobody)/.3); }
+  if(k==6){ const b=$('s6btn'); b.style.transform=`scale(${pop(t,st+0.2,.3)*(1+0.05*Math.sin(t*9))})`; }
+  $('caps').innerHTML = capWords(t);
+};
+window.render(0);
+</script></body></html>
