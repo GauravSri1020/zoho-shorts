@@ -126,6 +126,7 @@ flow:
   # screens / screenshots (STEP lines) -> Flow clip (RESULT). Clips nahi aaye to Short faceless NAHI banta: job
   # `expire_hours` ke baad "skip" (status skip_no_clips) ho jaata hai taaki agle din ke 2 naye Shorts ban sakein.
   never_faceless: true
+  premium_middle: true      # 23 Nov 2026: moving middle part (real screenshot screen-share or whiteboard), never a still photo card
   expire_hours: 30
   extra_angles: 4           # script QA mein fail ho to aur angles try karo (2 Shorts roz pakke)
   per_day: 2                # Shorts per daily run (2 schedule slots a day)

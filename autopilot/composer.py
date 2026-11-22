@@ -23,7 +23,7 @@ import subprocess
 from pathlib import Path
 
 from . import music, screens
-from .config import CHANNEL_HANDLE, CHANNEL_NAME, IS_ZOHO
+from .config import CH, CHANNEL_HANDLE, CHANNEL_NAME, IS_ZOHO
 
 W, H, FPS = 1080, 1920, 30
 PX, PY, PW, PH = 40, 470, 1000, 1100  # middle panel (screen shots)
@@ -437,6 +437,84 @@ Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
 
 
 # ------------------------------------------------------------------ main
+PREMIUM = bool((CH.get("flow") or {}).get("premium_middle", False)) if IS_ZOHO else False
+
+
+def _premium_items(sc, lines, segs, frames_of):
+    """One premium.segments item per screen shot: REAL Zoho screenshot when the line has one, else the whiteboard."""
+    from . import premium
+    lib = screens.library()
+    app = str(sc.get("app_label") or "Zoho")
+    accent = _ZOHO_ACCENT.get(next((k for k in _ZOHO_ACCENT if k in app.lower()), ""), "#E42527")
+    steps = sum(1 for l in lines if str(l.get("beat", "")).upper().startswith("STEP"))
+    header = (sc.get("hook_text") or app)[:40].upper()
+    items = []
+    for k, s in enumerate(segs):
+        if s["kind"] != "screen":
+            continue
+        l = lines[s["line"]]
+        spec = l.get("screen") or {}
+        beat = str(l.get("beat", "")).upper()
+        m = re.match(r"STEP\s*(\d+)", beat)
+        title = l.get("card") or (spec.get("tip") or l.get("say", ""))[:40]
+        it = {"frames": frames_of(k), "step": int(m.group(1)) if m else None, "steps": steps, "title": title,
+              "tip": spec.get("tip", ""), "say": l.get("say", ""), "accent": accent, "header": header,
+              "chips": premium.chips_for(spec.get("tip", ""), title), "mode": "board"}
+        real = spec.get("real")
+        if real and real in lib:
+            item = lib[real]
+            box = (item.get("targets") or {}).get(spec.get("click") or "")
+            it.update(mode="real", img=str(screens.REAL_DIR / item["file"]),
+                      box=box or [0, 0, 1, 1], zoom=1.3 if box else 1.0)
+        items.append((k, it))
+    return items
+
+
+def _render_premium(sc, lines, words, avatar_mp4, voice_wav, workdir, out_path, dur, times, segs, seed):
+    from . import premium
+    from .editor import black_spans, frozen_spans
+    fb = [round(s["t0"] * FPS) for s in segs] + [round(dur * FPS)]
+    frames_of = lambda k: max(fb[k + 1] - fb[k], 1)
+    items = _premium_items(sc, lines, segs, frames_of)
+    made = dict(zip([k for k, _ in items], premium.segments([it for _, it in items], workdir / "premium")))
+    clips = []
+    for k, s in enumerate(segs):
+        if s["kind"] == "avatar":
+            c = workdir / f"c{k:02d}.mp4"
+            _avatar_full(avatar_mp4, s["t0"], frames_of(k), s["zoom"], c)
+            clips.append(c)
+        else:
+            clips.append(made[k])
+    lst = workdir / "clips.txt"
+    lst.write_text("".join(f"file '{c.resolve()}'\n" for c in clips))
+    video = workdir / "video.mp4"
+    _run(_ff("-f", "concat", "-safe", "0", "-i", str(lst), "-c:v", "libx264", "-preset", "veryfast", "-crf", "17",
+             "-pix_fmt", "yuv420p", "-r", str(FPS), str(video)))
+    black = black_spans(video)
+    if black:
+        raise RuntimeError("black frames in the edit at " + ", ".join(f"{a:.1f}-{b:.1f}s" for a, b in black[:5]))
+    frozen = frozen_spans(video)  # before captions: nothing may stand still
+    if frozen:
+        raise RuntimeError("stuck picture in the edit at " + ", ".join(f"{a:.1f}-{b:.1f}s" for a, b in frozen[:5]))
+    ass = workdir / "captions.ass"
+    build_ass(words, lines, times, segs, ass, sc.get("hook_text") or sc.get("title", ""))
+    mus = music.pick(dur + 1, workdir, seed)
+    ass_arg = str(ass.resolve()).replace(":", r"\:").replace("'", r"\'")
+    fc = (f"[0:v]ass='{ass_arg}'[v];"
+          f"[2:a]aformat=sample_rates=44100:channel_layouts=stereo,volume={MUSIC_VOL:.2f}[m];"
+          f"[1:a]aformat=sample_rates=44100:channel_layouts=stereo,asplit=2[vo][sc];"
+          f"[m][sc]sidechaincompress=threshold=0.03:ratio=8:attack=20:release=400[md];"
+          f"[vo][md]amix=inputs=2:duration=first:normalize=0,alimiter=limit=0.95[aout]")
+    _run(_ff("-i", str(video), "-i", str(voice_wav), "-stream_loop", "-1", "-i", str(mus),
+             "-filter_complex", fc, "-map", "[v]", "-map", "[aout]",
+             "-t", f"{dur:.3f}", "-c:v", "libx264", "-preset", "medium", "-crf", "19", "-pix_fmt", "yuv420p",
+             "-r", str(FPS), "-c:a", "aac", "-b:a", "192k", "-movflags", "+faststart", str(out_path)))
+    (workdir / "plan.json").write_text(json.dumps(
+        [{k: v for k, v in s.items()} | {"beat": lines[s["line"]].get("beat")} for s in segs], indent=1))
+    print(f"[composer] PREMIUM {len(segs)} shots ({len(items)} moving screens), {dur:.1f}s -> {out_path}")
+    return out_path
+
+
 def render(sc, lines, words, avatar_mp4, voice_wav, workdir: Path, out_path: Path, seed=None, timeline=None):
     workdir.mkdir(parents=True, exist_ok=True)
     rng = random.Random(seed)
@@ -444,6 +522,8 @@ def render(sc, lines, words, avatar_mp4, voice_wav, workdir: Path, out_path: Pat
     times = line_times(lines, words, dur)
     segs = plan_parts(timeline, dur) if timeline else plan(lines, times, dur)
 
+    if IS_ZOHO and PREMIUM:  # 23 Nov 2026: moving premium middle part, no drawn app pages, no presenter photo
+        return _render_premium(sc, lines, words, avatar_mp4, voice_wav, workdir, out_path, dur, times, segs, seed)
     specs, idx = [], {}
     for s in segs:
         if s["kind"] == "screen":

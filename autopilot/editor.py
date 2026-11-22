@@ -258,6 +258,22 @@ def black_spans(path, min_len=0.1):
     return [(float(a), float(b)) for a, b in re.findall(r"black_start:\s*([\d.]+)\s+black_end:\s*([\d.]+)", err)]
 
 
+def frozen_spans(path, min_len=1.6, noise="-55dB"):
+    """[(start, end)] where the picture above the captions does not move for >= min_len s (23 Nov 2026, Gaurav:
+    "beech mein gandi si stuck screen aa rahi hai"). Captions change every ~1 s and hid a frozen photo card from the
+    old checks, so only the top 8-63 % of the frame is compared. A Flow clip, a real screen with its moving cursor /
+    camera and the premium whiteboard always move; a still photo, a held last frame or a static card does not."""
+    err = subprocess.run(["ffmpeg", "-hide_banner", "-i", str(path), "-an", "-vf",
+                          f"crop=iw:ih*0.55:0:ih*0.08,freezedetect=n={noise}:d={min_len}", "-f", "null", "-"],
+                         capture_output=True, text=True).stderr
+    starts = [float(x) for x in re.findall(r"freeze_start:\s*([\d.]+)", err)]
+    durs = [float(x) for x in re.findall(r"freeze_duration:\s*([\d.]+)", err)]
+    out = [(a, a + d) for a, d in zip(starts, durs)]
+    if len(starts) > len(durs):  # frozen until the very end
+        out.append((starts[-1], probe(path)["duration"] if probe(path) else starts[-1] + min_len))
+    return out
+
+
 def check_media(path):
     """Cheap technical checks on the finished file. Returns a list of problems (empty = ok)."""
     problems = []
@@ -277,6 +293,9 @@ def check_media(path):
     black = black_spans(path)
     if black:
         problems.append("black screen at " + ", ".join(f"{a:.1f}-{b:.1f}s" for a, b in black[:5]))
+    frozen = frozen_spans(path)
+    if frozen:
+        problems.append("stuck / frozen picture at " + ", ".join(f"{a:.1f}-{b:.1f}s" for a, b in frozen[:5]))
     return problems
 
 
