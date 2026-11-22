@@ -1,0 +1,345 @@
+{
+ "id": "20261122-0930-4",
+ "niche": "zoho",
+ "status": "waiting_for_clips",
+ "upload": true,
+ "created": "2026-11-22T09:34:16",
+ "title": "Zoho Desk AI Automation: Summarize Tickets Instantly with Claude #Shorts",
+ "description": "Stop wasting time on ticket histories. Use Zoho Flow and Claude AI to automatically generate 3-bullet summaries for escalated Zoho Desk tickets.\n\n1. Create a Zoho Flow triggered when a Zoho Desk ticket status changes to 'Escalated'.\n2. Add an AI step (OpenAI or Claude) passing the ticket conversation thread with a concise summary prompt.\n3. Add a Zoho Desk action to publish the generated summary as a private internal comment.\n\nAPI / tool used:\n- name: Zoho Flow API\n- endpoint: POST https://flow.zoho.com/api/v1/workspaces/{workspace_id}/flows\n- scope: ZohoFlow.flows.ALL\n- docs: Zoho Flow API Documentation\n\nAI + Zoho automations every day - follow @GSXAutomation\n\nWhat inspired this: https://news.google.com/rss/articles/CBMiiwFBVV95cUxQejNncTVNQklWQkxUelh6TDFidWd4QkJWVVdscnZ4Y2ljNklaaFdOOVV0ODE0Mll6OVFUMEcwV0JzNmd1akswdW9rcFFOVHMyTmh5QTVTdWtMbEJ2Y2o0SzRLVTEtak1TYy1rNmVHLV9XdDFMUElTYUoweWM0ZFc1V3RKb1VreTM5TWZv?oc=5\n\nThis video uses an AI-generated presenter and voice.\nIndependent channel. Not affiliated with or endorsed by Zoho Corporation. Zoho is a trademark of Zoho Corporation.\n\n#Shorts #Zoho #AIAutomation #ZohoCRM #AIAgents",
+ "angle": {
+  "story_index": 9,
+  "pillar": "trending",
+  "region": "global",
+  "product": "Zoho Desk & Claude",
+  "app": "desk",
+  "problem": "Tier-2 support engineers spend 15 minutes reading 50-comment ticket histories before resolving escalated issues.",
+  "fix_type": "flow_ai",
+  "solution": "Use a Zoho Flow AI step to auto-summarize long ticket threads and attach a 3-bullet briefing note on escalation.",
+  "steps": [
+   "Create a Zoho Flow triggered when a Zoho Desk ticket status changes to 'Escalated'.",
+   "Add an AI step (OpenAI or Claude) passing the ticket conversation thread with a concise summary prompt.",
+   "Add a Zoho Desk action to publish the generated summary as a private internal comment."
+  ],
+  "api": "https://flow.zoho.com/api/v1/workspaces/{workspace_id}/flows",
+  "result": "Saves tier-2 agents 10 minutes per ticket, accelerating complex issue resolution.",
+  "wow": "Engineers get a 3-bullet AI summary of 50 ticket comments the second it hits their queue.",
+  "hook": "Zoho Desk upgraded its tools—here is how AI summarizes long tickets instantly!"
+ },
+ "story": {
+  "title": "Zoho Desk Unveils New Product Enhancements",
+  "link": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxQejNncTVNQklWQkxUelh6TDFidWd4QkJWVVdscnZ4Y2ljNklaaFdOOVV0ODE0Mll6OVFUMEcwV0JzNmd1akswdW9rcFFOVHMyTmh5QTVTdWtMbEJ2Y2o0SzRLVTEtak1TYy1rNmVHLV9XdDFMUElTYUoweWM0ZFc1V3RKb1VreTM5TWZv?oc=5",
+  "summary": "Zoho Desk Unveils New Product Enhancements Business Post Nigeria",
+  "source": "Business Post Nigeria",
+  "ts": 1794843189,
+  "type": "news",
+  "publishers": 1,
+  "trend": 14,
+  "age_hours": 137,
+  "score": 10,
+  "facts_checked": true
+ },
+ "script": {
+  "title": "Zoho Desk AI Automation: Summarize Tickets Instantly with Claude",
+  "hook_text": "Stop reading 50-comment tickets!",
+  "thumb_text": "AI *Summarizes* Escalated Desk Tickets",
+  "app_label": "Zoho Desk + Claude",
+  "lines": [
+   {
+    "beat": "HOOK",
+    "say": "Tier-two support engineers waste fifteen minutes reading fifty-comment ticket histories.",
+    "tts": "Tier-two support engineers waste fifteen minutes reading fifty-comment ticket histories.",
+    "card": "15 Mins Wasted Per Ticket",
+    "screen": null
+   },
+   {
+    "beat": "PROBLEM",
+    "say": "When complex issues get escalated, agents spend more time scrolling through endless thread updates than actually fixing the problem for the customer.",
+    "tts": "When complex issues get escalated, agents spend more time scrolling through endless thread updates than actually fixing the problem for the customer.",
+    "card": "Endless Ticket Scrolling",
+    "screen": null
+   },
+   {
+    "beat": "FIX",
+    "say": "We can build an automated Zoho Flow that passes escalated ticket threads directly to Claude AI and posts a concise briefing note automatically.",
+    "tts": "We can build an automated Zoho Flow that passes escalated ticket threads directly to Claude AI and posts a concise briefing note automatically.",
+    "card": "Auto AI Summaries",
+    "screen": {
+     "app": "flow",
+     "view": "builder",
+     "nodes": [
+      "Trigger: Ticket Escalated",
+      "AI Step: Claude Prompt",
+      "Action: Add Internal Comment"
+     ],
+     "click": "AI Step: Claude Prompt"
+    }
+   },
+   {
+    "beat": "STEP 1",
+    "say": "First, open Zoho Flow and build a new flow triggered when a Zoho Desk ticket status updates to Escalated.",
+    "tts": "First, open Zoho Flow and build a new flow triggered when a Zoho Desk ticket status updates to Escalated.",
+    "card": "Step 1: Create Trigger",
+    "screen": {
+     "app": "flow",
+     "view": "builder",
+     "path": [
+      "App Triggers",
+      "Zoho Desk",
+      "Ticket Updated"
+     ],
+     "fields": [
+      [
+       "Trigger Field",
+       "Status"
+      ],
+      [
+       "New Value",
+       "Escalated"
+      ]
+     ],
+     "click": "Ticket Updated"
+    }
+   },
+   {
+    "beat": "STEP 2",
+    "say": "Next, insert a custom payload or AI action block passing the entire ticket thread text to Claude with a prompt requesting a three-bullet summary.",
+    "tts": "Next, insert a custom payload or AI action block passing the entire ticket thread text to Claude with a prompt requesting a three-bullet summary.",
+    "card": "Step 2: Prompt Claude AI",
+    "screen": {
+     "app": "flow",
+     "view": "action_config",
+     "fields": [
+      [
+       "Action",
+       "Claude AI Prompt"
+      ],
+      [
+       "Prompt Input",
+       "Summarize ticket thread in 3 bullets"
+      ]
+     ],
+     "click": "Claude AI Prompt"
+    }
+   },
+   {
+    "beat": "STEP 3",
+    "say": "Then, append a Zoho Desk action module to post that generated AI briefing straight into the ticket as a private internal comment.",
+    "tts": "Then, append a Zoho Desk action module to post that generated AI briefing straight into the ticket as a private internal comment.",
+    "card": "Step 3: Add Private Comment",
+    "screen": {
+     "app": "desk",
+     "view": "action_config",
+     "fields": [
+      [
+       "Module",
+       "Tickets"
+      ],
+      [
+       "Action",
+       "Add Comment"
+      ],
+      [
+       "Is Private",
+       "True"
+      ],
+      [
+       "Comment Content",
+       "${Claude.summary}"
+      ]
+     ],
+     "click": "Add Comment"
+    }
+   },
+   {
+    "beat": "RESULT",
+    "say": "Tier-two engineers get an instant three-bullet briefing the moment an escalated ticket arrives, saving over ten minutes on every single issue.",
+    "tts": "Tier-two engineers get an instant three-bullet briefing the moment an escalated ticket arrives, saving over ten minutes on every single issue.",
+    "card": "10+ Mins Saved Per Ticket!",
+    "screen": null
+   }
+  ],
+  "api": {
+   "name": "Zoho Flow API",
+   "endpoint": "POST https://flow.zoho.com/api/v1/workspaces/{workspace_id}/flows",
+   "scope": "ZohoFlow.flows.ALL",
+   "docs": "Zoho Flow API Documentation"
+  },
+  "code": null,
+  "test_before_recording": [
+   "Verify Zoho Desk status 'Escalated' exists",
+   "Test Claude API connectivity in Zoho Flow",
+   "Confirm private comment permissions"
+  ],
+  "description": "Stop wasting time on ticket histories. Use Zoho Flow and Claude AI to automatically generate 3-bullet summaries for escalated Zoho Desk tickets.",
+  "tags": [
+   "ZohoDesk",
+   "ZohoFlow",
+   "ClaudeAI",
+   "Automation",
+   "SupportEfficiency",
+   "TechNews",
+   "WorkflowAutomation",
+   "AI",
+   "BusinessProductivity",
+   "CustomerSupport"
+  ]
+ },
+ "lines": [
+  {
+   "beat": "HOOK",
+   "say": "Tier-two support engineers waste fifteen minutes reading fifty-comment ticket histories.",
+   "tts": "Tier-two support engineers waste fifteen minutes reading fifty-comment ticket histories.",
+   "card": "15 Mins Wasted Per Ticket",
+   "screen": null,
+   "face": true
+  },
+  {
+   "beat": "PROBLEM",
+   "say": "When complex issues get escalated, agents spend more time scrolling through endless thread updates than actually fixing the problem for the customer.",
+   "tts": "When complex issues get escalated, agents spend more time scrolling through endless thread updates than actually fixing the problem for the customer.",
+   "card": "Endless Ticket Scrolling",
+   "screen": null,
+   "face": true
+  },
+  {
+   "beat": "FIX",
+   "say": "We can build an automated Zoho Flow that passes escalated ticket threads directly to Claude AI and posts a concise briefing note automatically.",
+   "tts": "We can build an automated Zoho Flow that passes escalated ticket threads directly to Claude AI and posts a concise briefing note automatically.",
+   "card": "Auto AI Summaries",
+   "screen": {
+    "app": "flow",
+    "view": "builder",
+    "nodes": [
+     "Trigger: Ticket Escalated",
+     "AI Step: Claude Prompt",
+     "Action: Add Internal Comment"
+    ],
+    "click": "AI Step: Claude Prompt"
+   },
+   "face": false
+  },
+  {
+   "beat": "STEP 1",
+   "say": "First, open Zoho Flow and build a new flow triggered when a Zoho Desk ticket status updates to Escalated.",
+   "tts": "First, open Zoho Flow and build a new flow triggered when a Zoho Desk ticket status updates to Escalated.",
+   "card": "Step 1: Create Trigger",
+   "screen": {
+    "app": "flow",
+    "view": "builder",
+    "path": [
+     "App Triggers",
+     "Zoho Desk",
+     "Ticket Updated"
+    ],
+    "fields": [
+     [
+      "Trigger Field",
+      "Status"
+     ],
+     [
+      "New Value",
+      "Escalated"
+     ]
+    ],
+    "click": "Ticket Updated"
+   },
+   "face": false
+  },
+  {
+   "beat": "STEP 2",
+   "say": "Next, insert a custom payload or AI action block passing the entire ticket thread text to Claude with a prompt requesting a three-bullet summary.",
+   "tts": "Next, insert a custom payload or AI action block passing the entire ticket thread text to Claude with a prompt requesting a three-bullet summary.",
+   "card": "Step 2: Prompt Claude AI",
+   "screen": {
+    "app": "flow",
+    "view": "action_config",
+    "fields": [
+     [
+      "Action",
+      "Claude AI Prompt"
+     ],
+     [
+      "Prompt Input",
+      "Summarize ticket thread in 3 bullets"
+     ]
+    ],
+    "click": "Claude AI Prompt"
+   },
+   "face": false
+  },
+  {
+   "beat": "STEP 3",
+   "say": "Then, append a Zoho Desk action module to post that generated AI briefing straight into the ticket as a private internal comment.",
+   "tts": "Then, append a Zoho Desk action module to post that generated AI briefing straight into the ticket as a private internal comment.",
+   "card": "Step 3: Add Private Comment",
+   "screen": {
+    "app": "desk",
+    "view": "action_config",
+    "fields": [
+     [
+      "Module",
+      "Tickets"
+     ],
+     [
+      "Action",
+      "Add Comment"
+     ],
+     [
+      "Is Private",
+      "True"
+     ],
+     [
+      "Comment Content",
+      "${Claude.summary}"
+     ]
+    ],
+    "click": "Add Comment"
+   },
+   "face": false
+  },
+  {
+   "beat": "RESULT",
+   "say": "Tier-two engineers get an instant three-bullet briefing the moment an escalated ticket arrives, saving over ten minutes on every single issue.",
+   "tts": "Tier-two engineers get an instant three-bullet briefing the moment an escalated ticket arrives, saving over ten minutes on every single issue.",
+   "card": "10+ Mins Saved Per Ticket!",
+   "screen": null,
+   "face": true
+  }
+ ],
+ "clips": [
+  {
+   "text": "Tier-two support engineers waste fifteen minutes reading fifty-comment ticket histories.",
+   "lines": [
+    0
+   ],
+   "beat": "HOOK",
+   "prompt": "The man (my avatar) looks into the camera and talks to the viewer like a confident, friendly business tech explainer, smart and natural, not stiff; he stands with relaxed shoulders, shakes his head once with a half smile and holds up one hand as if saying stop. Vertical 9:16 medium-wide shot from the knees up, camera about two metres away, his head in the upper third with space above it, both hands and all his gestures fully visible in the frame, static camera, sharp and well lit, wearing light blue overshirt over a black crew-neck t-shirt, in a modern warehouse office with neat shelves and boxes softly blurred behind him; in this whole video he has a short neatly trimmed beard, a short fade with a little volume on top, thin black rectangular glasses - exactly the same in every shot of this video. His face, skin tone, height and body build stay exactly as in my avatar's reference photos - the same natural average build, never slimmer and never heavier. Clean professional business look: no tilak or any mark on his forehead, no necklace, mala, beads, thread or religious accessory, no earrings, no bracelets. He says, in clear natural English with a clear, neutral international accent, at a brisk, lively pace: \"Tier-two support engineers waste fifteen minutes reading fifty-comment ticket histories.\" His lips match every word. He starts speaking in the very first frame, with no pause before the first word, and stops right after the last word. Audio: only his voice - no music, no sound effects. No subtitles, no captions, no text on screen."
+  },
+  {
+   "text": "When complex issues get escalated, agents spend more time scrolling through",
+   "lines": [
+    1
+   ],
+   "beat": "PROBLEM",
+   "prompt": "The man (my avatar) looks into the camera and talks to the viewer like a confident, friendly business tech explainer, smart and natural, not stiff; he shrugs with both shoulders and tilts his head, as if he has seen this problem a hundred times. Vertical 9:16 medium-wide shot from the knees up, camera about two metres away, his head in the upper third with space above it, both hands and all his gestures fully visible in the frame, static camera, sharp and well lit, wearing light blue overshirt over a black crew-neck t-shirt, in a modern warehouse office with neat shelves and boxes softly blurred behind him; in this whole video he has a short neatly trimmed beard, a short fade with a little volume on top, thin black rectangular glasses - exactly the same in every shot of this video. His face, skin tone, height and body build stay exactly as in my avatar's reference photos - the same natural average build, never slimmer and never heavier. Clean professional business look: no tilak or any mark on his forehead, no necklace, mala, beads, thread or religious accessory, no earrings, no bracelets. He says, in clear natural English with a clear, neutral international accent, at a brisk, lively pace: \"When complex issues get escalated, agents spend more time scrolling through\" His lips match every word. He starts speaking in the very first frame, with no pause before the first word, and stops right after the last word. Audio: only his voice - no music, no sound effects. No subtitles, no captions, no text on screen."
+  },
+  {
+   "text": "endless thread updates than actually fixing the problem for the customer.",
+   "lines": [
+    1
+   ],
+   "beat": "PROBLEM",
+   "prompt": "The man (my avatar) looks into the camera and talks to the viewer like a confident, friendly business tech explainer, smart and natural, not stiff; he counts the wasted hours on his fingers with a slightly annoyed face. Vertical 9:16 medium-wide shot from the knees up, camera about two metres away, his head in the upper third with space above it, both hands and all his gestures fully visible in the frame, static camera, sharp and well lit, wearing light blue overshirt over a black crew-neck t-shirt, in a modern warehouse office with neat shelves and boxes softly blurred behind him; in this whole video he has a short neatly trimmed beard, a short fade with a little volume on top, thin black rectangular glasses - exactly the same in every shot of this video. His face, skin tone, height and body build stay exactly as in my avatar's reference photos - the same natural average build, never slimmer and never heavier. Clean professional business look: no tilak or any mark on his forehead, no necklace, mala, beads, thread or religious accessory, no earrings, no bracelets. He says, in clear natural English with a clear, neutral international accent, at a brisk, lively pace: \"endless thread updates than actually fixing the problem for the customer.\" His lips match every word. He starts speaking in the very first frame, with no pause before the first word, and stops right after the last word. Audio: only his voice - no music, no sound effects. No subtitles, no captions, no text on screen."
+  },
+  {
+   "text": "Tier-two engineers get an instant three-bullet briefing the moment an escalated ticket arrives, saving over ten minutes on every single issue.",
+   "lines": [
+    6
+   ],
+   "beat": "RESULT",
+   "prompt": "The man (my avatar) looks into the camera and talks to the viewer like a confident, friendly business tech explainer, smart and natural, not stiff; he puts one hand in his pocket, smiles and gestures toward the camera with the other hand. Vertical 9:16 medium-wide shot from the knees up, camera about two metres away, his head in the upper third with space above it, both hands and all his gestures fully visible in the frame, static camera, sharp and well lit, wearing light blue overshirt over a black crew-neck t-shirt, in a modern warehouse office with neat shelves and boxes softly blurred behind him; in this whole video he has a short neatly trimmed beard, a short fade with a little volume on top, thin black rectangular glasses - exactly the same in every shot of this video. His face, skin tone, height and body build stay exactly as in my avatar's reference photos - the same natural average build, never slimmer and never heavier. Clean professional business look: no tilak or any mark on his forehead, no necklace, mala, beads, thread or religious accessory, no earrings, no bracelets. He says, in clear natural English with a clear, neutral international accent, at a brisk, lively pace: \"Tier-two engineers get an instant three-bullet briefing the moment an escalated ticket arrives, saving over ten minutes on every single issue.\" His lips match every word. He starts speaking in the very first frame, with no pause before the first word, and stops right after the last word. Audio: only his voice - no music, no sound effects. No subtitles, no captions, no text on screen."
+  }
+ ],
+ "look": "wearing light blue overshirt over a black crew-neck t-shirt, in a modern warehouse office with neat shelves and boxes softly blurred behind him; in this whole video he has a short neatly trimmed beard, a short fade with a little volume on top, thin black rectangular glasses - exactly the same in every shot of this video",
+ "issue": 199
+}
