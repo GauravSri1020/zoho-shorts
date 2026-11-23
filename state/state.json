@@ -1,5 +1,5 @@
 {
- "next_id": 74,
+ "next_id": 75,
  "covered_links": [
   "https://www.reddit.com/r/Zoho/comments/1wzd94y/sales_order_or_invoice/",
   "https://www.reddit.com/r/Zoho/comments/1wwjbbr/accounting_of_travel_agent/",
@@ -64,7 +64,8 @@
   "https://news.google.com/rss/articles/CBMiwAFBVV95cUxQRmotbDFhTmdxUnlZRWdCcjZvMzVvSjMtR19mdklNek90WVhFSHV0QTN6aHFzNmJ2OTYxMzhmUUY2QkdqMXBRRF83cGY2blJZRzJIbjhGaHBSclFEZmcyc2Zaa3VRbVFfRkotbm1hNllsYzk1RTFSWGtWdXJPVmhpcDVFalF1V1l5U0lOeEZSQ3lLX0wxdVF2blFQbTN6QTlCTnhqQ291UFNFZ2lLZ1daQUVfaGlPQTBOY1gtYktjME0?oc=5",
   "https://news.google.com/rss/articles/CBMigAFBVV95cUxNUTlFNmdfTWpGSjQ1U091VGRqMmlqdlFMcDV4Z2V5anhrR3BTOTdBMkZsUDhQdjZreURGTDNVZ3VoTGYtUzFyRUhwalhZUkh5dm1ac3hrOXZubldCRDBpSXNNZHRJOE8td0VreTJUd2wySzlWWmxkd1FHakdkOXRBRQ?oc=5",
   "https://news.google.com/rss/articles/CBMiiwFBVV95cUxQejNncTVNQklWQkxUelh6TDFidWd4QkJWVVdscnZ4Y2ljNklaaFdOOVV0ODE0Mll6OVFUMEcwV0JzNmd1akswdW9rcFFOVHMyTmh5QTVTdWtMbEJ2Y2o0SzRLVTEtak1TYy1rNmVHLV9XdDFMUElTYUoweWM0ZFc1V3RKb1VreTM5TWZv?oc=5",
-  "https://news.google.com/rss/articles/CBMiRkFVX3lxTE5zNDZvaVlCR2h0Ry1tVU9YRUxVWHlWeHBpTGZhbmU5emJEUXdUM0J6emtuWTFvS1pIdTdxc0l3RWQ4bVlvOXc?oc=5"
+  "https://news.google.com/rss/articles/CBMiRkFVX3lxTE5zNDZvaVlCR2h0Ry1tVU9YRUxVWHlWeHBpTGZhbmU5emJEUXdUM0J6emtuWTFvS1pIdTdxc0l3RWQ4bVlvOXc?oc=5",
+  "https://news.google.com/rss/articles/CBMiiwFBVV95cUxNVFhiQ3Q1aEZ6dGg3Y1dQZVdDT0lUN1FvMFh3NEk1RUxVYlhsMTR2djhTdjI2N0t0ZGdfV24tUVEyY25IekZDNjVHYTVzOHFjTW5XaW41LWV4TnMxNXBCLXNFdXQ1NUJ1V3VGc3JHbzRFOGNVNHVlWGNGRkUzVm05NjF1M3VLa3RfZWVR?oc=5"
  ],
  "problems": [
   "Zoho Books me online paid sales orders direct closed invoice me convert nahi hote.",
@@ -139,7 +140,8 @@
   "Support managers fear AI agents will give incorrect information to customers without supervision.",
   "Field teams and delivery drivers struggle with fragmented navigation tools while communicating on team chat apps.",
   "Tier-2 support engineers spend 15 minutes reading 50-comment ticket histories before resolving escalated issues.",
-  "Support agents spend too much time manually configuring complex ticket routing and repetitive tasks."
+  "Support agents spend too much time manually configuring complex ticket routing and repetitive tasks.",
+  "Nigerian businesses receiving SMEDAN digital support packages struggle to set up automated customer onboarding and invoicing."
  ],
  "scripts": {
   "S0001": {
@@ -797,6 +799,14 @@
    "created": "2026-11-22T11:37:53",
    "video_id": "IvTpkqTh6Gc",
    "publish_at": "2026-11-23T21:30:00+05:30"
+  },
+  "S0074": {
+   "problem": "Nigerian businesses receiving SMEDAN digital support packages struggle to set up automated customer onboarding and invoicing.",
+   "title": "Automate SMEDAN & Zoho 20 Billion Digital Support Scheme in Zoho Flow #Shorts",
+   "pillar": "trending",
+   "engine": "flow",
+   "job": "20261123-1250-2",
+   "created": "2026-11-23T12:52:58"
   }
  },
  "slots": [
@@ -1205,9 +1215,9 @@
  "last_photo": "1_jacket.jpg",
  "photo_scenes": [],
  "photo_agent_error": "RuntimeError: image model unavailable: 404 NOT_FOUND. {'error': {'code': 404, 'm",
- "look_index": 66,
- "status_issue": 217,
- "status_line": "PIPELINE ideas=27 clips=0 editing=0 qa_failed=0 scheduled=5 published=54 total=59 today=1 next=2026-11-23T21:30",
+ "look_index": 67,
+ "status_issue": 219,
+ "status_line": "PIPELINE ideas=27 clips=1 editing=0 qa_failed=0 scheduled=5 published=54 total=59 today=1 next=2026-11-23T21:30",
  "rotation": {
   "claude_wealth": 21,
   "claude_wealth_industry": 16,
@@ -1242,7 +1252,8 @@
   "Zoho Adds Blended Agents to Desk, Pairing AI Task Execution with Human Support -",
   "Mappls integrates with Zoho's Arattai for navigation",
   "Zoho Desk Unveils New Product Enhancements",
-  "Zoho launches Automation Studio & Workstation to mark 10 years of Zoho Desk - HapaKenya -"
+  "Zoho launches Automation Studio & Workstation to mark 10 years of Zoho Desk - HapaKenya -",
+  "SMEDAN, Zoho ₦20 Billion Digital Support for 25,000 Nigerian Businesses – Requirements and How to Apply"
  ],
  "used_outfits": [
   "teal henley t-shirt under an open dark blazer",
@@ -1258,7 +1269,8 @@
   "beige overshirt over a black crew-neck t-shirt",
   "light blue suit with a white shirt and no tie",
   "light blue overshirt over a black crew-neck t-shirt",
-  "maroon henley t-shirt under an open dark blazer"
+  "maroon henley t-shirt under an open dark blazer",
+  "beige oxford shirt with the sleeves neatly rolled up"
  ],
  "used_places": [
   29,
@@ -1274,11 +1286,12 @@
   23,
   18,
   13,
-  30
+  30,
+  26
  ],
  "last_grooming": [
-  0,
-  2,
-  3
+  3,
+  3,
+  0
  ]
 }

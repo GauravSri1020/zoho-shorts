@@ -1,0 +1,521 @@
+{
+ "id": "20261123-1250-2",
+ "niche": "zoho",
+ "status": "waiting_for_clips",
+ "upload": true,
+ "created": "2026-11-23T12:52:58",
+ "title": "Automate SMEDAN & Zoho 20 Billion Digital Support Scheme in Zoho Flow #Shorts",
+ "description": "Learn how to automate the SMEDAN and Zoho 20 billion naira digital support scheme intake using Zoho Flow, AI classification, CRM, and Books in under 5 minutes.\n\n1. Create a Zoho Form webhook trigger in Zoho Flow for applicant intake.\n2. Add a Zoho Flow AI step to classify applicant business size and industry.\n3. Configure actions to create the customer record in Zoho CRM and generate initial invoices in Zoho Books.\n\nAPI / tool used:\n- name: Zoho Flow Webhook API\n- endpoint: POST /api/v1/flow/webhooks/grant-intake\n- scope: ZohoFlow.webhooks.ALL\n- docs: Zoho Flow Webhooks Guide\n\nCode (json) - Zoho Flow Webhook Trigger payload section:\n{\n  \"company_name\": \"Trading Ltd\",\n  \"email\": \"contact@example.com\",\n  \"industry\": \"Retail\"\n}\n\nAI + Zoho automations every day - follow @GSXAutomation\n\nWhat inspired this: https://news.google.com/rss/articles/CBMiiwFBVV95cUxNVFhiQ3Q1aEZ6dGg3Y1dQZVdDT0lUN1FvMFh3NEk1RUxVYlhsMTR2djhTdjI2N0t0ZGdfV24tUVEyY25IekZDNjVHYTVzOHFjTW5XaW41LWV4TnMxNXBCLXNFdXQ1NUJ1V3VGc3JHbzRFOGNVNHVlWGNGRkUzVm05NjF1M3VLa3RfZWVR?oc=5\n\nThis video uses an AI-generated presenter and voice.\nIndependent channel. Not affiliated with or endorsed by Zoho Corporation. Zoho is a trademark of Zoho Corporation.\n\n#Shorts #Zoho #AIAutomation #ZohoCRM #AIAgents",
+ "angle": {
+  "story_index": 3,
+  "pillar": "trending",
+  "region": "global",
+  "product": "Zoho One",
+  "app": "flow",
+  "problem": "Nigerian businesses receiving SMEDAN digital support packages struggle to set up automated customer onboarding and invoicing.",
+  "fix_type": "flow_ai",
+  "solution": "Build a Zoho Flow automation that captures grant-supported registrations and triggers instant welcome sequences in Zoho CRM.",
+  "steps": [
+   "Create a Zoho Form webhook trigger in Zoho Flow for applicant intake.",
+   "Add a Zoho Flow AI step to classify applicant business size and industry.",
+   "Configure actions to create the customer record in Zoho CRM and generate initial invoices in Zoho Books."
+  ],
+  "api": "POST /api/v1/flow/webhooks/smedan-intake",
+  "result": "Instant digital onboarding for thousands of businesses without manual data entry.",
+  "wow": "Connects government grant onboarding directly into fully automated Zoho workflows in under 5 minutes.",
+  "hook": "Zoho and SMEDAN just launched a ₦20B digital support scheme—automate your intake now!"
+ },
+ "story": {
+  "title": "SMEDAN, Zoho ₦20 Billion Digital Support for 25,000 Nigerian Businesses – Requirements and How to Apply",
+  "link": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxNVFhiQ3Q1aEZ6dGg3Y1dQZVdDT0lUN1FvMFh3NEk1RUxVYlhsMTR2djhTdjI2N0t0ZGdfV24tUVEyY25IekZDNjVHYTVzOHFjTW5XaW41LWV4TnMxNXBCLXNFdXQ1NUJ1V3VGc3JHbzRFOGNVNHVlWGNGRkUzVm05NjF1M3VLa3RfZWVR?oc=5",
+  "summary": "SMEDAN, Zoho ₦20 Billion Digital Support for 25,000 Nigerian Businesses – Requirements and How to Apply MSME Africa",
+  "source": "MSME Africa",
+  "ts": 1795284636,
+  "type": "news",
+  "publishers": 1,
+  "trend": 7,
+  "age_hours": 42,
+  "score": 10,
+  "facts_checked": true
+ },
+ "script": {
+  "title": "Automate SMEDAN & Zoho 20 Billion Digital Support Scheme in Zoho Flow",
+  "hook_text": "Claim your share of the 20 billion naira SMEDAN and Zoho digital support scheme by automating your grant intake right now using Zoho Flow!",
+  "thumb_text": "Automate 20B SMEDAN Zoho Intake",
+  "app_label": "Zoho Flow + AI",
+  "lines": [
+   {
+    "beat": "HOOK",
+    "say": "Claim your share of the massive 20 billion naira SMEDAN and Zoho digital support scheme by automating your grant intake right now using Zoho Flow!",
+    "tts": "Claim your share of the massive 20 billion naira SMEDAN and Zoho digital support scheme by automating your grant intake right now using Zoho Flow!",
+    "card": "SMEDAN & Zoho 20B Scheme",
+    "screen": null
+   },
+   {
+    "beat": "PROBLEM",
+    "say": "With thousands of Nigerian entrepreneurs and small businesses rushing to apply for this incredible digital support funding, manual application review simply slows down the entire process and creates massive bottlenecks.",
+    "tts": "With thousands of Nigerian entrepreneurs and small businesses rushing to apply for this incredible digital support funding, manual application review simply slows down the entire process and creates massive bottlenecks.",
+    "card": "Manual intake slows growth",
+    "screen": null
+   },
+   {
+    "beat": "FIX",
+    "say": "To fix this instantly, open Zoho Flow, click Create Flow, and name your automation specifically for the grant intake process to start building your workflow.",
+    "tts": "To fix this instantly, open Zoho Flow, click Create Flow, and name your automation specifically for the grant intake process to start building your workflow.",
+    "card": "Zoho Flow + AI Automation",
+    "screen": {
+     "app": "flow",
+     "view": "flow",
+     "path": [
+      "Zoho Flow",
+      "My Flows",
+      "Create Flow"
+     ],
+     "heading": "Create Flow",
+     "columns": [],
+     "rows": [],
+     "fields": [
+      [
+       "Flow Name",
+       "Grant Intake"
+      ]
+     ],
+     "toggles": [],
+     "messages": [],
+     "tool": null,
+     "method": null,
+     "url": null,
+     "headers": [],
+     "body": null,
+     "response": null,
+     "language": null,
+     "nodes": [
+      "Trigger: Webhook"
+     ],
+     "real": null,
+     "click": "Create Flow",
+     "tip": "Set up your trigger webhook endpoint."
+    }
+   },
+   {
+    "beat": "STEP 1",
+    "say": "Next, select Webhooks as your trigger, copy the unique endpoint URL generated by the platform, and paste it directly into your application form settings to capture every submission.",
+    "tts": "Next, select Webhooks as your trigger, copy the unique endpoint URL generated by the platform, and paste it directly into your application form settings to capture every submission.",
+    "card": "Trigger: Webhook URL",
+    "screen": {
+     "app": "flow",
+     "view": "flow",
+     "path": [
+      "Zoho Flow",
+      "Webhooks",
+      "Configure"
+     ],
+     "heading": "Webhook Trigger",
+     "columns": [],
+     "rows": [],
+     "fields": [
+      [
+       "Webhook URL",
+       "https://flow.zoho.com/api/v1/webhook/grant-intake"
+      ]
+     ],
+     "toggles": [],
+     "messages": [],
+     "tool": null,
+     "method": "POST",
+     "url": "https://flow.zoho.com/api/v1/flow/webhooks/grant-intake",
+     "headers": [
+      [
+       "Content-Type",
+       "application/json"
+      ]
+     ],
+     "body": "{\"applicant\": \"Trading Ltd\", \"grant\": \"Support\"}",
+     "response": "{\"status\": \"success\"}",
+     "language": null,
+     "nodes": [
+      "Trigger: Webhook URL"
+     ],
+     "real": null,
+     "click": "Webhook URL",
+     "tip": "Copy webhook URL to your form."
+    }
+   },
+   {
+    "beat": "STEP 2",
+    "say": "Now, add an advanced AI step, select text classification to evaluate eligibility criteria, and map the applicant business description right into the input field for smart assessment.",
+    "tts": "Now, add an advanced AI step, select text classification to evaluate eligibility criteria, and map the applicant business description right into the input field for smart assessment.",
+    "card": "AI Step: Classify Business",
+    "screen": {
+     "app": "flow",
+     "view": "flow",
+     "path": [
+      "Zoho Flow",
+      "AI Assistant",
+      "Text Classification"
+     ],
+     "heading": "AI Classification",
+     "columns": [],
+     "rows": [],
+     "fields": [
+      [
+       "Prompt",
+       "Classify business size and industry"
+      ],
+      [
+       "Input",
+       "{{trigger.business_description}}"
+      ]
+     ],
+     "toggles": [],
+     "messages": [],
+     "tool": "Zoho Flow AI Classifier",
+     "method": null,
+     "url": null,
+     "headers": [],
+     "body": null,
+     "response": null,
+     "language": null,
+     "nodes": [
+      "AI: Classify Business"
+     ],
+     "real": null,
+     "click": "AI Assistant",
+     "tip": "Map classification outputs to variables."
+    }
+   },
+   {
+    "beat": "STEP 3",
+    "say": "Then, configure subsequent actions to immediately create the verified customer record inside Zoho CRM and generate initial digital support documentation in Zoho Books.",
+    "tts": "Then, configure subsequent actions to immediately create the verified customer record inside Zoho CRM and generate initial digital support documentation in Zoho Books.",
+    "card": "Action: CRM & Books",
+    "screen": {
+     "app": "flow",
+     "view": "flow",
+     "path": [
+      "Zoho Flow",
+      "Actions",
+      "Zoho CRM & Books"
+     ],
+     "heading": "Configure Actions",
+     "columns": [],
+     "rows": [],
+     "fields": [
+      [
+       "CRM Module",
+       "Contacts"
+      ],
+      [
+       "Books Action",
+       "Create Invoice"
+      ]
+     ],
+     "toggles": [],
+     "messages": [],
+     "tool": "Zoho CRM & Books Connectors",
+     "method": null,
+     "url": null,
+     "headers": [],
+     "body": null,
+     "response": null,
+     "language": null,
+     "nodes": [
+      "Action: Create CRM Record",
+      "Action: Generate Books Invoice"
+     ],
+     "real": null,
+     "click": "Create CRM Record",
+     "tip": "Connects onboarding directly into fully automated Zoho workflows."
+    }
+   },
+   {
+    "beat": "RESULT",
+    "say": "Achieve instant digital onboarding for thousands of businesses under the 20 billion naira scheme, guaranteeing complete accuracy and zero manual data entry errors from start to finish.",
+    "tts": "Achieve instant digital onboarding for thousands of businesses under the 20 billion naira scheme, guaranteeing complete accuracy and zero manual data entry errors from start to finish.",
+    "card": "Zero manual data entry",
+    "screen": null
+   }
+  ],
+  "api": {
+   "name": "Zoho Flow Webhook API",
+   "endpoint": "POST /api/v1/flow/webhooks/grant-intake",
+   "scope": "ZohoFlow.webhooks.ALL",
+   "docs": "Zoho Flow Webhooks Guide"
+  },
+  "code": {
+   "language": "json",
+   "filename": "payload.json",
+   "content": "{\n  \"company_name\": \"Trading Ltd\",\n  \"email\": \"contact@example.com\",\n  \"industry\": \"Retail\"\n}",
+   "where_to_paste": "Zoho Flow Webhook Trigger payload section"
+  },
+  "test_before_recording": [
+   "Verify Zoho Flow webhook URL is active",
+   "Test sample JSON payload in Zoho Flow test run",
+   "Confirm Zoho CRM and Zoho Books connections are authenticated"
+  ],
+  "description": "Learn how to automate the SMEDAN and Zoho 20 billion naira digital support scheme intake using Zoho Flow, AI classification, CRM, and Books in under 5 minutes.",
+  "tags": [
+   "SMEDAN",
+   "ZohoFlow",
+   "ZohoCRM",
+   "ZohoBooks",
+   "Automation",
+   "AI",
+   "Grants",
+   "NoCode",
+   "Business"
+  ]
+ },
+ "lines": [
+  {
+   "beat": "HOOK",
+   "say": "Claim your share of the massive 20 billion naira SMEDAN and Zoho digital support scheme by automating your grant intake right now using Zoho Flow!",
+   "tts": "Claim your share of the massive 20 billion naira SMEDAN and Zoho digital support scheme by automating your grant intake right now using Zoho Flow!",
+   "card": "SMEDAN & Zoho 20B Scheme",
+   "screen": null,
+   "face": true
+  },
+  {
+   "beat": "PROBLEM",
+   "say": "With thousands of Nigerian entrepreneurs and small businesses rushing to apply for this incredible digital support funding, manual application review simply slows down the entire process and creates massive bottlenecks.",
+   "tts": "With thousands of Nigerian entrepreneurs and small businesses rushing to apply for this incredible digital support funding, manual application review simply slows down the entire process and creates massive bottlenecks.",
+   "card": "Manual intake slows growth",
+   "screen": null,
+   "face": true
+  },
+  {
+   "beat": "FIX",
+   "say": "To fix this instantly, open Zoho Flow, click Create Flow, and name your automation specifically for the grant intake process to start building your workflow.",
+   "tts": "To fix this instantly, open Zoho Flow, click Create Flow, and name your automation specifically for the grant intake process to start building your workflow.",
+   "card": "Zoho Flow + AI Automation",
+   "screen": {
+    "app": "flow",
+    "view": "flow",
+    "path": [
+     "Zoho Flow",
+     "My Flows",
+     "Create Flow"
+    ],
+    "heading": "Create Flow",
+    "columns": [],
+    "rows": [],
+    "fields": [
+     [
+      "Flow Name",
+      "Grant Intake"
+     ]
+    ],
+    "toggles": [],
+    "messages": [],
+    "tool": null,
+    "method": null,
+    "url": null,
+    "headers": [],
+    "body": null,
+    "response": null,
+    "language": null,
+    "nodes": [
+     "Trigger: Webhook"
+    ],
+    "real": null,
+    "click": "Create Flow",
+    "tip": "Set up your trigger webhook endpoint."
+   },
+   "face": false
+  },
+  {
+   "beat": "STEP 1",
+   "say": "Next, select Webhooks as your trigger, copy the unique endpoint URL generated by the platform, and paste it directly into your application form settings to capture every submission.",
+   "tts": "Next, select Webhooks as your trigger, copy the unique endpoint URL generated by the platform, and paste it directly into your application form settings to capture every submission.",
+   "card": "Trigger: Webhook URL",
+   "screen": {
+    "app": "flow",
+    "view": "flow",
+    "path": [
+     "Zoho Flow",
+     "Webhooks",
+     "Configure"
+    ],
+    "heading": "Webhook Trigger",
+    "columns": [],
+    "rows": [],
+    "fields": [
+     [
+      "Webhook URL",
+      "https://flow.zoho.com/api/v1/webhook/grant-intake"
+     ]
+    ],
+    "toggles": [],
+    "messages": [],
+    "tool": null,
+    "method": "POST",
+    "url": "https://flow.zoho.com/api/v1/flow/webhooks/grant-intake",
+    "headers": [
+     [
+      "Content-Type",
+      "application/json"
+     ]
+    ],
+    "body": "{\"applicant\": \"Trading Ltd\", \"grant\": \"Support\"}",
+    "response": "{\"status\": \"success\"}",
+    "language": null,
+    "nodes": [
+     "Trigger: Webhook URL"
+    ],
+    "real": null,
+    "click": "Webhook URL",
+    "tip": "Copy webhook URL to your form."
+   },
+   "face": false
+  },
+  {
+   "beat": "STEP 2",
+   "say": "Now, add an advanced AI step, select text classification to evaluate eligibility criteria, and map the applicant business description right into the input field for smart assessment.",
+   "tts": "Now, add an advanced AI step, select text classification to evaluate eligibility criteria, and map the applicant business description right into the input field for smart assessment.",
+   "card": "AI Step: Classify Business",
+   "screen": {
+    "app": "flow",
+    "view": "flow",
+    "path": [
+     "Zoho Flow",
+     "AI Assistant",
+     "Text Classification"
+    ],
+    "heading": "AI Classification",
+    "columns": [],
+    "rows": [],
+    "fields": [
+     [
+      "Prompt",
+      "Classify business size and industry"
+     ],
+     [
+      "Input",
+      "{{trigger.business_description}}"
+     ]
+    ],
+    "toggles": [],
+    "messages": [],
+    "tool": "Zoho Flow AI Classifier",
+    "method": null,
+    "url": null,
+    "headers": [],
+    "body": null,
+    "response": null,
+    "language": null,
+    "nodes": [
+     "AI: Classify Business"
+    ],
+    "real": null,
+    "click": "AI Assistant",
+    "tip": "Map classification outputs to variables."
+   },
+   "face": false
+  },
+  {
+   "beat": "STEP 3",
+   "say": "Then, configure subsequent actions to immediately create the verified customer record inside Zoho CRM and generate initial digital support documentation in Zoho Books.",
+   "tts": "Then, configure subsequent actions to immediately create the verified customer record inside Zoho CRM and generate initial digital support documentation in Zoho Books.",
+   "card": "Action: CRM & Books",
+   "screen": {
+    "app": "flow",
+    "view": "flow",
+    "path": [
+     "Zoho Flow",
+     "Actions",
+     "Zoho CRM & Books"
+    ],
+    "heading": "Configure Actions",
+    "columns": [],
+    "rows": [],
+    "fields": [
+     [
+      "CRM Module",
+      "Contacts"
+     ],
+     [
+      "Books Action",
+      "Create Invoice"
+     ]
+    ],
+    "toggles": [],
+    "messages": [],
+    "tool": "Zoho CRM & Books Connectors",
+    "method": null,
+    "url": null,
+    "headers": [],
+    "body": null,
+    "response": null,
+    "language": null,
+    "nodes": [
+     "Action: Create CRM Record",
+     "Action: Generate Books Invoice"
+    ],
+    "real": null,
+    "click": "Create CRM Record",
+    "tip": "Connects onboarding directly into fully automated Zoho workflows."
+   },
+   "face": false
+  },
+  {
+   "beat": "RESULT",
+   "say": "Achieve instant digital onboarding for thousands of businesses under the 20 billion naira scheme, guaranteeing complete accuracy and zero manual data entry errors from start to finish.",
+   "tts": "Achieve instant digital onboarding for thousands of businesses under the 20 billion naira scheme, guaranteeing complete accuracy and zero manual data entry errors from start to finish.",
+   "card": "Zero manual data entry",
+   "screen": null,
+   "face": true
+  }
+ ],
+ "clips": [
+  {
+   "text": "Claim your share of the massive 20 billion naira SMEDAN and Zoho digital",
+   "lines": [
+    0
+   ],
+   "beat": "HOOK",
+   "prompt": "The man (my avatar) looks into the camera and talks to the viewer like a confident, friendly business tech explainer, smart and natural, not stiff; he leans one hand on a table or railing next to him, then straightens up and talks with a confident open gesture. Vertical 9:16 medium-wide shot from the knees up, camera about two metres away, his head in the upper third with space above it, both hands and all his gestures fully visible in the frame, camera straight in front of him at eye level, static camera, sharp and well lit, wearing beige oxford shirt with the sleeves neatly rolled up, in a sunlit corner office with a view over green hills; in this whole video he has a sharp short boxed beard, thick neatly combed-back medium-length dark hair, no glasses - exactly the same in every shot of this video. He always has a full head of thick dark hair, never bald, never shaved, never thinning or receding. His face, hair, beard, glasses, clothes, skin tone, height and body build are IDENTICAL in every clip of this video, as if the same moment were filmed by several cameras - only the camera angle changes. His face, skin tone, height and body build stay exactly as in my avatar's reference photos - the same natural average build, never slimmer and never heavier. Clean professional business look: no tilak or any mark on his forehead, no necklace, mala, beads, thread or religious accessory, no earrings, no bracelets. He says, in clear natural English with a clear, neutral international accent, at a brisk, lively pace: \"Claim your share of the massive 20 billion naira SMEDAN and Zoho digital\" His lips match every word. He starts speaking in the very first frame, with no pause before the first word, and stops right after the last word. Audio: only his voice - no music, no sound effects. No subtitles, no captions, no text on screen."
+  },
+  {
+   "text": "support scheme by automating your grant intake right now using Zoho Flow!",
+   "lines": [
+    0
+   ],
+   "beat": "HOOK",
+   "prompt": "The man (my avatar) looks into the camera and talks to the viewer like a confident, friendly business tech explainer, smart and natural, not stiff; he stands with relaxed shoulders, shakes his head once with a half smile and holds up one hand as if saying stop. Vertical 9:16 medium-wide shot from the knees up, camera about two metres away, his head in the upper third with space above it, both hands and all his gestures fully visible in the frame, camera slightly to his left at a gentle three-quarter angle, static camera, sharp and well lit, wearing beige oxford shirt with the sleeves neatly rolled up, in a sunlit corner office with a view over green hills; in this whole video he has a sharp short boxed beard, thick neatly combed-back medium-length dark hair, no glasses - exactly the same in every shot of this video. He always has a full head of thick dark hair, never bald, never shaved, never thinning or receding. His face, hair, beard, glasses, clothes, skin tone, height and body build are IDENTICAL in every clip of this video, as if the same moment were filmed by several cameras - only the camera angle changes. His face, skin tone, height and body build stay exactly as in my avatar's reference photos - the same natural average build, never slimmer and never heavier. Clean professional business look: no tilak or any mark on his forehead, no necklace, mala, beads, thread or religious accessory, no earrings, no bracelets. He says, in clear natural English with a clear, neutral international accent, at a brisk, lively pace: \"support scheme by automating your grant intake right now using Zoho Flow!\" His lips match every word. He starts speaking in the very first frame, with no pause before the first word, and stops right after the last word. Audio: only his voice - no music, no sound effects. No subtitles, no captions, no text on screen."
+  },
+  {
+   "text": "With thousands of Nigerian entrepreneurs and small businesses rushing to apply for this incredible digital support funding,",
+   "lines": [
+    1
+   ],
+   "beat": "PROBLEM",
+   "prompt": "The man (my avatar) looks into the camera and talks to the viewer like a confident, friendly business tech explainer, smart and natural, not stiff; he crosses his arms for a moment, then uncrosses them and gestures to the side in mild frustration. Vertical 9:16 medium-wide shot from the knees up, camera about two metres away, his head in the upper third with space above it, both hands and all his gestures fully visible in the frame, camera slightly to his right at a gentle three-quarter angle, a little closer, static camera, sharp and well lit, wearing beige oxford shirt with the sleeves neatly rolled up, in a sunlit corner office with a view over green hills; in this whole video he has a sharp short boxed beard, thick neatly combed-back medium-length dark hair, no glasses - exactly the same in every shot of this video. He always has a full head of thick dark hair, never bald, never shaved, never thinning or receding. His face, hair, beard, glasses, clothes, skin tone, height and body build are IDENTICAL in every clip of this video, as if the same moment were filmed by several cameras - only the camera angle changes. His face, skin tone, height and body build stay exactly as in my avatar's reference photos - the same natural average build, never slimmer and never heavier. Clean professional business look: no tilak or any mark on his forehead, no necklace, mala, beads, thread or religious accessory, no earrings, no bracelets. He says, in clear natural English with a clear, neutral international accent, at a brisk, lively pace: \"With thousands of Nigerian entrepreneurs and small businesses rushing to apply for this incredible digital support funding,\" His lips match every word. He starts speaking in the very first frame, with no pause before the first word, and stops right after the last word. Audio: only his voice - no music, no sound effects. No subtitles, no captions, no text on screen."
+  },
+  {
+   "text": "manual application review simply slows down the entire process and creates massive bottlenecks.",
+   "lines": [
+    1
+   ],
+   "beat": "PROBLEM",
+   "prompt": "The man (my avatar) looks into the camera and talks to the viewer like a confident, friendly business tech explainer, smart and natural, not stiff; he frowns slightly, sighs and spreads both hands palms up as if asking why this is still so hard. Vertical 9:16 medium-wide shot from the knees up, camera about two metres away, his head in the upper third with space above it, both hands and all his gestures fully visible in the frame, camera straight in front of him at eye level, static camera, sharp and well lit, wearing beige oxford shirt with the sleeves neatly rolled up, in a sunlit corner office with a view over green hills; in this whole video he has a sharp short boxed beard, thick neatly combed-back medium-length dark hair, no glasses - exactly the same in every shot of this video. He always has a full head of thick dark hair, never bald, never shaved, never thinning or receding. His face, hair, beard, glasses, clothes, skin tone, height and body build are IDENTICAL in every clip of this video, as if the same moment were filmed by several cameras - only the camera angle changes. His face, skin tone, height and body build stay exactly as in my avatar's reference photos - the same natural average build, never slimmer and never heavier. Clean professional business look: no tilak or any mark on his forehead, no necklace, mala, beads, thread or religious accessory, no earrings, no bracelets. He says, in clear natural English with a clear, neutral international accent, at a brisk, lively pace: \"manual application review simply slows down the entire process and creates massive bottlenecks.\" His lips match every word. He starts speaking in the very first frame, with no pause before the first word, and stops right after the last word. Audio: only his voice - no music, no sound effects. No subtitles, no captions, no text on screen."
+  },
+  {
+   "text": "Achieve instant digital onboarding for thousands of businesses under the 20 billion naira scheme,",
+   "lines": [
+    6
+   ],
+   "beat": "RESULT",
+   "prompt": "The man (my avatar) looks into the camera and talks to the viewer like a confident, friendly business tech explainer, smart and natural, not stiff; he puts one hand in his pocket, smiles and gestures toward the camera with the other hand. Vertical 9:16 medium-wide shot from the knees up, camera about two metres away, his head in the upper third with space above it, both hands and all his gestures fully visible in the frame, camera slightly to his left at a gentle three-quarter angle, static camera, sharp and well lit, wearing beige oxford shirt with the sleeves neatly rolled up, in a sunlit corner office with a view over green hills; in this whole video he has a sharp short boxed beard, thick neatly combed-back medium-length dark hair, no glasses - exactly the same in every shot of this video. He always has a full head of thick dark hair, never bald, never shaved, never thinning or receding. His face, hair, beard, glasses, clothes, skin tone, height and body build are IDENTICAL in every clip of this video, as if the same moment were filmed by several cameras - only the camera angle changes. His face, skin tone, height and body build stay exactly as in my avatar's reference photos - the same natural average build, never slimmer and never heavier. Clean professional business look: no tilak or any mark on his forehead, no necklace, mala, beads, thread or religious accessory, no earrings, no bracelets. He says, in clear natural English with a clear, neutral international accent, at a brisk, lively pace: \"Achieve instant digital onboarding for thousands of businesses under the 20 billion naira scheme,\" His lips match every word. He starts speaking in the very first frame, with no pause before the first word, and stops right after the last word. Audio: only his voice - no music, no sound effects. No subtitles, no captions, no text on screen."
+  },
+  {
+   "text": "guaranteeing complete accuracy and zero manual data entry errors from start to finish.",
+   "lines": [
+    6
+   ],
+   "beat": "RESULT",
+   "prompt": "The man (my avatar) looks into the camera and talks to the viewer like a confident, friendly business tech explainer, smart and natural, not stiff; he relaxes his shoulders, smiles and gives a small satisfied nod with an open-hand gesture. Vertical 9:16 medium-wide shot from the knees up, camera about two metres away, his head in the upper third with space above it, both hands and all his gestures fully visible in the frame, camera slightly to his right at a gentle three-quarter angle, a little closer, static camera, sharp and well lit, wearing beige oxford shirt with the sleeves neatly rolled up, in a sunlit corner office with a view over green hills; in this whole video he has a sharp short boxed beard, thick neatly combed-back medium-length dark hair, no glasses - exactly the same in every shot of this video. He always has a full head of thick dark hair, never bald, never shaved, never thinning or receding. His face, hair, beard, glasses, clothes, skin tone, height and body build are IDENTICAL in every clip of this video, as if the same moment were filmed by several cameras - only the camera angle changes. His face, skin tone, height and body build stay exactly as in my avatar's reference photos - the same natural average build, never slimmer and never heavier. Clean professional business look: no tilak or any mark on his forehead, no necklace, mala, beads, thread or religious accessory, no earrings, no bracelets. He says, in clear natural English with a clear, neutral international accent, at a brisk, lively pace: \"guaranteeing complete accuracy and zero manual data entry errors from start to finish.\" His lips match every word. He starts speaking in the very first frame, with no pause before the first word, and stops right after the last word. Audio: only his voice - no music, no sound effects. No subtitles, no captions, no text on screen."
+  }
+ ],
+ "look": "wearing beige oxford shirt with the sleeves neatly rolled up, in a sunlit corner office with a view over green hills; in this whole video he has a sharp short boxed beard, thick neatly combed-back medium-length dark hair, no glasses - exactly the same in every shot of this video",
+ "issue": 218
+}
