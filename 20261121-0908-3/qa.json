@@ -1,0 +1,43 @@
+{
+ "engine": "flow",
+ "min_score": 70,
+ "min_criterion": 55,
+ "voice": "gemini",
+ "tech_problems": [],
+ "scores": {
+  "hook": 80,
+  "avatar": 65,
+  "continuity": 85,
+  "voice": 55,
+  "zoho_screens": 85,
+  "pacing": 60,
+  "captions": 85,
+  "audio": 70,
+  "value": 85,
+  "polish": 75
+ },
+ "overall": 68.0,
+ "issues": [
+  "voice changes at 00:26 Voice changes timbre/pitch for the Problem section",
+  "voice changes at 01:49 Voice shifts to a completely different male narrator accent and tone for Step 2",
+  "01:49 Inconsistent audio generation: the voice actor/AI clone changes accent and timbre distinctly mid-video",
+  "00:00-03:05 Video duration of 3 minutes and 5 seconds is too long for the YouTube Shorts format and pacing drags",
+  "Presenter visuals rely on an AI-generated mouth overlay that exhibits stiff synthetic movement"
+ ],
+ "approved": false,
+ "fatal": false,
+ "black_frames": [],
+ "voice_changes": [
+  "00:26 Voice changes timbre/pitch for the Problem section",
+  "01:49 Voice shifts to a completely different male narrator accent and tone for Step 2"
+ ],
+ "blockers": [
+  "voice",
+  "pacing"
+ ],
+ "fixes": [
+  "Generate the entire narration with one consistent AI voice model or voiceover artist to eliminate voice switching",
+  "Condense the script and UI demonstration to keep the total runtime under 60 seconds for standard Shorts pacing"
+ ],
+ "vs_references": "The card layout and visual screen mockups look clean, but multiple voice shifts across sections and a 3-minute runtime prevent it from matching top reference Shorts."
+}

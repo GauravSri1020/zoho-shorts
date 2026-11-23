@@ -1,0 +1,31 @@
+{
+ "engine": "flow",
+ "min_score": 70,
+ "min_criterion": 55,
+ "voice": "edge",
+ "tech_problems": [],
+ "scores": {
+  "hook": 90,
+  "avatar": 92,
+  "continuity": 95,
+  "voice": 88,
+  "zoho_screens": 90,
+  "pacing": 90,
+  "captions": 92,
+  "audio": 90,
+  "value": 95,
+  "polish": 92
+ },
+ "overall": 91.0,
+ "issues": [],
+ "approved": true,
+ "fatal": false,
+ "black_frames": [],
+ "voice_changes": [
+  "00:12 presenter voice transitions to TTS narrator for UI steps",
+  "00:46 TTS narrator transitions back to presenter voice"
+ ],
+ "blockers": [],
+ "fixes": [],
+ "vs_references": "Matches top-tier reference shorts with high production quality, clear step-by-step UI guides, and crisp presenter cuts."
+}

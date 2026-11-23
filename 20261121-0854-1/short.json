@@ -1,0 +1,224 @@
+{
+ "title": "Zoho Desk Adds Blended AI Agents with Human Oversight #Shorts",
+ "description": "Learn how to configure Zoho Desk blended AI agents to automate support tasks safely with human oversight.\n\n1. Go to Zoho Desk Setup and open the AI / Zia Agent configuration menu.\n2. Enable blended agents and set safety boundaries for autonomous task execution.\n3. Configure escalation rules so complex tickets automatically route to human agents.\n\nAI + Zoho automations every day - follow @GSXAutomation\n\nWhat inspired this: https://news.google.com/rss/articles/CBMiwAFBVV95cUxQRmotbDFhTmdxUnlZRWdCcjZvMzVvSjMtR19mdklNek90WVhFSHV0QTN6aHFzNmJ2OTYxMzhmUUY2QkdqMXBRRF83cGY2blJZRzJIbjhGaHBSclFEZmcyc2Zaa3VRbVFfRkotbm1hNllsYzk1RTFSWGtWdXJPVmhpcDVFalF1V1l5U0lOeEZSQ3lLX0wxdVF2blFQbTN6QTlCTnhqQ291UFNFZ2lLZ1daQUVfaGlPQTBOY1gtYktjME0?oc=5\n\nThis video uses an AI-generated presenter and voice.\nIndependent channel. Not affiliated with or endorsed by Zoho Corporation. Zoho is a trademark of Zoho Corporation.\n\n#Shorts #Zoho #AIAutomation #ZohoCRM #AIAgents",
+ "script": {
+  "title": "Zoho Desk Adds Blended AI Agents with Human Oversight",
+  "hook_text": "Zoho Desk blended AI agents",
+  "thumb_text": "Zoho Desk gets *blended* AI",
+  "app_label": "Zoho Desk AI",
+  "lines": [
+   {
+    "beat": "HOOK",
+    "say": "AI support agents going rogue? Zoho Desk now offers a safer way to automate tickets.",
+    "tts": "AI support agents going rogue? Zoho Desk now offers a safer way to automate tickets.",
+    "card": "Zoho Desk Blended AI",
+    "screen": null
+   },
+   {
+    "beat": "PROBLEM",
+    "say": "Support managers fear AI agents will give incorrect information to customers without supervision.",
+    "tts": "Support managers fear AI agents will give incorrect information to customers without supervision.",
+    "card": "Risk of Unsupervised AI",
+    "screen": null
+   },
+   {
+    "beat": "FIX",
+    "say": "Enable Zoho Desk blended AI agents to combine automation with necessary human oversight.",
+    "tts": "Enable Zoho Desk blended AI agents to combine automation with necessary human oversight.",
+    "card": "Zoho Desk Setup > AI Agent",
+    "screen": {
+     "app": "desk",
+     "view": "settings",
+     "path": [
+      "Setup",
+      "AI / Zia Agent"
+     ],
+     "heading": "AI Agent Configuration",
+     "columns": [],
+     "rows": [],
+     "fields": [
+      [
+       "Agent Mode",
+       "Blended"
+      ],
+      [
+       "Supervision",
+       "Enabled"
+      ]
+     ],
+     "toggles": [
+      [
+       "Enable Blended AI",
+       true
+      ]
+     ],
+     "messages": null,
+     "tool": null,
+     "method": null,
+     "url": null,
+     "headers": null,
+     "body": null,
+     "response": null,
+     "language": null,
+     "nodes": null,
+     "real": null,
+     "click": "AI / Zia Agent",
+     "tip": "Configure AI settings"
+    }
+   },
+   {
+    "beat": "STEP 1",
+    "say": "Click Setup in Zoho Desk, then open the AI and Zia Agent configuration menu.",
+    "tts": "Click Setup in Zoho Desk, then open the AI and Zia Agent configuration menu.",
+    "card": "Open AI Agent Config",
+    "screen": {
+     "app": "desk",
+     "view": "settings",
+     "path": [
+      "Setup",
+      "AI Agents"
+     ],
+     "heading": "Zia Agent Settings",
+     "columns": [],
+     "rows": [],
+     "fields": [
+      [
+       "Configuration",
+       "Active"
+      ]
+     ],
+     "toggles": [],
+     "messages": null,
+     "tool": null,
+     "method": null,
+     "url": null,
+     "headers": null,
+     "body": null,
+     "response": null,
+     "language": null,
+     "nodes": null,
+     "real": null,
+     "click": "AI Agents",
+     "tip": "Select AI configuration"
+    }
+   },
+   {
+    "beat": "STEP 2",
+    "say": "Toggle on blended agents and set safety boundaries for autonomous task execution.",
+    "tts": "Toggle on blended agents and set safety boundaries for autonomous task execution.",
+    "card": "Set Safety Boundaries",
+    "screen": {
+     "app": "desk",
+     "view": "settings",
+     "path": [
+      "Setup",
+      "AI Agents",
+      "Safety"
+     ],
+     "heading": "Blended Agent Parameters",
+     "columns": [],
+     "rows": [],
+     "fields": [
+      [
+       "Execution Limit",
+       "Standard"
+      ],
+      [
+       "Confidence Threshold",
+       "85%"
+      ]
+     ],
+     "toggles": [
+      [
+       "Blended Mode",
+       true
+      ]
+     ],
+     "messages": null,
+     "tool": null,
+     "method": null,
+     "url": null,
+     "headers": null,
+     "body": null,
+     "response": null,
+     "language": null,
+     "nodes": null,
+     "real": null,
+     "click": "Blended Mode",
+     "tip": "Define autonomy limits"
+    }
+   },
+   {
+    "beat": "STEP 3",
+    "say": "Set up escalation rules so complex tickets automatically route to human agents.",
+    "tts": "Set up escalation rules so complex tickets automatically route to human agents.",
+    "card": "Route Complex Tickets",
+    "screen": {
+     "app": "desk",
+     "view": "settings",
+     "path": [
+      "Setup",
+      "Escalation Rules"
+     ],
+     "heading": "Ticket Escalation",
+     "columns": [],
+     "rows": [
+      [
+       "Low Confidence",
+       "Route to Human"
+      ],
+      [
+       "Billing Issue",
+       "Route to Tier 2"
+      ]
+     ],
+     "fields": [],
+     "toggles": [
+      [
+       "Auto-Escalate",
+       true
+      ]
+     ],
+     "messages": null,
+     "tool": null,
+     "method": null,
+     "url": null,
+     "headers": null,
+     "body": null,
+     "response": null,
+     "language": null,
+     "nodes": null,
+     "real": null,
+     "click": "Route to Human",
+     "tip": "Blended AI handles heavy lifting while handing off tricky edge cases."
+    }
+   },
+   {
+    "beat": "RESULT",
+    "say": "Automate routine customer tasks while ensuring human supervision keeps responses accurate and safe.",
+    "tts": "Automate routine customer tasks while ensuring human supervision keeps responses accurate and safe.",
+    "card": "Safe Automated Support",
+    "screen": null
+   }
+  ],
+  "api": null,
+  "code": null,
+  "test_before_recording": [
+   "Verify access to Zoho Desk Setup",
+   "Ensure Zia AI features are active in your plan"
+  ],
+  "description": "Learn how to configure Zoho Desk blended AI agents to automate support tasks safely with human oversight.",
+  "tags": [
+   "ZohoDesk",
+   "ZiaAI",
+   "BlendedAgents",
+   "CustomerSupport",
+   "AIAutomation",
+   "SupportDesk",
+   "HelpdeskAI",
+   "ZohoUpdates",
+   "EnterpriseTech",
+   "SupportManagement"
+  ]
+ }
+}

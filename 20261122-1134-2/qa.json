@@ -1,0 +1,30 @@
+{
+ "engine": "flow",
+ "min_score": 70,
+ "min_criterion": 55,
+ "voice": "edge",
+ "tech_problems": [],
+ "scores": {
+  "hook": 95,
+  "avatar": 95,
+  "continuity": 95,
+  "voice": 90,
+  "zoho_screens": 95,
+  "pacing": 95,
+  "captions": 90,
+  "audio": 90,
+  "value": 95,
+  "polish": 95
+ },
+ "overall": 93.0,
+ "issues": [],
+ "approved": true,
+ "fatal": false,
+ "black_frames": [],
+ "voice_changes": [],
+ "blockers": [],
+ "fixes": [
+  "Maintain current high production standards for future Zoho Desk release spotlights."
+ ],
+ "vs_references": "This short meets the high production quality, clear UI screencasting, and strong engagement of the best Zoho channel references."
+}

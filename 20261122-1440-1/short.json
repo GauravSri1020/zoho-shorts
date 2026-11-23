@@ -1,0 +1,96 @@
+{
+ "title": "UAE E-Invoicing Starts 1 Jan: Set It Up in Zoho Books #Shorts",
+ "description": "UAE e-invoicing becomes mandatory from 1 January 2027 for businesses with revenue of AED 50 million or more. Zoho Books is an FTA and Ministry of Finance accredited service provider (ASP), listed on EmaraTax as Zoho Software Trading LLC. Setup: Settings › Taxes & Compliance › E-Invoicing › Setup Now, connect on EmaraTax, then Verify & Complete Setup in Zoho Books.\n\nSources: Zoho Books UAE ASP setup guide; UAE MoF e-invoicing timeline.\n\n#ZohoBooks #UAE #EInvoicing #EmaraTax #Zoho",
+ "script": {
+  "title": "UAE E-Invoicing Starts 1 Jan: Set It Up in Zoho Books #Shorts",
+  "hook_text": "UAE E-INVOICING: 1 JAN",
+  "thumb_text": "E-INVOICING UAE",
+  "app_label": "Zoho Books",
+  "lines": [
+   {
+    "beat": "HOOK",
+    "say": "UAE businesses: e-invoicing becomes mandatory on January first for companies above fifty million dirhams.",
+    "tts": "UAE businesses: e-invoicing becomes mandatory on January first for companies above fifty million dirhams.",
+    "face": true,
+    "card": "Mandatory from 1 Jan 2027"
+   },
+   {
+    "beat": "PROBLEM",
+    "say": "If your invoices are not connected to the FTA through an approved provider by then, you are not compliant.",
+    "tts": "If your invoices are not connected to the FTA through an approved provider by then, you are not compliant.",
+    "face": true,
+    "card": "Approved provider needed"
+   },
+   {
+    "beat": "FIX",
+    "say": "Good news: Zoho Books itself is an FTA and Ministry of Finance approved provider, so you connect from inside Books.",
+    "tts": "Good news: Zoho Books itself is an FTA and Ministry of Finance approved provider, so you connect from inside Books.",
+    "face": false,
+    "card": "Zoho Books = approved ASP",
+    "screen": {
+     "app": "presenter",
+     "view": "presenter",
+     "tip": "Zoho Books is an FTA / MoF accredited service provider"
+    }
+   },
+   {
+    "beat": "STEP 1",
+    "say": "First, open Settings, go to E-Invoicing under Taxes and Compliance, click Setup Now and enter your TRN, TIN and EmaraTax email.",
+    "tts": "First, open Settings, go to E-Invoicing under Taxes and Compliance, click Setup Now and enter your TRN, TIN and EmaraTax email.",
+    "face": false,
+    "card": "Settings > Taxes & Compliance",
+    "screen": {
+     "real": "books/settings_home",
+     "app": "books",
+     "click": "Taxes",
+     "tip": "Taxes & Compliance > E-Invoicing > Setup Now"
+    }
+   },
+   {
+    "beat": "STEP 2",
+    "say": "Next, click Go to EmaraTax, open E-Invoicing there, and pick Zoho Software Trading LLC from the provider list.",
+    "tts": "Next, click Go to EmaraTax, open E-Invoicing there, and pick Zoho Software Trading LLC from the provider list.",
+    "face": false,
+    "card": "EmaraTax: pick Zoho as ASP",
+    "screen": {
+     "app": "presenter",
+     "view": "presenter",
+     "tip": "EmaraTax > E-Invoicing > ASP: Zoho Software Trading LLC"
+    }
+   },
+   {
+    "beat": "STEP 3",
+    "say": "Then come back to Zoho Books, tick the confirmation box and click Verify and Complete Setup. The status turns Active.",
+    "tts": "Then come back to Zoho Books, tick the confirmation box and click Verify and Complete Setup. The status turns Active.",
+    "face": false,
+    "card": "Verify & Complete Setup",
+    "screen": {
+     "app": "presenter",
+     "view": "presenter",
+     "tip": "Status: ACTIVE"
+    }
+   },
+   {
+    "beat": "RESULT",
+    "say": "About fifteen minutes of setup, and your invoices are ready for the UAE's new e-invoicing rules.",
+    "tts": "About fifteen minutes of setup, and your invoices are ready for the UAE's new e-invoicing rules.",
+    "face": true,
+    "card": "Ready for 1 Jan"
+   }
+  ],
+  "api": null,
+  "code": null,
+  "test_before_recording": "",
+  "description": "UAE e-invoicing becomes mandatory from 1 January 2027 for businesses with revenue of AED 50 million or more. Zoho Books is an FTA and Ministry of Finance accredited service provider (ASP), listed on EmaraTax as Zoho Software Trading LLC. Setup: Settings › Taxes & Compliance › E-Invoicing › Setup Now, connect on EmaraTax, then Verify & Complete Setup in Zoho Books.",
+  "tags": [
+   "Zoho Books",
+   "UAE e-invoicing",
+   "EmaraTax",
+   "FTA",
+   "ASP",
+   "Zoho",
+   "UAE VAT",
+   "Peppol"
+  ]
+ }
+}

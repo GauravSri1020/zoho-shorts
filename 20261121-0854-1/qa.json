@@ -1,0 +1,28 @@
+{
+ "engine": "flow",
+ "min_score": 70,
+ "min_criterion": 55,
+ "voice": "gemini",
+ "tech_problems": [],
+ "scores": {
+  "hook": 92,
+  "avatar": 90,
+  "continuity": 92,
+  "voice": 92,
+  "zoho_screens": 94,
+  "pacing": 90,
+  "captions": 92,
+  "audio": 90,
+  "value": 92,
+  "polish": 92
+ },
+ "overall": 91.6,
+ "issues": [],
+ "approved": true,
+ "fatal": false,
+ "black_frames": [],
+ "voice_changes": [],
+ "blockers": [],
+ "fixes": [],
+ "vs_references": "Matches top-tier reference Shorts with a clear structured layout, crisp UI callouts, and perfectly synced voiceover."
+}

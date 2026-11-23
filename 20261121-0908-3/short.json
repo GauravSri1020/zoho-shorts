@@ -1,0 +1,225 @@
+{
+ "title": "Mappls Integrated With Zoho Arattai #Shorts",
+ "description": "Learn how Mappls integrates directly with Zoho Arattai for native team navigation.\n\n1. Open Zoho Arattai on your mobile device or desktop app.\n2. Check chat settings to confirm the Mappls navigation integration is active.\n3. Tap on shared location pins in chats to launch turn-by-turn Mappls directions instantly.\n\nAI + Zoho automations every day - follow @GSXAutomation\n\nWhat inspired this: https://news.google.com/rss/articles/CBMigAFBVV95cUxNUTlFNmdfTWpGSjQ1U091VGRqMmlqdlFMcDV4Z2V5anhrR3BTOTdBMkZsUDhQdjZreURGTDNVZ3VoTGYtUzFyRUhwalhZUkh5dm1ac3hrOXZubldCRDBpSXNNZHRJOE8td0VreTJUd2wySzlWWmxkd1FHakdkOXRBRQ?oc=5\n\nThis video uses an AI-generated presenter and voice.\nIndependent channel. Not affiliated with or endorsed by Zoho Corporation. Zoho is a trademark of Zoho Corporation.\n\n#Shorts #Zoho #AIAutomation #ZohoCRM #AIAgents",
+ "script": {
+  "title": "Mappls Integrated With Zoho Arattai",
+  "hook_text": "Mappls meets Zoho Arattai!",
+  "thumb_text": "Mappls in *Zoho Arattai*",
+  "app_label": "Zoho Arattai + Mappls",
+  "lines": [
+   {
+    "beat": "HOOK",
+    "say": "Big news for field operations and logistics teams! Mappls has just been officially integrated with Zoho Arattai, bringing powerful mapping and location services directly into your everyday team messaging platform. If you manage remote workers, delivery fleets, or on-site technicians, this update completely changes how your team collaborates, shares locations, and navigates daily field visits without ever needing to jump between multiple separate applications.",
+    "tts": "Big news for field operations and logistics teams! Mappls has just been officially integrated with Zoho Arattai, bringing powerful mapping and location services directly into your everyday team messaging platform. If you manage remote workers, delivery fleets, or on-site technicians, this update completely changes how your team collaborates, shares locations, and navigates daily field visits without ever needing to jump between multiple separate applications.",
+    "card": "Mappls + Arattai",
+    "screen": null
+   },
+   {
+    "beat": "PROBLEM",
+    "say": "For the longest time, field teams have struggled with a very frustrating workflow bottleneck. Employees constantly waste precious minutes switching back and forth between separate mapping applications and team chat threads just to figure out where they need to go. Copying and pasting coordinates, manually typing long addresses into third-party navigation tools, and losing track of shared client locations leads to wasted time, communication errors, and inefficient daily travel routes across the entire workforce.",
+    "tts": "For the longest time, field teams have struggled with a very frustrating workflow bottleneck. Employees constantly waste precious minutes switching back and forth between separate mapping applications and team chat threads just to figure out where they need to go. Copying and pasting coordinates, manually typing long addresses into third-party navigation tools, and losing track of shared client locations leads to wasted time, communication errors, and inefficient daily travel routes across the entire workforce.",
+    "card": "Fragmented navigation",
+    "screen": null
+   },
+   {
+    "beat": "FIX",
+    "say": "To solve this problem, the new integration between Mappls and Zoho Arattai bridges the gap by bringing native location intelligence directly into your conversations. Instead of juggling multiple windows, your team can now interact with location data right inside the chat interface. This seamless combination streamlines your entire communication pipeline, ensuring that every field agent, dispatcher, and team manager stays perfectly synchronized with precise mapping data, live updates, and accurate route details all in one centralized workspace.",
+    "tts": "To solve this problem, the new integration between Mappls and Zoho Arattai bridges the gap by bringing native location intelligence directly into your conversations. Instead of juggling multiple windows, your team can now interact with location data right inside the chat interface. This seamless combination streamlines your entire communication pipeline, ensuring that every field agent, dispatcher, and team manager stays perfectly synchronized with precise mapping data, live updates, and accurate route details all in one centralized workspace.",
+    "card": "Native Mappls navigation",
+    "screen": {
+     "app": "arattai",
+     "view": "settings",
+     "path": [
+      "Chats",
+      "Location Sharing"
+     ],
+     "heading": "Zoho Arattai Location Settings",
+     "columns": [
+      "Feature",
+      "Status"
+     ],
+     "rows": [
+      [
+       "Mappls Maps",
+       "Enabled"
+      ]
+     ],
+     "fields": [
+      [
+       "Service",
+       "Mappls"
+      ]
+     ],
+     "toggles": [
+      [
+       "Mappls Integration",
+       true
+      ]
+     ],
+     "messages": null,
+     "tool": null,
+     "method": null,
+     "url": null,
+     "headers": null,
+     "body": null,
+     "response": null,
+     "language": null,
+     "nodes": null,
+     "real": null,
+     "click": "Mappls Integration",
+     "tip": "Verify map provider settings."
+    }
+   },
+   {
+    "beat": "STEP 1",
+    "say": "To get started, simply open up Zoho Arattai on your mobile device or your desktop application. Navigate to your active team conversations or direct messages where your field operations take place. Once you are inside your preferred chat thread, you will immediately notice how smoothly location sharing and team updates are organized, preparing you to utilize the new Mappls mapping capabilities without needing any complicated third-party software installation or external configuration steps.",
+    "tts": "To get started, simply open up Zoho Arattai on your mobile device or your desktop application. Navigate to your active team conversations or direct messages where your field operations take place. Once you are inside your preferred chat thread, you will immediately notice how smoothly location sharing and team updates are organized, preparing you to utilize the new Mappls mapping capabilities without needing any complicated third-party software installation or external configuration steps.",
+    "card": "Open Zoho Arattai",
+    "screen": {
+     "app": "arattai",
+     "view": "list",
+     "path": [
+      "Arattai",
+      "Conversations"
+     ],
+     "heading": "Zoho Arattai",
+     "columns": [
+      "Chat Name",
+      "Activity"
+     ],
+     "rows": [
+      [
+       "Field Operations",
+       "Active location share"
+      ]
+     ],
+     "fields": [],
+     "toggles": [],
+     "messages": null,
+     "tool": null,
+     "method": null,
+     "url": null,
+     "headers": null,
+     "body": null,
+     "response": null,
+     "language": null,
+     "nodes": null,
+     "real": null,
+     "click": "Field Operations",
+     "tip": "Open your active chat."
+    }
+   },
+   {
+    "beat": "STEP 2",
+    "say": "Next, open your chat info or shared media details to confirm that your location services are properly linked. The Mappls integration works quietly in the background to ensure that any dropped pins, geographic coordinates, or client site addresses shared by your colleagues are automatically recognized and formatted for instant map viewing. Taking a quick second to verify this setup guarantees that your entire team can effortlessly access accurate location details the moment they are dropped into the conversation.",
+    "tts": "Next, open your chat info or shared media details to confirm that your location services are properly linked. The Mappls integration works quietly in the background to ensure that any dropped pins, geographic coordinates, or client site addresses shared by your colleagues are automatically recognized and formatted for instant map viewing. Taking a quick second to verify this setup guarantees that your entire team can effortlessly access accurate location details the moment they are dropped into the conversation.",
+    "card": "Confirm Mappls active",
+    "screen": {
+     "app": "arattai",
+     "view": "settings",
+     "path": [
+      "Chat Info",
+      "Shared Media"
+     ],
+     "heading": "Chat Details",
+     "columns": [
+      "Detail",
+      "Status"
+     ],
+     "rows": [
+      [
+       "Map Provider",
+       "Mappls"
+      ]
+     ],
+     "fields": [
+      [
+       "Provider",
+       "Mappls"
+      ]
+     ],
+     "toggles": [
+      [
+       "Auto-Open Mappls",
+       true
+      ]
+     ],
+     "messages": null,
+     "tool": null,
+     "method": null,
+     "url": null,
+     "headers": null,
+     "body": null,
+     "response": null,
+     "language": null,
+     "nodes": null,
+     "real": null,
+     "click": "Auto-Open Mappls",
+     "tip": "Check default map settings."
+    }
+   },
+   {
+    "beat": "STEP 3",
+    "say": "Now comes the best part of the entire update. Whenever a teammate shares a location pin inside your Zoho Arattai chat, just tap directly on that shared pin. It will instantly launch turn by turn Mappls directions right on your screen, guiding you seamlessly to your destination without missing a beat. There is zero friction, zero manual address entry, and maximum efficiency for every single journey your field personnel take throughout the busy workday.",
+    "tts": "Now comes the best part of the entire update. Whenever a teammate shares a location pin inside your Zoho Arattai chat, just tap directly on that shared pin. It will instantly launch turn by turn Mappls directions right on your screen, guiding you seamlessly to your destination without missing a beat. There is zero friction, zero manual address entry, and maximum efficiency for every single journey your field personnel take throughout the busy workday.",
+    "card": "Launch Mappls directions",
+    "screen": {
+     "app": "arattai",
+     "view": "form",
+     "path": [
+      "Chats",
+      "Shared Pin"
+     ],
+     "heading": "Location Pin",
+     "columns": [],
+     "rows": [],
+     "fields": [
+      [
+       "Destination",
+       "Al Noor Trading"
+      ]
+     ],
+     "toggles": [],
+     "messages": null,
+     "tool": null,
+     "method": null,
+     "url": null,
+     "headers": null,
+     "body": null,
+     "response": null,
+     "language": null,
+     "nodes": null,
+     "real": null,
+     "click": "Destination",
+     "tip": "Tap pin to launch Mappls."
+    }
+   },
+   {
+    "beat": "RESULT",
+    "say": "By combining the power of Mappls navigation with Zoho Arattai team messaging, your business can finally say goodbye to messy workflows and disconnected apps. Empower your field agents, improve response times, and keep everyone completely aligned on every single visit. Try out this integration today, experience the future of streamlined field coordination, and don't forget to subscribe for more productivity tips!",
+    "tts": "By combining the power of Mappls navigation with Zoho Arattai team messaging, your business can finally say goodbye to messy workflows and disconnected apps. Empower your field agents, improve response times, and keep everyone completely aligned on every single visit. Try out this integration today, experience the future of streamlined field coordination, and don't forget to subscribe for more productivity tips!",
+    "card": "Seamless field navigation",
+    "screen": null
+   }
+  ],
+  "api": null,
+  "code": null,
+  "test_before_recording": [
+   "Confirm Zoho Arattai app is up to date",
+   "Check Mappls integration in settings"
+  ],
+  "description": "Learn how Mappls integrates directly with Zoho Arattai for native team navigation.",
+  "tags": [
+   "Zoho",
+   "Arattai",
+   "Mappls",
+   "Navigation",
+   "FieldService",
+   "Messaging",
+   "Integration",
+   "Productivity",
+   "Business",
+   "Updates"
+  ]
+ }
+}

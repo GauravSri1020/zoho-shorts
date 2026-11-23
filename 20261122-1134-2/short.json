@@ -1,0 +1,184 @@
+{
+ "title": "Zoho Desk Turns 10: New Automation Studio #Shorts",
+ "description": "Learn how to use the new Zoho Desk Automation Studio to build visual service workflows and reduce setup time.\n\n1. Open Zoho Desk and navigate to the new Automation Studio\n2. Drag and drop your ticket routing logic onto the canvas\n3. Deploy the automated workflow to your active support channels\n\nAI + Zoho automations every day - follow @GSXAutomation\n\nWhat inspired this: https://news.google.com/rss/articles/CBMiRkFVX3lxTE5zNDZvaVlCR2h0Ry1tVU9YRUxVWHlWeHBpTGZhbmU5emJEUXdUM0J6emtuWTFvS1pIdTdxc0l3RWQ4bVlvOXc?oc=5\n\nThis video uses an AI-generated presenter and voice.\nIndependent channel. Not affiliated with or endorsed by Zoho Corporation. Zoho is a trademark of Zoho Corporation.\n\n#Shorts #Zoho #AIAutomation #ZohoCRM #AIAgents",
+ "script": {
+  "title": "Zoho Desk Turns 10: New Automation Studio",
+  "hook_text": "Stop wasting hours on manual ticket routing",
+  "thumb_text": "Zoho Desk *Automation Studio*",
+  "app_label": "Zoho Desk Automation",
+  "lines": [
+   {
+    "beat": "HOOK",
+    "say": "Are you tired of wasting hours manually building complex ticket routing and support workflows?",
+    "tts": "Are you tired of wasting hours manually building complex ticket routing and support workflows?",
+    "card": "Stop manual workflows"
+   },
+   {
+    "beat": "PROBLEM",
+    "say": "Support teams often get bogged down by repetitive tasks that kill productivity and slow down response times for your customers.",
+    "tts": "Support teams often get bogged down by repetitive tasks that kill productivity and slow down response times for your customers.",
+    "card": "The productivity bottleneck"
+   },
+   {
+    "beat": "FIX",
+    "say": "Zoho Desk just turned ten and launched Automation Studio, a no-code visual builder for connected service workflows.",
+    "tts": "Zoho Desk just turned ten and launched Automation Studio, a no-code visual builder for connected service workflows.",
+    "card": "Zoho Desk Automation Studio",
+    "screen": {
+     "app": "desk",
+     "view": "settings",
+     "path": [
+      "Zoho Desk",
+      "Setup",
+      "Automation Studio"
+     ],
+     "heading": "Automation Studio",
+     "columns": [],
+     "rows": [],
+     "fields": [],
+     "toggles": [],
+     "messages": [],
+     "tool": null,
+     "method": null,
+     "url": null,
+     "headers": [],
+     "body": null,
+     "response": null,
+     "language": null,
+     "nodes": [],
+     "real": null,
+     "click": "Automation Studio",
+     "tip": "Open Automation Studio from Setup"
+    }
+   },
+   {
+    "beat": "STEP 1",
+    "say": "First, request early access, then open Automation Studio in your Zoho Desk setup. It is for Professional and Enterprise plans.",
+    "tts": "First, request early access, then open Automation Studio in your Zoho Desk setup. It is for Professional and Enterprise plans.",
+    "card": "Navigate to Automation Studio",
+    "screen": {
+     "app": "desk",
+     "view": "settings",
+     "path": [
+      "Zoho Desk",
+      "Setup",
+      "Automation Studio"
+     ],
+     "heading": "Automation Studio",
+     "columns": [],
+     "rows": [],
+     "fields": [],
+     "toggles": [],
+     "messages": [],
+     "tool": null,
+     "method": null,
+     "url": null,
+     "headers": [],
+     "body": null,
+     "response": null,
+     "language": null,
+     "nodes": [],
+     "real": null,
+     "click": "Automation Studio",
+     "tip": "Access the automation dashboard"
+    }
+   },
+   {
+    "beat": "STEP 2",
+    "say": "Next, add an event like a new ticket, then drop in If blocks to check priority or customer type.",
+    "tts": "Next, add an event like a new ticket, then drop in If blocks to check priority or customer type.",
+    "card": "Build routing logic",
+    "screen": {
+     "app": "desk",
+     "view": "flow",
+     "path": [
+      "Automation Studio",
+      "Canvas"
+     ],
+     "heading": "Workflow Canvas",
+     "columns": [],
+     "rows": [],
+     "fields": [],
+     "toggles": [],
+     "messages": [],
+     "tool": null,
+     "method": null,
+     "url": null,
+     "headers": [],
+     "body": null,
+     "response": null,
+     "language": null,
+     "nodes": [
+      "Trigger: Ticket Created",
+      "Condition: Priority High",
+      "Action: Assign to Tier 2"
+     ],
+     "real": null,
+     "click": "Canvas",
+     "tip": "Visualize your entire service flow without code"
+    }
+   },
+   {
+    "beat": "STEP 3",
+    "say": "Then use Fork blocks for parallel actions and Delay blocks for follow-ups, all inside one single rule.",
+    "tts": "Then use Fork blocks for parallel actions and Delay blocks for follow-ups, all inside one single rule.",
+    "card": "Deploy active workflow",
+    "screen": {
+     "app": "desk",
+     "view": "settings",
+     "path": [
+      "Automation Studio",
+      "Deploy"
+     ],
+     "heading": "Deploy Workflow",
+     "columns": [],
+     "rows": [],
+     "fields": [],
+     "toggles": [
+      [
+       "Active Channels",
+       true
+      ]
+     ],
+     "messages": [],
+     "tool": null,
+     "method": null,
+     "url": null,
+     "headers": [],
+     "body": null,
+     "response": null,
+     "language": null,
+     "nodes": [],
+     "real": null,
+     "click": "Deploy",
+     "tip": "Publish to live support channels"
+    }
+   },
+   {
+    "beat": "RESULT",
+    "say": "One visual rule replaces a pile of separate automations, so your team spends less time configuring and more time helping customers.",
+    "tts": "One visual rule replaces a pile of separate automations, so your team spends less time configuring and more time helping customers.",
+    "card": "Instant setup"
+   }
+  ],
+  "api": null,
+  "code": null,
+  "test_before_recording": [
+   "Verify access to Zoho Desk Setup",
+   "Check availability of Automation Studio"
+  ],
+  "description": "Learn how to use the new Zoho Desk Automation Studio to build visual service workflows and reduce setup time.",
+  "tags": [
+   "ZohoDesk",
+   "AutomationStudio",
+   "CustomerSupport",
+   "Zoho",
+   "WorkflowAutomation",
+   "Helpdesk",
+   "SupportAutomation",
+   "NoCode",
+   "Productivity",
+   "SaaS"
+  ]
+ }
+}

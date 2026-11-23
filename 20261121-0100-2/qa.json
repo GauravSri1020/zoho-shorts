@@ -1,0 +1,28 @@
+{
+ "engine": "flow",
+ "min_score": 70,
+ "min_criterion": 55,
+ "voice": "edge",
+ "tech_problems": [],
+ "scores": {
+  "hook": 95,
+  "avatar": 95,
+  "continuity": 95,
+  "voice": 90,
+  "zoho_screens": 95,
+  "pacing": 90,
+  "captions": 95,
+  "audio": 90,
+  "value": 95,
+  "polish": 95
+ },
+ "overall": 93.0,
+ "issues": [],
+ "approved": true,
+ "fatal": false,
+ "black_frames": [],
+ "voice_changes": [],
+ "blockers": [],
+ "fixes": [],
+ "vs_references": "This short meets the high standards of the reference examples, combining a strong hook, clear professional delivery, and clean visual layouts."
+}

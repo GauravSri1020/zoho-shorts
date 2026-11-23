@@ -1,0 +1,98 @@
+{
+ "title": "Zoho Desk Now Has Blended AI Agents: Turn Them On in 3 Steps #Shorts",
+ "description": "Zoho launched Blended Agents for Zoho Desk on 16 Nov 2026, powered by Zia Agents: AI retrieves information, executes tasks across connected apps and handles routine customer issues, while humans keep oversight. In Zoho Desk: Setup › User Management › Zia Agents › Prebuilt Agents, Agent Store, or New Agent (Agent Studio).\n\nZoho said it does not use customer data to train its AI models; in India Zoho Desk is hosted in local data centres.\n\nSources: newkerala.com (16 Nov 2026), zoho.com/desk/whatsnew.html, help.zoho.com 'What's new in Zoho Desk 2026'.\n\n#ZohoDesk #AIagents #CustomerSupport #Zoho",
+ "script": {
+  "title": "Zoho Desk Now Has Blended AI Agents: Turn Them On in 3 Steps #Shorts",
+  "hook_text": "ZOHO DESK AI AGENTS ARE HERE",
+  "thumb_text": "ZOHO DESK AI AGENTS",
+  "app_label": "Zoho Desk",
+  "lines": [
+   {
+    "beat": "HOOK",
+    "say": "Is your support team answering the same tickets all day? Zoho Desk now has AI agents for that.",
+    "tts": "Is your support team answering the same tickets all day? Zoho Desk now has AI agents for that.",
+    "face": true,
+    "card": "Zoho Desk AI agents"
+   },
+   {
+    "beat": "PROBLEM",
+    "say": "Routine questions pile up, your best people get stuck on easy tickets, and customers wait longer for real help.",
+    "tts": "Routine questions pile up, your best people get stuck on easy tickets, and customers wait longer for real help.",
+    "face": true,
+    "card": "Easy tickets pile up"
+   },
+   {
+    "beat": "FIX",
+    "say": "Zoho just launched Blended AI agents in Desk: AI handles routine issues, while your team keeps human oversight.",
+    "tts": "Zoho just launched Blended AI agents in Desk: AI handles routine issues, while your team keeps human oversight.",
+    "face": false,
+    "card": "Blended AI agents",
+    "screen": {
+     "app": "presenter",
+     "view": "presenter",
+     "tip": "AI handles routine tickets > humans stay in control"
+    }
+   },
+   {
+    "beat": "STEP 1",
+    "say": "First, open Setup in Zoho Desk, and click Zia Agents under User Management.",
+    "tts": "First, open Setup in Zoho Desk, and click Zia Agents under User Management.",
+    "face": false,
+    "card": "Setup > Zia Agents",
+    "screen": {
+     "real": "desk/setup_home",
+     "app": "desk",
+     "click": "Zia Agents",
+     "tip": "Setup > User Management > Zia Agents"
+    }
+   },
+   {
+    "beat": "STEP 2",
+    "say": "Next, open Prebuilt Agents to switch one on, or hire a specialist from the Agent Store.",
+    "tts": "Next, open Prebuilt Agents to switch one on, or hire a specialist from the Agent Store.",
+    "face": false,
+    "card": "Prebuilt Agents / Agent Store",
+    "screen": {
+     "real": "desk/zia_agents",
+     "app": "desk",
+     "click": "Prebuilt Agents",
+     "tip": "Zia Agents > Prebuilt Agents > Agent Store"
+    }
+   },
+   {
+    "beat": "STEP 3",
+    "say": "Or click New Agent to build your own in Agent Studio, with your own instructions and actions.",
+    "tts": "Or click New Agent to build your own in Agent Studio, with your own instructions and actions.",
+    "face": false,
+    "card": "New Agent > Agent Studio",
+    "screen": {
+     "real": "desk/zia_agents",
+     "app": "desk",
+     "click": "New Agent",
+     "tip": "Zia Agents > New Agent > Agent Studio"
+    }
+   },
+   {
+    "beat": "RESULT",
+    "say": "AI clears the routine work, your team takes the tricky cases, and Zoho says it never trains on your data.",
+    "tts": "AI clears the routine work, your team takes the tricky cases, and Zoho says it never trains on your data.",
+    "face": true,
+    "card": "Faster support"
+   }
+  ],
+  "api": null,
+  "code": null,
+  "test_before_recording": "",
+  "description": "Zoho launched Blended Agents for Zoho Desk on 16 Nov 2026, powered by Zia Agents: AI retrieves information, executes tasks across connected apps and handles routine customer issues, while humans keep oversight. In Zoho Desk: Setup › User Management › Zia Agents › Prebuilt Agents, Agent Store, or New Agent (Agent Studio).",
+  "tags": [
+   "Zoho Desk",
+   "Zia Agents",
+   "AI agents",
+   "customer support",
+   "Zoho",
+   "helpdesk",
+   "Agent Studio",
+   "AI customer service"
+  ]
+ }
+}
