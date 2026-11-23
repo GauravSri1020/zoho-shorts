@@ -1198,6 +1198,20 @@
    "minute": 1290,
    "video_id": "IvTpkqTh6Gc",
    "title": "Zoho Desk Turns 10: New Automation Studio #Shorts"
+  },
+  {
+   "date": "2026-11-25",
+   "window": "07:30",
+   "minute": 450,
+   "video_id": "W3htfBUlkgM",
+   "title": "Zoho Books Credit Notes: Refund or Apply to an Invoice #Shorts"
+  },
+  {
+   "date": "2026-11-25",
+   "window": "21:30",
+   "minute": 1290,
+   "video_id": "1aIiJMISHZc",
+   "title": "Zoho Desk Now Has Blended AI Agents: Turn Them On in 3 Steps #Shorts"
   }
  ],
  "failures": {},
@@ -1206,8 +1220,8 @@
  "photo_scenes": [],
  "photo_agent_error": "RuntimeError: image model unavailable: 404 NOT_FOUND. {'error': {'code': 404, 'm",
  "look_index": 66,
- "status_issue": 216,
- "status_line": "PIPELINE ideas=27 clips=1 editing=0 qa_failed=1 scheduled=3 published=54 total=57 today=1 next=2026-11-23T21:30",
+ "status_issue": 217,
+ "status_line": "PIPELINE ideas=27 clips=0 editing=0 qa_failed=0 scheduled=5 published=54 total=59 today=1 next=2026-11-23T21:30",
  "rotation": {
   "claude_wealth": 21,
   "claude_wealth_industry": 16,
