@@ -6,6 +6,23 @@ Is file ko har session ke end pe update karo, taaki agla chat yahin se shuru kar
 
 Gaurav jab bhi kuch bhi change karne bole: SABSE PEHLE backup - `backup-YYYY-MM-DD-<kya-badal-rahe-ho>` branch main se banao (aur agar video ka kaam hai to latest Short ka artifact download karo). Tabhi code chhuo. Kuch bigde to us branch se purana code wapas lo.
 
+## 23 Nov 2026 shaam (17:45-18:45 IST) - Desk AI agents Short bana, 2 "ganje" Shorts private, QA look check
+
+Gaurav: "aaj wale videos bana ke schedule karte hain".
+- Desk Blended AI agents Short (job 20261123-1230-1): 3 Flow clips (60 credits, same look: grey polo, olive overshirt,
+  black glasses, thick side-parted hair) -> premium build, 3 real Desk screens (Setup > Zia Agents > Prebuilt /
+  New Agent) + 1 board. Verified by hand (no black / frozen / silent parts, -14 LUFS all through). YouTube
+  1aIiJMISHZc, scheduled 24 Nov 21:30 IST. Screen lines in the edge backup voice (Gemini TTS 429/503 today).
+- Same run also rebuilt the old Credit Notes job (20261121-0100-1, qa_failed) -> W3htfBUlkgM. Its RESULT clip shows
+  him near-shaved while the HOOK has full hair -> set PRIVATE (fix-request credit-notes-private.json). Checked the
+  other scheduled ones: WhatsApp Campaigns r2Y9_r_-Cic had the same problem (HOOK/PROBLEM near-shaved, RESULT full
+  hair) -> PRIVATE. Desk Turns 10 (tonight 21:30) and UAE e-invoicing (24 Nov 07:30) have the same look in all clips - OK.
+- Why it got through: Gemini video QA gave a flat 95 on every criterion. Fix: `benchmark.look_check(clips)` - 2 frames
+  per raw Flow clip, Gemini only judges "same hair / beard / glasses / clothes, never bald / shaved". A problem or a
+  check that cannot run is FATAL in flow.py (publish_floor cannot bypass it). Backup: backup-2026-11-23-before-qa-look-check.
+- Queue now: 23 Nov 21:30 Desk Turns 10, 24 Nov 07:30 UAE, 24 Nov 21:30 Desk AI agents. 25 Nov both slots free.
+- Flow credits left ~20 (= 1 clip) until reset 2 Dec -> no new 3-clip Zoho Short possible before then unless more credits.
+
 ## 23 Nov 2026 (01:00-02:40 IST) - Desk screenshots, premium v2, Nvidia trending Short scheduled (bina Flow)
 
 - 12 asli Zoho Desk screenshots (Gaurav ka Desk portal, Zoho ka sample ticket): tickets list / detail / new ticket,

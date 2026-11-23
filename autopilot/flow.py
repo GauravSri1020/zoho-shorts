@@ -762,6 +762,19 @@ def finish():
             sc = job["script"]
             report = benchmark.gate(mp4, sc, "flow", editor.check_media(mp4) + notes,
                                     voice=job.get("_voice", "gemini"))
+            # 23 Nov 2026: the presenter's look is checked on its own from the raw Flow clips (same hair / beard /
+            # glasses / clothes, never bald). A problem - or a check that cannot run - is FATAL, so neither
+            # publish_floor nor anything else can upload the Short.
+            try:
+                look = benchmark.look_check(files)
+            except Exception as e:
+                look = [f"look check could not run ({str(e)[:160]}) - not uploading unchecked"]
+            if look:
+                report["look"] = look
+                report["issues"] = [f"LOOK: {x}" for x in look] + report["issues"]
+                report["blockers"] = list(dict.fromkeys((report.get("blockers") or []) + ["avatar"]))
+                report["fatal"] = True
+                report["approved"] = False
             (work / "qa.json").write_text(json.dumps(report, ensure_ascii=False, indent=1), encoding="utf-8")
             print(f"[qa] score={report['overall']}/{report['min_score']} approved={report['approved']}")
             (work / "short.json").write_text(json.dumps({k: job[k] for k in ("title", "description", "script")},

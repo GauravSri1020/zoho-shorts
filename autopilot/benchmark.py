@@ -163,6 +163,60 @@ def _upload_video(path):
     return f
 
 
+def _clip_frames(clip, n=2, width=512):
+    """n JPEG frames (bytes) spread over one clip (at 30% / 70% of its length)."""
+    import subprocess
+    dur = float(subprocess.run(["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0",
+                                str(clip)], capture_output=True, text=True, check=True).stdout.strip() or 0)
+    out = []
+    for i in range(n):
+        t = dur * (0.3 + 0.4 * i / max(1, n - 1))
+        jpg = subprocess.run(["ffmpeg", "-v", "error", "-ss", f"{t:.2f}", "-i", str(clip), "-frames:v", "1",
+                              "-vf", f"scale={width}:-2", "-f", "image2", "-c:v", "mjpeg", "-"],
+                             capture_output=True, check=True).stdout
+        if jpg:
+            out.append(jpg)
+    return out
+
+
+def look_check(clips):
+    """23 Nov 2026 (Gaurav: same hair / beard / glasses / clothes in every clip of a Short, NEVER bald).
+    Two Shorts went out with a near-shaved head in one clip and full hair in another while the video QA gave
+    95 - so the presenter's look is now checked on its own, clip by clip, from the raw Flow clips.
+    Returns a list of problems ([] = OK). Raises if the check cannot run (the caller then does NOT upload)."""
+    from google.genai import types
+    parts = []
+    for i, c in enumerate(clips, 1):
+        for j, jpg in enumerate(_clip_frames(c), 1):
+            parts += [types.Part(text=f"CLIP {i}, frame {j}:"),
+                      types.Part(inline_data=types.Blob(mime_type="image/jpeg", data=jpg))]
+    if len(clips) < 2:
+        n_note = "There is only one clip: just check the hair rule."
+    else:
+        n_note = f"There are {len(clips)} clips; they must show the presenter with the IDENTICAL look."
+    parts.append(types.Part(text=f"""You check the presenter's look in the clips of ONE YouTube Short (frames above).
+{n_note}
+Rules (strict - when in doubt it is a problem):
+- It must be the same man with the SAME hair (length, volume, style, hairline), SAME beard / stubble, SAME glasses
+  (or no glasses in all), SAME clothes in every clip. Camera angle, distance, lighting, expression and hand
+  gestures MAY differ - ignore those.
+- He must have a full head of hair in every clip: bald, shaved, buzz-cut / near-shaved, or clearly thinner /
+  receding hair in any clip is a problem.
+Return JSON: {{"clips": [{{"clip": 1, "hair": "short description", "bald_or_shaved": false, "beard": "...",
+ "glasses": "...", "outfit": "..."}}], "same_look": true, "differences": ["clip X vs clip Y: what differs"]}}"""))
+    d = _ask([types.Content(role="user", parts=parts)], retries=4)
+    if isinstance(d, list):
+        d = next((x for x in d if isinstance(x, dict)), None)
+    if not isinstance(d, dict) or "same_look" not in d:
+        raise ValueError("look check answer is not the expected JSON object")
+    problems = [f"clip {c.get('clip')}: bald / shaved / thin hair ({c.get('hair')})"
+                for c in d.get("clips") or [] if isinstance(c, dict) and c.get("bald_or_shaved")]
+    if not d.get("same_look"):
+        problems += [f"look changes: {x}" for x in (d.get("differences") or ["presenter looks different between clips"])]
+    print(f"[look] {len(clips)} clips: same_look={d.get('same_look')} problems={len(problems)}")
+    return problems
+
+
 def gate(mp4, sc, engine, tech_problems, voice="gemini"):
     """Returns the QA report dict; report["approved"] decides the upload.
     voice = who voiced the Zoho-screen parts: "gemini" = the avatar's own voice, so ANY voice change is a blocker;
