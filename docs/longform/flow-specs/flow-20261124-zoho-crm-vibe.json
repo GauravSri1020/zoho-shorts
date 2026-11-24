@@ -1,0 +1,59 @@
+{
+ "id": "flow-20261124-zoho-crm-vibe",
+ "priority": "news",
+ "structure": "rapid-faq",
+ "hook_type": "question",
+ "title": "Zoho CRM Vibe: Build an App by Typing, No Code #Shorts",
+ "description": "Zoho CRM Vibe is a new prompt-to-app AI builder announced by Zoho on 23 Nov 2026. Zoho says you describe what you need in plain language and it creates a working app, custom page, live dashboard or tracker on live CRM data, with no coding and no deployment step. Before publishing, an AI Security Review checks the app across six categories. Zoho lists it for Enterprise, Ultimate, Zoho One Enterprise and Zoho CRM Plus. Availability by country and pricing are not covered here.\n\nSource (checked 24 Nov 2026):\n- Zoho blog, Introducing Vibe: https://www.zoho.com/blog/crm/introducing-vibe-ai-app-builder-within-zohocrm.html\n\nThis video uses an AI-generated presenter (based on the creator), voice and animations. Facts are from the source above.\nIndependent channel. Not affiliated with or endorsed by Zoho Corporation.\n\n#ZohoCRM #ZohoVibe #AIAppBuilder #NoCode #Zoho #Shorts",
+ "tags": [
+  "zoho crm vibe",
+  "zoho vibe",
+  "zoho crm ai app builder",
+  "prompt to app zoho",
+  "zoho crm no code",
+  "zoho crm dashboard ai",
+  "zoho crm news",
+  "zoho crm new feature",
+  "zoho crm security review"
+ ],
+ "banner": "ZOHO CRM VIBE · NEW",
+ "source": "Source: Zoho blog, Introducing Vibe (23 Nov 2026, checked 24 Nov 2026)",
+ "look": "He wears a plain navy-blue polo shirt, short neat hair, trimmed light stubble, standing in a bright modern office with a white wall and a green plant behind him",
+ "clips": [
+  {
+   "file": "vibe1.mp4",
+   "say": "Can you build a CRM app just by typing? Zoho says yes, with a new tool called Vibe.",
+   "text": "Can you build a CRM app just by typing? Zoho says yes, with a new tool called Vibe.",
+   "lower": null,
+   "gesture": "He raises one eyebrow, then types in the air with both hands and smiles"
+  },
+  {
+   "file": "vibe2.mp4",
+   "say": "Zoho says it builds apps, dashboards and trackers from live CRM data, with no deployment step.",
+   "text": "Zoho says it builds apps, dashboards and trackers from live CRM data, with no deployment step.",
+   "lower": null,
+   "gesture": "He spreads both hands wide, like opening a screen"
+  },
+  {
+   "file": "vibe3.mp4",
+   "say": "Zoho's examples include a property tracker, a group-booking dashboard and an admissions pipeline.",
+   "text": "Zoho's examples: a property tracker, a group-booking dashboard and an admissions pipeline.",
+   "lower": null,
+   "gesture": "He counts three examples on his fingers"
+  },
+  {
+   "file": "vibe4.mp4",
+   "say": "Is it safe? Before you publish, an AI Security Review checks the app across six categories.",
+   "text": "Is it safe? Before you publish, an AI Security Review checks the app across 6 categories.",
+   "lower": null,
+   "gesture": "He holds up one palm like a stop sign, then nods"
+  },
+  {
+   "file": "vibe5.mp4",
+   "say": "Editions: Enterprise, Ultimate, Zoho One Enterprise and CRM Plus. What would you build first?",
+   "text": "Editions: Enterprise, Ultimate, Zoho One Enterprise, CRM Plus. What would you build first?",
+   "lower": null,
+   "gesture": "He points at the viewer with a questioning look"
+  }
+ ]
+}
