@@ -384,6 +384,17 @@ def prepare(count, do_upload):
             if not IS_ZOHO and angle.get("segment"):  # niche v4: segment (audience) colour + label win
                 sc["segment"] = angle["segment"]
             lines = keep_lines(_lines(sc))
+            if IS_ZOHO and NEVER_FACELESS:
+                # 24 Nov 2026 (Gaurav: "Books wali jaisi step-by-step asli screenshots chahiye"): every STEP of a Zoho
+                # Short must show a REAL Zoho screenshot from assets/screens - no whiteboard for the steps. A script
+                # whose steps have none is rejected here, so the next angle (an app we have screens for) is tried.
+                from . import screens as _scr
+                _lib = _scr.library()
+                _steps = [l for l in lines if str(l.get("beat", "")).upper().startswith("STEP")]
+                _miss = [l.get("beat") for l in _steps if ((l.get("screen") or {}).get("real") or "") not in _lib]
+                if not _steps or _miss:
+                    raise RuntimeError(f"steps without a real Zoho screenshot: {_miss or 'no STEP lines'} - "
+                                       f"Gaurav opens that app once, Claude adds its screens (CLAUDE.md rule 5)")
             clips = chunks(lines)
             if not clips and not FACELESS:
                 raise RuntimeError("script has no spoken lines")
