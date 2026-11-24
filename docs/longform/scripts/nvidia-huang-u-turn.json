@@ -1,0 +1,919 @@
+{
+ "id": "nvidia-huang-u-turn",
+ "title": "Why Nvidia Brought Jensen Huang Back: The 11-Day U-Turn Explained",
+ "structure": "timeline-update",
+ "hook_type": "question",
+ "voice": {
+  "engine": "kokoro",
+  "voice": "am_onyx",
+  "speed": 1.1
+ },
+ "research": "docs/longform/research/nvidia-huang-u-turn.md",
+ "intro_chapter": "The U-turn in 30 seconds",
+ "chapters": [
+  "The resignation",
+  "The board says no",
+  "The pressure",
+  "The U-turn",
+  "What happens next"
+ ],
+ "caption_fix": [
+  [
+   "C E O",
+   "CEO"
+  ],
+  [
+   "A I",
+   "AI"
+  ],
+  [
+   "U S",
+   "US"
+  ],
+  [
+   "S E C",
+   "SEC"
+  ],
+  [
+   "S and P five hundred",
+   "S&P 500"
+  ],
+  [
+   "J D Vance",
+   "JD Vance"
+  ],
+  [
+   "C N B C",
+   "CNBC"
+  ],
+  [
+   "U turn",
+   "U-turn"
+  ]
+ ],
+ "thumb": {
+  "chip": "NVIDIA",
+  "l1": "BOARD SAID",
+  "l2": "NO…YES",
+  "l3": "WHY?",
+  "pill": "11-DAY U-TURN",
+  "pose": "point_up",
+  "accent": "#76b900"
+ },
+ "tags": [
+  "Nvidia",
+  "Jensen Huang",
+  "Jensen Huang returns",
+  "Nvidia CEO",
+  "Nvidia board",
+  "NVDA stock",
+  "Nvidia news",
+  "Jensen Huang reinstated",
+  "Nvidia stock news",
+  "Colette Kress",
+  "Nvidia explained",
+  "AI stocks",
+  "tech news"
+ ],
+ "sources": [
+  {
+   "name": "NVIDIA 8-K: CEO transition (12 Nov 2026)",
+   "url": "https://www.sec.gov/Archives/edgar/data/0001045810/000104581026000082/nvidiaannouncesceotransiti.htm"
+  },
+  {
+   "name": "NVIDIA 8-K: Board reinstates Jensen Huang (23 Nov 2026)",
+   "url": "https://www.sec.gov/Archives/edgar/data/0001045810/000104581026000090/nov23pressrelease.htm"
+  },
+  {
+   "name": "AP via PBS NewsHour: board reinstates Huang",
+   "url": "https://www.pbs.org/newshour/nation/nvidia-board-unanimously-reinstates-jensen-huang-as-ceo-and-chairman"
+  },
+  {
+   "name": "NPR: board says it does not intend to reinstate Huang (17 Nov)",
+   "url": "https://www.wamc.org/2026-11-17/nvidia-board-says-it-does-not-intend-to-reinstate-jensen-huang-as-ceo"
+  },
+  {
+   "name": "AP via ITV: Nvidia rejects Huang's offer; Q3 results",
+   "url": "https://www.itv.com/news/2026-11-17/nvidia-rejects-jensen-huangs-offer-to-return-as-ceo"
+  },
+  {
+   "name": "AP via Boston Globe: House committee interviews 1-2 Dec",
+   "url": "https://www.bostonglobe.com/2026/11/17/business/nvidia-earning-surpass-expecations/"
+  },
+  {
+   "name": "Anadolu: National Security and Export Control Oversight Committee",
+   "url": "https://aa.com.tr/en/world/nvidia-sets-up-national-security-export-control-committee-after-huangs-departure/4127668"
+  },
+  {
+   "name": "Semafor report via Outlook India: three directors backed a return",
+   "url": "https://www.outlookindia.com/international/boardroom-faction-pushes-for-jensen-huangs-return-nvidia-rules-it-out"
+  },
+  {
+   "name": "CNBC: Trump on the reinstatement",
+   "url": "https://www.cnbc.com/2026/11/23/trump-nvidia-jensen-huang.html"
+  },
+  {
+   "name": "NBC News: Huang reinstated, California AG probe continues",
+   "url": "https://www.nbcnews.com/tech/tech-news/nvidia-reinstates-jensen-huang-rcna610864"
+  },
+  {
+   "name": "Yahoo Finance: stock +30%, nearly $1T added",
+   "url": "https://finance.yahoo.com/technology/article/nvidia-reinstates-jensen-huang-as-ceo-stock-rockets-141145439.html"
+  },
+  {
+   "name": "Yahoo Finance: worst week since 2008",
+   "url": "https://finance.yahoo.com/markets/stocks/articles/nvda-stock-clocks-worst-week-233812270.html"
+  },
+  {
+   "name": "Yahoo Finance: stock -12% after Reuters SEC report",
+   "url": "https://finance.yahoo.com/markets/stocks/articles/nvidia-stock-plunges-12-reuters-201702082.html"
+  },
+  {
+   "name": "Fortune: Nvidia's board and Huang's dozens of direct reports",
+   "url": "https://fortune.com/2026/11/19/bill-ackman-nvidia-jensen-huang-reinstatement-board/"
+  },
+  {
+   "name": "Gotrade: NVDA close 23 Nov",
+   "url": "https://www.heygotrade.com/en/news/nvidia-nvda-stock-news-november-24-2026/"
+  }
+ ],
+ "description": "Nvidia's board accepted Jensen Huang's resignation on 11 Nov 2026, said on 17 Nov it did not intend to reinstate him, and on 23 Nov voted unanimously to bring him back as president, CEO and board director. The stock closed up about 31.5% that day. In this video: the timeline from Nvidia's own filings, the pressure on the board (stock, a split board, politics), five likely reasons for the U-turn (clearly labelled as our analysis), and what comes next: the 1-2 Dec House committee interviews, the DOJ Megaspeed export case and the California probe.\n\nChapters\n{chapters}\n\nSources (checked 24 Nov 2026)\n- NVIDIA 8-K: CEO transition (12 Nov 2026): https://www.sec.gov/Archives/edgar/data/0001045810/000104581026000082/nvidiaannouncesceotransiti.htm\n- NVIDIA 8-K: Board reinstates Jensen Huang (23 Nov 2026): https://www.sec.gov/Archives/edgar/data/0001045810/000104581026000090/nov23pressrelease.htm\n- AP via PBS NewsHour: board reinstates Huang: https://www.pbs.org/newshour/nation/nvidia-board-unanimously-reinstates-jensen-huang-as-ceo-and-chairman\n- NPR: board says it does not intend to reinstate Huang (17 Nov): https://www.wamc.org/2026-11-17/nvidia-board-says-it-does-not-intend-to-reinstate-jensen-huang-as-ceo\n- AP via ITV: Nvidia rejects Huang's offer; Q3 results: https://www.itv.com/news/2026-11-17/nvidia-rejects-jensen-huangs-offer-to-return-as-ceo\n- AP via Boston Globe: House committee interviews 1-2 Dec: https://www.bostonglobe.com/2026/11/17/business/nvidia-earning-surpass-expecations/\n- Anadolu: National Security and Export Control Oversight Committee: https://aa.com.tr/en/world/nvidia-sets-up-national-security-export-control-committee-after-huangs-departure/4127668\n- Semafor report via Outlook India: three directors backed a return: https://www.outlookindia.com/international/boardroom-faction-pushes-for-jensen-huangs-return-nvidia-rules-it-out\n- CNBC: Trump on the reinstatement: https://www.cnbc.com/2026/11/23/trump-nvidia-jensen-huang.html\n- NBC News: Huang reinstated, California AG probe continues: https://www.nbcnews.com/tech/tech-news/nvidia-reinstates-jensen-huang-rcna610864\n- Yahoo Finance: stock +30%, nearly $1T added: https://finance.yahoo.com/technology/article/nvidia-reinstates-jensen-huang-as-ceo-stock-rockets-141145439.html\n- Yahoo Finance: worst week since 2008: https://finance.yahoo.com/markets/stocks/articles/nvda-stock-clocks-worst-week-233812270.html\n- Yahoo Finance: stock -12% after Reuters SEC report: https://finance.yahoo.com/markets/stocks/articles/nvidia-stock-plunges-12-reuters-201702082.html\n- Fortune: Nvidia's board and Huang's dozens of direct reports: https://fortune.com/2026/11/19/bill-ackman-nvidia-jensen-huang-reinstatement-board/\n- Gotrade: NVDA close 23 Nov: https://www.heygotrade.com/en/news/nvidia-nvda-stock-news-november-24-2026/\n\nAllegations in this story are reports, not proven facts. News and analysis, not financial advice.\nThis video uses an AI-generated presenter, voice and animations; facts were checked against the sources above.\nIndependent channel. Not affiliated with or endorsed by NVIDIA. NVIDIA is a trademark of NVIDIA Corporation.\n\n#Nvidia #JensenHuang #NVDA #StockMarket #AI #TechNews",
+ "scenes": [
+  {
+   "id": "s01",
+   "type": "HOOK",
+   "chapter": 0,
+   "visual": {
+    "kind": "hook2",
+    "beats": [
+     {
+      "t": "headline",
+      "tag": "NVIDIA",
+      "source": "NVIDIA filing",
+      "date": "12 Nov 2026",
+      "text": "Jensen Huang resigns as CEO",
+      "color": "coral"
+     },
+     {
+      "t": "headline",
+      "tag": "NVIDIA",
+      "source": "Earnings call",
+      "date": "17 Nov 2026",
+      "text": "Board: 'does not intend to reinstate'",
+      "color": "amber"
+     },
+     {
+      "t": "stat",
+      "value": "+31.5%",
+      "label": "NVDA on 23 Nov: Huang is back",
+      "color": "green"
+     },
+     {
+      "t": "title",
+      "title": "Why did the board change its mind?",
+      "sub": "and what happens next",
+      "chips": [
+       "Timeline",
+       "Pressure",
+       "U-turn",
+       "Next"
+      ]
+     }
+    ]
+   },
+   "lines": [
+    "On November twelfth, Nvidia announced that Jensen Huang had resigned as C E O.",
+    "Five days later, its board said it did not intend to bring him back.",
+    "Then on Monday, the twenty third, the same board voted unanimously to reinstate him, and the stock jumped more than thirty percent.",
+    "So what changed in a few days? Let's go through it fact by fact, then look at what happens next."
+   ]
+  },
+  {
+   "id": "s02",
+   "type": "CARTOON",
+   "chapter": 0,
+   "visual": {
+    "kind": "story",
+    "beats": [
+     {
+      "pose": "present",
+      "prop": "doc",
+      "text": "Facts first"
+     },
+     {
+      "pose": "point",
+      "prop": "magnifier",
+      "text": "Filings + major outlets"
+     },
+     {
+      "pose": "shrug",
+      "prop": "warning",
+      "text": "Our opinion = labelled",
+      "stamp": "CLEAR",
+      "stamp_color": "amber"
+     }
+    ]
+   },
+   "lines": [
+    "One note before we start.",
+    "Parts of this story are allegations that nobody has proven, so we only use Nvidia's own filings and what major news outlets reported.",
+    "And when something is our own reading of events, we will tell you clearly."
+   ]
+  },
+  {
+   "id": "c1",
+   "type": "CHAPTER",
+   "chapter": 1,
+   "visual": {
+    "num": 1,
+    "title": "The resignation"
+   },
+   "lines": [
+    "Chapter one. The resignation."
+   ]
+  },
+  {
+   "id": "s03",
+   "type": "CARTOON",
+   "chapter": 1,
+   "visual": {
+    "kind": "story",
+    "beats": [
+     {
+      "pose": "present",
+      "prop": "chart_up",
+      "text": "Co-founder, 1993"
+     },
+     {
+      "pose": "point",
+      "prop": "stack",
+      "text": "33 years as CEO"
+     },
+     {
+      "pose": "present",
+      "prop": "robot",
+      "text": "The face of the AI boom"
+     }
+    ]
+   },
+   "lines": [
+    "First, why this matters so much. Jensen Huang co-founded Nvidia in nineteen ninety three.",
+    "He ran it as C E O for thirty three years.",
+    "And for many people, he became the face of the whole A I boom, launching the chips that train today's A I models."
+   ]
+  },
+  {
+   "id": "s04",
+   "type": "BOARD",
+   "chapter": 1,
+   "visual": {
+    "kind": "dates",
+    "title": "How it started",
+    "items": [
+     {
+      "date": "Early Nov",
+      "label": "Board opens an independent investigation"
+     },
+     {
+      "date": "11 Nov",
+      "label": "Board accepts his resignation",
+      "big": true
+     },
+     {
+      "date": "12 Nov",
+      "label": "Announced, stock down about 4%"
+     },
+     {
+      "date": "12 Nov",
+      "label": "CFO Colette Kress becomes interim CEO"
+     }
+    ]
+   },
+   "lines": [
+    "It started with an independent board investigation into Huang's personal conduct.",
+    "On November eleventh, the board accepted his resignation as president, C E O, and board member.",
+    "Nvidia announced it the next day, and the stock fell about four percent.",
+    "Chief financial officer Colette Kress became interim C E O, and Harvey Jones became the board's first ever chair."
+   ]
+  },
+  {
+   "id": "s05",
+   "type": "CARTOON",
+   "chapter": 1,
+   "visual": {
+    "kind": "story",
+    "beats": [
+     {
+      "pose": "shrug",
+      "prop": "doc",
+      "text": "No reason given"
+     },
+     {
+      "pose": "point",
+      "prop": "doc",
+      "text": "'Code of conduct'"
+     },
+     {
+      "pose": "worried",
+      "prop": "magnifier",
+      "text": "Reports, not proof",
+      "stamp": "UNPROVEN",
+      "stamp_color": "coral"
+     }
+    ]
+   },
+   "lines": [
+    "Why did he go? The company's first statement gave no reason.",
+    "Later, the board chair said Huang resigned after disclosing personal behaviour that was inconsistent with the company's code of conduct.",
+    "News reports linked it to his private relationships, including one with a woman some U S officials reportedly suspect of ties to Chinese intelligence. None of that has been proven."
+   ]
+  },
+  {
+   "id": "s06",
+   "type": "BOARD",
+   "chapter": 1,
+   "visual": {
+    "kind": "headline",
+    "title": "In his own words",
+    "items": [
+     {
+      "source": "Jensen Huang on X",
+      "date": "17 Nov 2026",
+      "text": "\"I have made serious mistakes in my personal life.\"",
+      "color": "amber"
+     }
+    ]
+   },
+   "lines": [
+    "Huang himself later wrote that he had made serious mistakes in his personal life, and said he would cooperate with the board's investigation."
+   ]
+  },
+  {
+   "id": "c2",
+   "type": "CHAPTER",
+   "chapter": 2,
+   "visual": {
+    "num": 2,
+    "title": "The board says no"
+   },
+   "lines": [
+    "Chapter two. The board says no."
+   ]
+  },
+  {
+   "id": "s07",
+   "type": "BOARD",
+   "chapter": 2,
+   "visual": {
+    "kind": "flow2",
+    "title": "Tuesday, 17 November",
+    "steps": [
+     [
+      "Huang's post",
+      "'honoured' to return"
+     ],
+     [
+      "New committee",
+      "national security + exports"
+     ],
+     [
+      "Earnings call",
+      "record quarter"
+     ],
+     [
+      "The chair",
+      "'does not intend to reinstate'"
+     ]
+    ],
+    "footer": "All on the same day"
+   },
+   "lines": [
+    "Then came Tuesday, the seventeenth of November, the most confusing day of the whole story.",
+    "Huang posted that he would be honoured to return, if the board decided that was in the best interest of the company.",
+    "The board announced a new national security and export control oversight committee, chaired by director Suzanne Nora Johnson.",
+    "And on the earnings call that afternoon, chair Harvey Jones said the board does not intend to reinstate Jensen as C E O."
+   ]
+  },
+  {
+   "id": "s08",
+   "type": "BOARD",
+   "chapter": 2,
+   "visual": {
+    "kind": "stat",
+    "title": "The quarter Nvidia reported that day",
+    "stats": [
+     {
+      "value": "$116B",
+      "label": "revenue",
+      "note": "about double a year ago",
+      "color": "teal"
+     },
+     {
+      "value": "$2.70",
+      "label": "earnings per share",
+      "note": "vs $2.48 expected",
+      "color": "sky"
+     }
+    ],
+    "footer": "Source: AP, 17 Nov 2026"
+   },
+   "lines": [
+    "The strange part is that the same call showed a blowout quarter: about one hundred and sixteen billion dollars in revenue, roughly double a year earlier.",
+    "Earnings per share came in at two dollars and seventy cents, ahead of what Wall Street expected, and interim C E O Colette Kress raised the growth outlook."
+   ]
+  },
+  {
+   "id": "s09",
+   "type": "CARTOON",
+   "chapter": 2,
+   "visual": {
+    "kind": "story",
+    "beats": [
+     {
+      "pose": "present",
+      "prop": "office",
+      "text": "One voice?",
+      "label": "Board"
+     },
+     {
+      "pose": "shrug",
+      "prop": "office",
+      "text": "3 directors: bring him back",
+      "label": "Board",
+      "stamp": "REPORTED",
+      "stamp_color": "amber"
+     },
+     {
+      "pose": "point",
+      "prop": "magnifier",
+      "text": "Successor search"
+     }
+    ]
+   },
+   "lines": [
+    "But behind the scenes, the board was not as united as it looked.",
+    "Semafor reported that three directors wanted Huang back, while other directors were narrowing the search for a new chief executive.",
+    "Arm's C E O Rene Haas and Marvell's C E O Matt Murphy were reportedly considered."
+   ]
+  },
+  {
+   "id": "c3",
+   "type": "CHAPTER",
+   "chapter": 3,
+   "visual": {
+    "num": 3,
+    "title": "The pressure"
+   },
+   "lines": [
+    "Chapter three. The pressure."
+   ]
+  },
+  {
+   "id": "s10",
+   "type": "BOARD",
+   "chapter": 3,
+   "visual": {
+    "kind": "stat",
+    "title": "A brutal stretch for the stock",
+    "stats": [
+     {
+      "value": "-23%",
+      "label": "worst week since 2008",
+      "color": "red"
+     },
+     {
+      "value": "-12%",
+      "label": "Friday, 20 Nov",
+      "note": "after a Reuters report",
+      "color": "coral"
+     },
+     {
+      "value": "7",
+      "label": "trading days down in a row",
+      "color": "amber"
+     }
+    ],
+    "footer": "A media report is not a charge"
+   },
+   "lines": [
+    "Meanwhile, the stock was falling hard.",
+    "It had its worst week since two thousand and eight, down about twenty three percent, and seven trading days down in a row.",
+    "On Friday the twentieth it fell about twelve percent in one day, after Reuters reported that S E C staff were examining possible accounting issues. A media report is not a charge, and nothing has been established."
+   ]
+  },
+  {
+   "id": "s11",
+   "type": "BOARD",
+   "chapter": 3,
+   "visual": {
+    "kind": "stat",
+    "title": "Value lost since the October record",
+    "stats": [
+     {
+      "value": "$239",
+      "label": "record close, 6 Oct",
+      "color": "teal"
+     },
+     {
+      "value": "~$2.7T",
+      "label": "market value lost by 20 Nov",
+      "color": "red"
+     }
+    ],
+    "footer": "The S&P 500 slipped into a correction"
+   },
+   "lines": [
+    "From its record close of about two hundred and thirty nine dollars on the sixth of October, Nvidia had lost roughly two point seven trillion dollars in market value.",
+    "And the whole market felt it. The S and P five hundred slipped into a correction."
+   ]
+  },
+  {
+   "id": "s12",
+   "type": "BOARD",
+   "chapter": 3,
+   "visual": {
+    "kind": "compare",
+    "title": "Two loud camps",
+    "left": {
+     "title": "Bring him back",
+     "items": [
+      "Petition: 'Stand with Jensen'",
+      "Musk, Sweeney + others",
+      "President Trump"
+     ]
+    },
+    "right": {
+     "title": "Clean break",
+     "items": [
+      "Treasury Sec. Bessent",
+      "Governance experts",
+      "Board chair, 17 Nov"
+     ]
+    },
+    "cues": [
+     [
+      0,
+      "L0",
+      "R0"
+     ],
+     [
+      1,
+      "L1",
+      "R1"
+     ],
+     [
+      2,
+      "L2",
+      "R2"
+     ]
+    ]
+   },
+   "lines": [
+    "Outside the company, two camps got louder. One side started a petition called Stand with Jensen. The other side wanted a clean break.",
+    "Tech leaders like Elon Musk and Tim Sweeney backed a return, while governance experts warned that bringing him back before the investigations finish could add new risks.",
+    "And even inside the U S government there was a split. Treasury Secretary Scott Bessent called for a wholesale clean up, while President Trump said Huang had learned a big lesson and he would not mind a return."
+   ]
+  },
+  {
+   "id": "c4",
+   "type": "CHAPTER",
+   "chapter": 4,
+   "visual": {
+    "num": 4,
+    "title": "The U-turn"
+   },
+   "lines": [
+    "Chapter four. The U turn."
+   ]
+  },
+  {
+   "id": "s13",
+   "type": "BOARD",
+   "chapter": 4,
+   "visual": {
+    "kind": "dates",
+    "title": "The last 48 hours",
+    "items": [
+     {
+      "date": "Sun 22 Nov",
+      "label": "Trump calls for his return again"
+     },
+     {
+      "date": "Weekend",
+      "label": "VP Vance reportedly lobbies directors"
+     },
+     {
+      "date": "Mon 23 Nov",
+      "label": "Unanimous vote: Huang is back",
+      "big": true
+     },
+     {
+      "date": "Mon 23 Nov",
+      "label": "Kress goes back to CFO"
+     }
+    ]
+   },
+   "lines": [
+    "Then came the weekend. On Sunday, President Trump again called for Huang's return.",
+    "Vice President J D Vance reportedly helped make the case to board members.",
+    "On Monday, the board voted unanimously to reinstate Huang as president, C E O, and board director, effective immediately.",
+    "Colette Kress went back to her job as chief financial officer."
+   ]
+  },
+  {
+   "id": "s14",
+   "type": "BOARD",
+   "chapter": 4,
+   "visual": {
+    "kind": "headline",
+    "title": "What the board said",
+    "items": [
+     {
+      "source": "NVIDIA filing",
+      "date": "23 Nov 2026",
+      "text": "Board 'satisfied' with Huang's candor and ability to lead",
+      "color": "teal"
+     },
+     {
+      "source": "NVIDIA filing",
+      "date": "23 Nov 2026",
+      "text": "Input from 'senior levels' of the US government",
+      "color": "sky"
+     }
+    ]
+   },
+   "lines": [
+    "In its official statement, the board says it held a series of meetings with Huang, and was satisfied with his candor and his ability to lead.",
+    "It also says it received input from senior levels of the U S government, and that based on that input, it is confident his return poses no national security risk."
+   ]
+  },
+  {
+   "id": "s15",
+   "type": "BOARD",
+   "chapter": 4,
+   "visual": {
+    "kind": "stat",
+    "title": "Monday, 23 November",
+    "stats": [
+     {
+      "value": "+31.5%",
+      "label": "NVDA close",
+      "note": "$165.05",
+      "color": "green"
+     },
+     {
+      "value": "~$1T",
+      "label": "value added in one day",
+      "color": "teal"
+     },
+     {
+      "value": "+6.5%",
+      "label": "Nasdaq",
+      "color": "sky"
+     }
+    ],
+    "footer": "Sources: Yahoo Finance, Gotrade"
+   },
+   "lines": [
+    "President Trump told C N B C that he made the deal.",
+    "And the market answered fast. Nvidia closed up about thirty one and a half percent, at one hundred and sixty five dollars, adding close to one trillion dollars in a single day.",
+    "The Nasdaq closed up about six and a half percent."
+   ]
+  },
+  {
+   "id": "s16",
+   "type": "CARTOON",
+   "chapter": 4,
+   "visual": {
+    "kind": "story",
+    "beats": [
+     {
+      "pose": "present",
+      "prop": "magnifier",
+      "text": "Why the U-turn?",
+      "stamp": "OUR READ",
+      "stamp_color": "amber"
+     }
+    ]
+   },
+   "lines": [
+    "Now the big question. Why did the board change its mind? What follows is our own analysis of the reporting, not an inside account."
+   ]
+  },
+  {
+   "id": "s17",
+   "type": "BOARD",
+   "chapter": 4,
+   "visual": {
+    "kind": "checklist",
+    "title": "Our read: 5 likely reasons",
+    "items": [
+     "The security question got an answer",
+     "The stock was collapsing",
+     "No successor was ready",
+     "The board was already split",
+     "Pressure from all sides"
+    ]
+   },
+   "lines": [
+    "One. The biggest risk got an answer. The board says senior government officials told it Huang's return poses no national security risk. That removed the hardest objection.",
+    "Two. The stock. Since the October record, almost half of Nvidia's market value had disappeared, and investors were openly asking if the company could keep its pace without its founder.",
+    "Three. No successor was ready. Commentators in Fortune pointed out how much of Nvidia was built around Huang, who famously had dozens of people reporting directly to him, and the search was only days old.",
+    "Four. The board was already split. If the Semafor report is right, three directors wanted him back from the start, so the vote only had to move a few people.",
+    "Five. Pressure from every side: the White House, tech leaders, investors, and employees. When he walked back in on Monday, staff gathered in the atrium and cheered."
+   ]
+  },
+  {
+   "id": "s18",
+   "type": "CARTOON",
+   "chapter": 4,
+   "visual": {
+    "kind": "story",
+    "beats": [
+     {
+      "pose": "present",
+      "prop": "lock",
+      "text": "The committee stays"
+     },
+     {
+      "pose": "point",
+      "prop": "office",
+      "text": "Back, with guardrails",
+      "label": "Board"
+     }
+    ]
+   },
+   "lines": [
+    "And notice what is still in place. The new national security committee works with outside experts, and it meets at least every quarter.",
+    "So the message seems to be: he is back, but with more oversight than before."
+   ]
+  },
+  {
+   "id": "c5",
+   "type": "CHAPTER",
+   "chapter": 5,
+   "visual": {
+    "num": 5,
+    "title": "What happens next"
+   },
+   "lines": [
+    "Chapter five. What happens next."
+   ]
+  },
+  {
+   "id": "s19",
+   "type": "BOARD",
+   "chapter": 5,
+   "visual": {
+    "kind": "dates",
+    "title": "Dates and probes to watch",
+    "items": [
+     {
+      "date": "1 Dec",
+      "label": "Huang: interview with 3 House committees",
+      "big": true
+     },
+     {
+      "date": "2 Dec",
+      "label": "General counsel Tim Teter"
+     },
+     {
+      "date": "Ongoing",
+      "label": "DOJ: Megaspeed export case"
+     },
+     {
+      "date": "Ongoing",
+      "label": "California Attorney General"
+     }
+    ]
+   },
+   "lines": [
+    "The story is not over. On December first, Huang is due to sit for a closed door interview with three House committees that are examining the national security questions.",
+    "On December second, Nvidia's general counsel, Tim Teter, is due to appear.",
+    "The Justice Department is running a criminal investigation into possible export control violations at Megaspeed, a Singapore cloud company at the centre of the reports.",
+    "And California's attorney general says its probe of Nvidia continues."
+   ]
+  },
+  {
+   "id": "s20",
+   "type": "BOARD",
+   "chapter": 5,
+   "visual": {
+    "kind": "compare",
+    "title": "Two ways this can go (our read)",
+    "left": {
+     "title": "Nothing new comes out",
+     "items": [
+      "Focus goes back to chips",
+      "Trust slowly rebuilds",
+      "Succession talk fades"
+     ]
+    },
+    "right": {
+     "title": "New facts appear",
+     "items": [
+      "Board under pressure again",
+      "Tighter export rules",
+      "A more volatile stock"
+     ]
+    },
+    "cues": [
+     [
+      0,
+      "L0",
+      "R0"
+     ],
+     [
+      1,
+      "L1",
+      "R1"
+     ],
+     [
+      2,
+      "L2",
+      "R2"
+     ]
+    ]
+   },
+   "lines": [
+    "From here, we see two broad paths. Again, this is our analysis, not a prediction you should trade on.",
+    "If the hearings and investigations find nothing new, attention goes back to chips, trust slowly rebuilds, and the talk about a successor fades.",
+    "If new facts come out, the board faces the same question again, export rules could get even tighter, and the stock could swing hard. And this time, the board has already used its biggest card."
+   ]
+  },
+  {
+   "id": "s21",
+   "type": "BOARD",
+   "chapter": 5,
+   "visual": {
+    "kind": "stat",
+    "title": "Where the stock stands",
+    "stats": [
+     {
+      "value": "$165",
+      "label": "close, 23 Nov",
+      "color": "green"
+     },
+     {
+      "value": "$239",
+      "label": "record, 6 Oct",
+      "color": "teal"
+     },
+     {
+      "value": "-31%",
+      "label": "still below the record",
+      "color": "red"
+     }
+    ],
+    "footer": "News, not financial advice"
+   },
+   "lines": [
+    "For investors, even after Monday's jump, the stock is still about thirty one percent below its October record.",
+    "That is not advice to buy or sell. It is simply where things stand today."
+   ]
+  },
+  {
+   "id": "s22",
+   "type": "CARTOON",
+   "chapter": 5,
+   "visual": {
+    "kind": "story",
+    "beats": [
+     {
+      "pose": "shrug",
+      "prop": "calendar",
+      "text": "Three decisions",
+      "top": "12 DAYS",
+      "big": "3",
+      "sub": "decisions"
+     },
+     {
+      "pose": "point",
+      "prop": "clock",
+      "text": "Next: 1 December"
+     }
+    ]
+   },
+   "lines": [
+    "In under two weeks, Nvidia's board accepted its founder's resignation, refused to take him back, and then took him back.",
+    "The hearings in early December will tell us whether that was a smart reset, or only a pause."
+   ]
+  },
+  {
+   "id": "s23",
+   "type": "OUTRO",
+   "chapter": 5,
+   "visual": {
+    "kind": "outro",
+    "next": "Nvidia after the hearings",
+    "badge": "NVDA",
+    "badge_sub": "follow-up",
+    "note": "News and analysis, not financial advice"
+   },
+   "lines": [
+    "If you want the follow up after the December hearings, subscribe, and tell me in the comments: was bringing him back the right call?",
+    "As always, this is news and analysis, not financial advice."
+   ]
+  }
+ ]
+}
