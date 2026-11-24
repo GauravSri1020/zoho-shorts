@@ -1,0 +1,707 @@
+{
+ "jh01-reasons": {
+  "clips": [
+   "Nvidia's board said no to its founder. Days later, it said yes. Here are the five reasons.",
+   "Government input eased the security worry, the stock lost almost half its value, and no successor was ready.",
+   "And three directors reportedly wanted him back all along. Was it the right call? Comment below."
+  ],
+  "title": "Why Jensen Huang Came Back to Nvidia: 5 Reasons #Shorts",
+  "hl": [
+   "board",
+   "founder",
+   "yes",
+   "no",
+   "stock",
+   "successor",
+   "directors",
+   "five"
+  ],
+  "hook": "<small>JENSEN HUANG</small>HE'S BACK. <em>WHY?</em>",
+  "cta": "RIGHT CALL? COMMENT 👇",
+  "cta_from": "Comment",
+  "cta_clip": 2,
+  "pill": "JENSEN HUANG · NVIDIA",
+  "ticker": "NVDA <b>▲ 31.5%</b>",
+  "src": "Sources: NVIDIA filings · AP · NPR · CNBC · FT · Reuters · not financial advice",
+  "accent": "#ffd23f",
+  "accent2": "#5b5bff",
+  "pip": {
+   "x": 540,
+   "y": 1222,
+   "r": 102
+  },
+  "scenes": [
+   {
+    "clip": 0,
+    "from": "Here",
+    "to": "Was",
+    "to_clip": 2,
+    "kind": "mac",
+    "head": "WHY HE <em>CAME BACK</em>",
+    "sub": "5 reasons · our read",
+    "q": "Why did Nvidia bring back Jensen Huang?",
+    "mode": "steps",
+    "items": [
+     [
+      "🛡️",
+      "Board: US gov input, 'no security risk'"
+     ],
+     [
+      "📉",
+      "Stock had lost almost half its value"
+     ],
+     [
+      "🪑",
+      "No successor was ready"
+     ],
+     [
+      "🗳️",
+      "3 directors reportedly backed him"
+     ],
+     [
+      "📣",
+      "Investors, petition, White House"
+     ]
+    ],
+    "note": "Our analysis, based on reports",
+    "stickers": [
+     "📉",
+     "🏛️",
+     "🤝",
+     "🗳️"
+    ]
+   }
+  ]
+ },
+ "jh02-spy": {
+  "clips": [
+   "Everyone is asking about the so-called spy in this story. Here is what is actually confirmed.",
+   "The Justice Department says no conclusion has been reached, and intelligence officials are reportedly divided.",
+   "The real case is about chip exports through one Singapore company. That probe is still open."
+  ],
+  "title": "Jensen Huang and the 'Spy' Story: What We Actually Know #Shorts",
+  "hl": [
+   "spy",
+   "justice",
+   "conclusion",
+   "divided",
+   "exports",
+   "singapore",
+   "open"
+  ],
+  "hook": "<small>JENSEN HUANG</small>THE <em>'SPY'</em> STORY",
+  "cta": "FOLLOW FOR UPDATES ➜",
+  "cta_from": "That",
+  "cta_clip": 2,
+  "pill": "JENSEN HUANG · NVIDIA",
+  "ticker": "NVDA <b>▲ 31.5%</b>",
+  "src": "Sources: NVIDIA filings · AP · NPR · CNBC · FT · Reuters · not financial advice",
+  "accent": "#ff6b6b",
+  "accent2": "#4f46e5",
+  "pip": {
+   "x": 540,
+   "y": 1222,
+   "r": 102
+  },
+  "scenes": [
+   {
+    "clip": 0,
+    "from": "Here",
+    "to": "That",
+    "to_clip": 2,
+    "kind": "mac",
+    "head": "THE <em>'SPY'</em> STORY",
+    "sub": "what is actually confirmed",
+    "q": "Was there really a spy in the Jensen Huang story?",
+    "mode": "steps",
+    "items": [
+     [
+      "⚖️",
+      "DOJ: 'no conclusions reached' on her"
+     ],
+     [
+      "🕵️",
+      "US intelligence reportedly divided"
+     ],
+     [
+      "🇨🇳",
+      "Beijing denies she was a spy"
+     ],
+     [
+      "📦",
+      "Real case: Megaspeed export probe"
+     ],
+     [
+      "⏳",
+      "Still open. Nothing proven."
+     ]
+    ],
+    "note": "Sources: Reuters, AP, CNN",
+    "stickers": [
+     "🕵️",
+     "⚖️",
+     "📦",
+     "❓"
+    ]
+   }
+  ]
+ },
+ "jh03-stock": {
+  "clips": [
+   "Was bringing the founder back just a move to rescue the stock? Let's check the numbers.",
+   "The stock had lost almost half its value. The day he returned, it jumped thirty one percent.",
+   "The board says it acted for shareholders, but a stock jump does not end the investigations."
+  ],
+  "title": "Did Nvidia Bring Back Jensen Huang to Save the Stock? #Shorts",
+  "hl": [
+   "stock",
+   "half",
+   "thirty",
+   "percent",
+   "shareholders",
+   "investigations"
+  ],
+  "hook": "<small>JENSEN HUANG</small>WAS IT JUST <em>THE STOCK?</em>",
+  "cta": "PROBES STILL OPEN ⚠️",
+  "cta_from": "but",
+  "cta_clip": 2,
+  "pill": "JENSEN HUANG · NVIDIA",
+  "ticker": "NVDA <b>▲ 31.5%</b>",
+  "src": "Sources: NVIDIA filings · AP · NPR · CNBC · FT · Reuters · not financial advice",
+  "accent": "#4ade80",
+  "accent2": "#0ea5e9",
+  "pip": {
+   "x": 540,
+   "y": 1222,
+   "r": 102
+  },
+  "scenes": [
+   {
+    "clip": 0,
+    "from": "Let's",
+    "to": "but",
+    "to_clip": 2,
+    "kind": "mac",
+    "head": "THE <em>STOCK</em> STORY",
+    "sub": "NVDA in 4 numbers",
+    "q": "Did Nvidia bring back Jensen Huang to save the stock?",
+    "mode": "numbers",
+    "items": [
+     [
+      "$239",
+      "record close · 6 Oct"
+     ],
+     [
+      "~$125",
+      "close before his return"
+     ],
+     [
+      "+31.5%",
+      "the day he returned"
+     ],
+     [
+      "$165",
+      "close · 23 Nov"
+     ]
+    ],
+    "note": "Board: 'best interests of our stockholders'",
+    "stickers": [
+     "📈",
+     "💰",
+     "📉",
+     "🤔"
+    ]
+   }
+  ]
+ },
+ "jh04-investors": {
+  "clips": [
+   "Did big investors force the founder back? Not legally, but the pressure was huge.",
+   "Two funds urged the board to keep his return on the table, and one billionaire called the board panicked.",
+   "He never had a controlling stake, so in the end, only the board could decide."
+  ],
+  "title": "Did Investors Force Nvidia to Bring Back Jensen Huang? #Shorts",
+  "hl": [
+   "investors",
+   "force",
+   "pressure",
+   "funds",
+   "billionaire",
+   "panicked",
+   "board",
+   "stake"
+  ],
+  "hook": "<small>JENSEN HUANG</small>DID INVESTORS <em>FORCE IT?</em>",
+  "cta": "WHO REALLY DECIDED? 👇",
+  "cta_from": "only",
+  "cta_clip": 2,
+  "pill": "JENSEN HUANG · NVIDIA",
+  "ticker": "NVDA <b>▲ 31.5%</b>",
+  "src": "Sources: NVIDIA filings · AP · NPR · CNBC · FT · Reuters · not financial advice",
+  "accent": "#f472b6",
+  "accent2": "#6366f1",
+  "pip": {
+   "x": 540,
+   "y": 1222,
+   "r": 102
+  },
+  "scenes": [
+   {
+    "clip": 0,
+    "from": "Not",
+    "to": "only",
+    "to_clip": 2,
+    "kind": "mac",
+    "head": "THE <em>PRESSURE</em>",
+    "sub": "who pushed for his return",
+    "q": "Did investors force Nvidia to bring back Jensen Huang?",
+    "mode": "steps",
+    "items": [
+     [
+      "📝",
+      "Petition: 'Stand with Jensen'"
+     ],
+     [
+      "🏦",
+      "2 funds: keep 'all options on the table'"
+     ],
+     [
+      "🗣️",
+      "Bill Ackman: board 'panicked'"
+     ],
+     [
+      "🔑",
+      "He never had a controlling stake"
+     ],
+     [
+      "🗳️",
+      "Only the board could decide"
+     ]
+    ],
+    "note": "Sources: FT, CNBC, Fox Business",
+    "stickers": [
+     "🏦",
+     "📝",
+     "🗣️",
+     "🔑"
+    ]
+   }
+  ]
+ },
+ "jh05-why-not-leave": {
+  "clips": [
+   "Why didn't the founder simply start over somewhere else? His own moves give us clues.",
+   "Within five days, he offered to come back, and reports say he discussed a comeback with close confidants.",
+   "Some founders never really leave. Our guess: he never wanted another company."
+  ],
+  "title": "Why Didn't Jensen Huang Just Join Another Company? #Shorts",
+  "hl": [
+   "founder",
+   "five",
+   "days",
+   "comeback",
+   "thirty",
+   "years",
+   "guess"
+  ],
+  "hook": "<small>JENSEN HUANG</small>WHY NOT <em>A NEW JOB?</em>",
+  "cta": "WOULD YOU GO BACK? 👇",
+  "cta_from": "Our",
+  "cta_clip": 2,
+  "pill": "JENSEN HUANG · NVIDIA",
+  "ticker": "NVDA <b>▲ 31.5%</b>",
+  "src": "Sources: NVIDIA filings · AP · NPR · CNBC · FT · Reuters · not financial advice",
+  "accent": "#38bdf8",
+  "accent2": "#a855f7",
+  "pip": {
+   "x": 540,
+   "y": 1222,
+   "r": 102
+  },
+  "scenes": [
+   {
+    "clip": 0,
+    "from": "His",
+    "to": "Our",
+    "to_clip": 2,
+    "kind": "mac",
+    "head": "WHY HE <em>STAYED</em>",
+    "sub": "his moves, day by day",
+    "q": "Why didn't Jensen Huang join another company?",
+    "mode": "timeline",
+    "items": [
+     [
+      "12 Nov",
+      "Resigns as CEO"
+     ],
+     [
+      "15 Nov",
+      "FT: discussed comeback with confidants"
+     ],
+     [
+      "17 Nov",
+      "Posts: 'honoured' to return"
+     ],
+     [
+      "23 Nov",
+      "Back as CEO"
+     ]
+    ],
+    "note": "Our guess: Nvidia is his life's work",
+    "stickers": [
+     "🏠",
+     "❤️",
+     "📅",
+     "🔁"
+    ]
+   }
+  ]
+ },
+ "jh06-own-words": {
+  "clips": [
+   "What did the founder actually say during his eleven days away? Three statements stand out.",
+   "He admitted serious mistakes in his personal life, and said he would cooperate with the investigation.",
+   "Then he said he would be honoured to return. Six days later, he was back."
+  ],
+  "title": "Jensen Huang's Own Words During His 11 Days Away #Shorts",
+  "hl": [
+   "founder",
+   "mistakes",
+   "cooperate",
+   "honoured",
+   "eleven",
+   "six"
+  ],
+  "hook": "<small>JENSEN HUANG</small>IN HIS <em>OWN WORDS</em>",
+  "cta": "6 DAYS LATER: BACK ✅",
+  "cta_from": "Six",
+  "cta_clip": 2,
+  "pill": "JENSEN HUANG · NVIDIA",
+  "ticker": "NVDA <b>▲ 31.5%</b>",
+  "src": "Sources: NVIDIA filings · AP · NPR · CNBC · FT · Reuters · not financial advice",
+  "accent": "#fb923c",
+  "accent2": "#2563eb",
+  "pip": {
+   "x": 540,
+   "y": 1222,
+   "r": 102
+  },
+  "scenes": [
+   {
+    "clip": 0,
+    "from": "Three",
+    "to": "Six",
+    "to_clip": 2,
+    "kind": "mac",
+    "head": "HIS <em>OWN WORDS</em>",
+    "sub": "11 days away",
+    "q": "What did Jensen Huang say while he was out?",
+    "mode": "steps",
+    "items": [
+     [
+      "💬",
+      "'Serious mistakes in my personal life'"
+     ],
+     [
+      "🤝",
+      "Will cooperate with the investigation"
+     ],
+     [
+      "🏛️",
+      "Agreed to answer Congress"
+     ],
+     [
+      "🙏",
+      "'Honoured' to return if asked"
+     ]
+    ],
+    "note": "Sources: his statements via NPR, AP",
+    "stickers": [
+     "💬",
+     "🙏",
+     "🏛️",
+     "✍️"
+    ]
+   }
+  ]
+ },
+ "jh07-washington": {
+  "clips": [
+   "How big was Washington's role in bringing the founder back? Much bigger than usual.",
+   "The board says senior government officials gave input, and the White House says it helped make the deal.",
+   "But not everyone in Washington agreed. One top official had wanted an outsider as the new boss."
+  ],
+  "title": "Jensen Huang's Return: How Big Was Washington's Role? #Shorts",
+  "hl": [
+   "washington",
+   "government",
+   "white",
+   "house",
+   "deal",
+   "outsider"
+  ],
+  "hook": "<small>JENSEN HUANG</small>WASHINGTON'S <em>ROLE</em>",
+  "cta": "FOLLOW FOR MORE ➜",
+  "cta_from": "One",
+  "cta_clip": 2,
+  "pill": "JENSEN HUANG · NVIDIA",
+  "ticker": "NVDA <b>▲ 31.5%</b>",
+  "src": "Sources: NVIDIA filings · AP · NPR · CNBC · FT · Reuters · not financial advice",
+  "accent": "#facc15",
+  "accent2": "#db2777",
+  "pip": {
+   "x": 540,
+   "y": 1222,
+   "r": 102
+  },
+  "scenes": [
+   {
+    "clip": 0,
+    "from": "Much",
+    "to": "One",
+    "to_clip": 2,
+    "kind": "mac",
+    "head": "WASHINGTON'S <em>ROLE</em>",
+    "sub": "what was said, by whom",
+    "q": "What role did Washington play in Jensen Huang's return?",
+    "mode": "steps",
+    "items": [
+     [
+      "🏛️",
+      "Board: input from 'senior levels' of US gov"
+     ],
+     [
+      "🤝",
+      "Trump to CNBC: 'I made the deal'"
+     ],
+     [
+      "🗣️",
+      "VP Vance reportedly lobbied directors"
+     ],
+     [
+      "💼",
+      "Treasury Sec. Bessent wanted an outsider"
+     ]
+    ],
+    "note": "Sources: NVIDIA filing, CNBC, AP, SCMP",
+    "stickers": [
+     "🏛️",
+     "🤝",
+     "🇺🇸",
+     "💼"
+    ]
+   }
+  ]
+ },
+ "jh08-what-changes": {
+  "clips": [
+   "The founder is back, but Nvidia is not the same company it was two weeks ago.",
+   "A new security committee, a first ever board chair, and the finance chief back in her old job.",
+   "And from December first, Congress gets its questions answered. Follow for what happens next."
+  ],
+  "title": "Jensen Huang Is Back: 3 Things That Change at Nvidia Now #Shorts",
+  "hl": [
+   "founder",
+   "security",
+   "committee",
+   "chair",
+   "finance",
+   "december",
+   "congress"
+  ],
+  "hook": "<small>JENSEN HUANG</small>WHAT <em>CHANGES</em> NOW",
+  "cta": "FOLLOW FOR WHAT'S NEXT ➜",
+  "cta_from": "Follow",
+  "cta_clip": 2,
+  "pill": "JENSEN HUANG · NVIDIA",
+  "ticker": "NVDA <b>▲ 31.5%</b>",
+  "src": "Sources: NVIDIA filings · AP · NPR · CNBC · FT · Reuters · not financial advice",
+  "accent": "#34d399",
+  "accent2": "#7c3aed",
+  "pip": {
+   "x": 540,
+   "y": 1222,
+   "r": 102
+  },
+  "scenes": [
+   {
+    "clip": 0,
+    "from": "but",
+    "to": "Follow",
+    "to_clip": 2,
+    "kind": "mac",
+    "head": "WHAT <em>CHANGES</em>",
+    "sub": "Nvidia after the U-turn",
+    "q": "What changes at Nvidia with Jensen Huang back?",
+    "mode": "steps",
+    "items": [
+     [
+      "🛡️",
+      "New national security + export committee"
+     ],
+     [
+      "🪑",
+      "Harvey Jones: first-ever board chair"
+     ],
+     [
+      "💼",
+      "Colette Kress: back to CFO"
+     ],
+     [
+      "📅",
+      "1 Dec: Congress interview"
+     ]
+    ],
+    "note": "Sources: NVIDIA filings, Anadolu, AP",
+    "stickers": [
+     "🛡️",
+     "🪑",
+     "💼",
+     "📅"
+    ]
+   }
+  ]
+ },
+ "jh09-congress": {
+  "clips": [
+   "On December first, the founder faces three House committees behind closed doors. Here's why.",
+   "Lawmakers want answers about a potential breach of national security linked to chip exports.",
+   "The next day, Nvidia's top lawyer is due to appear too. This story is far from over."
+  ],
+  "title": "Jensen Huang Faces Congress on Dec 1: What They Want to Know #Shorts",
+  "hl": [
+   "december",
+   "three",
+   "house",
+   "committees",
+   "national",
+   "security",
+   "exports",
+   "lawyer"
+  ],
+  "hook": "<small>JENSEN HUANG</small>VS <em>CONGRESS</em>",
+  "cta": "FAR FROM OVER 👀",
+  "cta_from": "This",
+  "cta_clip": 2,
+  "pill": "JENSEN HUANG · NVIDIA",
+  "ticker": "NVDA <b>▲ 31.5%</b>",
+  "src": "Sources: NVIDIA filings · AP · NPR · CNBC · FT · Reuters · not financial advice",
+  "accent": "#f87171",
+  "accent2": "#0891b2",
+  "pip": {
+   "x": 540,
+   "y": 1222,
+   "r": 102
+  },
+  "scenes": [
+   {
+    "clip": 0,
+    "from": "Here's",
+    "to": "This",
+    "to_clip": 2,
+    "kind": "mac",
+    "head": "THE <em>HEARINGS</em>",
+    "sub": "what Congress wants to know",
+    "q": "Why is Jensen Huang facing Congress on Dec 1?",
+    "mode": "timeline",
+    "items": [
+     [
+      "1 Dec",
+      "Huang: closed-door, 3 House committees"
+     ],
+     [
+      "2 Dec",
+      "General counsel Tim Teter"
+     ],
+     [
+      "Focus",
+      "'Potential breach of national security'"
+     ],
+     [
+      "Ongoing",
+      "DOJ Megaspeed export probe"
+     ]
+    ],
+    "note": "Sources: AP, Digital Trends, PBS",
+    "stickers": [
+     "🏛️",
+     "🎙️",
+     "📜",
+     "⚖️"
+    ]
+   }
+  ]
+ },
+ "jh10-numbers": {
+  "clips": [
+   "Five numbers tell the whole story of the founder's exit and return.",
+   "Thirty three years at the top. Five days to a public no. Eleven days to a yes.",
+   "A thirty one percent jump in one day, and three House committees waiting on December first."
+  ],
+  "title": "Jensen Huang's Exit and Return in 5 Numbers #Shorts",
+  "hl": [
+   "five",
+   "numbers",
+   "thirty",
+   "eleven",
+   "one",
+   "three"
+  ],
+  "hook": "<small>JENSEN HUANG</small>THE STORY IN <em>5 NUMBERS</em>",
+  "cta": "WHICH NUMBER SHOCKED YOU? 👇",
+  "cta_from": "and",
+  "cta_clip": 2,
+  "pill": "JENSEN HUANG · NVIDIA",
+  "ticker": "NVDA <b>▲ 31.5%</b>",
+  "src": "Sources: NVIDIA filings · AP · NPR · CNBC · FT · Reuters · not financial advice",
+  "accent": "#a3e635",
+  "accent2": "#9333ea",
+  "pip": {
+   "x": 540,
+   "y": 1222,
+   "r": 102
+  },
+  "scenes": [
+   {
+    "clip": 1,
+    "from": "Thirty",
+    "to": "and",
+    "to_clip": 2,
+    "kind": "mac",
+    "head": "IN <em>5 NUMBERS</em>",
+    "sub": "exit → return",
+    "q": "Jensen Huang's exit and return, in numbers?",
+    "mode": "numbers",
+    "items": [
+     [
+      "33",
+      "years as CEO"
+     ],
+     [
+      "5",
+      "days to a public 'no'"
+     ],
+     [
+      "11",
+      "days to a 'yes'"
+     ],
+     [
+      "+31.5%",
+      "NVDA in one day"
+     ],
+     [
+      "3",
+      "House committees · 1 Dec"
+     ]
+    ],
+    "note": "Sources: NVIDIA filings, AP, Gotrade",
+    "stickers": [
+     "🔢",
+     "⏱️",
+     "📈",
+     "🏛️"
+    ]
+   }
+  ]
+ }
+}
