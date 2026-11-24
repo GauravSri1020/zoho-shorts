@@ -1,0 +1,319 @@
+{
+ "A": {
+  "clips": [
+   "Nvidia just added almost one trillion dollars in a single day. Here's what happened.",
+   "Two weeks ago, Nvidia's leadership crisis began. Then the stock fell seven days in a row.",
+   "On Monday, the board brought him back. Nvidia jumped over thirty percent, its best day in over a decade.",
+   "Other AI stocks flew with it. Is this the bottom for Nvidia? Tell me in the comments."
+  ],
+  "hl": [
+   "nvidia",
+   "trillion",
+   "crisis",
+   "seven",
+   "thirty",
+   "decade",
+   "bottom",
+   "comments",
+   "ai"
+  ],
+  "hook": "NVIDIA <em>+$1 TRILLION</em><br>IN ONE DAY",
+  "pill": "BREAKING · NVDA",
+  "ticker": "NVDA <b>▲ 31.5%</b>",
+  "src": "Sources: AP · NBC · CNBC · Yahoo Finance · not financial advice",
+  "pip": {
+   "x": 540,
+   "y": 1130,
+   "r": 150
+  },
+  "cta": "IS THIS THE BOTTOM? 👇",
+  "cta_from": "Tell",
+  "scenes": [
+   {
+    "clip": 0,
+    "from": "Here's",
+    "kind": "counter",
+    "glow": "#76b900",
+    "title": "MARKET VALUE ADDED",
+    "titleTop": 300,
+    "prefix": "≈ $",
+    "suffix": "T",
+    "dec": 1,
+    "numTop": 420,
+    "size": 300,
+    "color": "#9be22d",
+    "sub": "IN ONE DAY · MON 23 NOV",
+    "c0": 0,
+    "c1": 1.0
+   },
+   {
+    "clip": 1,
+    "from": "Then",
+    "kind": "counter",
+    "glow": "#e11d2e",
+    "prefix": "",
+    "suffix": " DAYS",
+    "dec": 0,
+    "numTop": 500,
+    "size": 250,
+    "color": "#ff2d42",
+    "sub": "STRAIGHT DAYS DOWN",
+    "line": [
+     1,
+     0.86,
+     0.9,
+     0.7,
+     0.62,
+     0.45,
+     0.3,
+     0.12
+    ],
+    "c0": 0,
+    "c1": 7
+   },
+   {
+    "clip": 2,
+    "from": "Nvidia",
+    "kind": "counter",
+    "glow": "#76b900",
+    "prefix": "+",
+    "suffix": "%",
+    "dec": 1,
+    "numTop": 500,
+    "size": 250,
+    "color": "#9be22d",
+    "sub": "CLOSE $165.05 · MON 23 NOV",
+    "line": [
+     0.05,
+     0.1,
+     0.08,
+     0.3,
+     0.55,
+     0.7,
+     0.85,
+     0.98
+    ],
+    "stamp": "BEST DAY IN 10+ YEARS",
+    "stampTop": 860,
+    "stampSize": 72,
+    "stampAt": 1.4,
+    "stampColor": "#ffe14d",
+    "c0": 0,
+    "c1": 31.5
+   },
+   {
+    "clip": 3,
+    "from": "Other",
+    "to": "Tell",
+    "kind": "chips",
+    "glow": "#76b900",
+    "title": "AI STOCKS FLEW WITH IT",
+    "titleTop": 300,
+    "listTop": 400,
+    "items": [
+     [
+      "📈",
+      "Nasdaq +6.5% at the close"
+     ],
+     [
+      "☁️",
+      "CoreWeave &amp; Nebius +20%"
+     ],
+     [
+      "🟢",
+      "Ended a 7-day losing streak"
+     ]
+    ]
+   }
+  ]
+ },
+ "B": {
+  "clips": [
+   "Nvidia's board said no to bringing its CEO back. Days later, they did it. Why?",
+   "The stock was sinking, the S&P 500 fell into a correction, and investors doubted the interim leadership.",
+   "Then the White House stepped in, and the board voted unanimously to bring him back.",
+   "Nvidia also set up a new national security oversight panel. Follow for what happens next."
+  ],
+  "hl": [
+   "board",
+   "no",
+   "why",
+   "sinking",
+   "correction",
+   "unanimously",
+   "white",
+   "house",
+   "security",
+   "follow"
+  ],
+  "hook": "BOARD SAID <em>NO</em>…<br>THEN <em>YES</em>. WHY?",
+  "pill": "BREAKING · NVDA",
+  "ticker": "NVDA <b>▲ 31.5%</b>",
+  "src": "Sources: AP · NBC · CNBC · Yahoo Finance · not financial advice",
+  "pip": {
+   "x": 540,
+   "y": 1130,
+   "r": 150
+  },
+  "cta": "FOLLOW FOR THE NEXT TWIST ➜",
+  "cta_from": "Follow",
+  "scenes": [
+   {
+    "clip": 0,
+    "from": "Days",
+    "kind": "chips",
+    "glow": "#3b82f6",
+    "title": "THE U-TURN",
+    "titleTop": 300,
+    "listTop": 400,
+    "items": [
+     [
+      "🚪",
+      "Jensen Huang resigns as CEO"
+     ],
+     [
+      "❌",
+      "Board: no plan to bring him back"
+     ],
+     [
+      "✅",
+      "Mon 23 Nov: reinstated"
+     ]
+    ]
+   },
+   {
+    "clip": 1,
+    "from": "S&P",
+    "kind": "chips",
+    "glow": "#e11d2e",
+    "title": "THE PRESSURE",
+    "titleTop": 300,
+    "listTop": 400,
+    "items": [
+     [
+      "📉",
+      "Stock: 7 days down in a row"
+     ],
+     [
+      "🔻",
+      "S&amp;P 500 in a correction"
+     ],
+     [
+      "❓",
+      "Doubts about interim leadership"
+     ]
+    ]
+   },
+   {
+    "clip": 2,
+    "from": "White",
+    "kind": "quote",
+    "glow": "#3b82f6",
+    "qTop": 290,
+    "qLabel": "CNBC INTERVIEW · MON 23 NOV",
+    "quote": "“I made the deal.”",
+    "attr": "— President Donald Trump, on Huang's return",
+    "stamp": "BOARD VOTE: UNANIMOUS",
+    "stampTop": 760,
+    "stampSize": 72,
+    "stampAt": 1.5,
+    "stampColor": "#9be22d"
+   },
+   {
+    "clip": 3,
+    "from": "Nvidia",
+    "to": "Follow",
+    "kind": "chips",
+    "glow": "#3b82f6",
+    "title": "ALSO NEW",
+    "titleTop": 300,
+    "listTop": 420,
+    "items": [
+     [
+      "🛡️",
+      "National security &amp; export-control oversight panel"
+     ]
+    ]
+   }
+  ]
+ },
+ "C": {
+  "clips": [
+   "Nvidia's leadership drama just ended, but this story is far from over. Here's what's next.",
+   "He's due to sit with three House committees next week, and California's attorney general is still investigating.",
+   "And even after a thirty percent jump, the stock is still about thirty percent below its October record.",
+   "So would you buy Nvidia here, or wait? Tell me in the comments, I read every one."
+  ],
+  "hl": [
+   "drama",
+   "over",
+   "three",
+   "house",
+   "california's",
+   "investigating",
+   "thirty",
+   "record",
+   "buy",
+   "wait",
+   "comments"
+  ],
+  "hook": "HE'S BACK.<br>BUT IT'S <em>NOT OVER</em>",
+  "pill": "NVDA · WHAT'S NEXT",
+  "ticker": "NVDA <b>▲ 31.5%</b>",
+  "src": "Sources: AP · NBC · CNBC · Yahoo Finance · not financial advice",
+  "pip": {
+   "x": 540,
+   "y": 1130,
+   "r": 150
+  },
+  "cta": "BUY OR WAIT? COMMENT 👇",
+  "cta_from": "Tell",
+  "scenes": [
+   {
+    "clip": 1,
+    "from": "three",
+    "kind": "chips",
+    "glow": "#e11d2e",
+    "title": "STILL OPEN",
+    "titleTop": 300,
+    "listTop": 400,
+    "items": [
+     [
+      "🏛️",
+      "3 House committees · interview next week"
+     ],
+     [
+      "⚖️",
+      "California AG · probe continues"
+     ]
+    ]
+   },
+   {
+    "clip": 2,
+    "from": "still",
+    "kind": "gap",
+    "glow": "#e11d2e",
+    "l1": "RECORD · 6 OCT",
+    "v1": "$239",
+    "l2": "CLOSE · 23 NOV",
+    "v2": "$165",
+    "ratio": 0.69,
+    "stamp": "-31%",
+    "stampTop": 520,
+    "stampSize": 110,
+    "stampAt": 1.1,
+    "stampColor": "#ff2d42"
+   },
+   {
+    "clip": 3,
+    "from": "So",
+    "to": "Tell",
+    "kind": "poll",
+    "glow": "#eab308",
+    "note": "NOT FINANCIAL ADVICE",
+    "noteTop": 870,
+    "noteAt": 0.8
+   }
+  ]
+ }
+}

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8">
+<style>
+@font-face{font-family:Anton;src:url(file:///usr/share/fonts/truetype/google-fonts/ofl/anton/Anton-Regular.ttf)}
+@font-face{font-family:Mont;src:url("file:///usr/share/fonts/truetype/google-fonts/ofl/montserrat/Montserrat[wght].ttf");font-weight:100 900}
+@font-face{font-family:Emo;src:url(file:///usr/share/fonts/truetype/noto/NotoColorEmoji.ttf)}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1080px;height:1920px;overflow:hidden;background:transparent}
+#stage{position:absolute;inset:0;overflow:hidden;font-family:Mont,Emo,sans-serif;color:#fff}
+#card{position:absolute;inset:0;display:none;overflow:hidden;background:#05070a}
+#bg{position:absolute;inset:-200px;background:
+  linear-gradient(rgba(255,255,255,.05) 2px,transparent 2px) 0 0/90px 90px,
+  linear-gradient(90deg,rgba(255,255,255,.05) 2px,transparent 2px) 0 0/90px 90px}
+#glow{position:absolute;left:-300px;top:120px;width:1680px;height:1300px;border-radius:50%;filter:blur(150px);opacity:.55}
+#vign{position:absolute;inset:0;background:radial-gradient(ellipse at 50% 40%,transparent 45%,rgba(0,0,0,.85) 100%)}
+#content{position:absolute;inset:0}
+#prog{position:absolute;left:0;top:0;height:10px;background:linear-gradient(90deg,#76b900,#d4ff3a);z-index:20}
+#pill{position:absolute;left:54px;top:64px;padding:14px 26px 14px 58px;border-radius:40px;background:#e11d2e;font:800 34px Mont;letter-spacing:2px;z-index:20;box-shadow:0 6px 24px rgba(0,0,0,.45)}
+#pill i{position:absolute;left:24px;top:23px;width:20px;height:20px;border-radius:50%;background:#fff}
+#tick{position:absolute;right:54px;top:60px;padding:12px 24px;border-radius:18px;background:rgba(5,7,10,.72);border:2px solid rgba(255,255,255,.2);font:700 38px "DejaVu Sans Mono",monospace;z-index:20}
+#tick b{color:#9be22d}
+#src{position:absolute;left:60px;right:60px;top:168px;text-align:center;font:600 24px Mont;color:rgba(255,255,255,.5);z-index:5}
+#caps{position:absolute;left:50px;right:50px;top:1300px;text-align:center;font:900 86px/1.1 Mont;text-transform:uppercase;
+  -webkit-text-stroke:4px #000;paint-order:stroke fill;text-shadow:0 8px 0 rgba(0,0,0,.65);z-index:30}
+#caps span{display:inline-block;margin:0 16px}
+#hook{position:absolute;left:70px;right:70px;top:1020px;text-align:center;z-index:25;display:none}
+#hook div{display:inline-block;background:#e4222b;padding:18px 34px 10px;border-radius:18px;font:400 104px/1.02 Anton;letter-spacing:1px;
+  box-shadow:0 14px 40px rgba(0,0,0,.5);transform:rotate(-2deg)}
+#hook em{font-style:normal;color:#ffe14d}
+#cta{position:absolute;left:0;right:0;top:1040px;text-align:center;z-index:25;display:none}
+#cta div{display:inline-block;background:#fff;color:#0b0d12;padding:22px 44px;border-radius:70px;font:900 62px Mont;box-shadow:0 14px 40px rgba(0,0,0,.5)}
+#ring{position:absolute;border-radius:50%;border:12px solid #9be22d;box-shadow:0 0 50px rgba(155,226,45,.55);z-index:15;display:none}
+#flash{position:absolute;inset:0;background:#fff;opacity:0;z-index:40}
+.big{position:absolute;left:0;right:0;text-align:center;font-family:Anton;line-height:.95}
+.lab{position:absolute;left:0;right:0;text-align:center;font:800 46px Mont;letter-spacing:5px;color:rgba(255,255,255,.78)}
+.stamp{position:absolute;font-family:Anton;border:12px solid;padding:6px 36px;border-radius:18px;white-space:nowrap}
+.chipl{position:absolute;left:80px;right:80px;height:150px;border-radius:30px;background:rgba(255,255,255,.08);border:3px solid rgba(255,255,255,.18);
+  display:flex;align-items:center;padding:0 40px;font:800 50px/1.1 Mont}
+.chipl span.e{font:64px Emo;margin-right:30px}
+.qcard{position:absolute;left:70px;right:70px;background:#f4f1ea;color:#111;border-radius:30px;padding:50px 54px;box-shadow:0 30px 80px rgba(0,0,0,.6)}
+</style></head><body>
+<div id="stage">
+ <div id="card"><div id="bg"></div><div id="glow"></div><div id="vign"></div><div id="content"></div></div>
+ <div id="prog"></div>
+ <div id="pill"><i></i><span id="pilltxt"></span></div>
+ <div id="tick"></div>
+ <div id="src"></div>
+ <div id="hook"><div id="hooktxt"></div></div>
+ <div id="cta"><div id="ctatxt"></div></div>
+ <div id="ring"></div>
+ <div id="caps"></div>
+ <div id="flash"></div>
+</div>
+<script>
+const D=window.DATA;
+const $=id=>document.getElementById(id);
+const clamp=(x,a=0,b=1)=>Math.max(a,Math.min(b,x));
+const ease=x=>1-Math.pow(1-clamp(x),3);
+const back=x=>{x=clamp(x);const c=1.7;return 1+(c+1)*Math.pow(x-1,3)+c*Math.pow(x-1,2)};
+$('pilltxt').textContent=D.pill; $('tick').innerHTML=D.ticker;
+let built=null;
+function fmt(v,dec){return v.toFixed(dec)}
+function buildScene(s){
+  const c=$('content'); c.innerHTML=''; $('glow').style.background=s.glow||'#76b900';
+  let h='';
+  if(s.title) h+=`<div class="lab" id="ttl" style="top:${s.titleTop||300}px;${s.titleStyle||''}">${s.title}</div>`;
+  if(s.kind==='counter'){
+    h+=`<div class="big" id="num" style="top:${s.numTop||400}px;font-size:${s.size||300}px;color:${s.color||'#9be22d'}"></div>`;
+    if(s.sub) h+=`<div class="lab" id="sub" style="top:${(s.numTop||400)+(s.size||300)+20}px;font-size:40px;letter-spacing:3px">${s.sub}</div>`;
+    if(s.line) h+=`<svg id="sv" width="1080" height="260" style="position:absolute;left:0;top:${(s.numTop||400)-30-260}px"><path id="ln" fill="none" stroke="${s.color||'#9be22d'}" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/><circle id="dt" r="16" fill="#fff"/></svg>`;
+  }
+  if(s.kind==='chips'){
+    s.items.forEach((it,i)=>{h+=`<div class="chipl" id="ch${i}" style="top:${(s.listTop||420)+i*175}px"><span class="e">${it[0]}</span><span>${it[1]}</span></div>`});
+  }
+  if(s.kind==='quote'){
+    h+=`<div class="qcard" id="qc" style="top:${s.qTop||330}px"><div style="font:900 34px Mont;color:#e11d2e;letter-spacing:4px">${s.qLabel}</div>
+      <div style="font:800 76px/1.12 Mont;margin-top:20px">${s.quote}</div><div style="font:600 34px Mont;color:#555;margin-top:20px">${s.attr}</div></div>`;
+  }
+  if(s.kind==='gap'){
+    h+=`<div id="b1" style="position:absolute;left:170px;width:300px;bottom:${1920-870}px;background:#9be22d;border-radius:18px 18px 0 0"></div>
+        <div id="b2" style="position:absolute;left:610px;width:300px;bottom:${1920-870}px;background:#ff2d42;border-radius:18px 18px 0 0"></div>
+        <div class="lab" style="top:885px;left:120px;right:auto;width:400px;font-size:36px;letter-spacing:2px">${s.l1}</div>
+        <div class="lab" style="top:885px;left:560px;right:auto;width:400px;font-size:36px;letter-spacing:2px">${s.l2}</div>
+        <div id="v1" class="big" style="left:120px;right:auto;width:400px;font-size:84px"></div>
+        <div id="v2" class="big" style="left:560px;right:auto;width:400px;font-size:84px"></div>`;
+  }
+  if(s.kind==='poll'){
+    h+=`<div id="p1" style="position:absolute;left:90px;width:420px;top:520px;height:300px;border-radius:40px;background:#16a34a;font:400 130px/300px Anton;text-align:center">BUY</div>
+        <div id="p2" style="position:absolute;right:90px;width:420px;top:520px;height:300px;border-radius:40px;background:#eab308;color:#111;font:400 130px/300px Anton;text-align:center">WAIT</div>
+        <div class="big" id="or" style="top:590px;font-size:90px">?</div>`;
+  }
+  if(s.stamp) h+=`<div class="stamp" id="stp" style="left:50%;top:${s.stampTop||900}px;font-size:${s.stampSize||96}px;color:${s.stampColor||'#ffe14d'};border-color:${s.stampColor||'#ffe14d'}">${s.stamp}</div>`;
+  if(s.note) h+=`<div class="lab" id="note" style="top:${s.noteTop||820}px;font-size:40px;letter-spacing:2px;color:#fff">${s.note}</div>`;
+  c.innerHTML=h;
+}
+function render(t){
+  $('prog').style.width=(1080*t/D.dur)+'px';
+  // card scene
+  const s=D.scenes.find(s=>t>=s.t0&&t<s.t1);
+  const card=$('card'), ring=$('ring');
+  if(s){
+    if(built!==s){buildScene(s);built=s}
+    card.style.display='block';
+    const lt=t-s.t0, dur=s.t1-s.t0;
+    card.style.transform=`translateY(${(1-ease(lt/0.22))*120}px) scale(${0.96+0.04*ease(lt/0.22)})`;
+    $('bg').style.transform=`translate(${-lt*18}px,${-lt*12}px)`;
+    $('content').style.transform=`scale(${1+0.025*lt/dur})`;
+    if($('ttl')){$('ttl').style.opacity=ease((lt-0.05)/0.25);}
+    if(s.kind==='counter'){
+      const p=ease((lt-0.15)/(s.countDur||1.1)); $('num').textContent=(s.prefix||'')+fmt(s.c0+(s.c1-s.c0)*p,s.dec||0)+(s.suffix||'');
+      $('num').style.transform=`scale(${lt<0.15?0.6:back((lt-0.15)/0.35)})`;
+      if($('sub')) $('sub').style.opacity=ease((lt-0.9)/0.3);
+      if(s.line){const pts=s.line, n=pts.length, k=clamp((lt-0.1)/1.2)*(n-1); let d='';
+        for(let i=0;i<=Math.floor(k);i++){const x=90+900*i/(n-1), y=20+220*(1-pts[i]); d+=(i?'L':'M')+x+' '+y}
+        const i0=Math.floor(k), f=k-i0; if(i0<n-1){const x=90+900*(i0+f)/(n-1), y=20+220*(1-(pts[i0]+(pts[i0+1]-pts[i0])*f)); d+='L'+x+' '+y; $('dt').setAttribute('cx',x);$('dt').setAttribute('cy',y)}
+        else {$('dt').setAttribute('cx',990);$('dt').setAttribute('cy',20+220*(1-pts[n-1]))}
+        $('ln').setAttribute('d',d)}
+    }
+    if(s.kind==='chips'){s.items.forEach((it,i)=>{const e=$('ch'+i), a=(it[2]!==undefined?it[2]:0.25+i*0.55); const p=ease((lt-a)/0.25);
+      e.style.opacity=p; e.style.transform=`translateX(${(1-p)*-160}px)`; if(lt>=a && lt<a+0.35) e.style.borderColor=s.glow||'#9be22d'; else e.style.borderColor='rgba(255,255,255,.18)'})}
+    if(s.kind==='quote'){const q=$('qc'); const p=ease((lt-0.1)/0.3); q.style.opacity=p; q.style.transform=`translateY(${(1-p)*80}px) rotate(${(1-p)*-3}deg)`}
+    if(s.kind==='gap'){const p=ease((lt-0.15)/0.8); const H1=500*p, H2=500*s.ratio*p; $('b1').style.height=H1+'px'; $('b2').style.height=H2+'px';
+      $('v1').style.top=(870-H1-100)+'px'; $('v2').style.top=(870-H2-100)+'px'; $('v1').textContent=s.v1; $('v2').textContent=s.v2;
+      $('v1').style.opacity=$('v2').style.opacity=ease((lt-0.6)/0.3)}
+    if(s.kind==='poll'){const a=1+0.04*Math.sin(lt*8); $('p1').style.transform=`scale(${back(lt/0.4)*a})`; $('p2').style.transform=`scale(${back((lt-0.2)/0.4)*(2-a)})`}
+    if($('stp')){const a=s.stampAt||0.9; const p=clamp((lt-a)/0.18); $('stp').style.opacity=p>0?1:0; $('stp').style.transform=`translateX(-50%) rotate(-6deg) scale(${p>0?1+1.2*(1-p):0})`}
+    if($('note')){$('note').style.opacity=ease((lt-(s.noteAt||1.2))/0.3)}
+    // pip ring
+    ring.style.display='block'; const P=D.pip; const rp=back(clamp((lt-0.12)/0.3));
+    ring.style.left=(P.x-P.r-12)+'px'; ring.style.top=(P.y-P.r-12)+'px'; ring.style.width=ring.style.height=(2*P.r+24)+'px';
+    ring.style.transform=`scale(${rp})`;
+    $('src').textContent=s.src||D.src||''; $('src').style.display='block';
+  } else {card.style.display='none'; ring.style.display='none'; built=null; $('src').style.display='none'}
+  // flash on card in
+  let fl=0; for(const sc of D.scenes){const d=t-sc.t0; if(d>=0&&d<0.12) fl=0.55*(1-d/0.12)} $('flash').style.opacity=fl;
+  // hook
+  const H=D.hook; if(t>=H.t0&&t<H.t1){$('hook').style.display='block'; $('hooktxt').innerHTML=H.html; const p=back((t-H.t0)/0.3);
+    $('hook').style.transform=`scale(${p})`} else $('hook').style.display='none';
+  // cta
+  const C=D.cta; if(C&&t>=C.t0&&t<C.t1){$('cta').style.display='block'; $('ctatxt').innerHTML=C.html; const p=back((t-C.t0)/0.3);
+    $('cta').style.transform=`scale(${p*(1+0.03*Math.sin((t-C.t0)*7))})`} else $('cta').style.display='none';
+  // captions: groups of up to 3 words
+  const caps=$('caps'); const w=D.words; let gi=-1;
+  for(let i=0;i<w.length;i++){ if(t>=w[i].t0-0.02 && t<(w[i].gend)) {gi=i;break} }
+  if(gi<0){caps.innerHTML='';}
+  else{const g=w[gi].g; const grp=w.filter(x=>x.g===g);
+    caps.innerHTML=grp.map(x=>{const on=t>=x.t0-0.02; const col=x.hl?'#ffe14d':'#fff';
+      return `<span style="color:${col};opacity:${on?1:0.0};transform:scale(${on?(t-x.t0<0.08?1.12:1):0.9})">${x.w}</span>`}).join(' ');
+    caps.style.top=(s?1300:1300)+'px';}
+}
+window.render=render;
+</script></body></html>

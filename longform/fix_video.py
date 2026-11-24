@@ -28,7 +28,7 @@ def main(req_path):
             sn[k] = cur[k]
     if r.get("description_prepend") and not sn["description"].startswith(r["description_prepend"][:40]):
         sn["description"] = r["description_prepend"].rstrip() + "\n\n" + sn["description"]
-    if r.get("privacy") in ("private", "unlisted"):  # 23 Nov 2026: take a scheduled / public video off (reversible)
+    if r.get("privacy") in ("private", "unlisted", "public"):  # 23 Nov: off (private/unlisted); 24 Nov: "public" = publish NOW
         st = yt.videos().list(part="status", id=vid).execute()["items"][0]["status"]
         st = {k: st[k] for k in ("selfDeclaredMadeForKids", "embeddable", "license", "publicStatsViewable",
                                  "containsSyntheticMedia") if k in st}
