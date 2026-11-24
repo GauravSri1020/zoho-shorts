@@ -6,6 +6,28 @@ Is file ko har session ke end pe update karo, taaki agla chat yahin se shuru kar
 
 Gaurav jab bhi kuch bhi change karne bole: SABSE PEHLE backup - `backup-YYYY-MM-DD-<kya-badal-rahe-ho>` branch main se banao (aur agar video ka kaam hai to latest Short ka artifact download karo). Tabhi code chhuo. Kuch bigde to us branch se purana code wapas lo.
 
+## 24 Nov 2026 (11:48-14:30 IST) - 3 NVIDIA Shorts WITH Flow, posted public at once; Zoho steps = real screenshots only
+
+Gaurav: NVIDIA news is big today (Huang reinstated as CEO 23 Nov, NVDA +31.5% to $165.05, ~$1T in a day) -> make 2-3
+NVIDIA Shorts with Flow on the OTHER Flow account (srig9056 / "Golu Sri", 1,050 credits, has the "Me" avatar), post them
+right away (not scheduled). Gestures different in every clip (no copied gestures), clothes + hair identical within a Short.
+- 3 Shorts x 4 clips (look per Short: A bomber + styled-up hair, B navy suit + glasses + side part, C green sweater +
+  wavy hair). ~280 credits incl. retries. Flow REFUSES dialogue naming a prominent person ("Jensen Huang", even
+  "Nvidia's CEO resigned") -> spoken lines without names; names/facts on the cards. Queuing too fast gave one
+  "unusual activity" failure -> one clip at a time. One clip had a red tilak (prompt forbids it) -> regenerated.
+- Renderer longform/nvidia24 (branch long-videos): face clips (Veo watermark cropped 6%, AI label stays on via
+  containsSyntheticMedia) + kinetic news cards (counter, crash/rise line, chips, quote card, gap bars, buy/wait poll)
+  with the LIVE face in a ring (OpenCV face crop per scene - never faceless), word captions, BREAKING pill + ticker,
+  whooshes, pulse bed, -14 LUFS. Bugs fixed: loudnorm 192 kHz cut the mix short (aresample 48k), per-clip audio padded
+  to video length (lip sync), graphics cached in ov.mov (re-composite in 2 min).
+- Posted: A "Nvidia Just Added $1 TRILLION in ONE Day" ZOwP0M2POpQ, C "Jensen Huang Is Back. But Nvidia's Story Isn't
+  Over" Xseg73YtbGs, B "Why Nvidia's Board Changed Its Mind in Days" SLMFvaAq7qE (upload run hung on apt install once - cancel + rerun fixed it). fix_video.py now accepts
+  privacy "public" = publish now (upload.py always schedules +45 min first).
+- Books-style steps: Gaurav wants every Zoho Short to show REAL screenshots step by step like the Books Shorts. flow.py
+  now rejects a Zoho script if any STEP has no real screenshot in assets/screens (library: Books 19, CRM 7, Desk 12) ->
+  the next topic is tried. More apps (Campaigns, Bigin, Sign, WorkDrive, Cliq, Creator, Flow) need a capture session:
+  Gaurav opens the app with sample data, Claude takes the screenshots (rule 5).
+
 ## 23 Nov 2026 shaam (17:45-18:45 IST) - Desk AI agents Short bana, 2 "ganje" Shorts private, QA look check
 
 Gaurav: "aaj wale videos bana ke schedule karte hain".
