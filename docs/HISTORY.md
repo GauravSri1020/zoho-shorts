@@ -6,6 +6,30 @@ Is file ko har session ke end pe update karo, taaki agla chat yahin se shuru kar
 
 Gaurav jab bhi kuch bhi change karne bole: SABSE PEHLE backup - `backup-YYYY-MM-DD-<kya-badal-rahe-ho>` branch main se banao (aur agar video ka kaam hai to latest Short ka artifact download karo). Tabhi code chhuo. Kuch bigde to us branch se purana code wapas lo.
 
+## 24 Nov 2026 (14:47-17:30 IST) - Jensen Huang long video + 10 Jensen Huang Shorts (Flow + "Mac screen" steps)
+
+Gaurav: long video on why Jensen Huang came back (board reasons, assumptions from news, what next, suspense, simple, not
+news-reporter style), then ~10 Shorts today day+night, "Jensen Huang" in every keyword, few Flow clips, middle part as a
+premium MacBook / Claude-style screen with step-by-step answers (NOT the board/grid look), cartoon stickers, new look +
+background per Short, a bit of Jensen.
+- Long video bNFYyQsm5Y8 "Why Nvidia Brought Jensen Huang Back: The 11-Day U-Turn Explained" (7.07 min, QA ok, public
+  24 Nov 19:30 IST).
+- 10 Shorts, renderer longform/jh24 (branch long-videos): 3 Flow clips each (hook / face ring / CTA), middle = laptop
+  "AI Assistant" chat typing the question, rows/tiles/timeline appear on the spoken word, emoji stickers, face PiP ring,
+  karaoke captions, -14 LUFS. Clips: flow-clips/jh-20261124/.
+- TILAK PROBLEM (important): Veo put a small red tilak between the brows in ~10 of 30 clips although the prompt forbids it,
+  often faint and only in some frames; normal contact sheets miss it. jh01/jh02/jh04 were already scheduled -> set
+  private (F0y-bi6lkw4, gcd1OF_Pjus, WAPTl0k7MLA) and re-uploaded clean. Fix: longform/jh24/detilak.py (face box ->
+  glabella ellipse, red chroma pulled to the surrounding skin; detilak_inpaint.py for a strong one) run on EVERY clip,
+  then faces.py check sheet (forehead crops at several frames). Also found + regenerated: bead mala in jh09_1 and
+  jh06_2, messy hair in jh06_1 (Flow Golu Sri credits now ~26, reset 13 Dec).
+- Schedule (UTC / IST): jh01 d-ZyqZ4Vi4s 12:30/18:00, jh04 _ie6ysr7Tic 13:10/18:40, jh07 vRVEbN_snaA 13:40/19:10,
+  jh02 2w00WKSzTDE 14:30/20:00, jh03 p4K_fbBgUuM 15:00/20:30, jh05 MzEV71jU4K4 15:30/21:00, Desk AI 1aIiJMISHZc
+  16:00/21:30, jh08 JYHGbt1M_Nw 16:30/22:00, jh09 mzdXrQALyOE 17:00/22:30, jh10 bQr5bNsTyYw 17:30/23:00,
+  jh06 __VxbN-lFjQ 18:00/23:30. Old private copies (do not republish): F0y-bi6lkw4, WAPTl0k7MLA, gcd1OF_Pjus.
+- TODO: put the detilak step + a mala/necklace check into the main robot (flow.py / benchmark.py look_check) so the
+  daily Shorts get it too.
+
 ## 24 Nov 2026 (11:48-14:30 IST) - 3 NVIDIA Shorts WITH Flow, posted public at once; Zoho steps = real screenshots only
 
 Gaurav: NVIDIA news is big today (Huang reinstated as CEO 23 Nov, NVDA +31.5% to $165.05, ~$1T in a day) -> make 2-3
