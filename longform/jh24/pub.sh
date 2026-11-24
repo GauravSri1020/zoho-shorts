@@ -11,7 +11,7 @@ cd /tmp/lp && git add previews/$ID.* && git commit -q -m "preview: $ID (Jensen H
 Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>
 Claude-Session: https://claude.ai/code/session_01Xrtm8Hv76gXmCZ4TCqdR6m" && git push -q origin longform-previews
 cd /tmp/lv && git pull -q --rebase
-echo "{\"id\": \"$ID\", \"publish_at\": \"$PUB\", \"upscale\": false, \"why\": \"Gaurav 24 Nov: ~10 Jensen Huang Shorts today\"}" > docs/longform/upload-requests/$ID.json
+echo "{\"id\": \"$ID\", \"publish_at\": \"$PUB\", \"upscale\": false, \"why\": \"Gaurav 24 Nov: ~10 Jensen Huang Shorts today (tilak-free re-render)\"}" > docs/longform/upload-requests/$ID.json
 git add docs/longform/upload-requests/$ID.json && git commit -q -m "upload request: $ID at $PUB
 
 Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>
