@@ -33,8 +33,12 @@
    Zoho's LinkedIn page (public pages via WebFetch; never log in), X/Twitter trending via news coverage,
    Google Trends (IN / AE / SA / US), YouTube search suggestions (what people type), Zoho Community + zoho.com/blog,
    Product Hunt, official regulators (MoF UAE, FTA, ZATCA, GSTN). A trend counts when >= 3 outlets carry it today.
-6. GitHub Actions minutes are limited (Free plan 2,000 min / month - ran out on 18 Nov 2026). Keep the brain run
-   short: at most ONE test render per day, no 4K test renders, stop after the report.
+6. The repo is public now, so GitHub Actions minutes are free (the 2,000 min/month limit of 18 Nov no longer
+   applies). Do the FULL run every day. 25 Nov 2026: the brain stopped after 29 turns with nothing made and no
+   report -> no long video that day. Rules since then: (a) the long queue must never be empty at the end of a run -
+   no news topic passes the fact rules = make an evergreen Zoho how-to (real screens: Books / CRM / Desk), never
+   "nothing"; (b) always write the "Daily report <date>" issue, also on failure; (c) the workflow now opens an issue
+   by itself when a run leaves no new script or an empty long queue, and saves the transcript as artifact brain-log.
 
 
 Gaurav: "2 Shorts + 1 long video EVERY day, automatically - research, make, upload, schedule. Always keep at least

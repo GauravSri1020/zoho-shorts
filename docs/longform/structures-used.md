@@ -12,3 +12,5 @@ date | type | id | structure | hook_type | title
 2026-11-21 | long | zoho-books-automation | before-after-demo | result-first | Zoho Books Automation: Recurring Invoices, Payment Reminders & Workflow Rules
 2026-11-24 | long | nvidia-huang-u-turn | timeline-update | question | Why Nvidia Brought Jensen Huang Back: The 11-Day U-Turn Explained
 2026-11-24 | short | flow-20261124-zoho-crm-vibe | rapid-faq | question | Zoho CRM Vibe: Build an App by Typing, No Code
+2026-11-25 | long | zoho-crm-vibe | rapid-faq | question | Zoho CRM Vibe Explained: Build Apps by Typing (7 Questions)
+2026-11-25 | short | vibe-a | news-impact-action | result-first | Zoho CRM Vibe: Build an App by Typing (What to Know)

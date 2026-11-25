@@ -1,0 +1,846 @@
+{
+ "id": "zoho-crm-vibe",
+ "title": "Zoho CRM Vibe Explained: Build Apps by Typing (7 Questions Answered)",
+ "structure": "rapid-faq",
+ "hook_type": "question",
+ "voice": {
+  "engine": "kokoro",
+  "voice": "am_onyx",
+  "speed": 1.1
+ },
+ "research": "docs/longform/research/zoho-crm-vibe.md",
+ "intro_chapter": "Vibe in 30 seconds",
+ "chapters": [
+  "What is Vibe?",
+  "What can you build?",
+  "How do you build with it?",
+  "Is it safe?",
+  "Who gets it?",
+  "Which AI, and what does it cost?",
+  "Is it ready?"
+ ],
+ "caption_fix": [
+  [
+   "C R M",
+   "CRM"
+  ],
+  [
+   "A I",
+   "AI"
+  ],
+  [
+   "U S",
+   "US"
+  ],
+  [
+   "U A E",
+   "UAE"
+  ],
+  [
+   "I T",
+   "IT"
+  ],
+  [
+   "A P I",
+   "API"
+  ],
+  [
+   "Z K S",
+   "ZKS"
+  ],
+  [
+   "B Y O K",
+   "BYOK"
+  ],
+  [
+   "Open A I",
+   "OpenAI"
+  ]
+ ],
+ "thumb": {
+  "chip": "ZOHO CRM",
+  "l1": "TYPE IT.",
+  "l2": "GET AN APP",
+  "l3": "VIBE",
+  "pill": "7 QUESTIONS",
+  "pose": "type",
+  "accent": "#38bdf8"
+ },
+ "tags": [
+  "Zoho CRM",
+  "Zoho CRM Vibe",
+  "Zoho Vibe",
+  "AI app builder",
+  "no code CRM",
+  "Zoho CRM AI",
+  "Zoho CRM tutorial",
+  "Zoho CRM 2026",
+  "prompt to app",
+  "Zoho CRM custom tab",
+  "Zoho One",
+  "Zoho CRM Plus",
+  "CRM dashboard"
+ ],
+ "sources": [
+  {
+   "name": "Zoho blog: Introducing Vibe, a prompt-to-app AI builder in Zoho CRM",
+   "url": "https://www.zoho.com/blog/crm/introducing-vibe-ai-app-builder-within-zohocrm.html"
+  },
+  {
+   "name": "Zoho Community: Introducing Vibe in CRM (official announcement + support replies)",
+   "url": "https://help.zoho.com/portal/en/community/topic/introducing-vibe-in-zoho-crm-turn-your-ideas-to-live-experience"
+  }
+ ],
+ "description": "Zoho CRM Vibe is a new AI app builder inside Zoho CRM: describe what you need in plain words and it builds a working tab on your live CRM data. In this video, 7 questions: what Vibe is, what you can build (Zoho's own examples: sales leaderboard, account console, commission calculator), the build tools (Suggestions, Surprise Me, Enhance, Discuss mode, Design mode, Snip tool, @ context), the six-area Security Review and Revision History, who gets it (Enterprise, Ultimate, Zoho One Enterprise, Zoho CRM Plus; Manage Extensibility permission; phased rollout starting with US, India and EU data centres), which AI it uses (OpenAI and Anthropic models, ZKS and BYOK) and what users report in the first week.\n\nChapters\n{chapters}\n\nSources (checked 25 Nov 2026)\n- Zoho blog - Introducing Vibe: https://www.zoho.com/blog/crm/introducing-vibe-ai-app-builder-within-zohocrm.html\n- Zoho Community - Introducing Vibe in CRM: https://help.zoho.com/portal/en/community/topic/introducing-vibe-in-zoho-crm-turn-your-ideas-to-live-experience\n\nZoho's posts do not list a separate price for Vibe; availability depends on your edition, permission and data centre.\nThis video uses an AI-generated presenter, voice and animations; facts were checked against the sources above.\nIndependent channel. Not affiliated with or endorsed by Zoho Corporation. Zoho is a trademark of Zoho Corporation.\n\n#ZohoCRM #ZohoVibe #NoCode #AIAppBuilder #GSXAutomation",
+ "scenes": [
+  {
+   "id": "s01",
+   "type": "HOOK",
+   "chapter": 0,
+   "visual": {
+    "kind": "hook2",
+    "beats": [
+     {
+      "t": "headline",
+      "tag": "ZOHO CRM",
+      "source": "Zoho blog",
+      "date": "Nov 2026",
+      "text": "Introducing Vibe: a prompt-to-app AI builder",
+      "color": "sky"
+     },
+     {
+      "t": "stat",
+      "value": "6",
+      "label": "areas the Security Review checks",
+      "color": "teal"
+     },
+     {
+      "t": "stat",
+      "value": "3",
+      "label": "data centres first: US, India, EU",
+      "color": "amber"
+     },
+     {
+      "t": "title",
+      "title": "Zoho CRM Vibe: 7 questions",
+      "sub": "answered in plain English",
+      "chips": [
+       "What",
+       "Build",
+       "Safe",
+       "Who",
+       "Cost"
+      ]
+     }
+    ]
+   },
+   "lines": [
+    "Zoho CRM now has a tool called Vibe, where you type what you want, and it builds a working app inside your C R M.",
+    "Before it goes live, an A I security review checks it in six areas.",
+    "But it is not in every account yet. The rollout started with the U S, India and European data centres.",
+    "So in this video, I will answer the seven questions people are actually asking about Vibe, in plain English."
+   ]
+  },
+  {
+   "id": "s02",
+   "type": "CARTOON",
+   "chapter": 0,
+   "visual": {
+    "kind": "story",
+    "beats": [
+     {
+      "pose": "present",
+      "prop": "doc",
+      "text": "Zoho's own posts"
+     },
+     {
+      "pose": "point",
+      "prop": "magnifier",
+      "text": "Checked 25 Nov"
+     },
+     {
+      "pose": "shrug",
+      "prop": "warning",
+      "text": "Claims = labelled",
+      "stamp": "FACTS",
+      "stamp_color": "green"
+     }
+    ]
+   },
+   "lines": [
+    "Quick note first. Everything here comes from Zoho's own blog and its official community announcement.",
+    "I checked both on the twenty fifth of November.",
+    "Where something is still unclear, like pricing, I will say so instead of guessing."
+   ]
+  },
+  {
+   "id": "c1",
+   "type": "CHAPTER",
+   "chapter": 1,
+   "visual": {
+    "num": 1,
+    "title": "What is Vibe?"
+   },
+   "lines": [
+    "Question one. What is Vibe?"
+   ]
+  },
+  {
+   "id": "s03",
+   "type": "CARTOON",
+   "chapter": 1,
+   "visual": {
+    "kind": "story",
+    "beats": [
+     {
+      "pose": "type",
+      "prop": "laptop",
+      "text": "You describe it"
+     },
+     {
+      "pose": "present",
+      "prop": "chart_up",
+      "text": "It builds it"
+     },
+     {
+      "pose": "cheer",
+      "prop": "robot",
+      "text": "On live CRM data"
+     }
+    ]
+   },
+   "lines": [
+    "Vibe is an A I app builder that lives inside Zoho C R M.",
+    "You describe what you need in normal words, and it creates a working app, an internal tool, a custom page, a dashboard or a tracker.",
+    "And it shows your live C R M data in that new screen, so it is not a mock up. It is the real thing."
+   ]
+  },
+  {
+   "id": "s04",
+   "type": "BOARD",
+   "chapter": 1,
+   "visual": {
+    "kind": "flow2",
+    "title": "From idea to live tab",
+    "steps": [
+     [
+      "Type",
+      "what you need"
+     ],
+     [
+      "Vibe builds",
+      "the screen + logic"
+     ],
+     [
+      "Check",
+      "Security Review"
+     ],
+     [
+      "Publish",
+      "for your users"
+     ]
+    ],
+    "footer": "No separate setup or deployment step"
+   },
+   "lines": [
+    "The flow is simple.",
+    "You type your idea.",
+    "Vibe builds the screen and the logic behind it.",
+    "You run a security review.",
+    "And then you publish it for your team. Zoho says there is no separate setup, configuration or deployment step."
+   ]
+  },
+  {
+   "id": "s05",
+   "type": "CARTOON",
+   "chapter": 1,
+   "visual": {
+    "kind": "story",
+    "beats": [
+     {
+      "pose": "present",
+      "prop": "doc",
+      "text": "First release: Tabs"
+     },
+     {
+      "pose": "point",
+      "prop": "clock",
+      "text": "Next: app switcher + detail pages"
+     }
+    ]
+   },
+   "lines": [
+    "One important detail. In this first release, Vibe builds Tabs inside your C R M.",
+    "Zoho says front end apps for the app switcher and custom detail pages for your modules are coming next, but it gives no date."
+   ]
+  },
+  {
+   "id": "c2",
+   "type": "CHAPTER",
+   "chapter": 2,
+   "visual": {
+    "num": 2,
+    "title": "What can you build?"
+   },
+   "lines": [
+    "Question two. What can you actually build?"
+   ]
+  },
+  {
+   "id": "s06",
+   "type": "BOARD",
+   "chapter": 2,
+   "visual": {
+    "kind": "checklist",
+    "title": "Zoho's own examples",
+    "items": [
+     "Sales leaderboard + forecasts",
+     "Account management console",
+     "Commission calculator",
+     "Property tracker (real estate)",
+     "Admissions pipeline (education)"
+    ]
+   },
+   "lines": [
+    "Zoho gives a few real examples.",
+    "A sales leaderboard with revenue trends, forecasts, a sales funnel and team rankings.",
+    "An account management console that flags risky accounts and renewals coming up in the next ninety days.",
+    "A commission calculator with tiers, deal bonuses and live projected earnings for each rep.",
+    "And in its blog, industry ideas like a property tracker for real estate and an admissions pipeline for education."
+   ]
+  },
+  {
+   "id": "s07",
+   "type": "BOARD",
+   "chapter": 2,
+   "visual": {
+    "kind": "stat",
+    "title": "The commission example",
+    "stats": [
+     {
+      "value": "5%",
+      "label": "base rate",
+      "color": "teal"
+     },
+     {
+      "value": "12%",
+      "label": "tier above 100% quota",
+      "color": "green"
+     },
+     {
+      "value": "1.5x",
+      "label": "accelerator above 120%",
+      "color": "amber"
+     }
+    ],
+    "footer": "Zoho's sample defaults, all editable"
+   },
+   "lines": [
+    "The commission example shows how detailed a prompt can be.",
+    "Zoho's sample starts with a five percent base rate, goes to twelve percent above one hundred percent of quota, and adds a one point five times accelerator above one hundred and twenty percent.",
+    "Every one of those numbers can be changed right on the page. That is the kind of tool that normally needs a developer."
+   ]
+  },
+  {
+   "id": "s08b",
+   "type": "BOARD",
+   "chapter": 2,
+   "visual": {
+    "kind": "checklist",
+    "title": "Ideas by industry (Zoho blog)",
+    "items": [
+     "Real estate: property tracker",
+     "Hospitality: group-booking dashboard",
+     "Financial services: onboarding tracker",
+     "Education: admissions pipeline"
+    ]
+   },
+   "lines": [
+    "Zoho's blog also gives ideas by industry. A real estate team could build a property tracker that shows every listing and its stage.",
+    "A hotel group could build a dashboard for group bookings.",
+    "A financial services firm could track new client onboarding, step by step.",
+    "And a school or college could run its admissions pipeline from one screen."
+   ]
+  },
+  {
+   "id": "s08",
+   "type": "CARTOON",
+   "chapter": 2,
+   "visual": {
+    "kind": "story",
+    "beats": [
+     {
+      "pose": "point",
+      "prop": "office",
+      "text": "Your process, your screen"
+     },
+     {
+      "pose": "present",
+      "prop": "stack",
+      "text": "One tab per job"
+     }
+    ]
+   },
+   "lines": [
+    "So the real idea is this: instead of bending your process to fit a standard C R M screen, you describe the screen your team actually needs.",
+    "Start with one job, like a weekly pipeline review, and build one tab for that."
+   ]
+  },
+  {
+   "id": "c3",
+   "type": "CHAPTER",
+   "chapter": 3,
+   "visual": {
+    "num": 3,
+    "title": "How do you build with it?"
+   },
+   "lines": [
+    "Question three. How do you actually build with it?"
+   ]
+  },
+  {
+   "id": "s09",
+   "type": "BOARD",
+   "chapter": 3,
+   "visual": {
+    "kind": "checklist",
+    "title": "Ways to start",
+    "items": [
+     "Suggestions: ready-made prompts",
+     "Surprise Me: ideas for your org",
+     "Enhance: AI sharpens your prompt",
+     "Discuss mode: it asks you first",
+     "Context with @: your modules"
+    ]
+   },
+   "lines": [
+    "If you do not know where to start, pick one of the ready made suggestions.",
+    "Surprise Me gives you prompt ideas tailored to your organisation.",
+    "Enhance takes your rough idea and turns it into a clear, detailed prompt.",
+    "Discuss mode lets the A I ask you clarifying questions before it builds anything.",
+    "And if you type the at sign, you can attach your modules or connections, so it understands your real C R M structure."
+   ]
+  },
+  {
+   "id": "s10",
+   "type": "BOARD",
+   "chapter": 3,
+   "visual": {
+    "kind": "flow2",
+    "title": "Then fix the details",
+    "steps": [
+     [
+      "Design mode",
+      "edit in a property panel"
+     ],
+     [
+      "Snip tool",
+      "circle one part, describe the change"
+     ],
+     [
+      "Voice + images",
+      "prompt the way you like"
+     ]
+    ],
+    "footer": "Prompts in English, Japanese, French, Korean and more"
+   },
+   "lines": [
+    "After the first version, you have two ways to fix details.",
+    "Design mode gives you a property panel for appearance, borders, layout and position, like a normal design tool.",
+    "The Snip tool lets you draw around one part of the screen and describe the change, so the A I only touches that area.",
+    "You can also use presets, commands, image based prompts and voice input, in English, Japanese, French, Korean and more."
+   ]
+  },
+  {
+   "id": "s11",
+   "type": "CARTOON",
+   "chapter": 3,
+   "visual": {
+    "kind": "story",
+    "beats": [
+     {
+      "pose": "type",
+      "prop": "laptop",
+      "text": "Tip: be specific"
+     },
+     {
+      "pose": "point",
+      "prop": "doc",
+      "text": "Name fields + numbers"
+     },
+     {
+      "pose": "cheer",
+      "prop": "chart_up",
+      "text": "Better first draft"
+     },
+     {
+      "pose": "present",
+      "prop": "magnifier",
+      "text": "Fix parts, don't restart"
+     }
+    ]
+   },
+   "lines": [
+    "My tip: write your prompt like a brief to a designer.",
+    "Name the exact fields, the numbers and the actions people should take.",
+    "Zoho's own example prompts are long and detailed, and that is why their first drafts look finished.",
+    "And if the first result is not right, do not start again from zero. Use Discuss mode or the Snip tool to fix only the part that is wrong."
+   ]
+  },
+  {
+   "id": "c4",
+   "type": "CHAPTER",
+   "chapter": 4,
+   "visual": {
+    "num": 4,
+    "title": "Is it safe?"
+   },
+   "lines": [
+    "Question four. Is it safe to publish what the A I builds?"
+   ]
+  },
+  {
+   "id": "s12",
+   "type": "BOARD",
+   "chapter": 4,
+   "visual": {
+    "kind": "checklist",
+    "title": "Security Review: 6 areas",
+    "items": [
+     "Packages",
+     "Source code",
+     "Connections",
+     "Outbound APIs",
+     "Privacy",
+     "Performance"
+    ]
+   },
+   "lines": [
+    "Before anything goes live, you run a Security Review, and the A I checks the app across six categories.",
+    "Packages.",
+    "Source code.",
+    "Connections.",
+    "Outbound A P I calls.",
+    "Privacy concerns, and performance improvements."
+   ]
+  },
+  {
+   "id": "s13",
+   "type": "CARTOON",
+   "chapter": 4,
+   "visual": {
+    "kind": "story",
+    "beats": [
+     {
+      "pose": "present",
+      "prop": "lock",
+      "text": "Isolated engine"
+     },
+     {
+      "pose": "point",
+      "prop": "clock",
+      "text": "Revision History"
+     },
+     {
+      "pose": "worried",
+      "prop": "magnifier",
+      "text": "You still review it",
+      "stamp": "CHECK",
+      "stamp_color": "amber"
+     }
+    ]
+   },
+   "lines": [
+    "Zoho says the apps run inside an isolated engine, for security and performance.",
+    "Every published version is kept in Revision History, so you can roll back with one click.",
+    "But an automatic review is not a replacement for you. Test with real users and real data before the whole team depends on it."
+   ]
+  },
+  {
+   "id": "c5",
+   "type": "CHAPTER",
+   "chapter": 5,
+   "visual": {
+    "num": 5,
+    "title": "Who gets it?"
+   },
+   "lines": [
+    "Question five. Who actually gets Vibe?"
+   ]
+  },
+  {
+   "id": "s14",
+   "type": "BOARD",
+   "chapter": 5,
+   "visual": {
+    "kind": "checklist",
+    "title": "Who can use it",
+    "items": [
+     "Enterprise + Ultimate editions",
+     "Zoho One Enterprise, CRM Plus",
+     "Permission: Manage Extensibility",
+     "Rollout: US, India, EU first"
+    ]
+   },
+   "lines": [
+    "According to Zoho's blog, Vibe is for the Enterprise and Ultimate editions of Zoho C R M.",
+    "It is also listed for Zoho One Enterprise and Zoho C R M Plus.",
+    "Inside a company, only users with the Manage Extensibility permission see Vibe in the left menu. Everyone else does not see it at all.",
+    "And the rollout is phased. It started with the U S, India and European data centres."
+   ]
+  },
+  {
+   "id": "s15",
+   "type": "CARTOON",
+   "chapter": 5,
+   "visual": {
+    "kind": "story",
+    "beats": [
+     {
+      "pose": "shrug",
+      "prop": "clock",
+      "text": "Gulf DC? Not listed yet"
+     },
+     {
+      "pose": "point",
+      "prop": "magnifier",
+      "text": "Check your left menu"
+     }
+    ]
+   },
+   "lines": [
+    "If your account is on another data centre, like the U A E or Saudi Arabia, Zoho has not listed a date yet.",
+    "The easiest check is simple: open Zoho C R M as an admin and look for Vibe in the left menu."
+   ]
+  },
+  {
+   "id": "c6",
+   "type": "CHAPTER",
+   "chapter": 6,
+   "visual": {
+    "num": 6,
+    "title": "Which AI, and what does it cost?"
+   },
+   "lines": [
+    "Question six. Which A I does it use, and what does it cost?"
+   ]
+  },
+  {
+   "id": "s15b",
+   "type": "CARTOON",
+   "chapter": 5,
+   "visual": {
+    "kind": "story",
+    "beats": [
+     {
+      "pose": "shrug",
+      "prop": "lock",
+      "text": "Not an admin? No Vibe"
+     },
+     {
+      "pose": "present",
+      "prop": "office",
+      "text": "Ask your admin"
+     }
+    ]
+   },
+   "lines": [
+    "If you are not an admin and you cannot find Vibe, that is expected, not a bug.",
+    "Ask your C R M admin to try it first. Honestly, that is good governance, because one person should decide which new tabs the whole team sees."
+   ]
+  },
+  {
+   "id": "s16",
+   "type": "BOARD",
+   "chapter": 6,
+   "visual": {
+    "kind": "headline",
+    "title": "What Zoho says",
+    "items": [
+     {
+      "source": "Zoho Community",
+      "date": "Nov 2026",
+      "text": "Vibe uses frontier models from OpenAI and Anthropic",
+      "color": "sky"
+     },
+     {
+      "source": "Zoho Community",
+      "date": "Nov 2026",
+      "text": "Configure them with ZKS and BYOK",
+      "color": "teal"
+     }
+    ]
+   },
+   "lines": [
+    "Zoho says Vibe uses frontier models from Open A I and Anthropic.",
+    "You can configure them with Z K S and B Y O K, which means bring your own key from the A I provider."
+   ]
+  },
+  {
+   "id": "s16b",
+   "type": "CARTOON",
+   "chapter": 6,
+   "visual": {
+    "kind": "story",
+    "beats": [
+     {
+      "pose": "present",
+      "prop": "lock",
+      "text": "UI stays in CRM"
+     },
+     {
+      "pose": "point",
+      "prop": "doc",
+      "text": "Ask your IT team"
+     }
+    ]
+   },
+   "lines": [
+    "Zoho's blog also says the interface you build stays inside your C R M, so your data does not need to move to a separate third party app builder.",
+    "If your company has strict A I rules, ask your I T or compliance team how the B Y O K and Z K S settings fit your policy before you start."
+   ]
+  },
+  {
+   "id": "s17",
+   "type": "CARTOON",
+   "chapter": 6,
+   "visual": {
+    "kind": "story",
+    "beats": [
+     {
+      "pose": "worried",
+      "prop": "warning",
+      "text": "No price in Zoho's posts"
+     },
+     {
+      "pose": "point",
+      "prop": "stack",
+      "text": "BYOK = your AI credits"
+     },
+     {
+      "pose": "present",
+      "prop": "chart_up",
+      "text": "Watch your usage"
+     }
+    ]
+   },
+   "lines": [
+    "What about price? Zoho's announcement posts do not list a separate price for Vibe, so I will not guess one.",
+    "But one thing is clear from Zoho's support replies: if you use your own key, generation uses credits on your own A I provider account, and when those credits run out, Vibe stops with an error.",
+    "So if you plan to test it a lot, keep an eye on the usage page at your A I provider."
+   ]
+  },
+  {
+   "id": "c7",
+   "type": "CHAPTER",
+   "chapter": 7,
+   "visual": {
+    "num": 7,
+    "title": "Is it ready?"
+   },
+   "lines": [
+    "Question seven, the honest one. Is it ready?"
+   ]
+  },
+  {
+   "id": "s18",
+   "type": "BOARD",
+   "chapter": 7,
+   "visual": {
+    "kind": "compare",
+    "title": "Early days: what users say",
+    "left": {
+     "title": "Working",
+     "items": [
+      "Users got apps built",
+      "Zoho fixed a 'stuck' bug",
+      "Big potential"
+     ]
+    },
+    "right": {
+     "title": "Not yet",
+     "items": [
+      "Some prompts stalled",
+      "Admins want to hide it",
+      "Clearer errors promised"
+     ]
+    },
+    "cues": [
+     [
+      0,
+      "L0",
+      "R0"
+     ],
+     [
+      1,
+      "L1",
+      "R1"
+     ],
+     [
+      2,
+      "L2",
+      "R2"
+     ]
+    ]
+   },
+   "lines": [
+    "In the first week, the community thread shows both sides.",
+    "Some users built working apps, while others saw prompts stuck on thinking. Zoho says it found and fixed an issue that caused that.",
+    "Several admins asked for a way to hide Vibe by role, and Zoho says left menu customisation is being worked on, along with clearer error messages."
+   ]
+  },
+  {
+   "id": "s19",
+   "type": "BOARD",
+   "chapter": 7,
+   "visual": {
+    "kind": "checklist",
+    "title": "Your checklist",
+    "items": [
+     "Check your edition",
+     "Admin: look for Vibe in left menu",
+     "Start with one Tab",
+     "Run the Security Review",
+     "Test before rollout"
+    ]
+   },
+   "lines": [
+    "So here is your checklist. First, check that you are on a supported edition.",
+    "As an admin, look for Vibe in the left menu.",
+    "Start with one small tab for one real job.",
+    "Run the Security Review before you publish.",
+    "And test it with a few users before the whole team uses it."
+   ]
+  },
+  {
+   "id": "s20",
+   "type": "CARTOON",
+   "chapter": 7,
+   "visual": {
+    "kind": "celebrate2",
+    "top": "VIBE",
+    "big": "7",
+    "sub": "questions answered"
+   },
+   "lines": [
+    "That is Zoho C R M Vibe in seven questions."
+   ]
+  },
+  {
+   "id": "s21",
+   "type": "OUTRO",
+   "chapter": 7,
+   "visual": {
+    "kind": "outro",
+    "next": "Building a real Vibe tab",
+    "badge": "CRM",
+    "badge_sub": "Vibe",
+    "note": "Rolling out in phases: check your account"
+   },
+   "lines": [
+    "If Vibe is in your account, tell me in the comments what you would build first, and I will try the best idea in a future video.",
+    "Subscribe for more Zoho and A I updates, and see you in the next one."
+   ]
+  }
+ ]
+}
