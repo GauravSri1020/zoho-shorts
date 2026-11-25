@@ -86,7 +86,11 @@ jobs:
           pip install kokoro-onnx soundfile numpy pyyaml playwright pillow
           python -m playwright install --with-deps chromium
           git config --global user.name "daily-brain"; git config --global user.email "daily-brain@users.noreply.github.com"
+      - name: Remember the start commit
+        if: steps.tok.outputs.ok == 'true'
+        run: echo "START_SHA=$(git rev-parse HEAD)" >> $GITHUB_ENV
       - uses: anthropics/claude-code-action@v1
+        id: brain
         if: steps.tok.outputs.ok == 'true'
         with:
           claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
@@ -102,9 +106,37 @@ jobs:
             (1 trending news Short every day), and every script is written by the script-writer subagent
             (Task tool, .claude/agents/script-writer.md) with a different structure each time.
             Today is the date the shell prints with `date -u`. Work autonomously; nobody will answer questions.
+            HARD RULES (Gaurav 25 Nov 2026 - on 25 Nov the run ended after 29 turns with NOTHING made and no report):
+            1. GitHub Actions is free and unlimited now (the repo is public) - do the full run, do not stop early to
+               "save minutes". Finishing early with nothing made counts as a failed day.
+            2. The long-video queue must never be empty at the end of your run: every day either one news long video
+               (longform-daily dispatched for 18:30 IST) or, if no news topic passes the fact rules, at least ONE
+               evergreen Zoho how-to long video into docs/longform/queue/long/ (real screens exist for Zoho Books,
+               CRM and Desk in assets/screens/index.yaml - official Zoho help pages are enough as sources for
+               evergreen how-tos). "Not enough facts for 7-10 min" means: pick the next topic, not: make nothing.
+            3. Always end with the "Daily report <date>" issue - also when something failed (say what and why).
           claude_args: |
             --max-turns 400
             --allowedTools "Bash,Read,Write,Edit,Glob,Grep,WebSearch,WebFetch,TodoWrite,Task"
+      - name: Brain made nothing? -> issue
+        if: always() && steps.tok.outputs.ok == 'true'
+        run: |
+          git fetch -q origin long-videos
+          N=$(git rev-list --count "$START_SHA"..origin/long-videos -- docs/longform/scripts docs/longform/queue docs/longform/daily docs/longform/flow-specs 2>/dev/null || echo 0)
+          L=$(git ls-tree --name-only origin/long-videos docs/longform/queue/long/ | grep -c '\.json$' || true)
+          echo "new script commits: $N, long queue: $L"
+          if [ "$N" = "0" ] || [ "$L" = "0" ]; then
+            gh issue create -R "$GITHUB_REPOSITORY" --assignee "${GITHUB_REPOSITORY_OWNER}" \
+              --title "Brain $(date -u +%F): no new long video / queue empty" \
+              --body "The daily brain run ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID} finished with $N new script commits and $L long videos in the queue. Its transcript is the run artifact brain-log. Next Claude chat: read it and make the long video by hand." || true
+          fi
+      - name: Save the brain transcript
+        if: always() && steps.tok.outputs.ok == 'true' && steps.brain.outputs.execution_file != ''
+        uses: actions/upload-artifact@v4
+        with:
+          name: brain-log
+          path: ${{ steps.brain.outputs.execution_file }}
+          retention-days: 7
       - name: Keeper right after the brain
         if: always() && steps.tok.outputs.ok == 'true'
         run: gh workflow run daily-robot.yml -R "$GITHUB_REPOSITORY" --ref main -f job=keeper || true
