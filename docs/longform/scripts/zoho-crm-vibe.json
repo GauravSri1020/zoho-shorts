@@ -63,7 +63,7 @@
   "l2": "GET AN APP",
   "l3": "VIBE",
   "pill": "7 QUESTIONS",
-  "pose": "type",
+  "pose": "open_hands",
   "accent": "#38bdf8"
  },
  "tags": [
@@ -264,6 +264,11 @@
      },
      {
       "pose": "point",
+      "prop": "laptop",
+      "text": "Its own page in your CRM"
+     },
+     {
+      "pose": "point",
       "prop": "clock",
       "text": "Next: app switcher + detail pages"
      }
@@ -271,6 +276,7 @@
    },
    "lines": [
     "One important detail. In this first release, Vibe builds Tabs inside your C R M.",
+    "A tab is its own page in your C R M menu, so your team opens it like any other screen, with no new login and no new app to install.",
     "Zoho says front end apps for the app switcher and custom detail pages for your modules are coming next, but it gives no date."
    ]
   },
@@ -839,6 +845,7 @@
    },
    "lines": [
     "If Vibe is in your account, tell me in the comments what you would build first, and I will try the best idea in a future video.",
+    "And if you are outside the U S, India or Europe, tell me which country you are in, so we know who is still waiting for it.",
     "Subscribe for more Zoho and A I updates, and see you in the next one."
    ]
   }
