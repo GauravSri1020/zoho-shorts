@@ -6,6 +6,35 @@ Is file ko har session ke end pe update karo, taaki agla chat yahin se shuru kar
 
 Gaurav jab bhi kuch bhi change karne bole: SABSE PEHLE backup - `backup-YYYY-MM-DD-<kya-badal-rahe-ho>` branch main se banao (aur agar video ka kaam hai to latest Short ka artifact download karo). Tabhi code chhuo. Kuch bigde to us branch se purana code wapas lo.
 
+## 25 Nov 2026 (19:49-22:15 IST) - long video missing + today's Shorts on Flow (Zoho CRM Vibe)
+
+Gaurav: "long videos dekh - aaj schedule nahi hui" + "aaj ke Shorts Flow pe bana ke upload karo". Choices (asked):
+2 Shorts with fewer clips, topic Zoho CRM Vibe, long video by hand today + fix the brain.
+- WHY no long video: daily-robot ran 05:42 UTC (cron late), Claude brain ended after 29 turns / ~3 min with NO commit,
+  NO daily report (only backup-2026-11-25-daily-run). Long queue was already empty (24 Nov brain said "not enough facts
+  for a long Vibe video" and only wrote a Flow spec). Output hidden by the action, so the exact reason is unknown.
+- FIX (main, daily-robot.yml): hard rules in the brain prompt (full run, Actions free now the repo is public; long queue
+  never empty -> evergreen Zoho how-to if no news passes; always the Daily report issue), a step that opens an issue
+  "Brain <date>: no new long video / queue empty" when the run adds no script or leaves queue/long empty, and the
+  brain transcript saved as artifact brain-log (7 days). DAILY.md point 6 rewritten the same way.
+- Shorts (Flow, 2 clips each, renderer = jh24 builder copied to the chat as vbuild.py; now takes N clips and
+  `item_words` so laptop rows pop on the spoken word):
+  - vibe-a eifCNH-uVjM "Zoho CRM Vibe: Build an App by Typing (What to Know)" public 25 Nov 22:30 IST. Main account
+    (navy blazer, glasses, wood studio). Clip 1 has a thin red thread + watch on the wrist (kept, credits low).
+  - vibe-b jw0CEV69LAI "3 Apps You Can Build in Zoho CRM Just by Typing (Vibe)" public 25 Nov 23:30 IST. Golu Sri
+    (denim shirt, office). Clip 2 had a red TILAK -> detilak_inpaint.py (clean). Clip 1 has a steel kada (kept).
+    A first clip 1 from the main account (vb1, 20 credits) could not reach GitHub (see below) -> remade on Golu Sri.
+- Credits now: main ~10 (reset 2 Dec), Golu Sri ~36 (reset 13 Dec). Golu Sri had 76, not ~26 as noted before.
+- Clips -> GitHub: the old upload-page route (window.open + postMessage + DataTransfer) worked for va1/va2, then
+  GitHub's file upload hung / 500 from ~21:25 IST. Working fallback: new-file editor on flow-clips, paste the clip as
+  base64 text (ClipboardEvent paste into .cm-content), commit, `base64 -d` locally. Dismiss the "Unsaved changes ->
+  Discard" banner first, otherwise the commit fails ("file could not be edited").
+- Long video zoho-crm-vibe "Zoho CRM Vibe Explained: Build Apps by Typing (7 Questions Answered)", rapid-faq,
+  7:08, QA pass, rendered by hand (Kokoro, 1080p master -> 4K on runner), public 26 Nov 18:30 IST. Sources: Zoho blog
+  + Zoho Community announcement (read in Chrome; the community page 404s for WebFetch). research/zoho-crm-vibe.md.
+- Open: long queue is empty again after 26 Nov -> tomorrow's brain run (with the new rules) must fill it; check the
+  new "no long video" issue / brain-log artifact if it fails again. 2 Shorts for 26 Nov not made (credits low).
+
 ## 24 Nov 2026 (14:47-17:30 IST) - Jensen Huang long video + 10 Jensen Huang Shorts (Flow + "Mac screen" steps)
 
 Gaurav: long video on why Jensen Huang came back (board reasons, assumptions from news, what next, suspense, simple, not
