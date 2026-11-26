@@ -1,5 +1,5 @@
 {
- "next_id": 75,
+ "next_id": 76,
  "covered_links": [
   "https://www.reddit.com/r/Zoho/comments/1wzd94y/sales_order_or_invoice/",
   "https://www.reddit.com/r/Zoho/comments/1wwjbbr/accounting_of_travel_agent/",
@@ -65,7 +65,8 @@
   "https://news.google.com/rss/articles/CBMigAFBVV95cUxNUTlFNmdfTWpGSjQ1U091VGRqMmlqdlFMcDV4Z2V5anhrR3BTOTdBMkZsUDhQdjZreURGTDNVZ3VoTGYtUzFyRUhwalhZUkh5dm1ac3hrOXZubldCRDBpSXNNZHRJOE8td0VreTJUd2wySzlWWmxkd1FHakdkOXRBRQ?oc=5",
   "https://news.google.com/rss/articles/CBMiiwFBVV95cUxQejNncTVNQklWQkxUelh6TDFidWd4QkJWVVdscnZ4Y2ljNklaaFdOOVV0ODE0Mll6OVFUMEcwV0JzNmd1akswdW9rcFFOVHMyTmh5QTVTdWtMbEJ2Y2o0SzRLVTEtak1TYy1rNmVHLV9XdDFMUElTYUoweWM0ZFc1V3RKb1VreTM5TWZv?oc=5",
   "https://news.google.com/rss/articles/CBMiRkFVX3lxTE5zNDZvaVlCR2h0Ry1tVU9YRUxVWHlWeHBpTGZhbmU5emJEUXdUM0J6emtuWTFvS1pIdTdxc0l3RWQ4bVlvOXc?oc=5",
-  "https://news.google.com/rss/articles/CBMiiwFBVV95cUxNVFhiQ3Q1aEZ6dGg3Y1dQZVdDT0lUN1FvMFh3NEk1RUxVYlhsMTR2djhTdjI2N0t0ZGdfV24tUVEyY25IekZDNjVHYTVzOHFjTW5XaW41LWV4TnMxNXBCLXNFdXQ1NUJ1V3VGc3JHbzRFOGNVNHVlWGNGRkUzVm05NjF1M3VLa3RfZWVR?oc=5"
+  "https://news.google.com/rss/articles/CBMiiwFBVV95cUxNVFhiQ3Q1aEZ6dGg3Y1dQZVdDT0lUN1FvMFh3NEk1RUxVYlhsMTR2djhTdjI2N0t0ZGdfV24tUVEyY25IekZDNjVHYTVzOHFjTW5XaW41LWV4TnMxNXBCLXNFdXQ1NUJ1V3VGc3JHbzRFOGNVNHVlWGNGRkUzVm05NjF1M3VLa3RfZWVR?oc=5",
+  "https://news.google.com/rss/articles/CBMifkFVX3lxTE1GdnJzaDh4dUxXVm40QklGRTM4a2JqNndfeXRUMS1XRlBKZkw3M0x3UDFUZGw1Mzh6ekFDTGxPVC1sMWJXQ3FWaWtxTUJBX3JTTF9BLWRPZGlBN3hYbGh1LVpsbGZzUjR1ZENPZ3VBWTBGRjBiVF9VaWE3aU15UQ?oc=5"
  ],
  "problems": [
   "Zoho Books me online paid sales orders direct closed invoice me convert nahi hote.",
@@ -141,7 +142,8 @@
   "Field teams and delivery drivers struggle with fragmented navigation tools while communicating on team chat apps.",
   "Tier-2 support engineers spend 15 minutes reading 50-comment ticket histories before resolving escalated issues.",
   "Support agents spend too much time manually configuring complex ticket routing and repetitive tasks.",
-  "Nigerian businesses receiving SMEDAN digital support packages struggle to set up automated customer onboarding and invoicing."
+  "Nigerian businesses receiving SMEDAN digital support packages struggle to set up automated customer onboarding and invoicing.",
+  "Nigerian businesses struggle with manual tax and e-invoicing compliance."
  ],
  "scripts": {
   "S0001": {
@@ -807,6 +809,14 @@
    "engine": "flow",
    "job": "20261123-1250-2",
    "created": "2026-11-23T12:52:58"
+  },
+  "S0075": {
+   "problem": "Nigerian businesses struggle with manual tax and e-invoicing compliance.",
+   "title": "Zoho Books Nigeria E-Invoicing Setup #Shorts",
+   "pillar": "trending",
+   "engine": "flow",
+   "job": "20261126-1016-2",
+   "created": "2026-11-26T10:20:43"
   }
  },
  "slots": [
@@ -1217,9 +1227,9 @@
  "last_photo": "1_jacket.jpg",
  "photo_scenes": [],
  "photo_agent_error": "RuntimeError: image model unavailable: 404 NOT_FOUND. {'error': {'code': 404, 'm",
- "look_index": 67,
- "status_issue": 225,
- "status_line": "PIPELINE ideas=27 clips=0 editing=0 qa_failed=0 scheduled=0 published=57 total=57 today=0 next=-",
+ "look_index": 68,
+ "status_issue": 229,
+ "status_line": "PIPELINE ideas=27 clips=1 editing=0 qa_failed=0 scheduled=0 published=57 total=57 today=0 next=-",
  "rotation": {
   "claude_wealth": 21,
   "claude_wealth_industry": 16,
@@ -1255,7 +1265,8 @@
   "Mappls integrates with Zoho's Arattai for navigation",
   "Zoho Desk Unveils New Product Enhancements",
   "Zoho launches Automation Studio & Workstation to mark 10 years of Zoho Desk - HapaKenya -",
-  "SMEDAN, Zoho ₦20 Billion Digital Support for 25,000 Nigerian Businesses – Requirements and How to Apply"
+  "SMEDAN, Zoho ₦20 Billion Digital Support for 25,000 Nigerian Businesses – Requirements and How to Apply",
+  "Zoho Unveils Nigeria-Tailored Finance Suite to Simplify Tax and E-Invoicing"
  ],
  "used_outfits": [
   "teal henley t-shirt under an open dark blazer",
@@ -1272,7 +1283,8 @@
   "light blue suit with a white shirt and no tie",
   "light blue overshirt over a black crew-neck t-shirt",
   "maroon henley t-shirt under an open dark blazer",
-  "beige oxford shirt with the sleeves neatly rolled up"
+  "beige oxford shirt with the sleeves neatly rolled up",
+  "dark green unstructured blazer over a plain white t-shirt"
  ],
  "used_places": [
   29,
@@ -1289,11 +1301,12 @@
   18,
   13,
   30,
-  26
+  26,
+  34
  ],
  "last_grooming": [
-  3,
-  3,
-  0
+  2,
+  2,
+  4
  ]
 }

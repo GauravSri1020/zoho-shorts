@@ -1,0 +1,491 @@
+{
+ "id": "20261126-1016-2",
+ "niche": "zoho",
+ "status": "waiting_for_clips",
+ "upload": true,
+ "created": "2026-11-26T10:20:43",
+ "title": "Zoho Books Nigeria E-Invoicing Setup #Shorts",
+ "description": "Learn how to configure the new Nigeria-specific tax and e-invoicing settings in Zoho Books for instant compliance.\n\n1. Go to Settings in Zoho Books and select Taxes.\n2. Enable the Nigeria tax module to access local compliance templates.\n3. Set up the e-invoicing integration to automate tax document generation.\n\nAI + Zoho automations every day - follow @GSXAutomation\n\nWhat inspired this: https://news.google.com/rss/articles/CBMifkFVX3lxTE1GdnJzaDh4dUxXVm40QklGRTM4a2JqNndfeXRUMS1XRlBKZkw3M0x3UDFUZGw1Mzh6ekFDTGxPVC1sMWJXQ3FWaWtxTUJBX3JTTF9BLWRPZGlBN3hYbGh1LVpsbGZzUjR1ZENPZ3VBWTBGRjBiVF9VaWE3aU15UQ?oc=5\n\nThis video uses an AI-generated presenter and voice.\nIndependent channel. Not affiliated with or endorsed by Zoho Corporation. Zoho is a trademark of Zoho Corporation.\n\n#Shorts #Zoho #AIAutomation #ZohoCRM #AIAgents",
+ "angle": {
+  "story_index": 7,
+  "pillar": "trending",
+  "region": "india",
+  "product": "Zoho Books",
+  "app": "books",
+  "problem": "Nigerian businesses struggle with manual tax and e-invoicing compliance.",
+  "fix_type": "native",
+  "solution": "Configure the new Nigeria-specific tax and e-invoicing settings in Zoho Books.",
+  "steps": [
+   "Go to Settings in Zoho Books and select Taxes.",
+   "Enable the Nigeria tax module to access local compliance templates.",
+   "Set up the e-invoicing integration to automate tax document generation."
+  ],
+  "api": null,
+  "result": "Instant compliance with local tax laws without manual document filing.",
+  "wow": "Zoho now automates Nigerian e-invoicing directly within your accounting workflow.",
+  "hook": "Zoho just launched Nigeria-tailored e-invoicing—here is the setup."
+ },
+ "story": {
+  "title": "Zoho Unveils Nigeria-Tailored Finance Suite to Simplify Tax and E-Invoicing",
+  "link": "https://news.google.com/rss/articles/CBMifkFVX3lxTE1GdnJzaDh4dUxXVm40QklGRTM4a2JqNndfeXRUMS1XRlBKZkw3M0x3UDFUZGw1Mzh6ekFDTGxPVC1sMWJXQ3FWaWtxTUJBX3JTTF9BLWRPZGlBN3hYbGh1LVpsbGZzUjR1ZENPZ3VBWTBGRjBiVF9VaWE3aU15UQ?oc=5",
+  "summary": "Zoho Unveils Nigeria-Tailored Finance Suite to Simplify Tax and E-Invoicing Tech Build Africa",
+  "source": "Tech Build Africa",
+  "ts": 1795435675,
+  "type": "news",
+  "publishers": 1,
+  "trend": 9,
+  "age_hours": 69,
+  "score": 11,
+  "facts_checked": true
+ },
+ "script": {
+  "title": "Zoho Books Nigeria E-Invoicing Setup",
+  "hook_text": "Zoho Nigeria tax update",
+  "thumb_text": "Zoho *Nigeria* e-invoicing",
+  "app_label": "Zoho Books",
+  "lines": [
+   {
+    "beat": "HOOK",
+    "say": "Zoho just launched Nigeria-tailored e-invoicing—here is the setup.",
+    "tts": "Zoho just launched Nigeria-tailored e-invoicing—here is the setup.",
+    "card": "Zoho Nigeria E-Invoicing",
+    "screen": null
+   },
+   {
+    "beat": "PROBLEM",
+    "say": "Nigerian businesses often struggle with manual tax and e-invoicing compliance, leading to errors and lost time. Always check with your tax advisor regarding specific local filing requirements.",
+    "tts": "Nigerian businesses often struggle with manual tax and e-invoicing compliance, leading to errors and lost time. Always check with your tax advisor regarding specific local filing requirements.",
+    "card": "Manual tax compliance",
+    "screen": null
+   },
+   {
+    "beat": "FIX",
+    "say": "You can now configure Nigeria-specific tax and e-invoicing settings directly within Zoho Books to streamline your accounting workflow.",
+    "tts": "You can now configure Nigeria-specific tax and e-invoicing settings directly within Zoho Books to streamline your accounting workflow.",
+    "card": "Zoho Books Nigeria Setup",
+    "screen": {
+     "app": "books",
+     "view": "settings",
+     "path": [
+      "Settings",
+      "Taxes & Compliance",
+      "Taxes"
+     ],
+     "heading": "Taxes",
+     "columns": [],
+     "rows": [],
+     "fields": [
+      [
+       "Tax Rate",
+       "7.5%"
+      ],
+      [
+       "Country",
+       "Nigeria"
+      ]
+     ],
+     "toggles": [
+      [
+       "Is your business registered for tax?",
+       true
+      ]
+     ],
+     "messages": [],
+     "tool": null,
+     "method": null,
+     "url": null,
+     "headers": [],
+     "body": null,
+     "response": null,
+     "language": null,
+     "nodes": [],
+     "real": "books/taxes_compliance",
+     "click": "Taxes",
+     "tip": "Open tax settings in Zoho Books."
+    }
+   },
+   {
+    "beat": "STEP 1",
+    "say": "Open Zoho Books, click the Gear icon for Settings, then navigate to the Taxes and Compliance section to select Taxes.",
+    "tts": "Open Zoho Books, click the Gear icon for Settings, then navigate to the Taxes and Compliance section to select Taxes.",
+    "card": "Settings > Taxes",
+    "screen": {
+     "app": "books",
+     "view": "settings",
+     "path": [
+      "Settings",
+      "All Settings"
+     ],
+     "heading": "Preferences",
+     "columns": [],
+     "rows": [],
+     "fields": [],
+     "toggles": [],
+     "messages": [],
+     "tool": null,
+     "method": null,
+     "url": null,
+     "headers": [],
+     "body": null,
+     "response": null,
+     "language": null,
+     "nodes": [],
+     "real": "books/settings_home",
+     "click": "Taxes",
+     "tip": "Select Taxes from organization settings."
+    }
+   },
+   {
+    "beat": "STEP 2",
+    "say": "Within the Tax settings, enable the Nigeria tax module. This allows you to input your tax registration details and access local compliance templates.",
+    "tts": "Within the Tax settings, enable the Nigeria tax module. This allows you to input your tax registration details and access local compliance templates.",
+    "card": "Enable Nigeria Tax",
+    "screen": {
+     "app": "books",
+     "view": "settings",
+     "path": [
+      "Settings",
+      "Taxes & Compliance",
+      "Taxes"
+     ],
+     "heading": "GST Settings",
+     "columns": [],
+     "rows": [],
+     "fields": [
+      [
+       "Tax Authority",
+       "FIRS"
+      ],
+      [
+       "Default Rate",
+       "7.5%"
+      ]
+     ],
+     "toggles": [
+      [
+       "Enable Nigeria Tax Module",
+       true
+      ]
+     ],
+     "messages": [],
+     "tool": null,
+     "method": null,
+     "url": null,
+     "headers": [],
+     "body": null,
+     "response": null,
+     "language": null,
+     "nodes": [],
+     "real": "books/taxes_compliance",
+     "click": "GST registered toggle",
+     "tip": "Activate local tax rules."
+    }
+   },
+   {
+    "beat": "STEP 3",
+    "say": "Finally, go to Integrations to connect your e-invoicing portal. This automates tax document generation, ensuring your invoices meet local regulatory standards.",
+    "tts": "Finally, go to Integrations to connect your e-invoicing portal. This automates tax document generation, ensuring your invoices meet local regulatory standards.",
+    "card": "Automate E-Invoicing",
+    "screen": {
+     "app": "books",
+     "view": "settings",
+     "path": [
+      "Settings",
+      "Integrations"
+     ],
+     "heading": "Integrations & Marketplace",
+     "columns": [],
+     "rows": [],
+     "fields": [
+      [
+       "Integration",
+       "Nigeria E-Invoice Portal"
+      ]
+     ],
+     "toggles": [
+      [
+       "Auto-sync Invoices",
+       true
+      ]
+     ],
+     "messages": [],
+     "tool": null,
+     "method": null,
+     "url": null,
+     "headers": [],
+     "body": null,
+     "response": null,
+     "language": null,
+     "nodes": [],
+     "real": "books/integrations",
+     "click": "Zoho Apps",
+     "tip": "Zoho now automates Nigerian e-invoicing directly within your accounting workflow."
+    }
+   },
+   {
+    "beat": "RESULT",
+    "say": "By following these steps, you achieve better compliance with local tax laws, significantly reducing the need for manual document filing and administrative overhead.",
+    "tts": "By following these steps, you achieve better compliance with local tax laws, significantly reducing the need for manual document filing and administrative overhead.",
+    "card": "Instant tax compliance",
+    "screen": null
+   }
+  ],
+  "api": null,
+  "code": null,
+  "test_before_recording": [
+   "Ensure your Zoho Books organization location is set to Nigeria.",
+   "Check local tax registration requirements with your tax advisor."
+  ],
+  "description": "Learn how to configure the new Nigeria-specific tax and e-invoicing settings in Zoho Books for instant compliance.",
+  "tags": [
+   "ZohoBooks",
+   "NigeriaTax",
+   "EInvoicing",
+   "Accounting",
+   "ZohoFinance",
+   "TaxCompliance",
+   "BusinessAutomation",
+   "ZohoTutorial",
+   "TechNews",
+   "CloudAccounting"
+  ]
+ },
+ "lines": [
+  {
+   "beat": "HOOK",
+   "say": "Zoho just launched Nigeria-tailored e-invoicing—here is the setup.",
+   "tts": "Zoho just launched Nigeria-tailored e-invoicing—here is the setup.",
+   "card": "Zoho Nigeria E-Invoicing",
+   "screen": null,
+   "face": true
+  },
+  {
+   "beat": "PROBLEM",
+   "say": "Nigerian businesses often struggle with manual tax and e-invoicing compliance, leading to errors and lost time. Always check with your tax advisor regarding specific local filing requirements.",
+   "tts": "Nigerian businesses often struggle with manual tax and e-invoicing compliance, leading to errors and lost time. Always check with your tax advisor regarding specific local filing requirements.",
+   "card": "Manual tax compliance",
+   "screen": null,
+   "face": true
+  },
+  {
+   "beat": "FIX",
+   "say": "You can now configure Nigeria-specific tax and e-invoicing settings directly within Zoho Books to streamline your accounting workflow.",
+   "tts": "You can now configure Nigeria-specific tax and e-invoicing settings directly within Zoho Books to streamline your accounting workflow.",
+   "card": "Zoho Books Nigeria Setup",
+   "screen": {
+    "app": "books",
+    "view": "settings",
+    "path": [
+     "Settings",
+     "Taxes & Compliance",
+     "Taxes"
+    ],
+    "heading": "Taxes",
+    "columns": [],
+    "rows": [],
+    "fields": [
+     [
+      "Tax Rate",
+      "7.5%"
+     ],
+     [
+      "Country",
+      "Nigeria"
+     ]
+    ],
+    "toggles": [
+     [
+      "Is your business registered for tax?",
+      true
+     ]
+    ],
+    "messages": [],
+    "tool": null,
+    "method": null,
+    "url": null,
+    "headers": [],
+    "body": null,
+    "response": null,
+    "language": null,
+    "nodes": [],
+    "real": "books/taxes_compliance",
+    "click": "Taxes",
+    "tip": "Open tax settings in Zoho Books."
+   },
+   "face": false
+  },
+  {
+   "beat": "STEP 1",
+   "say": "Open Zoho Books, click the Gear icon for Settings, then navigate to the Taxes and Compliance section to select Taxes.",
+   "tts": "Open Zoho Books, click the Gear icon for Settings, then navigate to the Taxes and Compliance section to select Taxes.",
+   "card": "Settings > Taxes",
+   "screen": {
+    "app": "books",
+    "view": "settings",
+    "path": [
+     "Settings",
+     "All Settings"
+    ],
+    "heading": "Preferences",
+    "columns": [],
+    "rows": [],
+    "fields": [],
+    "toggles": [],
+    "messages": [],
+    "tool": null,
+    "method": null,
+    "url": null,
+    "headers": [],
+    "body": null,
+    "response": null,
+    "language": null,
+    "nodes": [],
+    "real": "books/settings_home",
+    "click": "Taxes",
+    "tip": "Select Taxes from organization settings."
+   },
+   "face": false
+  },
+  {
+   "beat": "STEP 2",
+   "say": "Within the Tax settings, enable the Nigeria tax module. This allows you to input your tax registration details and access local compliance templates.",
+   "tts": "Within the Tax settings, enable the Nigeria tax module. This allows you to input your tax registration details and access local compliance templates.",
+   "card": "Enable Nigeria Tax",
+   "screen": {
+    "app": "books",
+    "view": "settings",
+    "path": [
+     "Settings",
+     "Taxes & Compliance",
+     "Taxes"
+    ],
+    "heading": "GST Settings",
+    "columns": [],
+    "rows": [],
+    "fields": [
+     [
+      "Tax Authority",
+      "FIRS"
+     ],
+     [
+      "Default Rate",
+      "7.5%"
+     ]
+    ],
+    "toggles": [
+     [
+      "Enable Nigeria Tax Module",
+      true
+     ]
+    ],
+    "messages": [],
+    "tool": null,
+    "method": null,
+    "url": null,
+    "headers": [],
+    "body": null,
+    "response": null,
+    "language": null,
+    "nodes": [],
+    "real": "books/taxes_compliance",
+    "click": "GST registered toggle",
+    "tip": "Activate local tax rules."
+   },
+   "face": false
+  },
+  {
+   "beat": "STEP 3",
+   "say": "Finally, go to Integrations to connect your e-invoicing portal. This automates tax document generation, ensuring your invoices meet local regulatory standards.",
+   "tts": "Finally, go to Integrations to connect your e-invoicing portal. This automates tax document generation, ensuring your invoices meet local regulatory standards.",
+   "card": "Automate E-Invoicing",
+   "screen": {
+    "app": "books",
+    "view": "settings",
+    "path": [
+     "Settings",
+     "Integrations"
+    ],
+    "heading": "Integrations & Marketplace",
+    "columns": [],
+    "rows": [],
+    "fields": [
+     [
+      "Integration",
+      "Nigeria E-Invoice Portal"
+     ]
+    ],
+    "toggles": [
+     [
+      "Auto-sync Invoices",
+      true
+     ]
+    ],
+    "messages": [],
+    "tool": null,
+    "method": null,
+    "url": null,
+    "headers": [],
+    "body": null,
+    "response": null,
+    "language": null,
+    "nodes": [],
+    "real": "books/integrations",
+    "click": "Zoho Apps",
+    "tip": "Zoho now automates Nigerian e-invoicing directly within your accounting workflow."
+   },
+   "face": false
+  },
+  {
+   "beat": "RESULT",
+   "say": "By following these steps, you achieve better compliance with local tax laws, significantly reducing the need for manual document filing and administrative overhead.",
+   "tts": "By following these steps, you achieve better compliance with local tax laws, significantly reducing the need for manual document filing and administrative overhead.",
+   "card": "Instant tax compliance",
+   "screen": null,
+   "face": true
+  }
+ ],
+ "clips": [
+  {
+   "text": "Zoho just launched Nigeria-tailored e-invoicing—here is the setup.",
+   "lines": [
+    0
+   ],
+   "beat": "HOOK",
+   "prompt": "The man (my avatar) looks into the camera and talks to the viewer like a confident, friendly business tech explainer, smart and natural, not stiff; he turns from looking to the side to face the camera, leans in slightly and raises his eyebrows. Vertical 9:16 medium-wide shot from the knees up, camera about two metres away, his head in the upper third with space above it, both hands and all his gestures fully visible in the frame, camera straight in front of him at eye level, static camera, sharp and well lit, wearing dark green unstructured blazer over a plain white t-shirt, in a modern logistics control room with large screens softly blurred behind him; in this whole video he has a full well-groomed beard, thick short slicked-back dark hair, thin gold round-frame glasses - exactly the same in every shot of this video. He always has a full head of thick dark hair, never bald, never shaved, never thinning or receding. His face, hair, beard, glasses, clothes, skin tone, height and body build are IDENTICAL in every clip of this video, as if the same moment were filmed by several cameras - only the camera angle changes. His face, skin tone, height and body build stay exactly as in my avatar's reference photos - the same natural average build, never slimmer and never heavier. Clean professional business look: no tilak or any mark on his forehead, no necklace, mala, beads, thread or religious accessory, no earrings, no bracelets. He says, in clear natural English with a clear, neutral international accent, at a brisk, lively pace: \"Zoho just launched Nigeria-tailored e-invoicing—here is the setup.\" His lips match every word. He starts speaking in the very first frame, with no pause before the first word, and stops right after the last word. Audio: only his voice - no music, no sound effects. No subtitles, no captions, no text on screen."
+  },
+  {
+   "text": "Nigerian businesses often struggle with manual tax and e-invoicing compliance, leading to errors and lost time.",
+   "lines": [
+    1
+   ],
+   "beat": "PROBLEM",
+   "prompt": "The man (my avatar) looks into the camera and talks to the viewer like a confident, friendly business tech explainer, smart and natural, not stiff; he shrugs with both shoulders and tilts his head, as if he has seen this problem a hundred times. Vertical 9:16 medium-wide shot from the knees up, camera about two metres away, his head in the upper third with space above it, both hands and all his gestures fully visible in the frame, camera slightly to his left at a gentle three-quarter angle, static camera, sharp and well lit, wearing dark green unstructured blazer over a plain white t-shirt, in a modern logistics control room with large screens softly blurred behind him; in this whole video he has a full well-groomed beard, thick short slicked-back dark hair, thin gold round-frame glasses - exactly the same in every shot of this video. He always has a full head of thick dark hair, never bald, never shaved, never thinning or receding. His face, hair, beard, glasses, clothes, skin tone, height and body build are IDENTICAL in every clip of this video, as if the same moment were filmed by several cameras - only the camera angle changes. His face, skin tone, height and body build stay exactly as in my avatar's reference photos - the same natural average build, never slimmer and never heavier. Clean professional business look: no tilak or any mark on his forehead, no necklace, mala, beads, thread or religious accessory, no earrings, no bracelets. He says, in clear natural English with a clear, neutral international accent, at a brisk, lively pace: \"Nigerian businesses often struggle with manual tax and e-invoicing compliance, leading to errors and lost time.\" His lips match every word. He starts speaking in the very first frame, with no pause before the first word, and stops right after the last word. Audio: only his voice - no music, no sound effects. No subtitles, no captions, no text on screen."
+  },
+  {
+   "text": "Always check with your tax advisor regarding specific local filing requirements.",
+   "lines": [
+    1
+   ],
+   "beat": "PROBLEM",
+   "prompt": "The man (my avatar) looks into the camera and talks to the viewer like a confident, friendly business tech explainer, smart and natural, not stiff; he counts the wasted hours on his fingers with a slightly annoyed face. Vertical 9:16 medium-wide shot from the knees up, camera about two metres away, his head in the upper third with space above it, both hands and all his gestures fully visible in the frame, camera slightly to his right at a gentle three-quarter angle, a little closer, static camera, sharp and well lit, wearing dark green unstructured blazer over a plain white t-shirt, in a modern logistics control room with large screens softly blurred behind him; in this whole video he has a full well-groomed beard, thick short slicked-back dark hair, thin gold round-frame glasses - exactly the same in every shot of this video. He always has a full head of thick dark hair, never bald, never shaved, never thinning or receding. His face, hair, beard, glasses, clothes, skin tone, height and body build are IDENTICAL in every clip of this video, as if the same moment were filmed by several cameras - only the camera angle changes. His face, skin tone, height and body build stay exactly as in my avatar's reference photos - the same natural average build, never slimmer and never heavier. Clean professional business look: no tilak or any mark on his forehead, no necklace, mala, beads, thread or religious accessory, no earrings, no bracelets. He says, in clear natural English with a clear, neutral international accent, at a brisk, lively pace: \"Always check with your tax advisor regarding specific local filing requirements.\" His lips match every word. He starts speaking in the very first frame, with no pause before the first word, and stops right after the last word. Audio: only his voice - no music, no sound effects. No subtitles, no captions, no text on screen."
+  },
+  {
+   "text": "By following these steps, you achieve better compliance with local tax laws,",
+   "lines": [
+    6
+   ],
+   "beat": "RESULT",
+   "prompt": "The man (my avatar) looks into the camera and talks to the viewer like a confident, friendly business tech explainer, smart and natural, not stiff; he relaxes his shoulders, smiles and gives a small satisfied nod with an open-hand gesture. Vertical 9:16 medium-wide shot from the knees up, camera about two metres away, his head in the upper third with space above it, both hands and all his gestures fully visible in the frame, camera straight in front of him at eye level, static camera, sharp and well lit, wearing dark green unstructured blazer over a plain white t-shirt, in a modern logistics control room with large screens softly blurred behind him; in this whole video he has a full well-groomed beard, thick short slicked-back dark hair, thin gold round-frame glasses - exactly the same in every shot of this video. He always has a full head of thick dark hair, never bald, never shaved, never thinning or receding. His face, hair, beard, glasses, clothes, skin tone, height and body build are IDENTICAL in every clip of this video, as if the same moment were filmed by several cameras - only the camera angle changes. His face, skin tone, height and body build stay exactly as in my avatar's reference photos - the same natural average build, never slimmer and never heavier. Clean professional business look: no tilak or any mark on his forehead, no necklace, mala, beads, thread or religious accessory, no earrings, no bracelets. He says, in clear natural English with a clear, neutral international accent, at a brisk, lively pace: \"By following these steps, you achieve better compliance with local tax laws,\" His lips match every word. He starts speaking in the very first frame, with no pause before the first word, and stops right after the last word. Audio: only his voice - no music, no sound effects. No subtitles, no captions, no text on screen."
+  },
+  {
+   "text": "significantly reducing the need for manual document filing and administrative overhead.",
+   "lines": [
+    6
+   ],
+   "beat": "RESULT",
+   "prompt": "The man (my avatar) looks into the camera and talks to the viewer like a confident, friendly business tech explainer, smart and natural, not stiff; he smiles and opens both arms wide. Vertical 9:16 medium-wide shot from the knees up, camera about two metres away, his head in the upper third with space above it, both hands and all his gestures fully visible in the frame, camera slightly to his left at a gentle three-quarter angle, static camera, sharp and well lit, wearing dark green unstructured blazer over a plain white t-shirt, in a modern logistics control room with large screens softly blurred behind him; in this whole video he has a full well-groomed beard, thick short slicked-back dark hair, thin gold round-frame glasses - exactly the same in every shot of this video. He always has a full head of thick dark hair, never bald, never shaved, never thinning or receding. His face, hair, beard, glasses, clothes, skin tone, height and body build are IDENTICAL in every clip of this video, as if the same moment were filmed by several cameras - only the camera angle changes. His face, skin tone, height and body build stay exactly as in my avatar's reference photos - the same natural average build, never slimmer and never heavier. Clean professional business look: no tilak or any mark on his forehead, no necklace, mala, beads, thread or religious accessory, no earrings, no bracelets. He says, in clear natural English with a clear, neutral international accent, at a brisk, lively pace: \"significantly reducing the need for manual document filing and administrative overhead.\" His lips match every word. He starts speaking in the very first frame, with no pause before the first word, and stops right after the last word. Audio: only his voice - no music, no sound effects. No subtitles, no captions, no text on screen."
+  }
+ ],
+ "look": "wearing dark green unstructured blazer over a plain white t-shirt, in a modern logistics control room with large screens softly blurred behind him; in this whole video he has a full well-groomed beard, thick short slicked-back dark hair, thin gold round-frame glasses - exactly the same in every shot of this video",
+ "issue": 228
+}
