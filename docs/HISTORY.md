@@ -586,3 +586,9 @@ Shuru mein: SadTalker / photo motion avatar, Gemini TTS, research/script/QA agen
 ## Kaam ki files
 
 channel.yaml - NICHE SWITCH (active_niche). niches/<niche>.yaml - us niche ki saari settings. research/problem_bank.yaml - real problems (yahan apni add karo). autopilot/flow.py - prompts, clip matching, face/TTS timeline. autopilot/composer.py - final layout. autopilot/tts.py - screen-part voice. autopilot/screens.py - Zoho / AI chat / API / code screens. assets/screens/index.yaml - asli Zoho screenshots. autopilot/writer.py - script agents + translations. autopilot/research.py - feeds + trend score + problem bank. state/state.json - robot ka state. .github/workflows/autopilot.yml - daily 10 AM IST + assemble on clip upload.
+
+## 26 Nov 2026 - daily run (brain)
+- News check: no topic passed the fact rules (Nvidia 25 Nov selloff: 1 source; Axios models-safety: second-hand). Made evergreen long video
+  `zoho-books-credit-notes` (research from Zoho help pages, structure mistakes-to-avoid, 7.1 min, validated, plan + thumbnail checked),
+  longform-daily dispatched, publish 27 Nov 18:30 IST (26 Nov slot = zoho-crm-vibe). Flow spec flow-20261126-books-credit-notes + flow-queue/2026-11-26.md.
+- Next: check longform-daily result; Flow session for the credit-notes Short; news topics once 2 sources exist.

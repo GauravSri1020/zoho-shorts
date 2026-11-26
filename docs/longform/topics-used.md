@@ -22,3 +22,4 @@
 2026-11-24 | long | nvidia-huang-u-turn | Why Nvidia Brought Jensen Huang Back: The 11-Day U-Turn Explained | rendering, publish 24 Nov 19:30 IST
 2026-11-24 | flow-short (news) | flow-20261124-zoho-crm-vibe | Zoho CRM Vibe: Build an App by Typing, No Code | spec ready, needs Flow session
 2026-11-26 | long | zoho-books-credit-notes | Zoho Books Credit Note: Refund vs Apply to Invoice (5 Mistakes) | evergreen, no news passed fact rules; publish 27 Nov 18:30 IST, longform-daily dispatched
+2026-11-26 | flow-short | flow-20261126-books-credit-notes | Zoho Books Credit Note: Refund or Apply to Invoice? #Shorts | spec ready, needs Flow session (no news Short: nothing passed 2-source rule)

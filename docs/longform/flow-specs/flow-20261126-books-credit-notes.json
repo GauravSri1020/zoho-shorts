@@ -1,0 +1,58 @@
+{
+ "id": "flow-20261126-books-credit-notes",
+ "priority": "evergreen",
+ "structure": "comparison-verdict",
+ "hook_type": "story",
+ "title": "Zoho Books Credit Note: Refund or Apply to Invoice? #Shorts",
+ "description": "A customer returns goods in Zoho Books: you create one credit note, then the path depends on the invoice. Open the invoice, More, Create Credit Note, and enter the exact returned quantity. Unpaid invoice: the credit settles it, the invoice becomes Paid or Partially Paid and the credit note becomes Closed. Paid invoice: go to Sales, Credit Notes, select the note, More, Refund, enter the amount and pick the cash or bank account.\n\nSources (Zoho help pages, checked 26 Nov 2026):\n- Issue a refund for returned goods: https://www.zoho.com/us/books/kb/credits/issue-refund.html\n- Credit notes: https://www.zoho.com/us/books/help/credit-note/\n- Apply credits: https://www.zoho.com/us/books/help/credit-note/apply-credits.html\n- Refund credits: https://www.zoho.com/us/books/help/credit-note/refund-credits.html\n\nThis video uses an AI-generated presenter (based on the creator), voice and animations. Facts are from the sources above.\nIndependent channel. Not affiliated with or endorsed by Zoho Corporation.\n\n#ZohoBooks #CreditNote #Accounting #Zoho #Shorts",
+ "tags": [
+  "zoho books credit note",
+  "zoho books refund",
+  "zoho books apply credit to invoice",
+  "credit note vs refund",
+  "zoho books returned goods",
+  "zoho books tutorial",
+  "zoho books sales return",
+  "zoho books for accountants"
+ ],
+ "banner": "ZOHO BOOKS · CREDIT NOTE",
+ "source": "Sources: Zoho Books help pages (checked 26 Nov 2026)",
+ "look": "He wears a plain navy-blue polo shirt, short neat hair, trimmed light stubble, standing in a bright modern office with a white wall and a green plant behind him",
+ "clips": [
+  {
+   "file": "cn1.mp4",
+   "say": "A customer returns goods, and in Zoho Books you create one credit note with two possible paths.",
+   "text": "A customer returns goods, and in Zoho Books you create one credit note with 2 possible paths.",
+   "lower": null,
+   "gesture": "He hands an imaginary box back across the camera, then holds up two fingers"
+  },
+  {
+   "file": "cn2.mp4",
+   "say": "Open the invoice, click More, then Create Credit Note, and enter the exact quantity returned.",
+   "text": "Open the invoice > More > Create Credit Note, and enter the exact quantity returned.",
+   "lower": null,
+   "gesture": "He taps three points in the air, one after another, nodding"
+  },
+  {
+   "file": "cn3.mp4",
+   "say": "Invoice still unpaid? The credit settles it: the invoice turns Paid or Partially Paid, and the note closes.",
+   "text": "Invoice still unpaid? The credit settles it: the invoice turns Paid or Partially Paid, and the note closes.",
+   "lower": null,
+   "gesture": "He makes a tick mark in the air with one finger and smiles"
+  },
+  {
+   "file": "cn4.mp4",
+   "say": "Invoice already paid? Open the credit note, click More, then Refund, enter the amount and pick the bank account.",
+   "text": "Invoice already paid? Credit note > More > Refund, enter the amount and pick the bank account.",
+   "lower": null,
+   "gesture": "He pushes one open palm forward, like sending money back"
+  },
+  {
+   "file": "cn5.mp4",
+   "say": "Which one do you use more often, a refund or a credit on the next invoice? Tell me below.",
+   "text": "Which one do you use more often: a refund, or a credit on the next invoice? Tell me below.",
+   "lower": null,
+   "gesture": "He points at the viewer with a questioning look, then at the comments below"
+  }
+ ]
+}
