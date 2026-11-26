@@ -1,0 +1,1018 @@
+{
+ "id": "zoho-books-credit-notes",
+ "title": "Zoho Books Credit Note: Refund vs Apply to Invoice (5 Mistakes)",
+ "structure": "mistakes-to-avoid",
+ "hook_type": "mistake",
+ "voice": {
+  "engine": "kokoro",
+  "voice": "am_onyx",
+  "speed": 1.1
+ },
+ "research": "docs/longform/research/zoho-books-credit-notes.md",
+ "intro_chapter": "Refund or apply, fast",
+ "chapters": [
+  "Refund or apply?",
+  "Mistake 1: Starting from scratch",
+  "Mistake 2: Using the wrong path",
+  "Mistakes 3 and 4: Applying credits",
+  "Mistake 5: No undo plan",
+  "Your checklist"
+ ],
+ "caption_fix": [
+  [
+   "A E D",
+   "AED"
+  ],
+  [
+   "C S V",
+   "CSV"
+  ],
+  [
+   "T S V",
+   "TSV"
+  ],
+  [
+   "X L S",
+   "XLS"
+  ]
+ ],
+ "thumb": {
+  "chip": "ZOHO BOOKS",
+  "l1": "CREDIT NOTE",
+  "l2": "REFUND?",
+  "l3": "OR APPLY",
+  "pill": "5 MISTAKES",
+  "pose": "point_you",
+  "accent": "#2fbf71"
+ },
+ "tags": [
+  "Zoho Books credit note",
+  "Zoho Books credit notes",
+  "Zoho Books refund",
+  "apply credit note to invoice",
+  "Zoho Books tutorial",
+  "create credit note Zoho Books",
+  "Zoho Books apply credits",
+  "Zoho Books invoice",
+  "Zoho Books for beginners",
+  "Zoho Books how to",
+  "credit note refund",
+  "Zoho Books 2026",
+  "Zoho accounting"
+ ],
+ "sources": [
+  {
+   "name": "Zoho Books help: Credit Notes",
+   "url": "https://www.zoho.com/us/books/help/credit-note/"
+  },
+  {
+   "name": "Zoho Books help: Apply credits to invoices",
+   "url": "https://www.zoho.com/us/books/help/credit-note/apply-credits.html"
+  },
+  {
+   "name": "Zoho Books help: Refund credits",
+   "url": "https://www.zoho.com/us/books/help/credit-note/refund-credits.html"
+  },
+  {
+   "name": "Zoho Books KB: Issue a refund",
+   "url": "https://www.zoho.com/us/books/kb/credits/issue-refund.html"
+  }
+ ],
+ "description": "Zoho Books credit note: should you refund the customer or apply it to an invoice? This step-by-step video shows how to create a credit note (from an invoice or from Sales > Credit Notes), how to apply it to invoices from the credit note page or the invoice page, how to refund it, how to undo an applied credit, and the 5 mistakes to avoid. Amounts in the video are round examples only.\n\nChapters\n{chapters}\n\nSources (checked 26 Nov 2026)\n- Zoho Books help - Credit Notes: https://www.zoho.com/us/books/help/credit-note/\n- Zoho Books help - Apply credits: https://www.zoho.com/us/books/help/credit-note/apply-credits.html\n- Zoho Books help - Refund credits: https://www.zoho.com/us/books/help/credit-note/refund-credits.html\n- Zoho Books KB - Issue a refund: https://www.zoho.com/us/books/kb/credits/issue-refund.html\n\nThis video covers the steps only, not tax treatment. Check tax rules with your accountant.\nThis video uses an AI-generated presenter, voice and animations; facts were checked against the sources above.\nIndependent channel. Not affiliated with or endorsed by Zoho Corporation. Zoho is a trademark of Zoho Corporation.\n\n#ZohoBooks #CreditNote #Accounting #GSXAutomation",
+ "scenes": [
+  {
+   "id": "s01",
+   "type": "HOOK",
+   "chapter": 0,
+   "visual": {
+    "kind": "hook2",
+    "beats": [
+     {
+      "t": "guy",
+      "pose": "worried",
+      "prop": "doc",
+      "text": "Credit note made. Now what?",
+      "color": "coral"
+     },
+     {
+      "t": "stat",
+      "value": "2",
+      "label": "ways to use a credit note",
+      "color": "teal"
+     },
+     {
+      "t": "stat",
+      "value": "5",
+      "label": "mistakes to avoid",
+      "color": "amber"
+     },
+     {
+      "t": "title",
+      "title": "Zoho Books Credit Note",
+      "sub": "Refund vs Apply to Invoice",
+      "chips": [
+       "Create",
+       "Apply",
+       "Refund",
+       "Undo"
+      ]
+     }
+    ]
+   },
+   "lines": [
+    "You created a credit note in Zoho Books. Now the money question: do you refund the customer, or apply it to an invoice?",
+    "Zoho Books gives you both options, and mixing them up is the easiest mistake to make.",
+    "In this video I will show you the exact clicks for both, with a simple example, and the five mistakes to avoid.",
+    "And mistake number four is the one where most people cannot find the undo button. Stay for that one."
+   ]
+  },
+  {
+   "id": "s02",
+   "type": "CARTOON",
+   "chapter": 0,
+   "visual": {
+    "kind": "story",
+    "beats": [
+     {
+      "pose": "present",
+      "prop": "doc",
+      "text": "Zoho's own help pages"
+     },
+     {
+      "pose": "point",
+      "prop": "magnifier",
+      "text": "Checked 26 Nov 2026"
+     },
+     {
+      "pose": "shrug",
+      "prop": "coins",
+      "text": "Example amounts only",
+      "stamp": "EXAMPLE",
+      "stamp_color": "amber"
+     }
+    ]
+   },
+   "lines": [
+    "Everything here comes from three official Zoho help pages, which I checked on the twenty sixth of November, twenty twenty six.",
+    "Zoho does not give money amounts, so every number I use is a round example, just to make it easy to follow.",
+    "And this video is about the credit note steps only, not tax treatment. Check your own tax rules separately."
+   ]
+  },
+  {
+   "id": "c1",
+   "type": "CHAPTER",
+   "chapter": 1,
+   "visual": {
+    "num": 1,
+    "title": "Refund or apply?"
+   },
+   "lines": [
+    "First, the big question. Refund or apply?"
+   ]
+  },
+  {
+   "id": "s03",
+   "type": "BOARD",
+   "chapter": 1,
+   "visual": {
+    "kind": "compare",
+    "title": "Same credit note, two paths",
+    "left": {
+     "title": "Apply to Invoice",
+     "items": [
+      "Reduces what customer owes",
+      "Fully or partially",
+      "One or many invoices"
+     ]
+    },
+    "right": {
+     "title": "Refund",
+     "items": [
+      "Money goes back",
+      "Full or partial amount",
+      "Pick cash or bank account"
+     ]
+    },
+    "cues": [
+     [
+      1,
+      "L0",
+      "R0"
+     ],
+     [
+      2,
+      "L1",
+      "R1"
+     ],
+     [
+      3,
+      "L2",
+      "R2"
+     ]
+    ]
+   },
+   "lines": [
+    "A credit note is money you owe a customer, for example after a return.",
+    "With Apply to Invoice, you use that credit against invoices the customer has not paid yet.",
+    "With Refund, you pay the money back, and you choose the cash or bank account it comes from.",
+    "You can also split it: apply part of the credit, and keep the rest open for later."
+   ]
+  },
+  {
+   "id": "s04",
+   "type": "CARTOON",
+   "chapter": 1,
+   "visual": {
+    "kind": "story",
+    "beats": [
+     {
+      "pose": "stand",
+      "prop": "doc",
+      "text": "Example: invoice AED 1,000"
+     },
+     {
+      "pose": "carry",
+      "prop": "stack",
+      "text": "Customer returns AED 300 of goods"
+     },
+     {
+      "pose": "point",
+      "prop": "coins",
+      "text": "Unpaid? Paid? Different path"
+     }
+    ]
+   },
+   "lines": [
+    "Here is the example we will use. An invoice for one thousand dirhams, and the customer returns goods worth three hundred.",
+    "What you do next depends on one thing: has the customer already paid that invoice, or not?",
+    "Keep that question in your head. It decides everything."
+   ]
+  },
+  {
+   "id": "s05",
+   "type": "BOARD",
+   "chapter": 1,
+   "visual": {
+    "kind": "flow2",
+    "title": "Which path?",
+    "steps": [
+     [
+      "Return happens",
+      "goods come back"
+     ],
+     [
+      "Create credit note",
+      "always the first step"
+     ],
+     [
+      "Invoice unpaid?",
+      "credit settles it"
+     ],
+     [
+      "Invoice paid?",
+      "refund the money"
+     ]
+    ],
+    "footer": "Zoho's own two scenarios"
+   },
+   "lines": [
+    "So the flow looks like this.",
+    "First, you always create the credit note.",
+    "If the invoice is unpaid, the invoice itself gets credited, and I will show you how.",
+    "If the invoice is already paid, you refund the customer from the credit note. Let us build it."
+   ]
+  },
+  {
+   "id": "c2",
+   "type": "CHAPTER",
+   "chapter": 2,
+   "visual": {
+    "num": 2,
+    "title": "Mistake 1: Starting from scratch"
+   },
+   "lines": [
+    "Mistake number one. Starting the credit note from scratch."
+   ]
+  },
+  {
+   "id": "s06",
+   "type": "BOARD",
+   "chapter": 2,
+   "visual": {
+    "kind": "checklist",
+    "title": "Why start from the invoice",
+    "items": [
+     "Invoice details come filled in",
+     "Enter the exact returned quantity",
+     "Stock goes back to inventory",
+     "Invoice: Paid or Partially Paid",
+     "Credit note becomes Closed"
+    ]
+   },
+   "lines": [
+    "If the return belongs to an invoice, do not make a blank credit note. Start from the invoice itself.",
+    "Zoho opens the New Credit Note page with the invoice details already filled in.",
+    "For returned goods, enter the exact quantity that came back under Item Details.",
+    "Zoho says the stock goes back to your inventory, and if the invoice was unpaid, it becomes Paid or Partially Paid, depending on the value returned.",
+    "And the credit note status becomes Closed, because the credit was used up."
+   ]
+  },
+  {
+   "id": "p1",
+   "type": "PODCAST",
+   "chapter": 2,
+   "visual": {
+    "path": [
+     "Sales",
+     "Invoices"
+    ],
+    "actions": [
+     {
+      "cue": 0,
+      "screen": "books/invoices_list",
+      "target": "All Invoices view",
+      "zoom": 1.8
+     },
+     {
+      "cue": 1,
+      "target": "New",
+      "zoom": 1.6,
+      "at": 0.5
+     }
+    ]
+   },
+   "lines": [
+    "In Zoho Books, go to Sales, then Invoices, and open the invoice the customer returned goods from.",
+    "Careful, the New button here makes a new invoice. For the credit note, you stay inside the existing invoice."
+   ]
+  },
+  {
+   "id": "s07",
+   "type": "BOARD",
+   "chapter": 2,
+   "visual": {
+    "kind": "flow2",
+    "title": "From the invoice",
+    "steps": [
+     [
+      "Open invoice",
+      "Sales > Invoices"
+     ],
+     [
+      "More icon",
+      "top of the invoice"
+     ],
+     [
+      "Create Credit Note",
+      "details filled in"
+     ],
+     [
+      "Review + save",
+      "check the quantity"
+     ]
+    ],
+    "footer": "Zoho Books help: Credit Notes"
+   },
+   "lines": [
+    "Inside the invoice, click the More icon.",
+    "Choose Create Credit Note.",
+    "The new credit note opens with the invoice details filled in.",
+    "Review the items, then save it."
+   ]
+  },
+  {
+   "id": "p2",
+   "type": "PODCAST",
+   "chapter": 2,
+   "visual": {
+    "path": [
+     "Sales",
+     "Credit Notes",
+     "New"
+    ],
+    "actions": [
+     {
+      "cue": 0,
+      "screen": "books/creditnote_new",
+      "target": "Customer Name",
+      "zoom": 1.8
+     },
+     {
+      "cue": 1,
+      "target": "Credit Note#",
+      "zoom": 2.0
+     },
+     {
+      "cue": 2,
+      "target": "Save as Draft",
+      "zoom": 2.0
+     },
+     {
+      "cue": 3,
+      "target": "Save as Open",
+      "zoom": 2.0
+     }
+    ]
+   },
+   "lines": [
+    "No invoice to start from? Go to Sales, Credit Notes, and click New at the top right. This is the form.",
+    "Pick the customer. The Credit Note number comes from your default series, or you can set it manually with the gear icon.",
+    "Add your items, then Save as Draft if you are not ready.",
+    "Or Save as Open when you are. Open means the credit is available to use."
+   ]
+  },
+  {
+   "id": "s08",
+   "type": "CARTOON",
+   "chapter": 2,
+   "visual": {
+    "kind": "story",
+    "beats": [
+     {
+      "pose": "worried",
+      "prop": "warning",
+      "text": "Mistake: blank note, wrong stock"
+     },
+     {
+      "pose": "point",
+      "prop": "doc",
+      "text": "Fix: start from the invoice"
+     }
+    ]
+   },
+   "lines": [
+    "So mistake one is making a stand alone credit note when the return belongs to an invoice.",
+    "Start from the invoice, and the details and the stock movement are handled for you."
+   ]
+  },
+  {
+   "id": "c3",
+   "type": "CHAPTER",
+   "chapter": 3,
+   "visual": {
+    "num": 3,
+    "title": "Mistake 2: Using the wrong path"
+   },
+   "lines": [
+    "Mistake number two. Using the wrong path for a paid invoice."
+   ]
+  },
+  {
+   "id": "s09",
+   "type": "CARTOON",
+   "chapter": 3,
+   "visual": {
+    "kind": "story",
+    "beats": [
+     {
+      "pose": "point",
+      "prop": "coins",
+      "text": "Unpaid invoice"
+     },
+     {
+      "pose": "present",
+      "prop": "doc",
+      "text": "Credit note from the invoice"
+     },
+     {
+      "pose": "cheer",
+      "prop": "chart_up",
+      "text": "Invoice credited, note Closed"
+     }
+    ]
+   },
+   "lines": [
+    "In our example, say the customer had not paid the one thousand dirham invoice.",
+    "You create the credit note from the invoice, with a returned value of three hundred.",
+    "Zoho says the invoice becomes Paid or Partially Paid, depending on the value returned, and the credit note becomes Closed."
+   ]
+  },
+  {
+   "id": "s10",
+   "type": "CARTOON",
+   "chapter": 3,
+   "visual": {
+    "kind": "story",
+    "beats": [
+     {
+      "pose": "worried",
+      "prop": "coins",
+      "text": "Customer already paid"
+     },
+     {
+      "pose": "point",
+      "prop": "envelope",
+      "text": "Credit note: Open"
+     },
+     {
+      "pose": "present",
+      "prop": "coins",
+      "text": "Refund is the next step"
+     }
+    ]
+   },
+   "lines": [
+    "Now say the customer already paid the full invoice.",
+    "You still create the credit note first, the same way.",
+    "But now the three hundred is real money owed back, so the next step is a refund."
+   ]
+  },
+  {
+   "id": "s11",
+   "type": "BOARD",
+   "chapter": 3,
+   "visual": {
+    "kind": "flow2",
+    "title": "Refund a credit note",
+    "steps": [
+     [
+      "Sales",
+      "Credit Notes"
+     ],
+     [
+      "Select the note",
+      "open it"
+     ],
+     [
+      "More > Refund",
+      "top menu"
+     ],
+     [
+      "Amount + account",
+      "cash or bank"
+     ],
+     [
+      "Save",
+      "done"
+     ]
+    ],
+    "footer": "Zoho Books help: Refund credits"
+   },
+   "lines": [
+    "Here is the refund path.",
+    "Go to Sales, Credit Notes, and select the note.",
+    "Click More, then Refund.",
+    "Enter the refund amount, and select the cash or bank account you are refunding from.",
+    "Click Save."
+   ]
+  },
+  {
+   "id": "s12",
+   "type": "CARTOON",
+   "chapter": 3,
+   "visual": {
+    "kind": "story",
+    "beats": [
+     {
+      "pose": "point",
+      "prop": "coins",
+      "text": "Full amount or partial"
+     },
+     {
+      "pose": "shrug",
+      "prop": "stack",
+      "text": "Rest stays as credit"
+     }
+    ]
+   },
+   "lines": [
+    "You can refund the full amount or only part of it. In our example, that is three hundred, or maybe one hundred.",
+    "Zoho does not spell out here what happens to the rest, so check the credit note status on your own screen after saving."
+   ]
+  },
+  {
+   "id": "s13",
+   "type": "BOARD",
+   "chapter": 3,
+   "visual": {
+    "kind": "headline",
+    "title": "Mistake 2",
+    "items": [
+     {
+      "source": "Rule of thumb",
+      "date": "Example",
+      "text": "Unpaid invoice: credit it. Paid invoice: refund it.",
+      "color": "coral"
+     }
+    ]
+   },
+   "lines": [
+    "So mistake two is trying to refund when the invoice was never paid, or forgetting to refund when it was.",
+    "Ask the paid or unpaid question first, then pick the path."
+   ]
+  },
+  {
+   "id": "c4",
+   "type": "CHAPTER",
+   "chapter": 4,
+   "visual": {
+    "num": 4,
+    "title": "Mistake 3 and 4: Applying credits"
+   },
+   "lines": [
+    "Mistakes three and four. Applying credits the right way."
+   ]
+  },
+  {
+   "id": "s14",
+   "type": "CARTOON",
+   "chapter": 4,
+   "visual": {
+    "kind": "story",
+    "beats": [
+     {
+      "pose": "present",
+      "prop": "doc",
+      "text": "Open credit, open invoice"
+     },
+     {
+      "pose": "point",
+      "prop": "magnifier",
+      "text": "Credit applies to invoices"
+     }
+    ]
+   },
+   "lines": [
+    "Sometimes the customer does not want money back. They want the credit used on their next invoice.",
+    "That is the Apply to Invoice path, and there are two ways to start it."
+   ]
+  },
+  {
+   "id": "s15",
+   "type": "BOARD",
+   "chapter": 4,
+   "visual": {
+    "kind": "flow2",
+    "title": "Apply from the credit note",
+    "steps": [
+     [
+      "Sales",
+      "Credit Notes"
+     ],
+     [
+      "Select the note",
+      "open it"
+     ],
+     [
+      "Apply to Invoice",
+      "button at the top"
+     ],
+     [
+      "Credits to Apply",
+      "amount per invoice"
+     ],
+     [
+      "Save",
+      "done"
+     ]
+    ],
+    "footer": "Zoho Books help: Apply credits"
+   },
+   "lines": [
+    "Way one is from the credit note.",
+    "Go to Sales, Credit Notes, and select the note.",
+    "Click Apply to Invoice at the top.",
+    "A popup opens. Enter the amount under Credits to Apply for each invoice.",
+    "Click Save."
+   ]
+  },
+  {
+   "id": "p3",
+   "type": "PODCAST",
+   "chapter": 4,
+   "visual": {
+    "path": [
+     "Sales",
+     "Invoices"
+    ],
+    "actions": [
+     {
+      "cue": 0,
+      "screen": "books/invoices_list",
+      "target": "All Invoices view",
+      "zoom": 1.8
+     },
+     {
+      "cue": 1,
+      "target": "All Invoices view",
+      "zoom": 1.5,
+      "at": 0.6
+     }
+    ]
+   },
+   "lines": [
+    "Way two is from the invoice. Go to Sales, Invoices, and select the invoice the customer still owes.",
+    "On that invoice page, look for Credits Available, and click the arrow next to it."
+   ]
+  },
+  {
+   "id": "s16",
+   "type": "BOARD",
+   "chapter": 4,
+   "visual": {
+    "kind": "flow2",
+    "title": "Apply from the invoice",
+    "steps": [
+     [
+      "Open invoice",
+      "Sales > Invoices"
+     ],
+     [
+      "Credits Available",
+      "click the arrow"
+     ],
+     [
+      "Credits to Apply",
+      "enter amount"
+     ],
+     [
+      "Apply Credits",
+      "done"
+     ]
+    ],
+    "footer": "Zoho Books help: Apply credits"
+   },
+   "lines": [
+    "So from the invoice, click the arrow next to Credits Available.",
+    "Enter the amount under Credits to Apply.",
+    "Then click Apply Credits."
+   ]
+  },
+  {
+   "id": "s17",
+   "type": "BOARD",
+   "chapter": 4,
+   "visual": {
+    "kind": "headline",
+    "title": "Mistake 3",
+    "items": [
+     {
+      "source": "Zoho Books help",
+      "date": "26 Nov 2026",
+      "text": "Credits Available shows only with an outstanding invoice and an open credit note",
+      "color": "amber"
+     }
+    ]
+   },
+   "lines": [
+    "Mistake number three. Looking for Credits Available and not finding it.",
+    "Zoho says it only shows when the customer has an outstanding invoice and an open credit note.",
+    "So check two things: is the invoice still unpaid, and is the credit note Open, not Draft?"
+   ]
+  },
+  {
+   "id": "s18",
+   "type": "CARTOON",
+   "chapter": 4,
+   "visual": {
+    "kind": "story",
+    "beats": [
+     {
+      "pose": "present",
+      "prop": "coins",
+      "text": "Example: credit AED 400"
+     },
+     {
+      "pose": "point",
+      "prop": "doc",
+      "text": "Invoice A: apply AED 250"
+     },
+     {
+      "pose": "cheer",
+      "prop": "doc",
+      "text": "Invoice B: apply AED 150"
+     },
+     {
+      "pose": "stand",
+      "prop": "stack",
+      "text": "Note becomes Closed"
+     }
+    ]
+   },
+   "lines": [
+    "Here is a quick example. A customer has an open credit of four hundred dirhams, and two unpaid invoices.",
+    "Apply two hundred and fifty to the first invoice, and one hundred and fifty to the second.",
+    "All four hundred is used, so the note becomes Closed.",
+    "If anything had been left over, the note would stay Open."
+   ]
+  },
+  {
+   "id": "p4",
+   "type": "PODCAST",
+   "chapter": 4,
+   "visual": {
+    "path": [
+     "Sales",
+     "Invoices",
+     "New"
+    ],
+    "actions": [
+     {
+      "cue": 0,
+      "screen": "books/invoice_new",
+      "target": "Customer Name",
+      "zoom": 1.9
+     },
+     {
+      "cue": 1,
+      "target": "Invoice#",
+      "zoom": 2.0
+     }
+    ]
+   },
+   "lines": [
+    "Mistake number four. Every invoice has one customer, shown here in Customer Name.",
+    "Zoho only lets you apply a credit note to invoices of that same customer, so a note for one customer cannot pay another customer's invoice."
+   ]
+  },
+  {
+   "id": "s19",
+   "type": "CARTOON",
+   "chapter": 4,
+   "visual": {
+    "kind": "story",
+    "beats": [
+     {
+      "pose": "worried",
+      "prop": "warning",
+      "text": "Different customer? No match"
+     },
+     {
+      "pose": "point",
+      "prop": "magnifier",
+      "text": "Check the customer name"
+     }
+    ]
+   },
+   "lines": [
+    "If an invoice is missing from the Apply to Invoice popup, check the customer name first.",
+    "It is the most likely reason."
+   ]
+  },
+  {
+   "id": "c5",
+   "type": "CHAPTER",
+   "chapter": 5,
+   "visual": {
+    "num": 5,
+    "title": "Mistake 5: No undo plan"
+   },
+   "lines": [
+    "Mistake number five. Not knowing how to undo it."
+   ]
+  },
+  {
+   "id": "s20",
+   "type": "BOARD",
+   "chapter": 5,
+   "visual": {
+    "kind": "flow2",
+    "title": "Undo an applied credit",
+    "steps": [
+     [
+      "Credit Notes",
+      "select the note"
+     ],
+     [
+      "Credit Applied Invoices",
+      "open the tab"
+     ],
+     [
+      "Hover the invoice",
+      "find the Remove icon"
+     ],
+     [
+      "Amount returns",
+      "available again"
+     ]
+    ],
+    "footer": "Zoho Books help: Apply credits"
+   },
+   "lines": [
+    "Now the promise from the start. How do you undo an applied credit?",
+    "Open the credit note and go to the Credit Applied Invoices tab.",
+    "Hover over the invoice, and click the Remove icon.",
+    "The amount becomes available on the credit note again, so you can apply it somewhere else, or refund it."
+   ]
+  },
+  {
+   "id": "s21",
+   "type": "BOARD",
+   "chapter": 5,
+   "visual": {
+    "kind": "checklist",
+    "title": "Refunds: where to look",
+    "items": [
+     "Credit Note > Refund History tab",
+     "Edit icon for a refund",
+     "Delete icon for a refund",
+     "More icon > Import Refunds",
+     "Files: CSV, TSV or XLS"
+    ]
+   },
+   "lines": [
+    "Refunds have their own history. Open the credit note, and click the Refund History tab, top right.",
+    "From there, an edit icon lets you change a refund.",
+    "And a delete icon removes it.",
+    "If you have many refunds to record, there is also Import Refunds, under the More icon on the Credit Notes page.",
+    "It accepts C S V, T S V or X L S files, and Zoho gives sample files to download."
+   ]
+  },
+  {
+   "id": "s22",
+   "type": "CARTOON",
+   "chapter": 5,
+   "visual": {
+    "kind": "story",
+    "beats": [
+     {
+      "pose": "present",
+      "prop": "doc",
+      "text": "Buying side: Vendor Credits"
+     },
+     {
+      "pose": "point",
+      "prop": "magnifier",
+      "text": "Separate section"
+     }
+    ]
+   },
+   "lines": [
+    "One last thing. Credit notes are for your customers. For the purchase side, Zoho Books has its own section called Vendor Credits.",
+    "I will cover that in a separate video if you want it. Tell me in the comments."
+   ]
+  },
+  {
+   "id": "c6",
+   "type": "CHAPTER",
+   "chapter": 6,
+   "visual": {
+    "num": 6,
+    "title": "Your checklist"
+   },
+   "lines": [
+    "Time to put it together."
+   ]
+  },
+  {
+   "id": "s23",
+   "type": "BOARD",
+   "chapter": 6,
+   "visual": {
+    "kind": "checklist",
+    "title": "Credit note checklist",
+    "items": [
+     "Paid or unpaid invoice?",
+     "Start from the invoice if you can",
+     "Unpaid: credit the invoice",
+     "Paid: More > Refund",
+     "Same customer, note Open",
+     "Mistake? Remove and redo"
+    ]
+   },
+   "lines": [
+    "Here is your checklist.",
+    "First, ask: is the invoice paid or unpaid?",
+    "Start the credit note from the invoice whenever the return belongs to one.",
+    "If it is unpaid, credit the invoice. If it is paid, use More, then Refund.",
+    "Credit and invoice must be the same customer, and the note must be Open.",
+    "And if you make a mistake, remove the applied credit and do it again."
+   ]
+  },
+  {
+   "id": "s24",
+   "type": "CARTOON",
+   "chapter": 6,
+   "visual": {
+    "kind": "story",
+    "beats": [
+     {
+      "pose": "cheer",
+      "prop": "doc",
+      "text": "Refund or apply: sorted"
+     }
+    ]
+   },
+   "lines": [
+    "That is Zoho Books credit notes, refund versus apply to invoice, with no guessing."
+   ]
+  },
+  {
+   "id": "o1",
+   "type": "OUTRO",
+   "chapter": 6,
+   "visual": {
+    "kind": "outro",
+    "next": "Zoho Books Automation: Recurring Invoices & Reminders",
+    "badge": "BOOKS",
+    "badge_sub": "Automation",
+    "note": "Credit notes: check paid or unpaid first"
+   },
+   "lines": [
+    "If this saved you a headache, comment which one you use more, refund or apply to invoice.",
+    "Next, watch my Zoho Books automation video, where I set up recurring invoices and payment reminders, so you chase less money.",
+    "Subscribe for more Zoho Books how tos, and see you in the next one."
+   ]
+  }
+ ]
+}

@@ -14,3 +14,4 @@ date | type | id | structure | hook_type | title
 2026-11-24 | short | flow-20261124-zoho-crm-vibe | rapid-faq | question | Zoho CRM Vibe: Build an App by Typing, No Code
 2026-11-25 | long | zoho-crm-vibe | rapid-faq | question | Zoho CRM Vibe Explained: Build Apps by Typing (7 Questions)
 2026-11-25 | short | vibe-a | news-impact-action | result-first | Zoho CRM Vibe: Build an App by Typing (What to Know)
+2026-11-26 | long | zoho-books-credit-notes | mistakes-to-avoid | mistake | Zoho Books Credit Note: Refund vs Apply to Invoice (5 Mistakes)

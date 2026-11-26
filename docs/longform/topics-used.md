@@ -21,3 +21,4 @@
 2026-11-22 | whiteboard-short (news) | s20261122-nvidia-worst-week | Nvidia's Worst Week Since 2008: The Reported SEC Accounting Probe, Explained | shorts-daily (news slot)
 2026-11-24 | long | nvidia-huang-u-turn | Why Nvidia Brought Jensen Huang Back: The 11-Day U-Turn Explained | rendering, publish 24 Nov 19:30 IST
 2026-11-24 | flow-short (news) | flow-20261124-zoho-crm-vibe | Zoho CRM Vibe: Build an App by Typing, No Code | spec ready, needs Flow session
+2026-11-26 | long | zoho-books-credit-notes | Zoho Books Credit Note: Refund vs Apply to Invoice (5 Mistakes) | evergreen, no news passed fact rules; publish 27 Nov 18:30 IST, longform-daily dispatched
